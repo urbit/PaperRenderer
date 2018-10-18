@@ -7,9 +7,7 @@ const client = Figma.Client({ personalAccessToken: TOKEN })
 const figma = {
   pull: (documentRef, callback) => {
     client.file(documentRef)
-      .then(({ data }) => {
-        callback(data)
-      })
+      .then(({ data }) => { callback(data) })
       .catch(err => console.error('figma.get() choked: ', err))
   }
 }

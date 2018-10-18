@@ -1,3 +1,6 @@
+import { map } from 'lodash';
+
+
 const initCanvas = (canvas, size) => {
   const { x, y } = size;
   let ctx = canvas.getContext('2d');
@@ -46,8 +49,8 @@ const dataURItoBlob = dataURI => {
 }
 
 
-const wordWrap = (context, text, x, y, lineHeight, fitWidth, font) => {
-    context.font = font;
+const wordWrap = (context, text, x, y, lineHeight, fitWidth) => {
+  text = text.toString()
     fitWidth = fitWidth || 0;
 
     if (fitWidth <= 0)
@@ -81,8 +84,53 @@ const wordWrap = (context, text, x, y, lineHeight, fitWidth, font) => {
 }
 
 
+
+const injectContent = (collateral, template) => {
+  const FIG_VAR_REGEXP = /(\@)/g;
+  return {
+    ...collateral,
+    renderables: map(template.renderables, renderable => {
+      if (renderable.type === 'TEXT') {
+        if (renderable.text.match(FIG_VAR_REGEXP)) {
+          const target = renderable.text.replace(FIG_VAR_REGEXP, '');
+          return {
+            ...renderable,
+            text: collateral[target],
+          }
+        } else {
+          return renderable;
+        };
+      };
+
+      if (renderable.type === 'SIGIL') {
+        const target = renderable.data.replace(FIG_VAR_REGEXP, '');
+        return {
+          ...renderable,
+          data: collateral[target],
+        };
+      };
+
+      if (renderable.type === 'QR') {
+        const target = renderable.data.replace(FIG_VAR_REGEXP, '');
+        return {
+          ...renderable,
+          data: collateral[target],
+        };
+      };
+
+    }),
+  };
+};
+
+const inject = (collateral, templates) => {
+  return map(templates, template => injectContent(collateral, template))
+}
+
+
 export {
   initCanvas,
   dataURItoBlob,
   wordWrap,
+  injectContent,
+  inject,
 }

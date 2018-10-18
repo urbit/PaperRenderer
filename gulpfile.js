@@ -4,6 +4,7 @@ var cssnano = require('gulp-cssnano');
 
 var rollup = require('rollup-stream');
 var source = require('vinyl-source-stream');
+var typescript = require('rollup-plugin-typescript');
 
 var babel = require('rollup-plugin-babel');
 var resolve = require('rollup-plugin-node-resolve');
@@ -42,18 +43,56 @@ var cache;
 gulp.task('bundle-js', function(cb) {
   return rollup({
     input: './src/index.js',
-    cache: cache,
-    format: 'es',
+    // cache: cache,
+    format: 'cjs',
     plugins: [
+      resolve({
+        browser: true,
+      }),
       babel({
         ignore: ['src/vendor/**', 'node_modules/**'],
-        plugins: ['babel-plugin-lodash']
+        // plugins: ['babel-plugin-lodash']
       }),
       commonjs({
         namedExports: {
-          'node_modules/urbit-keygen/dist/index.js': [ 'fullWalletFromSeed' ],
-          'node_modules/react/index.js': [ 'Component' ],
-          'node_modules/lodash/lodash.js': [ 'map', 'get', 'set', 'cloneDeep', 'entries', 'reduce', 'filter' ]
+          'node_modules/urbit-keygen/dist/index.js': [
+            'fullWalletFromSeed'
+          ],
+          'node_modules/react/index.js': [
+            'Component'
+          ],
+          'node_modules/sigil-js/dist/bundle.js': [
+            'pour'
+          ],
+          'node_modules/lodash/lodash.js': [
+            'map',
+            'get',
+            'set',
+            'cloneDeep',
+            'entries',
+            'reduce',
+            'filter',
+            'last',
+            'flatten',
+            'size',
+            'groupBy',
+            'head',
+            'uniq',
+            'mergeWith',
+            'chunk',
+            'some',
+            'isEmpty',
+            'isNumber',
+            'isString',
+            'isArray',
+            'isFunction',
+            'isArrayBuffer',
+            'isBoolean',
+            'isUndefined',
+            'isObject',
+            'isRegExp',
+            'isInteger',
+          ]
         }
       }),
       replace({
@@ -64,12 +103,11 @@ gulp.task('bundle-js', function(cb) {
         useEntry: 'prepend',
         extensions: '.js'
       }),
+      // typescript(),
       json(),
       globals(),
       builtins(),
-      resolve({
-        browser: true,
-      }),
+
       // sourcemaps(),
       // uglify(),
     ]
