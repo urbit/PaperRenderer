@@ -66,6 +66,7 @@ gulp.task('bundle-js', function(cb) {
           ],
           'node_modules/lodash/lodash.js': [
             'map',
+            'forEach',
             'get',
             'set',
             'cloneDeep',
