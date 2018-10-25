@@ -67,24 +67,21 @@ class PaperCollateralRenderer extends Component {
         if (item.type === 'QR') return drawQR({ ctx, ...item });
         if (item.type === 'SIGIL') return drawSigil({ ctx, ...item });
         if (item.type === 'TEXT') return drawWrappedText({ ctx, ...item });
-      })
-
-      const png = dataURItoBlob(this.canvas.toDataURL("image/png"));
+      });
 
       const result = {
         layout: renderableLayout,
-        png: png,
-      };
+        png: dataURItoBlob(this.canvas.toDataURL("image/png"));,
+      }
+
       this.props.callback(result)
     });
-
   };
 
 
   render() {
     return (
       <div className={'flex flex-column'}>
-        <button onClick={() => this.download()}>{'Download'}</button>
         <canvas ref={ pcr_ref => this.pcr_ref = pcr_ref } />
       </div>
 

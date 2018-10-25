@@ -11,10 +11,12 @@ import copy from './lib/copy';
 
 const zipDataSources = (wallet, copy, dataGetters, selector) => dataGetters[selector](wallet, copy);
 
+
+
 const generateRenderable = (wal, copy, templates, dataGetters, selector) => {
-  const collateral = zipDataSources(sampleWallet, copy, dataGetters, selector)
-  const template = templates[collateral.template]
-  const renderables = injectContent(collateral, template)
+  const collateral = zipDataSources(sampleWallet, copy, dataGetters, selector);
+  const template = templates[collateral.template];
+  const renderables = injectContent(collateral, template);
 
   return {
     ...collateral,
