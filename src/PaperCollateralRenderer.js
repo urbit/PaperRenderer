@@ -50,17 +50,17 @@ class PaperCollateralRenderer extends Component {
     ctx.fillStyle="#000";
 
     const asynchronous = filter(renderableLayout.renderables, renderable => {
-      return renderable.type === 'SIGIL' || renderable.type === 'QR'
-    })
+      return renderable.type === 'SIGIL' || renderable.type === 'QR';
+    });
 
     const synchronous = filter(renderableLayout.renderables, renderable => {
-      return renderable.type === 'TEXT'
-    })
+      return renderable.type === 'TEXT';
+    });
 
     const loadThese = map(asynchronous, item => {
       if (item.type === 'QR') return loadQR({ ctx, ...item });
       if (item.type === 'SIGIL') return loadSigil({ ctx, ...item });
-    })
+    });
 
     Promise.all(loadThese).then((loadedItems) => {
       forEach([...loadedItems, ...synchronous], item => {
@@ -71,10 +71,10 @@ class PaperCollateralRenderer extends Component {
 
       const result = {
         layout: renderableLayout,
-        png: dataURItoBlob(this.canvas.toDataURL("image/png"));,
-      }
+        png: dataURItoBlob(this.canvas.toDataURL("image/png")),
+      };
 
-      this.props.callback(result)
+      this.props.callback(result);
     });
   };
 
@@ -89,4 +89,4 @@ class PaperCollateralRenderer extends Component {
   };
 };
 
-export default PaperCollateralRenderer
+export default PaperCollateralRenderer;

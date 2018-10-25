@@ -43,7 +43,7 @@ var cache;
 gulp.task('bundle-js', function(cb) {
   return rollup({
     input: './src/index.js',
-    // cache: cache,
+    cache: cache,
     format: 'cjs',
     plugins: [
       resolve({
@@ -112,7 +112,11 @@ gulp.task('bundle-js', function(cb) {
       // sourcemaps(),
       // uglify(),
     ]
-  }).on('bundle', function(bundle) { cache = bundle; })
+  }).on('bundle', function(bundle) {
+    if (!cache) {
+      cache = bundle;
+    }
+   })
     .on('error', function(e){
       console.log(e);
       cb();
