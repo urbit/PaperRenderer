@@ -646,7 +646,7 @@ const templates = {
         "type": "TEXT",
         "fontPostScriptName": "SFProText-Regular",
         "fontSize": 10,
-        "text": "@seedTypeHeading",
+        "text": "@addressTypeHeading",
         "maxWidth": 248,
         "lineHeightPx": 12.890625,
         "x": 48,
@@ -762,9 +762,9 @@ const templates = {
       },
       {
         "type": "QR",
-        "size": 48.000099182128906,
-        "name": ">qr:@ownershipAddress",
-        "data": "@ownershipAddress",
+        "size": 48.00,
+        "name": ">qr:@seedAddress",
+        "data": "@seedAddress",
         "x": 48,
         "y": 450
       }

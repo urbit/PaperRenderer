@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOMServer from 'react-dom/server';
-import { map, reduce, isUndefined } from 'lodash';
+import { map, reduce, isUndefined, get } from 'lodash';
 import PaperCollateralRenderer from './PaperCollateralRenderer';
 import ob from 'urbit-ob';
 
@@ -13,8 +13,8 @@ const zipDataSources = (wallet, copy, dataGetters, selector) => dataGetters[sele
 
 
 
-const generateRenderable = (wal, copy, templates, dataGetters, selector) => {
-  const collateral = zipDataSources(sampleWallet, copy, dataGetters, selector);
+const generateRenderable = (wallet, copy, templates, dataGetters, selector) => {
+  const collateral = zipDataSources(wallet, copy, dataGetters, selector);
   const template = templates[collateral.template];
   const renderables = injectContent(collateral, template);
 
@@ -65,71 +65,154 @@ const injectContent = (collateral, template) => {
 
 
 
+const getOrThrow = (obj, path) => {
+  const result = get(obj, path)
+  if (isUndefined(result)) {
+   throw new Error(`Tried to get item at path ${path} from wallet object and failed.`)
+  } else {
+    return result
+  }
+}
+
+
 const dataGetters = {
-  MASTER_TICKET: (wallet, copy) => {
-    const patp = ob.add2patp(wallet.spawn[0].meta.ship)
-    const classOf = ob.tierOfadd(wallet.spawn[0].meta.ship)
+  MASTER_TICKET: (w, copy) => {
+    const SEEDNAME = 'masterTicket'
     return {
       template: 'MASTER_TICKET',
-      // TODO This is bad! (gvn)
-      patp: patp,
+      patp: getOrThrow(w, 'ship.patp'),
       heading: 'Master Ticket',
-      ticket: ob.hex2patq(wallet.ticket),
+      ticket: getOrThrow(w, 'ticket'),
       ticketSize: 'TBD',
-      // TODO convert to BIP32 mnemonic (gvn)
-      ownershipMnemonic: wallet.owner.seed,
+      ownershipMnemonic: getOrThrow(w, 'ownership.seed'),
       ownershipMnemonicSize: 'TBD',
       ownershipMnemonicDerivationPath: 'TBD',
-      // TODO convert to actual ethereum address (gvn)
-      ownershipAddress: wallet.owner.keys.public,
-      custody: copy.custody[classOf].masterTicket,
-      usage: copy.usage[classOf].masterTicket,
+      ownershipAddress: getOrThrow(w, 'ownership.keys.address'),
+      custody: getOrThrow(copy, `custody.${[w.ship.class]}.${[SEEDNAME]}`),
+      usage: getOrThrow(copy, `usage.${[w.ship.class]}.${[SEEDNAME]}`),
       createdOn: new Date(),
       walletVersion: copy.meta.walletVersion,
       moreInformation: copy.meta.moreInformation,
     }
   },
-  // TODO not sure how to tackle shards yet (gvn)
-  // MASTER_TICKET_SHARD: (wallet, copy) => ({
-  //   template: 'MASTER_TICKET_SHARD',
-  //   patp: ob.add2patp(1),
-  //   heading: `Master Ticket Shard ${wallet.shardIndex} of 3`,
-  //   ticket: ob.hex2patq(wallet.shard),
-  //   ticketSize: 'TBD',
-  //   // TODO convert to BIP32 mnemonic (gvn)
-  //   ownershipMnemonic: wallet.owner.seed,
-  //   ownershipMnemonicSize: 'TBD',
-  //   ownershipMnemonicDerivationPath: 'TBD',
-  //   // TODO convert to actual ethereum address (gvn)
-  //   ownershipAddress: wallet.owner.keys.public,
-  //   custody: copy.custody.lvl1,
-  //   usage: copy.usage.masterTicket,
-  //   createdOn: new Date(),
-  //   walletVersion: copy.meta.walletVersion,
-  //   moreInformation: copy.meta.moreInformation,
-  // }),
-  SPAWN: (wallet, copy) => {
-    const patp = ob.add2patp(wallet.spawn[0].meta.ship)
-    const classOf = ob.tierOfadd(wallet.spawn[0].meta.ship)
+
+  // TODO NOT DONE. DOES NOT MAP SHARDS.
+  MASTER_TICKET_SHARDS: (w, copy) => {
+    const SEEDNAME = 'masterTicketShard'
     return {
-      template: 'SEED',
-      patp: patp,
-      heading: 'Spawn Proxy Seed',
-      // TODO convert to mnemonic instead of @P here
-      ticket: ob.hex2patq(wallet.spawn[0].seed),
+      template: 'MASTER_TICKET',
+      patp: getOrThrow(w, 'ship.patp'),
+      heading: 'Master Ticket',
+      ticket: getOrThrow(w, 'ticket'),
       ticketSize: 'TBD',
-      // TODO convert to actual ethereum address
-      ownershipAddress: wallet.owner.keys.public,
-      // TODO need code paths based on ship type
-      custody: copy.custody[classOf].spawn,
-      usage: copy.usage[classOf].spawn,
+      ownershipMnemonic: getOrThrow(w, 'ownership.seed'),
+      ownershipMnemonicSize: 'TBD',
+      ownershipMnemonicDerivationPath: 'TBD',
+      ownershipAddress: getOrThrow(w, 'ownership.keys.address'),
+      custody: getOrThrow(copy, `custody.${[w.ship.class]}.${[SEEDNAME]}`),
+      usage: getOrThrow(copy, `usage.${[w.ship.class]}.${[SEEDNAME]}`),
       createdOn: new Date(),
       walletVersion: copy.meta.walletVersion,
       moreInformation: copy.meta.moreInformation,
     }
+  },
+  SPAWN: (w, copy) => {
+    const SEEDNAME = 'spawn'
+    const data = {
+      template: 'SEED',
+      patp: getOrThrow(w, 'ship.patp'),
+      heading: 'Spawn Seed',
+      seed: getOrThrow(w, `${SEEDNAME}.seed`),
+      seedSize: '128 Bits',
+      seedAddress: getOrThrow(w, `${SEEDNAME}.keys.address`),
+      custody: getOrThrow(copy, `custody.${[w.ship.class]}.${[SEEDNAME]}`),
+      usage: getOrThrow(copy, `usage.${[w.ship.class]}.${[SEEDNAME]}`),
+      createdOn: new Date(),
+      walletVersion: copy.meta.walletVersion,
+      moreInformation: copy.meta.moreInformation,
+      addressTypeHeading: 'Spawn Proxy Address',
+    }
+    return data
+  },
+  TRANSFER: (w, copy) => {
+    const SEEDNAME = 'transfer'
+    const data = {
+      template: 'SEED',
+      patp: getOrThrow(w, 'ship.patp'),
+      heading: 'Transfer Seed',
+      seed: getOrThrow(w, `${SEEDNAME}.seed`),
+      seedSize: '128 Bits',
+      seedAddress: getOrThrow(w, `${SEEDNAME}.keys.address`),
+      custody: getOrThrow(copy, `custody.${[w.ship.class]}.${[SEEDNAME]}`),
+      usage: getOrThrow(copy, `usage.${[w.ship.class]}.${[SEEDNAME]}`),
+      createdOn: new Date(),
+      walletVersion: copy.meta.walletVersion,
+      moreInformation: copy.meta.moreInformation,
+      addressTypeHeading: 'Transfer Proxy Address',
+    }
+    return data
+  },
+  VOTING: (w, copy) => {
+    const SEEDNAME = 'voting'
+    const data = {
+      template: 'SEED',
+      patp: getOrThrow(w, 'ship.patp'),
+      heading: 'Voting Seed',
+      seed: getOrThrow(w, `${SEEDNAME}.seed`),
+      seedSize: '128 Bits',
+      seedAddress: getOrThrow(w, `${SEEDNAME}.keys.address`),
+      custody: getOrThrow(copy, `custody.${[w.ship.class]}.${[SEEDNAME]}`),
+      usage: getOrThrow(copy, `usage.${[w.ship.class]}.${[SEEDNAME]}`),
+      createdOn: new Date(),
+      walletVersion: copy.meta.walletVersion,
+      moreInformation: copy.meta.moreInformation,
+      addressTypeHeading: 'Voting Proxy Address',
+    }
+    return data
+  },
+  MANAGEMENT: (w, copy) => {
+    const SEEDNAME = 'management'
+    const data = {
+      template: 'SEED',
+      patp: getOrThrow(w, 'ship.patp'),
+      heading: 'Management Seed',
+      seed: getOrThrow(w, `${SEEDNAME}.seed`),
+      seedSize: '128 Bits',
+      seedAddress: getOrThrow(w, `${SEEDNAME}.keys.address`),
+      custody: getOrThrow(copy, `custody.${[w.ship.class]}.${[SEEDNAME]}`),
+      usage: getOrThrow(copy, `usage.${[w.ship.class]}.${[SEEDNAME]}`),
+      createdOn: new Date(),
+      walletVersion: copy.meta.walletVersion,
+      moreInformation: copy.meta.moreInformation,
+      addressTypeHeading: 'Management Proxy Address',
+    }
+    return data
   },
 }
 
+
+const DOCKET = {
+  'galaxy': ['MASTER_TICKET_SHARDS', 'SPAWN', 'VOTING', 'TRANSFER', 'MANAGEMENT'],
+  'star': ['MASTER_TICKET', 'SPAWN', 'TRANSFER', 'MANAGEMENT'],
+  'planet': ['MASTER_TICKET', 'TRANSFER', 'MANAGEMENT'],
+}
+
+
+const wshim = kg_wallet => {
+  const reshaped = Object.entries(kg_wallet).map(([shipAddr, shipWallet]) => {
+    const shipClass = ob.tierOfadd(parseInt(shipAddr))
+    return {
+      ...shipWallet,
+      ship: {
+        patp: ob.add2patp(parseInt(shipAddr)),
+        addr: shipAddr,
+        class: shipClass,
+      },
+      docket: DOCKET[shipClass],
+    }
+  })
+  return reshaped
+}
 
 
 class App extends Component {
@@ -141,11 +224,19 @@ class App extends Component {
   }
 
   render() {
-    const renderableLayout = generateRenderable(sampleWallet, copy, templates, dataGetters, 'MASTER_TICKET')
+    const wallets = wshim(sampleWallet)
     return (
       <main id={'page-ref'}>
         {'Render paper collateral'}
-        <PaperCollateralRenderer renderableLayout={renderableLayout} callback={result => console.log(result)} />
+        {
+          wallets.map(wallet => {
+            const renderableLayouts = map(wallet.docket, selector => {
+              const renderableLayout = generateRenderable(wallet, copy, templates, dataGetters, selector)
+              return <PaperCollateralRenderer renderableLayout={renderableLayout} callback={result => console.log(result)} />
+            })
+            return renderableLayouts
+          })
+        }
       </main>
     );
   };
