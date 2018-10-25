@@ -1,108 +1,133 @@
 import React, { Component } from 'react';
 import ReactDOMServer from 'react-dom/server';
-import { map, reduce } from 'lodash';
-import copy from './lib/copy';
-// import WalletRenderer from './WalletRenderer';
-import WalletRenderer from './WalletRenderer';
-
-import figma from './lib/figma';
-import sampleWallet from './lib/sampleWallet';
-
-import templates from './lib/templates';
-
+import { map, reduce, isUndefined } from 'lodash';
+import PaperCollateralRenderer from './PaperCollateralRenderer';
 import ob from 'urbit-ob';
 
-const flatPack = (lo) => {
-  const extracted = reduce(lo.children, (acc, child) => {
-    if (child.type === 'GROUP') {
+import sampleWallet from './lib/sampleWallet';
+import templates from './lib/templates';
+import copy from './lib/copy';
 
-      // look for special items we don't need to parse
-      if (child.name.split(':')[0] === '>qr') return [...acc, {...child, type: 'QR'}];
-      if (child.name.split(':')[0] === '>sigil') return [...acc, {...child, type: 'SIGIL'}];
-      // if no special items are found, tranverse down into group
-      return [...acc, ...flatPack(child)]
-    } else {
-      if (child.type === 'TEXT') return [...acc, {...child, type: 'TEXT'}];
-      console.warn('Reminder: There are more children on board that will not be included in flatpack.')
-      return acc
-    }
-  }, []);
-  return extracted
+
+const zipDataSources = (wallet, copy, dataGetters, selector) => dataGetters[selector](wallet, copy);
+
+
+
+const generateRenderable = (wal, copy, templates, dataGetters, selector) => {
+  const collateral = zipDataSources(sampleWallet, copy, dataGetters, selector);
+  const template = templates[collateral.template];
+  const renderables = injectContent(collateral, template);
+
+  return {
+    ...collateral,
+    renderables,
+  }
 };
 
 
 
-const makeCollateral = wallet => {
-  return {
-    MASTER_TICKET: {
+const injectContent = (collateral, template) => {
+
+  if (isUndefined(collateral)) Error('collateral is undefined in injectContent')
+  if (isUndefined(template)) Error('template is undefined in injectContent')
+
+  const PAT = /(\@)/g;
+
+  const renderablesWithRealDataAdded = map(template.renderables, r => {
+      if (r.type === 'TEXT') {
+        if (r.text.match(PAT)) {
+          return {
+            ...r,
+            text: collateral[r.text.replace(PAT, '')],
+          }
+        } else {
+          return r;
+        }
+      }
+
+      if (r.type === 'SIGIL') {
+        return {
+          ...r,
+          data: collateral[r.data.replace(PAT, '')],
+        }
+      }
+
+      if (r.type === 'QR') {
+        return {
+          ...r,
+          data: collateral[r.data.replace(PAT, '')],
+        }
+      }
+  })
+
+  return renderablesWithRealDataAdded;
+};
+
+
+
+const dataGetters = {
+  MASTER_TICKET: (wallet, copy) => {
+    const patp = ob.add2patp(wallet.spawn[0].meta.ship)
+    const classOf = ob.tierOfadd(wallet.spawn[0].meta.ship)
+    return {
       template: 'MASTER_TICKET',
-      patp: ob.add2patp(1),
+      // TODO This is bad! (gvn)
+      patp: patp,
       heading: 'Master Ticket',
       ticket: ob.hex2patq(wallet.ticket),
       ticketSize: 'TBD',
-      // TODO convert to BIP32 mnemonic
+      // TODO convert to BIP32 mnemonic (gvn)
       ownershipMnemonic: wallet.owner.seed,
       ownershipMnemonicSize: 'TBD',
       ownershipMnemonicDerivationPath: 'TBD',
-      // TODO convert to actual ethereum address
+      // TODO convert to actual ethereum address (gvn)
       ownershipAddress: wallet.owner.keys.public,
-      custody: copy.custody.lvl1,
-      usage: copy.usage.masterTicket,
-      createdOn: new Date(),
-      walletVersion: copy.meta.walletVersion,
-      moreInformation: copy.meta.moreInformation,
-    },
-    // MASTER_TICKET_SHARD: {
-    //   template: 'MASTER_TICKET_SHARD',
-    //   patp: ob.add2patp(1),
-    //   heading: 'Master Ticket Shard',
-    //   ticket: ob.hex2patq(wallet.shard),
-    //   ticketSize: 'TBD',
-    //   // TODO convert to BIP32 mnemonic
-    //   ownershipMnemonic: wallet.owner.seed,
-    //   ownershipMnemonicSize: 'TBD',
-    //   ownershipMnemonicDerivationPath: 'TBD',
-    //   // TODO convert to actual ethereum address
-    //   ownershipAddress: wallet.owner.keys.public,
-    //   custody: copy.custody.lvl1,
-    //   usage: copy.usage.masterTicket,
-    //   createdOn: new Date(),
-    //   walletVersion: copy.meta.walletVersion,
-    //   moreInformation: copy.meta.moreInformation,
-    // },
-    ESCAPE: {
-      template: 'ESCAPE',
-      patp: ob.add2patp(1345),
-      heading: 'Master Ticket',
-      ticket: ob.hex2patq(wallet.ticket),
-      ticketSize: 'TBD',
-      seedInfo: 'TBD',
-      // TODO convert to BIP32 mnemonic
-      ownershipMnemonic: wallet.owner.seed,
-      ownershipMnemonicSize: 'TBD',
-      ownershipMnemonicDerivationPath: 'TBD',
-      // TODO convert to actual ethereum address
-      ownershipAddress: wallet.owner.keys.public,
-      custody: copy.custody.lvl1,
-      usage: copy.usage.masterTicket,
+      custody: copy.custody[classOf].masterTicket,
+      usage: copy.usage[classOf].masterTicket,
       createdOn: new Date(),
       walletVersion: copy.meta.walletVersion,
       moreInformation: copy.meta.moreInformation,
     }
-    // spawn: {
-    //
-    // },
-    // transfer: {
-    //
-    // },
-    // vote: {
-    //
-    // },
-    // manage: {
-    //
-    // },
-  }
-
+  },
+  // TODO not sure how to tackle shards yet (gvn)
+  // MASTER_TICKET_SHARD: (wallet, copy) => ({
+  //   template: 'MASTER_TICKET_SHARD',
+  //   patp: ob.add2patp(1),
+  //   heading: `Master Ticket Shard ${wallet.shardIndex} of 3`,
+  //   ticket: ob.hex2patq(wallet.shard),
+  //   ticketSize: 'TBD',
+  //   // TODO convert to BIP32 mnemonic (gvn)
+  //   ownershipMnemonic: wallet.owner.seed,
+  //   ownershipMnemonicSize: 'TBD',
+  //   ownershipMnemonicDerivationPath: 'TBD',
+  //   // TODO convert to actual ethereum address (gvn)
+  //   ownershipAddress: wallet.owner.keys.public,
+  //   custody: copy.custody.lvl1,
+  //   usage: copy.usage.masterTicket,
+  //   createdOn: new Date(),
+  //   walletVersion: copy.meta.walletVersion,
+  //   moreInformation: copy.meta.moreInformation,
+  // }),
+  SPAWN: (wallet, copy) => {
+    const patp = ob.add2patp(wallet.spawn[0].meta.ship)
+    const classOf = ob.tierOfadd(wallet.spawn[0].meta.ship)
+    return {
+      template: 'SEED',
+      patp: patp,
+      heading: 'Spawn Proxy Seed',
+      // TODO convert to mnemonic instead of @P here
+      ticket: ob.hex2patq(wallet.spawn[0].seed),
+      ticketSize: 'TBD',
+      // TODO convert to actual ethereum address
+      ownershipAddress: wallet.owner.keys.public,
+      // TODO need code paths based on ship type
+      custody: copy.custody[classOf].spawn,
+      usage: copy.usage[classOf].spawn,
+      createdOn: new Date(),
+      walletVersion: copy.meta.walletVersion,
+      moreInformation: copy.meta.moreInformation,
+    }
+  },
 }
 
 
@@ -115,77 +140,12 @@ class App extends Component {
     }
   }
 
-
-  componentDidMount = () => {
-
-    figma.pull('a4u6jBsdTgiXcrDGW61q5ngY', res => {
-
-      const _layouts = res.document.children[0].children;
-
-      const layouts = reduce(_layouts, (acc, lo) => {
-        return {
-          ...acc,
-          [lo.name]: {
-            key: lo.name,
-            absoluteBoundingBox: lo.absoluteBoundingBox,
-            renderables: map(flatPack(lo), child => {
-              if (child.type === 'QR') {
-                return {
-                  type: 'QR',
-                  size: child.absoluteBoundingBox.height,
-                  name: child.name,
-                  data: child.name.split(':')[1],
-                  x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
-                  y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
-                }
-              }
-
-              if (child.type === 'SIGIL') {
-                return {
-                  type: 'SIGIL',
-                  size: child.absoluteBoundingBox.height,
-                  name: child.name,
-                  data: child.name.split(':')[1],
-                  x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
-                  y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
-                }
-              }
-
-              if (child.type === 'TEXT') {
-                return {
-                  type: 'TEXT',
-                  fontPostScriptName: child.style.fontPostScriptName,
-                  fontSize: child.style.fontSize,
-                  text: child.characters,
-                  maxWidth: child.absoluteBoundingBox.width,
-                  lineHeightPx: child.style.lineHeightPx,
-                  x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
-                  y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
-                }
-              }
-
-              console.warn(`Untyped child ${child.name} in flat layouts`)
-            }),
-          }
-        }
-      }, {})
-
-      console.log(JSON.stringify(layouts));
-    })
-  }
-
   render() {
-
+    const renderableLayout = generateRenderable(sampleWallet, copy, templates, dataGetters, 'MASTER_TICKET')
     return (
       <main id={'page-ref'}>
-        {'Render a paper wallet'}
-        <WalletRenderer templates={templates} collateral={makeCollateral(sampleWallet)}/>
-
-        {
-          // this.state.layouts === null
-          //   ? 'Loading'
-          //   : <WalletRenderer templates={templates} collateral={makeCollateral(sampleWallet)}/>
-        }
+        {'Render paper collateral'}
+        <PaperCollateralRenderer renderableLayout={renderableLayout} callback={result => console.log(result)} />
       </main>
     );
   };
