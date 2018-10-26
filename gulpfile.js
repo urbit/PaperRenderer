@@ -139,9 +139,9 @@ gulp.task('inline', function () {
 
 
 gulp.task('default', gulp.series(
-  'fonts',
+  // 'fonts',
   gulp.parallel('bundle-js', 'bundle-css'),
-  'inline',
+  // 'inline',
 ));
 
 
@@ -149,3 +149,84 @@ gulp.task('watch', gulp.series('default', function() {
   gulp.watch('src/**/*.js', gulp.parallel('bundle-js'));
   gulp.watch('src/**/*.css', gulp.parallel('bundle-css'));
 }));
+
+
+
+gulp.task('buildLib', function(cb) {
+  return rollup({
+  input: './src/MakePaperCollateral.js',
+  format: 'cjs',
+  plugins: [
+    resolve({
+      browser: true,
+    }),
+    babel({
+      ignore: ['src/vendor/**', 'node_modules/**'],
+      plugins: ['babel-plugin-lodash']
+    }),
+    commonjs({
+      namedExports: {
+        'node_modules/urbit-keygen/dist/index.js': [
+          'fullWalletFromSeed'
+        ],
+        'node_modules/react/index.js': [
+          'Component'
+        ],
+        'node_modules/sigil-js/dist/bundle.js': [
+          'pour'
+        ],
+        'node_modules/lodash/lodash.js': [
+          'map',
+          'forEach',
+          'get',
+          'set',
+          'cloneDeep',
+          'entries',
+          'reduce',
+          'filter',
+          'last',
+          'flatten',
+          'size',
+          'groupBy',
+          'head',
+          'uniq',
+          'mergeWith',
+          'chunk',
+          'some',
+          'isEmpty',
+          'isNumber',
+          'isString',
+          'isArray',
+          'isFunction',
+          'isArrayBuffer',
+          'isBoolean',
+          'isUndefined',
+          'isObject',
+          'isRegExp',
+          'isInteger',
+        ]
+      }
+    }),
+    replace({
+      'process.env.NODE_ENV': JSON.stringify('development')
+    }),
+    rootImport({
+      root: `${__dirname}/src`,
+      useEntry: 'prepend',
+      extensions: '.js'
+    }),
+    json(),
+    globals(),
+    builtins(),
+    uglify(),
+  ]
+}).on('bundle', function(bundle) {
+ })
+  .on('error', function(e){
+    console.log(e);
+    cb();
+  })
+  .pipe(source('MakePaperCollateral.js'))
+  .pipe(gulp.dest('./dist/'))
+  .on('end', cb);
+});

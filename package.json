@@ -50,6 +50,7 @@
   },
   "scripts": {
     "start": "gulp watch",
-    "build": "gulp"
+    "build": "gulp",
+    "buildLib": "gulp buildLib"
   }
 }

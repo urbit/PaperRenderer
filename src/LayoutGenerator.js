@@ -7,7 +7,6 @@ import figma from './lib/figma';
 const flatPack = (lo) => {
   const extracted = reduce(lo.children, (acc, child) => {
     if (child.type === 'GROUP') {
-
       // look for special items we don't need to parse
       if (child.name.split(':')[0] === '>qr') return [...acc, {...child, type: 'QR'}];
       if (child.name.split(':')[0] === '>sigil') return [...acc, {...child, type: 'SIGIL'}];
