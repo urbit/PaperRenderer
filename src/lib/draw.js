@@ -1,7 +1,7 @@
 import { pour } from 'sigil-js';
 import PlainSVGStringRenderer from './PlainSVGStringRenderer';
 import qr from 'qr-image';
-import { wordWrap } from './walletRenderer'
+import { wordWrap } from './utils'
 
 
 const loadImg = (base64, cb) => new Promise(resolve => {

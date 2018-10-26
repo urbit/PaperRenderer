@@ -79,7 +79,20 @@ const wordWrap = (context, text, x, y, lineHeight, fitWidth) => {
 }
 
 
-
+const dateToDa = (d, mil) => {
+  var fil = function(n) {
+    return n >= 10 ? n : "0" + n;
+  };
+  return (
+    `~${d.getUTCFullYear()}.` +
+    `${(d.getUTCMonth() + 1)}.` +
+    `${fil(d.getUTCDate())}..` +
+    `${fil(d.getUTCHours())}.` +
+    `${fil(d.getUTCMinutes())}.` +
+    `${fil(d.getUTCSeconds())}` +
+    `${mil ? "..0000" : ""}`
+  );
+}
 
 
 
@@ -88,4 +101,5 @@ export {
   initCanvas,
   dataURItoBlob,
   wordWrap,
+  dateToDa,
 }

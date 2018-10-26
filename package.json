@@ -1,16 +1,11 @@
 {
-  "name": "pdf-test",
+  "name": "PaperCollateralRenderer",
   "version": "0.0.1",
   "private": true,
+  "main": "dist/PaperCollateralRenderer.js",
   "dependencies": {
-    "archiver": "^3.0.0",
     "babel-polyfill": "^6.26.0",
-    "dom-to-image": "^2.6.0",
     "figma-js": "^1.5.1",
-    "file-saver": "^2.0.0-rc.3",
-    "js-file-download": "^0.4.4",
-    "jspdf": "^1.4.1",
-    "jszip": "^3.1.5",
     "lodash": "^4.17.10",
     "qr-image": "^3.2.0",
     "react": "^16.4.1",
@@ -50,6 +45,7 @@
   },
   "scripts": {
     "start": "gulp watch",
-    "build": "gulp"
+    "build": "gulp",
+    "build.component": "gulp component"
   }
 }
