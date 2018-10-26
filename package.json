@@ -51,6 +51,6 @@
   "scripts": {
     "start": "gulp watch",
     "build": "gulp",
-    "buildLib": "gulp buildLib"
+    "build.component": "gulp component"
   }
 }

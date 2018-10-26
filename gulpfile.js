@@ -152,9 +152,9 @@ gulp.task('watch', gulp.series('default', function() {
 
 
 
-gulp.task('buildLib', function(cb) {
+gulp.task('component', function(cb) {
   return rollup({
-  input: './src/MakePaperCollateral.js',
+  input: './src/PaperCollateralRenderer.js',
   format: 'cjs',
   plugins: [
     resolve({
@@ -226,7 +226,7 @@ gulp.task('buildLib', function(cb) {
     console.log(e);
     cb();
   })
-  .pipe(source('MakePaperCollateral.js'))
+  .pipe(source('PaperCollateralRenderer.js'))
   .pipe(gulp.dest('./dist/'))
   .on('end', cb);
 });
