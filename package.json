@@ -46,6 +46,6 @@
   "scripts": {
     "start": "gulp watch",
     "build": "gulp",
-    "build.component": "gulp component"
+    "build.component": "gulp bundle-component"
   }
 }

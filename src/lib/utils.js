@@ -1,4 +1,4 @@
-import { map } from 'lodash';
+import { map, get, isUndefined } from 'lodash';
 
 
 const initCanvas = (canvas, size, resMult) => {
@@ -96,10 +96,64 @@ const dateToDa = (d, mil) => {
 
 
 
+const getOrThrow = (obj, path) => {
+  const result = get(obj, path)
+  if (isUndefined(result)) {
+   throw new Error(`Tried to get item at path ${path} from wallet object and failed.`)
+  } else {
+    return result;
+  };
+}
+
+
+const getTicketSize = (seedName, classOf) => {
+  if (seedName === 'masterTicket' && classOf === 'galaxy') return '384 Bits'
+  if (seedName === 'masterTicketShard' && classOf === 'galaxy') return '128 Bits'
+  if (seedName === 'masterTicket' && classOf === 'planet') return '64 Bits'
+  return '128 Bits'
+}
+
+
+
+// transform the wallet from keygen-js into a shape more easily iterable
+const shim = kg_wallet => {
+  const reshaped = Object.entries(kg_wallet).map(([shipAddr, shipWallet]) => {
+    const shipClass = ob.tierOfadd(parseInt(shipAddr));
+    return {
+      ...shipWallet,
+      ship: {
+        patp: ob.add2patp(parseInt(shipAddr)),
+        addr: shipAddr,
+        class: shipClass,
+      },
+      docket: DOCKET[shipClass],
+    }
+  });
+  return reshaped;
+};
+
+
+const paginate = component => {
+  return component
+}
+
+
+
+const insertLayouts = (component, template) => {
+
+}
+
+
+
 
 export {
   initCanvas,
   dataURItoBlob,
   wordWrap,
   dateToDa,
+  getOrThrow,
+  getTicketSize,
+  paginate,
+  shim,
+  insertLayouts,
 }
