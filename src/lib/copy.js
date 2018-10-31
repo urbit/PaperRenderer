@@ -1,4 +1,4 @@
-const copy = {
+const constants = {
   custody: {
     galaxy : {
       masterTicketShard: 'custody master ticket shard',
@@ -57,4 +57,4 @@ const copy = {
   }
 };
 
-export default copy;
+export default constants;

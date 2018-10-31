@@ -1,16 +1,18 @@
-import { map } from 'lodash';
+import { map, get, isUndefined } from 'lodash';
+import ob from 'urbit-ob';
 
 
-const initCanvas = (canvas, size, resMult) => {
+const initCanvas = (canvas, size, ratio) => {
   const { x, y } = size;
   let ctx = canvas.getContext('2d');
 
-  let ratio = ctx.webkitBackingStorePixelRatio < 2
-    ? window.devicePixelRatio
-    : 1;
+  // let ratio = ctx.webkitBackingStorePixelRatio < 2
+  //   ? window.devicePixelRatio
+  //   : 1;
 
   // default for high print resolution.
-  ratio = ratio * resMult;
+  // ratio = ratio * resMult;
+
 
   canvas.width = x * ratio;
   canvas.height = y * ratio;
@@ -96,10 +98,48 @@ const dateToDa = (d, mil) => {
 
 
 
+const retrieve = (obj, path) => {
+  const result = get(obj, path)
+  if (isUndefined(result)) {
+   throw new Error(`Tried to get item at path ${path} from object ${JSON.stringify(obj, null, 2)} and failed.`)
+  } else {
+    return result;
+  };
+}
+
+
+const getTicketSize = (seedName, classOf) => {
+  if (seedName === 'masterTicket' && classOf === 'galaxy') return '384 Bits'
+  if (seedName === 'masterTicketShard' && classOf === 'galaxy') return '128 Bits'
+  if (seedName === 'masterTicket' && classOf === 'planet') return '64 Bits'
+  return '128 Bits'
+}
+
+
+
+// transform the wallet from keygen-js into a shape more easily iterable
+const shim = kg_wallet => {
+  const reshaped = Object.entries(kg_wallet).map(([shipAddr, shipWallet]) => {
+    const shipClass = ob.tierOfadd(parseInt(shipAddr));
+    return {
+      ...shipWallet,
+      ship: {
+        patp: ob.add2patp(parseInt(shipAddr)),
+        addr: shipAddr,
+        class: shipClass,
+      },
+    }
+  });
+  return reshaped;
+};
+
 
 export {
   initCanvas,
   dataURItoBlob,
   wordWrap,
   dateToDa,
+  retrieve,
+  getTicketSize,
+  shim,
 }

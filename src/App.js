@@ -1,17 +1,23 @@
 import React, { Component } from 'react';
 import sampleWallet from './lib/sampleWallet';
 import PaperCollateralRenderer from './PaperCollateralRenderer';
-
+import LayoutGenerator from './LayoutGenerator';
 
 class App extends Component {
 
   render() {
     return (
-      <PaperCollateralRenderer
-        wallet={sampleWallet}
-        className={''}
-        callback={data => console.log(data)}
-      />
+      <div>
+        <PaperCollateralRenderer
+          wallet={sampleWallet}
+          className={''}
+          callback={data => console.log('upperscope: ', data)}
+          mode={'CONVENTIONAL'}
+        />
+        {
+          // <LayoutGenerator />
+        }
+      </div>
     )
   }
 
