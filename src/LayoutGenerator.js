@@ -31,7 +31,6 @@ class LayoutGenerator extends Component {
     }
   }
 
-
   componentDidMount = () => {
     figma.pull('a4u6jBsdTgiXcrDGW61q5ngY', res => {
 
@@ -85,7 +84,7 @@ class LayoutGenerator extends Component {
         }
       }, {});
 
-      console.log(JSON.stringify(layouts));
+      console.log(JSON.stringify(layouts, null, 2));
     })
   }
 

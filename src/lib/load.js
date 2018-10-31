@@ -1,5 +1,6 @@
 import qr from 'qr-image';
 import { pour } from 'sigil-js';
+import PlainSVGStringRenderer from './PlainSVGStringRenderer';
 
 
 const loadImg = (base64, cb) => new Promise(resolve => {

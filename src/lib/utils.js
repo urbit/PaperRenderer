@@ -1,16 +1,18 @@
 import { map, get, isUndefined } from 'lodash';
+import ob from 'urbit-ob';
 
 
-const initCanvas = (canvas, size, resMult) => {
+const initCanvas = (canvas, size, ratio) => {
   const { x, y } = size;
   let ctx = canvas.getContext('2d');
 
-  let ratio = ctx.webkitBackingStorePixelRatio < 2
-    ? window.devicePixelRatio
-    : 1;
+  // let ratio = ctx.webkitBackingStorePixelRatio < 2
+  //   ? window.devicePixelRatio
+  //   : 1;
 
   // default for high print resolution.
-  ratio = ratio * resMult;
+  // ratio = ratio * resMult;
+
 
   canvas.width = x * ratio;
   canvas.height = y * ratio;
@@ -96,10 +98,10 @@ const dateToDa = (d, mil) => {
 
 
 
-const getOrThrow = (obj, path) => {
+const retrieve = (obj, path) => {
   const result = get(obj, path)
   if (isUndefined(result)) {
-   throw new Error(`Tried to get item at path ${path} from wallet object and failed.`)
+   throw new Error(`Tried to get item at path ${path} from object ${JSON.stringify(obj, null, 2)} and failed.`)
   } else {
     return result;
   };
@@ -126,24 +128,10 @@ const shim = kg_wallet => {
         addr: shipAddr,
         class: shipClass,
       },
-      docket: DOCKET[shipClass],
     }
   });
   return reshaped;
 };
-
-
-const paginate = component => {
-  return component
-}
-
-
-
-const insertLayouts = (component, template) => {
-
-}
-
-
 
 
 export {
@@ -151,9 +139,7 @@ export {
   dataURItoBlob,
   wordWrap,
   dateToDa,
-  getOrThrow,
+  retrieve,
   getTicketSize,
-  paginate,
   shim,
-  insertLayouts,
 }

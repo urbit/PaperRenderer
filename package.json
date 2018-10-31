@@ -6,6 +6,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "figma-js": "^1.5.1",
+    "flat": "^4.1.0",
     "lodash": "^4.17.10",
     "qr-image": "^3.2.0",
     "react": "^16.4.1",
