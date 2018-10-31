@@ -1,7 +1,9 @@
 const sampleWallet = {
-    "5556": {
+    "0": {
       "ticket": "~loddyt-bidlyn-mogwyc-divwen-wanrux-larheb-lasmug-tamruc",
       "shards": [
+        "~loddyt-bidlyn-mogwyc-divwen-wanrux-larheb-lasmug-tamruc",
+        "~loddyt-bidlyn-mogwyc-divwen-wanrux-larheb-lasmug-tamruc",
         "~loddyt-bidlyn-mogwyc-divwen-wanrux-larheb-lasmug-tamruc"
       ],
       "ownership": {

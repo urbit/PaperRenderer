@@ -11,6 +11,7 @@ import constants from './lib/copy';
 
 import {
   MasterTicketComponent,
+  MasterTicketShardsComponent,
 } from './lib/components'
 
 
@@ -23,24 +24,24 @@ import {
 const PROFILES = {
   'CONVENTIONAL': {
     'galaxy': [
-      (w, cs, ts) => () => MasterTicketComponent(w, cs, ts),
-      // (wallet) => MasterTicketShardsComponent(w, copy, ts),
-      // (wallet) => SpawnSeedComponent(w, copy, ts),
-      // (wallet) => VotingSeedComponent(w, copy, ts),
-      // (wallet) => TransferSeedComponent(w, copy, ts),
-      // (wallet) => ManagmentSeedComponent(w, copy, ts),
+      // (w, cs, ts) => () => MasterTicketComponent(w, cs, ts),
+      (w, cs, ts) => () => MasterTicketShardsComponent(w, cs, ts),
+      // (w, cs, ts) => () =>  SpawnSeedComponent(w, copy, ts),
+      // (w, cs, ts) => VotingSeedComponent(w, copy, ts),
+      // (w, cs, ts) => TransferSeedComponent(w, copy, ts),
+      // (w, cs, ts) => ManagmentSeedComponent(w, copy, ts),
 
     ],
     'star': [
       (w, cs, ts) => () => MasterTicketComponent(w, cs, ts),
-      // (wallet) => SpawnSeedComponent(w, cs, ts),
-      // (wallet) => TransferSeedComponent(w, cs, ts),
-      // (wallet) => ManagmentSeedComponent(w, cs, ts),
+      // (w, cs, ts) => SpawnSeedComponent(w, cs, ts),
+      // (w, cs, ts) => TransferSeedComponent(w, cs, ts),
+      // (w, cs, ts) => ManagmentSeedComponent(w, cs, ts),
     ],
     'planet': [
       (w, cs, ts) => () => MasterTicketComponent(w, cs, ts),
-      // (wallet) => TransferSeedComponent(w, cs, ts),
-      // (wallet) => ManagmentSeedComponent(w, cs, ts),
+      // (w, cs, ts) => TransferSeedComponent(w, cs, ts),
+      // (w, cs, ts) => ManagmentSeedComponent(w, cs, ts),
     ],
     'manifest': [
       // (ws) => AddressManifestComponent(ws, cs, ts),
