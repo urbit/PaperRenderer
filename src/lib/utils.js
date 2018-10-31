@@ -1,5 +1,9 @@
 import { map, get, isUndefined } from 'lodash';
 import ob from 'urbit-ob';
+import flatten from 'flat'
+import { values, match, replace } from './reset';
+
+const PAT = /(\@)/g;
 
 
 const initCanvas = (canvas, size, ratio) => {
@@ -134,6 +138,57 @@ const shim = kg_wallet => {
 };
 
 
+
+const mapInsert = (c, t) => map(values(t.renderables), r => insert(flatten(c), r));
+
+const insert = (fc, r) => {
+  const { type, text, data } = r;
+
+  if (type === 'TEXT') {
+    // if this is a template variable, replace the @key with actual data
+    if (match(text, PAT)) return {...r, text: retrieve(fc, replace(text, PAT, '')) };
+    return r;
+  };
+
+  if (type === 'SIGIL') return {...r, img: retrieve(fc, replace(data, PAT, '')) };
+
+  if (type === 'QR') return {...r, img: retrieve(fc, replace(data, PAT, '')) };
+
+  throw new Error(`insert() cannot find a renderables for type: ${type}`);
+};
+
+
+
+const assignBin = (classOf, pageType) => {
+  if (classOf === 'galaxy') {
+    if (pageType === 'masterTicket') return '1'
+    if (pageType === 'masterTicketShard') return '1'
+    if (pageType === 'spawn') return '1'
+    if (pageType === 'voting') return '1'
+    if (pageType === 'managment') return '1'
+    if (pageType === 'transfer') return '1'
+  }
+
+  if (classOf === 'star') {
+    if (pageType === 'masterTicket') return '1'
+    if (pageType === 'masterTicketShard') return '1'
+    if (pageType === 'spawn') return '1'
+    if (pageType === 'voting') return '1'
+    if (pageType === 'managment') return '1'
+    if (pageType === 'transfer') return '1'
+  }
+
+  if (classOf === 'planet') {
+    if (pageType === 'masterTicket') return '1'
+    if (pageType === 'masterTicketShard') return '1'
+    if (pageType === 'spawn') return '1'
+    if (pageType === 'voting') return '1'
+    if (pageType === 'managment') return '1'
+    if (pageType === 'transfer') return '1'
+  }
+};
+
+
 export {
   initCanvas,
   dataURItoBlob,
@@ -142,4 +197,6 @@ export {
   retrieve,
   getTicketSize,
   shim,
+  mapInsert,
+  assignBin,
 }

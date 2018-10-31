@@ -14,6 +14,8 @@ import {
   retrieve,
   getTicketSize,
   shim,
+  assignBin,
+  mapInsert,
 } from './utils';
 
 import { loadQR, loadSigil } from './load';
@@ -26,80 +28,9 @@ const AT_LOAD_SIGIL_SIZE = 100;
 const PAT = /(\@)/g;
 
 
-const mapInsert = (c, t) => map(values(t.renderables), r => insert(flatten(c), r));
-
-const insert = (fc, r) => {
-  const { type, text, data } = r;
-
-  if (type === 'TEXT') {
-    // if this is a template variable, replace the @key with actual data
-    if (match(text, PAT)) return {...r, text: retrieve(fc, replace(text, PAT, '')) };
-    return r;
-  };
-
-  if (type === 'SIGIL') return {...r, img: retrieve(fc, replace(data, PAT, '')) };
-
-  if (type === 'QR') return {...r, img: retrieve(fc, replace(data, PAT, '')) };
-
-  throw new Error(`insert() cannot find a renderables for type: ${type}`);
-};
-
-
-
-const assignBin = (classOf, pageType) => {
-  if (classOf === 'galaxy') {
-    if (pageType === 'masterTicket') return '1'
-    if (pageType === 'masterTicketShard') return '1'
-    if (pageType === 'spawn') return '1'
-    if (pageType === 'voting') return '1'
-    if (pageType === 'managment') return '1'
-    if (pageType === 'transfer') return '1'
-    throw new Error(`assignBin() cannot find a _type: ${_type} in props: ${props} for galaxy`);
-  }
-
-  if (classOf === 'star') {
-    if (pageType === 'masterTicket') return '1'
-    if (pageType === 'masterTicketShard') return '1'
-    if (pageType === 'spawn') return '1'
-    if (pageType === 'voting') return '1'
-    if (pageType === 'managment') return '1'
-    if (pageType === 'transfer') return '1'
-    throw new Error(`assignBin() cannot find a _type: ${_type} in props: ${props} for star`);
-  }
-
-  if (classOf === 'planet') {
-    if (pageType === 'masterTicket') return '1'
-    if (pageType === 'masterTicketShard') return '1'
-    if (pageType === 'spawn') return '1'
-    if (pageType === 'voting') return '1'
-    if (pageType === 'managment') return '1'
-    if (pageType === 'transfer') return '1'
-    throw new Error(`assignBin() cannot find a _type: ${_type} in props: ${props} for planet`);
-  }
-
-  throw new Error(`assignBin() cannot find a classOf: ${classOf}`);
-};
-
-
-
-const bin = (page, props) => {
-  return {
-    ship: props.patp,
-    collateralType: props._type,
-    page,
-    bin: assignBin(props._classOf, props._type),
-  };
-};
-
-
-
-const mapBin = (pages, props) => map(pages, page => bin(page, props));
-
-
 
 const MasterTicketComponent = async (wallet, constants, templates) => {
   const KEY = 'masterTicket';
-
   const TEMPLATE = `MASTER_TICKET:${toUpperCase(retrieve(wallet, 'ship.class'))}`
 
   const props = {
@@ -135,18 +66,77 @@ const MasterTicketComponent = async (wallet, constants, templates) => {
     _bin: assignBin(retrieve(wallet, 'ship.class'), KEY)
   };
 
-  const renderables = mapInsert(props, retrieve(templates, TEMPLATE));
-
-  const page = {
-    renderables,
+  const page = [{
+    renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
     bin: assignBin(props._classOf, props._type),
     collateralType: props._type,
     ship: props.patp,
-  }
+  }];
 
-  return [page];
+  return page;
 }
 
+
+
+
+// const AddressManifestComponent = async (wallets, constants, templates) => {
+//   const KEY = 'addressManifest';
+//   const TEMPLATE = 'addressManifest'
+// }
+
+
+
+
+const MasterTicketShardsComponent = async (wallet, constants, templates) => {
+  const pages = await map(wallet.shards, async (shard, index) => {
+    const KEY = `masterTicketShard_${index + 1}`;
+    const TEMPLATE = `MASTER_TICKET_SHARD:${toUpperCase(retrieve(wallet, 'ship.class'))}`;
+    const props = {
+      heading: `Master Ticket Shard ${index + 1} of ${wallet.shards.length}`,
+      patp: retrieve(wallet, 'ship.patp'),
+      sigil: await loadSigil(AT_LOAD_SIGIL_SIZE, retrieve(wallet, 'ship.patp')),
+      shard: {
+        data: shard,
+        size: getTicketSize('masterTicketShard', retrieve(wallet, 'ship.class')),
+      },
+      ownership: {
+        seed: {
+          mnemonic: shard,
+          size: SEEDSIZE,
+          derivationPath: BIP32_DERIVATION_PATH,
+        },
+        ethereum: {
+          address: retrieve(wallet, 'ownership.keys.address'),
+          qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'ownership.keys.address')),
+        },
+      },
+      copy: {
+        // custody: retrieve(constants, `custody.${[wallet.ship.class]}.${[KEY]}`),
+        // usage: retrieve(constants, `usage.${[wallet.ship.class]}.${[KEY]}`),
+      },
+      meta: {
+        createdOn: dateToDa(new Date()),
+        walletVersion: constants.meta.walletVersion,
+        moreInformation: constants.meta.moreInformation,
+      },
+      _classOf: retrieve(wallet, 'ship.class'),
+      _type: 'masterTicketShard',
+      _bin: assignBin(retrieve(wallet, 'ship.class'), KEY)
+    };
+
+    const page = {
+      renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
+      bin: assignBin(props._classOf, props._type),
+      collateralType: props._type,
+      ship: props.patp,
+    };
+
+    return page;
+
+  });
+
+  return Promise.all(pages).then(results => results)
+};
 
 
 
@@ -155,7 +145,7 @@ const MasterTicketComponent = async (wallet, constants, templates) => {
 
 export {
   MasterTicketComponent,
-  // MasterTicketShardsComponent,
+  MasterTicketShardsComponent,
   // SeedComponent,
   // ManifestComponent,
 }

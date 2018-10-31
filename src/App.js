@@ -15,7 +15,7 @@ class App extends Component {
           mode={'CONVENTIONAL'}
         />
         {
-          // <LayoutGenerator />
+          <LayoutGenerator />
         }
       </div>
     )
