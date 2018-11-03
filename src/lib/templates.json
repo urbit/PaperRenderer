@@ -1672,5 +1672,196 @@
         "y": 250
       }
     ]
+  },
+  "ADDRESS_MANIFEST:FIRST": {
+    "key": "ADDRESS_MANIFEST:FIRST",
+    "absoluteBoundingBox": {
+      "x": 21441,
+      "y": -2333,
+      "width": 612,
+      "height": 792
+    },
+    "renderables": [
+      {
+        "type": "TEXT",
+        "fontPostScriptName": "WorkSans-Medium",
+        "fontSize": 32,
+        "text": "Ownership Address Manifest",
+        "maxWidth": 371,
+        "lineHeightPx": 37.5,
+        "x": 48,
+        "y": 36
+      },
+      {
+        "type": "TEXT",
+        "fontPostScriptName": "SFProText-Regular",
+        "fontSize": 9,
+        "text": "It is ok to store in a trusted environment but be aware that possession of this document will reveal how much address space you own to whoever sees it.\n\nYou can check any spawn, management, delegate or transfer address with this address.",
+        "maxWidth": 258,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 144
+      },
+      {
+        "type": "TEXT",
+        "fontPostScriptName": "SFProText-Bold",
+        "fontSize": 9,
+        "text": "This is public information.",
+        "maxWidth": 172,
+        "lineHeightPx": 16,
+        "x": 48,
+        "y": 120
+      },
+      {
+        "type": "TEXT",
+        "fontPostScriptName": "SFProText-Regular",
+        "fontSize": 10,
+        "text": "@pageAofB",
+        "maxWidth": 86,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 24
+      },
+      {
+        "type": "TEXT",
+        "fontPostScriptName": "SourceCodePro-Regular",
+        "fontSize": 9,
+        "text": "@meta.walletVersion",
+        "maxWidth": 117.1551742553711,
+        "lineHeightPx": 11.6015625,
+        "x": 157,
+        "y": 228
+      },
+      {
+        "type": "TEXT",
+        "fontPostScriptName": "SFProText-Regular",
+        "fontSize": 9,
+        "text": "Wallet Version: ",
+        "maxWidth": 86,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 228
+      },
+      {
+        "type": "TEXT",
+        "fontPostScriptName": "SourceCodePro-Regular",
+        "fontSize": 9,
+        "text": "@meta.createdOn",
+        "maxWidth": 149.26437377929688,
+        "lineHeightPx": 11.6015625,
+        "x": 157,
+        "y": 252
+      },
+      {
+        "type": "TEXT",
+        "fontPostScriptName": "SFProText-Regular",
+        "fontSize": 9,
+        "text": "Date Created: ",
+        "maxWidth": 86,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 252
+      },
+      {
+        "type": "TEXT",
+        "fontPostScriptName": "SourceCodePro-Regular",
+        "fontSize": 9,
+        "text": "@meta.walletVersion",
+        "maxWidth": 149,
+        "lineHeightPx": 11.6015625,
+        "x": 157,
+        "y": 276
+      },
+      {
+        "type": "TEXT",
+        "fontPostScriptName": "SFProText-Regular",
+        "fontSize": 9,
+        "text": "Information: ",
+        "maxWidth": 86,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 276
+      }
+    ]
+  },
+  "ADDRESS_MANIFEST:OVERFLOW": {
+    "key": "ADDRESS_MANIFEST:OVERFLOW",
+    "absoluteBoundingBox": {
+      "x": 22073,
+      "y": -2333,
+      "width": 612,
+      "height": 792
+    },
+    "renderables": [
+      {
+        "type": "TEXT",
+        "fontPostScriptName": "WorkSans-SemiBold",
+        "fontSize": 22,
+        "text": "Ownership Address Manifest",
+        "maxWidth": 258,
+        "lineHeightPx": 25.78125,
+        "x": 48,
+        "y": 36
+      },
+      {
+        "type": "TEXT",
+        "fontPostScriptName": "SFProText-Regular",
+        "fontSize": 10,
+        "text": "Page 2 of 2",
+        "maxWidth": 86,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 24
+      }
+    ]
+  },
+  "COMPONENT:ADDRESS_LIST_ITEM": {
+    "key": "COMPONENT:ADDRESS_LIST_ITEM",
+    "absoluteBoundingBox": {
+      "x": 21106,
+      "y": -2333,
+      "width": 322,
+      "height": 322
+    },
+    "renderables": [
+      {
+        "type": "TEXT",
+        "fontPostScriptName": "SourceCodePro-Bold",
+        "fontSize": 16,
+        "text": "@patp",
+        "maxWidth": 215,
+        "lineHeightPx": 24,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "type": "TEXT",
+        "fontPostScriptName": "SFProText-Medium",
+        "fontSize": 10,
+        "text": "Ownership Address",
+        "maxWidth": 129,
+        "lineHeightPx": 11.953125,
+        "x": 0,
+        "y": 36
+      },
+      {
+        "type": "QR",
+        "size": 36.00005340576172,
+        "name": ">qr:@ownership.ethereum.qr",
+        "data": "@ownership.ethereum.qr",
+        "x": 0,
+        "y": 60
+      },
+      {
+        "type": "TEXT",
+        "fontPostScriptName": "SourceCodePro-Regular",
+        "fontSize": 12,
+        "text": "@ownership.ethereum.address",
+        "maxWidth": 190,
+        "lineHeightPx": 15.46875,
+        "x": 43,
+        "y": 60
+      }
+    ]
   }
 }

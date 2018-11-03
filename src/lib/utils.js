@@ -128,7 +128,7 @@ const shim = kg_wallet => {
     return {
       ...shipWallet,
       ship: {
-        patp: ob.add2patp(parseInt(shipAddr)),
+        patp: `~${ob.add2patp(parseInt(shipAddr))}`,
         addr: shipAddr,
         class: shipClass,
       },

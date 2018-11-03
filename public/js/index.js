@@ -50130,6 +50130,7 @@ var lodash_1 = lodash$1.map;
 var lodash_2 = lodash$1.forEach;
 var lodash_3 = lodash$1.get;
 var lodash_7 = lodash$1.reduce;
+var lodash_16 = lodash$1.chunk;
 var lodash_20 = lodash$1.isString;
 var lodash_25 = lodash$1.isUndefined;
 var lodash_26 = lodash$1.isObject;
@@ -50405,7 +50406,7 @@ var shim$3 = function shim(kg_wallet) {
     var shipClass = src.tierOfadd(parseInt(shipAddr));
     return _objectSpread({}, shipWallet, {
       ship: {
-        patp: src.add2patp(parseInt(shipAddr)),
+        patp: "~".concat(src.add2patp(parseInt(shipAddr))),
         addr: shipAddr,
         class: shipClass
       }
@@ -50584,7 +50585,10 @@ var templates = {
 	"DO NOT EDIT: IN-CODE DEPS": {"key":"DO NOT EDIT: IN-CODE DEPS","absoluteBoundingBox":{"x":22685,"y":-2754,"width":1498,"height":227},"renderables":[]},
 	"MASTER_TICKET:GALAXY": {"key":"MASTER_TICKET:GALAXY","absoluteBoundingBox":{"x":23695,"y":-2333,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.data","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ticket","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":350},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.ethereum.address","maxWidth":190,"lineHeightPx":10.546875,"x":106,"y":550},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Address","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":530},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":670},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":720},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":48,"y":770},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":650},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":700},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":750},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":450},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Seed BIP32 Mnemonic","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":430},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.size","maxWidth":222.93544006347656,"lineHeightPx":10.546875,"x":70,"y":475},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":25,"lineHeightPx":11.6015625,"x":48,"y":475},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":490},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":490},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.size","maxWidth":224.8125,"lineHeightPx":11.6015625,"x":71.18659973144531,"y":400},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":23.02734375,"lineHeightPx":11.6015625,"x":48,"y":400},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":320},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":300},{"type":"SIGIL","size":70,"name":">sigil:@sigil","data":"@sigil","x":48,"y":210},{"type":"QR","size":48.000099182128906,"name":">qr:@ownership.ethereum.qr","data":"@ownership.ethereum.qr","x":48,"y":550},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Securely store this document.\n\n\n","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":230},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":210},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Download Bridge: urbit.org/docs/bridge\n\nUse the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.\n\nThe Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":314,"y":430},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":314,"y":412},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/wallet","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":599},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":578},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the Master Seed for a hardware wallet.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":300},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"For information on storing cryptographic material securely, see: ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":340},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"http://urbit.org/docs/custody ","maxWidth":228,"lineHeightPx":13.7109375,"x":336,"y":354},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The master ticket and ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":250}]},
 	"MASTER_TICKET:STAR": {"key":"MASTER_TICKET:STAR","absoluteBoundingBox":{"x":23695,"y":-1347,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.data","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ticket","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":350},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.ethereum.address","maxWidth":190,"lineHeightPx":10.546875,"x":106,"y":550},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Address","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":530},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":670},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":720},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":48,"y":770},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":650},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":700},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":750},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":450},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Seed BIP32 Mnemonic","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":430},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.size","maxWidth":222.93544006347656,"lineHeightPx":10.546875,"x":70,"y":475},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":25,"lineHeightPx":11.6015625,"x":48,"y":475},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":490},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":490},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.size","maxWidth":224.8125,"lineHeightPx":11.6015625,"x":71.18659973144531,"y":400},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":23.02734375,"lineHeightPx":11.6015625,"x":48,"y":400},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":320},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":300},{"type":"SIGIL","size":70,"name":">sigil:@sigil","data":"@sigil","x":48,"y":210},{"type":"QR","size":48.000099182128906,"name":">qr:@ownership.ethereum.qr","data":"@ownership.ethereum.qr","x":48,"y":550},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Download Bridge: urbit.org/docs/bridge\n\nUse the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.\n\nThe Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":314,"y":430},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":314,"y":412},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/wallet","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":599},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":578},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Securely store this document.\n\n\n","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":230},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":210},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the Master Seed for a hardware wallet.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":300},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"For information on storing cryptographic material securely, see: ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":340},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"http://urbit.org/docs/custody ","maxWidth":228,"lineHeightPx":13.7109375,"x":336,"y":354},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The master ticket and ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":250}]},
-	"MASTER_TICKET:PLANET": {"key":"MASTER_TICKET:PLANET","absoluteBoundingBox":{"x":23695,"y":-414,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.data","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ticket","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":350},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.ethereum.address","maxWidth":190,"lineHeightPx":10.546875,"x":106,"y":550},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Address","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":530},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":670},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":720},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":48,"y":770},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":650},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":700},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":750},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":450},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Seed BIP32 Mnemonic","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":430},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.size","maxWidth":222.93544006347656,"lineHeightPx":10.546875,"x":70,"y":475},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":25,"lineHeightPx":11.6015625,"x":48,"y":475},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":490},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":490},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.size","maxWidth":224.8125,"lineHeightPx":11.6015625,"x":71.18659973144531,"y":400},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":23.02734375,"lineHeightPx":11.6015625,"x":48,"y":400},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":320},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":300},{"type":"SIGIL","size":70,"name":">sigil:@sigil","data":"@sigil","x":48,"y":210},{"type":"QR","size":48.000099182128906,"name":">qr:@ownership.ethereum.qr","data":"@ownership.ethereum.qr","x":48,"y":550},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Download Bridge: urbit.org/docs/bridge\n\nUse the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.\n\nThe Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":314,"y":430},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":314,"y":412},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/wallet","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":599},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":578},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Securely store this document.\n\n\n","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":230},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":210},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the Master Seed for a hardware wallet.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":300},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"For information on storing cryptographic material securely, see: ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":340},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"http://urbit.org/docs/custody ","maxWidth":228,"lineHeightPx":13.7109375,"x":336,"y":354},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The master ticket and ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":250}]}
+	"MASTER_TICKET:PLANET": {"key":"MASTER_TICKET:PLANET","absoluteBoundingBox":{"x":23695,"y":-414,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.data","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ticket","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":350},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.ethereum.address","maxWidth":190,"lineHeightPx":10.546875,"x":106,"y":550},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Address","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":530},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":670},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":720},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":48,"y":770},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":650},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":700},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":750},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":450},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Seed BIP32 Mnemonic","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":430},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.size","maxWidth":222.93544006347656,"lineHeightPx":10.546875,"x":70,"y":475},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":25,"lineHeightPx":11.6015625,"x":48,"y":475},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":490},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":490},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.size","maxWidth":224.8125,"lineHeightPx":11.6015625,"x":71.18659973144531,"y":400},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":23.02734375,"lineHeightPx":11.6015625,"x":48,"y":400},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":320},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":300},{"type":"SIGIL","size":70,"name":">sigil:@sigil","data":"@sigil","x":48,"y":210},{"type":"QR","size":48.000099182128906,"name":">qr:@ownership.ethereum.qr","data":"@ownership.ethereum.qr","x":48,"y":550},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Download Bridge: urbit.org/docs/bridge\n\nUse the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.\n\nThe Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":314,"y":430},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":314,"y":412},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/wallet","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":599},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":578},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Securely store this document.\n\n\n","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":230},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":210},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the Master Seed for a hardware wallet.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":300},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"For information on storing cryptographic material securely, see: ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":340},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"http://urbit.org/docs/custody ","maxWidth":228,"lineHeightPx":13.7109375,"x":336,"y":354},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The master ticket and ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":250}]},
+	"ADDRESS_MANIFEST:FIRST": {"key":"ADDRESS_MANIFEST:FIRST","absoluteBoundingBox":{"x":21441,"y":-2333,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-Medium","fontSize":32,"text":"Ownership Address Manifest","maxWidth":371,"lineHeightPx":37.5,"x":48,"y":36},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"It is ok to store in a trusted environment but be aware that possession of this document will reveal how much address space you own to whoever sees it.\n\nYou can check any spawn, management, delegate or transfer address with this address.","maxWidth":258,"lineHeightPx":11.6015625,"x":48,"y":144},{"type":"TEXT","fontPostScriptName":"SFProText-Bold","fontSize":9,"text":"This is public information.","maxWidth":172,"lineHeightPx":16,"x":48,"y":120},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"@pageAofB","maxWidth":86,"lineHeightPx":12.890625,"x":48,"y":24},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":117.1551742553711,"lineHeightPx":11.6015625,"x":157,"y":228},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Wallet Version: ","maxWidth":86,"lineHeightPx":11.6015625,"x":48,"y":228},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":149.26437377929688,"lineHeightPx":11.6015625,"x":157,"y":252},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Date Created: ","maxWidth":86,"lineHeightPx":11.6015625,"x":48,"y":252},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":149,"lineHeightPx":11.6015625,"x":157,"y":276},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Information: ","maxWidth":86,"lineHeightPx":11.6015625,"x":48,"y":276}]},
+	"ADDRESS_MANIFEST:OVERFLOW": {"key":"ADDRESS_MANIFEST:OVERFLOW","absoluteBoundingBox":{"x":22073,"y":-2333,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":22,"text":"Ownership Address Manifest","maxWidth":258,"lineHeightPx":25.78125,"x":48,"y":36},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Page 2 of 2","maxWidth":86,"lineHeightPx":12.890625,"x":48,"y":24}]},
+	"COMPONENT:ADDRESS_LIST_ITEM": {"key":"COMPONENT:ADDRESS_LIST_ITEM","absoluteBoundingBox":{"x":21106,"y":-2333,"width":322,"height":322},"renderables":[{"type":"TEXT","fontPostScriptName":"SourceCodePro-Bold","fontSize":16,"text":"@patp","maxWidth":215,"lineHeightPx":24,"x":0,"y":0},{"type":"TEXT","fontPostScriptName":"SFProText-Medium","fontSize":10,"text":"Ownership Address","maxWidth":129,"lineHeightPx":11.953125,"x":0,"y":36},{"type":"QR","size":36.00005340576172,"name":">qr:@ownership.ethereum.qr","data":"@ownership.ethereum.qr","x":0,"y":60},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":12,"text":"@ownership.ethereum.address","maxWidth":190,"lineHeightPx":15.46875,"x":43,"y":60}]}
 };
 
 var constants = {
@@ -63709,96 +63713,56 @@ function () {
   return function MasterTicketComponent(_x, _x2, _x3) {
     return _ref.apply(this, arguments);
   };
-}(); // const AddressManifestComponent = async (wallets, constants, templates) => {
-//   const KEY = 'addressManifest';
-//   const TEMPLATE = 'addressManifest'
-// }
+}();
 
-
-var MasterTicketShardsComponent =
+var AddressManifestComponent =
 /*#__PURE__*/
 function () {
   var _ref2 = _asyncToGenerator(
   /*#__PURE__*/
-  regeneratorRuntime.mark(function _callee3(wallet, constants, templates) {
-    var pages;
+  regeneratorRuntime.mark(function _callee3(wallets, constants, templates) {
+    var props, listItems;
     return regeneratorRuntime.wrap(function _callee3$(_context3) {
       while (1) {
         switch (_context3.prev = _context3.next) {
           case 0:
-            _context3.next = 2;
-            return lodash_1(wallet.shards,
+            props = {
+              meta: {
+                createdOn: dateToDa(new Date()),
+                walletVersion: constants.meta.walletVersion,
+                moreInformation: constants.meta.moreInformation
+              }
+            };
+            listItems = lodash_1(wallets,
             /*#__PURE__*/
             function () {
               var _ref3 = _asyncToGenerator(
               /*#__PURE__*/
-              regeneratorRuntime.mark(function _callee2(shard, index) {
-                var KEY, TEMPLATE, props, page;
+              regeneratorRuntime.mark(function _callee2(wallet) {
                 return regeneratorRuntime.wrap(function _callee2$(_context2) {
                   while (1) {
                     switch (_context2.prev = _context2.next) {
                       case 0:
-                        KEY = "masterTicketShard_".concat(index + 1);
-                        TEMPLATE = "MASTER_TICKET_SHARD:".concat(toUpperCase(retrieve(wallet, 'ship.class')));
-                        _context2.t0 = "Master Ticket Shard ".concat(index + 1, " of ").concat(wallet.shards.length);
-                        _context2.t1 = retrieve(wallet, 'ship.patp');
-                        _context2.next = 6;
-                        return loadSigil(AT_LOAD_SIGIL_SIZE, retrieve(wallet, 'ship.patp'));
-
-                      case 6:
-                        _context2.t2 = _context2.sent;
-                        _context2.t3 = {
-                          data: shard,
-                          size: getTicketSize('masterTicketShard', retrieve(wallet, 'ship.class'))
-                        };
-                        _context2.t4 = {
-                          mnemonic: shard,
-                          size: SEEDSIZE,
-                          derivationPath: BIP32_DERIVATION_PATH
-                        };
-                        _context2.t5 = retrieve(wallet, 'ownership.keys.address');
-                        _context2.next = 12;
+                        _context2.t0 = retrieve(wallet, 'ship.patp');
+                        _context2.t1 = retrieve(wallet, 'ownership.keys.address');
+                        _context2.next = 4;
                         return loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'ownership.keys.address'));
 
-                      case 12:
-                        _context2.t6 = _context2.sent;
-                        _context2.t7 = {
-                          address: _context2.t5,
-                          qr: _context2.t6
+                      case 4:
+                        _context2.t2 = _context2.sent;
+                        _context2.t3 = {
+                          address: _context2.t1,
+                          qr: _context2.t2
                         };
-                        _context2.t8 = {
-                          seed: _context2.t4,
-                          ethereum: _context2.t7
+                        _context2.t4 = {
+                          ethereum: _context2.t3
                         };
-                        _context2.t9 = {};
-                        _context2.t10 = {
-                          createdOn: dateToDa(new Date()),
-                          walletVersion: constants.meta.walletVersion,
-                          moreInformation: constants.meta.moreInformation
-                        };
-                        _context2.t11 = retrieve(wallet, 'ship.class');
-                        _context2.t12 = assignBin(retrieve(wallet, 'ship.class'), KEY);
-                        props = {
-                          heading: _context2.t0,
-                          patp: _context2.t1,
-                          sigil: _context2.t2,
-                          shard: _context2.t3,
-                          ownership: _context2.t8,
-                          copy: _context2.t9,
-                          meta: _context2.t10,
-                          _classOf: _context2.t11,
-                          _type: 'masterTicketShard',
-                          _bin: _context2.t12
-                        };
-                        page = {
-                          renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
-                          bin: assignBin(props._classOf, props._type),
-                          collateralType: props._type,
-                          ship: props.patp
-                        };
-                        return _context2.abrupt("return", page);
+                        return _context2.abrupt("return", {
+                          patp: _context2.t0,
+                          ownership: _context2.t4
+                        });
 
-                      case 22:
+                      case 8:
                       case "end":
                         return _context2.stop();
                     }
@@ -63806,18 +63770,67 @@ function () {
                 }, _callee2, this);
               }));
 
-              return function (_x7, _x8) {
+              return function (_x7) {
                 return _ref3.apply(this, arguments);
               };
             }());
+            return _context3.abrupt("return", Promise.all(listItems).then(function (li) {
+              var LI_TOTAL_1 = 2;
+              var LI_TOTAL_X = 5;
+              var pageCount = Math.ceil((li.length - LI_TOTAL_1) / LI_TOTAL_X) + 1;
+              var firstListItemData = li.slice(0, LI_TOTAL_1);
+              var subsequentListItemData = li.slice(LI_TOTAL_1);
+              var TEMP_1 = retrieve(templates, 'ADDRESS_MANIFEST:FIRST');
+              var TEMP_X = retrieve(templates, 'ADDRESS_MANIFEST:OVERFLOW');
+              var LI_COMPONENT = retrieve(templates, 'COMPONENT:ADDRESS_LIST_ITEM');
+              var LI_COMPONENT_HEIGHT = 132;
+              var P1_LIST_START_Y = 384;
+              var P1_LIST_START_X = 48;
+              var PX_LIST_START_Y = 120;
+              var PX_LIST_START_X = 48;
+              var firstPageRenderableListItems = lodash_7(firstListItemData, function (acc, props, listItemIndex) {
+                var moved = lodash_1(mapInsert(props, LI_COMPONENT), function (_r) {
+                  var r = _objectSpread({}, _r);
 
-          case 2:
-            pages = _context3.sent;
-            return _context3.abrupt("return", Promise.all(pages).then(function (results) {
-              return results;
+                  r.x = _r.x + P1_LIST_START_X;
+                  r.y = _r.y + P1_LIST_START_Y + LI_COMPONENT_HEIGHT * listItemIndex;
+                  return r;
+                });
+                return _toConsumableArray(acc).concat(_toConsumableArray(moved));
+              }, []);
+              var listItemsBySubsequentPage = lodash_16(subsequentListItemData, LI_TOTAL_X);
+              var subsequentPages = lodash_1(listItemsBySubsequentPage, function (page, pageIndex) {
+                var listItemsWithData = lodash_7(subsequentListItemData, function (acc, props, listItemIndex) {
+                  var moved = lodash_1(mapInsert(props, LI_COMPONENT), function (_r) {
+                    var r = _objectSpread({}, _r);
+
+                    r.x = _r.x + PX_LIST_START_X;
+                    r.y = _r.y + PX_LIST_START_Y + LI_COMPONENT_HEIGHT * listItemIndex;
+                    return r;
+                  });
+                  return _toConsumableArray(acc).concat(_toConsumableArray(moved));
+                }, []);
+                return {
+                  renderables: _toConsumableArray(mapInsert(_objectSpread({}, props, {
+                    pageAofB: "Page ".concat(pageIndex + 1, " of ").concat(pageCount)
+                  }), TEMP_X)).concat(_toConsumableArray(listItemsWithData)),
+                  bin: 'public',
+                  collateralType: 'ownership_address_manifest',
+                  ship: 'all'
+                };
+              });
+              var pages = [{
+                renderables: _toConsumableArray(mapInsert(_objectSpread({}, props, {
+                  pageAofB: "Page 1 of ".concat(pageCount)
+                }), TEMP_1)).concat(_toConsumableArray(firstPageRenderableListItems)),
+                bin: 'public',
+                collateralType: 'ownership_address_manifest',
+                ship: 'all'
+              }].concat(_toConsumableArray(subsequentPages));
+              return pages;
             }));
 
-          case 4:
+          case 3:
           case "end":
             return _context3.stop();
         }
@@ -63825,8 +63838,123 @@ function () {
     }, _callee3, this);
   }));
 
-  return function MasterTicketShardsComponent(_x4, _x5, _x6) {
+  return function AddressManifestComponent(_x4, _x5, _x6) {
     return _ref2.apply(this, arguments);
+  };
+}();
+
+var MasterTicketShardsComponent =
+/*#__PURE__*/
+function () {
+  var _ref4 = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee5(wallet, constants, templates) {
+    var pages;
+    return regeneratorRuntime.wrap(function _callee5$(_context5) {
+      while (1) {
+        switch (_context5.prev = _context5.next) {
+          case 0:
+            _context5.next = 2;
+            return lodash_1(wallet.shards,
+            /*#__PURE__*/
+            function () {
+              var _ref5 = _asyncToGenerator(
+              /*#__PURE__*/
+              regeneratorRuntime.mark(function _callee4(shard, index) {
+                var KEY, TEMPLATE, props, page;
+                return regeneratorRuntime.wrap(function _callee4$(_context4) {
+                  while (1) {
+                    switch (_context4.prev = _context4.next) {
+                      case 0:
+                        KEY = "masterTicketShard_".concat(index + 1);
+                        TEMPLATE = "MASTER_TICKET_SHARD:".concat(toUpperCase(retrieve(wallet, 'ship.class')));
+                        _context4.t0 = "Master Ticket Shard ".concat(index + 1, " of ").concat(wallet.shards.length);
+                        _context4.t1 = retrieve(wallet, 'ship.patp');
+                        _context4.next = 6;
+                        return loadSigil(AT_LOAD_SIGIL_SIZE, retrieve(wallet, 'ship.patp'));
+
+                      case 6:
+                        _context4.t2 = _context4.sent;
+                        _context4.t3 = {
+                          data: shard,
+                          size: getTicketSize('masterTicketShard', retrieve(wallet, 'ship.class'))
+                        };
+                        _context4.t4 = {
+                          mnemonic: shard,
+                          size: SEEDSIZE,
+                          derivationPath: BIP32_DERIVATION_PATH
+                        };
+                        _context4.t5 = retrieve(wallet, 'ownership.keys.address');
+                        _context4.next = 12;
+                        return loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'ownership.keys.address'));
+
+                      case 12:
+                        _context4.t6 = _context4.sent;
+                        _context4.t7 = {
+                          address: _context4.t5,
+                          qr: _context4.t6
+                        };
+                        _context4.t8 = {
+                          seed: _context4.t4,
+                          ethereum: _context4.t7
+                        };
+                        _context4.t9 = {};
+                        _context4.t10 = {
+                          createdOn: dateToDa(new Date()),
+                          walletVersion: constants.meta.walletVersion,
+                          moreInformation: constants.meta.moreInformation
+                        };
+                        _context4.t11 = retrieve(wallet, 'ship.class');
+                        _context4.t12 = assignBin(retrieve(wallet, 'ship.class'), KEY);
+                        props = {
+                          heading: _context4.t0,
+                          patp: _context4.t1,
+                          sigil: _context4.t2,
+                          shard: _context4.t3,
+                          ownership: _context4.t8,
+                          copy: _context4.t9,
+                          meta: _context4.t10,
+                          _classOf: _context4.t11,
+                          _type: 'masterTicketShard',
+                          _bin: _context4.t12
+                        };
+                        page = {
+                          renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
+                          bin: assignBin(props._classOf, props._type),
+                          collateralType: props._type,
+                          ship: props.patp
+                        };
+                        return _context4.abrupt("return", page);
+
+                      case 22:
+                      case "end":
+                        return _context4.stop();
+                    }
+                  }
+                }, _callee4, this);
+              }));
+
+              return function (_x11, _x12) {
+                return _ref5.apply(this, arguments);
+              };
+            }());
+
+          case 2:
+            pages = _context5.sent;
+            return _context5.abrupt("return", Promise.all(pages).then(function (results) {
+              return results;
+            }));
+
+          case 4:
+          case "end":
+            return _context5.stop();
+        }
+      }
+    }, _callee5, this);
+  }));
+
+  return function MasterTicketShardsComponent(_x8, _x9, _x10) {
+    return _ref4.apply(this, arguments);
   };
 }();
 
@@ -63848,8 +63976,11 @@ var PROFILES = {
         return MasterTicketComponent(w, cs, ts);
       };
     }],
-    'manifest': [// (ws) => AddressManifestComponent(ws, cs, ts),
-    ]
+    'manifest': [function (ws, cs, ts) {
+      return function () {
+        return AddressManifestComponent(ws, cs, ts);
+      };
+    }]
   }
 };
 
@@ -63875,13 +64006,8 @@ function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "componentDidMount", function () {
-      // const totalCollateral = reduce(wallets, (acc, row) => acc + row.docket.length, 0);
-      // TODO calculate and add count of public address manifest pages.
-      // this.totalCollateral = totalCollateral;
-      // this.latch = true;
       var wallets = shim$3(_this.props.wallet);
-      var docket = PROFILES[_this.props.mode]; // console.log(wallets, docket)
-
+      var docket = PROFILES[_this.props.mode];
       var docketFunctions = lodash_7(wallets, function (acc, wallet) {
         var collateral = docket[wallet.ship.class];
         var componentFunctions = lodash_1(collateral, function (f) {
@@ -63889,7 +64015,12 @@ function (_Component) {
         });
         return _toConsumableArray(acc).concat(_toConsumableArray(componentFunctions));
       }, []);
-      Promise.all(lodash_1(docketFunctions, function (f) {
+
+      var withManifest = _toConsumableArray(docketFunctions).concat(_toConsumableArray(lodash_1(docket.manifest, function (f) {
+        return f(wallets, constants, templates);
+      })));
+
+      Promise.all(lodash_1(withManifest, function (f) {
         return f();
       })).then(function (pageGroups) {
         var flats = lodash_7(pageGroups, function (acc, arr) {
@@ -65849,7 +65980,7 @@ function (_Component) {
           return console.log('upperscope: ', data);
         },
         mode: 'CONVENTIONAL'
-      }), react.createElement(LayoutGenerator, null));
+      }));
     }
   }]);
 
