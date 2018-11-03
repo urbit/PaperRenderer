@@ -12,6 +12,7 @@ import constants from './lib/copy';
 import {
   MasterTicketComponent,
   MasterTicketShardsComponent,
+  AddressManifestComponent,
 } from './lib/components'
 
 
@@ -44,7 +45,7 @@ const PROFILES = {
       // (w, cs, ts) => ManagmentSeedComponent(w, cs, ts),
     ],
     'manifest': [
-      // (ws) => AddressManifestComponent(ws, cs, ts),
+      (ws, cs, ts) => () => AddressManifestComponent(ws, cs, ts),
     ]
   }
 }
@@ -77,17 +78,10 @@ class PaperCollateralRenderer extends Component {
 
 
   componentDidMount = () => {
-    // const totalCollateral = reduce(wallets, (acc, row) => acc + row.docket.length, 0);
-
-    // TODO calculate and add count of public address manifest pages.
-    // this.totalCollateral = totalCollateral;
-    // this.latch = true;
 
     const wallets = shim(this.props.wallet);
 
     const docket = PROFILES[this.props.mode];
-
-    // console.log(wallets, docket)
 
     const docketFunctions = reduce(wallets, (acc, wallet) => {
       const collateral = docket[wallet.ship.class]
@@ -95,7 +89,9 @@ class PaperCollateralRenderer extends Component {
       return [...acc, ...componentFunctions];
     }, []);
 
-    Promise.all(map(docketFunctions, f => f()))
+    const withManifest = [...docketFunctions, ...map(docket.manifest, f => f(wallets, constants, templates))]
+
+    Promise.all(map(withManifest, f => f()))
       .then(pageGroups => {
         const flats = reduce(pageGroups, (acc, arr) => [...acc, ...arr], []);
         this.setState({ pages: flats, totalPages: flats.length });
