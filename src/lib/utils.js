@@ -150,6 +150,12 @@ const insert = (fc, r) => {
     return r;
   };
 
+  if (type === 'ADDR_COMPACT') return {...r, text: retrieve(fc, replace(text, PAT, '')) };
+
+  if (type === 'ADDR_LONG') return {...r, text: retrieve(fc, replace(text, PAT, '')) };
+
+  if (type === 'PATQ') return {...r, text: retrieve(fc, replace(text, PAT, '')) };
+
   if (type === 'SIGIL') return {...r, img: retrieve(fc, replace(data, PAT, '')) };
 
   if (type === 'QR') return {...r, img: retrieve(fc, replace(data, PAT, '')) };

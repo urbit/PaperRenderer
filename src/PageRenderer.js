@@ -13,8 +13,9 @@ import {
   drawSigil,
   drawText,
   drawWrappedText,
-  loadQR,
-  loadSigil,
+  drawEthereumAddressCompact,
+  drawEthereumAddressLong,
+  drawPatQ,
 } from './lib/draw';
 
 
@@ -47,6 +48,9 @@ class PageRenderer extends Component {
 
     forEach(page.renderables, r => {
       if (r.type === 'QR') return drawQR({ ctx, ...r });
+      if (r.type === 'PATQ') return drawPatQ({ ctx, ...r });
+      if (r.type === 'ADDR_LONG') return drawEthereumAddressLong({ ctx, ...r });
+      if (r.type === 'ADDR_COMPACT') return drawEthereumAddressCompact({ ctx, ...r });
       if (r.type === 'SIGIL') return drawSigil({ ctx, ...r });
       if (r.type === 'TEXT') return drawWrappedText({ ctx, ...r });
     });

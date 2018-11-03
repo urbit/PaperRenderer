@@ -102,7 +102,7 @@ const AddressManifestComponent = async (wallets, constants, templates) => {
   });
 
   return Promise.all(listItems).then(li => {
-    const LI_TOTAL_1 = 2
+    const LI_TOTAL_1 = 4
     const LI_TOTAL_X = 5
 
     const pageCount = Math.ceil((li.length - LI_TOTAL_1) / LI_TOTAL_X) + 1;
@@ -114,11 +114,11 @@ const AddressManifestComponent = async (wallets, constants, templates) => {
     const TEMP_X = retrieve(templates, 'ADDRESS_MANIFEST:OVERFLOW');
 
     const LI_COMPONENT = retrieve(templates, 'COMPONENT:ADDRESS_LIST_ITEM');
-    const LI_COMPONENT_HEIGHT = 132;
+    const LI_COMPONENT_HEIGHT = 112;
 
-    const P1_LIST_START_Y = 384;
+    const P1_LIST_START_Y = 300;
     const P1_LIST_START_X = 48;
-    const PX_LIST_START_Y = 120;
+    const PX_LIST_START_Y = 160;
     const PX_LIST_START_X = 48;
 
     const firstPageRenderableListItems = reduce(firstListItemData, (acc, props, listItemIndex) => {
@@ -135,7 +135,7 @@ const AddressManifestComponent = async (wallets, constants, templates) => {
 
     const subsequentPages = map(listItemsBySubsequentPage, (page, pageIndex) => {
 
-      const listItemsWithData = reduce(subsequentListItemData, (acc, props, listItemIndex) => {
+      const listItemsWithData = reduce(page, (acc, props, listItemIndex) => {
         const moved = map(mapInsert(props, LI_COMPONENT), _r => {
           const r = {..._r}
           r.x = _r.x + PX_LIST_START_X;

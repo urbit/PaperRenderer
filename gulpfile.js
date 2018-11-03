@@ -46,6 +46,7 @@ gulp.task('bundle-js', function(cb) {
     cache: cache,
     format: 'cjs',
     plugins: [
+      json(),
       resolve({
         browser: true,
       }),
@@ -105,7 +106,6 @@ gulp.task('bundle-js', function(cb) {
         extensions: '.js'
       }),
       // typescript(),
-      json(),
       globals(),
       builtins(),
 
