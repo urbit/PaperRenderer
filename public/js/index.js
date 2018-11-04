@@ -21,24 +21,10 @@ var global = module.exports = typeof window != 'undefined' && window.Math == Mat
 if (typeof __g == 'number') __g = global; // eslint-disable-line no-undef
 });
 
-
-
-var _global$2 = Object.freeze({
-	default: _global,
-	__moduleExports: _global
-});
-
 var hasOwnProperty = {}.hasOwnProperty;
 var _has = function (it, key) {
   return hasOwnProperty.call(it, key);
 };
-
-
-
-var _has$2 = Object.freeze({
-	default: _has,
-	__moduleExports: _has
-});
 
 var _fails = function (exec) {
   try {
@@ -48,24 +34,9 @@ var _fails = function (exec) {
   }
 };
 
-
-
-var _fails$2 = Object.freeze({
-	default: _fails,
-	__moduleExports: _fails
-});
-
-var require$$1 = ( _fails$2 && _fails ) || _fails$2;
-
-var _descriptors = !require$$1(function () {
+// Thank's IE8 for his funny defineProperty
+var _descriptors = !_fails(function () {
   return Object.defineProperty({}, 'a', { get: function () { return 7; } }).a != 7;
-});
-
-
-
-var _descriptors$2 = Object.freeze({
-	default: _descriptors,
-	__moduleExports: _descriptors
 });
 
 var _core = createCommonjsModule(function (module) {
@@ -73,100 +44,46 @@ var core = module.exports = { version: '2.5.7' };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 });
 
-var _core_1 = _core.version;
-
-
-var _core$2 = Object.freeze({
-	default: _core,
-	__moduleExports: _core,
-	version: _core_1
-});
-
 var _isObject = function (it) {
   return typeof it === 'object' ? it !== null : typeof it === 'function';
 };
 
-
-
-var _isObject$2 = Object.freeze({
-	default: _isObject,
-	__moduleExports: _isObject
-});
-
-var isObject = ( _isObject$2 && _isObject ) || _isObject$2;
-
 var _anObject = function (it) {
-  if (!isObject(it)) throw TypeError(it + ' is not an object!');
+  if (!_isObject(it)) throw TypeError(it + ' is not an object!');
   return it;
 };
 
-
-
-var _anObject$2 = Object.freeze({
-	default: _anObject,
-	__moduleExports: _anObject
-});
-
-var global$1 = ( _global$2 && _global ) || _global$2;
-
-var document$1 = global$1.document;
+var document$1 = _global.document;
 // typeof document.createElement is 'object' in old IE
-var is = isObject(document$1) && isObject(document$1.createElement);
+var is = _isObject(document$1) && _isObject(document$1.createElement);
 var _domCreate = function (it) {
   return is ? document$1.createElement(it) : {};
 };
 
-
-
-var _domCreate$2 = Object.freeze({
-	default: _domCreate,
-	__moduleExports: _domCreate
+var _ie8DomDefine = !_descriptors && !_fails(function () {
+  return Object.defineProperty(_domCreate('div'), 'a', { get: function () { return 7; } }).a != 7;
 });
 
-var require$$1$1 = ( _descriptors$2 && _descriptors ) || _descriptors$2;
+// 7.1.1 ToPrimitive(input [, PreferredType])
 
-var cel = ( _domCreate$2 && _domCreate ) || _domCreate$2;
-
-var _ie8DomDefine = !require$$1$1 && !require$$1(function () {
-  return Object.defineProperty(cel('div'), 'a', { get: function () { return 7; } }).a != 7;
-});
-
-
-
-var _ie8DomDefine$2 = Object.freeze({
-	default: _ie8DomDefine,
-	__moduleExports: _ie8DomDefine
-});
-
+// instead of the ES6 spec version, we didn't implement @@toPrimitive case
+// and the second argument - flag - preferred type is a string
 var _toPrimitive = function (it, S) {
-  if (!isObject(it)) return it;
+  if (!_isObject(it)) return it;
   var fn, val;
-  if (S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it))) return val;
-  if (typeof (fn = it.valueOf) == 'function' && !isObject(val = fn.call(it))) return val;
-  if (!S && typeof (fn = it.toString) == 'function' && !isObject(val = fn.call(it))) return val;
+  if (S && typeof (fn = it.toString) == 'function' && !_isObject(val = fn.call(it))) return val;
+  if (typeof (fn = it.valueOf) == 'function' && !_isObject(val = fn.call(it))) return val;
+  if (!S && typeof (fn = it.toString) == 'function' && !_isObject(val = fn.call(it))) return val;
   throw TypeError("Can't convert object to primitive value");
 };
 
-
-
-var _toPrimitive$2 = Object.freeze({
-	default: _toPrimitive,
-	__moduleExports: _toPrimitive
-});
-
-var anObject = ( _anObject$2 && _anObject ) || _anObject$2;
-
-var IE8_DOM_DEFINE = ( _ie8DomDefine$2 && _ie8DomDefine ) || _ie8DomDefine$2;
-
-var toPrimitive = ( _toPrimitive$2 && _toPrimitive ) || _toPrimitive$2;
-
 var dP$1 = Object.defineProperty;
 
-var f = require$$1$1 ? Object.defineProperty : function defineProperty(O, P, Attributes) {
-  anObject(O);
-  P = toPrimitive(P, true);
-  anObject(Attributes);
-  if (IE8_DOM_DEFINE) try {
+var f = _descriptors ? Object.defineProperty : function defineProperty(O, P, Attributes) {
+  _anObject(O);
+  P = _toPrimitive(P, true);
+  _anObject(Attributes);
+  if (_ie8DomDefine) try {
     return dP$1(O, P, Attributes);
   } catch (e) { /* empty */ }
   if ('get' in Attributes || 'set' in Attributes) throw TypeError('Accessors not supported!');
@@ -178,14 +95,6 @@ var _objectDp = {
 	f: f
 };
 
-
-
-var _objectDp$2 = Object.freeze({
-	default: _objectDp,
-	__moduleExports: _objectDp,
-	f: f
-});
-
 var _propertyDesc = function (bitmap, value) {
   return {
     enumerable: !(bitmap & 1),
@@ -195,30 +104,12 @@ var _propertyDesc = function (bitmap, value) {
   };
 };
 
-
-
-var _propertyDesc$2 = Object.freeze({
-	default: _propertyDesc,
-	__moduleExports: _propertyDesc
-});
-
-var $defineProperty$1 = ( _objectDp$2 && _objectDp ) || _objectDp$2;
-
-var createDesc = ( _propertyDesc$2 && _propertyDesc ) || _propertyDesc$2;
-
-var _hide = require$$1$1 ? function (object, key, value) {
-  return $defineProperty$1.f(object, key, createDesc(1, value));
+var _hide = _descriptors ? function (object, key, value) {
+  return _objectDp.f(object, key, _propertyDesc(1, value));
 } : function (object, key, value) {
   object[key] = value;
   return object;
 };
-
-
-
-var _hide$2 = Object.freeze({
-	default: _hide,
-	__moduleExports: _hide
-});
 
 var id = 0;
 var px = Math.random();
@@ -226,45 +117,30 @@ var _uid = function (key) {
   return 'Symbol('.concat(key === undefined ? '' : key, ')_', (++id + px).toString(36));
 };
 
-
-
-var _uid$2 = Object.freeze({
-	default: _uid,
-	__moduleExports: _uid
-});
-
-var hide = ( _hide$2 && _hide ) || _hide$2;
-
-var has = ( _has$2 && _has ) || _has$2;
-
-var require$$26 = ( _uid$2 && _uid ) || _uid$2;
-
-var require$$1$2 = ( _core$2 && _core ) || _core$2;
-
 var _redefine = createCommonjsModule(function (module) {
-var SRC = require$$26('src');
+var SRC = _uid('src');
 var TO_STRING = 'toString';
 var $toString = Function[TO_STRING];
 var TPL = ('' + $toString).split(TO_STRING);
 
-require$$1$2.inspectSource = function (it) {
+_core.inspectSource = function (it) {
   return $toString.call(it);
 };
 
 (module.exports = function (O, key, val, safe) {
   var isFunction = typeof val == 'function';
-  if (isFunction) has(val, 'name') || hide(val, 'name', key);
+  if (isFunction) _has(val, 'name') || _hide(val, 'name', key);
   if (O[key] === val) return;
-  if (isFunction) has(val, SRC) || hide(val, SRC, O[key] ? '' + O[key] : TPL.join(String(key)));
-  if (O === global$1) {
+  if (isFunction) _has(val, SRC) || _hide(val, SRC, O[key] ? '' + O[key] : TPL.join(String(key)));
+  if (O === _global) {
     O[key] = val;
   } else if (!safe) {
     delete O[key];
-    hide(O, key, val);
+    _hide(O, key, val);
   } else if (O[key]) {
     O[key] = val;
   } else {
-    hide(O, key, val);
+    _hide(O, key, val);
   }
 // add fake Function#toString for correct work wrapped methods / constructors with methods like LoDash isNative
 })(Function.prototype, TO_STRING, function toString() {
@@ -272,29 +148,15 @@ require$$1$2.inspectSource = function (it) {
 });
 });
 
-
-
-var _redefine$2 = Object.freeze({
-	default: _redefine,
-	__moduleExports: _redefine
-});
-
 var _aFunction = function (it) {
   if (typeof it != 'function') throw TypeError(it + ' is not a function!');
   return it;
 };
 
-
-
-var _aFunction$2 = Object.freeze({
-	default: _aFunction,
-	__moduleExports: _aFunction
-});
-
-var aFunction = ( _aFunction$2 && _aFunction ) || _aFunction$2;
+// optional / simple context binding
 
 var _ctx = function (fn, that, length) {
-  aFunction(fn);
+  _aFunction(fn);
   if (that === undefined) return fn;
   switch (length) {
     case 1: return function (a) {
@@ -312,17 +174,6 @@ var _ctx = function (fn, that, length) {
   };
 };
 
-
-
-var _ctx$2 = Object.freeze({
-	default: _ctx,
-	__moduleExports: _ctx
-});
-
-var redefine = ( _redefine$2 && _redefine ) || _redefine$2;
-
-var ctx = ( _ctx$2 && _ctx ) || _ctx$2;
-
 var PROTOTYPE$1 = 'prototype';
 
 var $export = function (type, name, source) {
@@ -331,8 +182,8 @@ var $export = function (type, name, source) {
   var IS_STATIC = type & $export.S;
   var IS_PROTO = type & $export.P;
   var IS_BIND = type & $export.B;
-  var target = IS_GLOBAL ? global$1 : IS_STATIC ? global$1[name] || (global$1[name] = {}) : (global$1[name] || {})[PROTOTYPE$1];
-  var exports = IS_GLOBAL ? require$$1$2 : require$$1$2[name] || (require$$1$2[name] = {});
+  var target = IS_GLOBAL ? _global : IS_STATIC ? _global[name] || (_global[name] = {}) : (_global[name] || {})[PROTOTYPE$1];
+  var exports = IS_GLOBAL ? _core : _core[name] || (_core[name] = {});
   var expProto = exports[PROTOTYPE$1] || (exports[PROTOTYPE$1] = {});
   var key, own, out, exp;
   if (IS_GLOBAL) source = name;
@@ -342,15 +193,15 @@ var $export = function (type, name, source) {
     // export native or passed
     out = (own ? target : source)[key];
     // bind timers to global for call from export context
-    exp = IS_BIND && own ? ctx(out, global$1) : IS_PROTO && typeof out == 'function' ? ctx(Function.call, out) : out;
+    exp = IS_BIND && own ? _ctx(out, _global) : IS_PROTO && typeof out == 'function' ? _ctx(Function.call, out) : out;
     // extend global
-    if (target) redefine(target, key, out, type & $export.U);
+    if (target) _redefine(target, key, out, type & $export.U);
     // export
-    if (exports[key] != out) hide(exports, key, exp);
+    if (exports[key] != out) _hide(exports, key, exp);
     if (IS_PROTO && expProto[key] != out) expProto[key] = out;
   }
 };
-global$1.core = require$$1$2;
+_global.core = _core;
 // type bitmap
 $export.F = 1;   // forced
 $export.G = 2;   // global
@@ -362,23 +213,16 @@ $export.U = 64;  // safe
 $export.R = 128; // real proto method for `library`
 var _export = $export;
 
-
-
-var _export$2 = Object.freeze({
-	default: _export,
-	__moduleExports: _export
-});
-
 var _meta = createCommonjsModule(function (module) {
-var META = require$$26('meta');
+var META = _uid('meta');
 
 
-var setDesc = $defineProperty$1.f;
+var setDesc = _objectDp.f;
 var id = 0;
 var isExtensible = Object.isExtensible || function () {
   return true;
 };
-var FREEZE = !require$$1(function () {
+var FREEZE = !_fails(function () {
   return isExtensible(Object.preventExtensions({}));
 });
 var setMeta = function (it) {
@@ -389,8 +233,8 @@ var setMeta = function (it) {
 };
 var fastKey = function (it, create) {
   // return primitive with prefix
-  if (!isObject(it)) return typeof it == 'symbol' ? it : (typeof it == 'string' ? 'S' : 'P') + it;
-  if (!has(it, META)) {
+  if (!_isObject(it)) return typeof it == 'symbol' ? it : (typeof it == 'string' ? 'S' : 'P') + it;
+  if (!_has(it, META)) {
     // can't set metadata to uncaught frozen object
     if (!isExtensible(it)) return 'F';
     // not necessary to add metadata
@@ -401,7 +245,7 @@ var fastKey = function (it, create) {
   } return it[META].i;
 };
 var getWeak = function (it, create) {
-  if (!has(it, META)) {
+  if (!_has(it, META)) {
     // can't set metadata to uncaught frozen object
     if (!isExtensible(it)) return true;
     // not necessary to add metadata
@@ -413,7 +257,7 @@ var getWeak = function (it, create) {
 };
 // add metadata on freeze-family methods calling
 var onFreeze = function (it) {
-  if (FREEZE && meta.NEED && isExtensible(it) && !has(it, META)) setMeta(it);
+  if (FREEZE && meta.NEED && isExtensible(it) && !_has(it, META)) setMeta(it);
   return it;
 };
 var meta = module.exports = {
@@ -425,122 +269,54 @@ var meta = module.exports = {
 };
 });
 
-var _meta_1 = _meta.KEY;
-var _meta_2 = _meta.NEED;
-var _meta_3 = _meta.fastKey;
-var _meta_4 = _meta.getWeak;
-var _meta_5 = _meta.onFreeze;
-
-
-var _meta$2 = Object.freeze({
-	default: _meta,
-	__moduleExports: _meta,
-	KEY: _meta_1,
-	NEED: _meta_2,
-	fastKey: _meta_3,
-	getWeak: _meta_4,
-	onFreeze: _meta_5
-});
-
 var _library = false;
-
-
-
-var _library$2 = Object.freeze({
-	default: _library,
-	__moduleExports: _library
-});
-
-var require$$0 = ( _library$2 && _library ) || _library$2;
 
 var _shared = createCommonjsModule(function (module) {
 var SHARED = '__core-js_shared__';
-var store = global$1[SHARED] || (global$1[SHARED] = {});
+var store = _global[SHARED] || (_global[SHARED] = {});
 
 (module.exports = function (key, value) {
   return store[key] || (store[key] = value !== undefined ? value : {});
 })('versions', []).push({
-  version: require$$1$2.version,
-  mode: require$$0 ? 'pure' : 'global',
+  version: _core.version,
+  mode: _library ? 'pure' : 'global',
   copyright: '© 2018 Denis Pushkarev (zloirock.ru)'
 });
 });
 
-
-
-var _shared$2 = Object.freeze({
-	default: _shared,
-	__moduleExports: _shared
-});
-
-var require$$0$1 = ( _shared$2 && _shared ) || _shared$2;
-
 var _wks = createCommonjsModule(function (module) {
-var store = require$$0$1('wks');
+var store = _shared('wks');
 
-var Symbol = global$1.Symbol;
+var Symbol = _global.Symbol;
 var USE_SYMBOL = typeof Symbol == 'function';
 
 var $exports = module.exports = function (name) {
   return store[name] || (store[name] =
-    USE_SYMBOL && Symbol[name] || (USE_SYMBOL ? Symbol : require$$26)('Symbol.' + name));
+    USE_SYMBOL && Symbol[name] || (USE_SYMBOL ? Symbol : _uid)('Symbol.' + name));
 };
 
 $exports.store = store;
 });
 
+var def = _objectDp.f;
 
-
-var _wks$2 = Object.freeze({
-	default: _wks,
-	__moduleExports: _wks
-});
-
-var wks = ( _wks$2 && _wks ) || _wks$2;
-
-var def = $defineProperty$1.f;
-
-var TAG = wks('toStringTag');
+var TAG = _wks('toStringTag');
 
 var _setToStringTag = function (it, tag, stat) {
-  if (it && !has(it = stat ? it : it.prototype, TAG)) def(it, TAG, { configurable: true, value: tag });
+  if (it && !_has(it = stat ? it : it.prototype, TAG)) def(it, TAG, { configurable: true, value: tag });
 };
 
-
-
-var _setToStringTag$2 = Object.freeze({
-	default: _setToStringTag,
-	__moduleExports: _setToStringTag
-});
-
-var f$1 = wks;
+var f$1 = _wks;
 
 var _wksExt = {
 	f: f$1
 };
 
-
-
-var _wksExt$2 = Object.freeze({
-	default: _wksExt,
-	__moduleExports: _wksExt,
-	f: f$1
-});
-
-var wksExt = ( _wksExt$2 && _wksExt ) || _wksExt$2;
-
-var defineProperty = $defineProperty$1.f;
+var defineProperty = _objectDp.f;
 var _wksDefine = function (name) {
-  var $Symbol = require$$1$2.Symbol || (require$$1$2.Symbol = require$$0 ? {} : global$1.Symbol || {});
-  if (name.charAt(0) != '_' && !(name in $Symbol)) defineProperty($Symbol, name, { value: wksExt.f(name) });
+  var $Symbol = _core.Symbol || (_core.Symbol = _library ? {} : _global.Symbol || {});
+  if (name.charAt(0) != '_' && !(name in $Symbol)) defineProperty($Symbol, name, { value: _wksExt.f(name) });
 };
-
-
-
-var _wksDefine$2 = Object.freeze({
-	default: _wksDefine,
-	__moduleExports: _wksDefine
-});
 
 var toString = {}.toString;
 
@@ -548,25 +324,12 @@ var _cof = function (it) {
   return toString.call(it).slice(8, -1);
 };
 
+// fallback for non-array-like ES3 and non-enumerable old V8 strings
 
-
-var _cof$2 = Object.freeze({
-	default: _cof,
-	__moduleExports: _cof
-});
-
-var require$$2 = ( _cof$2 && _cof ) || _cof$2;
-
+// eslint-disable-next-line no-prototype-builtins
 var _iobject = Object('z').propertyIsEnumerable(0) ? Object : function (it) {
-  return require$$2(it) == 'String' ? it.split('') : Object(it);
+  return _cof(it) == 'String' ? it.split('') : Object(it);
 };
-
-
-
-var _iobject$2 = Object.freeze({
-	default: _iobject,
-	__moduleExports: _iobject
-});
 
 // 7.2.1 RequireObjectCoercible(argument)
 var _defined = function (it) {
@@ -574,27 +337,12 @@ var _defined = function (it) {
   return it;
 };
 
+// to indexed object, toObject with fallback for non-array-like ES3 strings
 
-
-var _defined$2 = Object.freeze({
-	default: _defined,
-	__moduleExports: _defined
-});
-
-var IObject = ( _iobject$2 && _iobject ) || _iobject$2;
-
-var defined = ( _defined$2 && _defined ) || _defined$2;
 
 var _toIobject = function (it) {
-  return IObject(defined(it));
+  return _iobject(_defined(it));
 };
-
-
-
-var _toIobject$2 = Object.freeze({
-	default: _toIobject,
-	__moduleExports: _toIobject
-});
 
 // 7.1.4 ToInteger
 var ceil = Math.ceil;
@@ -603,52 +351,30 @@ var _toInteger = function (it) {
   return isNaN(it = +it) ? 0 : (it > 0 ? floor : ceil)(it);
 };
 
-
-
-var _toInteger$2 = Object.freeze({
-	default: _toInteger,
-	__moduleExports: _toInteger
-});
-
-var toInteger = ( _toInteger$2 && _toInteger ) || _toInteger$2;
+// 7.1.15 ToLength
 
 var min = Math.min;
 var _toLength = function (it) {
-  return it > 0 ? min(toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
+  return it > 0 ? min(_toInteger(it), 0x1fffffffffffff) : 0; // pow(2, 53) - 1 == 9007199254740991
 };
-
-
-
-var _toLength$2 = Object.freeze({
-	default: _toLength,
-	__moduleExports: _toLength
-});
 
 var max = Math.max;
 var min$1 = Math.min;
 var _toAbsoluteIndex = function (index, length) {
-  index = toInteger(index);
+  index = _toInteger(index);
   return index < 0 ? max(index + length, 0) : min$1(index, length);
 };
 
+// false -> Array#indexOf
+// true  -> Array#includes
 
 
-var _toAbsoluteIndex$2 = Object.freeze({
-	default: _toAbsoluteIndex,
-	__moduleExports: _toAbsoluteIndex
-});
-
-var toIObject = ( _toIobject$2 && _toIobject ) || _toIobject$2;
-
-var toLength = ( _toLength$2 && _toLength ) || _toLength$2;
-
-var require$$15 = ( _toAbsoluteIndex$2 && _toAbsoluteIndex ) || _toAbsoluteIndex$2;
 
 var _arrayIncludes = function (IS_INCLUDES) {
   return function ($this, el, fromIndex) {
-    var O = toIObject($this);
-    var length = toLength(O.length);
-    var index = require$$15(fromIndex, length);
+    var O = _toIobject($this);
+    var length = _toLength(O.length);
+    var index = _toAbsoluteIndex(fromIndex, length);
     var value;
     // Array#includes uses SameValueZero equality algorithm
     // eslint-disable-next-line no-self-compare
@@ -663,79 +389,40 @@ var _arrayIncludes = function (IS_INCLUDES) {
   };
 };
 
-
-
-var _arrayIncludes$2 = Object.freeze({
-	default: _arrayIncludes,
-	__moduleExports: _arrayIncludes
-});
-
-var shared = require$$0$1('keys');
+var shared = _shared('keys');
 
 var _sharedKey = function (key) {
-  return shared[key] || (shared[key] = require$$26(key));
+  return shared[key] || (shared[key] = _uid(key));
 };
 
-
-
-var _sharedKey$2 = Object.freeze({
-	default: _sharedKey,
-	__moduleExports: _sharedKey
-});
-
-var require$$0$2 = ( _arrayIncludes$2 && _arrayIncludes ) || _arrayIncludes$2;
-
-var require$$0$3 = ( _sharedKey$2 && _sharedKey ) || _sharedKey$2;
-
-var arrayIndexOf = require$$0$2(false);
-var IE_PROTO = require$$0$3('IE_PROTO');
+var arrayIndexOf = _arrayIncludes(false);
+var IE_PROTO = _sharedKey('IE_PROTO');
 
 var _objectKeysInternal = function (object, names) {
-  var O = toIObject(object);
+  var O = _toIobject(object);
   var i = 0;
   var result = [];
   var key;
-  for (key in O) if (key != IE_PROTO) has(O, key) && result.push(key);
+  for (key in O) if (key != IE_PROTO) _has(O, key) && result.push(key);
   // Don't enum bug & hidden keys
-  while (names.length > i) if (has(O, key = names[i++])) {
+  while (names.length > i) if (_has(O, key = names[i++])) {
     ~arrayIndexOf(result, key) || result.push(key);
   }
   return result;
 };
-
-
-
-var _objectKeysInternal$2 = Object.freeze({
-	default: _objectKeysInternal,
-	__moduleExports: _objectKeysInternal
-});
 
 // IE 8- don't enum bug keys
 var _enumBugKeys = (
   'constructor,hasOwnProperty,isPrototypeOf,propertyIsEnumerable,toLocaleString,toString,valueOf'
 ).split(',');
 
+// 19.1.2.14 / 15.2.3.14 Object.keys(O)
 
 
-var _enumBugKeys$2 = Object.freeze({
-	default: _enumBugKeys,
-	__moduleExports: _enumBugKeys
-});
-
-var $keys = ( _objectKeysInternal$2 && _objectKeysInternal ) || _objectKeysInternal$2;
-
-var require$$0$4 = ( _enumBugKeys$2 && _enumBugKeys ) || _enumBugKeys$2;
 
 var _objectKeys = Object.keys || function keys(O) {
-  return $keys(O, require$$0$4);
+  return _objectKeysInternal(O, _enumBugKeys);
 };
-
-
-
-var _objectKeys$2 = Object.freeze({
-	default: _objectKeys,
-	__moduleExports: _objectKeys
-});
 
 var f$2 = Object.getOwnPropertySymbols;
 
@@ -743,109 +430,65 @@ var _objectGops = {
 	f: f$2
 };
 
-
-
-var _objectGops$2 = Object.freeze({
-	default: _objectGops,
-	__moduleExports: _objectGops,
-	f: f$2
-});
-
 var f$3 = {}.propertyIsEnumerable;
 
 var _objectPie = {
 	f: f$3
 };
 
+// all enumerable object keys, includes symbols
 
 
-var _objectPie$2 = Object.freeze({
-	default: _objectPie,
-	__moduleExports: _objectPie,
-	f: f$3
-});
-
-var getKeys = ( _objectKeys$2 && _objectKeys ) || _objectKeys$2;
-
-var gOPS = ( _objectGops$2 && _objectGops ) || _objectGops$2;
-
-var require$$0$5 = ( _objectPie$2 && _objectPie ) || _objectPie$2;
 
 var _enumKeys = function (it) {
-  var result = getKeys(it);
-  var getSymbols = gOPS.f;
+  var result = _objectKeys(it);
+  var getSymbols = _objectGops.f;
   if (getSymbols) {
     var symbols = getSymbols(it);
-    var isEnum = require$$0$5.f;
+    var isEnum = _objectPie.f;
     var i = 0;
     var key;
     while (symbols.length > i) if (isEnum.call(it, key = symbols[i++])) result.push(key);
   } return result;
 };
 
-
-
-var _enumKeys$2 = Object.freeze({
-	default: _enumKeys,
-	__moduleExports: _enumKeys
-});
+// 7.2.2 IsArray(argument)
 
 var _isArray = Array.isArray || function isArray(arg) {
-  return require$$2(arg) == 'Array';
+  return _cof(arg) == 'Array';
 };
 
-
-
-var _isArray$2 = Object.freeze({
-	default: _isArray,
-	__moduleExports: _isArray
-});
-
-var _objectDps = require$$1$1 ? Object.defineProperties : function defineProperties(O, Properties) {
-  anObject(O);
-  var keys = getKeys(Properties);
+var _objectDps = _descriptors ? Object.defineProperties : function defineProperties(O, Properties) {
+  _anObject(O);
+  var keys = _objectKeys(Properties);
   var length = keys.length;
   var i = 0;
   var P;
-  while (length > i) $defineProperty$1.f(O, P = keys[i++], Properties[P]);
+  while (length > i) _objectDp.f(O, P = keys[i++], Properties[P]);
   return O;
 };
 
-
-
-var _objectDps$2 = Object.freeze({
-	default: _objectDps,
-	__moduleExports: _objectDps
-});
-
-var document$2 = global$1.document;
+var document$2 = _global.document;
 var _html = document$2 && document$2.documentElement;
 
+// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 
 
-var _html$2 = Object.freeze({
-	default: _html,
-	__moduleExports: _html
-});
 
-var require$$1$3 = ( _objectDps$2 && _objectDps ) || _objectDps$2;
-
-var html = ( _html$2 && _html ) || _html$2;
-
-var IE_PROTO$1 = require$$0$3('IE_PROTO');
+var IE_PROTO$1 = _sharedKey('IE_PROTO');
 var Empty = function () { /* empty */ };
 var PROTOTYPE$2 = 'prototype';
 
 // Create object with fake `null` prototype: use iframe Object with cleared prototype
 var createDict = function () {
   // Thrash, waste and sodomy: IE GC bug
-  var iframe = cel('iframe');
-  var i = require$$0$4.length;
+  var iframe = _domCreate('iframe');
+  var i = _enumBugKeys.length;
   var lt = '<';
   var gt = '>';
   var iframeDocument;
   iframe.style.display = 'none';
-  html.appendChild(iframe);
+  _html.appendChild(iframe);
   iframe.src = 'javascript:'; // eslint-disable-line no-script-url
   // createDict = iframe.contentWindow.Object;
   // html.removeChild(iframe);
@@ -854,50 +497,37 @@ var createDict = function () {
   iframeDocument.write(lt + 'script' + gt + 'document.F=Object' + lt + '/script' + gt);
   iframeDocument.close();
   createDict = iframeDocument.F;
-  while (i--) delete createDict[PROTOTYPE$2][require$$0$4[i]];
+  while (i--) delete createDict[PROTOTYPE$2][_enumBugKeys[i]];
   return createDict();
 };
 
 var _objectCreate = Object.create || function create(O, Properties) {
   var result;
   if (O !== null) {
-    Empty[PROTOTYPE$2] = anObject(O);
+    Empty[PROTOTYPE$2] = _anObject(O);
     result = new Empty();
     Empty[PROTOTYPE$2] = null;
     // add "__proto__" for Object.getPrototypeOf polyfill
     result[IE_PROTO$1] = O;
   } else result = createDict();
-  return Properties === undefined ? result : require$$1$3(result, Properties);
+  return Properties === undefined ? result : _objectDps(result, Properties);
 };
 
+// 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
 
-
-var _objectCreate$2 = Object.freeze({
-	default: _objectCreate,
-	__moduleExports: _objectCreate
-});
-
-var hiddenKeys = require$$0$4.concat('length', 'prototype');
+var hiddenKeys = _enumBugKeys.concat('length', 'prototype');
 
 var f$5 = Object.getOwnPropertyNames || function getOwnPropertyNames(O) {
-  return $keys(O, hiddenKeys);
+  return _objectKeysInternal(O, hiddenKeys);
 };
 
 var _objectGopn = {
 	f: f$5
 };
 
+// fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
 
-
-var _objectGopn$2 = Object.freeze({
-	default: _objectGopn,
-	__moduleExports: _objectGopn,
-	f: f$5
-});
-
-var gOPN$2 = ( _objectGopn$2 && _objectGopn ) || _objectGopn$2;
-
-var gOPN$1 = gOPN$2.f;
+var gOPN$1 = _objectGopn.f;
 var toString$1 = {}.toString;
 
 var windowNames = typeof window == 'object' && window && Object.getOwnPropertyNames
@@ -912,61 +542,27 @@ var getWindowNames = function (it) {
 };
 
 var f$4 = function getOwnPropertyNames(it) {
-  return windowNames && toString$1.call(it) == '[object Window]' ? getWindowNames(it) : gOPN$1(toIObject(it));
+  return windowNames && toString$1.call(it) == '[object Window]' ? getWindowNames(it) : gOPN$1(_toIobject(it));
 };
 
 var _objectGopnExt = {
 	f: f$4
 };
 
-
-
-var _objectGopnExt$2 = Object.freeze({
-	default: _objectGopnExt,
-	__moduleExports: _objectGopnExt,
-	f: f$4
-});
-
 var gOPD$1 = Object.getOwnPropertyDescriptor;
 
-var f$6 = require$$1$1 ? gOPD$1 : function getOwnPropertyDescriptor(O, P) {
-  O = toIObject(O);
-  P = toPrimitive(P, true);
-  if (IE8_DOM_DEFINE) try {
+var f$6 = _descriptors ? gOPD$1 : function getOwnPropertyDescriptor(O, P) {
+  O = _toIobject(O);
+  P = _toPrimitive(P, true);
+  if (_ie8DomDefine) try {
     return gOPD$1(O, P);
   } catch (e) { /* empty */ }
-  if (has(O, P)) return createDesc(!require$$0$5.f.call(O, P), O[P]);
+  if (_has(O, P)) return _propertyDesc(!_objectPie.f.call(O, P), O[P]);
 };
 
 var _objectGopd = {
 	f: f$6
 };
-
-
-
-var _objectGopd$2 = Object.freeze({
-	default: _objectGopd,
-	__moduleExports: _objectGopd,
-	f: f$6
-});
-
-var $export$1 = ( _export$2 && _export ) || _export$2;
-
-var require$$0$6 = ( _meta$2 && _meta ) || _meta$2;
-
-var setToStringTag = ( _setToStringTag$2 && _setToStringTag ) || _setToStringTag$2;
-
-var require$$0$7 = ( _wksDefine$2 && _wksDefine ) || _wksDefine$2;
-
-var enumKeys = ( _enumKeys$2 && _enumKeys ) || _enumKeys$2;
-
-var isArray = ( _isArray$2 && _isArray ) || _isArray$2;
-
-var create = ( _objectCreate$2 && _objectCreate ) || _objectCreate$2;
-
-var require$$1$4 = ( _objectGopnExt$2 && _objectGopnExt ) || _objectGopnExt$2;
-
-var require$$0$8 = ( _objectGopd$2 && _objectGopd ) || _objectGopd$2;
 
 'use strict';
 // ECMAScript 6 symbols shim
@@ -975,7 +571,7 @@ var require$$0$8 = ( _objectGopd$2 && _objectGopd ) || _objectGopd$2;
 
 
 
-var META = require$$0$6.KEY;
+var META = _meta.KEY;
 
 
 
@@ -995,28 +591,28 @@ var META = require$$0$6.KEY;
 
 
 
-var gOPD = require$$0$8.f;
-var dP = $defineProperty$1.f;
-var gOPN = require$$1$4.f;
-var $Symbol = global$1.Symbol;
-var $JSON = global$1.JSON;
+var gOPD = _objectGopd.f;
+var dP = _objectDp.f;
+var gOPN = _objectGopnExt.f;
+var $Symbol = _global.Symbol;
+var $JSON = _global.JSON;
 var _stringify = $JSON && $JSON.stringify;
 var PROTOTYPE = 'prototype';
-var HIDDEN = wks('_hidden');
-var TO_PRIMITIVE = wks('toPrimitive');
+var HIDDEN = _wks('_hidden');
+var TO_PRIMITIVE = _wks('toPrimitive');
 var isEnum = {}.propertyIsEnumerable;
-var SymbolRegistry = require$$0$1('symbol-registry');
-var AllSymbols = require$$0$1('symbols');
-var OPSymbols = require$$0$1('op-symbols');
+var SymbolRegistry = _shared('symbol-registry');
+var AllSymbols = _shared('symbols');
+var OPSymbols = _shared('op-symbols');
 var ObjectProto = Object[PROTOTYPE];
 var USE_NATIVE = typeof $Symbol == 'function';
-var QObject = global$1.QObject;
+var QObject = _global.QObject;
 // Don't use setters in Qt Script, https://github.com/zloirock/core-js/issues/173
 var setter = !QObject || !QObject[PROTOTYPE] || !QObject[PROTOTYPE].findChild;
 
 // fallback for old Android, https://code.google.com/p/v8/issues/detail?id=687
-var setSymbolDesc = require$$1$1 && require$$1(function () {
-  return create(dP({}, 'a', {
+var setSymbolDesc = _descriptors && _fails(function () {
+  return _objectCreate(dP({}, 'a', {
     get: function () { return dP(this, 'a', { value: 7 }).a; }
   })).a != 7;
 }) ? function (it, key, D) {
@@ -1027,7 +623,7 @@ var setSymbolDesc = require$$1$1 && require$$1(function () {
 } : dP;
 
 var wrap = function (tag) {
-  var sym = AllSymbols[tag] = create($Symbol[PROTOTYPE]);
+  var sym = AllSymbols[tag] = _objectCreate($Symbol[PROTOTYPE]);
   sym._k = tag;
   return sym;
 };
@@ -1040,22 +636,22 @@ var isSymbol = USE_NATIVE && typeof $Symbol.iterator == 'symbol' ? function (it)
 
 var $defineProperty = function defineProperty(it, key, D) {
   if (it === ObjectProto) $defineProperty(OPSymbols, key, D);
-  anObject(it);
-  key = toPrimitive(key, true);
-  anObject(D);
-  if (has(AllSymbols, key)) {
+  _anObject(it);
+  key = _toPrimitive(key, true);
+  _anObject(D);
+  if (_has(AllSymbols, key)) {
     if (!D.enumerable) {
-      if (!has(it, HIDDEN)) dP(it, HIDDEN, createDesc(1, {}));
+      if (!_has(it, HIDDEN)) dP(it, HIDDEN, _propertyDesc(1, {}));
       it[HIDDEN][key] = true;
     } else {
-      if (has(it, HIDDEN) && it[HIDDEN][key]) it[HIDDEN][key] = false;
-      D = create(D, { enumerable: createDesc(0, false) });
+      if (_has(it, HIDDEN) && it[HIDDEN][key]) it[HIDDEN][key] = false;
+      D = _objectCreate(D, { enumerable: _propertyDesc(0, false) });
     } return setSymbolDesc(it, key, D);
   } return dP(it, key, D);
 };
 var $defineProperties = function defineProperties(it, P) {
-  anObject(it);
-  var keys = enumKeys(P = toIObject(P));
+  _anObject(it);
+  var keys = _enumKeys(P = _toIobject(P));
   var i = 0;
   var l = keys.length;
   var key;
@@ -1063,38 +659,38 @@ var $defineProperties = function defineProperties(it, P) {
   return it;
 };
 var $create = function create$$1(it, P) {
-  return P === undefined ? create(it) : $defineProperties(create(it), P);
+  return P === undefined ? _objectCreate(it) : $defineProperties(_objectCreate(it), P);
 };
 var $propertyIsEnumerable = function propertyIsEnumerable(key) {
-  var E = isEnum.call(this, key = toPrimitive(key, true));
-  if (this === ObjectProto && has(AllSymbols, key) && !has(OPSymbols, key)) return false;
-  return E || !has(this, key) || !has(AllSymbols, key) || has(this, HIDDEN) && this[HIDDEN][key] ? E : true;
+  var E = isEnum.call(this, key = _toPrimitive(key, true));
+  if (this === ObjectProto && _has(AllSymbols, key) && !_has(OPSymbols, key)) return false;
+  return E || !_has(this, key) || !_has(AllSymbols, key) || _has(this, HIDDEN) && this[HIDDEN][key] ? E : true;
 };
 var $getOwnPropertyDescriptor = function getOwnPropertyDescriptor(it, key) {
-  it = toIObject(it);
-  key = toPrimitive(key, true);
-  if (it === ObjectProto && has(AllSymbols, key) && !has(OPSymbols, key)) return;
+  it = _toIobject(it);
+  key = _toPrimitive(key, true);
+  if (it === ObjectProto && _has(AllSymbols, key) && !_has(OPSymbols, key)) return;
   var D = gOPD(it, key);
-  if (D && has(AllSymbols, key) && !(has(it, HIDDEN) && it[HIDDEN][key])) D.enumerable = true;
+  if (D && _has(AllSymbols, key) && !(_has(it, HIDDEN) && it[HIDDEN][key])) D.enumerable = true;
   return D;
 };
 var $getOwnPropertyNames = function getOwnPropertyNames(it) {
-  var names = gOPN(toIObject(it));
+  var names = gOPN(_toIobject(it));
   var result = [];
   var i = 0;
   var key;
   while (names.length > i) {
-    if (!has(AllSymbols, key = names[i++]) && key != HIDDEN && key != META) result.push(key);
+    if (!_has(AllSymbols, key = names[i++]) && key != HIDDEN && key != META) result.push(key);
   } return result;
 };
 var $getOwnPropertySymbols = function getOwnPropertySymbols(it) {
   var IS_OP = it === ObjectProto;
-  var names = gOPN(IS_OP ? OPSymbols : toIObject(it));
+  var names = gOPN(IS_OP ? OPSymbols : _toIobject(it));
   var result = [];
   var i = 0;
   var key;
   while (names.length > i) {
-    if (has(AllSymbols, key = names[i++]) && (IS_OP ? has(ObjectProto, key) : true)) result.push(AllSymbols[key]);
+    if (_has(AllSymbols, key = names[i++]) && (IS_OP ? _has(ObjectProto, key) : true)) result.push(AllSymbols[key]);
   } return result;
 };
 
@@ -1102,47 +698,47 @@ var $getOwnPropertySymbols = function getOwnPropertySymbols(it) {
 if (!USE_NATIVE) {
   $Symbol = function Symbol() {
     if (this instanceof $Symbol) throw TypeError('Symbol is not a constructor!');
-    var tag = require$$26(arguments.length > 0 ? arguments[0] : undefined);
+    var tag = _uid(arguments.length > 0 ? arguments[0] : undefined);
     var $set = function (value) {
       if (this === ObjectProto) $set.call(OPSymbols, value);
-      if (has(this, HIDDEN) && has(this[HIDDEN], tag)) this[HIDDEN][tag] = false;
-      setSymbolDesc(this, tag, createDesc(1, value));
+      if (_has(this, HIDDEN) && _has(this[HIDDEN], tag)) this[HIDDEN][tag] = false;
+      setSymbolDesc(this, tag, _propertyDesc(1, value));
     };
-    if (require$$1$1 && setter) setSymbolDesc(ObjectProto, tag, { configurable: true, set: $set });
+    if (_descriptors && setter) setSymbolDesc(ObjectProto, tag, { configurable: true, set: $set });
     return wrap(tag);
   };
-  redefine($Symbol[PROTOTYPE], 'toString', function toString() {
+  _redefine($Symbol[PROTOTYPE], 'toString', function toString() {
     return this._k;
   });
 
-  require$$0$8.f = $getOwnPropertyDescriptor;
-  $defineProperty$1.f = $defineProperty;
-  gOPN$2.f = require$$1$4.f = $getOwnPropertyNames;
-  require$$0$5.f = $propertyIsEnumerable;
-  gOPS.f = $getOwnPropertySymbols;
+  _objectGopd.f = $getOwnPropertyDescriptor;
+  _objectDp.f = $defineProperty;
+  _objectGopn.f = _objectGopnExt.f = $getOwnPropertyNames;
+  _objectPie.f = $propertyIsEnumerable;
+  _objectGops.f = $getOwnPropertySymbols;
 
-  if (require$$1$1 && !require$$0) {
-    redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
+  if (_descriptors && !_library) {
+    _redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
   }
 
-  wksExt.f = function (name) {
-    return wrap(wks(name));
+  _wksExt.f = function (name) {
+    return wrap(_wks(name));
   };
 }
 
-$export$1($export$1.G + $export$1.W + $export$1.F * !USE_NATIVE, { Symbol: $Symbol });
+_export(_export.G + _export.W + _export.F * !USE_NATIVE, { Symbol: $Symbol });
 
 for (var es6Symbols = (
   // 19.4.2.2, 19.4.2.3, 19.4.2.4, 19.4.2.6, 19.4.2.8, 19.4.2.9, 19.4.2.10, 19.4.2.11, 19.4.2.12, 19.4.2.13, 19.4.2.14
   'hasInstance,isConcatSpreadable,iterator,match,replace,search,species,split,toPrimitive,toStringTag,unscopables'
-).split(','), j = 0; es6Symbols.length > j;)wks(es6Symbols[j++]);
+).split(','), j = 0; es6Symbols.length > j;)_wks(es6Symbols[j++]);
 
-for (var wellKnownSymbols = getKeys(wks.store), k = 0; wellKnownSymbols.length > k;) require$$0$7(wellKnownSymbols[k++]);
+for (var wellKnownSymbols = _objectKeys(_wks.store), k = 0; wellKnownSymbols.length > k;) _wksDefine(wellKnownSymbols[k++]);
 
-$export$1($export$1.S + $export$1.F * !USE_NATIVE, 'Symbol', {
+_export(_export.S + _export.F * !USE_NATIVE, 'Symbol', {
   // 19.4.2.1 Symbol.for(key)
   'for': function (key) {
-    return has(SymbolRegistry, key += '')
+    return _has(SymbolRegistry, key += '')
       ? SymbolRegistry[key]
       : SymbolRegistry[key] = $Symbol(key);
   },
@@ -1155,7 +751,7 @@ $export$1($export$1.S + $export$1.F * !USE_NATIVE, 'Symbol', {
   useSimple: function () { setter = false; }
 });
 
-$export$1($export$1.S + $export$1.F * !USE_NATIVE, 'Object', {
+_export(_export.S + _export.F * !USE_NATIVE, 'Object', {
   // 19.1.2.2 Object.create(O [, Properties])
   create: $create,
   // 19.1.2.4 Object.defineProperty(O, P, Attributes)
@@ -1171,7 +767,7 @@ $export$1($export$1.S + $export$1.F * !USE_NATIVE, 'Object', {
 });
 
 // 24.3.2 JSON.stringify(value [, replacer [, space]])
-$JSON && $export$1($export$1.S + $export$1.F * (!USE_NATIVE || require$$1(function () {
+$JSON && _export(_export.S + _export.F * (!USE_NATIVE || _fails(function () {
   var S = $Symbol();
   // MS Edge converts symbol values to JSON as {}
   // WebKit converts symbol values to JSON as null
@@ -1184,8 +780,8 @@ $JSON && $export$1($export$1.S + $export$1.F * (!USE_NATIVE || require$$1(functi
     var replacer, $replacer;
     while (arguments.length > i) args.push(arguments[i++]);
     $replacer = replacer = args[1];
-    if (!isObject(replacer) && it === undefined || isSymbol(it)) return; // IE8 returns string on undefined
-    if (!isArray(replacer)) replacer = function (key, value) {
+    if (!_isObject(replacer) && it === undefined || isSymbol(it)) return; // IE8 returns string on undefined
+    if (!_isArray(replacer)) replacer = function (key, value) {
       if (typeof $replacer == 'function') value = $replacer.call(this, key, value);
       if (!isSymbol(value)) return value;
     };
@@ -1195,132 +791,143 @@ $JSON && $export$1($export$1.S + $export$1.F * (!USE_NATIVE || require$$1(functi
 });
 
 // 19.4.3.4 Symbol.prototype[@@toPrimitive](hint)
-$Symbol[PROTOTYPE][TO_PRIMITIVE] || hide($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
+$Symbol[PROTOTYPE][TO_PRIMITIVE] || _hide($Symbol[PROTOTYPE], TO_PRIMITIVE, $Symbol[PROTOTYPE].valueOf);
 // 19.4.3.5 Symbol.prototype[@@toStringTag]
-setToStringTag($Symbol, 'Symbol');
+_setToStringTag($Symbol, 'Symbol');
 // 20.2.1.9 Math[@@toStringTag]
-setToStringTag(Math, 'Math', true);
+_setToStringTag(Math, 'Math', true);
 // 24.3.3 JSON[@@toStringTag]
-setToStringTag(global$1.JSON, 'JSON', true);
+_setToStringTag(_global.JSON, 'JSON', true);
 
-$export$1($export$1.S, 'Object', { create: create });
+// 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
+_export(_export.S, 'Object', { create: _objectCreate });
 
-$export$1($export$1.S + $export$1.F * !require$$1$1, 'Object', { defineProperty: $defineProperty$1.f });
+// 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
+_export(_export.S + _export.F * !_descriptors, 'Object', { defineProperty: _objectDp.f });
 
-$export$1($export$1.S + $export$1.F * !require$$1$1, 'Object', { defineProperties: require$$1$3 });
+// 19.1.2.3 / 15.2.3.7 Object.defineProperties(O, Properties)
+_export(_export.S + _export.F * !_descriptors, 'Object', { defineProperties: _objectDps });
+
+// most Object methods by ES6 should accept primitives
+
+
 
 var _objectSap = function (KEY, exec) {
-  var fn = (require$$1$2.Object || {})[KEY] || Object[KEY];
+  var fn = (_core.Object || {})[KEY] || Object[KEY];
   var exp = {};
   exp[KEY] = exec(fn);
-  $export$1($export$1.S + $export$1.F * require$$1(function () { fn(1); }), 'Object', exp);
+  _export(_export.S + _export.F * _fails(function () { fn(1); }), 'Object', exp);
 };
 
+// 19.1.2.6 Object.getOwnPropertyDescriptor(O, P)
 
+var $getOwnPropertyDescriptor$1 = _objectGopd.f;
 
-var _objectSap$2 = Object.freeze({
-	default: _objectSap,
-	__moduleExports: _objectSap
-});
-
-var require$$0$9 = ( _objectSap$2 && _objectSap ) || _objectSap$2;
-
-var $getOwnPropertyDescriptor$1 = require$$0$8.f;
-
-require$$0$9('getOwnPropertyDescriptor', function () {
+_objectSap('getOwnPropertyDescriptor', function () {
   return function getOwnPropertyDescriptor(it, key) {
-    return $getOwnPropertyDescriptor$1(toIObject(it), key);
+    return $getOwnPropertyDescriptor$1(_toIobject(it), key);
   };
 });
 
+// 7.1.13 ToObject(argument)
+
 var _toObject = function (it) {
-  return Object(defined(it));
+  return Object(_defined(it));
 };
 
+// 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
 
 
-var _toObject$2 = Object.freeze({
-	default: _toObject,
-	__moduleExports: _toObject
-});
-
-var toObject = ( _toObject$2 && _toObject ) || _toObject$2;
-
-var IE_PROTO$2 = require$$0$3('IE_PROTO');
+var IE_PROTO$2 = _sharedKey('IE_PROTO');
 var ObjectProto$1 = Object.prototype;
 
 var _objectGpo = Object.getPrototypeOf || function (O) {
-  O = toObject(O);
-  if (has(O, IE_PROTO$2)) return O[IE_PROTO$2];
+  O = _toObject(O);
+  if (_has(O, IE_PROTO$2)) return O[IE_PROTO$2];
   if (typeof O.constructor == 'function' && O instanceof O.constructor) {
     return O.constructor.prototype;
   } return O instanceof Object ? ObjectProto$1 : null;
 };
 
+// 19.1.2.9 Object.getPrototypeOf(O)
 
 
-var _objectGpo$2 = Object.freeze({
-	default: _objectGpo,
-	__moduleExports: _objectGpo
-});
 
-var getPrototypeOf = ( _objectGpo$2 && _objectGpo ) || _objectGpo$2;
-
-require$$0$9('getPrototypeOf', function () {
+_objectSap('getPrototypeOf', function () {
   return function getPrototypeOf$$1(it) {
-    return getPrototypeOf(toObject(it));
+    return _objectGpo(_toObject(it));
   };
 });
 
-require$$0$9('keys', function () {
+// 19.1.2.14 Object.keys(O)
+
+
+
+_objectSap('keys', function () {
   return function keys(it) {
-    return getKeys(toObject(it));
+    return _objectKeys(_toObject(it));
   };
 });
 
-require$$0$9('getOwnPropertyNames', function () {
-  return require$$1$4.f;
+// 19.1.2.7 Object.getOwnPropertyNames(O)
+_objectSap('getOwnPropertyNames', function () {
+  return _objectGopnExt.f;
 });
 
-var meta = require$$0$6.onFreeze;
+// 19.1.2.5 Object.freeze(O)
 
-require$$0$9('freeze', function ($freeze) {
+var meta = _meta.onFreeze;
+
+_objectSap('freeze', function ($freeze) {
   return function freeze(it) {
-    return $freeze && isObject(it) ? $freeze(meta(it)) : it;
+    return $freeze && _isObject(it) ? $freeze(meta(it)) : it;
   };
 });
 
-var meta$1 = require$$0$6.onFreeze;
+// 19.1.2.17 Object.seal(O)
 
-require$$0$9('seal', function ($seal) {
+var meta$1 = _meta.onFreeze;
+
+_objectSap('seal', function ($seal) {
   return function seal(it) {
-    return $seal && isObject(it) ? $seal(meta$1(it)) : it;
+    return $seal && _isObject(it) ? $seal(meta$1(it)) : it;
   };
 });
 
-var meta$2 = require$$0$6.onFreeze;
+// 19.1.2.15 Object.preventExtensions(O)
 
-require$$0$9('preventExtensions', function ($preventExtensions) {
+var meta$2 = _meta.onFreeze;
+
+_objectSap('preventExtensions', function ($preventExtensions) {
   return function preventExtensions(it) {
-    return $preventExtensions && isObject(it) ? $preventExtensions(meta$2(it)) : it;
+    return $preventExtensions && _isObject(it) ? $preventExtensions(meta$2(it)) : it;
   };
 });
 
-require$$0$9('isFrozen', function ($isFrozen) {
+// 19.1.2.12 Object.isFrozen(O)
+
+
+_objectSap('isFrozen', function ($isFrozen) {
   return function isFrozen(it) {
-    return isObject(it) ? $isFrozen ? $isFrozen(it) : false : true;
+    return _isObject(it) ? $isFrozen ? $isFrozen(it) : false : true;
   };
 });
 
-require$$0$9('isSealed', function ($isSealed) {
+// 19.1.2.13 Object.isSealed(O)
+
+
+_objectSap('isSealed', function ($isSealed) {
   return function isSealed(it) {
-    return isObject(it) ? $isSealed ? $isSealed(it) : false : true;
+    return _isObject(it) ? $isSealed ? $isSealed(it) : false : true;
   };
 });
 
-require$$0$9('isExtensible', function ($isExtensible) {
+// 19.1.2.11 Object.isExtensible(O)
+
+
+_objectSap('isExtensible', function ($isExtensible) {
   return function isExtensible(it) {
-    return isObject(it) ? $isExtensible ? $isExtensible(it) : true : false;
+    return _isObject(it) ? $isExtensible ? $isExtensible(it) : true : false;
   };
 });
 
@@ -1334,7 +941,7 @@ require$$0$9('isExtensible', function ($isExtensible) {
 var $assign = Object.assign;
 
 // should work with symbols and should have deterministic property order (V8 bug)
-var _objectAssign = !$assign || require$$1(function () {
+var _objectAssign = !$assign || _fails(function () {
   var A = {};
   var B = {};
   // eslint-disable-next-line no-undef
@@ -1344,14 +951,14 @@ var _objectAssign = !$assign || require$$1(function () {
   K.split('').forEach(function (k) { B[k] = k; });
   return $assign({}, A)[S] != 7 || Object.keys($assign({}, B)).join('') != K;
 }) ? function assign(target, source) { // eslint-disable-line no-unused-vars
-  var T = toObject(target);
+  var T = _toObject(target);
   var aLen = arguments.length;
   var index = 1;
-  var getSymbols = gOPS.f;
-  var isEnum = require$$0$5.f;
+  var getSymbols = _objectGops.f;
+  var isEnum = _objectPie.f;
   while (aLen > index) {
-    var S = IObject(arguments[index++]);
-    var keys = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S);
+    var S = _iobject(arguments[index++]);
+    var keys = getSymbols ? _objectKeys(S).concat(getSymbols(S)) : _objectKeys(S);
     var length = keys.length;
     var j = 0;
     var key;
@@ -1359,16 +966,10 @@ var _objectAssign = !$assign || require$$1(function () {
   } return T;
 } : $assign;
 
+// 19.1.3.1 Object.assign(target, source)
 
 
-var _objectAssign$2 = Object.freeze({
-	default: _objectAssign,
-	__moduleExports: _objectAssign
-});
-
-var assign = ( _objectAssign$2 && _objectAssign ) || _objectAssign$2;
-
-$export$1($export$1.S + $export$1.F, 'Object', { assign: assign });
+_export(_export.S + _export.F, 'Object', { assign: _objectAssign });
 
 // 7.2.9 SameValue(x, y)
 var _sameValue = Object.is || function is(x, y) {
@@ -1376,26 +977,23 @@ var _sameValue = Object.is || function is(x, y) {
   return x === y ? x !== 0 || 1 / x === 1 / y : x != x && y != y;
 };
 
+// 19.1.3.10 Object.is(value1, value2)
 
+_export(_export.S, 'Object', { is: _sameValue });
 
-var _sameValue$2 = Object.freeze({
-	default: _sameValue,
-	__moduleExports: _sameValue
-});
+// Works with __proto__ only. Old v8 can't work with null proto objects.
+/* eslint-disable no-proto */
 
-var require$$0$10 = ( _sameValue$2 && _sameValue ) || _sameValue$2;
-
-$export$1($export$1.S, 'Object', { is: require$$0$10 });
 
 var check = function (O, proto) {
-  anObject(O);
-  if (!isObject(proto) && proto !== null) throw TypeError(proto + ": can't set as prototype!");
+  _anObject(O);
+  if (!_isObject(proto) && proto !== null) throw TypeError(proto + ": can't set as prototype!");
 };
 var _setProto = {
   set: Object.setPrototypeOf || ('__proto__' in {} ? // eslint-disable-line
     function (test, buggy, set) {
       try {
-        set = ctx(Function.call, require$$0$8.f(Object.prototype, '__proto__').set, 2);
+        set = _ctx(Function.call, _objectGopd.f(Object.prototype, '__proto__').set, 2);
         set(test, []);
         buggy = !(test instanceof Array);
       } catch (e) { buggy = true; }
@@ -1409,24 +1007,15 @@ var _setProto = {
   check: check
 };
 
-var _setProto_1 = _setProto.set;
-var _setProto_2 = _setProto.check;
+// 19.1.3.19 Object.setPrototypeOf(O, proto)
 
+_export(_export.S, 'Object', { setPrototypeOf: _setProto.set });
 
-var _setProto$2 = Object.freeze({
-	default: _setProto,
-	__moduleExports: _setProto,
-	set: _setProto_1,
-	check: _setProto_2
-});
+// getting tag from 19.1.3.6 Object.prototype.toString()
 
-var setProto = ( _setProto$2 && _setProto ) || _setProto$2;
-
-$export$1($export$1.S, 'Object', { setPrototypeOf: setProto.set });
-
-var TAG$1 = wks('toStringTag');
+var TAG$1 = _wks('toStringTag');
 // ES3 wrong here
-var ARG = require$$2(function () { return arguments; }()) == 'Arguments';
+var ARG = _cof(function () { return arguments; }()) == 'Arguments';
 
 // fallback for IE11 Script Access Denied error
 var tryGet = function (it, key) {
@@ -1441,28 +1030,19 @@ var _classof = function (it) {
     // @@toStringTag case
     : typeof (T = tryGet(O = Object(it), TAG$1)) == 'string' ? T
     // builtinTag case
-    : ARG ? require$$2(O)
+    : ARG ? _cof(O)
     // ES3 arguments fallback
-    : (B = require$$2(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : B;
+    : (B = _cof(O)) == 'Object' && typeof O.callee == 'function' ? 'Arguments' : B;
 };
-
-
-
-var _classof$2 = Object.freeze({
-	default: _classof,
-	__moduleExports: _classof
-});
-
-var classof = ( _classof$2 && _classof ) || _classof$2;
 
 'use strict';
 // 19.1.3.6 Object.prototype.toString()
 
 var test = {};
-test[wks('toStringTag')] = 'z';
+test[_wks('toStringTag')] = 'z';
 if (test + '' != '[object z]') {
-  redefine(Object.prototype, 'toString', function toString() {
-    return '[object ' + classof(this) + ']';
+  _redefine(Object.prototype, 'toString', function toString() {
+    return '[object ' + _classof(this) + ']';
   }, true);
 }
 
@@ -1483,15 +1063,6 @@ var _invoke = function (fn, args, that) {
   } return fn.apply(that, args);
 };
 
-
-
-var _invoke$2 = Object.freeze({
-	default: _invoke,
-	__moduleExports: _invoke
-});
-
-var invoke = ( _invoke$2 && _invoke ) || _invoke$2;
-
 'use strict';
 
 
@@ -1508,34 +1079,28 @@ var construct = function (F, len, args) {
 };
 
 var _bind = Function.bind || function bind(that /* , ...args */) {
-  var fn = aFunction(this);
+  var fn = _aFunction(this);
   var partArgs = arraySlice.call(arguments, 1);
   var bound = function (/* args... */) {
     var args = partArgs.concat(arraySlice.call(arguments));
-    return this instanceof bound ? construct(fn, args.length, args) : invoke(fn, args, that);
+    return this instanceof bound ? construct(fn, args.length, args) : _invoke(fn, args, that);
   };
-  if (isObject(fn.prototype)) bound.prototype = fn.prototype;
+  if (_isObject(fn.prototype)) bound.prototype = fn.prototype;
   return bound;
 };
 
+// 19.2.3.2 / 15.3.4.5 Function.prototype.bind(thisArg, args...)
 
 
-var _bind$2 = Object.freeze({
-	default: _bind,
-	__moduleExports: _bind
-});
+_export(_export.P, 'Function', { bind: _bind });
 
-var bind = ( _bind$2 && _bind ) || _bind$2;
-
-$export$1($export$1.P, 'Function', { bind: bind });
-
-var dP$2 = $defineProperty$1.f;
+var dP$2 = _objectDp.f;
 var FProto = Function.prototype;
 var nameRE = /^\s*function ([^ (]*)/;
 var NAME = 'name';
 
 // 19.2.4.2 name
-NAME in FProto || require$$1$1 && dP$2(FProto, NAME, {
+NAME in FProto || _descriptors && dP$2(FProto, NAME, {
   configurable: true,
   get: function () {
     try {
@@ -1549,49 +1114,40 @@ NAME in FProto || require$$1$1 && dP$2(FProto, NAME, {
 'use strict';
 
 
-var HAS_INSTANCE = wks('hasInstance');
+var HAS_INSTANCE = _wks('hasInstance');
 var FunctionProto = Function.prototype;
 // 19.2.3.6 Function.prototype[@@hasInstance](V)
-if (!(HAS_INSTANCE in FunctionProto)) $defineProperty$1.f(FunctionProto, HAS_INSTANCE, { value: function (O) {
-  if (typeof this != 'function' || !isObject(O)) return false;
-  if (!isObject(this.prototype)) return O instanceof this;
+if (!(HAS_INSTANCE in FunctionProto)) _objectDp.f(FunctionProto, HAS_INSTANCE, { value: function (O) {
+  if (typeof this != 'function' || !_isObject(O)) return false;
+  if (!_isObject(this.prototype)) return O instanceof this;
   // for environment w/o native `@@hasInstance` logic enough `instanceof`, but add this:
-  while (O = getPrototypeOf(O)) if (this.prototype === O) return true;
+  while (O = _objectGpo(O)) if (this.prototype === O) return true;
   return false;
 } });
 
 var _stringWs = '\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003' +
   '\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF';
 
-
-
-var _stringWs$2 = Object.freeze({
-	default: _stringWs,
-	__moduleExports: _stringWs
-});
-
-var require$$2$1 = ( _stringWs$2 && _stringWs ) || _stringWs$2;
-
-var space = '[' + require$$2$1 + ']';
+var space = '[' + _stringWs + ']';
 var non = '\u200b\u0085';
 var ltrim = RegExp('^' + space + space + '*');
 var rtrim = RegExp(space + space + '*$');
 
 var exporter = function (KEY, exec, ALIAS) {
   var exp = {};
-  var FORCE = require$$1(function () {
-    return !!require$$2$1[KEY]() || non[KEY]() != non;
+  var FORCE = _fails(function () {
+    return !!_stringWs[KEY]() || non[KEY]() != non;
   });
-  var fn = exp[KEY] = FORCE ? exec(trim) : require$$2$1[KEY];
+  var fn = exp[KEY] = FORCE ? exec(trim) : _stringWs[KEY];
   if (ALIAS) exp[ALIAS] = fn;
-  $export$1($export$1.P + $export$1.F * FORCE, 'String', exp);
+  _export(_export.P + _export.F * FORCE, 'String', exp);
 };
 
 // 1 -> String#trimLeft
 // 2 -> String#trimRight
 // 3 -> String#trim
 var trim = exporter.trim = function (string, TYPE) {
-  string = String(defined(string));
+  string = String(_defined(string));
   if (TYPE & 1) string = string.replace(ltrim, '');
   if (TYPE & 2) string = string.replace(rtrim, '');
   return string;
@@ -1599,73 +1155,39 @@ var trim = exporter.trim = function (string, TYPE) {
 
 var _stringTrim = exporter;
 
-
-
-var _stringTrim$2 = Object.freeze({
-	default: _stringTrim,
-	__moduleExports: _stringTrim
-});
-
-var require$$0$11 = ( _stringTrim$2 && _stringTrim ) || _stringTrim$2;
-
-var $parseInt = global$1.parseInt;
-var $trim = require$$0$11.trim;
+var $parseInt = _global.parseInt;
+var $trim = _stringTrim.trim;
 
 var hex = /^[-+]?0[xX]/;
 
-var _parseInt = $parseInt(require$$2$1 + '08') !== 8 || $parseInt(require$$2$1 + '0x16') !== 22 ? function parseInt(str, radix) {
+var _parseInt = $parseInt(_stringWs + '08') !== 8 || $parseInt(_stringWs + '0x16') !== 22 ? function parseInt(str, radix) {
   var string = $trim(String(str), 3);
   return $parseInt(string, (radix >>> 0) || (hex.test(string) ? 16 : 10));
 } : $parseInt;
 
+// 18.2.5 parseInt(string, radix)
+_export(_export.G + _export.F * (parseInt != _parseInt), { parseInt: _parseInt });
 
+var $parseFloat = _global.parseFloat;
+var $trim$1 = _stringTrim.trim;
 
-var _parseInt$2 = Object.freeze({
-	default: _parseInt,
-	__moduleExports: _parseInt
-});
-
-var $parseInt$1 = ( _parseInt$2 && _parseInt ) || _parseInt$2;
-
-$export$1($export$1.G + $export$1.F * (parseInt != $parseInt$1), { parseInt: $parseInt$1 });
-
-var $parseFloat = global$1.parseFloat;
-var $trim$1 = require$$0$11.trim;
-
-var _parseFloat = 1 / $parseFloat(require$$2$1 + '-0') !== -Infinity ? function parseFloat(str) {
+var _parseFloat = 1 / $parseFloat(_stringWs + '-0') !== -Infinity ? function parseFloat(str) {
   var string = $trim$1(String(str), 3);
   var result = $parseFloat(string);
   return result === 0 && string.charAt(0) == '-' ? -0 : result;
 } : $parseFloat;
 
+// 18.2.4 parseFloat(string)
+_export(_export.G + _export.F * (parseFloat != _parseFloat), { parseFloat: _parseFloat });
 
-
-var _parseFloat$2 = Object.freeze({
-	default: _parseFloat,
-	__moduleExports: _parseFloat
-});
-
-var $parseFloat$1 = ( _parseFloat$2 && _parseFloat ) || _parseFloat$2;
-
-$export$1($export$1.G + $export$1.F * (parseFloat != $parseFloat$1), { parseFloat: $parseFloat$1 });
-
-var setPrototypeOf = setProto.set;
+var setPrototypeOf = _setProto.set;
 var _inheritIfRequired = function (that, target, C) {
   var S = target.constructor;
   var P;
-  if (S !== C && typeof S == 'function' && (P = S.prototype) !== C.prototype && isObject(P) && setPrototypeOf) {
+  if (S !== C && typeof S == 'function' && (P = S.prototype) !== C.prototype && _isObject(P) && setPrototypeOf) {
     setPrototypeOf(that, P);
   } return that;
 };
-
-
-
-var _inheritIfRequired$2 = Object.freeze({
-	default: _inheritIfRequired,
-	__moduleExports: _inheritIfRequired
-});
-
-var inheritIfRequired = ( _inheritIfRequired$2 && _inheritIfRequired ) || _inheritIfRequired$2;
 
 'use strict';
 
@@ -1674,21 +1196,21 @@ var inheritIfRequired = ( _inheritIfRequired$2 && _inheritIfRequired ) || _inher
 
 
 
-var gOPN$3 = gOPN$2.f;
-var gOPD$2 = require$$0$8.f;
-var dP$3 = $defineProperty$1.f;
-var $trim$2 = require$$0$11.trim;
+var gOPN$3 = _objectGopn.f;
+var gOPD$2 = _objectGopd.f;
+var dP$3 = _objectDp.f;
+var $trim$2 = _stringTrim.trim;
 var NUMBER = 'Number';
-var $Number = global$1[NUMBER];
+var $Number = _global[NUMBER];
 var Base = $Number;
 var proto = $Number.prototype;
 // Opera ~12 has broken Object#toString
-var BROKEN_COF = require$$2(create(proto)) == NUMBER;
+var BROKEN_COF = _cof(_objectCreate(proto)) == NUMBER;
 var TRIM = 'trim' in String.prototype;
 
 // 7.1.3 ToNumber(argument)
 var toNumber = function (argument) {
-  var it = toPrimitive(argument, false);
+  var it = _toPrimitive(argument, false);
   if (typeof it == 'string' && it.length > 2) {
     it = TRIM ? it.trim() : $trim$2(it, 3);
     var first = it.charCodeAt(0);
@@ -1718,60 +1240,42 @@ if (!$Number(' 0o1') || !$Number('0b1') || $Number('+0x1')) {
     var that = this;
     return that instanceof $Number
       // check on 1..constructor(foo) case
-      && (BROKEN_COF ? require$$1(function () { proto.valueOf.call(that); }) : require$$2(that) != NUMBER)
-        ? inheritIfRequired(new Base(toNumber(it)), that, $Number) : toNumber(it);
+      && (BROKEN_COF ? _fails(function () { proto.valueOf.call(that); }) : _cof(that) != NUMBER)
+        ? _inheritIfRequired(new Base(toNumber(it)), that, $Number) : toNumber(it);
   };
-  for (var keys = require$$1$1 ? gOPN$3(Base) : (
+  for (var keys = _descriptors ? gOPN$3(Base) : (
     // ES3:
     'MAX_VALUE,MIN_VALUE,NaN,NEGATIVE_INFINITY,POSITIVE_INFINITY,' +
     // ES6 (in case, if modules with ES6 Number statics required before):
     'EPSILON,isFinite,isInteger,isNaN,isSafeInteger,MAX_SAFE_INTEGER,' +
     'MIN_SAFE_INTEGER,parseFloat,parseInt,isInteger'
   ).split(','), j$1 = 0, key; keys.length > j$1; j$1++) {
-    if (has(Base, key = keys[j$1]) && !has($Number, key)) {
+    if (_has(Base, key = keys[j$1]) && !_has($Number, key)) {
       dP$3($Number, key, gOPD$2(Base, key));
     }
   }
   $Number.prototype = proto;
   proto.constructor = $Number;
-  redefine(global$1, NUMBER, $Number);
+  _redefine(_global, NUMBER, $Number);
 }
 
 var _aNumberValue = function (it, msg) {
-  if (typeof it != 'number' && require$$2(it) != 'Number') throw TypeError(msg);
+  if (typeof it != 'number' && _cof(it) != 'Number') throw TypeError(msg);
   return +it;
 };
-
-
-
-var _aNumberValue$2 = Object.freeze({
-	default: _aNumberValue,
-	__moduleExports: _aNumberValue
-});
 
 'use strict';
 
 
 
 var _stringRepeat = function repeat(count) {
-  var str = String(defined(this));
+  var str = String(_defined(this));
   var res = '';
-  var n = toInteger(count);
+  var n = _toInteger(count);
   if (n < 0 || n == Infinity) throw RangeError("Count can't be negative");
   for (;n > 0; (n >>>= 1) && (str += str)) if (n & 1) res += str;
   return res;
 };
-
-
-
-var _stringRepeat$2 = Object.freeze({
-	default: _stringRepeat,
-	__moduleExports: _stringRepeat
-});
-
-var aNumberValue = ( _aNumberValue$2 && _aNumberValue ) || _aNumberValue$2;
-
-var repeat = ( _stringRepeat$2 && _stringRepeat ) || _stringRepeat$2;
 
 'use strict';
 
@@ -1808,7 +1312,7 @@ var numToString = function () {
   while (--i >= 0) {
     if (s !== '' || i === 0 || data[i] !== 0) {
       var t = String(data[i]);
-      s = s === '' ? t : s + repeat.call(ZERO, 7 - t.length) + t;
+      s = s === '' ? t : s + _stringRepeat.call(ZERO, 7 - t.length) + t;
     }
   } return s;
 };
@@ -1828,18 +1332,18 @@ var log = function (x) {
   } return n;
 };
 
-$export$1($export$1.P + $export$1.F * (!!$toFixed && (
+_export(_export.P + _export.F * (!!$toFixed && (
   0.00008.toFixed(3) !== '0.000' ||
   0.9.toFixed(0) !== '1' ||
   1.255.toFixed(2) !== '1.25' ||
   1000000000000000128.0.toFixed(0) !== '1000000000000000128'
-) || !require$$1(function () {
+) || !_fails(function () {
   // V8 ~ Android 4.3-
   $toFixed.call({});
 })), 'Number', {
   toFixed: function toFixed(fractionDigits) {
-    var x = aNumberValue(this, ERROR);
-    var f = toInteger(fractionDigits);
+    var x = _aNumberValue(this, ERROR);
+    var f = _toInteger(fractionDigits);
     var s = '';
     var m = ZERO;
     var e, z, j, k;
@@ -1876,12 +1380,12 @@ $export$1($export$1.P + $export$1.F * (!!$toFixed && (
       } else {
         multiply(0, z);
         multiply(1 << -e, 0);
-        m = numToString() + repeat.call(ZERO, f);
+        m = numToString() + _stringRepeat.call(ZERO, f);
       }
     }
     if (f > 0) {
       k = m.length;
-      m = s + (k <= f ? '0.' + repeat.call(ZERO, f - k) + m : m.slice(0, k - f) + '.' + m.slice(k - f));
+      m = s + (k <= f ? '0.' + _stringRepeat.call(ZERO, f - k) + m : m.slice(0, k - f) + '.' + m.slice(k - f));
     } else {
       m = s + m;
     } return m;
@@ -1894,86 +1398,95 @@ $export$1($export$1.P + $export$1.F * (!!$toFixed && (
 
 var $toPrecision = 1.0.toPrecision;
 
-$export$1($export$1.P + $export$1.F * (require$$1(function () {
+_export(_export.P + _export.F * (_fails(function () {
   // IE7-
   return $toPrecision.call(1, undefined) !== '1';
-}) || !require$$1(function () {
+}) || !_fails(function () {
   // V8 ~ Android 4.3-
   $toPrecision.call({});
 })), 'Number', {
   toPrecision: function toPrecision(precision) {
-    var that = aNumberValue(this, 'Number#toPrecision: incorrect invocation!');
+    var that = _aNumberValue(this, 'Number#toPrecision: incorrect invocation!');
     return precision === undefined ? $toPrecision.call(that) : $toPrecision.call(that, precision);
   }
 });
 
-$export$1($export$1.S, 'Number', { EPSILON: Math.pow(2, -52) });
+// 20.1.2.1 Number.EPSILON
 
-var _isFinite = global$1.isFinite;
 
-$export$1($export$1.S, 'Number', {
+_export(_export.S, 'Number', { EPSILON: Math.pow(2, -52) });
+
+// 20.1.2.2 Number.isFinite(number)
+
+var _isFinite = _global.isFinite;
+
+_export(_export.S, 'Number', {
   isFinite: function isFinite(it) {
     return typeof it == 'number' && _isFinite(it);
   }
 });
 
+// 20.1.2.3 Number.isInteger(number)
+
 var floor$2 = Math.floor;
 var _isInteger = function isInteger(it) {
-  return !isObject(it) && isFinite(it) && floor$2(it) === it;
+  return !_isObject(it) && isFinite(it) && floor$2(it) === it;
 };
 
+// 20.1.2.3 Number.isInteger(number)
 
 
-var _isInteger$2 = Object.freeze({
-	default: _isInteger,
-	__moduleExports: _isInteger
-});
+_export(_export.S, 'Number', { isInteger: _isInteger });
 
-var isInteger = ( _isInteger$2 && _isInteger ) || _isInteger$2;
+// 20.1.2.4 Number.isNaN(number)
 
-$export$1($export$1.S, 'Number', { isInteger: isInteger });
 
-$export$1($export$1.S, 'Number', {
+_export(_export.S, 'Number', {
   isNaN: function isNaN(number) {
     // eslint-disable-next-line no-self-compare
     return number != number;
   }
 });
 
+// 20.1.2.5 Number.isSafeInteger(number)
+
+
 var abs = Math.abs;
 
-$export$1($export$1.S, 'Number', {
+_export(_export.S, 'Number', {
   isSafeInteger: function isSafeInteger(number) {
-    return isInteger(number) && abs(number) <= 0x1fffffffffffff;
+    return _isInteger(number) && abs(number) <= 0x1fffffffffffff;
   }
 });
 
-$export$1($export$1.S, 'Number', { MAX_SAFE_INTEGER: 0x1fffffffffffff });
+// 20.1.2.6 Number.MAX_SAFE_INTEGER
 
-$export$1($export$1.S, 'Number', { MIN_SAFE_INTEGER: -0x1fffffffffffff });
 
-$export$1($export$1.S + $export$1.F * (Number.parseFloat != $parseFloat$1), 'Number', { parseFloat: $parseFloat$1 });
+_export(_export.S, 'Number', { MAX_SAFE_INTEGER: 0x1fffffffffffff });
 
-$export$1($export$1.S + $export$1.F * (Number.parseInt != $parseInt$1), 'Number', { parseInt: $parseInt$1 });
+// 20.1.2.10 Number.MIN_SAFE_INTEGER
+
+
+_export(_export.S, 'Number', { MIN_SAFE_INTEGER: -0x1fffffffffffff });
+
+// 20.1.2.12 Number.parseFloat(string)
+_export(_export.S + _export.F * (Number.parseFloat != _parseFloat), 'Number', { parseFloat: _parseFloat });
+
+// 20.1.2.13 Number.parseInt(string, radix)
+_export(_export.S + _export.F * (Number.parseInt != _parseInt), 'Number', { parseInt: _parseInt });
 
 // 20.2.2.20 Math.log1p(x)
 var _mathLog1p = Math.log1p || function log1p(x) {
   return (x = +x) > -1e-8 && x < 1e-8 ? x - x * x / 2 : Math.log(1 + x);
 };
 
+// 20.2.2.3 Math.acosh(x)
 
-
-var _mathLog1p$2 = Object.freeze({
-	default: _mathLog1p,
-	__moduleExports: _mathLog1p
-});
-
-var require$$0$12 = ( _mathLog1p$2 && _mathLog1p ) || _mathLog1p$2;
 
 var sqrt = Math.sqrt;
 var $acosh = Math.acosh;
 
-$export$1($export$1.S + $export$1.F * !($acosh
+_export(_export.S + _export.F * !($acosh
   // V8 bug: https://code.google.com/p/v8/issues/detail?id=3509
   && Math.floor($acosh(Number.MAX_VALUE)) == 710
   // Tor Browser bug: Math.acosh(Infinity) -> NaN
@@ -1982,9 +1495,11 @@ $export$1($export$1.S + $export$1.F * !($acosh
   acosh: function acosh(x) {
     return (x = +x) < 1 ? NaN : x > 94906265.62425156
       ? Math.log(x) + Math.LN2
-      : require$$0$12(x - 1 + sqrt(x - 1) * sqrt(x + 1));
+      : _mathLog1p(x - 1 + sqrt(x - 1) * sqrt(x + 1));
   }
 });
+
+// 20.2.2.5 Math.asinh(x)
 
 var $asinh = Math.asinh;
 
@@ -1993,12 +1508,14 @@ function asinh(x) {
 }
 
 // Tor Browser bug: Math.asinh(0) -> -0
-$export$1($export$1.S + $export$1.F * !($asinh && 1 / $asinh(0) > 0), 'Math', { asinh: asinh });
+_export(_export.S + _export.F * !($asinh && 1 / $asinh(0) > 0), 'Math', { asinh: asinh });
+
+// 20.2.2.7 Math.atanh(x)
 
 var $atanh = Math.atanh;
 
 // Tor Browser bug: Math.atanh(-0) -> 0
-$export$1($export$1.S + $export$1.F * !($atanh && 1 / $atanh(-0) < 0), 'Math', {
+_export(_export.S + _export.F * !($atanh && 1 / $atanh(-0) < 0), 'Math', {
   atanh: function atanh(x) {
     return (x = +x) == 0 ? x : Math.log((1 + x) / (1 - x)) / 2;
   }
@@ -2010,30 +1527,30 @@ var _mathSign = Math.sign || function sign(x) {
   return (x = +x) == 0 || x != x ? x : x < 0 ? -1 : 1;
 };
 
+// 20.2.2.9 Math.cbrt(x)
 
 
-var _mathSign$2 = Object.freeze({
-	default: _mathSign,
-	__moduleExports: _mathSign
-});
 
-var require$$0$13 = ( _mathSign$2 && _mathSign ) || _mathSign$2;
-
-$export$1($export$1.S, 'Math', {
+_export(_export.S, 'Math', {
   cbrt: function cbrt(x) {
-    return require$$0$13(x = +x) * Math.pow(Math.abs(x), 1 / 3);
+    return _mathSign(x = +x) * Math.pow(Math.abs(x), 1 / 3);
   }
 });
 
-$export$1($export$1.S, 'Math', {
+// 20.2.2.11 Math.clz32(x)
+
+
+_export(_export.S, 'Math', {
   clz32: function clz32(x) {
     return (x >>>= 0) ? 31 - Math.floor(Math.log(x + 0.5) * Math.LOG2E) : 32;
   }
 });
 
+// 20.2.2.12 Math.cosh(x)
+
 var exp = Math.exp;
 
-$export$1($export$1.S, 'Math', {
+_export(_export.S, 'Math', {
   cosh: function cosh(x) {
     return (exp(x = +x) + exp(-x)) / 2;
   }
@@ -2050,16 +1567,13 @@ var _mathExpm1 = (!$expm1
   return (x = +x) == 0 ? x : x > -1e-6 && x < 1e-6 ? x + x * x / 2 : Math.exp(x) - 1;
 } : $expm1;
 
+// 20.2.2.14 Math.expm1(x)
 
 
-var _mathExpm1$2 = Object.freeze({
-	default: _mathExpm1,
-	__moduleExports: _mathExpm1
-});
 
-var expm1 = ( _mathExpm1$2 && _mathExpm1 ) || _mathExpm1$2;
+_export(_export.S + _export.F * (_mathExpm1 != Math.expm1), 'Math', { expm1: _mathExpm1 });
 
-$export$1($export$1.S + $export$1.F * (expm1 != Math.expm1), 'Math', { expm1: expm1 });
+// 20.2.2.16 Math.fround(x)
 
 var pow$1 = Math.pow;
 var EPSILON = pow$1(2, -52);
@@ -2073,7 +1587,7 @@ var roundTiesToEven = function (n) {
 
 var _mathFround = Math.fround || function fround(x) {
   var $abs = Math.abs(x);
-  var $sign = require$$0$13(x);
+  var $sign = _mathSign(x);
   var a, result;
   if ($abs < MIN32) return $sign * roundTiesToEven($abs / MIN32 / EPSILON32) * MIN32 * EPSILON32;
   a = (1 + EPSILON32 / EPSILON) * $abs;
@@ -2083,20 +1597,16 @@ var _mathFround = Math.fround || function fround(x) {
   return $sign * result;
 };
 
+// 20.2.2.16 Math.fround(x)
 
 
-var _mathFround$2 = Object.freeze({
-	default: _mathFround,
-	__moduleExports: _mathFround
-});
+_export(_export.S, 'Math', { fround: _mathFround });
 
-var fround = ( _mathFround$2 && _mathFround ) || _mathFround$2;
-
-$export$1($export$1.S, 'Math', { fround: fround });
+// 20.2.2.17 Math.hypot([value1[, value2[, … ]]])
 
 var abs$1 = Math.abs;
 
-$export$1($export$1.S, 'Math', {
+_export(_export.S, 'Math', {
   hypot: function hypot(value1, value2) { // eslint-disable-line no-unused-vars
     var sum = 0;
     var i = 0;
@@ -2118,10 +1628,12 @@ $export$1($export$1.S, 'Math', {
   }
 });
 
+// 20.2.2.18 Math.imul(x, y)
+
 var $imul = Math.imul;
 
 // some WebKit versions fails with big numbers, some has wrong arity
-$export$1($export$1.S + $export$1.F * require$$1(function () {
+_export(_export.S + _export.F * _fails(function () {
   return $imul(0xffffffff, 5) != -5 || $imul.length != 2;
 }), 'Math', {
   imul: function imul(x, y) {
@@ -2134,46 +1646,67 @@ $export$1($export$1.S + $export$1.F * require$$1(function () {
   }
 });
 
-$export$1($export$1.S, 'Math', {
+// 20.2.2.21 Math.log10(x)
+
+
+_export(_export.S, 'Math', {
   log10: function log10(x) {
     return Math.log(x) * Math.LOG10E;
   }
 });
 
-$export$1($export$1.S, 'Math', { log1p: require$$0$12 });
+// 20.2.2.20 Math.log1p(x)
 
-$export$1($export$1.S, 'Math', {
+
+_export(_export.S, 'Math', { log1p: _mathLog1p });
+
+// 20.2.2.22 Math.log2(x)
+
+
+_export(_export.S, 'Math', {
   log2: function log2(x) {
     return Math.log(x) / Math.LN2;
   }
 });
 
-$export$1($export$1.S, 'Math', { sign: require$$0$13 });
+// 20.2.2.28 Math.sign(x)
+
+
+_export(_export.S, 'Math', { sign: _mathSign });
+
+// 20.2.2.30 Math.sinh(x)
+
 
 var exp$1 = Math.exp;
 
 // V8 near Chromium 38 has a problem with very small numbers
-$export$1($export$1.S + $export$1.F * require$$1(function () {
+_export(_export.S + _export.F * _fails(function () {
   return !Math.sinh(-2e-17) != -2e-17;
 }), 'Math', {
   sinh: function sinh(x) {
     return Math.abs(x = +x) < 1
-      ? (expm1(x) - expm1(-x)) / 2
+      ? (_mathExpm1(x) - _mathExpm1(-x)) / 2
       : (exp$1(x - 1) - exp$1(-x - 1)) * (Math.E / 2);
   }
 });
 
+// 20.2.2.33 Math.tanh(x)
+
+
 var exp$2 = Math.exp;
 
-$export$1($export$1.S, 'Math', {
+_export(_export.S, 'Math', {
   tanh: function tanh(x) {
-    var a = expm1(x = +x);
-    var b = expm1(-x);
+    var a = _mathExpm1(x = +x);
+    var b = _mathExpm1(-x);
     return a == Infinity ? 1 : b == Infinity ? -1 : (a - b) / (exp$2(x) + exp$2(-x));
   }
 });
 
-$export$1($export$1.S, 'Math', {
+// 20.2.2.34 Math.trunc(x)
+
+
+_export(_export.S, 'Math', {
   trunc: function trunc(it) {
     return (it > 0 ? Math.floor : Math.ceil)(it);
   }
@@ -2183,7 +1716,7 @@ var fromCharCode = String.fromCharCode;
 var $fromCodePoint = String.fromCodePoint;
 
 // length should be 1, old FF problem
-$export$1($export$1.S + $export$1.F * (!!$fromCodePoint && $fromCodePoint.length != 1), 'String', {
+_export(_export.S + _export.F * (!!$fromCodePoint && $fromCodePoint.length != 1), 'String', {
   // 21.1.2.2 String.fromCodePoint(...codePoints)
   fromCodePoint: function fromCodePoint(x) { // eslint-disable-line no-unused-vars
     var res = [];
@@ -2192,7 +1725,7 @@ $export$1($export$1.S + $export$1.F * (!!$fromCodePoint && $fromCodePoint.length
     var code;
     while (aLen > i) {
       code = +arguments[i++];
-      if (require$$15(code, 0x10ffff) !== code) throw RangeError(code + ' is not a valid code point');
+      if (_toAbsoluteIndex(code, 0x10ffff) !== code) throw RangeError(code + ' is not a valid code point');
       res.push(code < 0x10000
         ? fromCharCode(code)
         : fromCharCode(((code -= 0x10000) >> 10) + 0xd800, code % 0x400 + 0xdc00)
@@ -2201,11 +1734,11 @@ $export$1($export$1.S + $export$1.F * (!!$fromCodePoint && $fromCodePoint.length
   }
 });
 
-$export$1($export$1.S, 'String', {
+_export(_export.S, 'String', {
   // 21.1.2.4 String.raw(callSite, ...substitutions)
   raw: function raw(callSite) {
-    var tpl = toIObject(callSite.raw);
-    var len = toLength(tpl.length);
+    var tpl = _toIobject(callSite.raw);
+    var len = _toLength(tpl.length);
     var aLen = arguments.length;
     var res = [];
     var i = 0;
@@ -2218,16 +1751,18 @@ $export$1($export$1.S, 'String', {
 
 'use strict';
 // 21.1.3.25 String.prototype.trim()
-require$$0$11('trim', function ($trim) {
+_stringTrim('trim', function ($trim) {
   return function trim() {
     return $trim(this, 3);
   };
 });
 
+// true  -> String#at
+// false -> String#codePointAt
 var _stringAt = function (TO_STRING) {
   return function (that, pos) {
-    var s = String(defined(that));
-    var i = toInteger(pos);
+    var s = String(_defined(that));
+    var i = _toInteger(pos);
     var l = s.length;
     var a, b;
     if (i < 0 || i >= l) return TO_STRING ? '' : undefined;
@@ -2238,21 +1773,7 @@ var _stringAt = function (TO_STRING) {
   };
 };
 
-
-
-var _stringAt$2 = Object.freeze({
-	default: _stringAt,
-	__moduleExports: _stringAt
-});
-
 var _iterators = {};
-
-
-
-var _iterators$2 = Object.freeze({
-	default: _iterators,
-	__moduleExports: _iterators
-});
 
 'use strict';
 
@@ -2261,23 +1782,12 @@ var _iterators$2 = Object.freeze({
 var IteratorPrototype = {};
 
 // 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
-hide(IteratorPrototype, wks('iterator'), function () { return this; });
+_hide(IteratorPrototype, _wks('iterator'), function () { return this; });
 
 var _iterCreate = function (Constructor, NAME, next) {
-  Constructor.prototype = create(IteratorPrototype, { next: createDesc(1, next) });
-  setToStringTag(Constructor, NAME + ' Iterator');
+  Constructor.prototype = _objectCreate(IteratorPrototype, { next: _propertyDesc(1, next) });
+  _setToStringTag(Constructor, NAME + ' Iterator');
 };
-
-
-
-var _iterCreate$2 = Object.freeze({
-	default: _iterCreate,
-	__moduleExports: _iterCreate
-});
-
-var Iterators = ( _iterators$2 && _iterators ) || _iterators$2;
-
-var require$$0$14 = ( _iterCreate$2 && _iterCreate ) || _iterCreate$2;
 
 'use strict';
 
@@ -2288,7 +1798,7 @@ var require$$0$14 = ( _iterCreate$2 && _iterCreate ) || _iterCreate$2;
 
 
 
-var ITERATOR = wks('iterator');
+var ITERATOR = _wks('iterator');
 var BUGGY = !([].keys && 'next' in [].keys()); // Safari has buggy iterators w/o `next`
 var FF_ITERATOR = '@@iterator';
 var KEYS = 'keys';
@@ -2297,7 +1807,7 @@ var VALUES = 'values';
 var returnThis = function () { return this; };
 
 var _iterDefine = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED) {
-  require$$0$14(Constructor, NAME, next);
+  _iterCreate(Constructor, NAME, next);
   var getMethod = function (kind) {
     if (!BUGGY && kind in proto) return proto[kind];
     switch (kind) {
@@ -2316,12 +1826,12 @@ var _iterDefine = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORC
   var methods, key, IteratorPrototype;
   // Fix native
   if ($anyNative) {
-    IteratorPrototype = getPrototypeOf($anyNative.call(new Base()));
+    IteratorPrototype = _objectGpo($anyNative.call(new Base()));
     if (IteratorPrototype !== Object.prototype && IteratorPrototype.next) {
       // Set @@toStringTag to native iterators
-      setToStringTag(IteratorPrototype, TAG, true);
+      _setToStringTag(IteratorPrototype, TAG, true);
       // fix for some old engines
-      if (!require$$0 && typeof IteratorPrototype[ITERATOR] != 'function') hide(IteratorPrototype, ITERATOR, returnThis);
+      if (!_library && typeof IteratorPrototype[ITERATOR] != 'function') _hide(IteratorPrototype, ITERATOR, returnThis);
     }
   }
   // fix Array#{values, @@iterator}.name in V8 / FF
@@ -2330,12 +1840,12 @@ var _iterDefine = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORC
     $default = function values() { return $native.call(this); };
   }
   // Define iterator
-  if ((!require$$0 || FORCED) && (BUGGY || VALUES_BUG || !proto[ITERATOR])) {
-    hide(proto, ITERATOR, $default);
+  if ((!_library || FORCED) && (BUGGY || VALUES_BUG || !proto[ITERATOR])) {
+    _hide(proto, ITERATOR, $default);
   }
   // Plug for library
-  Iterators[NAME] = $default;
-  Iterators[TAG] = returnThis;
+  _iterators[NAME] = $default;
+  _iterators[TAG] = returnThis;
   if (DEFAULT) {
     methods = {
       values: DEF_VALUES ? $default : getMethod(VALUES),
@@ -2343,28 +1853,17 @@ var _iterDefine = function (Base, NAME, Constructor, next, DEFAULT, IS_SET, FORC
       entries: $entries
     };
     if (FORCED) for (key in methods) {
-      if (!(key in proto)) redefine(proto, key, methods[key]);
-    } else $export$1($export$1.P + $export$1.F * (BUGGY || VALUES_BUG), NAME, methods);
+      if (!(key in proto)) _redefine(proto, key, methods[key]);
+    } else _export(_export.P + _export.F * (BUGGY || VALUES_BUG), NAME, methods);
   }
   return methods;
 };
 
-
-
-var _iterDefine$2 = Object.freeze({
-	default: _iterDefine,
-	__moduleExports: _iterDefine
-});
-
-var require$$0$15 = ( _stringAt$2 && _stringAt ) || _stringAt$2;
-
-var $iterDefine = ( _iterDefine$2 && _iterDefine ) || _iterDefine$2;
-
 'use strict';
-var $at = require$$0$15(true);
+var $at = _stringAt(true);
 
 // 21.1.3.27 String.prototype[@@iterator]()
-$iterDefine(String, 'String', function (iterated) {
+_iterDefine(String, 'String', function (iterated) {
   this._t = String(iterated); // target
   this._i = 0;                // next index
 // 21.1.5.2.1 %StringIteratorPrototype%.next()
@@ -2380,42 +1879,33 @@ $iterDefine(String, 'String', function (iterated) {
 
 'use strict';
 
-var $at$1 = require$$0$15(false);
-$export$1($export$1.P, 'String', {
+var $at$1 = _stringAt(false);
+_export(_export.P, 'String', {
   // 21.1.3.3 String.prototype.codePointAt(pos)
   codePointAt: function codePointAt(pos) {
     return $at$1(this, pos);
   }
 });
 
-var MATCH = wks('match');
+// 7.2.8 IsRegExp(argument)
+
+
+var MATCH = _wks('match');
 var _isRegexp = function (it) {
   var isRegExp;
-  return isObject(it) && ((isRegExp = it[MATCH]) !== undefined ? !!isRegExp : require$$2(it) == 'RegExp');
+  return _isObject(it) && ((isRegExp = it[MATCH]) !== undefined ? !!isRegExp : _cof(it) == 'RegExp');
 };
 
+// helper for String#{startsWith, endsWith, includes}
 
 
-var _isRegexp$2 = Object.freeze({
-	default: _isRegexp,
-	__moduleExports: _isRegexp
-});
-
-var isRegExp = ( _isRegexp$2 && _isRegexp ) || _isRegexp$2;
 
 var _stringContext = function (that, searchString, NAME) {
-  if (isRegExp(searchString)) throw TypeError('String#' + NAME + " doesn't accept regex!");
-  return String(defined(that));
+  if (_isRegexp(searchString)) throw TypeError('String#' + NAME + " doesn't accept regex!");
+  return String(_defined(that));
 };
 
-
-
-var _stringContext$2 = Object.freeze({
-	default: _stringContext,
-	__moduleExports: _stringContext
-});
-
-var MATCH$1 = wks('match');
+var MATCH$1 = _wks('match');
 var _failsIsRegexp = function (KEY) {
   var re = /./;
   try {
@@ -2428,17 +1918,7 @@ var _failsIsRegexp = function (KEY) {
   } return true;
 };
 
-
-
-var _failsIsRegexp$2 = Object.freeze({
-	default: _failsIsRegexp,
-	__moduleExports: _failsIsRegexp
-});
-
-var context = ( _stringContext$2 && _stringContext ) || _stringContext$2;
-
-var require$$0$16 = ( _failsIsRegexp$2 && _failsIsRegexp ) || _failsIsRegexp$2;
-
+// 21.1.3.6 String.prototype.endsWith(searchString [, endPosition])
 'use strict';
 
 
@@ -2446,12 +1926,12 @@ var require$$0$16 = ( _failsIsRegexp$2 && _failsIsRegexp ) || _failsIsRegexp$2;
 var ENDS_WITH = 'endsWith';
 var $endsWith = ''[ENDS_WITH];
 
-$export$1($export$1.P + $export$1.F * require$$0$16(ENDS_WITH), 'String', {
+_export(_export.P + _export.F * _failsIsRegexp(ENDS_WITH), 'String', {
   endsWith: function endsWith(searchString /* , endPosition = @length */) {
-    var that = context(this, searchString, ENDS_WITH);
+    var that = _stringContext(this, searchString, ENDS_WITH);
     var endPosition = arguments.length > 1 ? arguments[1] : undefined;
-    var len = toLength(that.length);
-    var end = endPosition === undefined ? len : Math.min(toLength(endPosition), len);
+    var len = _toLength(that.length);
+    var end = endPosition === undefined ? len : Math.min(_toLength(endPosition), len);
     var search = String(searchString);
     return $endsWith
       ? $endsWith.call(that, search, end)
@@ -2459,23 +1939,25 @@ $export$1($export$1.P + $export$1.F * require$$0$16(ENDS_WITH), 'String', {
   }
 });
 
+// 21.1.3.7 String.prototype.includes(searchString, position = 0)
 'use strict';
 
 
 var INCLUDES = 'includes';
 
-$export$1($export$1.P + $export$1.F * require$$0$16(INCLUDES), 'String', {
+_export(_export.P + _export.F * _failsIsRegexp(INCLUDES), 'String', {
   includes: function includes(searchString /* , position = 0 */) {
-    return !!~context(this, searchString, INCLUDES)
+    return !!~_stringContext(this, searchString, INCLUDES)
       .indexOf(searchString, arguments.length > 1 ? arguments[1] : undefined);
   }
 });
 
-$export$1($export$1.P, 'String', {
+_export(_export.P, 'String', {
   // 21.1.3.13 String.prototype.repeat(count)
-  repeat: repeat
+  repeat: _stringRepeat
 });
 
+// 21.1.3.18 String.prototype.startsWith(searchString [, position ])
 'use strict';
 
 
@@ -2483,10 +1965,10 @@ $export$1($export$1.P, 'String', {
 var STARTS_WITH = 'startsWith';
 var $startsWith = ''[STARTS_WITH];
 
-$export$1($export$1.P + $export$1.F * require$$0$16(STARTS_WITH), 'String', {
+_export(_export.P + _export.F * _failsIsRegexp(STARTS_WITH), 'String', {
   startsWith: function startsWith(searchString /* , position = 0 */) {
-    var that = context(this, searchString, STARTS_WITH);
-    var index = toLength(Math.min(arguments.length > 1 ? arguments[1] : undefined, that.length));
+    var that = _stringContext(this, searchString, STARTS_WITH);
+    var index = _toLength(Math.min(arguments.length > 1 ? arguments[1] : undefined, that.length));
     var search = String(searchString);
     return $startsWith
       ? $startsWith.call(that, search, index)
@@ -2497,7 +1979,7 @@ $export$1($export$1.P + $export$1.F * require$$0$16(STARTS_WITH), 'String', {
 var quot = /"/g;
 // B.2.3.2.1 CreateHTML(string, tag, attribute, value)
 var createHTML = function (string, tag, attribute, value) {
-  var S = String(defined(string));
+  var S = String(_defined(string));
   var p1 = '<' + tag;
   if (attribute !== '') p1 += ' ' + attribute + '="' + String(value).replace(quot, '&quot;') + '"';
   return p1 + '>' + S + '</' + tag + '>';
@@ -2505,24 +1987,15 @@ var createHTML = function (string, tag, attribute, value) {
 var _stringHtml = function (NAME, exec) {
   var O = {};
   O[NAME] = exec(createHTML);
-  $export$1($export$1.P + $export$1.F * require$$1(function () {
+  _export(_export.P + _export.F * _fails(function () {
     var test = ''[NAME]('"');
     return test !== test.toLowerCase() || test.split('"').length > 3;
   }), 'String', O);
 };
 
-
-
-var _stringHtml$2 = Object.freeze({
-	default: _stringHtml,
-	__moduleExports: _stringHtml
-});
-
-var require$$0$17 = ( _stringHtml$2 && _stringHtml ) || _stringHtml$2;
-
 'use strict';
 // B.2.3.2 String.prototype.anchor(name)
-require$$0$17('anchor', function (createHTML) {
+_stringHtml('anchor', function (createHTML) {
   return function anchor(name) {
     return createHTML(this, 'a', 'name', name);
   };
@@ -2530,7 +2003,7 @@ require$$0$17('anchor', function (createHTML) {
 
 'use strict';
 // B.2.3.3 String.prototype.big()
-require$$0$17('big', function (createHTML) {
+_stringHtml('big', function (createHTML) {
   return function big() {
     return createHTML(this, 'big', '', '');
   };
@@ -2538,7 +2011,7 @@ require$$0$17('big', function (createHTML) {
 
 'use strict';
 // B.2.3.4 String.prototype.blink()
-require$$0$17('blink', function (createHTML) {
+_stringHtml('blink', function (createHTML) {
   return function blink() {
     return createHTML(this, 'blink', '', '');
   };
@@ -2546,7 +2019,7 @@ require$$0$17('blink', function (createHTML) {
 
 'use strict';
 // B.2.3.5 String.prototype.bold()
-require$$0$17('bold', function (createHTML) {
+_stringHtml('bold', function (createHTML) {
   return function bold() {
     return createHTML(this, 'b', '', '');
   };
@@ -2554,7 +2027,7 @@ require$$0$17('bold', function (createHTML) {
 
 'use strict';
 // B.2.3.6 String.prototype.fixed()
-require$$0$17('fixed', function (createHTML) {
+_stringHtml('fixed', function (createHTML) {
   return function fixed() {
     return createHTML(this, 'tt', '', '');
   };
@@ -2562,7 +2035,7 @@ require$$0$17('fixed', function (createHTML) {
 
 'use strict';
 // B.2.3.7 String.prototype.fontcolor(color)
-require$$0$17('fontcolor', function (createHTML) {
+_stringHtml('fontcolor', function (createHTML) {
   return function fontcolor(color) {
     return createHTML(this, 'font', 'color', color);
   };
@@ -2570,7 +2043,7 @@ require$$0$17('fontcolor', function (createHTML) {
 
 'use strict';
 // B.2.3.8 String.prototype.fontsize(size)
-require$$0$17('fontsize', function (createHTML) {
+_stringHtml('fontsize', function (createHTML) {
   return function fontsize(size) {
     return createHTML(this, 'font', 'size', size);
   };
@@ -2578,7 +2051,7 @@ require$$0$17('fontsize', function (createHTML) {
 
 'use strict';
 // B.2.3.9 String.prototype.italics()
-require$$0$17('italics', function (createHTML) {
+_stringHtml('italics', function (createHTML) {
   return function italics() {
     return createHTML(this, 'i', '', '');
   };
@@ -2586,7 +2059,7 @@ require$$0$17('italics', function (createHTML) {
 
 'use strict';
 // B.2.3.10 String.prototype.link(url)
-require$$0$17('link', function (createHTML) {
+_stringHtml('link', function (createHTML) {
   return function link(url) {
     return createHTML(this, 'a', 'href', url);
   };
@@ -2594,7 +2067,7 @@ require$$0$17('link', function (createHTML) {
 
 'use strict';
 // B.2.3.11 String.prototype.small()
-require$$0$17('small', function (createHTML) {
+_stringHtml('small', function (createHTML) {
   return function small() {
     return createHTML(this, 'small', '', '');
   };
@@ -2602,7 +2075,7 @@ require$$0$17('small', function (createHTML) {
 
 'use strict';
 // B.2.3.12 String.prototype.strike()
-require$$0$17('strike', function (createHTML) {
+_stringHtml('strike', function (createHTML) {
   return function strike() {
     return createHTML(this, 'strike', '', '');
   };
@@ -2610,7 +2083,7 @@ require$$0$17('strike', function (createHTML) {
 
 'use strict';
 // B.2.3.13 String.prototype.sub()
-require$$0$17('sub', function (createHTML) {
+_stringHtml('sub', function (createHTML) {
   return function sub() {
     return createHTML(this, 'sub', '', '');
   };
@@ -2618,27 +2091,30 @@ require$$0$17('sub', function (createHTML) {
 
 'use strict';
 // B.2.3.14 String.prototype.sup()
-require$$0$17('sup', function (createHTML) {
+_stringHtml('sup', function (createHTML) {
   return function sup() {
     return createHTML(this, 'sup', '', '');
   };
 });
 
-$export$1($export$1.S, 'Date', { now: function () { return new Date().getTime(); } });
+// 20.3.3.1 / 15.9.4.4 Date.now()
+
+
+_export(_export.S, 'Date', { now: function () { return new Date().getTime(); } });
 
 'use strict';
 
 
 
 
-$export$1($export$1.P + $export$1.F * require$$1(function () {
+_export(_export.P + _export.F * _fails(function () {
   return new Date(NaN).toJSON() !== null
     || Date.prototype.toJSON.call({ toISOString: function () { return 1; } }) !== 1;
 }), 'Date', {
   // eslint-disable-next-line no-unused-vars
   toJSON: function toJSON(key) {
-    var O = toObject(this);
-    var pv = toPrimitive(O);
+    var O = _toObject(this);
+    var pv = _toPrimitive(O);
     return typeof pv == 'number' && !isFinite(pv) ? null : O.toISOString();
   }
 });
@@ -2654,9 +2130,9 @@ var lz = function (num) {
 };
 
 // PhantomJS / old WebKit has a broken implementations
-var _dateToIsoString = (require$$1(function () {
+var _dateToIsoString = (_fails(function () {
   return $toISOString.call(new Date(-5e13 - 1)) != '0385-07-25T07:06:39.999Z';
-}) || !require$$1(function () {
+}) || !_fails(function () {
   $toISOString.call(new Date(NaN));
 })) ? function toISOString() {
   if (!isFinite(getTime.call(this))) throw RangeError('Invalid time value');
@@ -2670,17 +2146,13 @@ var _dateToIsoString = (require$$1(function () {
     ':' + lz(d.getUTCSeconds()) + '.' + (m > 99 ? m : '0' + lz(m)) + 'Z';
 } : $toISOString;
 
+// 20.3.4.36 / 15.9.5.43 Date.prototype.toISOString()
 
 
-var _dateToIsoString$2 = Object.freeze({
-	default: _dateToIsoString,
-	__moduleExports: _dateToIsoString
-});
 
-var toISOString = ( _dateToIsoString$2 && _dateToIsoString ) || _dateToIsoString$2;
-
-$export$1($export$1.P + $export$1.F * (Date.prototype.toISOString !== toISOString), 'Date', {
-  toISOString: toISOString
+// PhantomJS / old WebKit has a broken implementations
+_export(_export.P + _export.F * (Date.prototype.toISOString !== _dateToIsoString), 'Date', {
+  toISOString: _dateToIsoString
 });
 
 var DateProto = Date.prototype;
@@ -2689,7 +2161,7 @@ var TO_STRING = 'toString';
 var $toString = DateProto[TO_STRING];
 var getTime$1 = DateProto.getTime;
 if (new Date(NaN) + '' != INVALID_DATE) {
-  redefine(DateProto, TO_STRING, function toString() {
+  _redefine(DateProto, TO_STRING, function toString() {
     var value = getTime$1.call(this);
     // eslint-disable-next-line no-self-compare
     return value === value ? $toString.call(this) : INVALID_DATE;
@@ -2703,89 +2175,59 @@ var NUMBER$1 = 'number';
 
 var _dateToPrimitive = function (hint) {
   if (hint !== 'string' && hint !== NUMBER$1 && hint !== 'default') throw TypeError('Incorrect hint');
-  return toPrimitive(anObject(this), hint != NUMBER$1);
+  return _toPrimitive(_anObject(this), hint != NUMBER$1);
 };
 
-
-
-var _dateToPrimitive$2 = Object.freeze({
-	default: _dateToPrimitive,
-	__moduleExports: _dateToPrimitive
-});
-
-var require$$2$2 = ( _dateToPrimitive$2 && _dateToPrimitive ) || _dateToPrimitive$2;
-
-var TO_PRIMITIVE$1 = wks('toPrimitive');
+var TO_PRIMITIVE$1 = _wks('toPrimitive');
 var proto$1 = Date.prototype;
 
-if (!(TO_PRIMITIVE$1 in proto$1)) hide(proto$1, TO_PRIMITIVE$1, require$$2$2);
+if (!(TO_PRIMITIVE$1 in proto$1)) _hide(proto$1, TO_PRIMITIVE$1, _dateToPrimitive);
 
-$export$1($export$1.S, 'Array', { isArray: isArray });
+// 22.1.2.2 / 15.4.3.2 Array.isArray(arg)
+
+
+_export(_export.S, 'Array', { isArray: _isArray });
+
+// call something on iterator step with safe closing on error
 
 var _iterCall = function (iterator, fn, value, entries) {
   try {
-    return entries ? fn(anObject(value)[0], value[1]) : fn(value);
+    return entries ? fn(_anObject(value)[0], value[1]) : fn(value);
   // 7.4.6 IteratorClose(iterator, completion)
   } catch (e) {
     var ret = iterator['return'];
-    if (ret !== undefined) anObject(ret.call(iterator));
+    if (ret !== undefined) _anObject(ret.call(iterator));
     throw e;
   }
 };
 
+// check on default Array iterator
 
-
-var _iterCall$2 = Object.freeze({
-	default: _iterCall,
-	__moduleExports: _iterCall
-});
-
-var ITERATOR$1 = wks('iterator');
+var ITERATOR$1 = _wks('iterator');
 var ArrayProto = Array.prototype;
 
 var _isArrayIter = function (it) {
-  return it !== undefined && (Iterators.Array === it || ArrayProto[ITERATOR$1] === it);
+  return it !== undefined && (_iterators.Array === it || ArrayProto[ITERATOR$1] === it);
 };
-
-
-
-var _isArrayIter$2 = Object.freeze({
-	default: _isArrayIter,
-	__moduleExports: _isArrayIter
-});
 
 'use strict';
 
 
 
 var _createProperty = function (object, index, value) {
-  if (index in object) $defineProperty$1.f(object, index, createDesc(0, value));
+  if (index in object) _objectDp.f(object, index, _propertyDesc(0, value));
   else object[index] = value;
 };
 
+var ITERATOR$2 = _wks('iterator');
 
-
-var _createProperty$2 = Object.freeze({
-	default: _createProperty,
-	__moduleExports: _createProperty
-});
-
-var ITERATOR$2 = wks('iterator');
-
-var core_getIteratorMethod = require$$1$2.getIteratorMethod = function (it) {
+var core_getIteratorMethod = _core.getIteratorMethod = function (it) {
   if (it != undefined) return it[ITERATOR$2]
     || it['@@iterator']
-    || Iterators[classof(it)];
+    || _iterators[_classof(it)];
 };
 
-
-
-var core_getIteratorMethod$2 = Object.freeze({
-	default: core_getIteratorMethod,
-	__moduleExports: core_getIteratorMethod
-});
-
-var ITERATOR$3 = wks('iterator');
+var ITERATOR$3 = _wks('iterator');
 var SAFE_CLOSING = false;
 
 try {
@@ -2808,23 +2250,6 @@ var _iterDetect = function (exec, skipClosing) {
   return safe;
 };
 
-
-
-var _iterDetect$2 = Object.freeze({
-	default: _iterDetect,
-	__moduleExports: _iterDetect
-});
-
-var call = ( _iterCall$2 && _iterCall ) || _iterCall$2;
-
-var require$$21 = ( _isArrayIter$2 && _isArrayIter ) || _isArrayIter$2;
-
-var createProperty = ( _createProperty$2 && _createProperty ) || _createProperty$2;
-
-var require$$25 = ( core_getIteratorMethod$2 && core_getIteratorMethod ) || core_getIteratorMethod$2;
-
-var require$$33 = ( _iterDetect$2 && _iterDetect ) || _iterDetect$2;
-
 'use strict';
 
 
@@ -2835,27 +2260,27 @@ var require$$33 = ( _iterDetect$2 && _iterDetect ) || _iterDetect$2;
 
 
 
-$export$1($export$1.S + $export$1.F * !require$$33(function (iter) {  }), 'Array', {
+_export(_export.S + _export.F * !_iterDetect(function (iter) {  }), 'Array', {
   // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
   from: function from(arrayLike /* , mapfn = undefined, thisArg = undefined */) {
-    var O = toObject(arrayLike);
+    var O = _toObject(arrayLike);
     var C = typeof this == 'function' ? this : Array;
     var aLen = arguments.length;
     var mapfn = aLen > 1 ? arguments[1] : undefined;
     var mapping = mapfn !== undefined;
     var index = 0;
-    var iterFn = require$$25(O);
+    var iterFn = core_getIteratorMethod(O);
     var length, result, step, iterator;
-    if (mapping) mapfn = ctx(mapfn, aLen > 2 ? arguments[2] : undefined, 2);
+    if (mapping) mapfn = _ctx(mapfn, aLen > 2 ? arguments[2] : undefined, 2);
     // if object isn't iterable or it's array with default iterator - use simple case
-    if (iterFn != undefined && !(C == Array && require$$21(iterFn))) {
+    if (iterFn != undefined && !(C == Array && _isArrayIter(iterFn))) {
       for (iterator = iterFn.call(O), result = new C(); !(step = iterator.next()).done; index++) {
-        createProperty(result, index, mapping ? call(iterator, mapfn, [step.value, index], true) : step.value);
+        _createProperty(result, index, mapping ? _iterCall(iterator, mapfn, [step.value, index], true) : step.value);
       }
     } else {
-      length = toLength(O.length);
+      length = _toLength(O.length);
       for (result = new C(length); length > index; index++) {
-        createProperty(result, index, mapping ? mapfn(O[index], index) : O[index]);
+        _createProperty(result, index, mapping ? mapfn(O[index], index) : O[index]);
       }
     }
     result.length = index;
@@ -2868,7 +2293,7 @@ $export$1($export$1.S + $export$1.F * !require$$33(function (iter) {  }), 'Array
 
 
 // WebKit Array.of isn't generic
-$export$1($export$1.S + $export$1.F * require$$1(function () {
+_export(_export.S + _export.F * _fails(function () {
   function F() { /* empty */ }
   return !(Array.of.call(F) instanceof F);
 }), 'Array', {
@@ -2877,7 +2302,7 @@ $export$1($export$1.S + $export$1.F * require$$1(function () {
     var index = 0;
     var aLen = arguments.length;
     var result = new (typeof this == 'function' ? this : Array)(aLen);
-    while (aLen > index) createProperty(result, index, arguments[index++]);
+    while (aLen > index) _createProperty(result, index, arguments[index++]);
     result.length = aLen;
     return result;
   }
@@ -2887,20 +2312,11 @@ $export$1($export$1.S + $export$1.F * require$$1(function () {
 
 
 var _strictMethod = function (method, arg) {
-  return !!method && require$$1(function () {
+  return !!method && _fails(function () {
     // eslint-disable-next-line no-useless-call
     arg ? method.call(null, function () { /* empty */ }, 1) : method.call(null);
   });
 };
-
-
-
-var _strictMethod$2 = Object.freeze({
-	default: _strictMethod,
-	__moduleExports: _strictMethod
-});
-
-var require$$0$18 = ( _strictMethod$2 && _strictMethod ) || _strictMethod$2;
 
 'use strict';
 // 22.1.3.13 Array.prototype.join(separator)
@@ -2909,9 +2325,9 @@ var require$$0$18 = ( _strictMethod$2 && _strictMethod ) || _strictMethod$2;
 var arrayJoin = [].join;
 
 // fallback for not array-like strings
-$export$1($export$1.P + $export$1.F * (IObject != Object || !require$$0$18(arrayJoin)), 'Array', {
+_export(_export.P + _export.F * (_iobject != Object || !_strictMethod(arrayJoin)), 'Array', {
   join: function join(separator) {
-    return arrayJoin.call(toIObject(this), separator === undefined ? ',' : separator);
+    return arrayJoin.call(_toIobject(this), separator === undefined ? ',' : separator);
   }
 });
 
@@ -2924,17 +2340,17 @@ $export$1($export$1.P + $export$1.F * (IObject != Object || !require$$0$18(array
 var arraySlice$1 = [].slice;
 
 // fallback for not array-like ES3 strings and DOM objects
-$export$1($export$1.P + $export$1.F * require$$1(function () {
-  if (html) arraySlice$1.call(html);
+_export(_export.P + _export.F * _fails(function () {
+  if (_html) arraySlice$1.call(_html);
 }), 'Array', {
   slice: function slice(begin, end) {
-    var len = toLength(this.length);
-    var klass = require$$2(this);
+    var len = _toLength(this.length);
+    var klass = _cof(this);
     end = end === undefined ? len : end;
     if (klass == 'Array') return arraySlice$1.call(this, begin, end);
-    var start = require$$15(begin, len);
-    var upTo = require$$15(end, len);
-    var size = toLength(upTo - start);
+    var start = _toAbsoluteIndex(begin, len);
+    var upTo = _toAbsoluteIndex(end, len);
+    var size = _toLength(upTo - start);
     var cloned = new Array(size);
     var i = 0;
     for (; i < size; i++) cloned[i] = klass == 'String'
@@ -2952,58 +2368,55 @@ $export$1($export$1.P + $export$1.F * require$$1(function () {
 var $sort = [].sort;
 var test$1 = [1, 2, 3];
 
-$export$1($export$1.P + $export$1.F * (require$$1(function () {
+_export(_export.P + _export.F * (_fails(function () {
   // IE8-
   test$1.sort(undefined);
-}) || !require$$1(function () {
+}) || !_fails(function () {
   // V8 bug
   test$1.sort(null);
   // Old WebKit
-}) || !require$$0$18($sort)), 'Array', {
+}) || !_strictMethod($sort)), 'Array', {
   // 22.1.3.25 Array.prototype.sort(comparefn)
   sort: function sort(comparefn) {
     return comparefn === undefined
-      ? $sort.call(toObject(this))
-      : $sort.call(toObject(this), aFunction(comparefn));
+      ? $sort.call(_toObject(this))
+      : $sort.call(_toObject(this), _aFunction(comparefn));
   }
 });
 
-var SPECIES = wks('species');
+var SPECIES = _wks('species');
 
 var _arraySpeciesConstructor = function (original) {
   var C;
-  if (isArray(original)) {
+  if (_isArray(original)) {
     C = original.constructor;
     // cross-realm fallback
-    if (typeof C == 'function' && (C === Array || isArray(C.prototype))) C = undefined;
-    if (isObject(C)) {
+    if (typeof C == 'function' && (C === Array || _isArray(C.prototype))) C = undefined;
+    if (_isObject(C)) {
       C = C[SPECIES];
       if (C === null) C = undefined;
     }
   } return C === undefined ? Array : C;
 };
 
+// 9.4.2.3 ArraySpeciesCreate(originalArray, length)
 
-
-var _arraySpeciesConstructor$2 = Object.freeze({
-	default: _arraySpeciesConstructor,
-	__moduleExports: _arraySpeciesConstructor
-});
-
-var speciesConstructor = ( _arraySpeciesConstructor$2 && _arraySpeciesConstructor ) || _arraySpeciesConstructor$2;
 
 var _arraySpeciesCreate = function (original, length) {
-  return new (speciesConstructor(original))(length);
+  return new (_arraySpeciesConstructor(original))(length);
 };
 
+// 0 -> Array#forEach
+// 1 -> Array#map
+// 2 -> Array#filter
+// 3 -> Array#some
+// 4 -> Array#every
+// 5 -> Array#find
+// 6 -> Array#findIndex
 
 
-var _arraySpeciesCreate$2 = Object.freeze({
-	default: _arraySpeciesCreate,
-	__moduleExports: _arraySpeciesCreate
-});
 
-var arraySpeciesCreate = ( _arraySpeciesCreate$2 && _arraySpeciesCreate ) || _arraySpeciesCreate$2;
+
 
 var _arrayMethods = function (TYPE, $create) {
   var IS_MAP = TYPE == 1;
@@ -3012,12 +2425,12 @@ var _arrayMethods = function (TYPE, $create) {
   var IS_EVERY = TYPE == 4;
   var IS_FIND_INDEX = TYPE == 6;
   var NO_HOLES = TYPE == 5 || IS_FIND_INDEX;
-  var create = $create || arraySpeciesCreate;
+  var create = $create || _arraySpeciesCreate;
   return function ($this, callbackfn, that) {
-    var O = toObject($this);
-    var self = IObject(O);
-    var f = ctx(callbackfn, that, 3);
-    var length = toLength(self.length);
+    var O = _toObject($this);
+    var self = _iobject(O);
+    var f = _ctx(callbackfn, that, 3);
+    var length = _toLength(self.length);
     var index = 0;
     var result = IS_MAP ? create($this, length) : IS_FILTER ? create($this, 0) : undefined;
     var val, res;
@@ -3038,21 +2451,12 @@ var _arrayMethods = function (TYPE, $create) {
   };
 };
 
-
-
-var _arrayMethods$2 = Object.freeze({
-	default: _arrayMethods,
-	__moduleExports: _arrayMethods
-});
-
-var require$$28 = ( _arrayMethods$2 && _arrayMethods ) || _arrayMethods$2;
-
 'use strict';
 
-var $forEach = require$$28(0);
-var STRICT = require$$0$18([].forEach, true);
+var $forEach = _arrayMethods(0);
+var STRICT = _strictMethod([].forEach, true);
 
-$export$1($export$1.P + $export$1.F * !STRICT, 'Array', {
+_export(_export.P + _export.F * !STRICT, 'Array', {
   // 22.1.3.10 / 15.4.4.18 Array.prototype.forEach(callbackfn [, thisArg])
   forEach: function forEach(callbackfn /* , thisArg */) {
     return $forEach(this, callbackfn, arguments[1]);
@@ -3061,9 +2465,9 @@ $export$1($export$1.P + $export$1.F * !STRICT, 'Array', {
 
 'use strict';
 
-var $map = require$$28(1);
+var $map = _arrayMethods(1);
 
-$export$1($export$1.P + $export$1.F * !require$$0$18([].map, true), 'Array', {
+_export(_export.P + _export.F * !_strictMethod([].map, true), 'Array', {
   // 22.1.3.15 / 15.4.4.19 Array.prototype.map(callbackfn [, thisArg])
   map: function map(callbackfn /* , thisArg */) {
     return $map(this, callbackfn, arguments[1]);
@@ -3072,9 +2476,9 @@ $export$1($export$1.P + $export$1.F * !require$$0$18([].map, true), 'Array', {
 
 'use strict';
 
-var $filter = require$$28(2);
+var $filter = _arrayMethods(2);
 
-$export$1($export$1.P + $export$1.F * !require$$0$18([].filter, true), 'Array', {
+_export(_export.P + _export.F * !_strictMethod([].filter, true), 'Array', {
   // 22.1.3.7 / 15.4.4.20 Array.prototype.filter(callbackfn [, thisArg])
   filter: function filter(callbackfn /* , thisArg */) {
     return $filter(this, callbackfn, arguments[1]);
@@ -3083,9 +2487,9 @@ $export$1($export$1.P + $export$1.F * !require$$0$18([].filter, true), 'Array', 
 
 'use strict';
 
-var $some = require$$28(3);
+var $some = _arrayMethods(3);
 
-$export$1($export$1.P + $export$1.F * !require$$0$18([].some, true), 'Array', {
+_export(_export.P + _export.F * !_strictMethod([].some, true), 'Array', {
   // 22.1.3.23 / 15.4.4.17 Array.prototype.some(callbackfn [, thisArg])
   some: function some(callbackfn /* , thisArg */) {
     return $some(this, callbackfn, arguments[1]);
@@ -3094,9 +2498,9 @@ $export$1($export$1.P + $export$1.F * !require$$0$18([].some, true), 'Array', {
 
 'use strict';
 
-var $every = require$$28(4);
+var $every = _arrayMethods(4);
 
-$export$1($export$1.P + $export$1.F * !require$$0$18([].every, true), 'Array', {
+_export(_export.P + _export.F * !_strictMethod([].every, true), 'Array', {
   // 22.1.3.5 / 15.4.4.16 Array.prototype.every(callbackfn [, thisArg])
   every: function every(callbackfn /* , thisArg */) {
     return $every(this, callbackfn, arguments[1]);
@@ -3104,10 +2508,10 @@ $export$1($export$1.P + $export$1.F * !require$$0$18([].every, true), 'Array', {
 });
 
 var _arrayReduce = function (that, callbackfn, aLen, memo, isRight) {
-  aFunction(callbackfn);
-  var O = toObject(that);
-  var self = IObject(O);
-  var length = toLength(O.length);
+  _aFunction(callbackfn);
+  var O = _toObject(that);
+  var self = _iobject(O);
+  var length = _toLength(O.length);
   var index = isRight ? length - 1 : 0;
   var i = isRight ? -1 : 1;
   if (aLen < 2) for (;;) {
@@ -3127,23 +2531,14 @@ var _arrayReduce = function (that, callbackfn, aLen, memo, isRight) {
   return memo;
 };
 
-
-
-var _arrayReduce$2 = Object.freeze({
-	default: _arrayReduce,
-	__moduleExports: _arrayReduce
-});
-
-var $reduce = ( _arrayReduce$2 && _arrayReduce ) || _arrayReduce$2;
-
 'use strict';
 
 
 
-$export$1($export$1.P + $export$1.F * !require$$0$18([].reduce, true), 'Array', {
+_export(_export.P + _export.F * !_strictMethod([].reduce, true), 'Array', {
   // 22.1.3.18 / 15.4.4.21 Array.prototype.reduce(callbackfn [, initialValue])
   reduce: function reduce(callbackfn /* , initialValue */) {
-    return $reduce(this, callbackfn, arguments.length, arguments[1], false);
+    return _arrayReduce(this, callbackfn, arguments.length, arguments[1], false);
   }
 });
 
@@ -3151,20 +2546,20 @@ $export$1($export$1.P + $export$1.F * !require$$0$18([].reduce, true), 'Array', 
 
 
 
-$export$1($export$1.P + $export$1.F * !require$$0$18([].reduceRight, true), 'Array', {
+_export(_export.P + _export.F * !_strictMethod([].reduceRight, true), 'Array', {
   // 22.1.3.19 / 15.4.4.22 Array.prototype.reduceRight(callbackfn [, initialValue])
   reduceRight: function reduceRight(callbackfn /* , initialValue */) {
-    return $reduce(this, callbackfn, arguments.length, arguments[1], true);
+    return _arrayReduce(this, callbackfn, arguments.length, arguments[1], true);
   }
 });
 
 'use strict';
 
-var $indexOf = require$$0$2(false);
+var $indexOf = _arrayIncludes(false);
 var $native = [].indexOf;
 var NEGATIVE_ZERO = !!$native && 1 / [1].indexOf(1, -0) < 0;
 
-$export$1($export$1.P + $export$1.F * (NEGATIVE_ZERO || !require$$0$18($native)), 'Array', {
+_export(_export.P + _export.F * (NEGATIVE_ZERO || !_strictMethod($native)), 'Array', {
   // 22.1.3.11 / 15.4.4.14 Array.prototype.indexOf(searchElement [, fromIndex])
   indexOf: function indexOf(searchElement /* , fromIndex = 0 */) {
     return NEGATIVE_ZERO
@@ -3182,33 +2577,34 @@ $export$1($export$1.P + $export$1.F * (NEGATIVE_ZERO || !require$$0$18($native))
 var $native$1 = [].lastIndexOf;
 var NEGATIVE_ZERO$1 = !!$native$1 && 1 / [1].lastIndexOf(1, -0) < 0;
 
-$export$1($export$1.P + $export$1.F * (NEGATIVE_ZERO$1 || !require$$0$18($native$1)), 'Array', {
+_export(_export.P + _export.F * (NEGATIVE_ZERO$1 || !_strictMethod($native$1)), 'Array', {
   // 22.1.3.14 / 15.4.4.15 Array.prototype.lastIndexOf(searchElement [, fromIndex])
   lastIndexOf: function lastIndexOf(searchElement /* , fromIndex = @[*-1] */) {
     // convert -0 to +0
     if (NEGATIVE_ZERO$1) return $native$1.apply(this, arguments) || 0;
-    var O = toIObject(this);
-    var length = toLength(O.length);
+    var O = _toIobject(this);
+    var length = _toLength(O.length);
     var index = length - 1;
-    if (arguments.length > 1) index = Math.min(index, toInteger(arguments[1]));
+    if (arguments.length > 1) index = Math.min(index, _toInteger(arguments[1]));
     if (index < 0) index = length + index;
     for (;index >= 0; index--) if (index in O) if (O[index] === searchElement) return index || 0;
     return -1;
   }
 });
 
+// 22.1.3.3 Array.prototype.copyWithin(target, start, end = this.length)
 'use strict';
 
 
 
 
 var _arrayCopyWithin = [].copyWithin || function copyWithin(target /* = 0 */, start /* = 0, end = @length */) {
-  var O = toObject(this);
-  var len = toLength(O.length);
-  var to = require$$15(target, len);
-  var from = require$$15(start, len);
+  var O = _toObject(this);
+  var len = _toLength(O.length);
+  var to = _toAbsoluteIndex(target, len);
+  var from = _toAbsoluteIndex(start, len);
   var end = arguments.length > 2 ? arguments[2] : undefined;
-  var count = Math.min((end === undefined ? len : require$$15(end, len)) - from, len - to);
+  var count = Math.min((end === undefined ? len : _toAbsoluteIndex(end, len)) - from, len - to);
   var inc = 1;
   if (from < to && to < from + count) {
     inc = -1;
@@ -3223,130 +2619,93 @@ var _arrayCopyWithin = [].copyWithin || function copyWithin(target /* = 0 */, st
   } return O;
 };
 
-
-
-var _arrayCopyWithin$2 = Object.freeze({
-	default: _arrayCopyWithin,
-	__moduleExports: _arrayCopyWithin
-});
-
-var UNSCOPABLES = wks('unscopables');
+// 22.1.3.31 Array.prototype[@@unscopables]
+var UNSCOPABLES = _wks('unscopables');
 var ArrayProto$1 = Array.prototype;
-if (ArrayProto$1[UNSCOPABLES] == undefined) hide(ArrayProto$1, UNSCOPABLES, {});
+if (ArrayProto$1[UNSCOPABLES] == undefined) _hide(ArrayProto$1, UNSCOPABLES, {});
 var _addToUnscopables = function (key) {
   ArrayProto$1[UNSCOPABLES][key] = true;
 };
 
+// 22.1.3.3 Array.prototype.copyWithin(target, start, end = this.length)
 
 
-var _addToUnscopables$2 = Object.freeze({
-	default: _addToUnscopables,
-	__moduleExports: _addToUnscopables
-});
+_export(_export.P, 'Array', { copyWithin: _arrayCopyWithin });
 
-var require$$36 = ( _arrayCopyWithin$2 && _arrayCopyWithin ) || _arrayCopyWithin$2;
+_addToUnscopables('copyWithin');
 
-var require$$0$19 = ( _addToUnscopables$2 && _addToUnscopables ) || _addToUnscopables$2;
-
-$export$1($export$1.P, 'Array', { copyWithin: require$$36 });
-
-require$$0$19('copyWithin');
-
+// 22.1.3.6 Array.prototype.fill(value, start = 0, end = this.length)
 'use strict';
 
 
 
 var _arrayFill = function fill(value /* , start = 0, end = @length */) {
-  var O = toObject(this);
-  var length = toLength(O.length);
+  var O = _toObject(this);
+  var length = _toLength(O.length);
   var aLen = arguments.length;
-  var index = require$$15(aLen > 1 ? arguments[1] : undefined, length);
+  var index = _toAbsoluteIndex(aLen > 1 ? arguments[1] : undefined, length);
   var end = aLen > 2 ? arguments[2] : undefined;
-  var endPos = end === undefined ? length : require$$15(end, length);
+  var endPos = end === undefined ? length : _toAbsoluteIndex(end, length);
   while (endPos > index) O[index++] = value;
   return O;
 };
 
+// 22.1.3.6 Array.prototype.fill(value, start = 0, end = this.length)
 
 
-var _arrayFill$2 = Object.freeze({
-	default: _arrayFill,
-	__moduleExports: _arrayFill
-});
+_export(_export.P, 'Array', { fill: _arrayFill });
 
-var require$$35 = ( _arrayFill$2 && _arrayFill ) || _arrayFill$2;
-
-$export$1($export$1.P, 'Array', { fill: require$$35 });
-
-require$$0$19('fill');
+_addToUnscopables('fill');
 
 'use strict';
 // 22.1.3.8 Array.prototype.find(predicate, thisArg = undefined)
 
-var $find = require$$28(5);
+var $find = _arrayMethods(5);
 var KEY = 'find';
 var forced = true;
 // Shouldn't skip holes
 if (KEY in []) Array(1)[KEY](function () { forced = false; });
-$export$1($export$1.P + $export$1.F * forced, 'Array', {
+_export(_export.P + _export.F * forced, 'Array', {
   find: function find(callbackfn /* , that = undefined */) {
     return $find(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
   }
 });
-require$$0$19(KEY);
+_addToUnscopables(KEY);
 
 'use strict';
 // 22.1.3.9 Array.prototype.findIndex(predicate, thisArg = undefined)
 
-var $find$1 = require$$28(6);
+var $find$1 = _arrayMethods(6);
 var KEY$1 = 'findIndex';
 var forced$1 = true;
 // Shouldn't skip holes
 if (KEY$1 in []) Array(1)[KEY$1](function () { forced$1 = false; });
-$export$1($export$1.P + $export$1.F * forced$1, 'Array', {
+_export(_export.P + _export.F * forced$1, 'Array', {
   findIndex: function findIndex(callbackfn /* , that = undefined */) {
     return $find$1(this, callbackfn, arguments.length > 1 ? arguments[1] : undefined);
   }
 });
-require$$0$19(KEY$1);
+_addToUnscopables(KEY$1);
 
 'use strict';
 
 
 
-var SPECIES$1 = wks('species');
+var SPECIES$1 = _wks('species');
 
 var _setSpecies = function (KEY) {
-  var C = global$1[KEY];
-  if (require$$1$1 && C && !C[SPECIES$1]) $defineProperty$1.f(C, SPECIES$1, {
+  var C = _global[KEY];
+  if (_descriptors && C && !C[SPECIES$1]) _objectDp.f(C, SPECIES$1, {
     configurable: true,
     get: function () { return this; }
   });
 };
 
-
-
-var _setSpecies$2 = Object.freeze({
-	default: _setSpecies,
-	__moduleExports: _setSpecies
-});
-
-var require$$2$3 = ( _setSpecies$2 && _setSpecies ) || _setSpecies$2;
-
-require$$2$3('Array');
+_setSpecies('Array');
 
 var _iterStep = function (done, value) {
   return { value: value, done: !!done };
 };
-
-
-
-var _iterStep$2 = Object.freeze({
-	default: _iterStep,
-	__moduleExports: _iterStep
-});
-
-var step = ( _iterStep$2 && _iterStep ) || _iterStep$2;
 
 'use strict';
 
@@ -3358,8 +2717,8 @@ var step = ( _iterStep$2 && _iterStep ) || _iterStep$2;
 // 22.1.3.13 Array.prototype.keys()
 // 22.1.3.29 Array.prototype.values()
 // 22.1.3.30 Array.prototype[@@iterator]()
-var es6_array_iterator = $iterDefine(Array, 'Array', function (iterated, kind) {
-  this._t = toIObject(iterated); // target
+var es6_array_iterator = _iterDefine(Array, 'Array', function (iterated, kind) {
+  this._t = _toIobject(iterated); // target
   this._i = 0;                   // next index
   this._k = kind;                // kind
 // 22.1.5.2.1 %ArrayIteratorPrototype%.next()
@@ -3369,32 +2728,25 @@ var es6_array_iterator = $iterDefine(Array, 'Array', function (iterated, kind) {
   var index = this._i++;
   if (!O || index >= O.length) {
     this._t = undefined;
-    return step(1);
+    return _iterStep(1);
   }
-  if (kind == 'keys') return step(0, index);
-  if (kind == 'values') return step(0, O[index]);
-  return step(0, [index, O[index]]);
+  if (kind == 'keys') return _iterStep(0, index);
+  if (kind == 'values') return _iterStep(0, O[index]);
+  return _iterStep(0, [index, O[index]]);
 }, 'values');
 
 // argumentsList[@@iterator] is %ArrayProto_values% (9.4.4.6, 9.4.4.7)
-Iterators.Arguments = Iterators.Array;
+_iterators.Arguments = _iterators.Array;
 
-require$$0$19('keys');
-require$$0$19('values');
-require$$0$19('entries');
-
-
-
-var es6_array_iterator$2 = Object.freeze({
-	default: es6_array_iterator,
-	__moduleExports: es6_array_iterator
-});
+_addToUnscopables('keys');
+_addToUnscopables('values');
+_addToUnscopables('entries');
 
 'use strict';
 // 21.2.5.3 get RegExp.prototype.flags
 
 var _flags = function () {
-  var that = anObject(this);
+  var that = _anObject(this);
   var result = '';
   if (that.global) result += 'g';
   if (that.ignoreCase) result += 'i';
@@ -3404,20 +2756,11 @@ var _flags = function () {
   return result;
 };
 
+var dP$4 = _objectDp.f;
+var gOPN$4 = _objectGopn.f;
 
 
-var _flags$2 = Object.freeze({
-	default: _flags,
-	__moduleExports: _flags
-});
-
-var getFlags = ( _flags$2 && _flags ) || _flags$2;
-
-var dP$4 = $defineProperty$1.f;
-var gOPN$4 = gOPN$2.f;
-
-
-var $RegExp = global$1.RegExp;
+var $RegExp = _global.RegExp;
 var Base$1 = $RegExp;
 var proto$2 = $RegExp.prototype;
 var re1 = /a/g;
@@ -3425,19 +2768,19 @@ var re2 = /a/g;
 // "new" creates a new object, old webkit buggy here
 var CORRECT_NEW = new $RegExp(re1) !== re1;
 
-if (require$$1$1 && (!CORRECT_NEW || require$$1(function () {
-  re2[wks('match')] = false;
+if (_descriptors && (!CORRECT_NEW || _fails(function () {
+  re2[_wks('match')] = false;
   // RegExp constructor can alter flags and IsRegExp works correct with @@match
   return $RegExp(re1) != re1 || $RegExp(re2) == re2 || $RegExp(re1, 'i') != '/a/i';
 }))) {
   $RegExp = function RegExp(p, f) {
     var tiRE = this instanceof $RegExp;
-    var piRE = isRegExp(p);
+    var piRE = _isRegexp(p);
     var fiU = f === undefined;
     return !tiRE && piRE && p.constructor === $RegExp && fiU ? p
-      : inheritIfRequired(CORRECT_NEW
+      : _inheritIfRequired(CORRECT_NEW
         ? new Base$1(piRE && !fiU ? p.source : p, f)
-        : Base$1((piRE = p instanceof $RegExp) ? p.source : p, piRE && fiU ? getFlags.call(p) : f)
+        : Base$1((piRE = p instanceof $RegExp) ? p.source : p, piRE && fiU ? _flags.call(p) : f)
       , tiRE ? this : proto$2, $RegExp);
   };
   var proxy = function (key) {
@@ -3450,14 +2793,15 @@ if (require$$1$1 && (!CORRECT_NEW || require$$1(function () {
   for (var keys$1 = gOPN$4(Base$1), i = 0; keys$1.length > i;) proxy(keys$1[i++]);
   proto$2.constructor = $RegExp;
   $RegExp.prototype = proto$2;
-  redefine(global$1, 'RegExp', $RegExp);
+  _redefine(_global, 'RegExp', $RegExp);
 }
 
-require$$2$3('RegExp');
+_setSpecies('RegExp');
 
-if (require$$1$1 && /./g.flags != 'g') $defineProperty$1.f(RegExp.prototype, 'flags', {
+// 21.2.5.3 get RegExp.prototype.flags()
+if (_descriptors && /./g.flags != 'g') _objectDp.f(RegExp.prototype, 'flags', {
   configurable: true,
-  get: getFlags
+  get: _flags
 });
 
 'use strict';
@@ -3469,15 +2813,15 @@ var TO_STRING$1 = 'toString';
 var $toString$1 = /./[TO_STRING$1];
 
 var define$1 = function (fn) {
-  redefine(RegExp.prototype, TO_STRING$1, fn, true);
+  _redefine(RegExp.prototype, TO_STRING$1, fn, true);
 };
 
 // 21.2.5.14 RegExp.prototype.toString()
-if (require$$1(function () { return $toString$1.call({ source: 'a', flags: 'b' }) != '/a/b'; })) {
+if (_fails(function () { return $toString$1.call({ source: 'a', flags: 'b' }) != '/a/b'; })) {
   define$1(function toString() {
-    var R = anObject(this);
+    var R = _anObject(this);
     return '/'.concat(R.source, '/',
-      'flags' in R ? R.flags : !require$$1$1 && R instanceof RegExp ? getFlags.call(R) : undefined);
+      'flags' in R ? R.flags : !_descriptors && R instanceof RegExp ? _flags.call(R) : undefined);
   });
 // FF44- RegExp#toString has a wrong name
 } else if ($toString$1.name != TO_STRING$1) {
@@ -3494,17 +2838,17 @@ if (require$$1(function () { return $toString$1.call({ source: 'a', flags: 'b' }
 
 
 var _fixReWks = function (KEY, length, exec) {
-  var SYMBOL = wks(KEY);
-  var fns = exec(defined, SYMBOL, ''[KEY]);
+  var SYMBOL = _wks(KEY);
+  var fns = exec(_defined, SYMBOL, ''[KEY]);
   var strfn = fns[0];
   var rxfn = fns[1];
-  if (require$$1(function () {
+  if (_fails(function () {
     var O = {};
     O[SYMBOL] = function () { return 7; };
     return ''[KEY](O) != 7;
   })) {
-    redefine(String.prototype, KEY, strfn);
-    hide(RegExp.prototype, SYMBOL, length == 2
+    _redefine(String.prototype, KEY, strfn);
+    _hide(RegExp.prototype, SYMBOL, length == 2
       // 21.2.5.8 RegExp.prototype[@@replace](string, replaceValue)
       // 21.2.5.11 RegExp.prototype[@@split](string, limit)
       ? function (string, arg) { return rxfn.call(string, this, arg); }
@@ -3515,16 +2859,8 @@ var _fixReWks = function (KEY, length, exec) {
   }
 };
 
-
-
-var _fixReWks$2 = Object.freeze({
-	default: _fixReWks,
-	__moduleExports: _fixReWks
-});
-
-var require$$0$20 = ( _fixReWks$2 && _fixReWks ) || _fixReWks$2;
-
-require$$0$20('match', 1, function (defined, MATCH, $match) {
+// @@match logic
+_fixReWks('match', 1, function (defined, MATCH, $match) {
   // 21.1.3.11 String.prototype.match(regexp)
   return [function match(regexp) {
     'use strict';
@@ -3534,7 +2870,8 @@ require$$0$20('match', 1, function (defined, MATCH, $match) {
   }, $match];
 });
 
-require$$0$20('replace', 2, function (defined, REPLACE, $replace) {
+// @@replace logic
+_fixReWks('replace', 2, function (defined, REPLACE, $replace) {
   // 21.1.3.14 String.prototype.replace(searchValue, replaceValue)
   return [function replace(searchValue, replaceValue) {
     'use strict';
@@ -3546,7 +2883,8 @@ require$$0$20('replace', 2, function (defined, REPLACE, $replace) {
   }, $replace];
 });
 
-require$$0$20('search', 1, function (defined, SEARCH, $search) {
+// @@search logic
+_fixReWks('search', 1, function (defined, SEARCH, $search) {
   // 21.1.3.15 String.prototype.search(regexp)
   return [function search(regexp) {
     'use strict';
@@ -3556,9 +2894,10 @@ require$$0$20('search', 1, function (defined, SEARCH, $search) {
   }, $search];
 });
 
-require$$0$20('split', 2, function (defined, SPLIT, $split) {
+// @@split logic
+_fixReWks('split', 2, function (defined, SPLIT, $split) {
   'use strict';
-  var isRegExp$$1 = isRegExp;
+  var isRegExp = _isRegexp;
   var _split = $split;
   var $push = [].push;
   var $SPLIT = 'split';
@@ -3578,7 +2917,7 @@ require$$0$20('split', 2, function (defined, SPLIT, $split) {
       var string = String(this);
       if (separator === undefined && limit === 0) return [];
       // If `separator` is not a regex, use native split
-      if (!isRegExp$$1(separator)) return _split.call(string, separator, limit);
+      if (!isRegExp(separator)) return _split.call(string, separator, limit);
       var output = [];
       var flags = (separator.ignoreCase ? 'i' : '') +
                   (separator.multiline ? 'm' : '') +
@@ -3633,28 +2972,21 @@ var _anInstance = function (it, Constructor, name, forbiddenField) {
   } return it;
 };
 
-
-
-var _anInstance$2 = Object.freeze({
-	default: _anInstance,
-	__moduleExports: _anInstance
-});
-
 var _forOf = createCommonjsModule(function (module) {
 var BREAK = {};
 var RETURN = {};
 var exports = module.exports = function (iterable, entries, fn, that, ITERATOR) {
-  var iterFn = ITERATOR ? function () { return iterable; } : require$$25(iterable);
-  var f = ctx(fn, that, entries ? 2 : 1);
+  var iterFn = ITERATOR ? function () { return iterable; } : core_getIteratorMethod(iterable);
+  var f = _ctx(fn, that, entries ? 2 : 1);
   var index = 0;
   var length, step, iterator, result;
   if (typeof iterFn != 'function') throw TypeError(iterable + ' is not iterable!');
   // fast case for arrays with default iterator
-  if (require$$21(iterFn)) for (length = toLength(iterable.length); length > index; index++) {
-    result = entries ? f(anObject(step = iterable[index])[0], step[1]) : f(iterable[index]);
+  if (_isArrayIter(iterFn)) for (length = _toLength(iterable.length); length > index; index++) {
+    result = entries ? f(_anObject(step = iterable[index])[0], step[1]) : f(iterable[index]);
     if (result === BREAK || result === RETURN) return result;
   } else for (iterator = iterFn.call(iterable); !(step = iterator.next()).done;) {
-    result = call(iterator, f, step.value, entries);
+    result = _iterCall(iterator, f, step.value, entries);
     if (result === BREAK || result === RETURN) return result;
   }
 };
@@ -3662,32 +2994,21 @@ exports.BREAK = BREAK;
 exports.RETURN = RETURN;
 });
 
+// 7.3.20 SpeciesConstructor(O, defaultConstructor)
 
 
-var _forOf$2 = Object.freeze({
-	default: _forOf,
-	__moduleExports: _forOf
-});
-
-var SPECIES$2 = wks('species');
+var SPECIES$2 = _wks('species');
 var _speciesConstructor = function (O, D) {
-  var C = anObject(O).constructor;
+  var C = _anObject(O).constructor;
   var S;
-  return C === undefined || (S = anObject(C)[SPECIES$2]) == undefined ? D : aFunction(S);
+  return C === undefined || (S = _anObject(C)[SPECIES$2]) == undefined ? D : _aFunction(S);
 };
 
-
-
-var _speciesConstructor$2 = Object.freeze({
-	default: _speciesConstructor,
-	__moduleExports: _speciesConstructor
-});
-
-var process$1 = global$1.process;
-var setTask = global$1.setImmediate;
-var clearTask = global$1.clearImmediate;
-var MessageChannel = global$1.MessageChannel;
-var Dispatch = global$1.Dispatch;
+var process$1 = _global.process;
+var setTask = _global.setImmediate;
+var clearTask = _global.clearImmediate;
+var MessageChannel = _global.MessageChannel;
+var Dispatch = _global.Dispatch;
 var counter = 0;
 var queue = {};
 var ONREADYSTATECHANGE = 'onreadystatechange';
@@ -3714,7 +3035,7 @@ if (!setTask || !clearTask) {
     while (arguments.length > i) args.push(arguments[i++]);
     queue[++counter] = function () {
       // eslint-disable-next-line no-new-func
-      invoke(typeof fn == 'function' ? fn : Function(fn), args);
+      _invoke(typeof fn == 'function' ? fn : Function(fn), args);
     };
     defer(counter);
     return counter;
@@ -3723,40 +3044,40 @@ if (!setTask || !clearTask) {
     delete queue[id];
   };
   // Node.js 0.8-
-  if (require$$2(process$1) == 'process') {
+  if (_cof(process$1) == 'process') {
     defer = function (id) {
-      process$1.nextTick(ctx(run, id, 1));
+      process$1.nextTick(_ctx(run, id, 1));
     };
   // Sphere (JS game engine) Dispatch API
   } else if (Dispatch && Dispatch.now) {
     defer = function (id) {
-      Dispatch.now(ctx(run, id, 1));
+      Dispatch.now(_ctx(run, id, 1));
     };
   // Browsers with MessageChannel, includes WebWorkers
   } else if (MessageChannel) {
     channel = new MessageChannel();
     port = channel.port2;
     channel.port1.onmessage = listener;
-    defer = ctx(port.postMessage, port, 1);
+    defer = _ctx(port.postMessage, port, 1);
   // Browsers with postMessage, skip WebWorkers
   // IE8 has postMessage, but it's sync & typeof its postMessage is 'object'
-  } else if (global$1.addEventListener && typeof postMessage == 'function' && !global$1.importScripts) {
+  } else if (_global.addEventListener && typeof postMessage == 'function' && !_global.importScripts) {
     defer = function (id) {
-      global$1.postMessage(id + '', '*');
+      _global.postMessage(id + '', '*');
     };
-    global$1.addEventListener('message', listener, false);
+    _global.addEventListener('message', listener, false);
   // IE8-
-  } else if (ONREADYSTATECHANGE in cel('script')) {
+  } else if (ONREADYSTATECHANGE in _domCreate('script')) {
     defer = function (id) {
-      html.appendChild(cel('script'))[ONREADYSTATECHANGE] = function () {
-        html.removeChild(this);
+      _html.appendChild(_domCreate('script'))[ONREADYSTATECHANGE] = function () {
+        _html.removeChild(this);
         run.call(id);
       };
     };
   // Rest old browsers
   } else {
     defer = function (id) {
-      setTimeout(ctx(run, id, 1), 0);
+      setTimeout(_ctx(run, id, 1), 0);
     };
   }
 }
@@ -3765,24 +3086,11 @@ var _task = {
   clear: clearTask
 };
 
-var _task_1 = _task.set;
-var _task_2 = _task.clear;
-
-
-var _task$2 = Object.freeze({
-	default: _task,
-	__moduleExports: _task,
-	set: _task_1,
-	clear: _task_2
-});
-
-var $task = ( _task$2 && _task ) || _task$2;
-
-var macrotask = $task.set;
-var Observer = global$1.MutationObserver || global$1.WebKitMutationObserver;
-var process$2 = global$1.process;
-var Promise$1 = global$1.Promise;
-var isNode$1 = require$$2(process$2) == 'process';
+var macrotask = _task.set;
+var Observer = _global.MutationObserver || _global.WebKitMutationObserver;
+var process$2 = _global.process;
+var Promise$1 = _global.Promise;
+var isNode$1 = _cof(process$2) == 'process';
 
 var _microtask = function () {
   var head, last, notify;
@@ -3810,7 +3118,7 @@ var _microtask = function () {
       process$2.nextTick(flush);
     };
   // browsers with MutationObserver, except iOS Safari - https://github.com/zloirock/core-js/issues/339
-  } else if (Observer && !(global$1.navigator && global$1.navigator.standalone)) {
+  } else if (Observer && !(_global.navigator && _global.navigator.standalone)) {
     var toggle = true;
     var node = document.createTextNode('');
     new Observer(flush).observe(node, { characterData: true }); // eslint-disable-line no-new
@@ -3833,7 +3141,7 @@ var _microtask = function () {
   } else {
     notify = function () {
       // strange IE + webpack dev server bug - use .call(global)
-      macrotask.call(global$1, flush);
+      macrotask.call(_global, flush);
     };
   }
 
@@ -3847,13 +3155,6 @@ var _microtask = function () {
   };
 };
 
-
-
-var _microtask$2 = Object.freeze({
-	default: _microtask,
-	__moduleExports: _microtask
-});
-
 'use strict';
 // 25.4.1.5 NewPromiseCapability(C)
 
@@ -3865,8 +3166,8 @@ function PromiseCapability(C) {
     resolve = $$resolve;
     reject = $$reject;
   });
-  this.resolve = aFunction(resolve);
-  this.reject = aFunction(reject);
+  this.resolve = _aFunction(resolve);
+  this.reject = _aFunction(reject);
 }
 
 var f$7 = function (C) {
@@ -3877,14 +3178,6 @@ var _newPromiseCapability = {
 	f: f$7
 };
 
-
-
-var _newPromiseCapability$2 = Object.freeze({
-	default: _newPromiseCapability,
-	__moduleExports: _newPromiseCapability,
-	f: f$7
-});
-
 var _perform = function (exec) {
   try {
     return { e: false, v: exec() };
@@ -3893,69 +3186,23 @@ var _perform = function (exec) {
   }
 };
 
-
-
-var _perform$2 = Object.freeze({
-	default: _perform,
-	__moduleExports: _perform
-});
-
-var navigator$1 = global$1.navigator;
+var navigator$1 = _global.navigator;
 
 var _userAgent = navigator$1 && navigator$1.userAgent || '';
 
-
-
-var _userAgent$2 = Object.freeze({
-	default: _userAgent,
-	__moduleExports: _userAgent
-});
-
-var newPromiseCapability$1 = ( _newPromiseCapability$2 && _newPromiseCapability ) || _newPromiseCapability$2;
-
 var _promiseResolve = function (C, x) {
-  anObject(C);
-  if (isObject(x) && x.constructor === C) return x;
-  var promiseCapability = newPromiseCapability$1.f(C);
+  _anObject(C);
+  if (_isObject(x) && x.constructor === C) return x;
+  var promiseCapability = _newPromiseCapability.f(C);
   var resolve = promiseCapability.resolve;
   resolve(x);
   return promiseCapability.promise;
 };
 
-
-
-var _promiseResolve$2 = Object.freeze({
-	default: _promiseResolve,
-	__moduleExports: _promiseResolve
-});
-
 var _redefineAll = function (target, src, safe) {
-  for (var key in src) redefine(target, key, src[key], safe);
+  for (var key in src) _redefine(target, key, src[key], safe);
   return target;
 };
-
-
-
-var _redefineAll$2 = Object.freeze({
-	default: _redefineAll,
-	__moduleExports: _redefineAll
-});
-
-var anInstance = ( _anInstance$2 && _anInstance ) || _anInstance$2;
-
-var forOf = ( _forOf$2 && _forOf ) || _forOf$2;
-
-var speciesConstructor$1 = ( _speciesConstructor$2 && _speciesConstructor ) || _speciesConstructor$2;
-
-var require$$0$21 = ( _microtask$2 && _microtask ) || _microtask$2;
-
-var perform = ( _perform$2 && _perform ) || _perform$2;
-
-var userAgent = ( _userAgent$2 && _userAgent ) || _userAgent$2;
-
-var promiseResolve = ( _promiseResolve$2 && _promiseResolve ) || _promiseResolve$2;
-
-var redefineAll = ( _redefineAll$2 && _redefineAll ) || _redefineAll$2;
 
 'use strict';
 
@@ -3968,31 +3215,31 @@ var redefineAll = ( _redefineAll$2 && _redefineAll ) || _redefineAll$2;
 
 
 
-var task = $task.set;
-var microtask = require$$0$21();
+var task = _task.set;
+var microtask = _microtask();
 
 
 
 
 var PROMISE = 'Promise';
-var TypeError$1 = global$1.TypeError;
-var process = global$1.process;
+var TypeError$1 = _global.TypeError;
+var process = _global.process;
 var versions = process && process.versions;
 var v8 = versions && versions.v8 || '';
-var $Promise = global$1[PROMISE];
-var isNode = classof(process) == 'process';
+var $Promise = _global[PROMISE];
+var isNode = _classof(process) == 'process';
 var empty = function () { /* empty */ };
 var Internal;
 var newGenericPromiseCapability;
 var OwnPromiseCapability;
 var Wrapper;
-var newPromiseCapability = newGenericPromiseCapability = newPromiseCapability$1.f;
+var newPromiseCapability = newGenericPromiseCapability = _newPromiseCapability.f;
 
 var USE_NATIVE$1 = !!function () {
   try {
     // correct subclassing with @@species support
     var promise = $Promise.resolve(1);
-    var FakePromise = (promise.constructor = {})[wks('species')] = function (exec) {
+    var FakePromise = (promise.constructor = {})[_wks('species')] = function (exec) {
       exec(empty, empty);
     };
     // unhandled rejections tracking support, NodeJS Promise without it fails @@species test
@@ -4002,14 +3249,14 @@ var USE_NATIVE$1 = !!function () {
       // https://bugs.chromium.org/p/chromium/issues/detail?id=830565
       // we can't detect it synchronously, so just check versions
       && v8.indexOf('6.6') !== 0
-      && userAgent.indexOf('Chrome/66') === -1;
+      && _userAgent.indexOf('Chrome/66') === -1;
   } catch (e) { /* empty */ }
 }();
 
 // helpers
 var isThenable = function (it) {
   var then;
-  return isObject(it) && typeof (then = it.then) == 'function' ? then : false;
+  return _isObject(it) && typeof (then = it.then) == 'function' ? then : false;
 };
 var notify = function (promise, isReject) {
   if (promise._n) return;
@@ -4058,17 +3305,17 @@ var notify = function (promise, isReject) {
   });
 };
 var onUnhandled = function (promise) {
-  task.call(global$1, function () {
+  task.call(_global, function () {
     var value = promise._v;
     var unhandled = isUnhandled(promise);
     var result, handler, console;
     if (unhandled) {
-      result = perform(function () {
+      result = _perform(function () {
         if (isNode) {
           process.emit('unhandledRejection', value, promise);
-        } else if (handler = global$1.onunhandledrejection) {
+        } else if (handler = _global.onunhandledrejection) {
           handler({ promise: promise, reason: value });
-        } else if ((console = global$1.console) && console.error) {
+        } else if ((console = _global.console) && console.error) {
           console.error('Unhandled promise rejection', value);
         }
       });
@@ -4082,11 +3329,11 @@ var isUnhandled = function (promise) {
   return promise._h !== 1 && (promise._a || promise._c).length === 0;
 };
 var onHandleUnhandled = function (promise) {
-  task.call(global$1, function () {
+  task.call(_global, function () {
     var handler;
     if (isNode) {
       process.emit('rejectionHandled', promise);
-    } else if (handler = global$1.onrejectionhandled) {
+    } else if (handler = _global.onrejectionhandled) {
       handler({ promise: promise, reason: promise._v });
     }
   });
@@ -4113,7 +3360,7 @@ var $resolve = function (value) {
       microtask(function () {
         var wrapper = { _w: promise, _d: false }; // wrap
         try {
-          then.call(value, ctx($resolve, wrapper, 1), ctx($reject, wrapper, 1));
+          then.call(value, _ctx($resolve, wrapper, 1), _ctx($reject, wrapper, 1));
         } catch (e) {
           $reject.call(wrapper, e);
         }
@@ -4132,11 +3379,11 @@ var $resolve = function (value) {
 if (!USE_NATIVE$1) {
   // 25.4.3.1 Promise(executor)
   $Promise = function Promise(executor) {
-    anInstance(this, $Promise, PROMISE, '_h');
-    aFunction(executor);
+    _anInstance(this, $Promise, PROMISE, '_h');
+    _aFunction(executor);
     Internal.call(this);
     try {
-      executor(ctx($resolve, this, 1), ctx($reject, this, 1));
+      executor(_ctx($resolve, this, 1), _ctx($reject, this, 1));
     } catch (err) {
       $reject.call(this, err);
     }
@@ -4151,10 +3398,10 @@ if (!USE_NATIVE$1) {
     this._h = 0;              // <- rejection state, 0 - default, 1 - handled, 2 - unhandled
     this._n = false;          // <- notify
   };
-  Internal.prototype = redefineAll($Promise.prototype, {
+  Internal.prototype = _redefineAll($Promise.prototype, {
     // 25.4.5.3 Promise.prototype.then(onFulfilled, onRejected)
     then: function then(onFulfilled, onRejected) {
-      var reaction = newPromiseCapability(speciesConstructor$1(this, $Promise));
+      var reaction = newPromiseCapability(_speciesConstructor(this, $Promise));
       reaction.ok = typeof onFulfilled == 'function' ? onFulfilled : true;
       reaction.fail = typeof onRejected == 'function' && onRejected;
       reaction.domain = isNode ? process.domain : undefined;
@@ -4171,23 +3418,23 @@ if (!USE_NATIVE$1) {
   OwnPromiseCapability = function () {
     var promise = new Internal();
     this.promise = promise;
-    this.resolve = ctx($resolve, promise, 1);
-    this.reject = ctx($reject, promise, 1);
+    this.resolve = _ctx($resolve, promise, 1);
+    this.reject = _ctx($reject, promise, 1);
   };
-  newPromiseCapability$1.f = newPromiseCapability = function (C) {
+  _newPromiseCapability.f = newPromiseCapability = function (C) {
     return C === $Promise || C === Wrapper
       ? new OwnPromiseCapability(C)
       : newGenericPromiseCapability(C);
   };
 }
 
-$export$1($export$1.G + $export$1.W + $export$1.F * !USE_NATIVE$1, { Promise: $Promise });
-setToStringTag($Promise, PROMISE);
-require$$2$3(PROMISE);
-Wrapper = require$$1$2[PROMISE];
+_export(_export.G + _export.W + _export.F * !USE_NATIVE$1, { Promise: $Promise });
+_setToStringTag($Promise, PROMISE);
+_setSpecies(PROMISE);
+Wrapper = _core[PROMISE];
 
 // statics
-$export$1($export$1.S + $export$1.F * !USE_NATIVE$1, PROMISE, {
+_export(_export.S + _export.F * !USE_NATIVE$1, PROMISE, {
   // 25.4.4.5 Promise.reject(r)
   reject: function reject(r) {
     var capability = newPromiseCapability(this);
@@ -4196,13 +3443,13 @@ $export$1($export$1.S + $export$1.F * !USE_NATIVE$1, PROMISE, {
     return capability.promise;
   }
 });
-$export$1($export$1.S + $export$1.F * (require$$0 || !USE_NATIVE$1), PROMISE, {
+_export(_export.S + _export.F * (_library || !USE_NATIVE$1), PROMISE, {
   // 25.4.4.6 Promise.resolve(x)
   resolve: function resolve(x) {
-    return promiseResolve(require$$0 && this === Wrapper ? $Promise : this, x);
+    return _promiseResolve(_library && this === Wrapper ? $Promise : this, x);
   }
 });
-$export$1($export$1.S + $export$1.F * !(USE_NATIVE$1 && require$$33(function (iter) {
+_export(_export.S + _export.F * !(USE_NATIVE$1 && _iterDetect(function (iter) {
   $Promise.all(iter)['catch'](empty);
 })), PROMISE, {
   // 25.4.4.1 Promise.all(iterable)
@@ -4211,11 +3458,11 @@ $export$1($export$1.S + $export$1.F * !(USE_NATIVE$1 && require$$33(function (it
     var capability = newPromiseCapability(C);
     var resolve = capability.resolve;
     var reject = capability.reject;
-    var result = perform(function () {
+    var result = _perform(function () {
       var values = [];
       var index = 0;
       var remaining = 1;
-      forOf(iterable, false, function (promise) {
+      _forOf(iterable, false, function (promise) {
         var $index = index++;
         var alreadyCalled = false;
         values.push(undefined);
@@ -4237,8 +3484,8 @@ $export$1($export$1.S + $export$1.F * !(USE_NATIVE$1 && require$$33(function (it
     var C = this;
     var capability = newPromiseCapability(C);
     var reject = capability.reject;
-    var result = perform(function () {
-      forOf(iterable, false, function (promise) {
+    var result = _perform(function () {
+      _forOf(iterable, false, function (promise) {
         C.resolve(promise).then(capability.resolve, reject);
       });
     });
@@ -4248,21 +3495,12 @@ $export$1($export$1.S + $export$1.F * !(USE_NATIVE$1 && require$$33(function (it
 });
 
 var _validateCollection = function (it, TYPE) {
-  if (!isObject(it) || it._t !== TYPE) throw TypeError('Incompatible receiver, ' + TYPE + ' required!');
+  if (!_isObject(it) || it._t !== TYPE) throw TypeError('Incompatible receiver, ' + TYPE + ' required!');
   return it;
 };
 
-
-
-var _validateCollection$2 = Object.freeze({
-	default: _validateCollection,
-	__moduleExports: _validateCollection
-});
-
-var validate = ( _validateCollection$2 && _validateCollection ) || _validateCollection$2;
-
 'use strict';
-var dP$5 = $defineProperty$1.f;
+var dP$5 = _objectDp.f;
 
 
 
@@ -4272,9 +3510,9 @@ var dP$5 = $defineProperty$1.f;
 
 
 
-var fastKey = require$$0$6.fastKey;
+var fastKey = _meta.fastKey;
 
-var SIZE = require$$1$1 ? '_s' : 'size';
+var SIZE = _descriptors ? '_s' : 'size';
 
 var getEntry = function (that, key) {
   // fast case
@@ -4290,19 +3528,19 @@ var getEntry = function (that, key) {
 var _collectionStrong = {
   getConstructor: function (wrapper, NAME, IS_MAP, ADDER) {
     var C = wrapper(function (that, iterable) {
-      anInstance(that, C, NAME, '_i');
+      _anInstance(that, C, NAME, '_i');
       that._t = NAME;         // collection type
-      that._i = create(null); // index
+      that._i = _objectCreate(null); // index
       that._f = undefined;    // first entry
       that._l = undefined;    // last entry
       that[SIZE] = 0;         // size
-      if (iterable != undefined) forOf(iterable, IS_MAP, that[ADDER], that);
+      if (iterable != undefined) _forOf(iterable, IS_MAP, that[ADDER], that);
     });
-    redefineAll(C.prototype, {
+    _redefineAll(C.prototype, {
       // 23.1.3.1 Map.prototype.clear()
       // 23.2.3.2 Set.prototype.clear()
       clear: function clear() {
-        for (var that = validate(this, NAME), data = that._i, entry = that._f; entry; entry = entry.n) {
+        for (var that = _validateCollection(this, NAME), data = that._i, entry = that._f; entry; entry = entry.n) {
           entry.r = true;
           if (entry.p) entry.p = entry.p.n = undefined;
           delete data[entry.i];
@@ -4313,7 +3551,7 @@ var _collectionStrong = {
       // 23.1.3.3 Map.prototype.delete(key)
       // 23.2.3.4 Set.prototype.delete(value)
       'delete': function (key) {
-        var that = validate(this, NAME);
+        var that = _validateCollection(this, NAME);
         var entry = getEntry(that, key);
         if (entry) {
           var next = entry.n;
@@ -4330,8 +3568,8 @@ var _collectionStrong = {
       // 23.2.3.6 Set.prototype.forEach(callbackfn, thisArg = undefined)
       // 23.1.3.5 Map.prototype.forEach(callbackfn, thisArg = undefined)
       forEach: function forEach(callbackfn /* , that = undefined */) {
-        validate(this, NAME);
-        var f = ctx(callbackfn, arguments.length > 1 ? arguments[1] : undefined, 3);
+        _validateCollection(this, NAME);
+        var f = _ctx(callbackfn, arguments.length > 1 ? arguments[1] : undefined, 3);
         var entry;
         while (entry = entry ? entry.n : this._f) {
           f(entry.v, entry.k, this);
@@ -4342,12 +3580,12 @@ var _collectionStrong = {
       // 23.1.3.7 Map.prototype.has(key)
       // 23.2.3.7 Set.prototype.has(value)
       has: function has(key) {
-        return !!getEntry(validate(this, NAME), key);
+        return !!getEntry(_validateCollection(this, NAME), key);
       }
     });
-    if (require$$1$1) dP$5(C.prototype, 'size', {
+    if (_descriptors) dP$5(C.prototype, 'size', {
       get: function () {
-        return validate(this, NAME)[SIZE];
+        return _validateCollection(this, NAME)[SIZE];
       }
     });
     return C;
@@ -4379,8 +3617,8 @@ var _collectionStrong = {
   setStrong: function (C, NAME, IS_MAP) {
     // add .keys, .values, .entries, [@@iterator]
     // 23.1.3.4, 23.1.3.8, 23.1.3.11, 23.1.3.12, 23.2.3.5, 23.2.3.8, 23.2.3.10, 23.2.3.11
-    $iterDefine(C, NAME, function (iterated, kind) {
-      this._t = validate(iterated, NAME); // target
+    _iterDefine(C, NAME, function (iterated, kind) {
+      this._t = _validateCollection(iterated, NAME); // target
       this._k = kind;                     // kind
       this._l = undefined;                // previous
     }, function () {
@@ -4393,33 +3631,18 @@ var _collectionStrong = {
       if (!that._t || !(that._l = entry = entry ? entry.n : that._t._f)) {
         // or finish the iteration
         that._t = undefined;
-        return step(1);
+        return _iterStep(1);
       }
       // return step by kind
-      if (kind == 'keys') return step(0, entry.k);
-      if (kind == 'values') return step(0, entry.v);
-      return step(0, [entry.k, entry.v]);
+      if (kind == 'keys') return _iterStep(0, entry.k);
+      if (kind == 'values') return _iterStep(0, entry.v);
+      return _iterStep(0, [entry.k, entry.v]);
     }, IS_MAP ? 'entries' : 'values', !IS_MAP, true);
 
     // add [@@species], 23.1.2.2, 23.2.2.2
-    require$$2$3(NAME);
+    _setSpecies(NAME);
   }
 };
-
-var _collectionStrong_1 = _collectionStrong.getConstructor;
-var _collectionStrong_2 = _collectionStrong.def;
-var _collectionStrong_3 = _collectionStrong.getEntry;
-var _collectionStrong_4 = _collectionStrong.setStrong;
-
-
-var _collectionStrong$2 = Object.freeze({
-	default: _collectionStrong,
-	__moduleExports: _collectionStrong,
-	getConstructor: _collectionStrong_1,
-	def: _collectionStrong_2,
-	getEntry: _collectionStrong_3,
-	setStrong: _collectionStrong_4
-});
 
 'use strict';
 
@@ -4436,41 +3659,41 @@ var _collectionStrong$2 = Object.freeze({
 
 
 var _collection = function (NAME, wrapper, methods, common, IS_MAP, IS_WEAK) {
-  var Base = global$1[NAME];
+  var Base = _global[NAME];
   var C = Base;
   var ADDER = IS_MAP ? 'set' : 'add';
   var proto = C && C.prototype;
   var O = {};
   var fixMethod = function (KEY) {
     var fn = proto[KEY];
-    redefine(proto, KEY,
+    _redefine(proto, KEY,
       KEY == 'delete' ? function (a) {
-        return IS_WEAK && !isObject(a) ? false : fn.call(this, a === 0 ? 0 : a);
+        return IS_WEAK && !_isObject(a) ? false : fn.call(this, a === 0 ? 0 : a);
       } : KEY == 'has' ? function has(a) {
-        return IS_WEAK && !isObject(a) ? false : fn.call(this, a === 0 ? 0 : a);
+        return IS_WEAK && !_isObject(a) ? false : fn.call(this, a === 0 ? 0 : a);
       } : KEY == 'get' ? function get(a) {
-        return IS_WEAK && !isObject(a) ? undefined : fn.call(this, a === 0 ? 0 : a);
+        return IS_WEAK && !_isObject(a) ? undefined : fn.call(this, a === 0 ? 0 : a);
       } : KEY == 'add' ? function add(a) { fn.call(this, a === 0 ? 0 : a); return this; }
         : function set(a, b) { fn.call(this, a === 0 ? 0 : a, b); return this; }
     );
   };
-  if (typeof C != 'function' || !(IS_WEAK || proto.forEach && !require$$1(function () {
+  if (typeof C != 'function' || !(IS_WEAK || proto.forEach && !_fails(function () {
     new C().entries().next();
   }))) {
     // create collection constructor
     C = common.getConstructor(wrapper, NAME, IS_MAP, ADDER);
-    redefineAll(C.prototype, methods);
-    require$$0$6.NEED = true;
+    _redefineAll(C.prototype, methods);
+    _meta.NEED = true;
   } else {
     var instance = new C();
     // early implementations not supports chaining
     var HASNT_CHAINING = instance[ADDER](IS_WEAK ? {} : -0, 1) != instance;
     // V8 ~  Chromium 40- weak-collections throws on primitives, but should return false
-    var THROWS_ON_PRIMITIVES = require$$1(function () { instance.has(1); });
+    var THROWS_ON_PRIMITIVES = _fails(function () { instance.has(1); });
     // most early implementations doesn't supports iterables, most modern - not close it correctly
-    var ACCEPT_ITERABLES = require$$33(function (iter) { new C(iter); }); // eslint-disable-line no-new
+    var ACCEPT_ITERABLES = _iterDetect(function (iter) { new C(iter); }); // eslint-disable-line no-new
     // for early implementations -0 and +0 not the same
-    var BUGGY_ZERO = !IS_WEAK && require$$1(function () {
+    var BUGGY_ZERO = !IS_WEAK && _fails(function () {
       // V8 ~ Chromium 42- fails only with 5+ elements
       var $instance = new C();
       var index = 5;
@@ -4479,9 +3702,9 @@ var _collection = function (NAME, wrapper, methods, common, IS_MAP, IS_WEAK) {
     });
     if (!ACCEPT_ITERABLES) {
       C = wrapper(function (target, iterable) {
-        anInstance(target, C, NAME);
-        var that = inheritIfRequired(new Base(), target, C);
-        if (iterable != undefined) forOf(iterable, IS_MAP, that[ADDER], that);
+        _anInstance(target, C, NAME);
+        var that = _inheritIfRequired(new Base(), target, C);
+        if (iterable != undefined) _forOf(iterable, IS_MAP, that[ADDER], that);
         return that;
       });
       C.prototype = proto;
@@ -4497,26 +3720,15 @@ var _collection = function (NAME, wrapper, methods, common, IS_MAP, IS_WEAK) {
     if (IS_WEAK && proto.clear) delete proto.clear;
   }
 
-  setToStringTag(C, NAME);
+  _setToStringTag(C, NAME);
 
   O[NAME] = C;
-  $export$1($export$1.G + $export$1.W + $export$1.F * (C != Base), O);
+  _export(_export.G + _export.W + _export.F * (C != Base), O);
 
   if (!IS_WEAK) common.setStrong(C, NAME, IS_MAP);
 
   return C;
 };
-
-
-
-var _collection$2 = Object.freeze({
-	default: _collection,
-	__moduleExports: _collection
-});
-
-var strong = ( _collectionStrong$2 && _collectionStrong ) || _collectionStrong$2;
-
-var require$$0$22 = ( _collection$2 && _collection ) || _collection$2;
 
 'use strict';
 
@@ -4524,26 +3736,19 @@ var require$$0$22 = ( _collection$2 && _collection ) || _collection$2;
 var MAP = 'Map';
 
 // 23.1 Map Objects
-var es6_map = require$$0$22(MAP, function (get) {
+var es6_map = _collection(MAP, function (get) {
   return function Map() { return get(this, arguments.length > 0 ? arguments[0] : undefined); };
 }, {
   // 23.1.3.6 Map.prototype.get(key)
   get: function get(key) {
-    var entry = strong.getEntry(validate(this, MAP), key);
+    var entry = _collectionStrong.getEntry(_validateCollection(this, MAP), key);
     return entry && entry.v;
   },
   // 23.1.3.9 Map.prototype.set(key, value)
   set: function set(key, value) {
-    return strong.def(validate(this, MAP), key === 0 ? 0 : key, value);
+    return _collectionStrong.def(_validateCollection(this, MAP), key === 0 ? 0 : key, value);
   }
-}, strong, true);
-
-
-
-var es6_map$2 = Object.freeze({
-	default: es6_map,
-	__moduleExports: es6_map
-});
+}, _collectionStrong, true);
 
 'use strict';
 
@@ -4551,25 +3756,18 @@ var es6_map$2 = Object.freeze({
 var SET = 'Set';
 
 // 23.2 Set Objects
-var es6_set = require$$0$22(SET, function (get) {
+var es6_set = _collection(SET, function (get) {
   return function Set() { return get(this, arguments.length > 0 ? arguments[0] : undefined); };
 }, {
   // 23.2.3.1 Set.prototype.add(value)
   add: function add(value) {
-    return strong.def(validate(this, SET), value = value === 0 ? 0 : value, value);
+    return _collectionStrong.def(_validateCollection(this, SET), value = value === 0 ? 0 : value, value);
   }
-}, strong);
-
-
-
-var es6_set$2 = Object.freeze({
-	default: es6_set,
-	__moduleExports: es6_set
-});
+}, _collectionStrong);
 
 'use strict';
 
-var getWeak = require$$0$6.getWeak;
+var getWeak = _meta.getWeak;
 
 
 
@@ -4577,8 +3775,8 @@ var getWeak = require$$0$6.getWeak;
 
 
 
-var arrayFind = require$$28(5);
-var arrayFindIndex = require$$28(6);
+var arrayFind = _arrayMethods(5);
+var arrayFindIndex = _arrayMethods(6);
 var id$1 = 0;
 
 // fallback for uncaught frozen keys
@@ -4618,34 +3816,34 @@ UncaughtFrozenStore.prototype = {
 var _collectionWeak = {
   getConstructor: function (wrapper, NAME, IS_MAP, ADDER) {
     var C = wrapper(function (that, iterable) {
-      anInstance(that, C, NAME, '_i');
+      _anInstance(that, C, NAME, '_i');
       that._t = NAME;      // collection type
       that._i = id$1++;      // collection id
       that._l = undefined; // leak store for uncaught frozen objects
-      if (iterable != undefined) forOf(iterable, IS_MAP, that[ADDER], that);
+      if (iterable != undefined) _forOf(iterable, IS_MAP, that[ADDER], that);
     });
-    redefineAll(C.prototype, {
+    _redefineAll(C.prototype, {
       // 23.3.3.2 WeakMap.prototype.delete(key)
       // 23.4.3.3 WeakSet.prototype.delete(value)
       'delete': function (key) {
-        if (!isObject(key)) return false;
+        if (!_isObject(key)) return false;
         var data = getWeak(key);
-        if (data === true) return uncaughtFrozenStore(validate(this, NAME))['delete'](key);
-        return data && has(data, this._i) && delete data[this._i];
+        if (data === true) return uncaughtFrozenStore(_validateCollection(this, NAME))['delete'](key);
+        return data && _has(data, this._i) && delete data[this._i];
       },
       // 23.3.3.4 WeakMap.prototype.has(key)
       // 23.4.3.4 WeakSet.prototype.has(value)
-      has: function has$$1(key) {
-        if (!isObject(key)) return false;
+      has: function has(key) {
+        if (!_isObject(key)) return false;
         var data = getWeak(key);
-        if (data === true) return uncaughtFrozenStore(validate(this, NAME)).has(key);
-        return data && has(data, this._i);
+        if (data === true) return uncaughtFrozenStore(_validateCollection(this, NAME)).has(key);
+        return data && _has(data, this._i);
       }
     });
     return C;
   },
   def: function (that, key, value) {
-    var data = getWeak(anObject(key), true);
+    var data = getWeak(_anObject(key), true);
     if (data === true) uncaughtFrozenStore(that).set(key, value);
     else data[that._i] = value;
     return that;
@@ -4653,24 +3851,9 @@ var _collectionWeak = {
   ufstore: uncaughtFrozenStore
 };
 
-var _collectionWeak_1 = _collectionWeak.getConstructor;
-var _collectionWeak_2 = _collectionWeak.def;
-var _collectionWeak_3 = _collectionWeak.ufstore;
-
-
-var _collectionWeak$2 = Object.freeze({
-	default: _collectionWeak,
-	__moduleExports: _collectionWeak,
-	getConstructor: _collectionWeak_1,
-	def: _collectionWeak_2,
-	ufstore: _collectionWeak_3
-});
-
-var weak = ( _collectionWeak$2 && _collectionWeak ) || _collectionWeak$2;
-
 var es6_weakMap = createCommonjsModule(function (module) {
 'use strict';
-var each = require$$28(0);
+var each = _arrayMethods(0);
 
 
 
@@ -4679,9 +3862,9 @@ var each = require$$28(0);
 
 
 var WEAK_MAP = 'WeakMap';
-var getWeak = require$$0$6.getWeak;
+var getWeak = _meta.getWeak;
 var isExtensible = Object.isExtensible;
-var uncaughtFrozenStore = weak.ufstore;
+var uncaughtFrozenStore = _collectionWeak.ufstore;
 var tmp = {};
 var InternalMap;
 
@@ -4694,32 +3877,32 @@ var wrapper = function (get) {
 var methods = {
   // 23.3.3.3 WeakMap.prototype.get(key)
   get: function get(key) {
-    if (isObject(key)) {
+    if (_isObject(key)) {
       var data = getWeak(key);
-      if (data === true) return uncaughtFrozenStore(validate(this, WEAK_MAP)).get(key);
+      if (data === true) return uncaughtFrozenStore(_validateCollection(this, WEAK_MAP)).get(key);
       return data ? data[this._i] : undefined;
     }
   },
   // 23.3.3.5 WeakMap.prototype.set(key, value)
   set: function set(key, value) {
-    return weak.def(validate(this, WEAK_MAP), key, value);
+    return _collectionWeak.def(_validateCollection(this, WEAK_MAP), key, value);
   }
 };
 
 // 23.3 WeakMap Objects
-var $WeakMap = module.exports = require$$0$22(WEAK_MAP, wrapper, methods, weak, true, true);
+var $WeakMap = module.exports = _collection(WEAK_MAP, wrapper, methods, _collectionWeak, true, true);
 
 // IE11 WeakMap frozen keys fix
-if (require$$1(function () { return new $WeakMap().set((Object.freeze || Object)(tmp), 7).get(tmp) != 7; })) {
-  InternalMap = weak.getConstructor(wrapper, WEAK_MAP);
-  assign(InternalMap.prototype, methods);
-  require$$0$6.NEED = true;
+if (_fails(function () { return new $WeakMap().set((Object.freeze || Object)(tmp), 7).get(tmp) != 7; })) {
+  InternalMap = _collectionWeak.getConstructor(wrapper, WEAK_MAP);
+  _objectAssign(InternalMap.prototype, methods);
+  _meta.NEED = true;
   each(['delete', 'has', 'get', 'set'], function (key) {
     var proto = $WeakMap.prototype;
     var method = proto[key];
-    redefine(proto, key, function (a, b) {
+    _redefine(proto, key, function (a, b) {
       // store frozen objects on internal weakmap shim
-      if (isObject(a) && !isExtensible(a)) {
+      if (_isObject(a) && !isExtensible(a)) {
         if (!this._f) this._f = new InternalMap();
         var result = this._f[key](a, b);
         return key == 'set' ? this : result;
@@ -4730,31 +3913,24 @@ if (require$$1(function () { return new $WeakMap().set((Object.freeze || Object)
 }
 });
 
-
-
-var es6_weakMap$2 = Object.freeze({
-	default: es6_weakMap,
-	__moduleExports: es6_weakMap
-});
-
 'use strict';
 
 
 var WEAK_SET = 'WeakSet';
 
 // 23.4 WeakSet Objects
-require$$0$22(WEAK_SET, function (get) {
+_collection(WEAK_SET, function (get) {
   return function WeakSet() { return get(this, arguments.length > 0 ? arguments[0] : undefined); };
 }, {
   // 23.4.3.1 WeakSet.prototype.add(value)
   add: function add(value) {
-    return weak.def(validate(this, WEAK_SET), value, true);
+    return _collectionWeak.def(_validateCollection(this, WEAK_SET), value, true);
   }
-}, weak, false, true);
+}, _collectionWeak, false, true);
 
-var TYPED = require$$26('typed_array');
-var VIEW$1 = require$$26('view');
-var ABV = !!(global$1.ArrayBuffer && global$1.DataView);
+var TYPED = _uid('typed_array');
+var VIEW$1 = _uid('view');
+var ABV = !!(_global.ArrayBuffer && _global.DataView);
 var CONSTR = ABV;
 var i$1 = 0;
 var l = 9;
@@ -4765,9 +3941,9 @@ var TypedArrayConstructors = (
 ).split(',');
 
 while (i$1 < l) {
-  if (Typed = global$1[TypedArrayConstructors[i$1++]]) {
-    hide(Typed.prototype, TYPED, true);
-    hide(Typed.prototype, VIEW$1, true);
+  if (Typed = _global[TypedArrayConstructors[i$1++]]) {
+    _hide(Typed.prototype, TYPED, true);
+    _hide(Typed.prototype, VIEW$1, true);
   } else CONSTR = false;
 }
 
@@ -4778,39 +3954,16 @@ var _typed = {
   VIEW: VIEW$1
 };
 
-var _typed_1 = _typed.ABV;
-var _typed_2 = _typed.CONSTR;
-var _typed_3 = _typed.TYPED;
-var _typed_4 = _typed.VIEW;
+// https://tc39.github.io/ecma262/#sec-toindex
 
-
-var _typed$2 = Object.freeze({
-	default: _typed,
-	__moduleExports: _typed,
-	ABV: _typed_1,
-	CONSTR: _typed_2,
-	TYPED: _typed_3,
-	VIEW: _typed_4
-});
 
 var _toIndex = function (it) {
   if (it === undefined) return 0;
-  var number = toInteger(it);
-  var length = toLength(number);
+  var number = _toInteger(it);
+  var length = _toLength(number);
   if (number !== length) throw RangeError('Wrong length!');
   return length;
 };
-
-
-
-var _toIndex$2 = Object.freeze({
-	default: _toIndex,
-	__moduleExports: _toIndex
-});
-
-var require$$5 = ( _typed$2 && _typed ) || _typed$2;
-
-var require$$14 = ( _toIndex$2 && _toIndex ) || _toIndex$2;
 
 var _typedBuffer = createCommonjsModule(function (module, exports) {
 'use strict';
@@ -4825,8 +3978,8 @@ var _typedBuffer = createCommonjsModule(function (module, exports) {
 
 
 
-var gOPN = gOPN$2.f;
-var dP = $defineProperty$1.f;
+var gOPN = _objectGopn.f;
+var dP = _objectDp.f;
 
 
 var ARRAY_BUFFER = 'ArrayBuffer';
@@ -4834,12 +3987,12 @@ var DATA_VIEW = 'DataView';
 var PROTOTYPE = 'prototype';
 var WRONG_LENGTH = 'Wrong length!';
 var WRONG_INDEX = 'Wrong index!';
-var $ArrayBuffer = global$1[ARRAY_BUFFER];
-var $DataView = global$1[DATA_VIEW];
-var Math = global$1.Math;
-var RangeError = global$1.RangeError;
+var $ArrayBuffer = _global[ARRAY_BUFFER];
+var $DataView = _global[DATA_VIEW];
+var Math = _global.Math;
+var RangeError = _global.RangeError;
 // eslint-disable-next-line no-shadow-restricted-names
-var Infinity = global$1.Infinity;
+var Infinity = _global.Infinity;
 var BaseBuffer = $ArrayBuffer;
 var abs = Math.abs;
 var pow = Math.pow;
@@ -4849,9 +4002,9 @@ var LN2 = Math.LN2;
 var BUFFER = 'buffer';
 var BYTE_LENGTH = 'byteLength';
 var BYTE_OFFSET = 'byteOffset';
-var $BUFFER = require$$1$1 ? '_b' : BUFFER;
-var $LENGTH = require$$1$1 ? '_l' : BYTE_LENGTH;
-var $OFFSET = require$$1$1 ? '_o' : BYTE_OFFSET;
+var $BUFFER = _descriptors ? '_b' : BUFFER;
+var $LENGTH = _descriptors ? '_l' : BYTE_LENGTH;
+var $OFFSET = _descriptors ? '_o' : BYTE_OFFSET;
 
 // IEEE754 conversions based on https://github.com/feross/ieee754
 function packIEEE754(value, mLen, nBytes) {
@@ -4952,7 +4105,7 @@ function addGetter(C, key, internal) {
 
 function get(view, bytes, index, isLittleEndian) {
   var numIndex = +index;
-  var intIndex = require$$14(numIndex);
+  var intIndex = _toIndex(numIndex);
   if (intIndex + bytes > view[$LENGTH]) throw RangeError(WRONG_INDEX);
   var store = view[$BUFFER]._b;
   var start = intIndex + view[$OFFSET];
@@ -4961,7 +4114,7 @@ function get(view, bytes, index, isLittleEndian) {
 }
 function set(view, bytes, index, conversion, value, isLittleEndian) {
   var numIndex = +index;
-  var intIndex = require$$14(numIndex);
+  var intIndex = _toIndex(numIndex);
   if (intIndex + bytes > view[$LENGTH]) throw RangeError(WRONG_INDEX);
   var store = view[$BUFFER]._b;
   var start = intIndex + view[$OFFSET];
@@ -4969,35 +4122,35 @@ function set(view, bytes, index, conversion, value, isLittleEndian) {
   for (var i = 0; i < bytes; i++) store[start + i] = pack[isLittleEndian ? i : bytes - i - 1];
 }
 
-if (!require$$5.ABV) {
+if (!_typed.ABV) {
   $ArrayBuffer = function ArrayBuffer(length) {
-    anInstance(this, $ArrayBuffer, ARRAY_BUFFER);
-    var byteLength = require$$14(length);
-    this._b = require$$35.call(new Array(byteLength), 0);
+    _anInstance(this, $ArrayBuffer, ARRAY_BUFFER);
+    var byteLength = _toIndex(length);
+    this._b = _arrayFill.call(new Array(byteLength), 0);
     this[$LENGTH] = byteLength;
   };
 
   $DataView = function DataView(buffer, byteOffset, byteLength) {
-    anInstance(this, $DataView, DATA_VIEW);
-    anInstance(buffer, $ArrayBuffer, DATA_VIEW);
+    _anInstance(this, $DataView, DATA_VIEW);
+    _anInstance(buffer, $ArrayBuffer, DATA_VIEW);
     var bufferLength = buffer[$LENGTH];
-    var offset = toInteger(byteOffset);
+    var offset = _toInteger(byteOffset);
     if (offset < 0 || offset > bufferLength) throw RangeError('Wrong offset!');
-    byteLength = byteLength === undefined ? bufferLength - offset : toLength(byteLength);
+    byteLength = byteLength === undefined ? bufferLength - offset : _toLength(byteLength);
     if (offset + byteLength > bufferLength) throw RangeError(WRONG_LENGTH);
     this[$BUFFER] = buffer;
     this[$OFFSET] = offset;
     this[$LENGTH] = byteLength;
   };
 
-  if (require$$1$1) {
+  if (_descriptors) {
     addGetter($ArrayBuffer, BYTE_LENGTH, '_l');
     addGetter($DataView, BUFFER, '_b');
     addGetter($DataView, BYTE_LENGTH, '_l');
     addGetter($DataView, BYTE_OFFSET, '_o');
   }
 
-  redefineAll($DataView[PROTOTYPE], {
+  _redefineAll($DataView[PROTOTYPE], {
     getInt8: function getInt8(byteOffset) {
       return get(this, 1, byteOffset)[0] << 24 >> 24;
     },
@@ -5050,32 +4203,32 @@ if (!require$$5.ABV) {
     }
   });
 } else {
-  if (!require$$1(function () {
+  if (!_fails(function () {
     $ArrayBuffer(1);
-  }) || !require$$1(function () {
+  }) || !_fails(function () {
     new $ArrayBuffer(-1); // eslint-disable-line no-new
-  }) || require$$1(function () {
+  }) || _fails(function () {
     new $ArrayBuffer(); // eslint-disable-line no-new
     new $ArrayBuffer(1.5); // eslint-disable-line no-new
     new $ArrayBuffer(NaN); // eslint-disable-line no-new
     return $ArrayBuffer.name != ARRAY_BUFFER;
   })) {
     $ArrayBuffer = function ArrayBuffer(length) {
-      anInstance(this, $ArrayBuffer);
-      return new BaseBuffer(require$$14(length));
+      _anInstance(this, $ArrayBuffer);
+      return new BaseBuffer(_toIndex(length));
     };
     var ArrayBufferProto = $ArrayBuffer[PROTOTYPE] = BaseBuffer[PROTOTYPE];
     for (var keys = gOPN(BaseBuffer), j = 0, key; keys.length > j;) {
-      if (!((key = keys[j++]) in $ArrayBuffer)) hide($ArrayBuffer, key, BaseBuffer[key]);
+      if (!((key = keys[j++]) in $ArrayBuffer)) _hide($ArrayBuffer, key, BaseBuffer[key]);
     }
-    if (!require$$0) ArrayBufferProto.constructor = $ArrayBuffer;
+    if (!_library) ArrayBufferProto.constructor = $ArrayBuffer;
   }
   // iOS Safari 7.x bug
   var view = new $DataView(new $ArrayBuffer(2));
   var $setInt8 = $DataView[PROTOTYPE].setInt8;
   view.setInt8(0, 2147483648);
   view.setInt8(1, 2147483649);
-  if (view.getInt8(0) || !view.getInt8(1)) redefineAll($DataView[PROTOTYPE], {
+  if (view.getInt8(0) || !view.getInt8(1)) _redefineAll($DataView[PROTOTYPE], {
     setInt8: function setInt8(byteOffset, value) {
       $setInt8.call(this, byteOffset, value << 24 >> 24);
     },
@@ -5084,21 +4237,12 @@ if (!require$$5.ABV) {
     }
   }, true);
 }
-setToStringTag($ArrayBuffer, ARRAY_BUFFER);
-setToStringTag($DataView, DATA_VIEW);
-hide($DataView[PROTOTYPE], require$$5.VIEW, true);
+_setToStringTag($ArrayBuffer, ARRAY_BUFFER);
+_setToStringTag($DataView, DATA_VIEW);
+_hide($DataView[PROTOTYPE], _typed.VIEW, true);
 exports[ARRAY_BUFFER] = $ArrayBuffer;
 exports[DATA_VIEW] = $DataView;
 });
-
-
-
-var _typedBuffer$2 = Object.freeze({
-	default: _typedBuffer,
-	__moduleExports: _typedBuffer
-});
-
-var require$$6 = ( _typedBuffer$2 && _typedBuffer ) || _typedBuffer$2;
 
 'use strict';
 
@@ -5108,34 +4252,34 @@ var require$$6 = ( _typedBuffer$2 && _typedBuffer ) || _typedBuffer$2;
 
 
 
-var ArrayBuffer$1 = global$1.ArrayBuffer;
+var ArrayBuffer$1 = _global.ArrayBuffer;
 
-var $ArrayBuffer = require$$6.ArrayBuffer;
-var $DataView = require$$6.DataView;
-var $isView = require$$5.ABV && ArrayBuffer$1.isView;
+var $ArrayBuffer = _typedBuffer.ArrayBuffer;
+var $DataView = _typedBuffer.DataView;
+var $isView = _typed.ABV && ArrayBuffer$1.isView;
 var $slice = $ArrayBuffer.prototype.slice;
-var VIEW = require$$5.VIEW;
+var VIEW = _typed.VIEW;
 var ARRAY_BUFFER = 'ArrayBuffer';
 
-$export$1($export$1.G + $export$1.W + $export$1.F * (ArrayBuffer$1 !== $ArrayBuffer), { ArrayBuffer: $ArrayBuffer });
+_export(_export.G + _export.W + _export.F * (ArrayBuffer$1 !== $ArrayBuffer), { ArrayBuffer: $ArrayBuffer });
 
-$export$1($export$1.S + $export$1.F * !require$$5.CONSTR, ARRAY_BUFFER, {
+_export(_export.S + _export.F * !_typed.CONSTR, ARRAY_BUFFER, {
   // 24.1.3.1 ArrayBuffer.isView(arg)
   isView: function isView(it) {
-    return $isView && $isView(it) || isObject(it) && VIEW in it;
+    return $isView && $isView(it) || _isObject(it) && VIEW in it;
   }
 });
 
-$export$1($export$1.P + $export$1.U + $export$1.F * require$$1(function () {
+_export(_export.P + _export.U + _export.F * _fails(function () {
   return !new $ArrayBuffer(2).slice(1, undefined).byteLength;
 }), ARRAY_BUFFER, {
   // 24.1.4.3 ArrayBuffer.prototype.slice(start, end)
   slice: function slice(start, end) {
-    if ($slice !== undefined && end === undefined) return $slice.call(anObject(this), start); // FF fix
-    var len = anObject(this).byteLength;
-    var first = require$$15(start, len);
-    var fin = require$$15(end === undefined ? len : end, len);
-    var result = new (speciesConstructor$1(this, $ArrayBuffer))(toLength(fin - first));
+    if ($slice !== undefined && end === undefined) return $slice.call(_anObject(this), start); // FF fix
+    var len = _anObject(this).byteLength;
+    var first = _toAbsoluteIndex(start, len);
+    var fin = _toAbsoluteIndex(end === undefined ? len : end, len);
+    var result = new (_speciesConstructor(this, $ArrayBuffer))(_toLength(fin - first));
     var viewS = new $DataView(this);
     var viewT = new $DataView(result);
     var index = 0;
@@ -5145,55 +4289,53 @@ $export$1($export$1.P + $export$1.U + $export$1.F * require$$1(function () {
   }
 });
 
-require$$2$3(ARRAY_BUFFER);
+_setSpecies(ARRAY_BUFFER);
 
-$export$1($export$1.G + $export$1.W + $export$1.F * !require$$5.ABV, {
-  DataView: require$$6.DataView
+_export(_export.G + _export.W + _export.F * !_typed.ABV, {
+  DataView: _typedBuffer.DataView
 });
-
-var $iterators = ( es6_array_iterator$2 && es6_array_iterator ) || es6_array_iterator$2;
 
 var _typedArray = createCommonjsModule(function (module) {
 'use strict';
-if (require$$1$1) {
-  var LIBRARY = require$$0;
-  var global = global$1;
-  var fails = require$$1;
-  var $export = $export$1;
-  var $typed = require$$5;
-  var $buffer = require$$6;
-  var ctx$$1 = ctx;
-  var anInstance$$1 = anInstance;
-  var propertyDesc = createDesc;
-  var hide$$1 = hide;
-  var redefineAll$$1 = redefineAll;
-  var toInteger$$1 = toInteger;
-  var toLength$$1 = toLength;
-  var toIndex = require$$14;
-  var toAbsoluteIndex = require$$15;
-  var toPrimitive$$1 = toPrimitive;
-  var has$$1 = has;
-  var classof$$1 = classof;
-  var isObject$$1 = isObject;
-  var toObject$$1 = toObject;
-  var isArrayIter = require$$21;
-  var create$$1 = create;
-  var getPrototypeOf$$1 = getPrototypeOf;
-  var gOPN = gOPN$2.f;
-  var getIterFn = require$$25;
-  var uid = require$$26;
-  var wks$$1 = wks;
-  var createArrayMethod = require$$28;
-  var createArrayIncludes = require$$0$2;
-  var speciesConstructor = speciesConstructor$1;
-  var ArrayIterators = $iterators;
-  var Iterators$$1 = Iterators;
-  var $iterDetect = require$$33;
-  var setSpecies = require$$2$3;
-  var arrayFill = require$$35;
-  var arrayCopyWithin = require$$36;
-  var $DP = $defineProperty$1;
-  var $GOPD = require$$0$8;
+if (_descriptors) {
+  var LIBRARY = _library;
+  var global = _global;
+  var fails = _fails;
+  var $export = _export;
+  var $typed = _typed;
+  var $buffer = _typedBuffer;
+  var ctx = _ctx;
+  var anInstance = _anInstance;
+  var propertyDesc = _propertyDesc;
+  var hide = _hide;
+  var redefineAll = _redefineAll;
+  var toInteger = _toInteger;
+  var toLength = _toLength;
+  var toIndex = _toIndex;
+  var toAbsoluteIndex = _toAbsoluteIndex;
+  var toPrimitive = _toPrimitive;
+  var has = _has;
+  var classof = _classof;
+  var isObject = _isObject;
+  var toObject = _toObject;
+  var isArrayIter = _isArrayIter;
+  var create = _objectCreate;
+  var getPrototypeOf = _objectGpo;
+  var gOPN = _objectGopn.f;
+  var getIterFn = core_getIteratorMethod;
+  var uid = _uid;
+  var wks = _wks;
+  var createArrayMethod = _arrayMethods;
+  var createArrayIncludes = _arrayIncludes;
+  var speciesConstructor = _speciesConstructor;
+  var ArrayIterators = es6_array_iterator;
+  var Iterators = _iterators;
+  var $iterDetect = _iterDetect;
+  var setSpecies = _setSpecies;
+  var arrayFill = _arrayFill;
+  var arrayCopyWithin = _arrayCopyWithin;
+  var $DP = _objectDp;
+  var $GOPD = _objectGopd;
   var dP = $DP.f;
   var gOPD = $GOPD.f;
   var RangeError = global.RangeError;
@@ -5225,8 +4367,8 @@ if (require$$1$1) {
   var arraySlice = ArrayProto.slice;
   var arrayToString = ArrayProto.toString;
   var arrayToLocaleString = ArrayProto.toLocaleString;
-  var ITERATOR = wks$$1('iterator');
-  var TAG = wks$$1('toStringTag');
+  var ITERATOR = wks('iterator');
+  var TAG = wks('toStringTag');
   var TYPED_CONSTRUCTOR = uid('typed_constructor');
   var DEF_CONSTRUCTOR = uid('def_constructor');
   var ALL_CONSTRUCTORS = $typed.CONSTR;
@@ -5248,18 +4390,18 @@ if (require$$1$1) {
   });
 
   var toOffset = function (it, BYTES) {
-    var offset = toInteger$$1(it);
+    var offset = toInteger(it);
     if (offset < 0 || offset % BYTES) throw RangeError('Wrong offset!');
     return offset;
   };
 
   var validate = function (it) {
-    if (isObject$$1(it) && TYPED_ARRAY in it) return it;
+    if (isObject(it) && TYPED_ARRAY in it) return it;
     throw TypeError(it + ' is not a typed array!');
   };
 
   var allocate = function (C, length) {
-    if (!(isObject$$1(C) && TYPED_CONSTRUCTOR in C)) {
+    if (!(isObject(C) && TYPED_CONSTRUCTOR in C)) {
       throw TypeError('It is not a typed array constructor!');
     } return new C(length);
   };
@@ -5281,7 +4423,7 @@ if (require$$1$1) {
   };
 
   var $from = function from(source /* , mapfn, thisArg */) {
-    var O = toObject$$1(source);
+    var O = toObject(source);
     var aLen = arguments.length;
     var mapfn = aLen > 1 ? arguments[1] : undefined;
     var mapping = mapfn !== undefined;
@@ -5292,8 +4434,8 @@ if (require$$1$1) {
         values.push(step.value);
       } O = values;
     }
-    if (mapping && aLen > 2) mapfn = ctx$$1(mapfn, arguments[2], 2);
-    for (i = 0, length = toLength$$1(O.length), result = allocate(this, length); length > i; i++) {
+    if (mapping && aLen > 2) mapfn = ctx(mapfn, arguments[2], 2);
+    for (i = 0, length = toLength(O.length), result = allocate(this, length); length > i; i++) {
       result[i] = mapping ? mapfn(O[i], i) : O[i];
     }
     return result;
@@ -5383,7 +4525,7 @@ if (require$$1$1) {
       return new (speciesConstructor(O, O[DEF_CONSTRUCTOR]))(
         O.buffer,
         O.byteOffset + $begin * O.BYTES_PER_ELEMENT,
-        toLength$$1((end === undefined ? length : toAbsoluteIndex(end, length)) - $begin)
+        toLength((end === undefined ? length : toAbsoluteIndex(end, length)) - $begin)
       );
     }
   };
@@ -5396,8 +4538,8 @@ if (require$$1$1) {
     validate(this);
     var offset = toOffset(arguments[1], 1);
     var length = this.length;
-    var src = toObject$$1(arrayLike);
-    var len = toLength$$1(src.length);
+    var src = toObject(arrayLike);
+    var len = toLength(src.length);
     var index = 0;
     if (len + offset > length) throw RangeError(WRONG_LENGTH);
     while (index < len) this[offset + index] = src[index++];
@@ -5416,27 +4558,27 @@ if (require$$1$1) {
   };
 
   var isTAIndex = function (target, key) {
-    return isObject$$1(target)
+    return isObject(target)
       && target[TYPED_ARRAY]
       && typeof key != 'symbol'
       && key in target
       && String(+key) == String(key);
   };
   var $getDesc = function getOwnPropertyDescriptor(target, key) {
-    return isTAIndex(target, key = toPrimitive$$1(key, true))
+    return isTAIndex(target, key = toPrimitive(key, true))
       ? propertyDesc(2, target[key])
       : gOPD(target, key);
   };
   var $setDesc = function defineProperty(target, key, desc) {
-    if (isTAIndex(target, key = toPrimitive$$1(key, true))
-      && isObject$$1(desc)
-      && has$$1(desc, 'value')
-      && !has$$1(desc, 'get')
-      && !has$$1(desc, 'set')
+    if (isTAIndex(target, key = toPrimitive(key, true))
+      && isObject(desc)
+      && has(desc, 'value')
+      && !has(desc, 'get')
+      && !has(desc, 'set')
       // TODO: add validation descriptor w/o calling accessors
       && !desc.configurable
-      && (!has$$1(desc, 'writable') || desc.writable)
-      && (!has$$1(desc, 'enumerable') || desc.enumerable)
+      && (!has(desc, 'writable') || desc.writable)
+      && (!has(desc, 'enumerable') || desc.enumerable)
     ) {
       target[key] = desc.value;
       return target;
@@ -5459,10 +4601,10 @@ if (require$$1$1) {
     };
   }
 
-  var $TypedArrayPrototype$ = redefineAll$$1({}, proto);
-  redefineAll$$1($TypedArrayPrototype$, $iterators$$1);
-  hide$$1($TypedArrayPrototype$, ITERATOR, $iterators$$1.values);
-  redefineAll$$1($TypedArrayPrototype$, {
+  var $TypedArrayPrototype$ = redefineAll({}, proto);
+  redefineAll($TypedArrayPrototype$, $iterators$$1);
+  hide($TypedArrayPrototype$, ITERATOR, $iterators$$1.values);
+  redefineAll($TypedArrayPrototype$, {
     slice: $slice,
     set: $set,
     constructor: function () { /* noop */ },
@@ -5485,7 +4627,7 @@ if (require$$1$1) {
     var SETTER = 'set' + KEY;
     var TypedArray = global[NAME];
     var Base = TypedArray || {};
-    var TAC = TypedArray && getPrototypeOf$$1(TypedArray);
+    var TAC = TypedArray && getPrototypeOf(TypedArray);
     var FORCED = !TypedArray || !$typed.ABV;
     var O = {};
     var TypedArrayPrototype = TypedArray && TypedArray[PROTOTYPE];
@@ -5511,15 +4653,15 @@ if (require$$1$1) {
     };
     if (FORCED) {
       TypedArray = wrapper(function (that, data, $offset, $length) {
-        anInstance$$1(that, TypedArray, NAME, '_d');
+        anInstance(that, TypedArray, NAME, '_d');
         var index = 0;
         var offset = 0;
         var buffer, byteLength, length, klass;
-        if (!isObject$$1(data)) {
+        if (!isObject(data)) {
           length = toIndex(data);
           byteLength = length * BYTES;
           buffer = new $ArrayBuffer(byteLength);
-        } else if (data instanceof $ArrayBuffer || (klass = classof$$1(data)) == ARRAY_BUFFER || klass == SHARED_BUFFER) {
+        } else if (data instanceof $ArrayBuffer || (klass = classof(data)) == ARRAY_BUFFER || klass == SHARED_BUFFER) {
           buffer = data;
           offset = toOffset($offset, BYTES);
           var $len = data.byteLength;
@@ -5528,7 +4670,7 @@ if (require$$1$1) {
             byteLength = $len - offset;
             if (byteLength < 0) throw RangeError(WRONG_LENGTH);
           } else {
-            byteLength = toLength$$1($length) * BYTES;
+            byteLength = toLength($length) * BYTES;
             if (byteLength + offset > $len) throw RangeError(WRONG_LENGTH);
           }
           length = byteLength / BYTES;
@@ -5537,7 +4679,7 @@ if (require$$1$1) {
         } else {
           return $from.call(TypedArray, data);
         }
-        hide$$1(that, '_d', {
+        hide(that, '_d', {
           b: buffer,
           o: offset,
           l: byteLength,
@@ -5546,8 +4688,8 @@ if (require$$1$1) {
         });
         while (index < length) addElement(that, index++);
       });
-      TypedArrayPrototype = TypedArray[PROTOTYPE] = create$$1($TypedArrayPrototype$);
-      hide$$1(TypedArrayPrototype, 'constructor', TypedArray);
+      TypedArrayPrototype = TypedArray[PROTOTYPE] = create($TypedArrayPrototype$);
+      hide(TypedArrayPrototype, 'constructor', TypedArray);
     } else if (!fails(function () {
       TypedArray(1);
     }) || !fails(function () {
@@ -5559,12 +4701,12 @@ if (require$$1$1) {
       new TypedArray(iter); // eslint-disable-line no-new
     }, true)) {
       TypedArray = wrapper(function (that, data, $offset, $length) {
-        anInstance$$1(that, TypedArray, NAME);
+        anInstance(that, TypedArray, NAME);
         var klass;
         // `ws` module bug, temporarily remove validation length for Uint8Array
         // https://github.com/websockets/ws/pull/645
-        if (!isObject$$1(data)) return new Base(toIndex(data));
-        if (data instanceof $ArrayBuffer || (klass = classof$$1(data)) == ARRAY_BUFFER || klass == SHARED_BUFFER) {
+        if (!isObject(data)) return new Base(toIndex(data));
+        if (data instanceof $ArrayBuffer || (klass = classof(data)) == ARRAY_BUFFER || klass == SHARED_BUFFER) {
           return $length !== undefined
             ? new Base(data, toOffset($offset, BYTES), $length)
             : $offset !== undefined
@@ -5575,7 +4717,7 @@ if (require$$1$1) {
         return $from.call(TypedArray, data);
       });
       arrayForEach(TAC !== Function.prototype ? gOPN(Base).concat(gOPN(TAC)) : gOPN(Base), function (key) {
-        if (!(key in TypedArray)) hide$$1(TypedArray, key, Base[key]);
+        if (!(key in TypedArray)) hide(TypedArray, key, Base[key]);
       });
       TypedArray[PROTOTYPE] = TypedArrayPrototype;
       if (!LIBRARY) TypedArrayPrototype.constructor = TypedArray;
@@ -5584,10 +4726,10 @@ if (require$$1$1) {
     var CORRECT_ITER_NAME = !!$nativeIterator
       && ($nativeIterator.name == 'values' || $nativeIterator.name == undefined);
     var $iterator = $iterators$$1.values;
-    hide$$1(TypedArray, TYPED_CONSTRUCTOR, true);
-    hide$$1(TypedArrayPrototype, TYPED_ARRAY, NAME);
-    hide$$1(TypedArrayPrototype, VIEW, true);
-    hide$$1(TypedArrayPrototype, DEF_CONSTRUCTOR, TypedArray);
+    hide(TypedArray, TYPED_CONSTRUCTOR, true);
+    hide(TypedArrayPrototype, TYPED_ARRAY, NAME);
+    hide(TypedArrayPrototype, VIEW, true);
+    hide(TypedArrayPrototype, DEF_CONSTRUCTOR, TypedArray);
 
     if (CLAMPED ? new TypedArray(1)[TAG] != NAME : !(TAG in TypedArrayPrototype)) {
       dP(TypedArrayPrototype, TAG, {
@@ -5608,7 +4750,7 @@ if (require$$1$1) {
       of: $of
     });
 
-    if (!(BYTES_PER_ELEMENT in TypedArrayPrototype)) hide$$1(TypedArrayPrototype, BYTES_PER_ELEMENT, BYTES);
+    if (!(BYTES_PER_ELEMENT in TypedArrayPrototype)) hide(TypedArrayPrototype, BYTES_PER_ELEMENT, BYTES);
 
     $export($export.P, NAME, proto);
 
@@ -5630,105 +4772,108 @@ if (require$$1$1) {
       TypedArrayPrototype.toLocaleString.call([1, 2]);
     })), NAME, { toLocaleString: $toLocaleString });
 
-    Iterators$$1[NAME] = CORRECT_ITER_NAME ? $nativeIterator : $iterator;
-    if (!LIBRARY && !CORRECT_ITER_NAME) hide$$1(TypedArrayPrototype, ITERATOR, $iterator);
+    Iterators[NAME] = CORRECT_ITER_NAME ? $nativeIterator : $iterator;
+    if (!LIBRARY && !CORRECT_ITER_NAME) hide(TypedArrayPrototype, ITERATOR, $iterator);
   };
 } else module.exports = function () { /* empty */ };
 });
 
-
-
-var _typedArray$2 = Object.freeze({
-	default: _typedArray,
-	__moduleExports: _typedArray
-});
-
-var require$$0$23 = ( _typedArray$2 && _typedArray ) || _typedArray$2;
-
-require$$0$23('Int8', 1, function (init) {
+_typedArray('Int8', 1, function (init) {
   return function Int8Array(data, byteOffset, length) {
     return init(this, data, byteOffset, length);
   };
 });
 
-require$$0$23('Uint8', 1, function (init) {
+_typedArray('Uint8', 1, function (init) {
   return function Uint8Array(data, byteOffset, length) {
     return init(this, data, byteOffset, length);
   };
 });
 
-require$$0$23('Uint8', 1, function (init) {
+_typedArray('Uint8', 1, function (init) {
   return function Uint8ClampedArray(data, byteOffset, length) {
     return init(this, data, byteOffset, length);
   };
 }, true);
 
-require$$0$23('Int16', 2, function (init) {
+_typedArray('Int16', 2, function (init) {
   return function Int16Array(data, byteOffset, length) {
     return init(this, data, byteOffset, length);
   };
 });
 
-require$$0$23('Uint16', 2, function (init) {
+_typedArray('Uint16', 2, function (init) {
   return function Uint16Array(data, byteOffset, length) {
     return init(this, data, byteOffset, length);
   };
 });
 
-require$$0$23('Int32', 4, function (init) {
+_typedArray('Int32', 4, function (init) {
   return function Int32Array(data, byteOffset, length) {
     return init(this, data, byteOffset, length);
   };
 });
 
-require$$0$23('Uint32', 4, function (init) {
+_typedArray('Uint32', 4, function (init) {
   return function Uint32Array(data, byteOffset, length) {
     return init(this, data, byteOffset, length);
   };
 });
 
-require$$0$23('Float32', 4, function (init) {
+_typedArray('Float32', 4, function (init) {
   return function Float32Array(data, byteOffset, length) {
     return init(this, data, byteOffset, length);
   };
 });
 
-require$$0$23('Float64', 8, function (init) {
+_typedArray('Float64', 8, function (init) {
   return function Float64Array(data, byteOffset, length) {
     return init(this, data, byteOffset, length);
   };
 });
 
-var rApply = (global$1.Reflect || {}).apply;
+// 26.1.1 Reflect.apply(target, thisArgument, argumentsList)
+
+
+
+var rApply = (_global.Reflect || {}).apply;
 var fApply = Function.apply;
 // MS Edge argumentsList argument is optional
-$export$1($export$1.S + $export$1.F * !require$$1(function () {
+_export(_export.S + _export.F * !_fails(function () {
   rApply(function () { /* empty */ });
 }), 'Reflect', {
   apply: function apply(target, thisArgument, argumentsList) {
-    var T = aFunction(target);
-    var L = anObject(argumentsList);
+    var T = _aFunction(target);
+    var L = _anObject(argumentsList);
     return rApply ? rApply(T, thisArgument, L) : fApply.call(T, thisArgument, L);
   }
 });
 
-var rConstruct = (global$1.Reflect || {}).construct;
+// 26.1.2 Reflect.construct(target, argumentsList [, newTarget])
+
+
+
+
+
+
+
+var rConstruct = (_global.Reflect || {}).construct;
 
 // MS Edge supports only 2 arguments and argumentsList argument is optional
 // FF Nightly sets third argument as `new.target`, but does not create `this` from it
-var NEW_TARGET_BUG = require$$1(function () {
+var NEW_TARGET_BUG = _fails(function () {
   function F() { /* empty */ }
   return !(rConstruct(function () { /* empty */ }, [], F) instanceof F);
 });
-var ARGS_BUG = !require$$1(function () {
+var ARGS_BUG = !_fails(function () {
   rConstruct(function () { /* empty */ });
 });
 
-$export$1($export$1.S + $export$1.F * (NEW_TARGET_BUG || ARGS_BUG), 'Reflect', {
+_export(_export.S + _export.F * (NEW_TARGET_BUG || ARGS_BUG), 'Reflect', {
   construct: function construct(Target, args /* , newTarget */) {
-    aFunction(Target);
-    anObject(args);
-    var newTarget = arguments.length < 3 ? Target : aFunction(arguments[2]);
+    _aFunction(Target);
+    _anObject(args);
+    var newTarget = arguments.length < 3 ? Target : _aFunction(arguments[2]);
     if (ARGS_BUG && !NEW_TARGET_BUG) return rConstruct(Target, args, newTarget);
     if (Target == newTarget) {
       // w/o altered newTarget, optimization for 0-4 arguments
@@ -5742,26 +4887,33 @@ $export$1($export$1.S + $export$1.F * (NEW_TARGET_BUG || ARGS_BUG), 'Reflect', {
       // w/o altered newTarget, lot of arguments case
       var $args = [null];
       $args.push.apply($args, args);
-      return new (bind.apply(Target, $args))();
+      return new (_bind.apply(Target, $args))();
     }
     // with altered newTarget, not support built-in constructors
     var proto = newTarget.prototype;
-    var instance = create(isObject(proto) ? proto : Object.prototype);
+    var instance = _objectCreate(_isObject(proto) ? proto : Object.prototype);
     var result = Function.apply.call(Target, instance, args);
-    return isObject(result) ? result : instance;
+    return _isObject(result) ? result : instance;
   }
 });
 
-$export$1($export$1.S + $export$1.F * require$$1(function () {
+// 26.1.3 Reflect.defineProperty(target, propertyKey, attributes)
+
+
+
+
+
+// MS Edge has broken Reflect.defineProperty - throwing instead of returning false
+_export(_export.S + _export.F * _fails(function () {
   // eslint-disable-next-line no-undef
-  Reflect.defineProperty($defineProperty$1.f({}, 1, { value: 1 }), 1, { value: 2 });
+  Reflect.defineProperty(_objectDp.f({}, 1, { value: 1 }), 1, { value: 2 });
 }), 'Reflect', {
   defineProperty: function defineProperty(target, propertyKey, attributes) {
-    anObject(target);
-    propertyKey = toPrimitive(propertyKey, true);
-    anObject(attributes);
+    _anObject(target);
+    propertyKey = _toPrimitive(propertyKey, true);
+    _anObject(attributes);
     try {
-      $defineProperty$1.f(target, propertyKey, attributes);
+      _objectDp.f(target, propertyKey, attributes);
       return true;
     } catch (e) {
       return false;
@@ -5769,12 +4921,14 @@ $export$1($export$1.S + $export$1.F * require$$1(function () {
   }
 });
 
-var gOPD$3 = require$$0$8.f;
+// 26.1.4 Reflect.deleteProperty(target, propertyKey)
+
+var gOPD$3 = _objectGopd.f;
 
 
-$export$1($export$1.S, 'Reflect', {
+_export(_export.S, 'Reflect', {
   deleteProperty: function deleteProperty(target, propertyKey) {
-    var desc = gOPD$3(anObject(target), propertyKey);
+    var desc = gOPD$3(_anObject(target), propertyKey);
     return desc && !desc.configurable ? false : delete target[propertyKey];
   }
 });
@@ -5784,13 +4938,13 @@ $export$1($export$1.S, 'Reflect', {
 
 
 var Enumerate = function (iterated) {
-  this._t = anObject(iterated); // target
+  this._t = _anObject(iterated); // target
   this._i = 0;                  // next index
   var keys = this._k = [];      // keys
   var key;
   for (key in iterated) keys.push(key);
 };
-require$$0$14(Enumerate, 'Object', function () {
+_iterCreate(Enumerate, 'Object', function () {
   var that = this;
   var keys = that._k;
   var key;
@@ -5800,76 +4954,101 @@ require$$0$14(Enumerate, 'Object', function () {
   return { value: key, done: false };
 });
 
-$export$1($export$1.S, 'Reflect', {
+_export(_export.S, 'Reflect', {
   enumerate: function enumerate(target) {
     return new Enumerate(target);
   }
 });
 
+// 26.1.6 Reflect.get(target, propertyKey [, receiver])
+
+
+
+
+
+
+
 function get(target, propertyKey /* , receiver */) {
   var receiver = arguments.length < 3 ? target : arguments[2];
   var desc, proto;
-  if (anObject(target) === receiver) return target[propertyKey];
-  if (desc = require$$0$8.f(target, propertyKey)) return has(desc, 'value')
+  if (_anObject(target) === receiver) return target[propertyKey];
+  if (desc = _objectGopd.f(target, propertyKey)) return _has(desc, 'value')
     ? desc.value
     : desc.get !== undefined
       ? desc.get.call(receiver)
       : undefined;
-  if (isObject(proto = getPrototypeOf(target))) return get(proto, propertyKey, receiver);
+  if (_isObject(proto = _objectGpo(target))) return get(proto, propertyKey, receiver);
 }
 
-$export$1($export$1.S, 'Reflect', { get: get });
+_export(_export.S, 'Reflect', { get: get });
 
-$export$1($export$1.S, 'Reflect', {
+// 26.1.7 Reflect.getOwnPropertyDescriptor(target, propertyKey)
+
+
+
+
+_export(_export.S, 'Reflect', {
   getOwnPropertyDescriptor: function getOwnPropertyDescriptor(target, propertyKey) {
-    return require$$0$8.f(anObject(target), propertyKey);
+    return _objectGopd.f(_anObject(target), propertyKey);
   }
 });
 
-$export$1($export$1.S, 'Reflect', {
-  getPrototypeOf: function getPrototypeOf$$1(target) {
-    return getPrototypeOf(anObject(target));
+// 26.1.8 Reflect.getPrototypeOf(target)
+
+
+
+
+_export(_export.S, 'Reflect', {
+  getPrototypeOf: function getPrototypeOf(target) {
+    return _objectGpo(_anObject(target));
   }
 });
 
-$export$1($export$1.S, 'Reflect', {
+// 26.1.9 Reflect.has(target, propertyKey)
+
+
+_export(_export.S, 'Reflect', {
   has: function has(target, propertyKey) {
     return propertyKey in target;
   }
 });
 
+// 26.1.10 Reflect.isExtensible(target)
+
+
 var $isExtensible = Object.isExtensible;
 
-$export$1($export$1.S, 'Reflect', {
+_export(_export.S, 'Reflect', {
   isExtensible: function isExtensible(target) {
-    anObject(target);
+    _anObject(target);
     return $isExtensible ? $isExtensible(target) : true;
   }
 });
 
-var Reflect$1 = global$1.Reflect;
+// all object keys, includes non-enumerable and symbols
+
+
+
+var Reflect$1 = _global.Reflect;
 var _ownKeys = Reflect$1 && Reflect$1.ownKeys || function ownKeys(it) {
-  var keys = gOPN$2.f(anObject(it));
-  var getSymbols = gOPS.f;
+  var keys = _objectGopn.f(_anObject(it));
+  var getSymbols = _objectGops.f;
   return getSymbols ? keys.concat(getSymbols(it)) : keys;
 };
 
+// 26.1.11 Reflect.ownKeys(target)
 
 
-var _ownKeys$2 = Object.freeze({
-	default: _ownKeys,
-	__moduleExports: _ownKeys
-});
+_export(_export.S, 'Reflect', { ownKeys: _ownKeys });
 
-var ownKeys = ( _ownKeys$2 && _ownKeys ) || _ownKeys$2;
+// 26.1.12 Reflect.preventExtensions(target)
 
-$export$1($export$1.S, 'Reflect', { ownKeys: ownKeys });
 
 var $preventExtensions = Object.preventExtensions;
 
-$export$1($export$1.S, 'Reflect', {
+_export(_export.S, 'Reflect', {
   preventExtensions: function preventExtensions(target) {
-    anObject(target);
+    _anObject(target);
     try {
       if ($preventExtensions) $preventExtensions(target);
       return true;
@@ -5879,35 +5058,49 @@ $export$1($export$1.S, 'Reflect', {
   }
 });
 
+// 26.1.13 Reflect.set(target, propertyKey, V [, receiver])
+
+
+
+
+
+
+
+
+
 function set(target, propertyKey, V /* , receiver */) {
   var receiver = arguments.length < 4 ? target : arguments[3];
-  var ownDesc = require$$0$8.f(anObject(target), propertyKey);
+  var ownDesc = _objectGopd.f(_anObject(target), propertyKey);
   var existingDescriptor, proto;
   if (!ownDesc) {
-    if (isObject(proto = getPrototypeOf(target))) {
+    if (_isObject(proto = _objectGpo(target))) {
       return set(proto, propertyKey, V, receiver);
     }
-    ownDesc = createDesc(0);
+    ownDesc = _propertyDesc(0);
   }
-  if (has(ownDesc, 'value')) {
-    if (ownDesc.writable === false || !isObject(receiver)) return false;
-    if (existingDescriptor = require$$0$8.f(receiver, propertyKey)) {
+  if (_has(ownDesc, 'value')) {
+    if (ownDesc.writable === false || !_isObject(receiver)) return false;
+    if (existingDescriptor = _objectGopd.f(receiver, propertyKey)) {
       if (existingDescriptor.get || existingDescriptor.set || existingDescriptor.writable === false) return false;
       existingDescriptor.value = V;
-      $defineProperty$1.f(receiver, propertyKey, existingDescriptor);
-    } else $defineProperty$1.f(receiver, propertyKey, createDesc(0, V));
+      _objectDp.f(receiver, propertyKey, existingDescriptor);
+    } else _objectDp.f(receiver, propertyKey, _propertyDesc(0, V));
     return true;
   }
   return ownDesc.set === undefined ? false : (ownDesc.set.call(receiver, V), true);
 }
 
-$export$1($export$1.S, 'Reflect', { set: set });
+_export(_export.S, 'Reflect', { set: set });
 
-if (setProto) $export$1($export$1.S, 'Reflect', {
+// 26.1.14 Reflect.setPrototypeOf(target, proto)
+
+
+
+if (_setProto) _export(_export.S, 'Reflect', {
   setPrototypeOf: function setPrototypeOf(target, proto) {
-    setProto.check(target, proto);
+    _setProto.check(target, proto);
     try {
-      setProto.set(target, proto);
+      _setProto.set(target, proto);
       return true;
     } catch (e) {
       return false;
@@ -5918,15 +5111,15 @@ if (setProto) $export$1($export$1.S, 'Reflect', {
 'use strict';
 // https://github.com/tc39/Array.prototype.includes
 
-var $includes = require$$0$2(true);
+var $includes = _arrayIncludes(true);
 
-$export$1($export$1.P, 'Array', {
+_export(_export.P, 'Array', {
   includes: function includes(el /* , fromIndex = 0 */) {
     return $includes(this, el, arguments.length > 1 ? arguments[1] : undefined);
   }
 });
 
-require$$0$19('includes');
+_addToUnscopables('includes');
 
 'use strict';
 // https://tc39.github.io/proposal-flatMap/#sec-FlattenIntoArray
@@ -5934,12 +5127,12 @@ require$$0$19('includes');
 
 
 
-var IS_CONCAT_SPREADABLE = wks('isConcatSpreadable');
+var IS_CONCAT_SPREADABLE = _wks('isConcatSpreadable');
 
 function flattenIntoArray(target, original, source, sourceLen, start, depth, mapper, thisArg) {
   var targetIndex = start;
   var sourceIndex = 0;
-  var mapFn = mapper ? ctx(mapper, thisArg, 3) : false;
+  var mapFn = mapper ? _ctx(mapper, thisArg, 3) : false;
   var element, spreadable;
 
   while (sourceIndex < sourceLen) {
@@ -5947,13 +5140,13 @@ function flattenIntoArray(target, original, source, sourceLen, start, depth, map
       element = mapFn ? mapFn(source[sourceIndex], sourceIndex, original) : source[sourceIndex];
 
       spreadable = false;
-      if (isObject(element)) {
+      if (_isObject(element)) {
         spreadable = element[IS_CONCAT_SPREADABLE];
-        spreadable = spreadable !== undefined ? !!spreadable : isArray(element);
+        spreadable = spreadable !== undefined ? !!spreadable : _isArray(element);
       }
 
       if (spreadable && depth > 0) {
-        targetIndex = flattenIntoArray(target, original, element, toLength(element.length), targetIndex, depth - 1) - 1;
+        targetIndex = flattenIntoArray(target, original, element, _toLength(element.length), targetIndex, depth - 1) - 1;
       } else {
         if (targetIndex >= 0x1fffffffffffff) throw TypeError();
         target[targetIndex] = element;
@@ -5968,15 +5161,6 @@ function flattenIntoArray(target, original, source, sourceLen, start, depth, map
 
 var _flattenIntoArray = flattenIntoArray;
 
-
-
-var _flattenIntoArray$2 = Object.freeze({
-	default: _flattenIntoArray,
-	__moduleExports: _flattenIntoArray
-});
-
-var flattenIntoArray$1 = ( _flattenIntoArray$2 && _flattenIntoArray ) || _flattenIntoArray$2;
-
 'use strict';
 // https://tc39.github.io/proposal-flatMap/#sec-Array.prototype.flatMap
 
@@ -5986,19 +5170,19 @@ var flattenIntoArray$1 = ( _flattenIntoArray$2 && _flattenIntoArray ) || _flatte
 
 
 
-$export$1($export$1.P, 'Array', {
+_export(_export.P, 'Array', {
   flatMap: function flatMap(callbackfn /* , thisArg */) {
-    var O = toObject(this);
+    var O = _toObject(this);
     var sourceLen, A;
-    aFunction(callbackfn);
-    sourceLen = toLength(O.length);
-    A = arraySpeciesCreate(O, 0);
-    flattenIntoArray$1(A, O, O, sourceLen, 0, 1, callbackfn, arguments[1]);
+    _aFunction(callbackfn);
+    sourceLen = _toLength(O.length);
+    A = _arraySpeciesCreate(O, 0);
+    _flattenIntoArray(A, O, O, sourceLen, 0, 1, callbackfn, arguments[1]);
     return A;
   }
 });
 
-require$$0$19('flatMap');
+_addToUnscopables('flatMap');
 
 'use strict';
 // https://tc39.github.io/proposal-flatMap/#sec-Array.prototype.flatten
@@ -6009,50 +5193,46 @@ require$$0$19('flatMap');
 
 
 
-$export$1($export$1.P, 'Array', {
+_export(_export.P, 'Array', {
   flatten: function flatten(/* depthArg = 1 */) {
     var depthArg = arguments[0];
-    var O = toObject(this);
-    var sourceLen = toLength(O.length);
-    var A = arraySpeciesCreate(O, 0);
-    flattenIntoArray$1(A, O, O, sourceLen, 0, depthArg === undefined ? 1 : toInteger(depthArg));
+    var O = _toObject(this);
+    var sourceLen = _toLength(O.length);
+    var A = _arraySpeciesCreate(O, 0);
+    _flattenIntoArray(A, O, O, sourceLen, 0, depthArg === undefined ? 1 : _toInteger(depthArg));
     return A;
   }
 });
 
-require$$0$19('flatten');
+_addToUnscopables('flatten');
 
 'use strict';
 // https://github.com/mathiasbynens/String.prototype.at
 
-var $at$2 = require$$0$15(true);
+var $at$2 = _stringAt(true);
 
-$export$1($export$1.P, 'String', {
+_export(_export.P, 'String', {
   at: function at(pos) {
     return $at$2(this, pos);
   }
 });
 
+// https://github.com/tc39/proposal-string-pad-start-end
+
+
+
+
 var _stringPad = function (that, maxLength, fillString, left) {
-  var S = String(defined(that));
+  var S = String(_defined(that));
   var stringLength = S.length;
   var fillStr = fillString === undefined ? ' ' : String(fillString);
-  var intMaxLength = toLength(maxLength);
+  var intMaxLength = _toLength(maxLength);
   if (intMaxLength <= stringLength || fillStr == '') return S;
   var fillLen = intMaxLength - stringLength;
-  var stringFiller = repeat.call(fillStr, Math.ceil(fillLen / fillStr.length));
+  var stringFiller = _stringRepeat.call(fillStr, Math.ceil(fillLen / fillStr.length));
   if (stringFiller.length > fillLen) stringFiller = stringFiller.slice(0, fillLen);
   return left ? stringFiller + S : S + stringFiller;
 };
-
-
-
-var _stringPad$2 = Object.freeze({
-	default: _stringPad,
-	__moduleExports: _stringPad
-});
-
-var $pad = ( _stringPad$2 && _stringPad ) || _stringPad$2;
 
 'use strict';
 // https://github.com/tc39/proposal-string-pad-start-end
@@ -6061,9 +5241,9 @@ var $pad = ( _stringPad$2 && _stringPad ) || _stringPad$2;
 
 
 // https://github.com/zloirock/core-js/issues/280
-$export$1($export$1.P + $export$1.F * /Version\/10\.\d+(\.\d+)? Safari\//.test(userAgent), 'String', {
+_export(_export.P + _export.F * /Version\/10\.\d+(\.\d+)? Safari\//.test(_userAgent), 'String', {
   padStart: function padStart(maxLength /* , fillString = ' ' */) {
-    return $pad(this, maxLength, arguments.length > 1 ? arguments[1] : undefined, true);
+    return _stringPad(this, maxLength, arguments.length > 1 ? arguments[1] : undefined, true);
   }
 });
 
@@ -6074,15 +5254,15 @@ $export$1($export$1.P + $export$1.F * /Version\/10\.\d+(\.\d+)? Safari\//.test(u
 
 
 // https://github.com/zloirock/core-js/issues/280
-$export$1($export$1.P + $export$1.F * /Version\/10\.\d+(\.\d+)? Safari\//.test(userAgent), 'String', {
+_export(_export.P + _export.F * /Version\/10\.\d+(\.\d+)? Safari\//.test(_userAgent), 'String', {
   padEnd: function padEnd(maxLength /* , fillString = ' ' */) {
-    return $pad(this, maxLength, arguments.length > 1 ? arguments[1] : undefined, false);
+    return _stringPad(this, maxLength, arguments.length > 1 ? arguments[1] : undefined, false);
   }
 });
 
 'use strict';
 // https://github.com/sebmarkbage/ecmascript-string-left-right-trim
-require$$0$11('trimLeft', function ($trim) {
+_stringTrim('trimLeft', function ($trim) {
   return function trimLeft() {
     return $trim(this, 1);
   };
@@ -6090,7 +5270,7 @@ require$$0$11('trimLeft', function ($trim) {
 
 'use strict';
 // https://github.com/sebmarkbage/ecmascript-string-left-right-trim
-require$$0$11('trimRight', function ($trim) {
+_stringTrim('trimRight', function ($trim) {
   return function trimRight() {
     return $trim(this, 2);
   };
@@ -6110,48 +5290,55 @@ var $RegExpStringIterator = function (regexp, string) {
   this._s = string;
 };
 
-require$$0$14($RegExpStringIterator, 'RegExp String', function next() {
+_iterCreate($RegExpStringIterator, 'RegExp String', function next() {
   var match = this._r.exec(this._s);
   return { value: match, done: match === null };
 });
 
-$export$1($export$1.P, 'String', {
+_export(_export.P, 'String', {
   matchAll: function matchAll(regexp) {
-    defined(this);
-    if (!isRegExp(regexp)) throw TypeError(regexp + ' is not a regexp!');
+    _defined(this);
+    if (!_isRegexp(regexp)) throw TypeError(regexp + ' is not a regexp!');
     var S = String(this);
-    var flags = 'flags' in RegExpProto ? String(regexp.flags) : getFlags.call(regexp);
+    var flags = 'flags' in RegExpProto ? String(regexp.flags) : _flags.call(regexp);
     var rx = new RegExp(regexp.source, ~flags.indexOf('g') ? flags : 'g' + flags);
-    rx.lastIndex = toLength(regexp.lastIndex);
+    rx.lastIndex = _toLength(regexp.lastIndex);
     return new $RegExpStringIterator(rx, S);
   }
 });
 
-require$$0$7('asyncIterator');
+_wksDefine('asyncIterator');
 
-require$$0$7('observable');
+_wksDefine('observable');
 
-$export$1($export$1.S, 'Object', {
+// https://github.com/tc39/proposal-object-getownpropertydescriptors
+
+
+
+
+
+
+_export(_export.S, 'Object', {
   getOwnPropertyDescriptors: function getOwnPropertyDescriptors(object) {
-    var O = toIObject(object);
-    var getDesc = require$$0$8.f;
-    var keys = ownKeys(O);
+    var O = _toIobject(object);
+    var getDesc = _objectGopd.f;
+    var keys = _ownKeys(O);
     var result = {};
     var i = 0;
     var key, desc;
     while (keys.length > i) {
       desc = getDesc(O, key = keys[i++]);
-      if (desc !== undefined) createProperty(result, key, desc);
+      if (desc !== undefined) _createProperty(result, key, desc);
     }
     return result;
   }
 });
 
-var isEnum$1 = require$$0$5.f;
+var isEnum$1 = _objectPie.f;
 var _objectToArray = function (isEntries) {
   return function (it) {
-    var O = toIObject(it);
-    var keys = getKeys(O);
+    var O = _toIobject(it);
+    var keys = _objectKeys(O);
     var length = keys.length;
     var i = 0;
     var result = [];
@@ -6162,26 +5349,21 @@ var _objectToArray = function (isEntries) {
   };
 };
 
+// https://github.com/tc39/proposal-object-values-entries
 
+var $values = _objectToArray(false);
 
-var _objectToArray$2 = Object.freeze({
-	default: _objectToArray,
-	__moduleExports: _objectToArray
-});
-
-var require$$0$24 = ( _objectToArray$2 && _objectToArray ) || _objectToArray$2;
-
-var $values = require$$0$24(false);
-
-$export$1($export$1.S, 'Object', {
+_export(_export.S, 'Object', {
   values: function values(it) {
     return $values(it);
   }
 });
 
-var $entries = require$$0$24(true);
+// https://github.com/tc39/proposal-object-values-entries
 
-$export$1($export$1.S, 'Object', {
+var $entries = _objectToArray(true);
+
+_export(_export.S, 'Object', {
   entries: function entries(it) {
     return $entries(it);
   }
@@ -6189,22 +5371,13 @@ $export$1($export$1.S, 'Object', {
 
 'use strict';
 // Forced replacement prototype accessors methods
-var _objectForcedPam = require$$0 || !require$$1(function () {
+var _objectForcedPam = _library || !_fails(function () {
   var K = Math.random();
   // In FF throws only define methods
   // eslint-disable-next-line no-undef, no-useless-call
   __defineSetter__.call(null, K, function () { /* empty */ });
-  delete global$1[K];
+  delete _global[K];
 });
-
-
-
-var _objectForcedPam$2 = Object.freeze({
-	default: _objectForcedPam,
-	__moduleExports: _objectForcedPam
-});
-
-var require$$2$4 = ( _objectForcedPam$2 && _objectForcedPam ) || _objectForcedPam$2;
 
 'use strict';
 
@@ -6213,9 +5386,9 @@ var require$$2$4 = ( _objectForcedPam$2 && _objectForcedPam ) || _objectForcedPa
 
 
 // B.2.2.2 Object.prototype.__defineGetter__(P, getter)
-require$$1$1 && $export$1($export$1.P + require$$2$4, 'Object', {
+_descriptors && _export(_export.P + _objectForcedPam, 'Object', {
   __defineGetter__: function __defineGetter__(P, getter) {
-    $defineProperty$1.f(toObject(this), P, { get: aFunction(getter), enumerable: true, configurable: true });
+    _objectDp.f(_toObject(this), P, { get: _aFunction(getter), enumerable: true, configurable: true });
   }
 });
 
@@ -6226,9 +5399,9 @@ require$$1$1 && $export$1($export$1.P + require$$2$4, 'Object', {
 
 
 // B.2.2.3 Object.prototype.__defineSetter__(P, setter)
-require$$1$1 && $export$1($export$1.P + require$$2$4, 'Object', {
+_descriptors && _export(_export.P + _objectForcedPam, 'Object', {
   __defineSetter__: function __defineSetter__(P, setter) {
-    $defineProperty$1.f(toObject(this), P, { set: aFunction(setter), enumerable: true, configurable: true });
+    _objectDp.f(_toObject(this), P, { set: _aFunction(setter), enumerable: true, configurable: true });
   }
 });
 
@@ -6237,17 +5410,17 @@ require$$1$1 && $export$1($export$1.P + require$$2$4, 'Object', {
 
 
 
-var getOwnPropertyDescriptor = require$$0$8.f;
+var getOwnPropertyDescriptor = _objectGopd.f;
 
 // B.2.2.4 Object.prototype.__lookupGetter__(P)
-require$$1$1 && $export$1($export$1.P + require$$2$4, 'Object', {
+_descriptors && _export(_export.P + _objectForcedPam, 'Object', {
   __lookupGetter__: function __lookupGetter__(P) {
-    var O = toObject(this);
-    var K = toPrimitive(P, true);
+    var O = _toObject(this);
+    var K = _toPrimitive(P, true);
     var D;
     do {
       if (D = getOwnPropertyDescriptor(O, K)) return D.get;
-    } while (O = getPrototypeOf(O));
+    } while (O = _objectGpo(O));
   }
 });
 
@@ -6256,61 +5429,52 @@ require$$1$1 && $export$1($export$1.P + require$$2$4, 'Object', {
 
 
 
-var getOwnPropertyDescriptor$1 = require$$0$8.f;
+var getOwnPropertyDescriptor$1 = _objectGopd.f;
 
 // B.2.2.5 Object.prototype.__lookupSetter__(P)
-require$$1$1 && $export$1($export$1.P + require$$2$4, 'Object', {
+_descriptors && _export(_export.P + _objectForcedPam, 'Object', {
   __lookupSetter__: function __lookupSetter__(P) {
-    var O = toObject(this);
-    var K = toPrimitive(P, true);
+    var O = _toObject(this);
+    var K = _toPrimitive(P, true);
     var D;
     do {
       if (D = getOwnPropertyDescriptor$1(O, K)) return D.set;
-    } while (O = getPrototypeOf(O));
+    } while (O = _objectGpo(O));
   }
 });
 
 var _arrayFromIterable = function (iter, ITERATOR) {
   var result = [];
-  forOf(iter, false, result.push, result, ITERATOR);
+  _forOf(iter, false, result.push, result, ITERATOR);
   return result;
 };
 
+// https://github.com/DavidBruant/Map-Set.prototype.toJSON
 
-
-var _arrayFromIterable$2 = Object.freeze({
-	default: _arrayFromIterable,
-	__moduleExports: _arrayFromIterable
-});
-
-var from = ( _arrayFromIterable$2 && _arrayFromIterable ) || _arrayFromIterable$2;
 
 var _collectionToJson = function (NAME) {
   return function toJSON() {
-    if (classof(this) != NAME) throw TypeError(NAME + "#toJSON isn't generic");
-    return from(this);
+    if (_classof(this) != NAME) throw TypeError(NAME + "#toJSON isn't generic");
+    return _arrayFromIterable(this);
   };
 };
 
+// https://github.com/DavidBruant/Map-Set.prototype.toJSON
 
 
-var _collectionToJson$2 = Object.freeze({
-	default: _collectionToJson,
-	__moduleExports: _collectionToJson
-});
+_export(_export.P + _export.R, 'Map', { toJSON: _collectionToJson('Map') });
 
-var require$$0$25 = ( _collectionToJson$2 && _collectionToJson ) || _collectionToJson$2;
+// https://github.com/DavidBruant/Map-Set.prototype.toJSON
 
-$export$1($export$1.P + $export$1.R, 'Map', { toJSON: require$$0$25('Map') });
 
-$export$1($export$1.P + $export$1.R, 'Set', { toJSON: require$$0$25('Set') });
+_export(_export.P + _export.R, 'Set', { toJSON: _collectionToJson('Set') });
 
 'use strict';
 // https://tc39.github.io/proposal-setmap-offrom/
 
 
 var _setCollectionOf = function (COLLECTION) {
-  $export$1($export$1.S, COLLECTION, { of: function of() {
+  _export(_export.S, COLLECTION, { of: function of() {
     var length = arguments.length;
     var A = new Array(length);
     while (length--) A[length] = arguments[length];
@@ -6318,22 +5482,17 @@ var _setCollectionOf = function (COLLECTION) {
   } });
 };
 
+// https://tc39.github.io/proposal-setmap-offrom/#sec-map.of
+_setCollectionOf('Map');
 
+// https://tc39.github.io/proposal-setmap-offrom/#sec-set.of
+_setCollectionOf('Set');
 
-var _setCollectionOf$2 = Object.freeze({
-	default: _setCollectionOf,
-	__moduleExports: _setCollectionOf
-});
+// https://tc39.github.io/proposal-setmap-offrom/#sec-weakmap.of
+_setCollectionOf('WeakMap');
 
-var require$$0$26 = ( _setCollectionOf$2 && _setCollectionOf ) || _setCollectionOf$2;
-
-require$$0$26('Map');
-
-require$$0$26('Set');
-
-require$$0$26('WeakMap');
-
-require$$0$26('WeakSet');
+// https://tc39.github.io/proposal-setmap-offrom/#sec-weakset.of
+_setCollectionOf('WeakSet');
 
 'use strict';
 // https://tc39.github.io/proposal-setmap-offrom/
@@ -6343,65 +5502,78 @@ require$$0$26('WeakSet');
 
 
 var _setCollectionFrom = function (COLLECTION) {
-  $export$1($export$1.S, COLLECTION, { from: function from(source /* , mapFn, thisArg */) {
+  _export(_export.S, COLLECTION, { from: function from(source /* , mapFn, thisArg */) {
     var mapFn = arguments[1];
     var mapping, A, n, cb;
-    aFunction(this);
+    _aFunction(this);
     mapping = mapFn !== undefined;
-    if (mapping) aFunction(mapFn);
+    if (mapping) _aFunction(mapFn);
     if (source == undefined) return new this();
     A = [];
     if (mapping) {
       n = 0;
-      cb = ctx(mapFn, arguments[2], 2);
-      forOf(source, false, function (nextItem) {
+      cb = _ctx(mapFn, arguments[2], 2);
+      _forOf(source, false, function (nextItem) {
         A.push(cb(nextItem, n++));
       });
     } else {
-      forOf(source, false, A.push, A);
+      _forOf(source, false, A.push, A);
     }
     return new this(A);
   } });
 };
 
+// https://tc39.github.io/proposal-setmap-offrom/#sec-map.from
+_setCollectionFrom('Map');
+
+// https://tc39.github.io/proposal-setmap-offrom/#sec-set.from
+_setCollectionFrom('Set');
+
+// https://tc39.github.io/proposal-setmap-offrom/#sec-weakmap.from
+_setCollectionFrom('WeakMap');
+
+// https://tc39.github.io/proposal-setmap-offrom/#sec-weakset.from
+_setCollectionFrom('WeakSet');
+
+// https://github.com/tc39/proposal-global
 
 
-var _setCollectionFrom$2 = Object.freeze({
-	default: _setCollectionFrom,
-	__moduleExports: _setCollectionFrom
-});
+_export(_export.G, { global: _global });
 
-var require$$0$27 = ( _setCollectionFrom$2 && _setCollectionFrom ) || _setCollectionFrom$2;
+// https://github.com/tc39/proposal-global
 
-require$$0$27('Map');
 
-require$$0$27('Set');
+_export(_export.S, 'System', { global: _global });
 
-require$$0$27('WeakMap');
+// https://github.com/ljharb/proposal-is-error
 
-require$$0$27('WeakSet');
 
-$export$1($export$1.G, { global: global$1 });
 
-$export$1($export$1.S, 'System', { global: global$1 });
-
-$export$1($export$1.S, 'Error', {
+_export(_export.S, 'Error', {
   isError: function isError(it) {
-    return require$$2(it) === 'Error';
+    return _cof(it) === 'Error';
   }
 });
 
-$export$1($export$1.S, 'Math', {
+// https://rwaldron.github.io/proposal-math-extensions/
+
+
+_export(_export.S, 'Math', {
   clamp: function clamp(x, lower, upper) {
     return Math.min(upper, Math.max(lower, x));
   }
 });
 
-$export$1($export$1.S, 'Math', { DEG_PER_RAD: Math.PI / 180 });
+// https://rwaldron.github.io/proposal-math-extensions/
+
+
+_export(_export.S, 'Math', { DEG_PER_RAD: Math.PI / 180 });
+
+// https://rwaldron.github.io/proposal-math-extensions/
 
 var RAD_PER_DEG = 180 / Math.PI;
 
-$export$1($export$1.S, 'Math', {
+_export(_export.S, 'Math', {
   degrees: function degrees(radians) {
     return radians * RAD_PER_DEG;
   }
@@ -6426,22 +5598,21 @@ var _mathScale = Math.scale || function scale(x, inLow, inHigh, outLow, outHigh)
   return (x - inLow) * (outHigh - outLow) / (inHigh - inLow) + outLow;
 };
 
+// https://rwaldron.github.io/proposal-math-extensions/
 
 
-var _mathScale$2 = Object.freeze({
-	default: _mathScale,
-	__moduleExports: _mathScale
-});
 
-var require$$0$28 = ( _mathScale$2 && _mathScale ) || _mathScale$2;
 
-$export$1($export$1.S, 'Math', {
+_export(_export.S, 'Math', {
   fscale: function fscale(x, inLow, inHigh, outLow, outHigh) {
-    return fround(require$$0$28(x, inLow, inHigh, outLow, outHigh));
+    return _mathFround(_mathScale(x, inLow, inHigh, outLow, outHigh));
   }
 });
 
-$export$1($export$1.S, 'Math', {
+// https://gist.github.com/BrendanEich/4294d5c212a6d2254703
+
+
+_export(_export.S, 'Math', {
   iaddh: function iaddh(x0, x1, y0, y1) {
     var $x0 = x0 >>> 0;
     var $x1 = x1 >>> 0;
@@ -6450,7 +5621,10 @@ $export$1($export$1.S, 'Math', {
   }
 });
 
-$export$1($export$1.S, 'Math', {
+// https://gist.github.com/BrendanEich/4294d5c212a6d2254703
+
+
+_export(_export.S, 'Math', {
   isubh: function isubh(x0, x1, y0, y1) {
     var $x0 = x0 >>> 0;
     var $x1 = x1 >>> 0;
@@ -6459,7 +5633,10 @@ $export$1($export$1.S, 'Math', {
   }
 });
 
-$export$1($export$1.S, 'Math', {
+// https://gist.github.com/BrendanEich/4294d5c212a6d2254703
+
+
+_export(_export.S, 'Math', {
   imulh: function imulh(u, v) {
     var UINT16 = 0xffff;
     var $u = +u;
@@ -6473,19 +5650,30 @@ $export$1($export$1.S, 'Math', {
   }
 });
 
-$export$1($export$1.S, 'Math', { RAD_PER_DEG: 180 / Math.PI });
+// https://rwaldron.github.io/proposal-math-extensions/
+
+
+_export(_export.S, 'Math', { RAD_PER_DEG: 180 / Math.PI });
+
+// https://rwaldron.github.io/proposal-math-extensions/
 
 var DEG_PER_RAD = Math.PI / 180;
 
-$export$1($export$1.S, 'Math', {
+_export(_export.S, 'Math', {
   radians: function radians(degrees) {
     return degrees * DEG_PER_RAD;
   }
 });
 
-$export$1($export$1.S, 'Math', { scale: require$$0$28 });
+// https://rwaldron.github.io/proposal-math-extensions/
 
-$export$1($export$1.S, 'Math', {
+
+_export(_export.S, 'Math', { scale: _mathScale });
+
+// https://gist.github.com/BrendanEich/4294d5c212a6d2254703
+
+
+_export(_export.S, 'Math', {
   umulh: function umulh(u, v) {
     var UINT16 = 0xffff;
     var $u = +u;
@@ -6499,11 +5687,15 @@ $export$1($export$1.S, 'Math', {
   }
 });
 
-$export$1($export$1.S, 'Math', { signbit: function signbit(x) {
+// http://jfbastien.github.io/papers/Math.signbit.html
+
+
+_export(_export.S, 'Math', { signbit: function signbit(x) {
   // eslint-disable-next-line no-self-compare
   return (x = +x) != x ? x : x == 0 ? 1 / x == Infinity : x > 0;
 } });
 
+// https://github.com/tc39/proposal-promise-finally
 'use strict';
 
 
@@ -6511,15 +5703,15 @@ $export$1($export$1.S, 'Math', { signbit: function signbit(x) {
 
 
 
-$export$1($export$1.P + $export$1.R, 'Promise', { 'finally': function (onFinally) {
-  var C = speciesConstructor$1(this, require$$1$2.Promise || global$1.Promise);
+_export(_export.P + _export.R, 'Promise', { 'finally': function (onFinally) {
+  var C = _speciesConstructor(this, _core.Promise || _global.Promise);
   var isFunction = typeof onFinally == 'function';
   return this.then(
     isFunction ? function (x) {
-      return promiseResolve(C, onFinally()).then(function () { return x; });
+      return _promiseResolve(C, onFinally()).then(function () { return x; });
     } : onFinally,
     isFunction ? function (e) {
-      return promiseResolve(C, onFinally()).then(function () { throw e; });
+      return _promiseResolve(C, onFinally()).then(function () { throw e; });
     } : onFinally
   );
 } });
@@ -6530,30 +5722,26 @@ $export$1($export$1.P + $export$1.R, 'Promise', { 'finally': function (onFinally
 
 
 
-$export$1($export$1.S, 'Promise', { 'try': function (callbackfn) {
-  var promiseCapability = newPromiseCapability$1.f(this);
-  var result = perform(callbackfn);
+_export(_export.S, 'Promise', { 'try': function (callbackfn) {
+  var promiseCapability = _newPromiseCapability.f(this);
+  var result = _perform(callbackfn);
   (result.e ? promiseCapability.reject : promiseCapability.resolve)(result.v);
   return promiseCapability.promise;
 } });
 
-var Map$1 = ( es6_map$2 && es6_map ) || es6_map$2;
-
-var require$$1$5 = ( es6_weakMap$2 && es6_weakMap ) || es6_weakMap$2;
-
-var shared$1 = require$$0$1('metadata');
-var store = shared$1.store || (shared$1.store = new (require$$1$5)());
+var shared$1 = _shared('metadata');
+var store = shared$1.store || (shared$1.store = new (es6_weakMap)());
 
 var getOrCreateMetadataMap = function (target, targetKey, create) {
   var targetMetadata = store.get(target);
   if (!targetMetadata) {
     if (!create) return undefined;
-    store.set(target, targetMetadata = new Map$1());
+    store.set(target, targetMetadata = new es6_map());
   }
   var keyMetadata = targetMetadata.get(targetKey);
   if (!keyMetadata) {
     if (!create) return undefined;
-    targetMetadata.set(targetKey, keyMetadata = new Map$1());
+    targetMetadata.set(targetKey, keyMetadata = new es6_map());
   } return keyMetadata;
 };
 var ordinaryHasOwnMetadata = function (MetadataKey, O, P) {
@@ -6577,7 +5765,7 @@ var toMetaKey$1 = function (it) {
   return it === undefined || typeof it == 'symbol' ? it : String(it);
 };
 var exp$3 = function (O) {
-  $export$1($export$1.S, 'Reflect', O);
+  _export(_export.S, 'Reflect', O);
 };
 
 var _metadata = {
@@ -6591,45 +5779,20 @@ var _metadata = {
   exp: exp$3
 };
 
-var _metadata_1 = _metadata.store;
-var _metadata_2 = _metadata.map;
-var _metadata_3 = _metadata.has;
-var _metadata_4 = _metadata.get;
-var _metadata_5 = _metadata.set;
-var _metadata_6 = _metadata.keys;
-var _metadata_7 = _metadata.key;
-var _metadata_8 = _metadata.exp;
+var toMetaKey = _metadata.key;
+var ordinaryDefineOwnMetadata = _metadata.set;
 
-
-var _metadata$2 = Object.freeze({
-	default: _metadata,
-	__moduleExports: _metadata,
-	store: _metadata_1,
-	map: _metadata_2,
-	has: _metadata_3,
-	get: _metadata_4,
-	set: _metadata_5,
-	keys: _metadata_6,
-	key: _metadata_7,
-	exp: _metadata_8
-});
-
-var $metadata = ( _metadata$2 && _metadata ) || _metadata$2;
-
-var toMetaKey = $metadata.key;
-var ordinaryDefineOwnMetadata = $metadata.set;
-
-$metadata.exp({ defineMetadata: function defineMetadata(metadataKey, metadataValue, target, targetKey) {
-  ordinaryDefineOwnMetadata(metadataKey, metadataValue, anObject(target), toMetaKey(targetKey));
+_metadata.exp({ defineMetadata: function defineMetadata(metadataKey, metadataValue, target, targetKey) {
+  ordinaryDefineOwnMetadata(metadataKey, metadataValue, _anObject(target), toMetaKey(targetKey));
 } });
 
-var toMetaKey$2 = $metadata.key;
-var getOrCreateMetadataMap$1 = $metadata.map;
-var store$1 = $metadata.store;
+var toMetaKey$2 = _metadata.key;
+var getOrCreateMetadataMap$1 = _metadata.map;
+var store$1 = _metadata.store;
 
-$metadata.exp({ deleteMetadata: function deleteMetadata(metadataKey, target /* , targetKey */) {
+_metadata.exp({ deleteMetadata: function deleteMetadata(metadataKey, target /* , targetKey */) {
   var targetKey = arguments.length < 3 ? undefined : toMetaKey$2(arguments[2]);
-  var metadataMap = getOrCreateMetadataMap$1(anObject(target), targetKey, false);
+  var metadataMap = getOrCreateMetadataMap$1(_anObject(target), targetKey, false);
   if (metadataMap === undefined || !metadataMap['delete'](metadataKey)) return false;
   if (metadataMap.size) return true;
   var targetMetadata = store$1.get(target);
@@ -6637,93 +5800,93 @@ $metadata.exp({ deleteMetadata: function deleteMetadata(metadataKey, target /* ,
   return !!targetMetadata.size || store$1['delete'](target);
 } });
 
-var ordinaryHasOwnMetadata$1 = $metadata.has;
-var ordinaryGetOwnMetadata$1 = $metadata.get;
-var toMetaKey$3 = $metadata.key;
+var ordinaryHasOwnMetadata$1 = _metadata.has;
+var ordinaryGetOwnMetadata$1 = _metadata.get;
+var toMetaKey$3 = _metadata.key;
 
 var ordinaryGetMetadata = function (MetadataKey, O, P) {
   var hasOwn = ordinaryHasOwnMetadata$1(MetadataKey, O, P);
   if (hasOwn) return ordinaryGetOwnMetadata$1(MetadataKey, O, P);
-  var parent = getPrototypeOf(O);
+  var parent = _objectGpo(O);
   return parent !== null ? ordinaryGetMetadata(MetadataKey, parent, P) : undefined;
 };
 
-$metadata.exp({ getMetadata: function getMetadata(metadataKey, target /* , targetKey */) {
-  return ordinaryGetMetadata(metadataKey, anObject(target), arguments.length < 3 ? undefined : toMetaKey$3(arguments[2]));
+_metadata.exp({ getMetadata: function getMetadata(metadataKey, target /* , targetKey */) {
+  return ordinaryGetMetadata(metadataKey, _anObject(target), arguments.length < 3 ? undefined : toMetaKey$3(arguments[2]));
 } });
 
-var Set$1 = ( es6_set$2 && es6_set ) || es6_set$2;
-
-var ordinaryOwnMetadataKeys$1 = $metadata.keys;
-var toMetaKey$4 = $metadata.key;
+var ordinaryOwnMetadataKeys$1 = _metadata.keys;
+var toMetaKey$4 = _metadata.key;
 
 var ordinaryMetadataKeys = function (O, P) {
   var oKeys = ordinaryOwnMetadataKeys$1(O, P);
-  var parent = getPrototypeOf(O);
+  var parent = _objectGpo(O);
   if (parent === null) return oKeys;
   var pKeys = ordinaryMetadataKeys(parent, P);
-  return pKeys.length ? oKeys.length ? from(new Set$1(oKeys.concat(pKeys))) : pKeys : oKeys;
+  return pKeys.length ? oKeys.length ? _arrayFromIterable(new es6_set(oKeys.concat(pKeys))) : pKeys : oKeys;
 };
 
-$metadata.exp({ getMetadataKeys: function getMetadataKeys(target /* , targetKey */) {
-  return ordinaryMetadataKeys(anObject(target), arguments.length < 2 ? undefined : toMetaKey$4(arguments[1]));
+_metadata.exp({ getMetadataKeys: function getMetadataKeys(target /* , targetKey */) {
+  return ordinaryMetadataKeys(_anObject(target), arguments.length < 2 ? undefined : toMetaKey$4(arguments[1]));
 } });
 
-var ordinaryGetOwnMetadata$2 = $metadata.get;
-var toMetaKey$5 = $metadata.key;
+var ordinaryGetOwnMetadata$2 = _metadata.get;
+var toMetaKey$5 = _metadata.key;
 
-$metadata.exp({ getOwnMetadata: function getOwnMetadata(metadataKey, target /* , targetKey */) {
-  return ordinaryGetOwnMetadata$2(metadataKey, anObject(target)
+_metadata.exp({ getOwnMetadata: function getOwnMetadata(metadataKey, target /* , targetKey */) {
+  return ordinaryGetOwnMetadata$2(metadataKey, _anObject(target)
     , arguments.length < 3 ? undefined : toMetaKey$5(arguments[2]));
 } });
 
-var ordinaryOwnMetadataKeys$2 = $metadata.keys;
-var toMetaKey$6 = $metadata.key;
+var ordinaryOwnMetadataKeys$2 = _metadata.keys;
+var toMetaKey$6 = _metadata.key;
 
-$metadata.exp({ getOwnMetadataKeys: function getOwnMetadataKeys(target /* , targetKey */) {
-  return ordinaryOwnMetadataKeys$2(anObject(target), arguments.length < 2 ? undefined : toMetaKey$6(arguments[1]));
+_metadata.exp({ getOwnMetadataKeys: function getOwnMetadataKeys(target /* , targetKey */) {
+  return ordinaryOwnMetadataKeys$2(_anObject(target), arguments.length < 2 ? undefined : toMetaKey$6(arguments[1]));
 } });
 
-var ordinaryHasOwnMetadata$2 = $metadata.has;
-var toMetaKey$7 = $metadata.key;
+var ordinaryHasOwnMetadata$2 = _metadata.has;
+var toMetaKey$7 = _metadata.key;
 
 var ordinaryHasMetadata = function (MetadataKey, O, P) {
   var hasOwn = ordinaryHasOwnMetadata$2(MetadataKey, O, P);
   if (hasOwn) return true;
-  var parent = getPrototypeOf(O);
+  var parent = _objectGpo(O);
   return parent !== null ? ordinaryHasMetadata(MetadataKey, parent, P) : false;
 };
 
-$metadata.exp({ hasMetadata: function hasMetadata(metadataKey, target /* , targetKey */) {
-  return ordinaryHasMetadata(metadataKey, anObject(target), arguments.length < 3 ? undefined : toMetaKey$7(arguments[2]));
+_metadata.exp({ hasMetadata: function hasMetadata(metadataKey, target /* , targetKey */) {
+  return ordinaryHasMetadata(metadataKey, _anObject(target), arguments.length < 3 ? undefined : toMetaKey$7(arguments[2]));
 } });
 
-var ordinaryHasOwnMetadata$3 = $metadata.has;
-var toMetaKey$8 = $metadata.key;
+var ordinaryHasOwnMetadata$3 = _metadata.has;
+var toMetaKey$8 = _metadata.key;
 
-$metadata.exp({ hasOwnMetadata: function hasOwnMetadata(metadataKey, target /* , targetKey */) {
-  return ordinaryHasOwnMetadata$3(metadataKey, anObject(target)
+_metadata.exp({ hasOwnMetadata: function hasOwnMetadata(metadataKey, target /* , targetKey */) {
+  return ordinaryHasOwnMetadata$3(metadataKey, _anObject(target)
     , arguments.length < 3 ? undefined : toMetaKey$8(arguments[2]));
 } });
 
-var toMetaKey$9 = $metadata.key;
-var ordinaryDefineOwnMetadata$2 = $metadata.set;
+var toMetaKey$9 = _metadata.key;
+var ordinaryDefineOwnMetadata$2 = _metadata.set;
 
-$metadata.exp({ metadata: function metadata(metadataKey, metadataValue) {
+_metadata.exp({ metadata: function metadata(metadataKey, metadataValue) {
   return function decorator(target, targetKey) {
     ordinaryDefineOwnMetadata$2(
       metadataKey, metadataValue,
-      (targetKey !== undefined ? anObject : aFunction)(target),
+      (targetKey !== undefined ? _anObject : _aFunction)(target),
       toMetaKey$9(targetKey)
     );
   };
 } });
 
-var microtask$1 = require$$0$21();
-var process$3 = global$1.process;
-var isNode$2 = require$$2(process$3) == 'process';
+// https://github.com/rwaldron/tc39-notes/blob/master/es6/2014-09/sept-25.md#510-globalasap-for-enqueuing-a-microtask
 
-$export$1($export$1.G, {
+var microtask$1 = _microtask();
+var process$3 = _global.process;
+var isNode$2 = _cof(process$3) == 'process';
+
+_export(_export.G, {
   asap: function asap(fn) {
     var domain = isNode$2 && process$3.domain;
     microtask$1(domain ? domain.bind(fn) : fn);
@@ -6735,18 +5898,18 @@ $export$1($export$1.G, {
 
 
 
-var microtask$2 = require$$0$21();
-var OBSERVABLE = wks('observable');
+var microtask$2 = _microtask();
+var OBSERVABLE = _wks('observable');
 
 
 
 
 
 
-var RETURN = forOf.RETURN;
+var RETURN = _forOf.RETURN;
 
 var getMethod = function (fn) {
-  return fn == null ? undefined : aFunction(fn);
+  return fn == null ? undefined : _aFunction(fn);
 };
 
 var cleanupSubscription = function (subscription) {
@@ -6769,7 +5932,7 @@ var closeSubscription = function (subscription) {
 };
 
 var Subscription = function (observer, subscriber) {
-  anObject(observer);
+  _anObject(observer);
   this._c = undefined;
   this._o = observer;
   observer = new SubscriptionObserver(this);
@@ -6778,7 +5941,7 @@ var Subscription = function (observer, subscriber) {
     var subscription = cleanup;
     if (cleanup != null) {
       if (typeof cleanup.unsubscribe === 'function') cleanup = function () { subscription.unsubscribe(); };
-      else aFunction(cleanup);
+      else _aFunction(cleanup);
       this._c = cleanup;
     }
   } catch (e) {
@@ -6787,7 +5950,7 @@ var Subscription = function (observer, subscriber) {
   } if (subscriptionClosed(this)) cleanupSubscription(this);
 };
 
-Subscription.prototype = redefineAll({}, {
+Subscription.prototype = _redefineAll({}, {
   unsubscribe: function unsubscribe() { closeSubscription(this); }
 });
 
@@ -6795,7 +5958,7 @@ var SubscriptionObserver = function (subscription) {
   this._s = subscription;
 };
 
-SubscriptionObserver.prototype = redefineAll({}, {
+SubscriptionObserver.prototype = _redefineAll({}, {
   next: function next(value) {
     var subscription = this._s;
     if (!subscriptionClosed(subscription)) {
@@ -6851,17 +6014,17 @@ SubscriptionObserver.prototype = redefineAll({}, {
 });
 
 var $Observable = function Observable(subscriber) {
-  anInstance(this, $Observable, 'Observable', '_f')._f = aFunction(subscriber);
+  _anInstance(this, $Observable, 'Observable', '_f')._f = _aFunction(subscriber);
 };
 
-redefineAll($Observable.prototype, {
+_redefineAll($Observable.prototype, {
   subscribe: function subscribe(observer) {
     return new Subscription(observer, this._f);
   },
   forEach: function forEach(fn) {
     var that = this;
-    return new (require$$1$2.Promise || global$1.Promise)(function (resolve, reject) {
-      aFunction(fn);
+    return new (_core.Promise || _global.Promise)(function (resolve, reject) {
+      _aFunction(fn);
       var subscription = that.subscribe({
         next: function (value) {
           try {
@@ -6878,12 +6041,12 @@ redefineAll($Observable.prototype, {
   }
 });
 
-redefineAll($Observable, {
+_redefineAll($Observable, {
   from: function from(x) {
     var C = typeof this === 'function' ? this : $Observable;
-    var method = getMethod(anObject(x)[OBSERVABLE]);
+    var method = getMethod(_anObject(x)[OBSERVABLE]);
     if (method) {
-      var observable = anObject(method.call(x));
+      var observable = _anObject(method.call(x));
       return observable.constructor === C ? observable : new C(function (observer) {
         return observable.subscribe(observer);
       });
@@ -6893,7 +6056,7 @@ redefineAll($Observable, {
       microtask$2(function () {
         if (!done) {
           try {
-            if (forOf(x, false, function (it) {
+            if (_forOf(x, false, function (it) {
               observer.next(it);
               if (done) return RETURN;
             }) === RETURN) return;
@@ -6924,14 +6087,18 @@ redefineAll($Observable, {
   }
 });
 
-hide($Observable.prototype, OBSERVABLE, function () { return this; });
+_hide($Observable.prototype, OBSERVABLE, function () { return this; });
 
-$export$1($export$1.G, { Observable: $Observable });
+_export(_export.G, { Observable: $Observable });
 
-require$$2$3('Observable');
+_setSpecies('Observable');
+
+// ie9- setTimeout & setInterval additional parameters fix
+
+
 
 var slice = [].slice;
-var MSIE = /MSIE .\./.test(userAgent); // <- dirty ie9- check
+var MSIE = /MSIE .\./.test(_userAgent); // <- dirty ie9- check
 var wrap$1 = function (set) {
   return function (fn, time /* , ...args */) {
     var boundArgs = arguments.length > 2;
@@ -6942,19 +6109,19 @@ var wrap$1 = function (set) {
     } : fn, time);
   };
 };
-$export$1($export$1.G + $export$1.B + $export$1.F * MSIE, {
-  setTimeout: wrap$1(global$1.setTimeout),
-  setInterval: wrap$1(global$1.setInterval)
+_export(_export.G + _export.B + _export.F * MSIE, {
+  setTimeout: wrap$1(_global.setTimeout),
+  setInterval: wrap$1(_global.setInterval)
 });
 
-$export$1($export$1.G + $export$1.B, {
-  setImmediate: $task.set,
-  clearImmediate: $task.clear
+_export(_export.G + _export.B, {
+  setImmediate: _task.set,
+  clearImmediate: _task.clear
 });
 
-var ITERATOR$4 = wks('iterator');
-var TO_STRING_TAG = wks('toStringTag');
-var ArrayValues = Iterators.Array;
+var ITERATOR$4 = _wks('iterator');
+var TO_STRING_TAG = _wks('toStringTag');
+var ArrayValues = _iterators.Array;
 
 var DOMIterables = {
   CSSRuleList: true, // TODO: Not spec compliant, should be false.
@@ -6990,17 +6157,17 @@ var DOMIterables = {
   TouchList: false
 };
 
-for (var collections = getKeys(DOMIterables), i$2 = 0; i$2 < collections.length; i$2++) {
+for (var collections = _objectKeys(DOMIterables), i$2 = 0; i$2 < collections.length; i$2++) {
   var NAME$1 = collections[i$2];
   var explicit = DOMIterables[NAME$1];
-  var Collection = global$1[NAME$1];
+  var Collection = _global[NAME$1];
   var proto$3 = Collection && Collection.prototype;
   var key$1;
   if (proto$3) {
-    if (!proto$3[ITERATOR$4]) hide(proto$3, ITERATOR$4, ArrayValues);
-    if (!proto$3[TO_STRING_TAG]) hide(proto$3, TO_STRING_TAG, NAME$1);
-    Iterators[NAME$1] = ArrayValues;
-    if (explicit) for (key$1 in $iterators) if (!proto$3[key$1]) redefine(proto$3, key$1, $iterators[key$1], true);
+    if (!proto$3[ITERATOR$4]) _hide(proto$3, ITERATOR$4, ArrayValues);
+    if (!proto$3[TO_STRING_TAG]) _hide(proto$3, TO_STRING_TAG, NAME$1);
+    _iterators[NAME$1] = ArrayValues;
+    if (explicit) for (key$1 in es6_array_iterator) if (!proto$3[key$1]) _redefine(proto$3, key$1, es6_array_iterator[key$1], true);
   }
 }
 
@@ -7752,18 +6919,11 @@ var _replacer = function (regExp, replace) {
   };
 };
 
+// https://github.com/benjamingr/RexExp.escape
 
+var $re = _replacer(/[\\^$*+?.()|[\]{}]/g, '\\$&');
 
-var _replacer$2 = Object.freeze({
-	default: _replacer,
-	__moduleExports: _replacer
-});
-
-var require$$0$29 = ( _replacer$2 && _replacer ) || _replacer$2;
-
-var $re = require$$0$29(/[\\^$*+?.()|[\]{}]/g, '\\$&');
-
-$export$1($export$1.S, 'RegExp', { escape: function escape(it) { return $re(it); } });
+_export(_export.S, 'RegExp', { escape: function escape(it) { return $re(it); } });
 
 "use strict";
 
@@ -7885,20 +7045,20 @@ var objectAssign = shouldUseNative() ? Object.assign : function (target, source)
 	return to;
 };
 
-
-
-var objectAssign$2 = Object.freeze({
-	default: objectAssign,
-	__moduleExports: objectAssign
-});
-
-var require$$0$30 = ( objectAssign$2 && objectAssign ) || objectAssign$2;
+/** @license React v16.5.2
+ * react.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 
 'use strict';var n="function"===typeof Symbol&&Symbol.for;n&&Symbol.for("react.placeholder");
 function A(a,b,d,c,e,g,h,f){if(!a){a=void 0;if(void 0===b)a=Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");else{var k=[d,c,e,g,h,f],l=0;a=Error(b.replace(/%s/g,function(){return k[l++]}));a.name="Invariant Violation";}a.framesToPop=1;throw a;}}
 function B(a){for(var b=arguments.length-1,d="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=0;c<b;c++)d+="&args[]="+encodeURIComponent(arguments[c+1]);A(!1,"Minified React error #"+a+"; visit %s for the full message or use the non-minified dev environment for full errors and additional helpful warnings. ",d);}var C={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}}; var D={};
 function E(a,b,d){this.props=a;this.context=b;this.refs=D;this.updater=d||C;}E.prototype.isReactComponent={};E.prototype.setState=function(a,b){"object"!==typeof a&&"function"!==typeof a&&null!=a?B("85"):void 0;this.updater.enqueueSetState(this,a,b,"setState");};E.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate");};function F(){}F.prototype=E.prototype;function G(a,b,d){this.props=a;this.context=b;this.refs=D;this.updater=d||C;}var H=G.prototype=new F;
-H.constructor=G;require$$0$30(H,E.prototype);H.isPureReactComponent=!0;
+H.constructor=G;objectAssign(H,E.prototype);H.isPureReactComponent=!0;
 
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
@@ -7913,21 +7073,19 @@ var ReactPropTypesSecret$1 = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 var ReactPropTypesSecret_1 = ReactPropTypesSecret$1;
 
-
-
-var ReactPropTypesSecret$2 = Object.freeze({
-	default: ReactPropTypesSecret_1,
-	__moduleExports: ReactPropTypesSecret_1
-});
-
-var require$$0$31 = ( ReactPropTypesSecret$2 && ReactPropTypesSecret_1 ) || ReactPropTypesSecret$2;
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 
 'use strict';
 
 var printWarning = function() {};
 
 {
-  var ReactPropTypesSecret = require$$0$31;
+  var ReactPropTypesSecret = ReactPropTypesSecret_1;
   var loggedTypeFailures = {};
 
   printWarning = function(text) {
@@ -8007,15 +7165,6 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 
 var checkPropTypes_1 = checkPropTypes;
 
-
-
-var checkPropTypes$1 = Object.freeze({
-	default: checkPropTypes_1,
-	__moduleExports: checkPropTypes_1
-});
-
-var require$$2$5 = ( checkPropTypes$1 && checkPropTypes_1 ) || checkPropTypes$1;
-
 var react_development = createCommonjsModule(function (module) {
 /** @license React v16.5.2
  * react.development.js
@@ -8034,8 +7183,8 @@ var react_development = createCommonjsModule(function (module) {
   (function() {
 'use strict';
 
-var _assign = require$$0$30;
-var checkPropTypes = require$$2$5;
+var _assign = objectAssign;
+var checkPropTypes = checkPropTypes_1;
 
 // TODO: this is special because it gets imported during build.
 
@@ -9745,31 +8894,15 @@ module.exports = react;
 }
 });
 
-
-
-var react_development$2 = Object.freeze({
-	default: react_development,
-	__moduleExports: react_development
-});
-
-var require$$1$6 = ( react_development$2 && react_development ) || react_development$2;
-
 var react = createCommonjsModule(function (module) {
 'use strict';
 
 {
-  module.exports = require$$1$6;
+  module.exports = react_development;
 }
 });
 
 var react_1 = react.Component;
-
-
-var react$1 = Object.freeze({
-	default: react,
-	__moduleExports: react,
-	Component: react_1
-});
 
 var schedule_production_min = createCommonjsModule(function (module, exports) {
 /** @license React v16.5.2
@@ -10217,43 +9350,30 @@ exports.unstable_cancelScheduledWork = unstable_cancelScheduledWork;
 }
 });
 
-var schedule_development$1 = unwrapExports(schedule_development);
-var schedule_development_1 = schedule_development.unstable_now;
-var schedule_development_2 = schedule_development.unstable_scheduleWork;
-var schedule_development_3 = schedule_development.unstable_cancelScheduledWork;
-
-
-var schedule_development$2 = Object.freeze({
-	default: schedule_development$1,
-	__moduleExports: schedule_development,
-	unstable_now: schedule_development_1,
-	unstable_scheduleWork: schedule_development_2,
-	unstable_cancelScheduledWork: schedule_development_3
-});
-
-var require$$1$7 = ( schedule_development$2 && schedule_development$1 ) || schedule_development$2;
+unwrapExports(schedule_development);
 
 var schedule = createCommonjsModule(function (module) {
 'use strict';
 
 {
-  module.exports = require$$1$7;
+  module.exports = schedule_development;
 }
 });
 
+/** @license React v16.5.2
+ * react-dom.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 
-
-var schedule$2 = Object.freeze({
-	default: schedule,
-	__moduleExports: schedule
-});
-
-var require$$1$8 = ( react$1 && react ) || react$1;
-
-var require$$3 = ( schedule$2 && schedule ) || schedule$2;
-
+/*
+ Modernizr 3.0.0pre (Custom Build) | MIT
+*/
 'use strict';function ca(a,b,c,d,e,f,g,h){if(!a){a=void 0;if(void 0===b)a=Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");else{var k=[c,d,e,f,g,h],l=0;a=Error(b.replace(/%s/g,function(){return k[l++]}));a.name="Invariant Violation";}a.framesToPop=1;throw a;}}
-function t$1(a){for(var b=arguments.length-1,c="https://reactjs.org/docs/error-decoder.html?invariant="+a,d=0;d<b;d++)c+="&args[]="+encodeURIComponent(arguments[d+1]);ca(!1,"Minified React error #"+a+"; visit %s for the full message or use the non-minified dev environment for full errors and additional helpful warnings. ",c);}require$$1$8?void 0:t$1("227");function da(a,b,c,d,e,f,g,h,k){var l=Array.prototype.slice.call(arguments,3);try{b.apply(c,l);}catch(m){this.onError(m);}}
+function t$1(a){for(var b=arguments.length-1,c="https://reactjs.org/docs/error-decoder.html?invariant="+a,d=0;d<b;d++)c+="&args[]="+encodeURIComponent(arguments[d+1]);ca(!1,"Minified React error #"+a+"; visit %s for the full message or use the non-minified dev environment for full errors and additional helpful warnings. ",c);}react?void 0:t$1("227");function da(a,b,c,d,e,f,g,h,k){var l=Array.prototype.slice.call(arguments,3);try{b.apply(c,l);}catch(m){this.onError(m);}}
 var ea=!1;
 var fa=null;
 var ha=!1;
@@ -10278,9 +9398,9 @@ var hb=null;
 var ib=null;
 function jb(){if(ib)return ib;var a,b=hb,c=b.length,d,e="value"in gb?gb.value:gb.textContent,f=e.length;for(a=0;a<c&&b[a]===e[a];a++);var g=c-a;for(d=1;d<=g&&b[c-d]===e[f-d];d++);return ib=e.slice(a,1<d?1-d:void 0)}function kb(){return!0}function lb(){return!1}
 function z$1(a,b,c,d){this.dispatchConfig=a;this._targetInst=b;this.nativeEvent=c;a=this.constructor.Interface;for(var e in a)a.hasOwnProperty(e)&&((b=a[e])?this[e]=b(c):"target"===e?this.target=d:this[e]=c[e]);this.isDefaultPrevented=(null!=c.defaultPrevented?c.defaultPrevented:!1===c.returnValue)?kb:lb;this.isPropagationStopped=lb;return this}
-require$$0$30(z$1.prototype,{preventDefault:function(){this.defaultPrevented=!0;var a=this.nativeEvent;a&&(a.preventDefault?a.preventDefault():"unknown"!==typeof a.returnValue&&(a.returnValue=!1),this.isDefaultPrevented=kb);},stopPropagation:function(){var a=this.nativeEvent;a&&(a.stopPropagation?a.stopPropagation():"unknown"!==typeof a.cancelBubble&&(a.cancelBubble=!0),this.isPropagationStopped=kb);},persist:function(){this.isPersistent=kb;},isPersistent:lb,destructor:function(){var a=this.constructor.Interface,
+objectAssign(z$1.prototype,{preventDefault:function(){this.defaultPrevented=!0;var a=this.nativeEvent;a&&(a.preventDefault?a.preventDefault():"unknown"!==typeof a.returnValue&&(a.returnValue=!1),this.isDefaultPrevented=kb);},stopPropagation:function(){var a=this.nativeEvent;a&&(a.stopPropagation?a.stopPropagation():"unknown"!==typeof a.cancelBubble&&(a.cancelBubble=!0),this.isPropagationStopped=kb);},persist:function(){this.isPersistent=kb;},isPersistent:lb,destructor:function(){var a=this.constructor.Interface,
 b;for(b in a)this[b]=null;this.nativeEvent=this._targetInst=this.dispatchConfig=null;this.isPropagationStopped=this.isDefaultPrevented=lb;this._dispatchInstances=this._dispatchListeners=null;}});z$1.Interface={type:null,target:null,currentTarget:function(){return null},eventPhase:null,bubbles:null,cancelable:null,timeStamp:function(a){return a.timeStamp||Date.now()},defaultPrevented:null,isTrusted:null};
-z$1.extend=function(a){function b(){}function c(){return d.apply(this,arguments)}var d=this;b.prototype=d.prototype;var e=new b;require$$0$30(e,c.prototype);c.prototype=e;c.prototype.constructor=c;c.Interface=require$$0$30({},d.Interface,a);c.extend=d.extend;mb(c);return c};mb(z$1);function nb(a,b,c,d){if(this.eventPool.length){var e=this.eventPool.pop();this.call(e,a,b,c,d);return e}return new this(a,b,c,d)}function ob(a){a instanceof this?void 0:t$1("279");a.destructor();10>this.eventPool.length&&this.eventPool.push(a);}
+z$1.extend=function(a){function b(){}function c(){return d.apply(this,arguments)}var d=this;b.prototype=d.prototype;var e=new b;objectAssign(e,c.prototype);c.prototype=e;c.prototype.constructor=c;c.Interface=objectAssign({},d.Interface,a);c.extend=d.extend;mb(c);return c};mb(z$1);function nb(a,b,c,d){if(this.eventPool.length){var e=this.eventPool.pop();this.call(e,a,b,c,d);return e}return new this(a,b,c,d)}function ob(a){a instanceof this?void 0:t$1("279");a.destructor();10>this.eventPool.length&&this.eventPool.push(a);}
 function mb(a){a.eventPool=[];a.getPooled=nb;a.release=ob;}var pb=z$1.extend({data:null}); var qb=z$1.extend({data:null}); var rb=[9,13,27,32]; var sb=Va&&"CompositionEvent"in window; var tb=null;Va&&"documentMode"in document&&(tb=document.documentMode);
 var ub=Va&&"TextEvent"in window&&!tb;
 var vb=Va&&(!sb||tb&&8<tb&&11>=tb);
@@ -10299,7 +9419,7 @@ function Lb(a,b){return a(b)}function Mb(a,b,c){return a(b,c)}function Nb(){}var
 function Sb(a){a=a.target||a.srcElement||window;a.correspondingUseElement&&(a=a.correspondingUseElement);return 3===a.nodeType?a.parentNode:a}function Tb(a){if(!Va)return!1;a="on"+a;var b=a in document;b||(b=document.createElement("div"),b.setAttribute(a,"return;"),b="function"===typeof b[a]);return b}function Ub(a){var b=a.type;return(a=a.nodeName)&&"input"===a.toLowerCase()&&("checkbox"===b||"radio"===b)}
 function Vb(a){var b=Ub(a)?"checked":"value",c=Object.getOwnPropertyDescriptor(a.constructor.prototype,b),d=""+a[b];if(!a.hasOwnProperty(b)&&"undefined"!==typeof c&&"function"===typeof c.get&&"function"===typeof c.set){var e=c.get,f=c.set;Object.defineProperty(a,b,{configurable:!0,get:function(){return e.call(this)},set:function(a){d=""+a;f.call(this,a);}});Object.defineProperty(a,b,{enumerable:c.enumerable});return{getValue:function(){return d},setValue:function(a){d=""+a;},stopTracking:function(){a._valueTracker=
 null;delete a[b];}}}}function Wb(a){a._valueTracker||(a._valueTracker=Vb(a));}function Xb(a){if(!a)return!1;var b=a._valueTracker;if(!b)return!0;var c=b.getValue();var d="";a&&(d=Ub(a)?a.checked?"true":"false":a.value);a=d;return a!==c?(b.setValue(a),!0):!1}
-var Yb=require$$1$8.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+var Yb=react.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
 var Zb=/^(.*)[\\\/]/;
 var C$1="function"===typeof Symbol&&Symbol.for;
 var $b=C$1?Symbol.for("react.element"):60103;
@@ -10328,7 +9448,7 @@ function uc(a,b,c,d){if(null===b||"undefined"===typeof b||tc(a,b,c,d))return!0;i
 "accent-height alignment-baseline arabic-form baseline-shift cap-height clip-path clip-rule color-interpolation color-interpolation-filters color-profile color-rendering dominant-baseline enable-background fill-opacity fill-rule flood-color flood-opacity font-family font-size font-size-adjust font-stretch font-style font-variant font-weight glyph-name glyph-orientation-horizontal glyph-orientation-vertical horiz-adv-x horiz-origin-x image-rendering letter-spacing lighting-color marker-end marker-mid marker-start overline-position overline-thickness paint-order panose-1 pointer-events rendering-intent shape-rendering stop-color stop-opacity strikethrough-position strikethrough-thickness stroke-dasharray stroke-dashoffset stroke-linecap stroke-linejoin stroke-miterlimit stroke-opacity stroke-width text-anchor text-decoration text-rendering underline-position underline-thickness unicode-bidi unicode-range units-per-em v-alphabetic v-hanging v-ideographic v-mathematical vector-effect vert-adv-y vert-origin-x vert-origin-y word-spacing writing-mode xmlns:xlink x-height".split(" ").forEach(function(a){var b=a.replace(vc,
 wc);E$1[b]=new D$1(b,1,!1,a,null);});"xlink:actuate xlink:arcrole xlink:href xlink:role xlink:show xlink:title xlink:type".split(" ").forEach(function(a){var b=a.replace(vc,wc);E$1[b]=new D$1(b,1,!1,a,"http://www.w3.org/1999/xlink");});["xml:base","xml:lang","xml:space"].forEach(function(a){var b=a.replace(vc,wc);E$1[b]=new D$1(b,1,!1,a,"http://www.w3.org/XML/1998/namespace");});E$1.tabIndex=new D$1("tabIndex",1,!1,"tabindex",null);
 function xc(a,b,c,d){var e=E$1.hasOwnProperty(b)?E$1[b]:null;var f=null!==e?0===e.type:d?!1:!(2<b.length)||"o"!==b[0]&&"O"!==b[0]||"n"!==b[1]&&"N"!==b[1]?!1:!0;f||(uc(b,c,e,d)&&(c=null),d||null===e?sc(b)&&(null===c?a.removeAttribute(b):a.setAttribute(b,""+c)):e.mustUseProperty?a[e.propertyName]=null===c?3===e.type?!1:"":c:(b=e.attributeName,d=e.attributeNamespace,null===c?a.removeAttribute(b):(e=e.type,c=3===e||4===e&&!0===c?"":""+c,d?a.setAttributeNS(d,b,c):a.setAttribute(b,c))));}
-function yc(a){switch(typeof a){case "boolean":case "number":case "object":case "string":case "undefined":return a;default:return""}}function zc(a,b){var c=b.checked;return require$$0$30({},b,{defaultChecked:void 0,defaultValue:void 0,value:void 0,checked:null!=c?c:a._wrapperState.initialChecked})}
+function yc(a){switch(typeof a){case "boolean":case "number":case "object":case "string":case "undefined":return a;default:return""}}function zc(a,b){var c=b.checked;return objectAssign({},b,{defaultChecked:void 0,defaultValue:void 0,value:void 0,checked:null!=c?c:a._wrapperState.initialChecked})}
 function Bc(a,b){var c=null==b.defaultValue?"":b.defaultValue,d=null!=b.checked?b.checked:b.defaultChecked;c=yc(null!=b.value?b.value:c);a._wrapperState={initialChecked:d,initialValue:c,controlled:"checkbox"===b.type||"radio"===b.type?null!=b.checked:null!=b.value};}function Cc(a,b){b=b.checked;null!=b&&xc(a,"checked",b,!1);}
 function Dc(a,b){Cc(a,b);var c=yc(b.value),d=b.type;if(null!=c)if("number"===d){if(0===c&&""===a.value||a.value!=c)a.value=""+c;}else a.value!==""+c&&(a.value=""+c);else if("submit"===d||"reset"===d){a.removeAttribute("value");return}b.hasOwnProperty("value")?Ec(a,b.type,c):b.hasOwnProperty("defaultValue")&&Ec(a,b.type,yc(b.defaultValue));null==b.checked&&null!=b.defaultChecked&&(a.defaultChecked=!!b.defaultChecked);}
 function Fc(a,b,c){if(b.hasOwnProperty("value")||b.hasOwnProperty("defaultValue")){var d=b.type;if(!("submit"!==d&&"reset"!==d||void 0!==b.value&&null!==b.value))return;b=""+a._wrapperState.initialValue;c||b===a.value||(a.value=b);a.defaultValue=b;}c=a.name;""!==c&&(a.name="");a.defaultChecked=!a.defaultChecked;a.defaultChecked=!!a._wrapperState.initialChecked;""!==c&&(a.name=c);}
@@ -10392,9 +9512,9 @@ var Zd=null;
 var $d=!1;
 function ae(a,b){var c=b.window===b?b.document:9===b.nodeType?b:b.ownerDocument;if($d||null==Xd||Xd!==Od(c))return null;c=Xd;"selectionStart"in c&&Ud(c)?c={start:c.selectionStart,end:c.selectionEnd}:(c=(c.ownerDocument&&c.ownerDocument.defaultView||window).getSelection(),c={anchorNode:c.anchorNode,anchorOffset:c.anchorOffset,focusNode:c.focusNode,focusOffset:c.focusOffset});return Zd&&id$2(Zd,c)?null:(Zd=c,a=z$1.getPooled(Wd.select,Yd,a,b),a.type="select",a.target=Xd,Ua(a),a)}
 var be={eventTypes:Wd,extractEvents:function(a,b,c,d){var e=d.window===d?d.document:9===d.nodeType?d:d.ownerDocument,f;if(!(f=!e)){a:{e=Nd(e);f=ta.onSelect;for(var g=0;g<f.length;g++){var h=f[g];if(!e.hasOwnProperty(h)||!e[h]){e=!1;break a}}e=!0;}f=!e;}if(f)return null;e=b?Ma(b):window;switch(a){case "focus":if(Rb(e)||"true"===e.contentEditable)Xd=e,Yd=b,Zd=null;break;case "blur":Zd=Yd=Xd=null;break;case "mousedown":$d=!0;break;case "contextmenu":case "mouseup":case "dragend":return $d=!1,ae(c,d);case "selectionchange":if(Vd)break;
-case "keydown":case "keyup":return ae(c,d)}return null}};Ea.injectEventPluginOrder("ResponderEventPlugin SimpleEventPlugin EnterLeaveEventPlugin ChangeEventPlugin SelectEventPlugin BeforeInputEventPlugin".split(" "));ua=Na;va=La;wa=Ma;Ea.injectEventPluginsByName({SimpleEventPlugin:Cd,EnterLeaveEventPlugin:fd,ChangeEventPlugin:Uc,SelectEventPlugin:be,BeforeInputEventPlugin:Eb});function ce(a){var b="";require$$1$8.Children.forEach(a,function(a){null!=a&&(b+=a);});return b}
-function de(a,b){a=require$$0$30({children:void 0},b);if(b=ce(b.children))a.children=b;return a}function ee(a,b,c,d){a=a.options;if(b){b={};for(var e=0;e<c.length;e++)b["$"+c[e]]=!0;for(c=0;c<a.length;c++)e=b.hasOwnProperty("$"+a[c].value),a[c].selected!==e&&(a[c].selected=e),e&&d&&(a[c].defaultSelected=!0);}else{c=""+yc(c);b=null;for(e=0;e<a.length;e++){if(a[e].value===c){a[e].selected=!0;d&&(a[e].defaultSelected=!0);return}null!==b||a[e].disabled||(b=a[e]);}null!==b&&(b.selected=!0);}}
-function fe(a,b){null!=b.dangerouslySetInnerHTML?t$1("91"):void 0;return require$$0$30({},b,{value:void 0,defaultValue:void 0,children:""+a._wrapperState.initialValue})}function ge(a,b){var c=b.value;null==c&&(c=b.defaultValue,b=b.children,null!=b&&(null!=c?t$1("92"):void 0,Array.isArray(b)&&(1>=b.length?void 0:t$1("93"),b=b[0]),c=b),null==c&&(c=""));a._wrapperState={initialValue:yc(c)};}
+case "keydown":case "keyup":return ae(c,d)}return null}};Ea.injectEventPluginOrder("ResponderEventPlugin SimpleEventPlugin EnterLeaveEventPlugin ChangeEventPlugin SelectEventPlugin BeforeInputEventPlugin".split(" "));ua=Na;va=La;wa=Ma;Ea.injectEventPluginsByName({SimpleEventPlugin:Cd,EnterLeaveEventPlugin:fd,ChangeEventPlugin:Uc,SelectEventPlugin:be,BeforeInputEventPlugin:Eb});function ce(a){var b="";react.Children.forEach(a,function(a){null!=a&&(b+=a);});return b}
+function de(a,b){a=objectAssign({children:void 0},b);if(b=ce(b.children))a.children=b;return a}function ee(a,b,c,d){a=a.options;if(b){b={};for(var e=0;e<c.length;e++)b["$"+c[e]]=!0;for(c=0;c<a.length;c++)e=b.hasOwnProperty("$"+a[c].value),a[c].selected!==e&&(a[c].selected=e),e&&d&&(a[c].defaultSelected=!0);}else{c=""+yc(c);b=null;for(e=0;e<a.length;e++){if(a[e].value===c){a[e].selected=!0;d&&(a[e].defaultSelected=!0);return}null!==b||a[e].disabled||(b=a[e]);}null!==b&&(b.selected=!0);}}
+function fe(a,b){null!=b.dangerouslySetInnerHTML?t$1("91"):void 0;return objectAssign({},b,{value:void 0,defaultValue:void 0,children:""+a._wrapperState.initialValue})}function ge(a,b){var c=b.value;null==c&&(c=b.defaultValue,b=b.children,null!=b&&(null!=c?t$1("92"):void 0,Array.isArray(b)&&(1>=b.length?void 0:t$1("93"),b=b[0]),c=b),null==c&&(c=""));a._wrapperState={initialValue:yc(c)};}
 function he(a,b){var c=yc(b.value),d=yc(b.defaultValue);null!=c&&(c=""+c,c!==a.value&&(a.value=c),null==b.defaultValue&&a.defaultValue!==c&&(a.defaultValue=c));null!=d&&(a.defaultValue=""+d);}function ie(a){var b=a.textContent;b===a._wrapperState.initialValue&&(a.value=b);}var je={html:"http://www.w3.org/1999/xhtml",mathml:"http://www.w3.org/1998/Math/MathML",svg:"http://www.w3.org/2000/svg"};
 function ke(a){switch(a){case "svg":return"http://www.w3.org/2000/svg";case "math":return"http://www.w3.org/1998/Math/MathML";default:return"http://www.w3.org/1999/xhtml"}}function le(a,b){return null==a||"http://www.w3.org/1999/xhtml"===a?ke(b):"http://www.w3.org/2000/svg"===a&&"foreignObject"===b?"http://www.w3.org/1999/xhtml":a}
 var me=void 0;
@@ -10403,14 +9523,14 @@ function oe(a,b){if(b){var c=a.firstChild;if(c&&c===a.lastChild&&3===c.nodeType)
 var pe={animationIterationCount:!0,borderImageOutset:!0,borderImageSlice:!0,borderImageWidth:!0,boxFlex:!0,boxFlexGroup:!0,boxOrdinalGroup:!0,columnCount:!0,columns:!0,flex:!0,flexGrow:!0,flexPositive:!0,flexShrink:!0,flexNegative:!0,flexOrder:!0,gridArea:!0,gridRow:!0,gridRowEnd:!0,gridRowSpan:!0,gridRowStart:!0,gridColumn:!0,gridColumnEnd:!0,gridColumnSpan:!0,gridColumnStart:!0,fontWeight:!0,lineClamp:!0,lineHeight:!0,opacity:!0,order:!0,orphans:!0,tabSize:!0,widows:!0,zIndex:!0,zoom:!0,fillOpacity:!0,
 floodOpacity:!0,stopOpacity:!0,strokeDasharray:!0,strokeDashoffset:!0,strokeMiterlimit:!0,strokeOpacity:!0,strokeWidth:!0};
 var qe=["Webkit","ms","Moz","O"];Object.keys(pe).forEach(function(a){qe.forEach(function(b){b=b+a.charAt(0).toUpperCase()+a.substring(1);pe[b]=pe[a];});});
-function re(a,b){a=a.style;for(var c in b)if(b.hasOwnProperty(c)){var d=0===c.indexOf("--");var e=c;var f=b[c];e=null==f||"boolean"===typeof f||""===f?"":d||"number"!==typeof f||0===f||pe.hasOwnProperty(e)&&pe[e]?(""+f).trim():f+"px";"float"===c&&(c="cssFloat");d?a.setProperty(c,e):a[c]=e;}}var se=require$$0$30({menuitem:!0},{area:!0,base:!0,br:!0,col:!0,embed:!0,hr:!0,img:!0,input:!0,keygen:!0,link:!0,meta:!0,param:!0,source:!0,track:!0,wbr:!0});
+function re(a,b){a=a.style;for(var c in b)if(b.hasOwnProperty(c)){var d=0===c.indexOf("--");var e=c;var f=b[c];e=null==f||"boolean"===typeof f||""===f?"":d||"number"!==typeof f||0===f||pe.hasOwnProperty(e)&&pe[e]?(""+f).trim():f+"px";"float"===c&&(c="cssFloat");d?a.setProperty(c,e):a[c]=e;}}var se=objectAssign({menuitem:!0},{area:!0,base:!0,br:!0,col:!0,embed:!0,hr:!0,img:!0,input:!0,keygen:!0,link:!0,meta:!0,param:!0,source:!0,track:!0,wbr:!0});
 function te(a,b){b&&(se[a]&&(null!=b.children||null!=b.dangerouslySetInnerHTML?t$1("137",a,""):void 0),null!=b.dangerouslySetInnerHTML&&(null!=b.children?t$1("60"):void 0,"object"===typeof b.dangerouslySetInnerHTML&&"__html"in b.dangerouslySetInnerHTML?void 0:t$1("61")),null!=b.style&&"object"!==typeof b.style?t$1("62",""):void 0);}
 function ue(a,b){if(-1===a.indexOf("-"))return"string"===typeof b.is;switch(a){case "annotation-xml":case "color-profile":case "font-face":case "font-face-src":case "font-face-uri":case "font-face-format":case "font-face-name":case "missing-glyph":return!1;default:return!0}}
 function ve(a,b){a=9===a.nodeType||11===a.nodeType?a:a.ownerDocument;var c=Nd(a);b=ta[b];for(var d=0;d<b.length;d++){var e=b[d];if(!c.hasOwnProperty(e)||!c[e]){switch(e){case "scroll":Jd("scroll",a);break;case "focus":case "blur":Jd("focus",a);Jd("blur",a);c.blur=!0;c.focus=!0;break;case "cancel":case "close":Tb(e)&&Jd(e,a);break;case "invalid":case "submit":case "reset":break;default:-1===fb.indexOf(e)&&F$1(e,a);}c[e]=!0;}}}function we(){}var xe=null; var ye=null;
 function ze(a,b){switch(a){case "button":case "input":case "select":case "textarea":return!!b.autoFocus}return!1}function Ae(a,b){return"textarea"===a||"option"===a||"noscript"===a||"string"===typeof b.children||"number"===typeof b.children||"object"===typeof b.dangerouslySetInnerHTML&&null!==b.dangerouslySetInnerHTML&&null!=b.dangerouslySetInnerHTML.__html}function Be(a){for(a=a.nextSibling;a&&1!==a.nodeType&&3!==a.nodeType;)a=a.nextSibling;return a}
 function Ce(a){for(a=a.firstChild;a&&1!==a.nodeType&&3!==a.nodeType;)a=a.nextSibling;return a}new Set;var De=[]; var Ee=-1;function G$1(a){0>Ee||(a.current=De[Ee],De[Ee]=null,Ee--);}function H$1(a,b){Ee++;De[Ee]=a.current;a.current=b;}var Fe={}; var I$1={current:Fe}; var J$1={current:!1}; var Ge=Fe;
 function He(a,b){var c=a.type.contextTypes;if(!c)return Fe;var d=a.stateNode;if(d&&d.__reactInternalMemoizedUnmaskedChildContext===b)return d.__reactInternalMemoizedMaskedChildContext;var e={},f;for(f in c)e[f]=b[f];d&&(a=a.stateNode,a.__reactInternalMemoizedUnmaskedChildContext=b,a.__reactInternalMemoizedMaskedChildContext=e);return e}function K$1(a){a=a.childContextTypes;return null!==a&&void 0!==a}function Ie(a){G$1(J$1,a);G$1(I$1,a);}function Je(a){G$1(J$1,a);G$1(I$1,a);}
-function Ke(a,b,c){I$1.current!==Fe?t$1("168"):void 0;H$1(I$1,b,a);H$1(J$1,c,a);}function Le(a,b,c){var d=a.stateNode;a=b.childContextTypes;if("function"!==typeof d.getChildContext)return c;d=d.getChildContext();for(var e in d)e in a?void 0:t$1("108",lc(b)||"Unknown",e);return require$$0$30({},c,d)}function Me(a){var b=a.stateNode;b=b&&b.__reactInternalMemoizedMergedChildContext||Fe;Ge=I$1.current;H$1(I$1,b,a);H$1(J$1,J$1.current,a);return!0}
+function Ke(a,b,c){I$1.current!==Fe?t$1("168"):void 0;H$1(I$1,b,a);H$1(J$1,c,a);}function Le(a,b,c){var d=a.stateNode;a=b.childContextTypes;if("function"!==typeof d.getChildContext)return c;d=d.getChildContext();for(var e in d)e in a?void 0:t$1("108",lc(b)||"Unknown",e);return objectAssign({},c,d)}function Me(a){var b=a.stateNode;b=b&&b.__reactInternalMemoizedMergedChildContext||Fe;Ge=I$1.current;H$1(I$1,b,a);H$1(J$1,J$1.current,a);return!0}
 function Ne(a,b,c){var d=a.stateNode;d?void 0:t$1("169");c?(b=Le(a,b,Ge),d.__reactInternalMemoizedMergedChildContext=b,G$1(J$1,a),G$1(I$1,a),H$1(I$1,b,a)):G$1(J$1,a);H$1(J$1,c,a);}var Oe=null; var Pe=null;function Qe(a){return function(b){try{return a(b)}catch(c){}}}
 function Re(a){if("undefined"===typeof __REACT_DEVTOOLS_GLOBAL_HOOK__)return!1;var b=__REACT_DEVTOOLS_GLOBAL_HOOK__;if(b.isDisabled||!b.supportsFiber)return!0;try{var c=b.inject(a);Oe=Qe(function(a){return b.onCommitFiberRoot(c,a)});Pe=Qe(function(a){return b.onCommitFiberUnmount(c,a)});}catch(d){}return!0}
 function Se(a,b,c,d){this.tag=a;this.key=c;this.sibling=this.child=this.return=this.stateNode=this.type=null;this.index=0;this.ref=null;this.pendingProps=b;this.firstContextDependency=this.memoizedState=this.updateQueue=this.memoizedProps=null;this.mode=d;this.effectTag=0;this.lastEffect=this.firstEffect=this.nextEffect=null;this.childExpirationTime=this.expirationTime=0;this.alternate=null;}function Te(a){a=a.prototype;return!(!a||!a.isReactComponent)}
@@ -10423,14 +9543,14 @@ function bf(a){return{baseState:a,firstUpdate:null,lastUpdate:null,firstCaptured
 function df(a){return{expirationTime:a,tag:0,payload:null,callback:null,next:null,nextEffect:null}}function ef(a,b){null===a.lastUpdate?a.firstUpdate=a.lastUpdate=b:(a.lastUpdate.next=b,a.lastUpdate=b);}
 function ff(a,b){var c=a.alternate;if(null===c){var d=a.updateQueue;var e=null;null===d&&(d=a.updateQueue=bf(a.memoizedState));}else d=a.updateQueue,e=c.updateQueue,null===d?null===e?(d=a.updateQueue=bf(a.memoizedState),e=c.updateQueue=bf(c.memoizedState)):d=a.updateQueue=cf(e):null===e&&(e=c.updateQueue=cf(d));null===e||d===e?ef(d,b):null===d.lastUpdate||null===e.lastUpdate?(ef(d,b),ef(e,b)):(ef(d,b),e.lastUpdate=b);}
 function gf(a,b){var c=a.updateQueue;c=null===c?a.updateQueue=bf(a.memoizedState):hf(a,c);null===c.lastCapturedUpdate?c.firstCapturedUpdate=c.lastCapturedUpdate=b:(c.lastCapturedUpdate.next=b,c.lastCapturedUpdate=b);}function hf(a,b){var c=a.alternate;null!==c&&b===c.updateQueue&&(b=a.updateQueue=cf(b));return b}
-function jf(a,b,c,d,e,f){switch(c.tag){case 1:return a=c.payload,"function"===typeof a?a.call(f,d,e):a;case 3:a.effectTag=a.effectTag&-1025|64;case 0:a=c.payload;e="function"===typeof a?a.call(f,d,e):a;if(null===e||void 0===e)break;return require$$0$30({},d,e);case 2:af=!0;}return d}
+function jf(a,b,c,d,e,f){switch(c.tag){case 1:return a=c.payload,"function"===typeof a?a.call(f,d,e):a;case 3:a.effectTag=a.effectTag&-1025|64;case 0:a=c.payload;e="function"===typeof a?a.call(f,d,e):a;if(null===e||void 0===e)break;return objectAssign({},d,e);case 2:af=!0;}return d}
 function kf(a,b,c,d,e){af=!1;b=hf(a,b);for(var f=b.baseState,g=null,h=0,k=b.firstUpdate,l=f;null!==k;){var m=k.expirationTime;if(m>e){if(null===g&&(g=k,f=l),0===h||h>m)h=m;}else l=jf(a,b,k,l,c,d),null!==k.callback&&(a.effectTag|=32,k.nextEffect=null,null===b.lastEffect?b.firstEffect=b.lastEffect=k:(b.lastEffect.nextEffect=k,b.lastEffect=k));k=k.next;}m=null;for(k=b.firstCapturedUpdate;null!==k;){var r=k.expirationTime;if(r>e){if(null===m&&(m=k,null===g&&(f=l)),0===h||h>r)h=r;}else l=jf(a,b,k,l,c,d),
 null!==k.callback&&(a.effectTag|=32,k.nextEffect=null,null===b.lastCapturedEffect?b.firstCapturedEffect=b.lastCapturedEffect=k:(b.lastCapturedEffect.nextEffect=k,b.lastCapturedEffect=k));k=k.next;}null===g&&(b.lastUpdate=null);null===m?b.lastCapturedUpdate=null:a.effectTag|=32;null===g&&null===m&&(f=l);b.baseState=f;b.firstUpdate=g;b.firstCapturedUpdate=m;a.expirationTime=h;a.memoizedState=l;}
 function lf(a,b,c){null!==b.firstCapturedUpdate&&(null!==b.lastUpdate&&(b.lastUpdate.next=b.firstCapturedUpdate,b.lastUpdate=b.lastCapturedUpdate),b.firstCapturedUpdate=b.lastCapturedUpdate=null);mf(b.firstEffect,c);b.firstEffect=b.lastEffect=null;mf(b.firstCapturedEffect,c);b.firstCapturedEffect=b.lastCapturedEffect=null;}function mf(a,b){for(;null!==a;){var c=a.callback;if(null!==c){a.callback=null;var d=b;"function"!==typeof c?t$1("191",c):void 0;c.call(d);}a=a.nextEffect;}}
 function nf(a,b){return{value:a,source:b,stack:mc(b)}}var of={current:null}; var pf=null; var qf=null; var rf=null;function sf(a,b){var c=a.type._context;H$1(of,c._currentValue,a);c._currentValue=b;}function tf(a){var b=of.current;G$1(of,a);a.type._context._currentValue=b;}function uf(a){pf=a;rf=qf=null;a.firstContextDependency=null;}
 function vf(a,b){if(rf!==a&&!1!==b&&0!==b){if("number"!==typeof b||1073741823===b)rf=a,b=1073741823;b={context:a,observedBits:b,next:null};null===qf?(null===pf?t$1("277"):void 0,pf.firstContextDependency=qf=b):qf=qf.next=b;}return a._currentValue}var wf={}; var L$1={current:wf}; var xf={current:wf}; var yf={current:wf};function zf(a){a===wf?t$1("174"):void 0;return a}
-function Af(a,b){H$1(yf,b,a);H$1(xf,a,a);H$1(L$1,wf,a);var c=b.nodeType;switch(c){case 9:case 11:b=(b=b.documentElement)?b.namespaceURI:le(null,"");break;default:c=8===c?b.parentNode:b,b=c.namespaceURI||null,c=c.tagName,b=le(b,c);}G$1(L$1,a);H$1(L$1,b,a);}function Bf(a){G$1(L$1,a);G$1(xf,a);G$1(yf,a);}function Cf(a){zf(yf.current);var b=zf(L$1.current);var c=le(b,a.type);b!==c&&(H$1(xf,a,a),H$1(L$1,c,a));}function Df(a){xf.current===a&&(G$1(L$1,a),G$1(xf,a));}var Ef=(new require$$1$8.Component).refs;
-function Ff(a,b,c,d){b=a.memoizedState;c=c(d,b);c=null===c||void 0===c?b:require$$0$30({},b,c);a.memoizedState=c;d=a.updateQueue;null!==d&&0===a.expirationTime&&(d.baseState=c);}
+function Af(a,b){H$1(yf,b,a);H$1(xf,a,a);H$1(L$1,wf,a);var c=b.nodeType;switch(c){case 9:case 11:b=(b=b.documentElement)?b.namespaceURI:le(null,"");break;default:c=8===c?b.parentNode:b,b=c.namespaceURI||null,c=c.tagName,b=le(b,c);}G$1(L$1,a);H$1(L$1,b,a);}function Bf(a){G$1(L$1,a);G$1(xf,a);G$1(yf,a);}function Cf(a){zf(yf.current);var b=zf(L$1.current);var c=le(b,a.type);b!==c&&(H$1(xf,a,a),H$1(L$1,c,a));}function Df(a){xf.current===a&&(G$1(L$1,a),G$1(xf,a));}var Ef=(new react.Component).refs;
+function Ff(a,b,c,d){b=a.memoizedState;c=c(d,b);c=null===c||void 0===c?b:objectAssign({},b,c);a.memoizedState=c;d=a.updateQueue;null!==d&&0===a.expirationTime&&(d.baseState=c);}
 var Jf={isMounted:function(a){return(a=a._reactInternalFiber)?2===jd(a):!1},enqueueSetState:function(a,b,c){a=a._reactInternalFiber;var d=Gf();d=Hf(d,a);var e=df(d);e.payload=b;void 0!==c&&null!==c&&(e.callback=c);ff(a,e);If(a,d);},enqueueReplaceState:function(a,b,c){a=a._reactInternalFiber;var d=Gf();d=Hf(d,a);var e=df(d);e.tag=1;e.payload=b;void 0!==c&&null!==c&&(e.callback=c);ff(a,e);If(a,d);},enqueueForceUpdate:function(a,b){a=a._reactInternalFiber;var c=Gf();c=Hf(c,a);var d=df(c);d.tag=2;void 0!==
 b&&null!==b&&(d.callback=b);ff(a,d);If(a,c);}};function Kf(a,b,c,d,e,f,g){a=a.stateNode;return"function"===typeof a.shouldComponentUpdate?a.shouldComponentUpdate(d,f,g):b.prototype&&b.prototype.isPureReactComponent?!id$2(c,d)||!id$2(e,f):!0}function Lf(a,b,c,d){a=b.state;"function"===typeof b.componentWillReceiveProps&&b.componentWillReceiveProps(c,d);"function"===typeof b.UNSAFE_componentWillReceiveProps&&b.UNSAFE_componentWillReceiveProps(c,d);b.state!==a&&Jf.enqueueReplaceState(b,b.state,null);}
 function Mf(a,b,c,d){var e=a.stateNode,f=K$1(b)?Ge:I$1.current;e.props=c;e.state=a.memoizedState;e.refs=Ef;e.context=He(a,f);f=a.updateQueue;null!==f&&(kf(a,f,c,e,d),e.state=a.memoizedState);f=b.getDerivedStateFromProps;"function"===typeof f&&(Ff(a,b,f,c),e.state=a.memoizedState);"function"===typeof b.getDerivedStateFromProps||"function"===typeof e.getSnapshotBeforeUpdate||"function"!==typeof e.UNSAFE_componentWillMount&&"function"!==typeof e.componentWillMount||(b=e.state,"function"===typeof e.componentWillMount&&
@@ -10458,7 +9578,7 @@ b.memoizedProps,g.props=h,m=g.context,k=K$1(c)?Ge:I$1.current,k=He(b,k),r=c.getD
 m,A,k))?(l||"function"!==typeof g.UNSAFE_componentWillUpdate&&"function"!==typeof g.componentWillUpdate||("function"===typeof g.componentWillUpdate&&g.componentWillUpdate(d,A,k),"function"===typeof g.UNSAFE_componentWillUpdate&&g.UNSAFE_componentWillUpdate(d,A,k)),"function"===typeof g.componentDidUpdate&&(b.effectTag|=4),"function"===typeof g.getSnapshotBeforeUpdate&&(b.effectTag|=256)):("function"!==typeof g.componentDidUpdate||h===a.memoizedProps&&m===a.memoizedState||(b.effectTag|=4),"function"!==
 typeof g.getSnapshotBeforeUpdate||h===a.memoizedProps&&m===a.memoizedState||(b.effectTag|=256),b.memoizedProps=d,b.memoizedState=A),g.props=d,g.state=A,g.context=k,d=r):("function"!==typeof g.componentDidUpdate||h===a.memoizedProps&&m===a.memoizedState||(b.effectTag|=4),"function"!==typeof g.getSnapshotBeforeUpdate||h===a.memoizedProps&&m===a.memoizedState||(b.effectTag|=256),d=!1);return ig(a,b,c,d,f,e)}
 function ig(a,b,c,d,e,f){fg(a,b);var g=0!==(b.effectTag&64);if(!d&&!g)return e&&Ne(b,c,!1),eg(a,b,f);d=b.stateNode;cg.current=b;var h=g?null:d.render();b.effectTag|=1;null!==a&&g&&(M$1(a,b,null,f),b.child=null);M$1(a,b,h,f);b.memoizedState=d.state;b.memoizedProps=d.props;e&&Ne(b,c,!0);return b.child}function jg(a){var b=a.stateNode;b.pendingContext?Ke(a,b.pendingContext,b.pendingContext!==b.context):b.context&&Ke(a,b.context,!1);Af(a,b.containerInfo);}
-function ng(a,b){if(a&&a.defaultProps){b=require$$0$30({},b);a=a.defaultProps;for(var c in a)void 0===b[c]&&(b[c]=a[c]);}return b}
+function ng(a,b){if(a&&a.defaultProps){b=objectAssign({},b);a=a.defaultProps;for(var c in a)void 0===b[c]&&(b[c]=a[c]);}return b}
 function og(a,b,c,d){null!==a?t$1("155"):void 0;var e=b.pendingProps;if("object"===typeof c&&null!==c&&"function"===typeof c.then){c=bg(c);var f=c;f="function"===typeof f?Te(f)?3:1:void 0!==f&&null!==f&&f.$$typeof?14:4;f=b.tag=f;var g=ng(c,e);switch(f){case 1:return gg(a,b,c,g,d);case 3:return hg(a,b,c,g,d);case 14:return dg(a,b,c,g,d);default:t$1("283",c);}}f=He(b,I$1.current);uf(b,d);f=c(e,f);b.effectTag|=1;if("object"===typeof f&&null!==f&&"function"===typeof f.render&&void 0===f.$$typeof){b.tag=2;K$1(c)?
 (g=!0,Me(b)):g=!1;b.memoizedState=null!==f.state&&void 0!==f.state?f.state:null;var h=c.getDerivedStateFromProps;"function"===typeof h&&Ff(b,c,h,e);f.updater=Jf;b.stateNode=f;f._reactInternalFiber=b;Mf(b,c,e,d);return ig(a,b,c,!0,g,d)}b.tag=0;M$1(a,b,f,d);b.memoizedProps=e;return b.child}
 function eg(a,b,c){null!==a&&(b.firstContextDependency=a.firstContextDependency);var d=b.childExpirationTime;if(0===d||d>c)return null;null!==a&&b.child!==a.child?t$1("153"):void 0;if(null!==b.child){a=b.child;c=Ue(a,a.pendingProps,a.expirationTime);b.child=c;for(c.return=b;null!==a.sibling;)a=a.sibling,c=c.sibling=Ue(a,a.pendingProps,a.expirationTime),c.return=b;c.sibling=null;}return b.child}
@@ -10469,7 +9589,7 @@ d,b.child;case 13:return dg(a,b,b.type,b.pendingProps,c);case 14:return e=b.type
 f=h===f&&(0!==h||1/h===1/f)||h!==h&&f!==f?0:("function"===typeof d._calculateChangedBits?d._calculateChangedBits(h,f):1073741823)|0;if(0===f){if(g.children===e.children&&!J$1.current){b=eg(a,b,c);break a}}else for(g=b.child,null!==g&&(g.return=b);null!==g;){h=g.firstContextDependency;if(null!==h){do{if(h.context===d&&0!==(h.observedBits&f)){if(2===g.tag||3===g.tag){var k=df(c);k.tag=2;ff(g,k);}if(0===g.expirationTime||g.expirationTime>c)g.expirationTime=c;k=g.alternate;null!==k&&(0===k.expirationTime||
 k.expirationTime>c)&&(k.expirationTime=c);for(var l=g.return;null!==l;){k=l.alternate;if(0===l.childExpirationTime||l.childExpirationTime>c)l.childExpirationTime=c,null!==k&&(0===k.childExpirationTime||k.childExpirationTime>c)&&(k.childExpirationTime=c);else if(null!==k&&(0===k.childExpirationTime||k.childExpirationTime>c))k.childExpirationTime=c;else break;l=l.return;}}k=g.child;h=h.next;}while(null!==h)}else k=12===g.tag?g.type===b.type?null:g.child:g.child;if(null!==k)k.return=g;else for(k=g;null!==
 k;){if(k===b){k=null;break}g=k.sibling;if(null!==g){g.return=k.return;k=g;break}k=k.return;}g=k;}}M$1(a,b,e.children,c);b=b.child;}return b;case 11:return f=b.type,d=b.pendingProps,e=d.children,uf(b,c),f=vf(f,d.unstable_observedBits),e=e(f),b.effectTag|=1,M$1(a,b,e,c),b.memoizedProps=d,b.child;default:t$1("156");}}function qg(a){a.effectTag|=4;}var rg=void 0; var sg=void 0; var tg=void 0;rg=function(){};
-sg=function(a,b,c,d,e){var f=a.memoizedProps;if(f!==d){var g=b.stateNode;zf(L$1.current);a=null;switch(c){case "input":f=zc(g,f);d=zc(g,d);a=[];break;case "option":f=de(g,f);d=de(g,d);a=[];break;case "select":f=require$$0$30({},f,{value:void 0});d=require$$0$30({},d,{value:void 0});a=[];break;case "textarea":f=fe(g,f);d=fe(g,d);a=[];break;default:"function"!==typeof f.onClick&&"function"===typeof d.onClick&&(g.onclick=we);}te(c,d);g=c=void 0;var h=null;for(c in f)if(!d.hasOwnProperty(c)&&f.hasOwnProperty(c)&&null!=f[c])if("style"===
+sg=function(a,b,c,d,e){var f=a.memoizedProps;if(f!==d){var g=b.stateNode;zf(L$1.current);a=null;switch(c){case "input":f=zc(g,f);d=zc(g,d);a=[];break;case "option":f=de(g,f);d=de(g,d);a=[];break;case "select":f=objectAssign({},f,{value:void 0});d=objectAssign({},d,{value:void 0});a=[];break;case "textarea":f=fe(g,f);d=fe(g,d);a=[];break;default:"function"!==typeof f.onClick&&"function"===typeof d.onClick&&(g.onclick=we);}te(c,d);g=c=void 0;var h=null;for(c in f)if(!d.hasOwnProperty(c)&&f.hasOwnProperty(c)&&null!=f[c])if("style"===
 c){var k=f[c];for(g in k)k.hasOwnProperty(g)&&(h||(h={}),h[g]="");}else"dangerouslySetInnerHTML"!==c&&"children"!==c&&"suppressContentEditableWarning"!==c&&"suppressHydrationWarning"!==c&&"autoFocus"!==c&&(sa.hasOwnProperty(c)?a||(a=[]):(a=a||[]).push(c,null));for(c in d){var l=d[c];k=null!=f?f[c]:void 0;if(d.hasOwnProperty(c)&&l!==k&&(null!=l||null!=k))if("style"===c)if(k){for(g in k)!k.hasOwnProperty(g)||l&&l.hasOwnProperty(g)||(h||(h={}),h[g]="");for(g in l)l.hasOwnProperty(g)&&k[g]!==l[g]&&(h||
 (h={}),h[g]=l[g]);}else h||(a||(a=[]),a.push(c,h)),h=l;else"dangerouslySetInnerHTML"===c?(l=l?l.__html:void 0,k=k?k.__html:void 0,null!=l&&k!==l&&(a=a||[]).push(c,""+l)):"children"===c?k===l||"string"!==typeof l&&"number"!==typeof l||(a=a||[]).push(c,""+l):"suppressContentEditableWarning"!==c&&"suppressHydrationWarning"!==c&&(sa.hasOwnProperty(c)?(null!=l&&ve(e,c),a||k===l||(a=[])):(a=a||[]).push(c,l));}h&&(a=a||[]).push("style",h);e=a;(b.updateQueue=e)&&qg(b);}};tg=function(a,b,c,d){c!==d&&qg(b);};
 function ug(a,b){var c=b.source,d=b.stack;null===d&&null!==c&&(d=mc(c));null!==c&&lc(c.type);b=b.value;null!==a&&2===a.tag&&lc(a.type);try{console.error(b);}catch(e){setTimeout(function(){throw e;});}}function vg(a){var b=a.ref;if(null!==b)if("function"===typeof b)try{b(null);}catch(c){wg(a,c);}else b.current=null;}
@@ -10500,7 +9620,7 @@ function Qg(a){for(;;){var b=a.alternate,c=a.return,d=a.sibling;if(0===(a.effect
 {wasMultiple:!!m.multiple};F$1("invalid",e);ve(r,"onChange");break;case "textarea":ge(e,m),F$1("invalid",e),ve(r,"onChange");}te(g,m);l=null;for(h in m)m.hasOwnProperty(h)&&(k=m[h],"children"===h?"string"===typeof k?e.textContent!==k&&(l=["children",k]):"number"===typeof k&&e.textContent!==""+k&&(l=["children",""+k]):sa.hasOwnProperty(h)&&null!=k&&ve(r,h));switch(g){case "input":Wb(e);Fc(e,m,!0);break;case "textarea":Wb(e);ie(e,m);break;case "select":case "option":break;default:"function"===typeof m.onClick&&
 (e.onclick=we);}h=l;f.updateQueue=h;f=null!==h?!0:!1;f&&qg(b);}else{m=b;e=h;r=f;l=9===g.nodeType?g:g.ownerDocument;k===je.html&&(k=ke(e));k===je.html?"script"===e?(e=l.createElement("div"),e.innerHTML="<script>\x3c/script>",l=e.removeChild(e.firstChild)):"string"===typeof r.is?l=l.createElement(e,{is:r.is}):(l=l.createElement(e),"select"===e&&r.multiple&&(l.multiple=!0)):l=l.createElementNS(k,e);e=l;e[Ia]=m;e[Ja]=f;a:for(m=e,r=b,l=r.child;null!==l;){if(7===l.tag||8===l.tag)m.appendChild(l.stateNode);
 else if(6!==l.tag&&null!==l.child){l.child.return=l;l=l.child;continue}if(l===r)break;for(;null===l.sibling;){if(null===l.return||l.return===r)break a;l=l.return;}l.sibling.return=l.return;l=l.sibling;}r=e;l=h;m=f;var A=g,S=ue(l,m);switch(l){case "iframe":case "object":F$1("load",r);g=m;break;case "video":case "audio":for(g=0;g<fb.length;g++)F$1(fb[g],r);g=m;break;case "source":F$1("error",r);g=m;break;case "img":case "image":case "link":F$1("error",r);F$1("load",r);g=m;break;case "form":F$1("reset",r);F$1("submit",
-r);g=m;break;case "details":F$1("toggle",r);g=m;break;case "input":Bc(r,m);g=zc(r,m);F$1("invalid",r);ve(A,"onChange");break;case "option":g=de(r,m);break;case "select":r._wrapperState={wasMultiple:!!m.multiple};g=require$$0$30({},m,{value:void 0});F$1("invalid",r);ve(A,"onChange");break;case "textarea":ge(r,m);g=fe(r,m);F$1("invalid",r);ve(A,"onChange");break;default:g=m;}te(l,g);k=void 0;var B=l,P=r,v=g;for(k in v)if(v.hasOwnProperty(k)){var p=v[k];"style"===k?re(P,p):"dangerouslySetInnerHTML"===k?(p=p?p.__html:void 0,
+r);g=m;break;case "details":F$1("toggle",r);g=m;break;case "input":Bc(r,m);g=zc(r,m);F$1("invalid",r);ve(A,"onChange");break;case "option":g=de(r,m);break;case "select":r._wrapperState={wasMultiple:!!m.multiple};g=objectAssign({},m,{value:void 0});F$1("invalid",r);ve(A,"onChange");break;case "textarea":ge(r,m);g=fe(r,m);F$1("invalid",r);ve(A,"onChange");break;default:g=m;}te(l,g);k=void 0;var B=l,P=r,v=g;for(k in v)if(v.hasOwnProperty(k)){var p=v[k];"style"===k?re(P,p):"dangerouslySetInnerHTML"===k?(p=p?p.__html:void 0,
 null!=p&&ne(P,p)):"children"===k?"string"===typeof p?("textarea"!==B||""!==p)&&oe(P,p):"number"===typeof p&&oe(P,""+p):"suppressContentEditableWarning"!==k&&"suppressHydrationWarning"!==k&&"autoFocus"!==k&&(sa.hasOwnProperty(k)?null!=p&&ve(A,k):null!=p&&xc(P,k,p,S));}switch(l){case "input":Wb(r);Fc(r,m,!1);break;case "textarea":Wb(r);ie(r,m);break;case "option":null!=m.value&&r.setAttribute("value",""+yc(m.value));break;case "select":g=r;g.multiple=!!m.multiple;r=m.value;null!=r?ee(g,!!m.multiple,
 r,!1):null!=m.defaultValue&&ee(g,!!m.multiple,m.defaultValue,!0);break;default:"function"===typeof g.onClick&&(r.onclick=we);}(f=ze(h,f))&&qg(b);b.stateNode=e;}null!==b.ref&&(b.effectTag|=128);}else null===b.stateNode?t$1("166"):void 0;break;case 8:e&&null!=b.stateNode?tg(e,b,e.memoizedProps,f):("string"!==typeof f&&(null===b.stateNode?t$1("166"):void 0),e=zf(yf.current),zf(L$1.current),$f(b)?(f=b,h=f.stateNode,e=f.memoizedProps,h[Ia]=f,(f=h.nodeValue!==e)&&qg(b)):(h=b,f=(9===e.nodeType?e:e.ownerDocument).createTextNode(f),
 f[Ia]=h,b.stateNode=f));break;case 13:case 14:break;case 16:break;case 9:break;case 10:break;case 15:break;case 6:Bf(b);rg(b);break;case 12:tf(b);break;case 11:break;case 4:t$1("167");default:t$1("156");}b=N$1=null;f=a;if(1073741823===O$1||1073741823!==f.childExpirationTime){h=0;for(e=f.child;null!==e;){g=e.expirationTime;m=e.childExpirationTime;if(0===h||0!==g&&g<h)h=g;if(0===h||0!==m&&m<h)h=m;e=e.sibling;}f.childExpirationTime=h;}if(null!==b)return b;null!==c&&0===(c.effectTag&512)&&(null===c.firstEffect&&
@@ -10528,13 +9648,13 @@ var W$1=!1;
 var Wg=!1;
 var Ug=!1;
 var ih=null;
-var jh=require$$3.unstable_now();
+var jh=schedule.unstable_now();
 var kh=(jh/10|0)+2;
 var lh=kh;
 var ah=50;
 var $g=0;
 var mh=null;
-var nh=1;function oh(){kh=((require$$3.unstable_now()-jh)/10|0)+2;}function Zg(a,b){if(0!==ch){if(b>ch)return;null!==dh&&require$$3.unstable_cancelScheduledWork(dh);}ch=b;a=require$$3.unstable_now()-jh;dh=require$$3.unstable_scheduleWork(ph,{timeout:10*(b-2)-a});}function Gf(){if(V$1)return lh;qh();if(0===Z$1||1073741823===Z$1)oh(),lh=kh;return lh}
+var nh=1;function oh(){kh=((schedule.unstable_now()-jh)/10|0)+2;}function Zg(a,b){if(0!==ch){if(b>ch)return;null!==dh&&schedule.unstable_cancelScheduledWork(dh);}ch=b;a=schedule.unstable_now()-jh;dh=schedule.unstable_scheduleWork(ph,{timeout:10*(b-2)-a});}function Gf(){if(V$1)return lh;qh();if(0===Z$1||1073741823===Z$1)oh(),lh=kh;return lh}
 function qh(){var a=0,b=null;if(null!==T$1)for(var c=T$1,d=U$1;null!==d;){var e=d.expirationTime;if(0===e){null===c||null===T$1?t$1("244"):void 0;if(d===d.nextScheduledRoot){U$1=T$1=d.nextScheduledRoot=null;break}else if(d===U$1)U$1=e=d.nextScheduledRoot,T$1.nextScheduledRoot=e,d.nextScheduledRoot=null;else if(d===T$1){T$1=c;T$1.nextScheduledRoot=U$1;d.nextScheduledRoot=null;break}else c.nextScheduledRoot=d.nextScheduledRoot,d.nextScheduledRoot=null;d=c.nextScheduledRoot;}else{if(0===a||e<a)a=e,b=d;if(d===T$1)break;if(1===a)break;
 c=d;d=d.nextScheduledRoot;}}Y$1=b;Z$1=a;}function ph(a){if(a.didTimeout&&null!==U$1){oh();var b=U$1;do{var c=b.expirationTime;0!==c&&kh>=c&&(b.nextExpirationTimeToWorkOn=kh);b=b.nextScheduledRoot;}while(b!==U$1)}Yg(0,a);}
 function Yg(a,b){hh=b;qh();if(null!==hh)for(oh(),lh=kh;null!==Y$1&&0!==Z$1&&(0===a||a>=Z$1)&&(!eh||kh>=Z$1);)Xg(Y$1,Z$1,kh>=Z$1),qh(),oh(),lh=kh;else for(;null!==Y$1&&0!==Z$1&&(0===a||a>=Z$1);)Xg(Y$1,Z$1,!0),qh();null!==hh&&(ch=0,dh=null);0!==Z$1&&Zg(Y$1,Z$1);hh=null;eh=!1;$g=0;mh=null;if(null!==ih)for(a=ih,ih=null,b=0;b<a.length;b++){var c=a[b];try{c._onComplete();}catch(d){fh||(fh=!0,gh=d);}}if(fh)throw a=gh,gh=null,fh=!1,a;}
@@ -10560,7 +9680,7 @@ Ch.prototype._onCommit=function(){if(!this._didCommit){this._didCommit=!0;var a=
 function Dh(a,b,c){b=new Se(5,null,null,b?3:0);a={current:b,containerInfo:a,pendingChildren:null,earliestPendingTime:0,latestPendingTime:0,earliestSuspendedTime:0,latestSuspendedTime:0,latestPingedTime:0,didError:!1,pendingCommitExpirationTime:0,finishedWork:null,timeoutHandle:-1,context:null,pendingContext:null,hydrate:c,nextExpirationTimeToWorkOn:0,expirationTime:0,firstBatch:null,nextScheduledRoot:null};this._internalRoot=b.stateNode=a;}
 Dh.prototype.render=function(a,b){var c=this._internalRoot,d=new Ch;b=void 0===b?null:b;null!==b&&d.then(b);xh(a,c,null,d._onCommit);return d};Dh.prototype.unmount=function(a){var b=this._internalRoot,c=new Ch;a=void 0===a?null:a;null!==a&&c.then(a);xh(null,b,null,c._onCommit);return c};Dh.prototype.legacy_renderSubtreeIntoContainer=function(a,b,c){var d=this._internalRoot,e=new Ch;c=void 0===c?null:c;null!==c&&e.then(c);xh(b,d,a,e._onCommit);return e};
 Dh.prototype.createBatch=function(){var a=new Bh(this),b=a._expirationTime,c=this._internalRoot,d=c.firstBatch;if(null===d)c.firstBatch=a,a._next=null;else{for(c=null;null!==d&&d._expirationTime<=b;)c=d,d=d._next;a._next=d;null!==c&&(c._next=a);}return a};Lb=sh;Mb=uh;Nb=function(){V$1||0===Vg||(Yg(Vg,null),Vg=0);};
-(function(a){var b=a.findFiberByHostInstance;return Re(require$$0$30({},a,{findHostInstanceByFiber:function(a){a=md(a);return null===a?null:a.stateNode},findFiberByHostInstance:function(a){return b?b(a):null}}))})({findFiberByHostInstance:Ka,bundleType:0,version:"16.5.2",rendererPackageName:"react-dom"});
+(function(a){var b=a.findFiberByHostInstance;return Re(objectAssign({},a,{findHostInstanceByFiber:function(a){a=md(a);return null===a?null:a.stateNode},findFiberByHostInstance:function(a){return b?b(a):null}}))})({findFiberByHostInstance:Ka,bundleType:0,version:"16.5.2",rendererPackageName:"react-dom"});
 
 var scheduleTracing_production_min = createCommonjsModule(function (module, exports) {
 /** @license React v16.5.2
@@ -11007,50 +10127,15 @@ exports.unstable_unsubscribe = unstable_unsubscribe;
 }
 });
 
-var scheduleTracing_development$1 = unwrapExports(scheduleTracing_development);
-var scheduleTracing_development_1 = scheduleTracing_development.__interactionsRef;
-var scheduleTracing_development_2 = scheduleTracing_development.__subscriberRef;
-var scheduleTracing_development_3 = scheduleTracing_development.unstable_clear;
-var scheduleTracing_development_4 = scheduleTracing_development.unstable_getCurrent;
-var scheduleTracing_development_5 = scheduleTracing_development.unstable_getThreadID;
-var scheduleTracing_development_6 = scheduleTracing_development.unstable_trace;
-var scheduleTracing_development_7 = scheduleTracing_development.unstable_wrap;
-var scheduleTracing_development_8 = scheduleTracing_development.unstable_subscribe;
-var scheduleTracing_development_9 = scheduleTracing_development.unstable_unsubscribe;
-
-
-var scheduleTracing_development$2 = Object.freeze({
-	default: scheduleTracing_development$1,
-	__moduleExports: scheduleTracing_development,
-	__interactionsRef: scheduleTracing_development_1,
-	__subscriberRef: scheduleTracing_development_2,
-	unstable_clear: scheduleTracing_development_3,
-	unstable_getCurrent: scheduleTracing_development_4,
-	unstable_getThreadID: scheduleTracing_development_5,
-	unstable_trace: scheduleTracing_development_6,
-	unstable_wrap: scheduleTracing_development_7,
-	unstable_subscribe: scheduleTracing_development_8,
-	unstable_unsubscribe: scheduleTracing_development_9
-});
-
-var require$$1$9 = ( scheduleTracing_development$2 && scheduleTracing_development$1 ) || scheduleTracing_development$2;
+unwrapExports(scheduleTracing_development);
 
 var tracing = createCommonjsModule(function (module) {
 'use strict';
 
 {
-  module.exports = require$$1$9;
+  module.exports = scheduleTracing_development;
 }
 });
-
-
-
-var tracing$2 = Object.freeze({
-	default: tracing,
-	__moduleExports: tracing
-});
-
-var require$$4 = ( tracing$2 && tracing ) || tracing$2;
 
 var reactDom_development = createCommonjsModule(function (module) {
 /** @license React v16.5.2
@@ -11070,11 +10155,11 @@ var reactDom_development = createCommonjsModule(function (module) {
   (function() {
 'use strict';
 
-var React = require$$1$8;
-var _assign = require$$0$30;
-var checkPropTypes = require$$2$5;
-var schedule = require$$3;
-var tracing = require$$4;
+var React = react;
+var _assign = objectAssign;
+var checkPropTypes = checkPropTypes_1;
+var schedule$$2 = schedule;
+var tracing$$1 = tracing;
 
 /**
  * Use invariant() to assert state which your program assumes to be true.
@@ -21177,7 +20262,7 @@ function createFiberRoot(containerInfo, isAsync, hydrate) {
       firstBatch: null,
       nextScheduledRoot: null,
 
-      interactionThreadID: tracing.unstable_getThreadID(),
+      interactionThreadID: tracing$$1.unstable_getThreadID(),
       memoizedInteractions: new Set(),
       pendingInteractionMap: new Map()
     };
@@ -22533,7 +21618,7 @@ function recordCommitTime() {
   if (!enableProfilerTimer) {
     return;
   }
-  commitTime = schedule.unstable_now();
+  commitTime = schedule$$2.unstable_now();
 }
 
 function startProfilerTimer(fiber) {
@@ -22541,10 +21626,10 @@ function startProfilerTimer(fiber) {
     return;
   }
 
-  profilerStartTime = schedule.unstable_now();
+  profilerStartTime = schedule$$2.unstable_now();
 
   if (fiber.actualStartTime < 0) {
-    fiber.actualStartTime = schedule.unstable_now();
+    fiber.actualStartTime = schedule$$2.unstable_now();
   }
 }
 
@@ -22561,7 +21646,7 @@ function stopProfilerTimerIfRunningAndRecordDelta(fiber, overrideBaseTime) {
   }
 
   if (profilerStartTime >= 0) {
-    var elapsedTime = schedule.unstable_now() - profilerStartTime;
+    var elapsedTime = schedule$$2.unstable_now() - profilerStartTime;
     fiber.actualDuration += elapsedTime;
     if (overrideBaseTime) {
       fiber.selfBaseDuration = elapsedTime;
@@ -26667,7 +25752,7 @@ var warnAboutInvalidUpdates = void 0;
 if (enableSchedulerTracing) {
   // Provide explicit error message when production+profiling bundle of e.g. react-dom
   // is used with production (non-profiling) bundle of schedule/tracing
-  !(tracing.__interactionsRef != null && tracing.__interactionsRef.current != null) ? invariant(false, 'It is not supported to run the profiling version of a renderer (for example, `react-dom/profiling`) without also replacing the `schedule/tracing` module with `schedule/tracing-profiling`. Your bundler might have a setting for aliasing both modules. Learn more at http://fb.me/react-profiling') : void 0;
+  !(tracing$$1.__interactionsRef != null && tracing$$1.__interactionsRef.current != null) ? invariant(false, 'It is not supported to run the profiling version of a renderer (for example, `react-dom/profiling`) without also replacing the `schedule/tracing` module with `schedule/tracing-profiling`. Your bundler might have a setting for aliasing both modules. Learn more at http://fb.me/react-profiling') : void 0;
 }
 
 {
@@ -27012,8 +26097,8 @@ function commitRoot(root, finishedWork) {
   if (enableSchedulerTracing) {
     // Restore any pending interactions at this point,
     // So that cascading work triggered during the render phase will be accounted for.
-    prevInteractions = tracing.__interactionsRef.current;
-    tracing.__interactionsRef.current = root.memoizedInteractions;
+    prevInteractions = tracing$$1.__interactionsRef.current;
+    tracing$$1.__interactionsRef.current = root.memoizedInteractions;
 
     // We are potentially finished with the current batch of interactions.
     // So we should clear them out of the pending interaction map.
@@ -27162,12 +26247,12 @@ function commitRoot(root, finishedWork) {
   onCommit(root, earliestRemainingTimeAfterCommit);
 
   if (enableSchedulerTracing) {
-    tracing.__interactionsRef.current = prevInteractions;
+    tracing$$1.__interactionsRef.current = prevInteractions;
 
     var subscriber = void 0;
 
     try {
-      subscriber = tracing.__subscriberRef.current;
+      subscriber = tracing$$1.__subscriberRef.current;
       if (subscriber !== null && root.memoizedInteractions.size > 0) {
         var threadID = computeThreadID(committedExpirationTime, root.interactionThreadID);
         subscriber.onWorkStopped(root.memoizedInteractions, threadID);
@@ -27527,8 +26612,8 @@ function renderRoot(root, isYieldy, isExpired) {
   if (enableSchedulerTracing) {
     // We're about to start new traced work.
     // Restore pending interactions so cascading work triggered during the render phase will be accounted for.
-    prevInteractions = tracing.__interactionsRef.current;
-    tracing.__interactionsRef.current = root.memoizedInteractions;
+    prevInteractions = tracing$$1.__interactionsRef.current;
+    tracing$$1.__interactionsRef.current = root.memoizedInteractions;
   }
 
   // Check if we're starting from a fresh stack, or if we're resuming from
@@ -27560,7 +26645,7 @@ function renderRoot(root, isYieldy, isExpired) {
       root.memoizedInteractions = interactions;
 
       if (interactions.size > 0) {
-        var subscriber = tracing.__subscriberRef.current;
+        var subscriber = tracing$$1.__subscriberRef.current;
         if (subscriber !== null) {
           var threadID = computeThreadID(expirationTime, root.interactionThreadID);
           try {
@@ -27631,7 +26716,7 @@ function renderRoot(root, isYieldy, isExpired) {
 
   if (enableSchedulerTracing) {
     // Traced work is done for now; restore the previous interactions.
-    tracing.__interactionsRef.current = prevInteractions;
+    tracing$$1.__interactionsRef.current = prevInteractions;
   }
 
   // We're done performing work. Time to clean up.
@@ -27884,13 +26969,13 @@ function retrySuspendedRoot(root, fiber, suspendedTime) {
     if (rootExpirationTime !== NoWork) {
       if (enableSchedulerTracing) {
         // Restore previous interactions so that new work is associated with them.
-        var prevInteractions = tracing.__interactionsRef.current;
-        tracing.__interactionsRef.current = root.memoizedInteractions;
+        var prevInteractions = tracing$$1.__interactionsRef.current;
+        tracing$$1.__interactionsRef.current = root.memoizedInteractions;
         // Because suspense timeouts do not decrement the interaction count,
         // Continued suspense work should also not increment the count.
         storeInteractionsForExpirationTime(root, rootExpirationTime, false);
         requestWork(root, rootExpirationTime);
-        tracing.__interactionsRef.current = prevInteractions;
+        tracing$$1.__interactionsRef.current = prevInteractions;
       } else {
         requestWork(root, rootExpirationTime);
       }
@@ -27935,7 +27020,7 @@ function storeInteractionsForExpirationTime(root, expirationTime, updateInteract
     return;
   }
 
-  var interactions = tracing.__interactionsRef.current;
+  var interactions = tracing$$1.__interactionsRef.current;
   if (interactions.size > 0) {
     var pendingInteractions = root.pendingInteractionMap.get(expirationTime);
     if (pendingInteractions != null) {
@@ -27958,7 +27043,7 @@ function storeInteractionsForExpirationTime(root, expirationTime, updateInteract
       }
     }
 
-    var subscriber = tracing.__subscriberRef.current;
+    var subscriber = tracing$$1.__subscriberRef.current;
     if (subscriber !== null) {
       var threadID = computeThreadID(expirationTime, root.interactionThreadID);
       subscriber.onWorkScheduled(interactions, threadID);
@@ -28044,7 +27129,7 @@ var isBatchingInteractiveUpdates = false;
 
 var completedBatches = null;
 
-var originalStartTimeMs = schedule.unstable_now();
+var originalStartTimeMs = schedule$$2.unstable_now();
 var currentRendererTime = msToExpirationTime(originalStartTimeMs);
 var currentSchedulerTime = currentRendererTime;
 
@@ -28056,7 +27141,7 @@ var lastCommittedRootDuringThisBatch = null;
 var timeHeuristicForUnitOfWork = 1;
 
 function recomputeCurrentRendererTime() {
-  var currentTimeMs = schedule.unstable_now() - originalStartTimeMs;
+  var currentTimeMs = schedule$$2.unstable_now() - originalStartTimeMs;
   currentRendererTime = msToExpirationTime(currentTimeMs);
 }
 
@@ -28070,7 +27155,7 @@ function scheduleCallbackWithExpirationTime(root, expirationTime) {
       if (callbackID !== null) {
         // Existing callback has insufficient timeout. Cancel and schedule a
         // new one.
-        schedule.unstable_cancelScheduledWork(callbackID);
+        schedule$$2.unstable_cancelScheduledWork(callbackID);
       }
     }
     // The request callback timer is already running. Don't start a new one.
@@ -28079,10 +27164,10 @@ function scheduleCallbackWithExpirationTime(root, expirationTime) {
   }
 
   callbackExpirationTime = expirationTime;
-  var currentMs = schedule.unstable_now() - originalStartTimeMs;
+  var currentMs = schedule$$2.unstable_now() - originalStartTimeMs;
   var expirationTimeMs = expirationTimeToMs(expirationTime);
   var timeout = expirationTimeMs - currentMs;
-  callbackID = schedule.unstable_scheduleWork(performAsyncWork, { timeout: timeout });
+  callbackID = schedule$$2.unstable_scheduleWork(performAsyncWork, { timeout: timeout });
 }
 
 // For every call to renderRoot, one of onFatal, onComplete, onSuspend, and
@@ -29314,20 +28399,11 @@ module.exports = reactDom;
 }
 });
 
-
-
-var reactDom_development$2 = Object.freeze({
-	default: reactDom_development,
-	__moduleExports: reactDom_development
-});
-
-var require$$1$10 = ( reactDom_development$2 && reactDom_development ) || reactDom_development$2;
-
 var reactDom = createCommonjsModule(function (module) {
 'use strict';
 
 {
-  module.exports = require$$1$10;
+  module.exports = reactDom_development;
 }
 });
 
@@ -29620,10 +28696,20 @@ function _nonIterableRest() {
   throw new TypeError("Invalid attempt to destructure non-iterable instance");
 }
 
-var value$3 = {"470":{"ticket":"~foslup-liglud-ritnul-pilres-sitrun-billys-lagwep-mapdux","shards":["~foslup-liglud-ritnul-pilres-sitrun-billys-lagwep-mapdux"],"ownership":{"meta":{"type":"ownership","revision":0,"ship":null},"seed":"leisure noble group network arch assume body come situate quote wing exhaust debris disease buzz clinic sleep essay degree photo reason vicious upon motion","keys":{"public":"0347c68ae95dc91f34ffaae0fe076d0674cd2937a0c747ff6aab2808108c3bb2e6","private":"8c0277e901c0566a1b7a9f76e16a5eda4f2b18f243f40f3bfcce21b1876b1599","chain":"b68c0b375258d6a9be51801a14ddf2049b8567359c89c961325acc7e82ff3be4","address":"0xf48c5B81a6D95A961A6e5e8e7946f179f9E3f02E"}},"transfer":{"meta":{"type":"transfer","revision":0,"ship":null},"seed":"transfer inquiry relief aim better side census oak gap sing save wonder gentle young sense company patient give heavy reopen during undo couch goose","keys":{"public":"033c2a8982f586eaef1a155de6869a11d9fe03b02090083749f3ba542e294455ca","private":"6a8111b3fb089fb93e925ad36a80f8891b2081d730b9ac5ea1f29c2b4bd879c8","chain":"8582065e1fb5862fbc7b1da43fd2d170c8d6c5dd8d1eaa30742d6f282ef875c1","address":"0xA5a08D7755bbd19A297A22e43811FB79259E796a"}},"spawn":{"meta":{"type":"spawn","revision":0,"ship":null},"seed":"hen border depth child film during switch crush buyer climb tonight grit main snow armed street strong wide cage subway brush memory reveal primary","keys":{"public":"02221898ede0aa5d11e4bc90127d6cf5f09b9066618558fd81cd95318c66b01b1c","private":"8d9a8769dcbaaa4d392865452fa5a4dd29a9ad3f5cc93a7026353bbcae590c3d","chain":"566940fa92fac48b779cd389fd31cf0f043a5d40305a233ebb38e25765f05cee","address":"0x50B3f02EFb1297881C699F93debC6FEBBbFBb220"}},"voting":{},"management":{"meta":{"type":"management","revision":0,"ship":null},"seed":"old lock title satisfy now unique pitch share rally farm merge forest wolf pupil milk door priority coral solution nothing goose deal setup question","keys":{"public":"034abc458e83423cd041b23098a41aeb445248bda90f635b81615c1f992c97d492","private":"3e9066830f3b2c0d9e9f2c71cc9ca02650e29392a5d158c45544aba3ae60c5e5","chain":"74ffef1c08ef659e23275c7fb50032506a60492d6a6d0eacd5b46ce6d7dfadbb","address":"0x1bA00fc2cb601F350D8097e379b4b9a35e861e9F"}},"network":{}},"726":{"ticket":"~topwyx-nacrel-marmex-macweg-diffen-rinrum-pallur-tomluc","shards":["~topwyx-nacrel-marmex-macweg-diffen-rinrum-pallur-tomluc"],"ownership":{"meta":{"type":"ownership","revision":0,"ship":null},"seed":"dad kiwi absurd burden section jaguar setup evidence column mobile orphan lady earth immune together huge drive marine patient define cross hen grit eternal","keys":{"public":"02c87327f07d06cb63b5f9f3fc0d59a301d2f006b087fafc64e326946bfc81190f","private":"9d8c145eb5b4a5b1c348fe0c98881c490f880bb3a1739721afb66c2546c3d405","chain":"e38cc6d029d1bad623ba06217af14d9d5fa4e1ed43c4d3bda05a057f00003b7c","address":"0xE21a927D351B3bec032F2fBDB2d2E970A5040208"}},"transfer":{"meta":{"type":"transfer","revision":0,"ship":null},"seed":"spice purity private random vanish also split tip cube love funny chapter fork music define dilemma cargo access nerve flight crack fever oval gym","keys":{"public":"03c5bceb6393a3b1ca3725cbdad3e2fa73680199d7abff2c2610fcb31601021d08","private":"bbd31ca1572d4044eb163a3fe5a63e447e7f83298582810240c511b527d6774d","chain":"0a4be3b8923650422140a60d2d90f96a7e0990c5c9fc74401e8e6338b4c48972","address":"0xd0ed19e55EA2d2BdDE87B33eD8e26979C14404a8"}},"spawn":{"meta":{"type":"spawn","revision":0,"ship":null},"seed":"mouse brass gaze calm repeat drill glue brisk slush fire core sign segment man bundle couch all into winter blast someone clump depart pass","keys":{"public":"0365e08079162889f96f008d7a96937f8d8da1ce209f1b3e4bfbfbc597c812f000","private":"950a585030cc4bab76e7f4e4b56a89a7d94016c1b9846875bb6e29ce6237e30b","chain":"4380dcb50c43a0a3407aba5546e16e5f7e3165b016087ddbdc0c002b7dd039c0","address":"0x7244B8dD073DB8d11aa5e911F21A654B824894E8"}},"voting":{},"management":{"meta":{"type":"management","revision":0,"ship":null},"seed":"true violin much utility slow reason curve panic indoor decade biology glory chronic monitor you uncle cabbage turkey cluster diet pilot need frame inmate","keys":{"public":"03cc748d05ab60aa5122a337b4a64bf8d0031ec8c7ade71618f4d38bf0f9e552ae","private":"9bd9d820e6f12b8981e02301d65dd8d6616a5ad11a486a656151bc958a5a10a1","chain":"9539757c73d8e737b1dcc9ff280fbf8bb4600640d576d587ec6b7430ba190b33","address":"0x45B07Ad2dcC8b72D733f88d44712CFD65607C5E4"}},"network":{}},"982":{"ticket":"~bardyl-nomrut-tolpen-bacfyr-dibmul-dasdyt-ladfun-midheb","shards":["~bardyl-nomrut-tolpen-bacfyr-dibmul-dasdyt-ladfun-midheb"],"ownership":{"meta":{"type":"ownership","revision":0,"ship":null},"seed":"usage name album peanut energy connect praise six hint barely eager ranch trash jelly opinion awkward lizard prevent illegal hotel hungry steak address dry","keys":{"public":"0350d792bc8d7c806ff1d8dcc1417fa76409d52bb1ad30e1fe689ab15d3db27af9","private":"12d415e6b8806117da3ad0744ad8ac1bda1cf8f6d9cbf41c80468c19794eadcc","chain":"f1b2782172595146a088a91732b9d6b3b23980ba3cac815d2b088d89e925a55b","address":"0xD0bcCDEe7C56319B562E66C71473d85521C6BdcC"}},"transfer":{"meta":{"type":"transfer","revision":0,"ship":null},"seed":"borrow artefact hotel office boring clever rebuild salmon code pilot maximum energy metal spider antique evoke chaos note click mobile clog upper fuel west","keys":{"public":"022c3a5e72d04cdf33c96363fc10bf6d4e10e657f7088fcbdc52dff29dda0e5a9c","private":"6fd5f30d43556180acf3d905ca24adc1f88ff313e1cb39671d02c97d9915f298","chain":"c68c037a73be66f703f04db97d799524f53dc5e7bc2203cdfc9d3907966c0832","address":"0xA86B28b63FDF9150B4EB83948Bb22c701B2a35eF"}},"spawn":{"meta":{"type":"spawn","revision":0,"ship":null},"seed":"orchard exotic table nuclear crane flip gate turn bonus advice verify collect slogan kingdom train fold float rally resist trust table mind matrix then","keys":{"public":"03e67ff3ba4749b04759376108db99417452c33fa72b9f0b6e67c665ed1c6b5b0e","private":"e47f670c924c6ab74d8b3c72397d327eae49e73ef74e81615e9ffb1573718006","chain":"b8b47418e9d992814980313d458dd5cec9603e9816fada3f30972aab43a81ecb","address":"0x40746120492ca1bB60670f63dB2B2Ccd44205c4B"}},"voting":{},"management":{"meta":{"type":"management","revision":0,"ship":null},"seed":"insane divorce canoe pitch annual volume next pudding repair snap hard helmet seed earn cause copy pitch breeze vessel found door bone mammal judge","keys":{"public":"0320413f11db8fd4874f6d19c920a581fdb8a70b0e268ea5421cc165489455f93c","private":"24c40d8e9cd5f682d5a5ecd04773a9920ad1ed8c8b456896fdd2fc3d654b63b5","chain":"e4010d88584674676f04d0b82004121c519b12beb496410d0312058932089fcb","address":"0x6F6A9FF16105a861476d06CD513D502A749eCA23"}},"network":{}},"1238":{"ticket":"~rophes-difryc-harsyt-timmun-finwyd-nolmed-midlud-foptuc","shards":["~rophes-difryc-harsyt-timmun-finwyd-nolmed-midlud-foptuc"],"ownership":{"meta":{"type":"ownership","revision":0,"ship":null},"seed":"tribe love tape kitchen van frequent curtain cabbage ability wasp figure monitor owner jealous image airport truth diet jeans deal ugly begin replace brain","keys":{"public":"02806926bd746f579411cb5d0031e566a26c8a90cbc22bb53bd24655b8769986df","private":"2c0f100aa3d760e6516847532adb1ddd018f0087b1cb89ba5f05862693aaf835","chain":"588d13448d68fbf3f8b326c44d581d7e54ca22341667a3a7501739e8bcf84416","address":"0x28748a6dBf3CAe97A92cA65Ce151331d258f1528"}},"transfer":{"meta":{"type":"transfer","revision":0,"ship":null},"seed":"route thrive pepper youth prefer raven carry ramp labor ski during work unknown much maximum know access regret shed move quiz scissors battle absorb","keys":{"public":"029f125869ac32a81e6892e4d737dd634b415d9fdeb3d611852ce966b557c20c91","private":"f56dcf0b8ce451da9e758581d90f4e56ea763407173928180d0dddf22d617e29","chain":"55f78f534b7670b21c9ad3877374453ee5748e754d1f1c4154e9d173385cc4c6","address":"0xd3D0D9D2cDbf37a3b33cb1424fF9Ca33b980e88f"}},"spawn":{"meta":{"type":"spawn","revision":0,"ship":null},"seed":"stick key jar session palm destroy since area sort august over track vacuum liquid sunny minor apology notice head boost craft vault negative hope","keys":{"public":"0364e001756bbd2bc820f1c924dec826c16658aa826328bf7ab08baf9c1f603a5c","private":"2e9cf87a1bf628efc768c5f84093ed8833845908c4b1b5d3608fc4ff1269bff4","chain":"b42bac7523c5a38fd16544762c464d4a9e94f41f539b7e35672526aab9ed963c","address":"0x391ABB61A95Fad03C3Ab1CdD869534bbBE6E49A4"}},"voting":{},"management":{"meta":{"type":"management","revision":0,"ship":null},"seed":"insane result shoulder demise similar shrug enforce tired awesome left decorate vendor grief cause cat remind payment hammer dose chapter forget dish fit month","keys":{"public":"021bf53a4b51ff91d7078d0e50b5e622733987746597864c1149f072a4955492e1","private":"145f3aeb0126af640f3654c8cae1cd109ff240e50d30162c48322b15cf2c6d85","chain":"41b197b17fda4577ed89da1036249e49595f5f0308c07f6bd53d456072655635","address":"0xBE1Ea92d251bC9762bB5b988c9A9d6fad3F19Cb8"}},"network":{}},"1494":{"ticket":"~habset-lossum-fasluc-dirwex-bisfen-masnys-dopnel-bisnyx","shards":["~habset-lossum-fasluc-dirwex-bisfen-masnys-dopnel-bisnyx"],"ownership":{"meta":{"type":"ownership","revision":0,"ship":null},"seed":"laundry simple noble hybrid duty report twelve series when face mystery devote city aim trust card pluck wrong kit wild ribbon note method story","keys":{"public":"0321da26f0ad96263aaccb2ffbfe53c66d365143779b3437dcdb34c80bcd1ec22a","private":"235ae763ccf117bdf6f7a3709d1ca3ca27627013abab5d04be3c471bb20b4c9f","chain":"f0b9381e76b24ee5a6428b6bbc905cccc6a6fa0596c84253d41df6b1edaec027","address":"0xceaAB3DeC9AD405962f22D2520a09d4409AcDAEF"}},"transfer":{"meta":{"type":"transfer","revision":0,"ship":null},"seed":"ignore gate tree exchange country decide chase acquire praise exhibit sniff erupt assume pioneer receive receive supply isolate net rare badge omit silver jazz","keys":{"public":"0209cf58214c16122d8131024f4cb557b059c68871d66c30a3db6a97dc3df76678","private":"0edb78118eb80b596f1cecfffa1f59bdb231fe584e29ef63e6a3c9c54f825e33","chain":"318664f2b2a2c041d9dad5f606160f18bded8cd5af49114e71428b336421ef8d","address":"0x25fb5774fBcAB1ae19a22cEd6042a372Ac6731Aa"}},"spawn":{"meta":{"type":"spawn","revision":0,"ship":null},"seed":"october grain actual hidden galaxy trap dash patch person render plunge elegant bargain real edit season major above wish void permit action sun choice","keys":{"public":"02e86aca73cc3782a8113dac2ef5ecdcfe02f164fa9e59055bd552b955609092b2","private":"7bdf591682e0579c453582ba999e9e997737919fe5d7c14028ddffa1bba9cfcd","chain":"ef3fb8d0f016a6c5990b90b90037bd8c9b1f1f428da1cff046470415f4398080","address":"0x06F05A7b98B88782ad8Dcf43b5302A638fc3C9ec"}},"voting":{},"management":{"meta":{"type":"management","revision":0,"ship":null},"seed":"total solar palm fortune royal celery thrive require there shrug chest inner spoon before cloud ordinary under wood decide taxi phrase salute ribbon company","keys":{"public":"03fff69d1e1554632953b2a3f8d1a548a8872bd202b68796d28d7ca60d577f6ad1","private":"9ea2a1c59531d98413cb45f4e4eff0c79be23a87b4d8ae1f9eda42896b5d78b1","chain":"16f6f1ac21b53c16f55d47ad45d67d3645e14d6d9b3334b88ef52fe816d33d45","address":"0x78612FB7a2Aa23A975BFf34f3D223668501fabf6"}},"network":{}},"1750":{"ticket":"~masreg-magpeg-doctel-famlev-tanfeb-ligsel-pinter-lacpel","shards":["~masreg-magpeg-doctel-famlev-tanfeb-ligsel-pinter-lacpel"],"ownership":{"meta":{"type":"ownership","revision":0,"ship":null},"seed":"negative thought enable buyer prevent wheel piece deer either harsh buffalo field nice tower bike electric claim pilot erode name improve neck transfer arrive","keys":{"public":"0206942928d50909404d75474c4e94091ca03c661c1768b61065a60b7ba25b97e3","private":"70d7aa7d2dd03e129f8f9f5d9933a5d797d7b8e2fc174a5610543f74f9638d84","chain":"7c1e13f9c5c206f8287056c8582ab2a735b050944159482514bd7421247f63a7","address":"0x51312B5C9CB5A79cD9b6c5C9765DF8560BDf764d"}},"transfer":{"meta":{"type":"transfer","revision":0,"ship":null},"seed":"clip pear check consider today aspect eager exercise fruit vacuum bachelor desk exile cotton debate easy split crime six brand dove crew jump act","keys":{"public":"0326af674842ef0cbbaca8eeab9e3311b30cc148d4fdf70b71db4d7fc22bca4aa3","private":"f9efdd4f03e1efecdeff4d7f9529abb52acc511fd523c23a899e3b2441243fdb","chain":"c8b342171679eceef74ea1263da2e9e617aa26db5bfc54685bdd1af792e385a6","address":"0x2eD43fD8A328eEC355F548Fa6C11A333498414E3"}},"spawn":{"meta":{"type":"spawn","revision":0,"ship":null},"seed":"toss vacuum dilemma crater lazy daughter light airport oppose sunny digital ethics senior proof obscure home much wheat drum again napkin robust floor raise","keys":{"public":"03049dc30e7c704ffacb6fbeb7033ec3f25ea51b0ef19112c131cfc4683784b8a7","private":"af84953cffa4128599481af7daac128c022b12ddc360a46df8d8c32717709973","chain":"9d8b13574dc47881ddce7a2d6b8bf79622c961b6409ea3779a9c722f20d4783b","address":"0xc2199177F661bE3aeA4C83058a4De199701aE75a"}},"voting":{},"management":{"meta":{"type":"management","revision":0,"ship":null},"seed":"depth ignore emotion text stamp custom ability water parent burst reflect hope guitar such away old team goddess guide table vintage fish this resist","keys":{"public":"02c8ffcb8c436c3b3903cc3ac3179abc3d93ea68734a12bfeed92a900606928b33","private":"e4e60ba69f5a567ca7a76500c783e0a6b9809e561ebb75dfb15bf6ee2d0c05ca","chain":"26455ee1923913196a23c699846954e5edba9165d29906765334c40286420d04","address":"0x97c950205E4d8a45f78392070e0dAF99F70fec05"}},"network":{}},"2006":{"ticket":"~panrus-ritfur-haddul-harmer-bicren-fadmev-davfyn-losmev","shards":["~panrus-ritfur-haddul-harmer-bicren-fadmev-davfyn-losmev"],"ownership":{"meta":{"type":"ownership","revision":0,"ship":null},"seed":"idle script sniff wide retreat gym then cave glow latin wife zebra motion vacant wood deputy symbol tiny web bike feature bomb cement flight","keys":{"public":"02a6e13e995d56f4d17d4041c75ae27a24030a516d714b57794ccf3262d6be5bc8","private":"75f1cb79919edc8e5440f52792c5ac2273807f35e3593e93d99058487bf17315","chain":"ffa83d1624e7cc2915683be666a4a4fd6504dce1526944b2f05dbcb93039fd8f","address":"0x69B4deFce171a87A06DE106DDE98D585877F933C"}},"transfer":{"meta":{"type":"transfer","revision":0,"ship":null},"seed":"gate sudden harvest oppose soul switch calm motor leopard shift jar solve myth core mandate vacuum pumpkin empty demise recycle bunker need style spirit","keys":{"public":"02d06b1a0f7b23e593155952823754bba4c48446d23edfc20167e98242b7762dea","private":"7d5886ee0b02e37da5da4d565c9b63596c31fb0de4ac1939332d39f8d2fc35d8","chain":"2c288d779724b46c67706679df8ad29a949fa06e710a051fd7004dabe1561b09","address":"0x455cc2475B3239a2d3aA925A6d93f3C6ED16A425"}},"spawn":{"meta":{"type":"spawn","revision":0,"ship":null},"seed":"girl pact combine shift online next eternal bundle bean month more achieve deposit garment wear mail setup book field leisure party harbor fish group","keys":{"public":"02b5d1594ad207f2b691b5146b1171b2a08c09b8e55891faddd20461b355d25258","private":"df3f229479aaada91317534ebcfca55bb1b1e4221ec3648e51816ec2b67b518d","chain":"c69e649aad0b4310b7d182ef64b5bdb0d3040454b746e758a23ba8ac87a01ddb","address":"0x5d379E21EdCe3F4aC046E2259e003DBb5095D982"}},"voting":{},"management":{"meta":{"type":"management","revision":0,"ship":null},"seed":"delay hole steel gate magic other glad inmate spin silent spider grief vast accuse hold bike control remember fruit ketchup toe hurt mandate rail","keys":{"public":"034f1d76d38c8b73d3f1abc1544e9c365449bef24d6d710ee2a2210bbef36f90ef","private":"195619c802a271a80840b44072dea25a45f61532025981bae984a7c5e0bf5733","chain":"1581fe8d87be908edb329d8c3a8344c0d13b7c85f7e482f11fa0f6a172326809","address":"0x5A56C16849F7588E3B8d931c96a4D37157432c0e"}},"network":{}},"2262":{"ticket":"~widsun-mipdus-timpen-satset-sicduc-borsyr-nisfyr-mosrev","shards":["~widsun-mipdus-timpen-satset-sicduc-borsyr-nisfyr-mosrev"],"ownership":{"meta":{"type":"ownership","revision":0,"ship":null},"seed":"camera differ ill start skill battle impact valve replace okay fly agent tomorrow gather chalk rain help cash route decade price suit dignity lens","keys":{"public":"0243d6314d00ae5156452f48d6e5e55a8418d28da6e128d5c8b5fcfd3407c15d2e","private":"cc114811588b6ddde441333638a74721cc98a1a3368c6571191082bba326522e","chain":"5a54de75e512a4831b31e7489837901cc4a09d9d1bb2d7f16ce7f50bf4116a80","address":"0x9fe2fb78050aadE596D8a13f1a5c556895De5966"}},"transfer":{"meta":{"type":"transfer","revision":0,"ship":null},"seed":"olive camp laugh milk rubber border noise person verb coast front ankle view fury pen tennis snack true quantum trust return icon exchange flower","keys":{"public":"02b29ceab765ef74b431f8402a94805a7fa1fb8617785d64df76392aff0dd3f9d2","private":"3e0aca3817efc232e33c1884dee093bfef57b29ddb4fb9439a4cfa9839d11ad4","chain":"23cfc2324ee9a49a8eb3969e2e1bdbc382ba02fac6d538c8ccedb7563fac851d","address":"0xBD8cF4F1592af2E0CA7Ae3E90f4CbD2371d4Cd57"}},"spawn":{"meta":{"type":"spawn","revision":0,"ship":null},"seed":"quality subway chuckle east veteran height track much still pond noble number little voice mimic enrich obvious limit grab foam wild fabric swamp charge","keys":{"public":"031e29ffa19e43c9dffbe4f2b0214413ebd677e776866bf200f75086bfb3c8b4d6","private":"f900f7bcafcf988a6b0a201f6eb1d40b571ef2e0aa9300823c86e3c88076a7d9","chain":"d1e02974c6b1b23650e17f2596590115d61ddf41d01a73e8572044e42e47600a","address":"0xDa7b43F673654BEF2165C46A6D26A1F039313cFC"}},"voting":{},"management":{"meta":{"type":"management","revision":0,"ship":null},"seed":"enforce vote rich dentist start select hurdle dune strategy deposit elder dash account shove tray tell strong depend goose huge give tissue shy parade","keys":{"public":"02d7a1656cb2089bdc2a37f0898bfcea6723b3ac75ebd8cc006bdc64756929aa29","private":"a735a9ba2a3bae6a07dd036f14357a5d9af52addd43074bfe06dd167a7686bca","chain":"ae4a5b15c5f450c441628601a4f6d9c29a0230737f7c1536fc10ae3055dea88c","address":"0xF704b23b3AD00b58E3b688aF16C0471E5275D11E"}},"network":{}},"2518":{"ticket":"~raldus-watrut-libmev-doclex-nibsut-marfun-nidbex-havwyx","shards":["~raldus-watrut-libmev-doclex-nibsut-marfun-nidbex-havwyx"],"ownership":{"meta":{"type":"ownership","revision":0,"ship":null},"seed":"jacket lonely mystery echo state trap onion acquire track chalk cage shrimp stick brief slim open duck lake grow flush better custom index large","keys":{"public":"03915404b701e061c285aac0275b3881e11b83417f99cdf034b81dcaea5d73c920","private":"e4f61b2778211543307f700383b126e16347614223edf0d5f6f84aeca25e012e","chain":"1c39867edba70976b96cc8b7ea4945f68591bdfe8e66ec916c670d65720725b2","address":"0xd5c27e94F2C7fC855EC94823B2b1d3b22085036c"}},"transfer":{"meta":{"type":"transfer","revision":0,"ship":null},"seed":"abuse title humor style uniform gap picture salute stove sadness double blind jeans hub shoot general ahead sport tired capable achieve scan cushion soft","keys":{"public":"02ed55400aa1b944386573e4252a79df074677a27a79b81d983ffde957e7e11ee5","private":"6899a7421b2df0fa67c1f1a974ad7fbed2ab16fe4d88ae1fc9e983d705f7ea82","chain":"119f2f17356dba59727adf2744db488382282a09a8c0b1d245c6aa997b02fb0d","address":"0xB9e3124B9450dAB753Fe27fc0fB12B5494341f74"}},"spawn":{"meta":{"type":"spawn","revision":0,"ship":null},"seed":"jealous siege sport sausage tomato distance peanut feel blouse category marriage match riot cruise creek tonight grant kid drama phone bomb wage foil earn","keys":{"public":"026996bcdd3130813983a5e7738da7b687519738b0c917c358b3efde6cf4303619","private":"51b63a2d0bab88bd83c8ba7c39a4ef6e441e3ce39dbed537d21cfb5caf05884f","chain":"452658f8a603ec839fcc7e4fa72f4d16c62a0cf599fdc99b3a2d9d4cbfb2df71","address":"0x18C62645904C2FbB00Ec081EE636c76e88433382"}},"voting":{},"management":{"meta":{"type":"management","revision":0,"ship":null},"seed":"wonder actual sustain grab rule tornado rich collect series thunder lesson cinnamon excuse region dignity cash friend truly stool exchange sniff almost today coin","keys":{"public":"038a909a6fb65e422c34f6cc7e7b5d78e04ff5bce89ed282c742601c6f3ced9d85","private":"d7b348d22c0421e8e653f1c1d481865c982b321481608f04635ad6fb16299238","chain":"3a9401be3f1e03b78a1215de8f6b4886bef270f811885171705a5cb2d2e1661d","address":"0x5776ecf9A0dBcab4d039443F285AE06eFABD61ea"}},"network":{}},"2774":{"ticket":"~lopleg-bossum-folsed-dapput-darrex-niddus-nambes-winpel","shards":["~lopleg-bossum-folsed-dapput-darrex-niddus-nambes-winpel"],"ownership":{"meta":{"type":"ownership","revision":0,"ship":null},"seed":"warrior smooth van legend any pulp palm size north short glare trial aerobic debate frown ignore explain picture mutual fabric age ribbon yellow wolf","keys":{"public":"020bb4f53965c5445b8511c74b1d61eb99b060068b290f1f4cd8b17218dbd0cc8c","private":"79ead136f4a95739d4331964fafe7c0c89faf7874ed5aa2d6fbc7a2aff079a26","chain":"74c1d2ec8187a0be2bd9ffcca478fc25ef32c9e1b815a01abb04ad343203ee94","address":"0x161b26787996bD24ae4391EFe614020885A7EC66"}},"transfer":{"meta":{"type":"transfer","revision":0,"ship":null},"seed":"trust entire bunker gentle heavy security gather open bachelor ball useful curve slam cabbage gadget shell age rotate clip joy train near shadow twelve","keys":{"public":"0264ffb8c0b2dc5a9fce8aa4220fb38ad756ad7f7e20dae2a6f6081afa83d3be23","private":"3b716c2bc98779597b86c3797724d51fe87e917bc062e0b08f6d6516e57b58c9","chain":"c00c81bf03d8d99ecea81e97ff66a4ca885454c1fa9873d1e7a61e74a7178c3f","address":"0x8Bb1A4C6b3C01AC87a5d13962F336EF12259749b"}},"spawn":{"meta":{"type":"spawn","revision":0,"ship":null},"seed":"reward army piece eye start canoe possible jungle symbol moral knife valve poem agent sausage then only traffic rail false fiscal dwarf hand dad","keys":{"public":"03644fa57ff99e20e37848ec4f45fac3fc0f249c1b37403e300b19495d1cd210e3","private":"e78f281186ad45f92ac14e6d332bbcd377e1d3172099b9acbed9f1a0e8315194","chain":"8316ea7a6e5e8b0aef847a0dd01560c64980e01746383ebcbecd006a26fdec0f","address":"0x49676907750ca928c571B1129E415a0570E71682"}},"voting":{},"management":{"meta":{"type":"management","revision":0,"ship":null},"seed":"clap glide apple casino fluid budget mercy height calm true gossip episode sustain pioneer asthma fix innocent give faint source taxi market hazard vessel","keys":{"public":"03b9550b0c022f4a33d23a798a30178ce91e7c080114ebde0f08de338bce9f1ffe","private":"a89bf4f3707482803b3041eb05ebdb76587b8e329086b3d7b7c24d5cab84e1b8","chain":"d5b6d14fb18ade9690bb0ba13a12c430e87d1e886fb88ac357cbe24f42f9a8a1","address":"0x70Ba1748a7ceD88905eBC28428EfCBCB0eC90E11"}},"network":{}},"3030":{"ticket":"~tapfyl-faspem-lodpyx-sopnyr-sopmud-fabsup-banpex-palwyx","shards":["~tapfyl-faspem-lodpyx-sopnyr-sopmud-fabsup-banpex-palwyx"],"ownership":{"meta":{"type":"ownership","revision":0,"ship":null},"seed":"hawk kingdom rare merge history kid beyond vacuum supreme plug blue birth stem seek artwork box great ten sign nurse arrest pledge gun stereo","keys":{"public":"02241e93b7ce537bddb2faffa6b9420b85780c89cd6542b509e0827e5615449e37","private":"8cc54203667ad2fb433745da5c7a5bdf4f80a2130b4653f98e2096346d0286a4","chain":"d6cf181f3a117f2ba27395cbac5db5516c859ef2614b4f3ed82fff90ef985909","address":"0x9A3e91B0aaF9fA732504B6D2b5dC0c32cb117907"}},"transfer":{"meta":{"type":"transfer","revision":0,"ship":null},"seed":"better pulse ladder inhale raccoon claim thing trash mutual only gasp dove wisdom pact cube occur floor blood sniff churn quality enroll twist mobile","keys":{"public":"03d8f1fe2ab2edccea69067836cdad000eb2c5c0b225b055cac7b2885c020b734e","private":"cd8953aafde435749fcc9af819e75f1efe327def5e5c2532fb0495eb896f82a4","chain":"31869ccb979bb4a492d94eb8de3d67d1c97c074b2191cbd0f44fd640161a9aef","address":"0x74bF028a856721EA473C024343474d1121e76BE8"}},"spawn":{"meta":{"type":"spawn","revision":0,"ship":null},"seed":"step category come phone snap act ancient strong notable banner weekend what pencil appear author execute beach dignity mimic other clay base enhance found","keys":{"public":"0348647fcfddd2662a645e76d3e71ca9ef1f6e1ff2b5293e93af493dc28ff7672c","private":"2993aa0d0e501c10322671ae9160d6ea11b1b0c64447dda37951541ae8aba66f","chain":"58fc81d4736db432096907cfc8c01040b4e5417ed2828b82651e5779c544f60c","address":"0xA86AC9123F0aC44f7BCD8382bb81AD674F4ecfb2"}},"voting":{},"management":{"meta":{"type":"management","revision":0,"ship":null},"seed":"plate left raw rebuild baby sight gift toilet broken hood drip fall blur absurd fee page photo inject long tent soldier bridge sad either","keys":{"public":"0291f6b28a05709c3b56c4ef53427181c241c1df2cc58566b461423a3ff9791821","private":"f3583891956148e49f66aa05a881a746bc778683c30166f4007aa6721944efc3","chain":"54d664992aaaf2b67b63d2b10fea1b5e3b17f370b385bbae7143d39020d7527b","address":"0xaCabC986c2fEED02DEED77E3663Ad97256CCe289"}},"network":{}}};
-var wallet4 = {
-	value: value$3
+var wallet5 = {
+	"0": {"ticket":"~radlud-tagset-fidrec-narrym-tadrud-patlup-magnyd-mismet-ranlyx-passun-napfeb-haldux-fannec-simpex-bistud-ramwyl-bansud-dibnym-todmes-tamtuc-finrup-mocfur-rantug-savfep","shards":["~radlud-tagset-fidrec-narrym-tadrud-patlup-magnyd-mismet-ranlyx-passun-napfeb-haldux-fannec-simpex-bistud-ramwyl","~ranlyx-passun-napfeb-haldux-fannec-simpex-bistud-ramwyl-bansud-dibnym-todmes-tamtuc-finrup-mocfur-rantug-savfep","~radlud-tagset-fidrec-narrym-tadrud-patlup-magnyd-mismet-bansud-dibnym-todmes-tamtuc-finrup-mocfur-rantug-savfep"],"ownership":{"meta":{"type":"ownership","revision":0,"ship":0},"seed":"piece female marriage among close talk smile refuse royal snack fish age ivory oak hundred food test person rubber flame manual question grab useful","keys":{"public":"0277c51d2e57e3e4de09b7a99b8649ee28f5523f9652422783365274cefea1e657","private":"5018bc4cf165e72d813262d2487f354ac700993dd2f586eb974ab9b5fba16aae","chain":"16b0794bb5d8a6fcb8fb4ad6bd515a0e1db0acf7f38ff46c5ba51691f2b92085","address":"0x8E26495878D124F0336cA08d32caeE4636d54aD8"}},"transfer":{"meta":{"type":"transfer","revision":0,"ship":0},"seed":"party vote circle puzzle still oil diary coil six suggest tackle identify write tennis mutual chuckle outdoor spell drive degree feel anxiety erosion cram","keys":{"public":"03755d256efde2cf5d4c94a0bdd4a563f4725dbb8cbeb5d261609df34909dbbb8f","private":"9d9b09b8775335dcccca8ec93e7df06fbe73392b73a8f658fffa1a33a1dd18c8","chain":"b0183eec9be21456997802110733db15fe1facaceac8ad23076276dc5d210e80","address":"0xd4210763E9B896D1b6DF6694f2B0E2bE412F60eA"}},"spawn":{"meta":{"type":"spawn","revision":0,"ship":0},"seed":"begin host casual trick old ten post van double doll lamp true divert soul legend health scout ball bicycle cause proof produce lazy around","keys":{"public":"0396c76a075e14b119d2eb7ca145c9bace7d19ef4d19ebfd6f497321c1e9eb036c","private":"6d3b9f5b97121ec8ac08883e998c3f148249828ac46312d0cb632bc6a4488997","chain":"00b2b8389db871b7fab7741a12da4cd08c3d024e61b3499e3fb79d37f14970ee","address":"0xCc61160fbFb525D05Cfadec593b7efE0942d8C70"}},"voting":{"meta":{"type":"voting","revision":0,"ship":0},"seed":"desert drip apart shine fit minor video virus occur village day drum please budget stairs nurse camera siren art crash order abstract flight sorry","keys":{"public":"02258e4911920263b004e9acaed2fb1ab0d67e14aa00e46cc02ee27d4cb99a32de","private":"e082549c14041f82e6951a159ab8104d0ee1f72f89429144b9d05756fa60a06b","chain":"fa2706de1ae58ac392d7c2ec319d7a407eeaed3530765bc4d5de2cb838e451d8","address":"0x6871d0A54F9571880Ca5766d9598401c060C1C3f"}},"management":{"meta":{"type":"management","revision":0,"ship":0},"seed":"lonely sheriff erase develop opinion wine adjust junk text target similar host select cram impulse traffic setup right clarify mention buddy divert flame correct","keys":{"public":"02c7ddd314753edbc70e6db79600d2d4d4eb8b1a0cece3d1cabaacc96f3ab7e323","private":"bf56391aa4e9b96dd2b377d539fcc69cf6e64a7283a9a338d6c3a25d8d657973","chain":"a0c2eedbed67616b5675b4ef130b19ecee5ac5051c06c17e697bd69dd287a2c5","address":"0x8a1305D001cB6D97d1D56aE674FBb9C3a374122F"}},"network":{"seed":"399b13377cae00528830d71a23473e2c99c5bb0f7fdf04407fd8a3afab854792","keys":{"crypt":{"private":"db2aeb62878870ba37a8d0a210627a5ae6d70b66a1adbd79e8eb700dcba511c8","public":"c431b44368894044457cd518ffc5c10a28c794b616dabdc1e44250c03deb9ac7"},"auth":{"private":"f2a870f2ae6a86a510e04695a94d0f4ac4820a5d5f8be5652890a461d0314977","public":"53dab594e8073c9ab9ebcb9f7b4aa05295f0a47aadd2deafe8bc2cbe76fb16b7"}},"meta":{"type":"network","revision":0,"ship":0}}},
+	"1000": {"ticket":"~haddus-witmud-finfun-danben-hinhes-hantyc-wollyn-hostug","shards":["~haddus-witmud-finfun-danben-hinhes-hantyc-wollyn-hostug"],"ownership":{"meta":{"type":"ownership","revision":0,"ship":1000},"seed":"visa enforce deer sample clarify cactus few heart bronze index roast essence cream donkey arctic draw main federal then vanish proof churn sell gorilla","keys":{"public":"036a7c0095dd2d5e0bee1bea28ab2b0a0f84c770d298fb31a1d69a1f1d3776f1eb","private":"8a9eaeb914599231c0d866f96fca2c89f40b6919a46ad9105b2af87c6baa5d33","chain":"1698146aada5742baaf76ac90b583299fc31bc5e95ea75c606c4a9cbcbc94e61","address":"0xdD7f3Ad5d5a2933272316035ec9655d5F1eE72Ad"}},"transfer":{"meta":{"type":"transfer","revision":0,"ship":1000},"seed":"gain drop muscle brick pitch deliver peanut man insect reflect federal hotel siege brain fabric eagle nuclear cotton help arena wife merit recall glove","keys":{"public":"0357ab53cee09e08e83cd6a2c5df2afe1a58e7c6bbf3f2a38126f9ae2d9a1c0a46","private":"0acc55a28025142a771c5815bcbd35d094007510e5a6acc2aa4da47ce5d9f7ba","chain":"e1fd1575ca9bfc736fa7f74dff96cee4652780febb70e63ed857d36bd1632c7f","address":"0xD1fBdbBCe6E88B729d77152584C02f980f1551b1"}},"spawn":{"meta":{"type":"spawn","revision":0,"ship":1000},"seed":"quit dawn alien palm eight earn zebra have spin attitude end foam grit keep remove over laugh practice open buyer cancel verify subject client","keys":{"public":"020c3fb80d12372a7f6da41a125a6702c4f47b859834c62c5aa9d4f2e8be106fd4","private":"4d3b95e7855ac080179ccece414483fdd74ac166535e175daee735816022c9f9","chain":"23398363a7443fd34a76f21aec7e5c5b09a2325d7b0ff4622cb88a033edcad0e","address":"0x444115d1C81D450e5F6E094a2D9fb7bf85e422BF"}},"voting":{},"management":{"meta":{"type":"management","revision":0,"ship":1000},"seed":"fury antenna clog crane amazing erosion random impulse script elephant poet divorce velvet vintage idea rib uncle glad crater garment aisle usual aunt sword","keys":{"public":"036db7b1f8a27cf9a6bb2b5e5a5c8988010d8551edf858e4ea4cf3b098e81dc64c","private":"207e75a6070bc3af022f6879cbad2b3362f1505f9e44cf7c526e717aa36de320","chain":"46feb422061ec87148286d703fe7dd0ce2cbe951af9b18fc2e23db59b97abafa","address":"0xCB4cA7Eaad5D16B812A31d6B879fA9b821E327eC"}},"network":{}},
+	"80000": {"ticket":"~difsyn-dorper-fopten-fadrus","shards":["~difsyn-dorper-fopten-fadrus"],"ownership":{"meta":{"type":"ownership","revision":0,"ship":80000},"seed":"fat buffalo economy suspect unveil canoe timber viable pen client jazz pencil eye emotion sight deputy emotion nest hat resemble lawsuit pride poet woman","keys":{"public":"0218dea99b0e44714aec7a7c741af4995c2ef357ef219d6955b8ed2b3c34ab0330","private":"5e6ed3573af3aeb38ab92689c49c95329eff8f2505ece5983f9f20be2d5901f5","chain":"2f3f3bce2c59fa78da22f7711be88368215caf0d9daf7e89114700061918ab76","address":"0x2a05774E1AB5A5ACDa681271B643D4Db39b6895e"}},"transfer":{"meta":{"type":"transfer","revision":0,"ship":80000},"seed":"fluid grace letter shrimp release quit master muscle sweet peace nominee garment join dumb abstract fruit nation corn visa tackle air stomach filter okay","keys":{"public":"0277acf5b3af6b9d469a11ecd7d447d03f6ceedcf9021bc9d31ca754959acf4fe8","private":"43956a8f0c3a533dc6bb2dc2aa341dd88e1155702600282e1d3dc5b4d329a69c","chain":"d8968530cc45d322c4b78f95ce6582cb4870a553013d286f88e13f2b4e22f9d0","address":"0x882eFb74B494CDC2805642428F912F5A3FF8d25c"}},"spawn":{"meta":{"type":"spawn","revision":0,"ship":80000},"seed":"library setup roof myth fringe fitness urge model night process warm stool stable reveal punch pony scale soup lizard accuse park consider task large","keys":{"public":"0276eb46ef7b1918a064e9361de342853be1b417aaacad5f5446e2492907f6dcba","private":"84c69e871a04761d364583ed40e9a0fd91bf558390730a4a32da4d19b6f178c6","chain":"8566618359c24bc4be7eeca379c96c503c59ac78f538b4cbd5be2eb80259d48d","address":"0xC42C9861f03b76238f5B38a0b61aA93471db1B77"}},"voting":{},"management":{"meta":{"type":"management","revision":0,"ship":80000},"seed":"reunion heavy alert phrase aunt ecology street web rotate aerobic success basket cliff sail canoe rescue alone lumber spread subject gospel tired vital peasant","keys":{"public":"03466a6d09c48457cbfb0c5094c99fb3d6925681969075dd0050b3167bc3ff8433","private":"34870c7d92f8c63b743731d1db310900d2c38575390a1b5c1664961118b8a1c0","chain":"983ece9519cb47e559eb97d09b826c42be0de39c121e532931fdcb61a41ea7f3","address":"0x8c794e5a8F2B82B4A647B8b602FB662A284eAC44"}},"network":{"seed":"a2405d4c8a86048004e5af21d8f2a6693918ddf22f5a0bffac9e1b4bef4740c0","keys":{"crypt":{"private":"303a1e9d961bc1de138c1e1e4113ceac25e96fe515ef6b21efb338d3e83af2dc","public":"dded83b96c98702d1cbd10f17625ef215890777abd6396f6d7fd4bcb9279c451"},"auth":{"private":"13ab43b79da0e315df6c1cb10076fdd509521d2f17e13edf0672557f9f4b503c","public":"27ea9829156690817d0d65c6a131333ceaec5f694846698ea1bdc2ce4da625fe"}},"meta":{"type":"network","revision":0,"ship":80000}}}
 };
+
+/** @license React v16.5.2
+ * react-dom-server.browser.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
 
 'use strict';function aa$1(a,b,d,c,k,f,h,l){if(!a){a=void 0;if(void 0===b)a=Error("Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.");else{var D=[d,c,k,f,h,l],z=0;a=Error(b.replace(/%s/g,function(){return D[z++]}));a.name="Invariant Violation";}a.framesToPop=1;throw a;}}
 function r$1(a){for(var b=arguments.length-1,d="https://reactjs.org/docs/error-decoder.html?invariant="+a,c=0;c<b;c++)d+="&args[]="+encodeURIComponent(arguments[c+1]);aa$1(!1,"Minified React error #"+a+"; visit %s for the full message or use the non-minified dev environment for full errors and additional helpful warnings. ",d);}
@@ -29652,29 +28738,29 @@ Q$2);O$2[b]=new N$2(b,1,!1,a,null);});"xlink:actuate xlink:arcrole xlink:href xl
 function R$1(a){if("boolean"===typeof a||"number"===typeof a)return""+a;a=""+a;var b=fa$1.exec(a);if(b){var d="",c,k=0;for(c=b.index;c<a.length;c++){switch(a.charCodeAt(c)){case 34:b="&quot;";break;case 38:b="&amp;";break;case 39:b="&#x27;";break;case 60:b="&lt;";break;case 62:b="&gt;";break;default:continue}k!==c&&(d+=a.substring(k,c));k=c+1;d+=b;}a=k!==c?d+a.substring(k,c):d;}return a}var S$1={html:"http://www.w3.org/1999/xhtml",mathml:"http://www.w3.org/1998/Math/MathML",svg:"http://www.w3.org/2000/svg"};
 function T$2(a){switch(a){case "svg":return"http://www.w3.org/2000/svg";case "math":return"http://www.w3.org/1998/Math/MathML";default:return"http://www.w3.org/1999/xhtml"}}
 var U$2={area:!0,base:!0,br:!0,col:!0,embed:!0,hr:!0,img:!0,input:!0,keygen:!0,link:!0,meta:!0,param:!0,source:!0,track:!0,wbr:!0};
-var ha$1=require$$0$30({menuitem:!0},U$2);
+var ha$1=objectAssign({menuitem:!0},U$2);
 var V$2={animationIterationCount:!0,borderImageOutset:!0,borderImageSlice:!0,borderImageWidth:!0,boxFlex:!0,boxFlexGroup:!0,boxOrdinalGroup:!0,columnCount:!0,columns:!0,flex:!0,flexGrow:!0,flexPositive:!0,flexShrink:!0,flexNegative:!0,flexOrder:!0,gridArea:!0,gridRow:!0,gridRowEnd:!0,gridRowSpan:!0,gridRowStart:!0,gridColumn:!0,gridColumnEnd:!0,gridColumnSpan:!0,
 gridColumnStart:!0,fontWeight:!0,lineClamp:!0,lineHeight:!0,opacity:!0,order:!0,orphans:!0,tabSize:!0,widows:!0,zIndex:!0,zoom:!0,fillOpacity:!0,floodOpacity:!0,stopOpacity:!0,strokeDasharray:!0,strokeDashoffset:!0,strokeMiterlimit:!0,strokeOpacity:!0,strokeWidth:!0};
 var ia$1=["Webkit","ms","Moz","O"];Object.keys(V$2).forEach(function(a){ia$1.forEach(function(b){b=b+a.charAt(0).toUpperCase()+a.substring(1);V$2[b]=V$2[a];});});
 var ja$1=/([A-Z])/g;
 var ka$1=/^ms-/;
-var W$2=require$$1$8.Children.toArray;
+var W$2=react.Children.toArray;
 var la$1={listing:!0,pre:!0,textarea:!0};
 var ma$1=/^[a-zA-Z][a-zA-Z:_\.\-\d]*$/;
 var X$1={};
-var Y$2={};function na$1(a){if(void 0===a||null===a)return a;var b="";require$$1$8.Children.forEach(a,function(a){null!=a&&(b+=a);});return b}var Z$2={};function oa$1(a,b){if(a=a.contextTypes){var d={},c;for(c in a)d[c]=b[c];b=d;}else b=Z$2;return b}var pa$1=Object.prototype.hasOwnProperty; var qa$1={children:null,dangerouslySetInnerHTML:null,suppressContentEditableWarning:null,suppressHydrationWarning:null};
+var Y$2={};function na$1(a){if(void 0===a||null===a)return a;var b="";react.Children.forEach(a,function(a){null!=a&&(b+=a);});return b}var Z$2={};function oa$1(a,b){if(a=a.contextTypes){var d={},c;for(c in a)d[c]=b[c];b=d;}else b=Z$2;return b}var pa$1=Object.prototype.hasOwnProperty; var qa$1={children:null,dangerouslySetInnerHTML:null,suppressContentEditableWarning:null,suppressHydrationWarning:null};
 function ra$1(a,b){void 0===a&&r$1("152",I$2(b)||"Component");}
-function sa$1(a,b){function d(c,k){var d=oa$1(k,b),f=[],h=!1,g={isMounted:function(){return!1},enqueueForceUpdate:function(){if(null===f)return null},enqueueReplaceState:function(a,b){h=!0;f=[b];},enqueueSetState:function(a,b){if(null===f)return null;f.push(b);}},e=void 0;if(k.prototype&&k.prototype.isReactComponent){if(e=new k(c.props,d,g),"function"===typeof k.getDerivedStateFromProps){var v=k.getDerivedStateFromProps.call(null,c.props,e.state);null!=v&&(e.state=require$$0$30({},e.state,v));}}else if(e=k(c.props,
+function sa$1(a,b){function d(c,k){var d=oa$1(k,b),f=[],h=!1,g={isMounted:function(){return!1},enqueueForceUpdate:function(){if(null===f)return null},enqueueReplaceState:function(a,b){h=!0;f=[b];},enqueueSetState:function(a,b){if(null===f)return null;f.push(b);}},e=void 0;if(k.prototype&&k.prototype.isReactComponent){if(e=new k(c.props,d,g),"function"===typeof k.getDerivedStateFromProps){var v=k.getDerivedStateFromProps.call(null,c.props,e.state);null!=v&&(e.state=objectAssign({},e.state,v));}}else if(e=k(c.props,
 d,g),null==e||null==e.render){a=e;ra$1(a,k);return}e.props=c.props;e.context=d;e.updater=g;g=e.state;void 0===g&&(e.state=g=null);if("function"===typeof e.UNSAFE_componentWillMount||"function"===typeof e.componentWillMount)if("function"===typeof e.componentWillMount&&"function"!==typeof k.getDerivedStateFromProps&&e.componentWillMount(),"function"===typeof e.UNSAFE_componentWillMount&&"function"!==typeof k.getDerivedStateFromProps&&e.UNSAFE_componentWillMount(),f.length){g=f;var t=h;f=null;h=!1;if(t&&
-1===g.length)e.state=g[0];else{v=t?g[0]:e.state;var m=!0;for(t=t?1:0;t<g.length;t++){var n=g[t];n="function"===typeof n?n.call(e,v,c.props,d):n;null!=n&&(m?(m=!1,v=require$$0$30({},v,n)):require$$0$30(v,n));}e.state=v;}}else f=null;a=e.render();ra$1(a,k);c=void 0;if("function"===typeof e.getChildContext&&(d=k.childContextTypes,"object"===typeof d)){c=e.getChildContext();for(var w in c)w in d?void 0:r$1("108",I$2(k)||"Unknown",w);}c&&(b=require$$0$30({},b,c));}for(;require$$1$8.isValidElement(a);){var c=a,k=c.type;if("function"!==typeof k)break;d(c,k);}return{child:a,
+1===g.length)e.state=g[0];else{v=t?g[0]:e.state;var m=!0;for(t=t?1:0;t<g.length;t++){var n=g[t];n="function"===typeof n?n.call(e,v,c.props,d):n;null!=n&&(m?(m=!1,v=objectAssign({},v,n)):objectAssign(v,n));}e.state=v;}}else f=null;a=e.render();ra$1(a,k);c=void 0;if("function"===typeof e.getChildContext&&(d=k.childContextTypes,"object"===typeof d)){c=e.getChildContext();for(var w in c)w in d?void 0:r$1("108",I$2(k)||"Unknown",w);}c&&(b=objectAssign({},b,c));}for(;react.isValidElement(a);){var c=a,k=c.type;if("function"!==typeof k)break;d(c,k);}return{child:a,
 context:b}}
-var ta$1=function(){function a(b,d){if(!(this instanceof a))throw new TypeError("Cannot call a class as a function");require$$1$8.isValidElement(b)?b.type!==A$1?b=[b]:(b=b.props.children,b=require$$1$8.isValidElement(b)?[b]:W$2(b)):b=W$2(b);this.stack=[{type:null,domNamespace:S$1.html,children:b,childIndex:0,context:Z$2,footer:""}];this.exhausted=!1;this.currentSelectValue=null;this.previousWasTextNode=!1;this.makeStaticMarkup=d;this.contextIndex=-1;this.contextStack=[];this.contextValueStack=[];}a.prototype.pushProvider=function(a){var b=
+var ta$1=function(){function a(b,d){if(!(this instanceof a))throw new TypeError("Cannot call a class as a function");react.isValidElement(b)?b.type!==A$1?b=[b]:(b=b.props.children,b=react.isValidElement(b)?[b]:W$2(b)):b=W$2(b);this.stack=[{type:null,domNamespace:S$1.html,children:b,childIndex:0,context:Z$2,footer:""}];this.exhausted=!1;this.currentSelectValue=null;this.previousWasTextNode=!1;this.makeStaticMarkup=d;this.contextIndex=-1;this.contextStack=[];this.contextValueStack=[];}a.prototype.pushProvider=function(a){var b=
 ++this.contextIndex,c=a.type._context,k=c._currentValue;this.contextStack[b]=c;this.contextValueStack[b]=k;c._currentValue=a.props.value;};a.prototype.popProvider=function(){var a=this.contextIndex,d=this.contextStack[a],c=this.contextValueStack[a];this.contextStack[a]=null;this.contextValueStack[a]=null;this.contextIndex--;d._currentValue=c;};a.prototype.read=function(a){if(this.exhausted)return null;for(var b="";b.length<a;){if(0===this.stack.length){this.exhausted=!0;break}var c=this.stack[this.stack.length-
 1];if(c.childIndex>=c.children.length){var k=c.footer;b+=k;""!==k&&(this.previousWasTextNode=!1);this.stack.pop();"select"===c.type?this.currentSelectValue=null:null!=c.type&&null!=c.type.type&&c.type.type.$$typeof===E$2&&this.popProvider(c.type);}else k=c.children[c.childIndex++],b+=this.render(k,c.context,c.domNamespace);}return b};a.prototype.render=function(a,d,c){if("string"===typeof a||"number"===typeof a){c=""+a;if(""===c)return"";if(this.makeStaticMarkup)return R$1(c);if(this.previousWasTextNode)return"\x3c!-- --\x3e"+
-R$1(c);this.previousWasTextNode=!0;return R$1(c)}d=sa$1(a,d);a=d.child;d=d.context;if(null===a||!1===a)return"";if(!require$$1$8.isValidElement(a)){if(null!=a&&null!=a.$$typeof){var b=a.$$typeof;b===y$1?r$1("257"):void 0;r$1("258",b.toString());}a=W$2(a);this.stack.push({type:null,domNamespace:c,children:a,childIndex:0,context:d,footer:""});return""}b=a.type;if("string"===typeof b)return this.renderDOM(a,d,c);switch(b){case B$1:case G$2:case C$2:case A$1:return a=W$2(a.props.children),this.stack.push({type:null,domNamespace:c,children:a,
+R$1(c);this.previousWasTextNode=!0;return R$1(c)}d=sa$1(a,d);a=d.child;d=d.context;if(null===a||!1===a)return"";if(!react.isValidElement(a)){if(null!=a&&null!=a.$$typeof){var b=a.$$typeof;b===y$1?r$1("257"):void 0;r$1("258",b.toString());}a=W$2(a);this.stack.push({type:null,domNamespace:c,children:a,childIndex:0,context:d,footer:""});return""}b=a.type;if("string"===typeof b)return this.renderDOM(a,d,c);switch(b){case B$1:case G$2:case C$2:case A$1:return a=W$2(a.props.children),this.stack.push({type:null,domNamespace:c,children:a,
 childIndex:0,context:d,footer:""}),""}if("object"===typeof b&&null!==b)switch(b.$$typeof){case H$2:return a=W$2(b.render(a.props,a.ref)),this.stack.push({type:null,domNamespace:c,children:a,childIndex:0,context:d,footer:""}),"";case E$2:return b=W$2(a.props.children),c={type:a,domNamespace:c,children:b,childIndex:0,context:d,footer:""},this.pushProvider(a),this.stack.push(c),"";case F$2:return b=W$2(a.props.children(a.type._currentValue)),this.stack.push({type:a,domNamespace:c,children:b,childIndex:0,context:d,
-footer:""}),""}r$1("130",null==b?b:typeof b,"");};a.prototype.renderDOM=function(a,d,c){var b=a.type.toLowerCase();c===S$1.html&&T$2(b);X$1.hasOwnProperty(b)||(ma$1.test(b)?void 0:r$1("65",b),X$1[b]=!0);var f=a.props;if("input"===b)f=require$$0$30({type:void 0},f,{defaultChecked:void 0,defaultValue:void 0,value:null!=f.value?f.value:f.defaultValue,checked:null!=f.checked?f.checked:f.defaultChecked});else if("textarea"===b){var h=f.value;if(null==h){h=f.defaultValue;var l=f.children;null!=l&&(null!=h?r$1("92"):void 0,Array.isArray(l)&&
-(1>=l.length?void 0:r$1("93"),l=l[0]),h=""+l);null==h&&(h="");}f=require$$0$30({},f,{value:void 0,children:""+h});}else if("select"===b)this.currentSelectValue=null!=f.value?f.value:f.defaultValue,f=require$$0$30({},f,{value:void 0});else if("option"===b){l=this.currentSelectValue;var D=na$1(f.children);if(null!=l){var z=null!=f.value?f.value+"":D;h=!1;if(Array.isArray(l))for(var g=0;g<l.length;g++){if(""+l[g]===z){h=!0;break}}else h=""+l===z;f=require$$0$30({selected:void 0,children:void 0},f,{selected:h,children:D});}}if(h=f)ha$1[b]&&(null!=
+footer:""}),""}r$1("130",null==b?b:typeof b,"");};a.prototype.renderDOM=function(a,d,c){var b=a.type.toLowerCase();c===S$1.html&&T$2(b);X$1.hasOwnProperty(b)||(ma$1.test(b)?void 0:r$1("65",b),X$1[b]=!0);var f=a.props;if("input"===b)f=objectAssign({type:void 0},f,{defaultChecked:void 0,defaultValue:void 0,value:null!=f.value?f.value:f.defaultValue,checked:null!=f.checked?f.checked:f.defaultChecked});else if("textarea"===b){var h=f.value;if(null==h){h=f.defaultValue;var l=f.children;null!=l&&(null!=h?r$1("92"):void 0,Array.isArray(l)&&
+(1>=l.length?void 0:r$1("93"),l=l[0]),h=""+l);null==h&&(h="");}f=objectAssign({},f,{value:void 0,children:""+h});}else if("select"===b)this.currentSelectValue=null!=f.value?f.value:f.defaultValue,f=objectAssign({},f,{value:void 0});else if("option"===b){l=this.currentSelectValue;var D=na$1(f.children);if(null!=l){var z=null!=f.value?f.value+"":D;h=!1;if(Array.isArray(l))for(var g=0;g<l.length;g++){if(""+l[g]===z){h=!0;break}}else h=""+l===z;f=objectAssign({selected:void 0,children:void 0},f,{selected:h,children:D});}}if(h=f)ha$1[b]&&(null!=
 h.children||null!=h.dangerouslySetInnerHTML?r$1("137",b,""):void 0),null!=h.dangerouslySetInnerHTML&&(null!=h.children?r$1("60"):void 0,"object"===typeof h.dangerouslySetInnerHTML&&"__html"in h.dangerouslySetInnerHTML?void 0:r$1("61")),null!=h.style&&"object"!==typeof h.style?r$1("62",""):void 0;h=f;l=this.makeStaticMarkup;D=1===this.stack.length;z="<"+a.type;for(u in h)if(pa$1.call(h,u)){var e=h[u];if(null!=e){if("style"===u){g=void 0;var v="",t="";for(g in e)if(e.hasOwnProperty(g)){var m=0===g.indexOf("--"),
 n=e[g];if(null!=n){var w=g;if(Y$2.hasOwnProperty(w))w=Y$2[w];else{var xa=w.replace(ja$1,"-$1").toLowerCase().replace(ka$1,"-ms-");w=Y$2[w]=xa;}v+=t+w+":";t=g;m=null==n||"boolean"===typeof n||""===n?"":m||"number"!==typeof n||0===n||V$2.hasOwnProperty(t)&&V$2[t]?(""+n).trim():n+"px";v+=m;t=";";}}e=v||null;}g=null;b:if(m=b,n=h,-1===m.indexOf("-"))m="string"===typeof n.is;else switch(m){case "annotation-xml":case "color-profile":case "font-face":case "font-face-src":case "font-face-uri":case "font-face-format":case "font-face-name":case "missing-glyph":m=
 !1;break b;default:m=!0;}if(m)qa$1.hasOwnProperty(u)||(g=u,g=M$2(g)&&null!=e?g+"="+('"'+R$1(e)+'"'):"");else{m=u;g=e;e=O$2.hasOwnProperty(m)?O$2[m]:null;if(n="style"!==m)n=null!==e?0===e.type:!(2<m.length)||"o"!==m[0]&&"O"!==m[0]||"n"!==m[1]&&"N"!==m[1]?!1:!0;n||ea$1(m,g,e,!1)?g="":null!==e?(m=e.attributeName,e=e.type,g=3===e||4===e&&!0===g?m+'=""':m+"="+('"'+R$1(g)+'"')):g=M$2(m)?m+"="+('"'+R$1(g)+'"'):"";}g&&(z+=" "+g);}}l||D&&(z+=' data-reactroot=""');var u=z;h="";U$2.hasOwnProperty(b)?u+="/>":(u+=">",h="</"+a.type+
@@ -29699,9 +28785,9 @@ var reactDomServer_browser_development = createCommonjsModule(function (module) 
   (function() {
 'use strict';
 
-var _assign = require$$0$30;
-var React = require$$1$8;
-var checkPropTypes = require$$2$5;
+var _assign = objectAssign;
+var React = react;
+var checkPropTypes = checkPropTypes_1;
 
 /**
  * Use invariant() to assert state which your program assumes to be true.
@@ -32798,20 +31884,11 @@ module.exports = server_browser;
 }
 });
 
-
-
-var reactDomServer_browser_development$2 = Object.freeze({
-	default: reactDomServer_browser_development,
-	__moduleExports: reactDomServer_browser_development
-});
-
-var require$$1$11 = ( reactDomServer_browser_development$2 && reactDomServer_browser_development ) || reactDomServer_browser_development$2;
-
 var server_browser = createCommonjsModule(function (module) {
 'use strict';
 
 {
-  module.exports = require$$1$11;
+  module.exports = reactDomServer_browser_development;
 }
 });
 
@@ -49952,15 +49029,6 @@ var isBuffer$1 = function isBuffer (obj) {
     typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
 };
 
-
-
-var isBuffer$3 = Object.freeze({
-	default: isBuffer$1,
-	__moduleExports: isBuffer$1
-});
-
-var isBuffer$4 = ( isBuffer$3 && isBuffer$1 ) || isBuffer$3;
-
 var flat = flatten;
 flatten.flatten = flatten;
 flatten.unflatten = unflatten;
@@ -49978,7 +49046,7 @@ function flatten (target, opts) {
       var value = object[key];
       var isarray = opts.safe && Array.isArray(value);
       var type = Object.prototype.toString.call(value);
-      var isbuffer = isBuffer$4(value);
+      var isbuffer = isBuffer$1(value);
       var isobject = (
         type === '[object Object]' ||
         type === '[object Array]'
@@ -50009,7 +49077,7 @@ function unflatten (target, opts) {
   var overwrite = opts.overwrite || false;
   var result = {};
 
-  var isbuffer = isBuffer$4(target);
+  var isbuffer = isBuffer$1(target);
   if (isbuffer || Object.prototype.toString.call(target) !== '[object Object]') {
     return target
   }
@@ -50195,7 +49263,7 @@ var getTicketSize = function getTicketSize(seedName, classOf) {
 }; // transform the wallet from keygen-js into a shape more easily iterable
 
 
-var shim$3 = function shim(kg_wallet) {
+var shim$2 = function shim(kg_wallet) {
   var reshaped = Object.entries(kg_wallet).map(function (_ref) {
     var _ref2 = _slicedToArray(_ref, 2),
         shipAddr = _ref2[0],
@@ -50210,6 +49278,7 @@ var shim$3 = function shim(kg_wallet) {
       }
     });
   });
+  console.log(reshaped);
   return reshaped;
 };
 
@@ -50255,29 +49324,38 @@ var assignBin = function assignBin(classOf, pageType) {
   if (classOf === 'galaxy') {
     if (pageType === 'masterTicket') return '1';
     if (pageType === 'masterTicketShard') return '1';
-    if (pageType === 'spawn') return '1';
-    if (pageType === 'voting') return '1';
-    if (pageType === 'managment') return '1';
+    if (pageType === 'spawn') return '2';
+    if (pageType === 'voting') return '3';
+    if (pageType === 'managment') return '3';
     if (pageType === 'transfer') return '1';
+    if (pageType === 'public') return '0';
+    if (pageType === 'manifest') return '0';
   }
+
+  
 
   if (classOf === 'star') {
-    if (pageType === 'masterTicket') return '1';
-    if (pageType === 'masterTicketShard') return '1';
-    if (pageType === 'spawn') return '1';
-    if (pageType === 'voting') return '1';
-    if (pageType === 'managment') return '1';
-    if (pageType === 'transfer') return '1';
+    if (pageType === 'masterTicket') return '2';
+    if (pageType === 'masterTicketShard') return '2';
+    if (pageType === 'spawn') return '3';
+    if (pageType === 'managment') return '3';
+    if (pageType === 'transfer') return '2';
+    if (pageType === 'public') return '0';
+    if (pageType === 'manifest') return '0';
   }
 
+  
+
   if (classOf === 'planet') {
-    if (pageType === 'masterTicket') return '1';
-    if (pageType === 'masterTicketShard') return '1';
-    if (pageType === 'spawn') return '1';
-    if (pageType === 'voting') return '1';
-    if (pageType === 'managment') return '1';
-    if (pageType === 'transfer') return '1';
+    if (pageType === 'masterTicket') return '3';
+    if (pageType === 'masterTicketShard') return '3';
+    if (pageType === 'managment') return '4';
+    if (pageType === 'transfer') return '3';
+    if (pageType === 'public') return '0';
+    if (pageType === 'manifest') return '0';
   }
+
+  
 };
 
 var drawQR = function drawQR(_ref) {
@@ -50450,6 +49528,7 @@ function (_Component) {
         ship: page.ship,
         collateralType: page.collateralType,
         bin: page.bin,
+        page: lodash_3(page, 'page', '1'),
         png: dataURItoBlob(_this.canvas.toDataURL("image/png"))
       };
 
@@ -50483,18 +49562,18 @@ function (_Component) {
 var ESCAPE = {"key":"ESCAPE","absoluteBoundingBox":{"x":21428,"y":1121,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"SourceCodePro-Bold","fontSize":10,"text":"@patp","maxWidth":257,"lineHeightPx":12.890625,"x":177,"y":337},{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":22,"text":"@heading","maxWidth":258,"lineHeightPx":32,"x":177,"y":372},{"type":"SIGIL","size":258,"name":">sigil:@patp","data":"@patp","x":177,"y":79},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"This is the most critical part of the HD Wallet to store securely. This ticket can authenticate any wallet action or rekey an entire wallet from scratch.\n\n","maxWidth":258,"lineHeightPx":11.6015625,"x":177,"y":516},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Store cold in a paper or hardware wallet away from other seeds.\n\n","maxWidth":258,"lineHeightPx":11.6015625,"x":177,"y":480},{"type":"TEXT","fontPostScriptName":"SFProText-Bold","fontSize":9,"text":"Do not share.\nThis is the most important part of your wallet.","maxWidth":258,"lineHeightPx":16,"x":177,"y":444},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":10,"text":"@ticket","maxWidth":258,"lineHeightPx":14.0625,"x":177,"y":408},{"type":"TEXT","fontPostScriptName":"WorkSans-Medium","fontSize":10,"text":"Ethereum Ownership Address ","maxWidth":258,"lineHeightPx":12.890625,"x":177,"y":564},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@walletVersion","maxWidth":117.1551742553711,"lineHeightPx":11.6015625,"x":263,"y":624},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Wallet Version: ","maxWidth":86,"lineHeightPx":11.6015625,"x":177,"y":624},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@seedInfo","maxWidth":173,"lineHeightPx":11.6015625,"x":263,"y":600},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Seed Info: ","maxWidth":86,"lineHeightPx":11.6015625,"x":177,"y":600},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@createdOn","maxWidth":149.26437377929688,"lineHeightPx":11.6015625,"x":263,"y":648},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Date Created: ","maxWidth":86,"lineHeightPx":11.6015625,"x":177,"y":648},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@moreInformation","maxWidth":151,"lineHeightPx":11.6015625,"x":263,"y":672},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Information: ","maxWidth":86,"lineHeightPx":11.6015625,"x":177,"y":672},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownershipAddress","maxWidth":258,"lineHeightPx":11.6015625,"x":177,"y":576}]};
 var templates = {
 	ESCAPE: ESCAPE,
-	"MASTER_TICKET_SHARD:GALAXY": {"key":"MASTER_TICKET_SHARD:GALAXY","absoluteBoundingBox":{"x":23010,"y":-2333,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":36},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Securely store this document.","maxWidth":126,"lineHeightPx":10.546875,"x":316,"y":225},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"This master ticket or ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network without your permission.","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":243},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"If you lose a child seed, you can recover it from your master ticket or ownership seed.\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":288},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":324},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"For information on storing cryptographic material securely, see: \n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":360},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/using/identity#custody","maxWidth":223,"lineHeightPx":13.7109375,"x":337,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":207},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":495},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":414},{"type":"PATQ","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@shard.data","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":360},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Master Ticket","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":342},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Address","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":531},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":639},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":621},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Seed BIP39 Mnemonic","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":396},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":315},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":297},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":684},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":594},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":666},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":576},{"type":"SIGIL","size":72,"name":">sigil:@sigil","data":"@sigil","x":48,"y":207},{"type":"QR","size":48.000099182128906,"name":">qr:@ownership.ethereum.qr","data":"@ownership.ethereum.qr","x":48,"y":549},{"type":"ADDR_COMPACT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.ethereum.address","maxWidth":190,"lineHeightPx":10.546875,"x":106,"y":549},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":414},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.size","maxWidth":222.93544006347656,"lineHeightPx":10.546875,"x":70,"y":486},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":25,"lineHeightPx":11.6015625,"x":48,"y":486},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":505},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":505},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/bridge","maxWidth":114,"lineHeightPx":13.7109375,"x":396,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Download Bridge: ","maxWidth":84,"lineHeightPx":13.7109375,"x":316,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Use the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":450}]},
-	"MASTER_TICKET:GALAXY": {"key":"MASTER_TICKET:GALAXY","absoluteBoundingBox":{"x":23695,"y":-2333,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"PATQ","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.data","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ticket","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":350},{"type":"ADDR_COMPACT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.ethereum.address","maxWidth":190,"lineHeightPx":10.546875,"x":106,"y":550},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Address","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":530},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":670},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":720},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":48,"y":770},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":650},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":700},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":750},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":450},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Seed BIP32 Mnemonic","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":430},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.size","maxWidth":222.93544006347656,"lineHeightPx":10.546875,"x":70,"y":475},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":25,"lineHeightPx":11.6015625,"x":48,"y":475},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":490},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":490},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.size","maxWidth":224.8125,"lineHeightPx":11.6015625,"x":71.18659973144531,"y":400},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":23.02734375,"lineHeightPx":11.6015625,"x":48,"y":400},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":320},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":300},{"type":"SIGIL","size":70,"name":">sigil:@sigil","data":"@sigil","x":48,"y":210},{"type":"QR","size":48.000099182128906,"name":">qr:@ownership.ethereum.qr","data":"@ownership.ethereum.qr","x":48,"y":550},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Securely store this document.\n\n\n","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":230},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":210},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Download Bridge: urbit.org/docs/bridge\n\nUse the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.\n\nThe Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":314,"y":430},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":314,"y":412},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/wallet","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":599},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":578},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the Master Seed for a hardware wallet.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":300},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"For information on storing cryptographic material securely, see: ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":340},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"http://urbit.org/docs/custody ","maxWidth":228,"lineHeightPx":13.7109375,"x":336,"y":354},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The master ticket and ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":250}]},
-	"VOTING:GALAXY": {"key":"VOTING:GALAXY","absoluteBoundingBox":{"x":24347,"y":-2333,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"PATQ","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@seed.data","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":370},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Seed","maxWidth":24,"lineHeightPx":12.890625,"x":48,"y":350},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":670},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":720},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":48,"y":770},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":650},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":700},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":750},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":450},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Ownership Seed BIP32 Mnemonic","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":430},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.size","maxWidth":222.93544006347656,"lineHeightPx":10.546875,"x":70,"y":475},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Size: ","maxWidth":25,"lineHeightPx":11.6015625,"x":48,"y":475},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":490},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":490},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.size","maxWidth":224.8125,"lineHeightPx":11.6015625,"x":71.18659973144531,"y":400},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Size: ","maxWidth":23.02734375,"lineHeightPx":11.6015625,"x":48,"y":400},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":320},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":300},{"type":"SIGIL","size":70,"name":">sigil:@sigil","data":"@sigil","x":48,"y":210},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Securely store this document.\n\n\n","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":230},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":210},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Download Bridge: urbit.org/docs/bridge\n\nUse the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.\n\nThe Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":314,"y":430},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":314,"y":412},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/wallet","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":599},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":578},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the Master Seed for a hardware wallet.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":300},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"For information on storing cryptographic material securely, see: ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":340},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"http://urbit.org/docs/custody ","maxWidth":228,"lineHeightPx":13.7109375,"x":336,"y":354},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"The master ticket and ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":250}]},
-	"MANAGEMENT:GALAXY": {"key":"MANAGEMENT:GALAXY","absoluteBoundingBox":{"x":24999,"y":-2333,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":670},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":720},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":48,"y":770},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":650},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":700},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":750},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":450},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Ownership Seed BIP32 Mnemonic","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":430},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.size","maxWidth":222.93544006347656,"lineHeightPx":10.546875,"x":70,"y":475},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Size: ","maxWidth":25,"lineHeightPx":11.6015625,"x":48,"y":475},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":490},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":490},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.size","maxWidth":224.8125,"lineHeightPx":11.6015625,"x":71.18659973144531,"y":400},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Size: ","maxWidth":23.02734375,"lineHeightPx":11.6015625,"x":48,"y":400},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":320},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":300},{"type":"SIGIL","size":70,"name":">sigil:@sigil","data":"@sigil","x":48,"y":210},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Securely store this document.\n\n\n","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":230},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":210},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Download Bridge: urbit.org/docs/bridge\n\nUse the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.\n\nThe Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":314,"y":430},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":314,"y":412},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/wallet","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":599},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":578},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the Master Seed for a hardware wallet.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":300},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"For information on storing cryptographic material securely, see: ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":340},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"http://urbit.org/docs/custody ","maxWidth":228,"lineHeightPx":13.7109375,"x":336,"y":354},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"The master ticket and ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":250},{"type":"PATQ","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@seed.data","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Seed","maxWidth":24,"lineHeightPx":12.890625,"x":48,"y":350}]},
-	"MANAGEMENT:STAR": {"key":"MANAGEMENT:STAR","absoluteBoundingBox":{"x":24999,"y":-1441,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":670},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":720},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":48,"y":770},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":650},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":700},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":750},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":450},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Ownership Seed BIP32 Mnemonic","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":430},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.size","maxWidth":222.93544006347656,"lineHeightPx":10.546875,"x":70,"y":475},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Size: ","maxWidth":25,"lineHeightPx":11.6015625,"x":48,"y":475},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":490},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":490},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.size","maxWidth":224.8125,"lineHeightPx":11.6015625,"x":71.18659973144531,"y":400},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Size: ","maxWidth":23.02734375,"lineHeightPx":11.6015625,"x":48,"y":400},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":320},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":300},{"type":"SIGIL","size":70,"name":">sigil:@sigil","data":"@sigil","x":48,"y":210},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Securely store this document.\n\n\n","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":230},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":210},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Download Bridge: urbit.org/docs/bridge\n\nUse the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.\n\nThe Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":314,"y":430},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":314,"y":412},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/wallet","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":599},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":578},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the Master Seed for a hardware wallet.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":300},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"For information on storing cryptographic material securely, see: ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":340},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"http://urbit.org/docs/custody ","maxWidth":228,"lineHeightPx":13.7109375,"x":336,"y":354},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"The master ticket and ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":250},{"type":"PATQ","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@seed.data","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Seed","maxWidth":24,"lineHeightPx":12.890625,"x":48,"y":350}]},
-	"MANAGEMENT:PLANET": {"key":"MANAGEMENT:PLANET","absoluteBoundingBox":{"x":24999,"y":-549,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":670},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":720},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":48,"y":770},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":650},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":700},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":750},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":450},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Ownership Seed BIP32 Mnemonic","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":430},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.size","maxWidth":222.93544006347656,"lineHeightPx":10.546875,"x":70,"y":475},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Size: ","maxWidth":25,"lineHeightPx":11.6015625,"x":48,"y":475},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":490},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":490},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.size","maxWidth":224.8125,"lineHeightPx":11.6015625,"x":71.18659973144531,"y":400},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Size: ","maxWidth":23.02734375,"lineHeightPx":11.6015625,"x":48,"y":400},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":320},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":300},{"type":"SIGIL","size":70,"name":">sigil:@sigil","data":"@sigil","x":48,"y":210},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Securely store this document.\n\n\n","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":230},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":210},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Download Bridge: urbit.org/docs/bridge\n\nUse the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.\n\nThe Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":314,"y":430},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":314,"y":412},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/wallet","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":599},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":578},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the Master Seed for a hardware wallet.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":300},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"For information on storing cryptographic material securely, see: ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":340},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"http://urbit.org/docs/custody ","maxWidth":228,"lineHeightPx":13.7109375,"x":336,"y":354},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"The master ticket and ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":250},{"type":"PATQ","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@seed.data","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Seed","maxWidth":24,"lineHeightPx":12.890625,"x":48,"y":350}]},
-	"SPAWN:GALAXY": {"key":"SPAWN:GALAXY","absoluteBoundingBox":{"x":25651,"y":-2333,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":670},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":720},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":48,"y":770},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":650},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":700},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":750},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":450},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Ownership Seed BIP32 Mnemonic","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":430},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.size","maxWidth":222.93544006347656,"lineHeightPx":10.546875,"x":70,"y":475},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Size: ","maxWidth":25,"lineHeightPx":11.6015625,"x":48,"y":475},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":490},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":490},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.size","maxWidth":224.8125,"lineHeightPx":11.6015625,"x":71.18659973144531,"y":400},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Size: ","maxWidth":23.02734375,"lineHeightPx":11.6015625,"x":48,"y":400},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":320},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":300},{"type":"SIGIL","size":70,"name":">sigil:@sigil","data":"@sigil","x":48,"y":210},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Securely store this document.\n\n\n","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":230},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":210},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Download Bridge: urbit.org/docs/bridge\n\nUse the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.\n\nThe Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":314,"y":430},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":314,"y":412},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/wallet","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":599},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":578},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the Master Seed for a hardware wallet.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":300},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"For information on storing cryptographic material securely, see: ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":340},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"http://urbit.org/docs/custody ","maxWidth":228,"lineHeightPx":13.7109375,"x":336,"y":354},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"The master ticket and ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":250},{"type":"PATQ","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@seed.data","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Seed","maxWidth":24,"lineHeightPx":12.890625,"x":48,"y":350}]},
-	"SPAWN:STAR": {"key":"SPAWN:STAR","absoluteBoundingBox":{"x":25651,"y":-1441,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":670},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":720},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":48,"y":770},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":650},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":700},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":750},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":450},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Ownership Seed BIP32 Mnemonic","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":430},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.size","maxWidth":222.93544006347656,"lineHeightPx":10.546875,"x":70,"y":475},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Size: ","maxWidth":25,"lineHeightPx":11.6015625,"x":48,"y":475},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":490},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":490},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.size","maxWidth":224.8125,"lineHeightPx":11.6015625,"x":71.18659973144531,"y":400},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Size: ","maxWidth":23.02734375,"lineHeightPx":11.6015625,"x":48,"y":400},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":320},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":300},{"type":"SIGIL","size":70,"name":">sigil:@sigil","data":"@sigil","x":48,"y":210},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Securely store this document.\n\n\n","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":230},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":210},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Download Bridge: urbit.org/docs/bridge\n\nUse the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.\n\nThe Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":314,"y":430},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":314,"y":412},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/wallet","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":599},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":578},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the Master Seed for a hardware wallet.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":300},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"For information on storing cryptographic material securely, see: ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":340},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"http://urbit.org/docs/custody ","maxWidth":228,"lineHeightPx":13.7109375,"x":336,"y":354},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"The master ticket and ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":250},{"type":"PATQ","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@seed.data","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Seed","maxWidth":24,"lineHeightPx":12.890625,"x":48,"y":350}]},
-	"MASTER_TICKET:STAR": {"key":"MASTER_TICKET:STAR","absoluteBoundingBox":{"x":23695,"y":-1441,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/wallet","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":603},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":585},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Securely store this document.\n\n\n","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":234},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":207},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the Master Seed for a hardware wallet.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":315},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"For information on storing cryptographic material securely, see: ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":358},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"http://urbit.org/docs/custody ","maxWidth":228,"lineHeightPx":13.7109375,"x":336,"y":372},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The master ticket and ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":261},{"type":"PATQ","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.data","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":360},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Master Ticket","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":342},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Address","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":531},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":639},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":621},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Seed BIP39 Mnemonic","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":414},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":315},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":297},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":684},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":666},{"type":"SIGIL","size":72,"name":">sigil:@sigil","data":"@sigil","x":48,"y":207},{"type":"QR","size":48.000099182128906,"name":">qr:@ownership.ethereum.qr","data":"@ownership.ethereum.qr","x":48,"y":553},{"type":"ADDR_COMPACT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.ethereum.address","maxWidth":190,"lineHeightPx":10.546875,"x":106,"y":549},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":432},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.size","maxWidth":222.93544006347656,"lineHeightPx":10.546875,"x":70,"y":486},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":25,"lineHeightPx":11.6015625,"x":48,"y":486},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.size","maxWidth":222.93544006347656,"lineHeightPx":10.546875,"x":70,"y":387},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":25,"lineHeightPx":11.6015625,"x":48,"y":387},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":504},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":504},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":522},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":414},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/bridge","maxWidth":114,"lineHeightPx":13.7109375,"x":396,"y":441},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Download Bridge: ","maxWidth":84,"lineHeightPx":13.7109375,"x":316,"y":441},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Use the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":468}]},
-	"MASTER_TICKET:PLANET": {"key":"MASTER_TICKET:PLANET","absoluteBoundingBox":{"x":23695,"y":-549,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"PATQ","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.data","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ticket","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":350},{"type":"ADDR_COMPACT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.ethereum.address","maxWidth":190,"lineHeightPx":10.546875,"x":106,"y":550},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Address","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":530},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":670},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":720},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":48,"y":770},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":650},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":700},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":750},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":450},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Seed BIP32 Mnemonic","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":430},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.size","maxWidth":222.93544006347656,"lineHeightPx":10.546875,"x":70,"y":475},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":25,"lineHeightPx":11.6015625,"x":48,"y":475},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":490},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":490},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.size","maxWidth":224.8125,"lineHeightPx":11.6015625,"x":71.18659973144531,"y":400},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":23.02734375,"lineHeightPx":11.6015625,"x":48,"y":400},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":320},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":300},{"type":"SIGIL","size":70,"name":">sigil:@sigil","data":"@sigil","x":48,"y":210},{"type":"QR","size":48.000099182128906,"name":">qr:@ownership.ethereum.qr","data":"@ownership.ethereum.qr","x":48,"y":550},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Download Bridge: urbit.org/docs/bridge\n\nUse the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.\n\nThe Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":314,"y":430},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":314,"y":412},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/wallet","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":599},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":578},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Securely store this document.\n\n\n","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":230},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":210},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the Master Seed for a hardware wallet.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":300},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"For information on storing cryptographic material securely, see: ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":340},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"http://urbit.org/docs/custody ","maxWidth":228,"lineHeightPx":13.7109375,"x":336,"y":354},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The master ticket and ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":250}]},
+	"MASTER_TICKET_SHARD:GALAXY": {"key":"MASTER_TICKET_SHARD:GALAXY","absoluteBoundingBox":{"x":23010,"y":-2333,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":36},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Securely store this document.","maxWidth":126,"lineHeightPx":10.546875,"x":316,"y":225},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"This master ticket or ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network without your permission.","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":243},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"If you lose a child seed, you can recover it from your master ticket or ownership seed.\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":288},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":324},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"For information on storing cryptographic material securely, see: \n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":360},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/using/identity#custody","maxWidth":223,"lineHeightPx":13.7109375,"x":337,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":207},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":513},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":414},{"type":"PATQ","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@shard.data","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":360},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Master Ticket","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":342},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Address","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":549},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":657},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":639},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":315},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":297},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":702},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":603},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":684},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":585},{"type":"SIGIL","size":72,"name":">sigil:@sigil","data":"@sigil","x":48,"y":207},{"type":"QR","size":48.000099182128906,"name":">qr:@ownership.ethereum.qr","data":"@ownership.ethereum.qr","x":48,"y":567},{"type":"ADDR_COMPACT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.ethereum.address","maxWidth":190,"lineHeightPx":10.546875,"x":106,"y":567},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/bridge","maxWidth":114,"lineHeightPx":13.7109375,"x":396,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Download Bridge: ","maxWidth":84,"lineHeightPx":13.7109375,"x":316,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Use the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":459}]},
+	"MASTER_TICKET:GALAXY": {"key":"MASTER_TICKET:GALAXY","absoluteBoundingBox":{"x":23695,"y":-2333,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"PATQ","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.data","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":360},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Master Ticket","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":342},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Address","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":531},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":639},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":621},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Seed BIP39 Mnemonic","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":414},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":315},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":297},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":684},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":666},{"type":"SIGIL","size":72,"name":">sigil:@sigil","data":"@sigil","x":48,"y":207},{"type":"QR","size":48.000099182128906,"name":">qr:@ownership.ethereum.qr","data":"@ownership.ethereum.qr","x":48,"y":553},{"type":"ADDR_COMPACT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.ethereum.address","maxWidth":190,"lineHeightPx":10.546875,"x":106,"y":549},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":432},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.size","maxWidth":222.93544006347656,"lineHeightPx":10.546875,"x":70,"y":486},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":25,"lineHeightPx":11.6015625,"x":48,"y":486},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.size","maxWidth":222.93544006347656,"lineHeightPx":10.546875,"x":70,"y":387},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":25,"lineHeightPx":11.6015625,"x":48,"y":387},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":504},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":504},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Securely store this document.","maxWidth":126,"lineHeightPx":10.546875,"x":316,"y":225},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"This master ticket or ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network without your permission.","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":243},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"If you lose a child seed, you can recover it from your master ticket or ownership seed.\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":288},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":324},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"For information on storing cryptographic material securely, see: \n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":360},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/using/identity#custody","maxWidth":223,"lineHeightPx":13.7109375,"x":337,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":207},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":513},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":414},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":603},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":585},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/bridge","maxWidth":114,"lineHeightPx":13.7109375,"x":396,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Download Bridge: ","maxWidth":84,"lineHeightPx":13.7109375,"x":316,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Use the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":459}]},
+	"VOTING:GALAXY": {"key":"VOTING:GALAXY","absoluteBoundingBox":{"x":24347,"y":-2333,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@voting.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":370},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Spawn Seed BIP39 Mnemonic","maxWidth":141,"lineHeightPx":12.890625,"x":48,"y":350},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":670},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":720},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":650},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":700},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@voting.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":441},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":441},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@voting.seed.size","maxWidth":224.8125,"lineHeightPx":11.6015625,"x":71.18659973144531,"y":423},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Size: ","maxWidth":23.02734375,"lineHeightPx":11.6015625,"x":48,"y":423},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":320},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":300},{"type":"SIGIL","size":70,"name":">sigil:@sigil","data":"@sigil","x":48,"y":210},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Securely store this document.","maxWidth":126,"lineHeightPx":10.546875,"x":316,"y":225},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"This master ticket or ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network without your permission.","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":243},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"If you lose a child seed, you can recover it from your master ticket or ownership seed.\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":288},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":324},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"For information on storing cryptographic material securely, see: \n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":360},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/using/identity#custody","maxWidth":223,"lineHeightPx":13.7109375,"x":337,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":207},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":513},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":414},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":603},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":585},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/bridge","maxWidth":114,"lineHeightPx":13.7109375,"x":396,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Download Bridge: ","maxWidth":84,"lineHeightPx":13.7109375,"x":316,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Use the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":459}]},
+	"MANAGEMENT:GALAXY": {"key":"MANAGEMENT:GALAXY","absoluteBoundingBox":{"x":24999,"y":-2333,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Securely store this document.","maxWidth":126,"lineHeightPx":10.546875,"x":316,"y":225},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"This master ticket or ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network without your permission.","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":243},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"If you lose a child seed, you can recover it from your master ticket or ownership seed.\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":288},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":324},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"For information on storing cryptographic material securely, see: \n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":360},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/using/identity#custody","maxWidth":223,"lineHeightPx":13.7109375,"x":337,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":207},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":513},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":414},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":603},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":585},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/bridge","maxWidth":114,"lineHeightPx":13.7109375,"x":396,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Download Bridge: ","maxWidth":84,"lineHeightPx":13.7109375,"x":316,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Use the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":459},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@management.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Spawn Seed BIP39 Mnemonic","maxWidth":141,"lineHeightPx":12.890625,"x":48,"y":350},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":670},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":720},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":650},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":700},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@management.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":441},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":441},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@management.seed.size","maxWidth":224.8125,"lineHeightPx":11.6015625,"x":71.18659973144531,"y":423},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":23.02734375,"lineHeightPx":11.6015625,"x":48,"y":423},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":320},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":300},{"type":"SIGIL","size":70,"name":">sigil:@sigil","data":"@sigil","x":48,"y":210}]},
+	"MANAGEMENT:STAR": {"key":"MANAGEMENT:STAR","absoluteBoundingBox":{"x":24999,"y":-1441,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Securely store this document.","maxWidth":126,"lineHeightPx":10.546875,"x":316,"y":225},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"This master ticket or ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network without your permission.","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":243},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"If you lose a child seed, you can recover it from your master ticket or ownership seed.\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":288},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":324},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"For information on storing cryptographic material securely, see: \n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":360},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/using/identity#custody","maxWidth":223,"lineHeightPx":13.7109375,"x":337,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":207},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":513},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":414},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":603},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":585},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/bridge","maxWidth":114,"lineHeightPx":13.7109375,"x":396,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Download Bridge: ","maxWidth":84,"lineHeightPx":13.7109375,"x":316,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Use the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":459},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@management.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Spawn Seed BIP39 Mnemonic","maxWidth":141,"lineHeightPx":12.890625,"x":48,"y":350},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":670},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":720},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":650},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":700},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@management.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":441},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":441},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@management.seed.size","maxWidth":224.8125,"lineHeightPx":11.6015625,"x":71.18659973144531,"y":423},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":23.02734375,"lineHeightPx":11.6015625,"x":48,"y":423},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":320},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":300},{"type":"SIGIL","size":70,"name":">sigil:@sigil","data":"@sigil","x":48,"y":210}]},
+	"MANAGEMENT:PLANET": {"key":"MANAGEMENT:PLANET","absoluteBoundingBox":{"x":24999,"y":-549,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Securely store this document.","maxWidth":126,"lineHeightPx":10.546875,"x":316,"y":225},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"This master ticket or ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network without your permission.","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":243},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"If you lose a child seed, you can recover it from your master ticket or ownership seed.\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":288},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":324},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"For information on storing cryptographic material securely, see: \n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":360},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/using/identity#custody","maxWidth":223,"lineHeightPx":13.7109375,"x":337,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":207},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":513},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":414},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":603},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":585},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/bridge","maxWidth":114,"lineHeightPx":13.7109375,"x":396,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Download Bridge: ","maxWidth":84,"lineHeightPx":13.7109375,"x":316,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Use the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":459},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@management.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Spawn Seed BIP39 Mnemonic","maxWidth":141,"lineHeightPx":12.890625,"x":48,"y":350},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":670},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":720},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":650},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":700},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@management.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":441},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":441},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@management.seed.size","maxWidth":224.8125,"lineHeightPx":11.6015625,"x":71.18659973144531,"y":423},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":23.02734375,"lineHeightPx":11.6015625,"x":48,"y":423},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":320},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":300},{"type":"SIGIL","size":70,"name":">sigil:@sigil","data":"@sigil","x":48,"y":210}]},
+	"SPAWN:GALAXY": {"key":"SPAWN:GALAXY","absoluteBoundingBox":{"x":25651,"y":-2333,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Securely store this document.","maxWidth":126,"lineHeightPx":10.546875,"x":316,"y":225},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"This master ticket or ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network without your permission.","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":243},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"If you lose a child seed, you can recover it from your master ticket or ownership seed.\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":288},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":324},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"For information on storing cryptographic material securely, see: \n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":360},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/using/identity#custody","maxWidth":223,"lineHeightPx":13.7109375,"x":337,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":207},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":513},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":414},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":603},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":585},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/bridge","maxWidth":114,"lineHeightPx":13.7109375,"x":396,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Download Bridge: ","maxWidth":84,"lineHeightPx":13.7109375,"x":316,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Use the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":459},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@spawn.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Spawn Seed BIP39 Mnemonic","maxWidth":141,"lineHeightPx":12.890625,"x":48,"y":350},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":670},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":720},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":650},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":700},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@spawn.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":441},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":441},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@spawn.seed.size","maxWidth":224.8125,"lineHeightPx":11.6015625,"x":71.18659973144531,"y":423},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":23.02734375,"lineHeightPx":11.6015625,"x":48,"y":423},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":320},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":300},{"type":"SIGIL","size":70,"name":">sigil:@sigil","data":"@sigil","x":48,"y":210}]},
+	"SPAWN:STAR": {"key":"SPAWN:STAR","absoluteBoundingBox":{"x":25651,"y":-1441,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Securely store this document.","maxWidth":126,"lineHeightPx":10.546875,"x":316,"y":225},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"This master ticket or ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network without your permission.","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":243},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"If you lose a child seed, you can recover it from your master ticket or ownership seed.\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":288},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":324},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"For information on storing cryptographic material securely, see: \n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":360},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/using/identity#custody","maxWidth":223,"lineHeightPx":13.7109375,"x":337,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":207},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":513},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":414},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":603},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":585},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/bridge","maxWidth":114,"lineHeightPx":13.7109375,"x":396,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Download Bridge: ","maxWidth":84,"lineHeightPx":13.7109375,"x":316,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Use the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":459},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@spawn.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Spawn Seed BIP39 Mnemonic","maxWidth":141,"lineHeightPx":12.890625,"x":48,"y":350},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":670},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":720},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":650},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":700},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@spawn.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":441},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":441},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@spawn.seed.size","maxWidth":224.8125,"lineHeightPx":11.6015625,"x":71.18659973144531,"y":423},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":23.02734375,"lineHeightPx":11.6015625,"x":48,"y":423},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":320},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":300},{"type":"SIGIL","size":70,"name":">sigil:@sigil","data":"@sigil","x":48,"y":210}]},
+	"MASTER_TICKET:STAR": {"key":"MASTER_TICKET:STAR","absoluteBoundingBox":{"x":23695,"y":-1441,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"PATQ","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.data","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":360},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Master Ticket","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":342},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Address","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":531},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":639},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":621},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Seed BIP39 Mnemonic","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":414},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":315},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":297},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":684},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":666},{"type":"SIGIL","size":72,"name":">sigil:@sigil","data":"@sigil","x":48,"y":207},{"type":"QR","size":48.000099182128906,"name":">qr:@ownership.ethereum.qr","data":"@ownership.ethereum.qr","x":48,"y":553},{"type":"ADDR_COMPACT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.ethereum.address","maxWidth":190,"lineHeightPx":10.546875,"x":106,"y":549},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":432},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.size","maxWidth":222.93544006347656,"lineHeightPx":10.546875,"x":70,"y":486},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":25,"lineHeightPx":11.6015625,"x":48,"y":486},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.size","maxWidth":222.93544006347656,"lineHeightPx":10.546875,"x":70,"y":387},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":25,"lineHeightPx":11.6015625,"x":48,"y":387},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":504},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":504},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Securely store this document.","maxWidth":126,"lineHeightPx":10.546875,"x":316,"y":225},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"This master ticket or ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network without your permission.","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":243},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"If you lose a child seed, you can recover it from your master ticket or ownership seed.\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":288},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":324},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"For information on storing cryptographic material securely, see: \n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":360},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/using/identity#custody","maxWidth":223,"lineHeightPx":13.7109375,"x":337,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":207},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":513},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":414},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":603},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":585},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/bridge","maxWidth":114,"lineHeightPx":13.7109375,"x":396,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Download Bridge: ","maxWidth":84,"lineHeightPx":13.7109375,"x":316,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Use the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":459}]},
+	"MASTER_TICKET:PLANET": {"key":"MASTER_TICKET:PLANET","absoluteBoundingBox":{"x":23695,"y":-549,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"PATQ","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.data","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":360},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Master Ticket","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":342},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Address","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":531},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":639},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":621},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Seed BIP39 Mnemonic","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":414},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":315},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":297},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":684},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":666},{"type":"SIGIL","size":72,"name":">sigil:@sigil","data":"@sigil","x":48,"y":207},{"type":"QR","size":48.000099182128906,"name":">qr:@ownership.ethereum.qr","data":"@ownership.ethereum.qr","x":48,"y":553},{"type":"ADDR_COMPACT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.ethereum.address","maxWidth":190,"lineHeightPx":10.546875,"x":106,"y":549},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":432},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.size","maxWidth":222.93544006347656,"lineHeightPx":10.546875,"x":70,"y":486},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":25,"lineHeightPx":11.6015625,"x":48,"y":486},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.size","maxWidth":222.93544006347656,"lineHeightPx":10.546875,"x":70,"y":387},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":25,"lineHeightPx":11.6015625,"x":48,"y":387},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":504},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":504},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Securely store this document.","maxWidth":126,"lineHeightPx":10.546875,"x":316,"y":225},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"This master ticket or ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network without your permission.","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":243},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"If you lose a child seed, you can recover it from your master ticket or ownership seed.\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":288},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":324},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"For information on storing cryptographic material securely, see: \n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":360},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/using/identity#custody","maxWidth":223,"lineHeightPx":13.7109375,"x":337,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":207},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":513},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":414},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":603},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":585},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/bridge","maxWidth":114,"lineHeightPx":13.7109375,"x":396,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Download Bridge: ","maxWidth":84,"lineHeightPx":13.7109375,"x":316,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Use the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":459}]},
 	"ADDRESS_MANIFEST:FIRST": {"key":"ADDRESS_MANIFEST:FIRST","absoluteBoundingBox":{"x":21441,"y":-2333,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"Ownership Address Manifest","maxWidth":364,"lineHeightPx":37.5,"x":48,"y":36},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"It is ok to store in a trusted environment but be aware that possession of this document will reveal how much address space you own to whoever sees it.\n\nYou can check any spawn, management, delegate or transfer address with this address.","maxWidth":258,"lineHeightPx":11.6015625,"x":48,"y":144},{"type":"TEXT","fontPostScriptName":"SFProText-Bold","fontSize":9,"text":"This is public information.","maxWidth":172,"lineHeightPx":16,"x":48,"y":120},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"@pageAofB","maxWidth":86,"lineHeightPx":12.890625,"x":48,"y":24},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":117.1551742553711,"lineHeightPx":11.6015625,"x":157,"y":228},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Wallet Version: ","maxWidth":86,"lineHeightPx":11.6015625,"x":48,"y":228},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":149.26437377929688,"lineHeightPx":11.6015625,"x":157,"y":252},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Date Created: ","maxWidth":86,"lineHeightPx":11.6015625,"x":48,"y":252},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":149,"lineHeightPx":11.6015625,"x":157,"y":276},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Information: ","maxWidth":86,"lineHeightPx":11.6015625,"x":48,"y":276}]},
-	"ADDRESS_MANIFEST:OVERFLOW": {"key":"ADDRESS_MANIFEST:OVERFLOW","absoluteBoundingBox":{"x":22073,"y":-2333,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"Ownership Address Manifest","maxWidth":364,"lineHeightPx":37.5,"x":48,"y":36},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Page 2 of 2","maxWidth":86,"lineHeightPx":12.890625,"x":48,"y":24},{"type":"TEXT","fontPostScriptName":"SFProText-Bold","fontSize":9,"text":"This is public information.","maxWidth":172,"lineHeightPx":16,"x":48,"y":120}]},
+	"ADDRESS_MANIFEST:OVERFLOW": {"key":"ADDRESS_MANIFEST:OVERFLOW","absoluteBoundingBox":{"x":22073,"y":-2333,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"Ownership Address Manifest","maxWidth":364,"lineHeightPx":37.5,"x":48,"y":36},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"@pageAofB","maxWidth":86,"lineHeightPx":12.890625,"x":48,"y":24},{"type":"TEXT","fontPostScriptName":"SFProText-Bold","fontSize":9,"text":"This is public information.","maxWidth":172,"lineHeightPx":16,"x":48,"y":120}]},
 	"COMPONENT:ADDRESS_LIST_ITEM": {"key":"COMPONENT:ADDRESS_LIST_ITEM","absoluteBoundingBox":{"x":21106,"y":-2333,"width":322,"height":322},"renderables":[{"type":"TEXT","fontPostScriptName":"SourceCodePro-Bold","fontSize":16,"text":"@patp","maxWidth":215,"lineHeightPx":24,"x":0,"y":0},{"type":"QR","size":36.00005340576172,"name":">qr:@ownership.ethereum.qr","data":"@ownership.ethereum.qr","x":0,"y":60},{"type":"ADDR_LONG","fontPostScriptName":"SourceCodePro-Regular","fontSize":12,"text":"@ownership.ethereum.address","maxWidth":190,"lineHeightPx":15.46875,"x":43,"y":60},{"type":"TEXT","fontPostScriptName":"SFProText-Medium","fontSize":10,"text":"Ownership Address","maxWidth":129,"lineHeightPx":11.953125,"x":0,"y":36}]}
 };
 
@@ -50556,6 +49635,9 @@ var constants = {
     moreInformation: 'urbit.org/docs/custody'
   }
 };
+
+// shim for using process in browser
+// based off https://github.com/defunctzombie/node-process/blob/master/browser.js
 
 function defaultSetTimout() {
     throw new Error('setTimeout has not been defined');
@@ -50978,6 +50060,15 @@ var isArray$2 = Array.isArray || function (arr) {
   return toString$3.call(arr) == '[object Array]';
 };
 
+/*!
+ * The buffer module from node.js, for the browser.
+ *
+ * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+ * @license  MIT
+ */
+/* eslint-disable no-proto */
+
+
 var INSPECT_MAX_BYTES$1 = 50;
 
 /**
@@ -51266,7 +50357,7 @@ function checked$1 (length) {
 }
 
 
-Buffer$1.isBuffer = isBuffer$5;
+Buffer$1.isBuffer = isBuffer$4;
 function internalIsBuffer$1 (b) {
   return !!(b != null && b._isBuffer)
 }
@@ -52732,7 +51823,7 @@ function isnan$1 (val) {
 // the following is from is-buffer, also by Feross Aboukhadijeh and with same lisence
 // The _isBuffer check is for Safari 5-7 support, because it's missing
 // Object.prototype.constructor. Remove this eventually
-function isBuffer$5(obj) {
+function isBuffer$4(obj) {
   return obj != null && (!!obj._isBuffer || isFastBuffer$1(obj) || isSlowBuffer$1(obj))
 }
 
@@ -52758,6 +51849,8 @@ EventHandlers.prototype = Object.create(null);
 function EventEmitter() {
   EventEmitter.init.call(this);
 }
+// nodejs oddity
+// require('events') === require('events').EventEmitter
 EventEmitter.EventEmitter = EventEmitter;
 
 EventEmitter.usingDomains = false;
@@ -53241,6 +52334,26 @@ if (typeof Object.create === 'function'){
 }
 var inherits$1 = inherits;
 
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
 var formatRegExp = /%[sdj%]/g;
 function format(f) {
   if (!isString(f)) {
@@ -53725,6 +52838,7 @@ function objectToString(o) {
 }
 
 
+// log is just a thin wrapper to console.log that prepends a timestamp
 
 
 
@@ -54377,7 +53491,7 @@ Readable$2.prototype.read = function (n) {
 
 function chunkInvalid(state, chunk) {
   var er = null;
-  if (!isBuffer$5(chunk) && typeof chunk !== 'string' && chunk !== null && chunk !== undefined && !state.objectMode) {
+  if (!isBuffer$4(chunk) && typeof chunk !== 'string' && chunk !== null && chunk !== undefined && !state.objectMode) {
     er = new TypeError('Invalid non-string/buffer chunk');
   }
   return er;
@@ -55629,6 +54743,9 @@ Stream$1.PassThrough = PassThrough$1;
 // Backwards-compat with node 0.4.x
 Stream$1.Stream = Stream$1;
 
+// old-style streams.  Note that the pipe method (the only relevant
+// part of this class) is overridden in the Readable class.
+
 function Stream$1() {
   EventEmitter.call(this);
 }
@@ -55867,7 +54984,7 @@ function encode(data, parse_url) {
     if (t == 'string' || t == 'number') {
         str = '' + data;
         data = new Buffer$1(str);
-    } else if (isBuffer$5(data)) {
+    } else if (isBuffer$4(data)) {
         str = data.toString();
     } else if (Array.isArray(data)) {
         data = new Buffer$1(data);
@@ -55902,13 +55019,6 @@ function encode(data, parse_url) {
 
 // {{{1 export functions
 var encode_1 = encode;
-
-
-
-var encode$1 = Object.freeze({
-	default: encode_1,
-	__moduleExports: encode_1
-});
 
 "use strict";
 
@@ -55987,13 +55097,6 @@ var errorcode = function calculate_ec(msg, ec_len) {
     }
     return new Buffer$1(msg);
 };
-
-
-
-var errorcode$2 = Object.freeze({
-	default: errorcode,
-	__moduleExports: errorcode
-});
 
 "use strict";
 
@@ -56348,35 +55451,6 @@ var matrix = {
     calculatePenalty: calculatePenalty,
 };
 
-var matrix_1 = matrix.getMatrix;
-var matrix_2 = matrix.init;
-var matrix_3 = matrix.fillFinders;
-var matrix_4 = matrix.fillAlignAndTiming;
-var matrix_5 = matrix.fillStub;
-var matrix_6 = matrix.fillReserved;
-var matrix_7 = matrix.fillData;
-var matrix_8 = matrix.calculatePenalty;
-
-
-var matrix$2 = Object.freeze({
-	default: matrix,
-	__moduleExports: matrix,
-	getMatrix: matrix_1,
-	init: matrix_2,
-	fillFinders: matrix_3,
-	fillAlignAndTiming: matrix_4,
-	fillStub: matrix_5,
-	fillReserved: matrix_6,
-	fillData: matrix_7,
-	calculatePenalty: matrix_8
-});
-
-var encode$2 = ( encode$1 && encode_1 ) || encode$1;
-
-var calculateEC = ( errorcode$2 && errorcode ) || errorcode$2;
-
-var matrix$3 = ( matrix$2 && matrix ) || matrix$2;
-
 "use strict";
 
 
@@ -56536,7 +55610,7 @@ function fillTemplate(message, template) {
     template.blocks = template.blocks.map(function(n) {
         var b = blocks.slice(offset, offset + n);
         offset += n;
-        template.ec.push(calculateEC(b, template.ec_len));
+        template.ec.push(errorcode(b, template.ec_len));
         return b;
     });
 
@@ -56546,9 +55620,9 @@ function fillTemplate(message, template) {
 // {{{1 All-in-one
 function QR$1(text, ec_level, parse_url) {
     ec_level = EC_LEVELS.indexOf(ec_level) > -1 ? ec_level : 'M';
-    var message = encode$2(text, parse_url);
+    var message = encode_1(text, parse_url);
     var data = fillTemplate(message, getTemplate(message, ec_level));
-    return matrix$3.getMatrix(data);
+    return matrix.getMatrix(data);
 }
 
 // {{{1 export functions
@@ -56557,19 +55631,6 @@ var qrBase = {
     getTemplate: getTemplate,
     fillTemplate: fillTemplate,
 };
-
-var qrBase_1 = qrBase.QR;
-var qrBase_2 = qrBase.getTemplate;
-var qrBase_3 = qrBase.fillTemplate;
-
-
-var qrBase$2 = Object.freeze({
-	default: qrBase,
-	__moduleExports: qrBase,
-	QR: qrBase_1,
-	getTemplate: qrBase_2,
-	fillTemplate: qrBase_3
-});
 
 var msg = {
   2:      'need dictionary',     /* Z_NEED_DICT       2  */
@@ -56637,6 +55698,13 @@ var Buf32 = Int32Array;
 
 'use strict';
 
+/* Public constants ==========================================================*/
+/* ===========================================================================*/
+
+
+//var Z_FILTERED          = 1;
+//var Z_HUFFMAN_ONLY      = 2;
+//var Z_RLE               = 3;
 var Z_FIXED$2 = 4;
 //var Z_DEFAULT_STRATEGY  = 0;
 
@@ -57912,6 +56980,11 @@ function crc32(crc, buf, len, pos) {
   return (crc ^ (-1)); // >>> 0;
 }
 
+/* Public constants ==========================================================*/
+/* ===========================================================================*/
+
+
+/* Allowed flush values; see deflate() and inflate() below for details */
 var Z_NO_FLUSH$1 = 0;
 var Z_PARTIAL_FLUSH$1 = 1;
 //var Z_SYNC_FLUSH    = 2;
@@ -57946,6 +57019,10 @@ var Z_FILTERED$1 = 1;
 var Z_HUFFMAN_ONLY$1 = 2;
 var Z_RLE$1 = 3;
 var Z_FIXED$1 = 4;
+/* Possible values of the data_type field (though see inflate()) */
+//var Z_BINARY              = 0;
+//var Z_TEXT                = 1;
+//var Z_ASCII               = 1; // = Z_TEXT
 var Z_UNKNOWN$1 = 2;
 
 
@@ -57956,7 +57033,6 @@ var Z_DEFLATED$1 = 8;
 
 
 var MAX_MEM_LEVEL = 9;
-/* Maximum value for memLevel in deflateInit2 */
 var LENGTH_CODES = 29;
 /* number of length codes, not counting the special END_BLOCK code */
 var LITERALS = 256;
@@ -60390,8 +59466,6 @@ var SYNC = 32; /* looking for synchronization bytes to restart inflate() */
 
 var ENOUGH_LENS = 852;
 var ENOUGH_DISTS = 592;
-//var ENOUGH =  (ENOUGH_LENS+ENOUGH_DISTS);
-
 function zswap32(q) {
   return (((q >>> 24) & 0xff) +
     ((q >>> 8) & 0xff00) +
@@ -61897,6 +60971,10 @@ exports.inflateSyncPoint = inflateSyncPoint;
 exports.inflateUndermine = inflateUndermine;
 */
 
+// import constants from './constants';
+
+
+// zlib modes
 var NONE = 0;
 var DEFLATE = 1;
 var INFLATE = 2;
@@ -62184,6 +61262,27 @@ var _binding = Object.freeze({
 	Zlib: Zlib$1
 });
 
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
 function assert (a, msg) {
   if (!a) {
     throw new Error(msg);
@@ -62383,7 +61482,7 @@ function zlibBuffer(engine, buffer, callback) {
 function zlibBufferSync(engine, buffer) {
   if (typeof buffer === 'string')
     buffer = new Buffer$1(buffer);
-  if (!isBuffer$5(buffer))
+  if (!isBuffer$4(buffer))
     throw new TypeError('Not a string or buffer');
 
   var flushFlag = binding$1.Z_FINISH;
@@ -62499,7 +61598,7 @@ function Zlib(opts, mode) {
   }
 
   if (opts.dictionary) {
-    if (!isBuffer$5(opts.dictionary)) {
+    if (!isBuffer$4(opts.dictionary)) {
       throw new Error('Invalid dictionary: it should be a Buffer instance');
     }
   }
@@ -62629,7 +61728,7 @@ Zlib.prototype._transform = function(chunk, encoding, cb) {
   var ending = ws.ending || ws.ended;
   var last = ending && (!chunk || ws.length === chunk.length);
 
-  if (!chunk === null && !isBuffer$5(chunk))
+  if (!chunk === null && !isBuffer$4(chunk))
     return cb(new Error('invalid input'));
 
   // If it's the last chunk, or a final flush, we use the Z_FINISH flush flag.
@@ -62863,7 +61962,7 @@ function update(c, buf) {
     }
 }
 
-function crc32$5(/* arguments */) {
+function crc32$4(/* arguments */) {
     var l = arguments.length;
     var c = new Buffer$1(4);
     c.fill(0xff);
@@ -62880,16 +61979,7 @@ function crc32$5(/* arguments */) {
     return c.readUInt32BE(0);
 }
 
-var crc32buffer = crc32$5;
-
-
-
-var crc32buffer$2 = Object.freeze({
-	default: crc32buffer,
-	__moduleExports: crc32buffer
-});
-
-var require$$0$32 = ( crc32buffer$2 && crc32buffer ) || crc32buffer$2;
+var crc32buffer = crc32$4;
 
 var crc32$2 = createCommonjsModule(function (module) {
 "use strict";
@@ -62900,7 +61990,7 @@ var crc32$2 = createCommonjsModule(function (module) {
 // https://code.google.com/p/v8/issues/detail?id=3757
 // https://github.com/alexeyten/qr-image/issues/13
 if (process$4.arch === 'arm') {
-    module.exports = require$$0$32;
+    module.exports = crc32buffer;
     return;
 }
 
@@ -62943,16 +62033,7 @@ module.exports = crc32;
 })();
 });
 
-
-
-var crc32$4 = Object.freeze({
-	default: crc32$2,
-	__moduleExports: crc32$2
-});
-
 var zlib$2 = ( zlib$1 && zlib ) || zlib$1;
-
-var crc32$6 = ( crc32$4 && crc32$2 ) || crc32$4;
 
 "use strict";
 
@@ -62971,7 +62052,7 @@ function png(bitmap, stream) {
     var IHDR = Buffer$1.concat([PNG_IHDR]);
     IHDR.writeUInt32BE(bitmap.size, 8);
     IHDR.writeUInt32BE(bitmap.size, 12);
-    IHDR.writeUInt32BE(crc32$6(IHDR.slice(4, -4)), 21);
+    IHDR.writeUInt32BE(crc32$2(IHDR.slice(4, -4)), 21);
     stream.push(IHDR);
 
     var IDAT = Buffer$1.concat([
@@ -62980,7 +62061,7 @@ function png(bitmap, stream) {
         new Buffer$1(4)
     ]);
     IDAT.writeUInt32BE(IDAT.length - 12, 0);
-    IDAT.writeUInt32BE(crc32$6(IDAT.slice(4, -4)), IDAT.length - 4);
+    IDAT.writeUInt32BE(crc32$2(IDAT.slice(4, -4)), IDAT.length - 4);
     stream.push(IDAT);
 
     stream.push(PNG_IEND);
@@ -63018,17 +62099,6 @@ var png_1 = {
     bitmap: bitmap,
     png: png
 };
-
-var png_2 = png_1.bitmap;
-var png_3 = png_1.png;
-
-
-var png$1 = Object.freeze({
-	default: png_1,
-	__moduleExports: png_1,
-	bitmap: png_2,
-	png: png_3
-});
 
 "use strict";
 
@@ -63291,34 +62361,13 @@ var vector = {
     svg_object: SVG_object
 };
 
-var vector_1 = vector.svg;
-var vector_2 = vector.eps;
-var vector_3 = vector.pdf;
-var vector_4 = vector.svg_object;
-
-
-var vector$2 = Object.freeze({
-	default: vector,
-	__moduleExports: vector,
-	svg: vector_1,
-	eps: vector_2,
-	pdf: vector_3,
-	svg_object: vector_4
-});
-
 var require$$0$33 = ( stream && Stream$1 ) || stream;
-
-var require$$1$12 = ( qrBase$2 && qrBase ) || qrBase$2;
-
-var png$2 = ( png$1 && png_1 ) || png$1;
-
-var vector$3 = ( vector$2 && vector ) || vector$2;
 
 "use strict";
 
 var Readable = require$$0$33.Readable;
 
-var QR = require$$1$12.QR;
+var QR = qrBase.QR;
 
 
 
@@ -63370,13 +62419,13 @@ function qr_image(text, options) {
     case 'pdf':
     case 'eps':
         nextTick(function() {
-            vector$3[options.type](matrix, stream, options.margin, options.size);
+            vector[options.type](matrix, stream, options.margin, options.size);
         });
         break;
     case 'svgpath':
         // deprecated, use svg_object method
         nextTick(function() {
-            var obj = vector$3.svg_object(matrix, options.margin, options.size);
+            var obj = vector.svg_object(matrix, options.margin, options.size);
             stream.push(obj.path);
             stream.push(null);
         });
@@ -63384,11 +62433,11 @@ function qr_image(text, options) {
     case 'png':
     default:
         nextTick(function() {
-            var bitmap = png$2.bitmap(matrix, options.size, options.margin);
+            var bitmap = png_1.bitmap(matrix, options.size, options.margin);
             if (options.customize) {
                 options.customize(bitmap);
             }
-            png$2.png(bitmap, stream);
+            png_1.png(bitmap, stream);
         });
     }
 
@@ -63406,16 +62455,16 @@ function qr_image_sync(text, options) {
     case 'svg':
     case 'pdf':
     case 'eps':
-        vector$3[options.type](matrix, stream, options.margin, options.size);
+        vector[options.type](matrix, stream, options.margin, options.size);
         result = stream.filter(Boolean).join('');
         break;
     case 'png':
     default:
-        var bitmap = png$2.bitmap(matrix, options.size, options.margin);
+        var bitmap = png_1.bitmap(matrix, options.size, options.margin);
         if (options.customize) {
             options.customize(bitmap);
         }
-        png$2.png(bitmap, stream);
+        png_1.png(bitmap, stream);
         result = Buffer$1.concat(stream.filter(Boolean));
     }
 
@@ -63426,7 +62475,7 @@ function svg_object(text, options) {
     options = get_options(options, 'svg');
 
     var matrix = QR(text, options.ec_level);
-    return vector$3.svg_object(matrix, options.margin);
+    return vector.svg_object(matrix, options.margin);
 }
 
 var qr = {
@@ -63577,9 +62626,8 @@ function () {
               seed: _context.t3,
               ethereum: _context.t6
             };
-            _context.t8 = {
-              custody: retrieve(constants, "custody.".concat([wallet.ship.class], ".").concat([KEY])),
-              usage: retrieve(constants, "usage.".concat([wallet.ship.class], ".").concat([KEY]))
+            _context.t8 = {// custody: retrieve(constants, `custody.${[wallet.ship.class]}.${[KEY]}`),
+              // usage: retrieve(constants, `usage.${[wallet.ship.class]}.${[KEY]}`),
             };
             _context.t9 = {
               createdOn: dateToDa(new Date()),
@@ -63721,18 +62769,20 @@ function () {
                   renderables: _toConsumableArray(mapInsert(_objectSpread({}, props, {
                     pageAofB: "Page ".concat(pageIndex + 1, " of ").concat(pageCount)
                   }), TEMP_X)).concat(_toConsumableArray(listItemsWithData)),
-                  bin: 'public',
+                  bin: '0',
                   collateralType: 'ownership_address_manifest',
-                  ship: 'all'
+                  ship: 'all',
+                  page: pageIndex + 2
                 };
               });
               var pages = [{
                 renderables: _toConsumableArray(mapInsert(_objectSpread({}, props, {
                   pageAofB: "Page 1 of ".concat(pageCount)
                 }), TEMP_1)).concat(_toConsumableArray(firstPageRenderableListItems)),
-                bin: 'public',
+                bin: '0',
                 collateralType: 'ownership_address_manifest',
-                ship: 'all'
+                ship: 'all',
+                page: 1
               }].concat(_toConsumableArray(subsequentPages));
               return pages;
             }));
@@ -63786,44 +62836,38 @@ function () {
                           data: shard,
                           size: getTicketSize('masterTicketShard', retrieve(wallet, 'ship.class'))
                         };
-                        _context4.t4 = {
-                          mnemonic: shard,
-                          size: SEEDSIZE,
-                          derivationPath: BIP32_DERIVATION_PATH
-                        };
-                        _context4.t5 = retrieve(wallet, 'ownership.keys.address');
-                        _context4.next = 12;
+                        _context4.t4 = retrieve(wallet, 'ownership.keys.address');
+                        _context4.next = 11;
                         return loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'ownership.keys.address'));
 
-                      case 12:
-                        _context4.t6 = _context4.sent;
+                      case 11:
+                        _context4.t5 = _context4.sent;
+                        _context4.t6 = {
+                          address: _context4.t4,
+                          qr: _context4.t5
+                        };
                         _context4.t7 = {
-                          address: _context4.t5,
-                          qr: _context4.t6
+                          ethereum: _context4.t6
                         };
-                        _context4.t8 = {
-                          seed: _context4.t4,
-                          ethereum: _context4.t7
-                        };
-                        _context4.t9 = {};
-                        _context4.t10 = {
+                        _context4.t8 = {};
+                        _context4.t9 = {
                           createdOn: dateToDa(new Date()),
                           walletVersion: constants.meta.walletVersion,
                           moreInformation: constants.meta.moreInformation
                         };
-                        _context4.t11 = retrieve(wallet, 'ship.class');
-                        _context4.t12 = assignBin(retrieve(wallet, 'ship.class'), KEY);
+                        _context4.t10 = retrieve(wallet, 'ship.class');
+                        _context4.t11 = assignBin(retrieve(wallet, 'ship.class'), KEY);
                         props = {
                           heading: _context4.t0,
                           patp: _context4.t1,
                           sigil: _context4.t2,
                           shard: _context4.t3,
-                          ownership: _context4.t8,
-                          copy: _context4.t9,
-                          meta: _context4.t10,
-                          _classOf: _context4.t11,
+                          ownership: _context4.t7,
+                          copy: _context4.t8,
+                          meta: _context4.t9,
+                          _classOf: _context4.t10,
                           _type: 'masterTicketShard',
-                          _bin: _context4.t12
+                          _bin: _context4.t11
                         };
                         page = {
                           renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
@@ -63833,7 +62877,7 @@ function () {
                         };
                         return _context4.abrupt("return", page);
 
-                      case 22:
+                      case 21:
                       case "end":
                         return _context4.stop();
                     }
@@ -63865,6 +62909,230 @@ function () {
   };
 }();
 
+var SpawnSeedComponent =
+/*#__PURE__*/
+function () {
+  var _ref6 = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee6(wallet, constants, templates) {
+    var KEY, TEMPLATE, props, page;
+    return regeneratorRuntime.wrap(function _callee6$(_context6) {
+      while (1) {
+        switch (_context6.prev = _context6.next) {
+          case 0:
+            KEY = 'spawn';
+            TEMPLATE = "SPAWN:".concat(toUpperCase(retrieve(wallet, 'ship.class')));
+            _context6.t0 = retrieve(wallet, 'ship.patp');
+            _context6.next = 5;
+            return loadSigil(AT_LOAD_SIGIL_SIZE, retrieve(wallet, 'ship.patp'));
+
+          case 5:
+            _context6.t1 = _context6.sent;
+            _context6.t2 = {
+              seed: {
+                mnemonic: retrieve(wallet, 'spawn.seed'),
+                size: SEEDSIZE,
+                derivationPath: BIP32_DERIVATION_PATH
+              } // ethereum: {
+              //   address: retrieve(wallet, 'spawn.keys.address'),
+              //   qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'spawn.keys.address')),
+              // },
+
+            };
+            _context6.t3 = {// custody: retrieve(constants, `custody.${[wallet.ship.class]}.${[KEY]}`),
+              // usage: retrieve(constants, `usage.${[wallet.ship.class]}.${[KEY]}`),
+            };
+            _context6.t4 = {
+              createdOn: dateToDa(new Date()),
+              walletVersion: constants.meta.walletVersion,
+              moreInformation: constants.meta.moreInformation
+            };
+            _context6.t5 = retrieve(wallet, 'ship.class');
+            _context6.t6 = KEY;
+            _context6.t7 = assignBin(retrieve(wallet, 'ship.class'), KEY);
+            props = {
+              heading: 'Spawn Seed',
+              patp: _context6.t0,
+              sigil: _context6.t1,
+              spawn: _context6.t2,
+              copy: _context6.t3,
+              meta: _context6.t4,
+              _classOf: _context6.t5,
+              _type: _context6.t6,
+              _bin: _context6.t7
+            };
+            page = [{
+              renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
+              bin: assignBin(props._classOf, props._type),
+              collateralType: props._type,
+              ship: props.patp
+            }];
+            return _context6.abrupt("return", page);
+
+          case 15:
+          case "end":
+            return _context6.stop();
+        }
+      }
+    }, _callee6, this);
+  }));
+
+  return function SpawnSeedComponent(_x13, _x14, _x15) {
+    return _ref6.apply(this, arguments);
+  };
+}();
+
+var VotingSeedComponent =
+/*#__PURE__*/
+function () {
+  var _ref7 = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee7(wallet, constants, templates) {
+    var KEY, TEMPLATE, props, page;
+    return regeneratorRuntime.wrap(function _callee7$(_context7) {
+      while (1) {
+        switch (_context7.prev = _context7.next) {
+          case 0:
+            KEY = 'voting';
+            TEMPLATE = "VOTING:".concat(toUpperCase(retrieve(wallet, 'ship.class')));
+            _context7.t0 = retrieve(wallet, 'ship.patp');
+            _context7.next = 5;
+            return loadSigil(AT_LOAD_SIGIL_SIZE, retrieve(wallet, 'ship.patp'));
+
+          case 5:
+            _context7.t1 = _context7.sent;
+            _context7.t2 = {
+              seed: {
+                mnemonic: retrieve(wallet, 'voting.seed'),
+                size: SEEDSIZE,
+                derivationPath: BIP32_DERIVATION_PATH
+              } // ethereum: {
+              //   address: retrieve(wallet, 'spawn.keys.address'),
+              //   qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'spawn.keys.address')),
+              // },
+
+            };
+            _context7.t3 = {// custody: retrieve(constants, `custody.${[wallet.ship.class]}.${[KEY]}`),
+              // usage: retrieve(constants, `usage.${[wallet.ship.class]}.${[KEY]}`),
+            };
+            _context7.t4 = {
+              createdOn: dateToDa(new Date()),
+              walletVersion: constants.meta.walletVersion,
+              moreInformation: constants.meta.moreInformation
+            };
+            _context7.t5 = retrieve(wallet, 'ship.class');
+            _context7.t6 = KEY;
+            _context7.t7 = assignBin(retrieve(wallet, 'ship.class'), KEY);
+            props = {
+              heading: 'Voting Seed',
+              patp: _context7.t0,
+              sigil: _context7.t1,
+              voting: _context7.t2,
+              copy: _context7.t3,
+              meta: _context7.t4,
+              _classOf: _context7.t5,
+              _type: _context7.t6,
+              _bin: _context7.t7
+            };
+            page = [{
+              renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
+              bin: assignBin(props._classOf, props._type),
+              collateralType: props._type,
+              ship: props.patp
+            }];
+            return _context7.abrupt("return", page);
+
+          case 15:
+          case "end":
+            return _context7.stop();
+        }
+      }
+    }, _callee7, this);
+  }));
+
+  return function VotingSeedComponent(_x16, _x17, _x18) {
+    return _ref7.apply(this, arguments);
+  };
+}();
+
+var ManagementSeedComponent =
+/*#__PURE__*/
+function () {
+  var _ref8 = _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee8(wallet, constants, templates) {
+    var KEY, TEMPLATE, props, page;
+    return regeneratorRuntime.wrap(function _callee8$(_context8) {
+      while (1) {
+        switch (_context8.prev = _context8.next) {
+          case 0:
+            KEY = 'management';
+            TEMPLATE = "MANAGEMENT:".concat(toUpperCase(retrieve(wallet, 'ship.class')));
+            _context8.t0 = retrieve(wallet, 'ship.patp');
+            _context8.next = 5;
+            return loadSigil(AT_LOAD_SIGIL_SIZE, retrieve(wallet, 'ship.patp'));
+
+          case 5:
+            _context8.t1 = _context8.sent;
+            _context8.t2 = {
+              seed: {
+                mnemonic: retrieve(wallet, 'management.seed'),
+                size: SEEDSIZE,
+                derivationPath: BIP32_DERIVATION_PATH
+              } // ethereum: {
+              //   address: retrieve(wallet, 'spawn.keys.address'),
+              //   qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'spawn.keys.address')),
+              // },
+
+            };
+            _context8.t3 = {// custody: retrieve(constants, `custody.${[wallet.ship.class]}.${[KEY]}`),
+              // usage: retrieve(constants, `usage.${[wallet.ship.class]}.${[KEY]}`),
+            };
+            _context8.t4 = {
+              createdOn: dateToDa(new Date()),
+              walletVersion: constants.meta.walletVersion,
+              moreInformation: constants.meta.moreInformation
+            };
+            _context8.t5 = retrieve(wallet, 'ship.class');
+            _context8.t6 = KEY;
+            _context8.t7 = assignBin(retrieve(wallet, 'ship.class'), KEY);
+            props = {
+              heading: 'Management Seed',
+              patp: _context8.t0,
+              sigil: _context8.t1,
+              management: _context8.t2,
+              copy: _context8.t3,
+              meta: _context8.t4,
+              _classOf: _context8.t5,
+              _type: _context8.t6,
+              _bin: _context8.t7
+            };
+            page = [{
+              renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
+              bin: assignBin(props._classOf, props._type),
+              collateralType: props._type,
+              ship: props.patp
+            }];
+            return _context8.abrupt("return", page);
+
+          case 15:
+          case "end":
+            return _context8.stop();
+        }
+      }
+    }, _callee8, this);
+  }));
+
+  return function ManagementSeedComponent(_x19, _x20, _x21) {
+    return _ref8.apply(this, arguments);
+  };
+}();
+
+// ws: wallets
+// cs: constants
+// ts: templates
+// Use partial application to make asynchonous execution easier later
+
 var PROFILES = {
   'CONVENTIONAL': {
     'galaxy': [// (w, cs, ts) => () => MasterTicketComponent(w, cs, ts),
@@ -63872,15 +63140,42 @@ var PROFILES = {
       return function () {
         return MasterTicketShardsComponent(w, cs, ts);
       };
+    }, function (w, cs, ts) {
+      return function () {
+        return SpawnSeedComponent(w, cs, ts);
+      };
+    }, function (w, cs, ts) {
+      return function () {
+        return VotingSeedComponent(w, cs, ts);
+      };
+    }, // (w, cs, ts) => () => TransferSeedComponent(w, copy, ts),
+    function (w, cs, ts) {
+      return function () {
+        return ManagementSeedComponent(w, cs, ts);
+      };
     }],
     'star': [function (w, cs, ts) {
       return function () {
         return MasterTicketComponent(w, cs, ts);
       };
+    }, function (w, cs, ts) {
+      return function () {
+        return SpawnSeedComponent(w, cs, ts);
+      };
+    }, // (w, cs, ts) => () => TransferSeedComponent(w, cs, ts),
+    function (w, cs, ts) {
+      return function () {
+        return ManagementSeedComponent(w, cs, ts);
+      };
     }],
     'planet': [function (w, cs, ts) {
       return function () {
         return MasterTicketComponent(w, cs, ts);
+      };
+    }, // (w, cs, ts) => () => TransferSeedComponent(w, cs, ts),
+    function (w, cs, ts) {
+      return function () {
+        return ManagementSeedComponent(w, cs, ts);
       };
     }],
     'manifest': [function (ws, cs, ts) {
@@ -63913,7 +63208,7 @@ function (_Component) {
     });
 
     _defineProperty(_assertThisInitialized(_assertThisInitialized(_this)), "componentDidMount", function () {
-      var wallets = shim$3(_this.props.wallet);
+      var wallets = shim$2(_this.props.wallet);
       var docket = PROFILES[_this.props.mode];
       var docketFunctions = lodash_7(wallets, function (acc, wallet) {
         var collateral = docket[wallet.ship.class];
@@ -64019,7 +63314,6 @@ var EasingType;
     EasingType[EasingType["EASE_OUT"] = 1] = "EASE_OUT"; /** Ease out with an animation curve similar to CSS ease-out */
     EasingType[EasingType["EASE_IN_AND_OUT"] = 2] = "EASE_IN_AND_OUT"; /** Ease in and then out with an animation curve similar to CSS ease-in-out */
 })(EasingType || (EasingType = {}));
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZmlnbWFUeXBlcy5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9maWdtYVR5cGVzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQWthQTs7O0dBR0c7QUFDSCxNQUFNLENBQU4sSUFBWSxTQThCWDtBQTlCRCxXQUFZLFNBQVM7SUFDbkIseURBQWMsQ0FBQSxDQUFDLGlEQUFpRDtJQUNoRSw2Q0FBUSxDQUFBO0lBRVIsY0FBYztJQUNkLDZDQUFRLENBQUE7SUFDUixpREFBVSxDQUFBO0lBQ1YsdURBQWEsQ0FBQTtJQUNiLHFEQUFZLENBQUE7SUFFWixlQUFlO0lBQ2YsK0NBQVMsQ0FBQTtJQUNULDZDQUFRLENBQUE7SUFDUix5REFBYyxDQUFBO0lBQ2QsdURBQWEsQ0FBQTtJQUViLGdCQUFnQjtJQUNoQixnREFBUyxDQUFBO0lBQ1Qsc0RBQVksQ0FBQTtJQUNaLHNEQUFZLENBQUE7SUFFWixpQkFBaUI7SUFDakIsc0RBQVksQ0FBQTtJQUNaLG9EQUFXLENBQUE7SUFFWCxpQkFBaUI7SUFDakIsd0NBQUssQ0FBQTtJQUNMLHNEQUFZLENBQUE7SUFDWiw0Q0FBTyxDQUFBO0lBQ1Asc0RBQVksQ0FBQTtBQUNkLENBQUMsRUE5QlcsU0FBUyxLQUFULFNBQVMsUUE4QnBCO0FBRUQsTUFBTSxDQUFOLElBQVksVUFJWDtBQUpELFdBQVksVUFBVTtJQUNwQixpREFBUyxDQUFBLENBQUMsNkRBQTZEO0lBQ3ZFLG1EQUFVLENBQUEsQ0FBQywrREFBK0Q7SUFDMUUsaUVBQWlCLENBQUEsQ0FBQyw4RUFBOEU7QUFDbEcsQ0FBQyxFQUpXLFVBQVUsS0FBVixVQUFVLFFBSXJCIn0=
 
 'use strict';
 
@@ -64033,13 +63327,6 @@ var bind$1 = function bind(fn, thisArg) {
   };
 };
 
-
-
-var bind$3 = Object.freeze({
-	default: bind$1,
-	__moduleExports: bind$1
-});
-
 /*!
  * Determine if an object is a Buffer
  *
@@ -64050,28 +63337,17 @@ var bind$3 = Object.freeze({
 // The _isBuffer check is for Safari 5-7 support, because it's missing
 // Object.prototype.constructor. Remove this eventually
 var isBuffer_1$1 = function (obj) {
-  return obj != null && (isBuffer$7(obj) || isSlowBuffer$2(obj) || !!obj._isBuffer)
+  return obj != null && (isBuffer$6(obj) || isSlowBuffer$2(obj) || !!obj._isBuffer)
 };
 
-function isBuffer$7 (obj) {
+function isBuffer$6 (obj) {
   return !!obj.constructor && typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
 }
 
 // For Node v0.10 support. Remove this eventually.
 function isSlowBuffer$2 (obj) {
-  return typeof obj.readFloatLE === 'function' && typeof obj.slice === 'function' && isBuffer$7(obj.slice(0, 0))
+  return typeof obj.readFloatLE === 'function' && typeof obj.slice === 'function' && isBuffer$6(obj.slice(0, 0))
 }
-
-
-
-var isBuffer$8 = Object.freeze({
-	default: isBuffer_1$1,
-	__moduleExports: isBuffer_1$1
-});
-
-var bind$4 = ( bind$3 && bind$1 ) || bind$3;
-
-var isBuffer$9 = ( isBuffer$8 && isBuffer_1$1 ) || isBuffer$8;
 
 'use strict';
 
@@ -64346,7 +63622,7 @@ function merge(/* obj1, obj2, obj3, ... */) {
 function extend(a, b, thisArg) {
   forEach$1(b, function assignValue(val, key) {
     if (thisArg && typeof val === 'function') {
-      a[key] = bind$4(val, thisArg);
+      a[key] = bind$1(val, thisArg);
     } else {
       a[key] = val;
     }
@@ -64357,7 +63633,7 @@ function extend(a, b, thisArg) {
 var utils = {
   isArray: isArray$5,
   isArrayBuffer: isArrayBuffer,
-  isBuffer: isBuffer$9,
+  isBuffer: isBuffer_1$1,
   isFormData: isFormData,
   isArrayBufferView: isArrayBufferView,
   isString: isString$2,
@@ -64377,74 +63653,18 @@ var utils = {
   trim: trim$1
 };
 
-var utils_1 = utils.isArray;
-var utils_2 = utils.isArrayBuffer;
-var utils_3 = utils.isBuffer;
-var utils_4 = utils.isFormData;
-var utils_5 = utils.isArrayBufferView;
-var utils_6 = utils.isString;
-var utils_7 = utils.isNumber;
-var utils_8 = utils.isObject;
-var utils_9 = utils.isUndefined;
-var utils_10 = utils.isDate;
-var utils_11 = utils.isFile;
-var utils_12 = utils.isBlob;
-var utils_13 = utils.isFunction;
-var utils_14 = utils.isStream;
-var utils_15 = utils.isURLSearchParams;
-var utils_16 = utils.isStandardBrowserEnv;
-var utils_17 = utils.forEach;
-var utils_18 = utils.merge;
-var utils_19 = utils.extend;
-var utils_20 = utils.trim;
-
-
-var utils$2 = Object.freeze({
-	default: utils,
-	__moduleExports: utils,
-	isArray: utils_1,
-	isArrayBuffer: utils_2,
-	isBuffer: utils_3,
-	isFormData: utils_4,
-	isArrayBufferView: utils_5,
-	isString: utils_6,
-	isNumber: utils_7,
-	isObject: utils_8,
-	isUndefined: utils_9,
-	isDate: utils_10,
-	isFile: utils_11,
-	isBlob: utils_12,
-	isFunction: utils_13,
-	isStream: utils_14,
-	isURLSearchParams: utils_15,
-	isStandardBrowserEnv: utils_16,
-	forEach: utils_17,
-	merge: utils_18,
-	extend: utils_19,
-	trim: utils_20
-});
-
-var utils$3 = ( utils$2 && utils ) || utils$2;
-
 'use strict';
 
 
 
 var normalizeHeaderName = function normalizeHeaderName(headers, normalizedName) {
-  utils$3.forEach(headers, function processHeader(value, name) {
+  utils.forEach(headers, function processHeader(value, name) {
     if (name !== normalizedName && name.toUpperCase() === normalizedName.toUpperCase()) {
       headers[normalizedName] = value;
       delete headers[name];
     }
   });
 };
-
-
-
-var normalizeHeaderName$2 = Object.freeze({
-	default: normalizeHeaderName,
-	__moduleExports: normalizeHeaderName
-});
 
 'use strict';
 
@@ -64468,15 +63688,6 @@ var enhanceError = function enhanceError(error, config, code, request, response)
   return error;
 };
 
-
-
-var enhanceError$2 = Object.freeze({
-	default: enhanceError,
-	__moduleExports: enhanceError
-});
-
-var enhanceError$3 = ( enhanceError$2 && enhanceError ) || enhanceError$2;
-
 'use strict';
 
 
@@ -64493,17 +63704,8 @@ var enhanceError$3 = ( enhanceError$2 && enhanceError ) || enhanceError$2;
  */
 var createError = function createError(message, config, code, request, response) {
   var error = new Error(message);
-  return enhanceError$3(error, config, code, request, response);
+  return enhanceError(error, config, code, request, response);
 };
-
-
-
-var createError$2 = Object.freeze({
-	default: createError,
-	__moduleExports: createError
-});
-
-var createError$3 = ( createError$2 && createError ) || createError$2;
 
 'use strict';
 
@@ -64522,7 +63724,7 @@ var settle = function settle(resolve, reject, response) {
   if (!response.status || !validateStatus || validateStatus(response.status)) {
     resolve(response);
   } else {
-    reject(createError$3(
+    reject(createError(
       'Request failed with status code ' + response.status,
       response.config,
       null,
@@ -64532,18 +63734,11 @@ var settle = function settle(resolve, reject, response) {
   }
 };
 
-
-
-var settle$2 = Object.freeze({
-	default: settle,
-	__moduleExports: settle
-});
-
 'use strict';
 
 
 
-function encode$3(val) {
+function encode$2(val) {
   return encodeURIComponent(val).
     replace(/%40/gi, '@').
     replace(/%3A/gi, ':').
@@ -64570,29 +63765,29 @@ var buildURL = function buildURL(url, params, paramsSerializer) {
   var serializedParams;
   if (paramsSerializer) {
     serializedParams = paramsSerializer(params);
-  } else if (utils$3.isURLSearchParams(params)) {
+  } else if (utils.isURLSearchParams(params)) {
     serializedParams = params.toString();
   } else {
     var parts = [];
 
-    utils$3.forEach(params, function serialize(val, key) {
+    utils.forEach(params, function serialize(val, key) {
       if (val === null || typeof val === 'undefined') {
         return;
       }
 
-      if (utils$3.isArray(val)) {
+      if (utils.isArray(val)) {
         key = key + '[]';
       } else {
         val = [val];
       }
 
-      utils$3.forEach(val, function parseValue(v) {
-        if (utils$3.isDate(v)) {
+      utils.forEach(val, function parseValue(v) {
+        if (utils.isDate(v)) {
           v = v.toISOString();
-        } else if (utils$3.isObject(v)) {
+        } else if (utils.isObject(v)) {
           v = JSON.stringify(v);
         }
-        parts.push(encode$3(key) + '=' + encode$3(v));
+        parts.push(encode$2(key) + '=' + encode$2(v));
       });
     });
 
@@ -64605,13 +63800,6 @@ var buildURL = function buildURL(url, params, paramsSerializer) {
 
   return url;
 };
-
-
-
-var buildURL$2 = Object.freeze({
-	default: buildURL,
-	__moduleExports: buildURL
-});
 
 'use strict';
 
@@ -64647,10 +63835,10 @@ var parseHeaders = function parseHeaders(headers) {
 
   if (!headers) { return parsed; }
 
-  utils$3.forEach(headers.split('\n'), function parser(line) {
+  utils.forEach(headers.split('\n'), function parser(line) {
     i = line.indexOf(':');
-    key = utils$3.trim(line.substr(0, i)).toLowerCase();
-    val = utils$3.trim(line.substr(i + 1));
+    key = utils.trim(line.substr(0, i)).toLowerCase();
+    val = utils.trim(line.substr(i + 1));
 
     if (key) {
       if (parsed[key] && ignoreDuplicateOf.indexOf(key) >= 0) {
@@ -64667,19 +63855,12 @@ var parseHeaders = function parseHeaders(headers) {
   return parsed;
 };
 
-
-
-var parseHeaders$2 = Object.freeze({
-	default: parseHeaders,
-	__moduleExports: parseHeaders
-});
-
 'use strict';
 
 
 
 var isURLSameOrigin = (
-  utils$3.isStandardBrowserEnv() ?
+  utils.isStandardBrowserEnv() ?
 
   // Standard browser envs have full support of the APIs needed to test
   // whether the request URL is of the same origin as current location.
@@ -64729,7 +63910,7 @@ var isURLSameOrigin = (
     * @returns {boolean} True if URL shares the same origin, otherwise false
     */
     return function isURLSameOrigin(requestURL) {
-      var parsed = (utils$3.isString(requestURL)) ? resolveURL(requestURL) : requestURL;
+      var parsed = (utils.isString(requestURL)) ? resolveURL(requestURL) : requestURL;
       return (parsed.protocol === originURL.protocol &&
             parsed.host === originURL.host);
     };
@@ -64742,13 +63923,6 @@ var isURLSameOrigin = (
     };
   })()
 );
-
-
-
-var isURLSameOrigin$2 = Object.freeze({
-	default: isURLSameOrigin,
-	__moduleExports: isURLSameOrigin
-});
 
 'use strict';
 
@@ -64787,19 +63961,12 @@ function btoa$2(input) {
 
 var btoa_1 = btoa$2;
 
-
-
-var btoa$3 = Object.freeze({
-	default: btoa_1,
-	__moduleExports: btoa_1
-});
-
 'use strict';
 
 
 
 var cookies = (
-  utils$3.isStandardBrowserEnv() ?
+  utils.isStandardBrowserEnv() ?
 
   // Standard browser envs support document.cookie
   (function standardBrowserEnv() {
@@ -64808,15 +63975,15 @@ var cookies = (
         var cookie = [];
         cookie.push(name + '=' + encodeURIComponent(value));
 
-        if (utils$3.isNumber(expires)) {
+        if (utils.isNumber(expires)) {
           cookie.push('expires=' + new Date(expires).toGMTString());
         }
 
-        if (utils$3.isString(path)) {
+        if (utils.isString(path)) {
           cookie.push('path=' + path);
         }
 
-        if (utils$3.isString(domain)) {
+        if (utils.isString(domain)) {
           cookie.push('domain=' + domain);
         }
 
@@ -64848,25 +64015,6 @@ var cookies = (
   })()
 );
 
-
-
-var cookies$2 = Object.freeze({
-	default: cookies,
-	__moduleExports: cookies
-});
-
-var settle$3 = ( settle$2 && settle ) || settle$2;
-
-var buildURL$3 = ( buildURL$2 && buildURL ) || buildURL$2;
-
-var parseHeaders$3 = ( parseHeaders$2 && parseHeaders ) || parseHeaders$2;
-
-var isURLSameOrigin$3 = ( isURLSameOrigin$2 && isURLSameOrigin ) || isURLSameOrigin$2;
-
-var require$$0$34 = ( btoa$3 && btoa_1 ) || btoa$3;
-
-var require$$1$13 = ( cookies$2 && cookies ) || cookies$2;
-
 'use strict';
 
 
@@ -64875,14 +64023,14 @@ var require$$1$13 = ( cookies$2 && cookies ) || cookies$2;
 
 
 
-var btoa$1 = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || require$$0$34;
+var btoa$1 = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || btoa_1;
 
 var xhr = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
     var requestData = config.data;
     var requestHeaders = config.headers;
 
-    if (utils$3.isFormData(requestData)) {
+    if (utils.isFormData(requestData)) {
       delete requestHeaders['Content-Type']; // Let the browser set it
     }
 
@@ -64896,7 +64044,7 @@ var xhr = function xhrAdapter(config) {
     if ("development" !== 'test' &&
         typeof window !== 'undefined' &&
         window.XDomainRequest && !('withCredentials' in request) &&
-        !isURLSameOrigin$3(config.url)) {
+        !isURLSameOrigin(config.url)) {
       request = new window.XDomainRequest();
       loadEvent = 'onload';
       xDomain = true;
@@ -64911,7 +64059,7 @@ var xhr = function xhrAdapter(config) {
       requestHeaders.Authorization = 'Basic ' + btoa$1(username + ':' + password);
     }
 
-    request.open(config.method.toUpperCase(), buildURL$3(config.url, config.params, config.paramsSerializer), true);
+    request.open(config.method.toUpperCase(), buildURL(config.url, config.params, config.paramsSerializer), true);
 
     // Set the request timeout in MS
     request.timeout = config.timeout;
@@ -64931,7 +64079,7 @@ var xhr = function xhrAdapter(config) {
       }
 
       // Prepare the response
-      var responseHeaders = 'getAllResponseHeaders' in request ? parseHeaders$3(request.getAllResponseHeaders()) : null;
+      var responseHeaders = 'getAllResponseHeaders' in request ? parseHeaders(request.getAllResponseHeaders()) : null;
       var responseData = !config.responseType || config.responseType === 'text' ? request.responseText : request.response;
       var response = {
         data: responseData,
@@ -64943,7 +64091,7 @@ var xhr = function xhrAdapter(config) {
         request: request
       };
 
-      settle$3(resolve, reject, response);
+      settle(resolve, reject, response);
 
       // Clean up request
       request = null;
@@ -64953,7 +64101,7 @@ var xhr = function xhrAdapter(config) {
     request.onerror = function handleError() {
       // Real errors are hidden from us by the browser
       // onerror should only fire if it's a network error
-      reject(createError$3('Network Error', config, null, request));
+      reject(createError('Network Error', config, null, request));
 
       // Clean up request
       request = null;
@@ -64961,7 +64109,7 @@ var xhr = function xhrAdapter(config) {
 
     // Handle timeout
     request.ontimeout = function handleTimeout() {
-      reject(createError$3('timeout of ' + config.timeout + 'ms exceeded', config, 'ECONNABORTED',
+      reject(createError('timeout of ' + config.timeout + 'ms exceeded', config, 'ECONNABORTED',
         request));
 
       // Clean up request
@@ -64971,12 +64119,12 @@ var xhr = function xhrAdapter(config) {
     // Add xsrf header
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
-    if (utils$3.isStandardBrowserEnv()) {
-      var cookies = require$$1$13;
+    if (utils.isStandardBrowserEnv()) {
+      var cookies$$1 = cookies;
 
       // Add xsrf header
-      var xsrfValue = (config.withCredentials || isURLSameOrigin$3(config.url)) && config.xsrfCookieName ?
-          cookies.read(config.xsrfCookieName) :
+      var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
+          cookies$$1.read(config.xsrfCookieName) :
           undefined;
 
       if (xsrfValue) {
@@ -64986,7 +64134,7 @@ var xhr = function xhrAdapter(config) {
 
     // Add headers to the request
     if ('setRequestHeader' in request) {
-      utils$3.forEach(requestHeaders, function setRequestHeader(val, key) {
+      utils.forEach(requestHeaders, function setRequestHeader(val, key) {
         if (typeof requestData === 'undefined' && key.toLowerCase() === 'content-type') {
           // Remove Content-Type if data is undefined
           delete requestHeaders[key];
@@ -65048,17 +64196,6 @@ var xhr = function xhrAdapter(config) {
   });
 };
 
-
-
-var xhr$2 = Object.freeze({
-	default: xhr,
-	__moduleExports: xhr
-});
-
-var normalizeHeaderName$3 = ( normalizeHeaderName$2 && normalizeHeaderName ) || normalizeHeaderName$2;
-
-var require$$1$14 = ( xhr$2 && xhr ) || xhr$2;
-
 'use strict';
 
 
@@ -65069,7 +64206,7 @@ var DEFAULT_CONTENT_TYPE = {
 };
 
 function setContentTypeIfUnset(headers, value) {
-  if (!utils$3.isUndefined(headers) && utils$3.isUndefined(headers['Content-Type'])) {
+  if (!utils.isUndefined(headers) && utils.isUndefined(headers['Content-Type'])) {
     headers['Content-Type'] = value;
   }
 }
@@ -65078,10 +64215,10 @@ function getDefaultAdapter() {
   var adapter;
   if (typeof XMLHttpRequest !== 'undefined') {
     // For browsers use XHR adapter
-    adapter = require$$1$14;
+    adapter = xhr;
   } else if (typeof process$4 !== 'undefined') {
     // For node use HTTP adapter
-    adapter = require$$1$14;
+    adapter = xhr;
   }
   return adapter;
 }
@@ -65090,24 +64227,24 @@ var defaults = {
   adapter: getDefaultAdapter(),
 
   transformRequest: [function transformRequest(data, headers) {
-    normalizeHeaderName$3(headers, 'Content-Type');
-    if (utils$3.isFormData(data) ||
-      utils$3.isArrayBuffer(data) ||
-      utils$3.isBuffer(data) ||
-      utils$3.isStream(data) ||
-      utils$3.isFile(data) ||
-      utils$3.isBlob(data)
+    normalizeHeaderName(headers, 'Content-Type');
+    if (utils.isFormData(data) ||
+      utils.isArrayBuffer(data) ||
+      utils.isBuffer(data) ||
+      utils.isStream(data) ||
+      utils.isFile(data) ||
+      utils.isBlob(data)
     ) {
       return data;
     }
-    if (utils$3.isArrayBufferView(data)) {
+    if (utils.isArrayBufferView(data)) {
       return data.buffer;
     }
-    if (utils$3.isURLSearchParams(data)) {
+    if (utils.isURLSearchParams(data)) {
       setContentTypeIfUnset(headers, 'application/x-www-form-urlencoded;charset=utf-8');
       return data.toString();
     }
-    if (utils$3.isObject(data)) {
+    if (utils.isObject(data)) {
       setContentTypeIfUnset(headers, 'application/json;charset=utf-8');
       return JSON.stringify(data);
     }
@@ -65146,22 +64283,15 @@ defaults.headers = {
   }
 };
 
-utils$3.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
+utils.forEach(['delete', 'get', 'head'], function forEachMethodNoData(method) {
   defaults.headers[method] = {};
 });
 
-utils$3.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
-  defaults.headers[method] = utils$3.merge(DEFAULT_CONTENT_TYPE);
+utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
+  defaults.headers[method] = utils.merge(DEFAULT_CONTENT_TYPE);
 });
 
 var defaults_1 = defaults;
-
-
-
-var defaults$1 = Object.freeze({
-	default: defaults_1,
-	__moduleExports: defaults_1
-});
 
 'use strict';
 
@@ -65207,7 +64337,7 @@ InterceptorManager.prototype.eject = function eject(id) {
  * @param {Function} fn The function to call for each interceptor
  */
 InterceptorManager.prototype.forEach = function forEach(fn) {
-  utils$3.forEach(this.handlers, function forEachHandler(h) {
+  utils.forEach(this.handlers, function forEachHandler(h) {
     if (h !== null) {
       fn(h);
     }
@@ -65215,13 +64345,6 @@ InterceptorManager.prototype.forEach = function forEach(fn) {
 };
 
 var InterceptorManager_1 = InterceptorManager;
-
-
-
-var InterceptorManager$1 = Object.freeze({
-	default: InterceptorManager_1,
-	__moduleExports: InterceptorManager_1
-});
 
 'use strict';
 
@@ -65237,32 +64360,18 @@ var InterceptorManager$1 = Object.freeze({
  */
 var transformData = function transformData(data, headers, fns) {
   /*eslint no-param-reassign:0*/
-  utils$3.forEach(fns, function transform(fn) {
+  utils.forEach(fns, function transform(fn) {
     data = fn(data, headers);
   });
 
   return data;
 };
 
-
-
-var transformData$2 = Object.freeze({
-	default: transformData,
-	__moduleExports: transformData
-});
-
 'use strict';
 
 var isCancel = function isCancel(value) {
   return !!(value && value.__CANCEL__);
 };
-
-
-
-var isCancel$2 = Object.freeze({
-	default: isCancel,
-	__moduleExports: isCancel
-});
 
 'use strict';
 
@@ -65279,13 +64388,6 @@ var isAbsoluteURL = function isAbsoluteURL(url) {
   return /^([a-z][a-z\d\+\-\.]*:)?\/\//i.test(url);
 };
 
-
-
-var isAbsoluteURL$2 = Object.freeze({
-	default: isAbsoluteURL,
-	__moduleExports: isAbsoluteURL
-});
-
 'use strict';
 
 /**
@@ -65300,23 +64402,6 @@ var combineURLs = function combineURLs(baseURL, relativeURL) {
     ? baseURL.replace(/\/+$/, '') + '/' + relativeURL.replace(/^\/+/, '')
     : baseURL;
 };
-
-
-
-var combineURLs$2 = Object.freeze({
-	default: combineURLs,
-	__moduleExports: combineURLs
-});
-
-var transformData$3 = ( transformData$2 && transformData ) || transformData$2;
-
-var isCancel$3 = ( isCancel$2 && isCancel ) || isCancel$2;
-
-var defaults$2 = ( defaults$1 && defaults_1 ) || defaults$1;
-
-var isAbsoluteURL$3 = ( isAbsoluteURL$2 && isAbsoluteURL ) || isAbsoluteURL$2;
-
-var combineURLs$3 = ( combineURLs$2 && combineURLs ) || combineURLs$2;
 
 'use strict';
 
@@ -65346,41 +64431,41 @@ var dispatchRequest = function dispatchRequest(config) {
   throwIfCancellationRequested(config);
 
   // Support baseURL config
-  if (config.baseURL && !isAbsoluteURL$3(config.url)) {
-    config.url = combineURLs$3(config.baseURL, config.url);
+  if (config.baseURL && !isAbsoluteURL(config.url)) {
+    config.url = combineURLs(config.baseURL, config.url);
   }
 
   // Ensure headers exist
   config.headers = config.headers || {};
 
   // Transform request data
-  config.data = transformData$3(
+  config.data = transformData(
     config.data,
     config.headers,
     config.transformRequest
   );
 
   // Flatten headers
-  config.headers = utils$3.merge(
+  config.headers = utils.merge(
     config.headers.common || {},
     config.headers[config.method] || {},
     config.headers || {}
   );
 
-  utils$3.forEach(
+  utils.forEach(
     ['delete', 'get', 'head', 'post', 'put', 'patch', 'common'],
     function cleanHeaderConfig(method) {
       delete config.headers[method];
     }
   );
 
-  var adapter = config.adapter || defaults$2.adapter;
+  var adapter = config.adapter || defaults_1.adapter;
 
   return adapter(config).then(function onAdapterResolution(response) {
     throwIfCancellationRequested(config);
 
     // Transform response data
-    response.data = transformData$3(
+    response.data = transformData(
       response.data,
       response.headers,
       config.transformResponse
@@ -65388,12 +64473,12 @@ var dispatchRequest = function dispatchRequest(config) {
 
     return response;
   }, function onAdapterRejection(reason) {
-    if (!isCancel$3(reason)) {
+    if (!isCancel(reason)) {
       throwIfCancellationRequested(config);
 
       // Transform response data
       if (reason && reason.response) {
-        reason.response.data = transformData$3(
+        reason.response.data = transformData(
           reason.response.data,
           reason.response.headers,
           config.transformResponse
@@ -65404,17 +64489,6 @@ var dispatchRequest = function dispatchRequest(config) {
     return Promise.reject(reason);
   });
 };
-
-
-
-var dispatchRequest$2 = Object.freeze({
-	default: dispatchRequest,
-	__moduleExports: dispatchRequest
-});
-
-var InterceptorManager$2 = ( InterceptorManager$1 && InterceptorManager_1 ) || InterceptorManager$1;
-
-var dispatchRequest$3 = ( dispatchRequest$2 && dispatchRequest ) || dispatchRequest$2;
 
 'use strict';
 
@@ -65431,8 +64505,8 @@ var dispatchRequest$3 = ( dispatchRequest$2 && dispatchRequest ) || dispatchRequ
 function Axios(instanceConfig) {
   this.defaults = instanceConfig;
   this.interceptors = {
-    request: new InterceptorManager$2(),
-    response: new InterceptorManager$2()
+    request: new InterceptorManager_1(),
+    response: new InterceptorManager_1()
   };
 }
 
@@ -65445,16 +64519,16 @@ Axios.prototype.request = function request(config) {
   /*eslint no-param-reassign:0*/
   // Allow for axios('example/url'[, config]) a la fetch API
   if (typeof config === 'string') {
-    config = utils$3.merge({
+    config = utils.merge({
       url: arguments[0]
     }, arguments[1]);
   }
 
-  config = utils$3.merge(defaults$2, {method: 'get'}, this.defaults, config);
+  config = utils.merge(defaults_1, {method: 'get'}, this.defaults, config);
   config.method = config.method.toLowerCase();
 
   // Hook up interceptors middleware
-  var chain = [dispatchRequest$3, undefined];
+  var chain = [dispatchRequest, undefined];
   var promise = Promise.resolve(config);
 
   this.interceptors.request.forEach(function unshiftRequestInterceptors(interceptor) {
@@ -65473,20 +64547,20 @@ Axios.prototype.request = function request(config) {
 };
 
 // Provide aliases for supported request methods
-utils$3.forEach(['delete', 'get', 'head', 'options'], function forEachMethodNoData(method) {
+utils.forEach(['delete', 'get', 'head', 'options'], function forEachMethodNoData(method) {
   /*eslint func-names:0*/
   Axios.prototype[method] = function(url, config) {
-    return this.request(utils$3.merge(config || {}, {
+    return this.request(utils.merge(config || {}, {
       method: method,
       url: url
     }));
   };
 });
 
-utils$3.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
+utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
   /*eslint func-names:0*/
   Axios.prototype[method] = function(url, data, config) {
-    return this.request(utils$3.merge(config || {}, {
+    return this.request(utils.merge(config || {}, {
       method: method,
       url: url,
       data: data
@@ -65495,13 +64569,6 @@ utils$3.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method)
 });
 
 var Axios_1 = Axios;
-
-
-
-var Axios$1 = Object.freeze({
-	default: Axios_1,
-	__moduleExports: Axios_1
-});
 
 'use strict';
 
@@ -65522,15 +64589,6 @@ Cancel.prototype.toString = function toString() {
 Cancel.prototype.__CANCEL__ = true;
 
 var Cancel_1 = Cancel;
-
-
-
-var Cancel$1 = Object.freeze({
-	default: Cancel_1,
-	__moduleExports: Cancel_1
-});
-
-var Cancel$2 = ( Cancel$1 && Cancel_1 ) || Cancel$1;
 
 'use strict';
 
@@ -65559,7 +64617,7 @@ function CancelToken(executor) {
       return;
     }
 
-    token.reason = new Cancel$2(message);
+    token.reason = new Cancel_1(message);
     resolvePromise(token.reason);
   });
 }
@@ -65590,13 +64648,6 @@ CancelToken.source = function source() {
 
 var CancelToken_1 = CancelToken;
 
-
-
-var CancelToken$1 = Object.freeze({
-	default: CancelToken_1,
-	__moduleExports: CancelToken_1
-});
-
 'use strict';
 
 /**
@@ -65625,19 +64676,6 @@ var spread = function spread(callback) {
   };
 };
 
-
-
-var spread$2 = Object.freeze({
-	default: spread,
-	__moduleExports: spread
-});
-
-var Axios$2 = ( Axios$1 && Axios_1 ) || Axios$1;
-
-var require$$1$15 = ( CancelToken$1 && CancelToken_1 ) || CancelToken$1;
-
-var require$$3$1 = ( spread$2 && spread ) || spread$2;
-
 'use strict';
 
 
@@ -65652,39 +64690,39 @@ var require$$3$1 = ( spread$2 && spread ) || spread$2;
  * @return {Axios} A new instance of Axios
  */
 function createInstance(defaultConfig) {
-  var context = new Axios$2(defaultConfig);
-  var instance = bind$4(Axios$2.prototype.request, context);
+  var context = new Axios_1(defaultConfig);
+  var instance = bind$1(Axios_1.prototype.request, context);
 
   // Copy axios.prototype to instance
-  utils$3.extend(instance, Axios$2.prototype, context);
+  utils.extend(instance, Axios_1.prototype, context);
 
   // Copy context to instance
-  utils$3.extend(instance, context);
+  utils.extend(instance, context);
 
   return instance;
 }
 
 // Create the default instance to be exported
-var axios$2 = createInstance(defaults$2);
+var axios$2 = createInstance(defaults_1);
 
 // Expose Axios class to allow class inheritance
-axios$2.Axios = Axios$2;
+axios$2.Axios = Axios_1;
 
 // Factory for creating new instances
 axios$2.create = function create(instanceConfig) {
-  return createInstance(utils$3.merge(defaults$2, instanceConfig));
+  return createInstance(utils.merge(defaults_1, instanceConfig));
 };
 
 // Expose Cancel & CancelToken
-axios$2.Cancel = Cancel$2;
-axios$2.CancelToken = require$$1$15;
-axios$2.isCancel = isCancel$3;
+axios$2.Cancel = Cancel_1;
+axios$2.CancelToken = CancelToken_1;
+axios$2.isCancel = isCancel;
 
 // Expose all/spread
 axios$2.all = function all(promises) {
   return Promise.all(promises);
 };
-axios$2.spread = require$$3$1;
+axios$2.spread = spread;
 
 var axios_1 = axios$2;
 
@@ -65693,14 +64731,7 @@ var default_1 = axios$2;
 
 axios_1.default = default_1;
 
-var axios$3 = Object.freeze({
-	default: axios_1,
-	__moduleExports: axios_1
-});
-
-var require$$0$35 = ( axios$3 && axios_1 ) || axios$3;
-
-var axios = require$$0$35;
+var axios = axios_1;
 
 var __assign = (undefined && undefined.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -65740,7 +64771,6 @@ var Client = function (opts) {
         projectFiles: function (projectId) { return client.get("projects/" + projectId + "/files"); }
     };
 };
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi9zcmMvaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7QUFFQSxjQUFjLGNBQWMsQ0FBQztBQUM3QixPQUFPLEtBQXVCLE1BQU0sT0FBTyxDQUFDO0FBa0g1QyxNQUFNLENBQUMsSUFBTSxNQUFNLEdBQUcsVUFBQyxJQUFtQjtJQUN4QyxJQUFNLE9BQU8sR0FBRyxJQUFJLENBQUMsV0FBVztRQUM5QixDQUFDLENBQUM7WUFDRSxhQUFhLEVBQUUsWUFBVSxJQUFJLENBQUMsV0FBYTtTQUM1QztRQUNILENBQUMsQ0FBQztZQUNFLGVBQWUsRUFBRSxJQUFJLENBQUMsbUJBQW1CO1NBQzFDLENBQUM7SUFFTixJQUFNLE1BQU0sR0FBRyxLQUFLLENBQUMsTUFBTSxDQUFDO1FBQzFCLE9BQU8sRUFBRSxjQUFXLElBQUksQ0FBQyxPQUFPLElBQUksZUFBZSxVQUFNO1FBQ3pELE9BQU8sU0FBQTtLQUNSLENBQUMsQ0FBQztJQUVILE1BQU0sQ0FBQztRQUNMLElBQUksRUFBRSxVQUFDLE1BQU0sRUFBRSxNQUFXO1lBQVgsdUJBQUEsRUFBQSxXQUFXO1lBQUssT0FBQSxNQUFNLENBQUMsR0FBRyxDQUFDLFdBQVMsTUFBUSxFQUFFLEVBQUUsTUFBTSxRQUFBLEVBQUUsQ0FBQztRQUF6QyxDQUF5QztRQUV4RSxVQUFVLEVBQUUsVUFBQyxNQUFNLEVBQUUsTUFBTTtZQUN6QixPQUFBLE1BQU0sQ0FBQyxHQUFHLENBQUMsWUFBVSxNQUFRLEVBQUU7Z0JBQzdCLE1BQU0sZUFDRCxNQUFNLElBQ1QsR0FBRyxFQUFFLE1BQU0sQ0FBQyxHQUFHLENBQUMsSUFBSSxDQUFDLEdBQUcsQ0FBQyxHQUMxQjthQUNGLENBQUM7UUFMRixDQUtFO1FBRUosUUFBUSxFQUFFLFVBQUEsTUFBTSxJQUFJLE9BQUEsTUFBTSxDQUFDLEdBQUcsQ0FBQyxXQUFTLE1BQU0sY0FBVyxDQUFDLEVBQXRDLENBQXNDO1FBRTFELFdBQVcsRUFBRSxVQUFDLE1BQU0sRUFBRSxNQUFNO1lBQzFCLE9BQUEsTUFBTSxDQUFDLElBQUksQ0FBQyxXQUFTLE1BQU0sY0FBVyxFQUFFLE1BQU0sQ0FBQztRQUEvQyxDQUErQztRQUVqRCxZQUFZLEVBQUUsVUFBQSxNQUFNLElBQUksT0FBQSxNQUFNLENBQUMsR0FBRyxDQUFDLFdBQVMsTUFBTSxjQUFXLENBQUMsRUFBdEMsQ0FBc0M7UUFFOUQsWUFBWSxFQUFFLFVBQUEsU0FBUyxJQUFJLE9BQUEsTUFBTSxDQUFDLEdBQUcsQ0FBQyxjQUFZLFNBQVMsV0FBUSxDQUFDLEVBQXpDLENBQXlDO0tBQ3JFLENBQUM7QUFDSixDQUFDLENBQUMifQ==
 
 var TOKEN = '1952-9da74b1b-551c-4acf-83b4-23b31743ab51';
 var client = Client({
@@ -65938,7 +64968,7 @@ function (_Component) {
     key: "render",
     value: function render() {
       return react.createElement("div", null, react.createElement(PaperCollateralRenderer, {
-        wallet: wallet4.value,
+        wallet: wallet5,
         className: '',
         callback: function callback(data) {
           return console.log('App Scope: ', data);

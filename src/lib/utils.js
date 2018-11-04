@@ -134,6 +134,7 @@ const shim = kg_wallet => {
       },
     }
   });
+  console.log(reshaped)
   return reshaped;
 };
 
@@ -143,23 +144,16 @@ const mapInsert = (c, t) => map(values(t.renderables), r => insert(flatten(c), r
 
 const insert = (fc, r) => {
   const { type, text, data } = r;
-
   if (type === 'TEXT') {
     // if this is a template variable, replace the @key with actual data
     if (match(text, PAT)) return {...r, text: retrieve(fc, replace(text, PAT, '')) };
     return r;
   };
-
   if (type === 'ADDR_COMPACT') return {...r, text: retrieve(fc, replace(text, PAT, '')) };
-
   if (type === 'ADDR_LONG') return {...r, text: retrieve(fc, replace(text, PAT, '')) };
-
   if (type === 'PATQ') return {...r, text: retrieve(fc, replace(text, PAT, '')) };
-
   if (type === 'SIGIL') return {...r, img: retrieve(fc, replace(data, PAT, '')) };
-
   if (type === 'QR') return {...r, img: retrieve(fc, replace(data, PAT, '')) };
-
   throw new Error(`insert() cannot find a renderables for type: ${type}`);
 };
 
@@ -167,31 +161,34 @@ const insert = (fc, r) => {
 
 const assignBin = (classOf, pageType) => {
   if (classOf === 'galaxy') {
-    if (pageType === 'masterTicket') return '1'
-    if (pageType === 'masterTicketShard') return '1'
-    if (pageType === 'spawn') return '1'
-    if (pageType === 'voting') return '1'
-    if (pageType === 'managment') return '1'
-    if (pageType === 'transfer') return '1'
-  }
+    if (pageType === 'masterTicket') return '1';
+    if (pageType === 'masterTicketShard') return '1';
+    if (pageType === 'spawn') return '2';
+    if (pageType === 'voting') return '3';
+    if (pageType === 'managment') return '3';
+    if (pageType === 'transfer') return '1';
+    if (pageType === 'public') return '0';
+    if (pageType === 'manifest') return '0';
+  };
 
   if (classOf === 'star') {
-    if (pageType === 'masterTicket') return '1'
-    if (pageType === 'masterTicketShard') return '1'
-    if (pageType === 'spawn') return '1'
-    if (pageType === 'voting') return '1'
-    if (pageType === 'managment') return '1'
-    if (pageType === 'transfer') return '1'
-  }
+    if (pageType === 'masterTicket') return '2';
+    if (pageType === 'masterTicketShard') return '2';
+    if (pageType === 'spawn') return '3';
+    if (pageType === 'managment') return '3';
+    if (pageType === 'transfer') return '2';
+    if (pageType === 'public') return '0';
+    if (pageType === 'manifest') return '0';
+  };
 
   if (classOf === 'planet') {
-    if (pageType === 'masterTicket') return '1'
-    if (pageType === 'masterTicketShard') return '1'
-    if (pageType === 'spawn') return '1'
-    if (pageType === 'voting') return '1'
-    if (pageType === 'managment') return '1'
-    if (pageType === 'transfer') return '1'
-  }
+    if (pageType === 'masterTicket') return '3';
+    if (pageType === 'masterTicketShard') return '3';
+    if (pageType === 'managment') return '4';
+    if (pageType === 'transfer') return '3';
+    if (pageType === 'public') return '0';
+    if (pageType === 'manifest') return '0';
+  };
 };
 
 

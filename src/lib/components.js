@@ -53,8 +53,8 @@ const MasterTicketComponent = async (wallet, constants, templates) => {
       },
     },
     copy: {
-      custody: retrieve(constants, `custody.${[wallet.ship.class]}.${[KEY]}`),
-      usage: retrieve(constants, `usage.${[wallet.ship.class]}.${[KEY]}`),
+      // custody: retrieve(constants, `custody.${[wallet.ship.class]}.${[KEY]}`),
+      // usage: retrieve(constants, `usage.${[wallet.ship.class]}.${[KEY]}`),
     },
     meta: {
       createdOn: dateToDa(new Date()),
@@ -150,9 +150,10 @@ const AddressManifestComponent = async (wallets, constants, templates) => {
         ...mapInsert({...props, pageAofB: `Page ${pageIndex + 1} of ${pageCount}`}, TEMP_X),
         ...listItemsWithData,
       ],
-      bin: 'public',
+      bin: '0',
       collateralType: 'ownership_address_manifest',
       ship: 'all',
+      page: pageIndex + 2,
     }
   });
 
@@ -162,9 +163,10 @@ const AddressManifestComponent = async (wallets, constants, templates) => {
           ...mapInsert({...props, pageAofB: `Page 1 of ${pageCount}`}, TEMP_1),
           ...firstPageRenderableListItems,
         ],
-        bin: 'public',
+        bin: '0',
         collateralType: 'ownership_address_manifest',
         ship: 'all',
+        page: 1,
       },
       ...subsequentPages
 
@@ -190,11 +192,6 @@ const MasterTicketShardsComponent = async (wallet, constants, templates) => {
         size: getTicketSize('masterTicketShard', retrieve(wallet, 'ship.class')),
       },
       ownership: {
-        seed: {
-          mnemonic: shard,
-          size: SEEDSIZE,
-          derivationPath: BIP32_DERIVATION_PATH,
-        },
         ethereum: {
           address: retrieve(wallet, 'ownership.keys.address'),
           qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'ownership.keys.address')),
@@ -229,6 +226,142 @@ const MasterTicketShardsComponent = async (wallet, constants, templates) => {
 };
 
 
+const SpawnSeedComponent = async (wallet, constants, templates) => {
+  const KEY = 'spawn';
+  const TEMPLATE = `SPAWN:${toUpperCase(retrieve(wallet, 'ship.class'))}`
+
+  const props = {
+    heading: 'Spawn Seed',
+    patp: retrieve(wallet, 'ship.patp'),
+    sigil: await loadSigil(AT_LOAD_SIGIL_SIZE, retrieve(wallet, 'ship.patp')),
+    spawn: {
+      seed: {
+        mnemonic: retrieve(wallet, 'spawn.seed'),
+        size: SEEDSIZE,
+        derivationPath: BIP32_DERIVATION_PATH,
+      },
+      // ethereum: {
+      //   address: retrieve(wallet, 'spawn.keys.address'),
+      //   qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'spawn.keys.address')),
+      // },
+    },
+    copy: {
+      // custody: retrieve(constants, `custody.${[wallet.ship.class]}.${[KEY]}`),
+      // usage: retrieve(constants, `usage.${[wallet.ship.class]}.${[KEY]}`),
+    },
+    meta: {
+      createdOn: dateToDa(new Date()),
+      walletVersion: constants.meta.walletVersion,
+      moreInformation: constants.meta.moreInformation,
+    },
+    _classOf: retrieve(wallet, 'ship.class'),
+    _type: KEY,
+    _bin: assignBin(retrieve(wallet, 'ship.class'), KEY)
+  };
+
+  const page = [{
+    renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
+    bin: assignBin(props._classOf, props._type),
+    collateralType: props._type,
+    ship: props.patp,
+  }];
+
+  return page;
+};
+
+
+
+const VotingSeedComponent = async (wallet, constants, templates) => {
+  const KEY = 'voting';
+  const TEMPLATE = `VOTING:${toUpperCase(retrieve(wallet, 'ship.class'))}`
+
+  const props = {
+    heading: 'Voting Seed',
+    patp: retrieve(wallet, 'ship.patp'),
+    sigil: await loadSigil(AT_LOAD_SIGIL_SIZE, retrieve(wallet, 'ship.patp')),
+    voting: {
+      seed: {
+        mnemonic: retrieve(wallet, 'voting.seed'),
+        size: SEEDSIZE,
+        derivationPath: BIP32_DERIVATION_PATH,
+      },
+      // ethereum: {
+      //   address: retrieve(wallet, 'spawn.keys.address'),
+      //   qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'spawn.keys.address')),
+      // },
+    },
+    copy: {
+      // custody: retrieve(constants, `custody.${[wallet.ship.class]}.${[KEY]}`),
+      // usage: retrieve(constants, `usage.${[wallet.ship.class]}.${[KEY]}`),
+    },
+    meta: {
+      createdOn: dateToDa(new Date()),
+      walletVersion: constants.meta.walletVersion,
+      moreInformation: constants.meta.moreInformation,
+    },
+    _classOf: retrieve(wallet, 'ship.class'),
+    _type: KEY,
+    _bin: assignBin(retrieve(wallet, 'ship.class'), KEY)
+  };
+
+  const page = [{
+    renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
+    bin: assignBin(props._classOf, props._type),
+    collateralType: props._type,
+    ship: props.patp,
+  }];
+
+  return page;
+};
+
+
+
+const ManagementSeedComponent = async (wallet, constants, templates) => {
+  const KEY = 'management';
+  const TEMPLATE = `MANAGEMENT:${toUpperCase(retrieve(wallet, 'ship.class'))}`
+
+  const props = {
+    heading: 'Management Seed',
+    patp: retrieve(wallet, 'ship.patp'),
+    sigil: await loadSigil(AT_LOAD_SIGIL_SIZE, retrieve(wallet, 'ship.patp')),
+    management: {
+      seed: {
+        mnemonic: retrieve(wallet, 'management.seed'),
+        size: SEEDSIZE,
+        derivationPath: BIP32_DERIVATION_PATH,
+      },
+      // ethereum: {
+      //   address: retrieve(wallet, 'spawn.keys.address'),
+      //   qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'spawn.keys.address')),
+      // },
+    },
+    copy: {
+      // custody: retrieve(constants, `custody.${[wallet.ship.class]}.${[KEY]}`),
+      // usage: retrieve(constants, `usage.${[wallet.ship.class]}.${[KEY]}`),
+    },
+    meta: {
+      createdOn: dateToDa(new Date()),
+      walletVersion: constants.meta.walletVersion,
+      moreInformation: constants.meta.moreInformation,
+    },
+    _classOf: retrieve(wallet, 'ship.class'),
+    _type: KEY,
+    _bin: assignBin(retrieve(wallet, 'ship.class'), KEY)
+  };
+
+  const page = [{
+    renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
+    bin: assignBin(props._classOf, props._type),
+    collateralType: props._type,
+    ship: props.patp,
+  }];
+
+  return page;
+};
+
+
+
+
 
 
 
@@ -237,5 +370,7 @@ export {
   MasterTicketComponent,
   MasterTicketShardsComponent,
   AddressManifestComponent,
-  // SeedComponent,
+  SpawnSeedComponent,
+  VotingSeedComponent,
+  ManagementSeedComponent,
 }
