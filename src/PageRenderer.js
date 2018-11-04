@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOMServer from 'react-dom/server';
-import { map, filter, forEach } from 'lodash';
+import { map, filter, forEach, get } from 'lodash';
 
 import {
   initCanvas,
@@ -59,6 +59,7 @@ class PageRenderer extends Component {
       ship: page.ship,
       collateralType: page.collateralType,
       bin: page.bin,
+      page: get(page, 'page', '1'),
       png: dataURItoBlob(this.canvas.toDataURL("image/png")),
     };
 
