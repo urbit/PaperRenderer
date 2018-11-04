@@ -52,10 +52,6 @@ const MasterTicketComponent = async (wallet, constants, templates) => {
         qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'ownership.keys.address')),
       },
     },
-    copy: {
-      // custody: retrieve(constants, `custody.${[wallet.ship.class]}.${[KEY]}`),
-      // usage: retrieve(constants, `usage.${[wallet.ship.class]}.${[KEY]}`),
-    },
     meta: {
       createdOn: dateToDa(new Date()),
       walletVersion: constants.meta.walletVersion,
@@ -70,6 +66,7 @@ const MasterTicketComponent = async (wallet, constants, templates) => {
     renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
     bin: assignBin(props._classOf, props._type),
     collateralType: props._type,
+    pageTitle: `${props.patp} Master Ticket`,
     ship: props.patp,
   }];
 
@@ -153,6 +150,7 @@ const AddressManifestComponent = async (wallets, constants, templates) => {
       bin: '0',
       collateralType: 'ownership_address_manifest',
       ship: 'all',
+      pageTitle: `Ownership Address Manifest page ${pageIndex + 2} of ${pageCount}`,
       page: pageIndex + 2,
     }
   });
@@ -166,6 +164,7 @@ const AddressManifestComponent = async (wallets, constants, templates) => {
         bin: '0',
         collateralType: 'ownership_address_manifest',
         ship: 'all',
+        pageTitle: `Ownership Address Manifest page 1 of ${pageCount}`,
         page: 1,
       },
       ...subsequentPages
@@ -215,6 +214,7 @@ const MasterTicketShardsComponent = async (wallet, constants, templates) => {
       renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
       bin: assignBin(props._classOf, props._type),
       collateralType: props._type,
+      pageTitle: `${props.patp} Master Ticket Shard ${index + 1} of ${wallet.shards.length}`,
       ship: props.patp,
     };
 
@@ -240,14 +240,6 @@ const SpawnSeedComponent = async (wallet, constants, templates) => {
         size: SEEDSIZE,
         derivationPath: BIP32_DERIVATION_PATH,
       },
-      // ethereum: {
-      //   address: retrieve(wallet, 'spawn.keys.address'),
-      //   qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'spawn.keys.address')),
-      // },
-    },
-    copy: {
-      // custody: retrieve(constants, `custody.${[wallet.ship.class]}.${[KEY]}`),
-      // usage: retrieve(constants, `usage.${[wallet.ship.class]}.${[KEY]}`),
     },
     meta: {
       createdOn: dateToDa(new Date()),
@@ -264,6 +256,7 @@ const SpawnSeedComponent = async (wallet, constants, templates) => {
     bin: assignBin(props._classOf, props._type),
     collateralType: props._type,
     ship: props.patp,
+    pageTitle: `${props.patp} Spawn Seed`,
   }];
 
   return page;
@@ -285,14 +278,6 @@ const VotingSeedComponent = async (wallet, constants, templates) => {
         size: SEEDSIZE,
         derivationPath: BIP32_DERIVATION_PATH,
       },
-      // ethereum: {
-      //   address: retrieve(wallet, 'spawn.keys.address'),
-      //   qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'spawn.keys.address')),
-      // },
-    },
-    copy: {
-      // custody: retrieve(constants, `custody.${[wallet.ship.class]}.${[KEY]}`),
-      // usage: retrieve(constants, `usage.${[wallet.ship.class]}.${[KEY]}`),
     },
     meta: {
       createdOn: dateToDa(new Date()),
@@ -309,6 +294,7 @@ const VotingSeedComponent = async (wallet, constants, templates) => {
     bin: assignBin(props._classOf, props._type),
     collateralType: props._type,
     ship: props.patp,
+    pageTitle: `${props.patp} Voting Seed`,
   }];
 
   return page;
@@ -330,14 +316,6 @@ const ManagementSeedComponent = async (wallet, constants, templates) => {
         size: SEEDSIZE,
         derivationPath: BIP32_DERIVATION_PATH,
       },
-      // ethereum: {
-      //   address: retrieve(wallet, 'spawn.keys.address'),
-      //   qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'spawn.keys.address')),
-      // },
-    },
-    copy: {
-      // custody: retrieve(constants, `custody.${[wallet.ship.class]}.${[KEY]}`),
-      // usage: retrieve(constants, `usage.${[wallet.ship.class]}.${[KEY]}`),
     },
     meta: {
       createdOn: dateToDa(new Date()),
@@ -354,6 +332,7 @@ const ManagementSeedComponent = async (wallet, constants, templates) => {
     bin: assignBin(props._classOf, props._type),
     collateralType: props._type,
     ship: props.patp,
+    pageTitle: `${props.patp} Management Seed`,
   }];
 
   return page;

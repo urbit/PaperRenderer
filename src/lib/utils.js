@@ -134,7 +134,6 @@ const shim = kg_wallet => {
       },
     }
   });
-  console.log(reshaped)
   return reshaped;
 };
 
@@ -165,7 +164,7 @@ const assignBin = (classOf, pageType) => {
     if (pageType === 'masterTicketShard') return '1';
     if (pageType === 'spawn') return '2';
     if (pageType === 'voting') return '3';
-    if (pageType === 'managment') return '3';
+    if (pageType === 'management') return '3';
     if (pageType === 'transfer') return '1';
     if (pageType === 'public') return '0';
     if (pageType === 'manifest') return '0';
@@ -175,7 +174,7 @@ const assignBin = (classOf, pageType) => {
     if (pageType === 'masterTicket') return '2';
     if (pageType === 'masterTicketShard') return '2';
     if (pageType === 'spawn') return '3';
-    if (pageType === 'managment') return '3';
+    if (pageType === 'management') return '3';
     if (pageType === 'transfer') return '2';
     if (pageType === 'public') return '0';
     if (pageType === 'manifest') return '0';
@@ -184,7 +183,7 @@ const assignBin = (classOf, pageType) => {
   if (classOf === 'planet') {
     if (pageType === 'masterTicket') return '3';
     if (pageType === 'masterTicketShard') return '3';
-    if (pageType === 'managment') return '4';
+    if (pageType === 'management') return '4';
     if (pageType === 'transfer') return '3';
     if (pageType === 'public') return '0';
     if (pageType === 'manifest') return '0';
