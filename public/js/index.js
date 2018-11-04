@@ -49278,7 +49278,6 @@ var shim$2 = function shim(kg_wallet) {
       }
     });
   });
-  console.log(reshaped);
   return reshaped;
 };
 
@@ -49326,7 +49325,7 @@ var assignBin = function assignBin(classOf, pageType) {
     if (pageType === 'masterTicketShard') return '1';
     if (pageType === 'spawn') return '2';
     if (pageType === 'voting') return '3';
-    if (pageType === 'managment') return '3';
+    if (pageType === 'management') return '3';
     if (pageType === 'transfer') return '1';
     if (pageType === 'public') return '0';
     if (pageType === 'manifest') return '0';
@@ -49338,7 +49337,7 @@ var assignBin = function assignBin(classOf, pageType) {
     if (pageType === 'masterTicket') return '2';
     if (pageType === 'masterTicketShard') return '2';
     if (pageType === 'spawn') return '3';
-    if (pageType === 'managment') return '3';
+    if (pageType === 'management') return '3';
     if (pageType === 'transfer') return '2';
     if (pageType === 'public') return '0';
     if (pageType === 'manifest') return '0';
@@ -49349,7 +49348,7 @@ var assignBin = function assignBin(classOf, pageType) {
   if (classOf === 'planet') {
     if (pageType === 'masterTicket') return '3';
     if (pageType === 'masterTicketShard') return '3';
-    if (pageType === 'managment') return '4';
+    if (pageType === 'management') return '4';
     if (pageType === 'transfer') return '3';
     if (pageType === 'public') return '0';
     if (pageType === 'manifest') return '0';
@@ -49529,6 +49528,7 @@ function (_Component) {
         collateralType: page.collateralType,
         bin: page.bin,
         page: lodash_3(page, 'page', '1'),
+        pageTitle: page.pageTitle,
         png: dataURItoBlob(_this.canvas.toDataURL("image/png"))
       };
 
@@ -62626,38 +62626,35 @@ function () {
               seed: _context.t3,
               ethereum: _context.t6
             };
-            _context.t8 = {// custody: retrieve(constants, `custody.${[wallet.ship.class]}.${[KEY]}`),
-              // usage: retrieve(constants, `usage.${[wallet.ship.class]}.${[KEY]}`),
-            };
-            _context.t9 = {
+            _context.t8 = {
               createdOn: dateToDa(new Date()),
               walletVersion: constants.meta.walletVersion,
               moreInformation: constants.meta.moreInformation
             };
-            _context.t10 = retrieve(wallet, 'ship.class');
-            _context.t11 = KEY;
-            _context.t12 = assignBin(retrieve(wallet, 'ship.class'), KEY);
+            _context.t9 = retrieve(wallet, 'ship.class');
+            _context.t10 = KEY;
+            _context.t11 = assignBin(retrieve(wallet, 'ship.class'), KEY);
             props = {
               heading: 'Master Ticket',
               patp: _context.t0,
               sigil: _context.t1,
               ticket: _context.t2,
               ownership: _context.t7,
-              copy: _context.t8,
-              meta: _context.t9,
-              _classOf: _context.t10,
-              _type: _context.t11,
-              _bin: _context.t12
+              meta: _context.t8,
+              _classOf: _context.t9,
+              _type: _context.t10,
+              _bin: _context.t11
             };
             page = [{
               renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
               bin: assignBin(props._classOf, props._type),
               collateralType: props._type,
+              pageTitle: "".concat(props.patp, " Master Ticket"),
               ship: props.patp
             }];
             return _context.abrupt("return", page);
 
-          case 22:
+          case 21:
           case "end":
             return _context.stop();
         }
@@ -62772,6 +62769,7 @@ function () {
                   bin: '0',
                   collateralType: 'ownership_address_manifest',
                   ship: 'all',
+                  pageTitle: "Ownership Address Manifest page ".concat(pageIndex + 2, " of ").concat(pageCount),
                   page: pageIndex + 2
                 };
               });
@@ -62782,6 +62780,7 @@ function () {
                 bin: '0',
                 collateralType: 'ownership_address_manifest',
                 ship: 'all',
+                pageTitle: "Ownership Address Manifest page 1 of ".concat(pageCount),
                 page: 1
               }].concat(_toConsumableArray(subsequentPages));
               return pages;
@@ -62873,6 +62872,7 @@ function () {
                           renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
                           bin: assignBin(props._classOf, props._type),
                           collateralType: props._type,
+                          pageTitle: "".concat(props.patp, " Master Ticket Shard ").concat(index + 1, " of ").concat(wallet.shards.length),
                           ship: props.patp
                         };
                         return _context4.abrupt("return", page);
@@ -62933,43 +62933,36 @@ function () {
                 mnemonic: retrieve(wallet, 'spawn.seed'),
                 size: SEEDSIZE,
                 derivationPath: BIP32_DERIVATION_PATH
-              } // ethereum: {
-              //   address: retrieve(wallet, 'spawn.keys.address'),
-              //   qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'spawn.keys.address')),
-              // },
-
+              }
             };
-            _context6.t3 = {// custody: retrieve(constants, `custody.${[wallet.ship.class]}.${[KEY]}`),
-              // usage: retrieve(constants, `usage.${[wallet.ship.class]}.${[KEY]}`),
-            };
-            _context6.t4 = {
+            _context6.t3 = {
               createdOn: dateToDa(new Date()),
               walletVersion: constants.meta.walletVersion,
               moreInformation: constants.meta.moreInformation
             };
-            _context6.t5 = retrieve(wallet, 'ship.class');
-            _context6.t6 = KEY;
-            _context6.t7 = assignBin(retrieve(wallet, 'ship.class'), KEY);
+            _context6.t4 = retrieve(wallet, 'ship.class');
+            _context6.t5 = KEY;
+            _context6.t6 = assignBin(retrieve(wallet, 'ship.class'), KEY);
             props = {
               heading: 'Spawn Seed',
               patp: _context6.t0,
               sigil: _context6.t1,
               spawn: _context6.t2,
-              copy: _context6.t3,
-              meta: _context6.t4,
-              _classOf: _context6.t5,
-              _type: _context6.t6,
-              _bin: _context6.t7
+              meta: _context6.t3,
+              _classOf: _context6.t4,
+              _type: _context6.t5,
+              _bin: _context6.t6
             };
             page = [{
               renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
               bin: assignBin(props._classOf, props._type),
               collateralType: props._type,
-              ship: props.patp
+              ship: props.patp,
+              pageTitle: "".concat(props.patp, " Spawn Seed")
             }];
             return _context6.abrupt("return", page);
 
-          case 15:
+          case 14:
           case "end":
             return _context6.stop();
         }
@@ -63006,43 +62999,36 @@ function () {
                 mnemonic: retrieve(wallet, 'voting.seed'),
                 size: SEEDSIZE,
                 derivationPath: BIP32_DERIVATION_PATH
-              } // ethereum: {
-              //   address: retrieve(wallet, 'spawn.keys.address'),
-              //   qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'spawn.keys.address')),
-              // },
-
+              }
             };
-            _context7.t3 = {// custody: retrieve(constants, `custody.${[wallet.ship.class]}.${[KEY]}`),
-              // usage: retrieve(constants, `usage.${[wallet.ship.class]}.${[KEY]}`),
-            };
-            _context7.t4 = {
+            _context7.t3 = {
               createdOn: dateToDa(new Date()),
               walletVersion: constants.meta.walletVersion,
               moreInformation: constants.meta.moreInformation
             };
-            _context7.t5 = retrieve(wallet, 'ship.class');
-            _context7.t6 = KEY;
-            _context7.t7 = assignBin(retrieve(wallet, 'ship.class'), KEY);
+            _context7.t4 = retrieve(wallet, 'ship.class');
+            _context7.t5 = KEY;
+            _context7.t6 = assignBin(retrieve(wallet, 'ship.class'), KEY);
             props = {
               heading: 'Voting Seed',
               patp: _context7.t0,
               sigil: _context7.t1,
               voting: _context7.t2,
-              copy: _context7.t3,
-              meta: _context7.t4,
-              _classOf: _context7.t5,
-              _type: _context7.t6,
-              _bin: _context7.t7
+              meta: _context7.t3,
+              _classOf: _context7.t4,
+              _type: _context7.t5,
+              _bin: _context7.t6
             };
             page = [{
               renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
               bin: assignBin(props._classOf, props._type),
               collateralType: props._type,
-              ship: props.patp
+              ship: props.patp,
+              pageTitle: "".concat(props.patp, " Voting Seed")
             }];
             return _context7.abrupt("return", page);
 
-          case 15:
+          case 14:
           case "end":
             return _context7.stop();
         }
@@ -63079,43 +63065,36 @@ function () {
                 mnemonic: retrieve(wallet, 'management.seed'),
                 size: SEEDSIZE,
                 derivationPath: BIP32_DERIVATION_PATH
-              } // ethereum: {
-              //   address: retrieve(wallet, 'spawn.keys.address'),
-              //   qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'spawn.keys.address')),
-              // },
-
+              }
             };
-            _context8.t3 = {// custody: retrieve(constants, `custody.${[wallet.ship.class]}.${[KEY]}`),
-              // usage: retrieve(constants, `usage.${[wallet.ship.class]}.${[KEY]}`),
-            };
-            _context8.t4 = {
+            _context8.t3 = {
               createdOn: dateToDa(new Date()),
               walletVersion: constants.meta.walletVersion,
               moreInformation: constants.meta.moreInformation
             };
-            _context8.t5 = retrieve(wallet, 'ship.class');
-            _context8.t6 = KEY;
-            _context8.t7 = assignBin(retrieve(wallet, 'ship.class'), KEY);
+            _context8.t4 = retrieve(wallet, 'ship.class');
+            _context8.t5 = KEY;
+            _context8.t6 = assignBin(retrieve(wallet, 'ship.class'), KEY);
             props = {
               heading: 'Management Seed',
               patp: _context8.t0,
               sigil: _context8.t1,
               management: _context8.t2,
-              copy: _context8.t3,
-              meta: _context8.t4,
-              _classOf: _context8.t5,
-              _type: _context8.t6,
-              _bin: _context8.t7
+              meta: _context8.t3,
+              _classOf: _context8.t4,
+              _type: _context8.t5,
+              _bin: _context8.t6
             };
             page = [{
               renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
               bin: assignBin(props._classOf, props._type),
               collateralType: props._type,
-              ship: props.patp
+              ship: props.patp,
+              pageTitle: "".concat(props.patp, " Management Seed")
             }];
             return _context8.abrupt("return", page);
 
-          case 15:
+          case 14:
           case "end":
             return _context8.stop();
         }

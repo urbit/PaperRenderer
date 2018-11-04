@@ -60,6 +60,7 @@ class PageRenderer extends Component {
       collateralType: page.collateralType,
       bin: page.bin,
       page: get(page, 'page', '1'),
+      pageTitle: page.pageTitle,
       png: dataURItoBlob(this.canvas.toDataURL("image/png")),
     };
 
