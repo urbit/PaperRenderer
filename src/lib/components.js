@@ -1,6 +1,5 @@
-import ob from 'urbit-ob';
 import flatten from 'flat';
-import { map, get, isUndefined, reduce, chunk } from 'lodash';
+import { isUndefined, chunk } from 'lodash';
 
 import {
   values,
@@ -22,7 +21,7 @@ import { loadQR, loadSigil } from './load';
 
 
 const SEEDSIZE = '128 Bits';
-const BIP32_DERIVATION_PATH = `/m/44’/60’/0’/0`;
+const BIP32_DERIVATION_PATH = `/m/44'/60'/0'/0/0`;
 const AT_LOAD_QR_SIZE = 100;
 const AT_LOAD_SIGIL_SIZE = 100;
 const PAT = /(\@)/g;
@@ -86,7 +85,7 @@ const AddressManifestComponent = async (wallets, constants, templates) => {
     },
   };
 
-  const listItems = map(wallets, async wallet => {
+  const listItems = wallets.map(async wallet => {
     return {
       patp: retrieve(wallet, 'ship.patp'),
       ownership: {
@@ -118,8 +117,8 @@ const AddressManifestComponent = async (wallets, constants, templates) => {
     const PX_LIST_START_Y = 160;
     const PX_LIST_START_X = 48;
 
-    const firstPageRenderableListItems = reduce(firstListItemData, (acc, props, listItemIndex) => {
-      const moved = map(mapInsert(props, LI_COMPONENT), _r => {
+    const firstPageRenderableListItems = firstListItemData.reduce((acc, props, listItemIndex) => {
+      const moved = mapInsert(props, LI_COMPONENT).map(_r => {
         const r = {..._r}
         r.x = _r.x + P1_LIST_START_X;
         r.y = _r.y + P1_LIST_START_Y + (LI_COMPONENT_HEIGHT * listItemIndex);
@@ -130,10 +129,10 @@ const AddressManifestComponent = async (wallets, constants, templates) => {
 
     const listItemsBySubsequentPage = chunk(subsequentListItemData, LI_TOTAL_X)
 
-    const subsequentPages = map(listItemsBySubsequentPage, (page, pageIndex) => {
+    const subsequentPages = listItemsBySubsequentPage.map((page, pageIndex) => {
 
-      const listItemsWithData = reduce(page, (acc, props, listItemIndex) => {
-        const moved = map(mapInsert(props, LI_COMPONENT), _r => {
+      const listItemsWithData = page.reduce((acc, props, listItemIndex) => {
+        const moved = mapInsert(props, LI_COMPONENT).map(_r => {
           const r = {..._r}
           r.x = _r.x + PX_LIST_START_X;
           r.y = _r.y + PX_LIST_START_Y + (LI_COMPONENT_HEIGHT * listItemIndex);
@@ -179,7 +178,7 @@ const AddressManifestComponent = async (wallets, constants, templates) => {
 
 
 const MasterTicketShardsComponent = async (wallet, constants, templates) => {
-  const pages = await map(wallet.shards, async (shard, index) => {
+  const pages = await wallet.shards.map(async (shard, index) => {
     const KEY = `masterTicketShard_${index + 1}`;
     const TEMPLATE = `MASTER_TICKET_SHARD:${toUpperCase(retrieve(wallet, 'ship.class'))}`;
     const props = {
@@ -187,6 +186,7 @@ const MasterTicketShardsComponent = async (wallet, constants, templates) => {
       patp: retrieve(wallet, 'ship.patp'),
       sigil: await loadSigil(AT_LOAD_SIGIL_SIZE, retrieve(wallet, 'ship.patp')),
       shard: {
+        number: `${index + 1} of ${wallet.shards.length}`,
         data: shard,
         size: getTicketSize('masterTicketShard', retrieve(wallet, 'ship.class')),
       },
@@ -337,12 +337,6 @@ const ManagementSeedComponent = async (wallet, constants, templates) => {
 
   return page;
 };
-
-
-
-
-
-
 
 
 export {

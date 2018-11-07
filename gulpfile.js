@@ -52,7 +52,7 @@ gulp.task('bundle-js', function(cb) {
       }),
       babel({
         ignore: ['src/vendor/**', 'node_modules/**'],
-        // plugins: ['babel-plugin-lodash']
+        plugins: ['babel-plugin-lodash']
       }),
       commonjs({
         namedExports: {
@@ -94,6 +94,10 @@ gulp.task('bundle-js', function(cb) {
             'isObject',
             'isRegExp',
             'isInteger',
+          ],
+          'node_modules/urbit-ob/dist/index.js': [
+            'tierOfadd',
+            'patp'
           ]
         }
       }),
@@ -110,7 +114,7 @@ gulp.task('bundle-js', function(cb) {
       builtins(),
 
       // sourcemaps(),
-      // uglify(),
+      uglify(),
     ]
   }).on('bundle', function(bundle) {
     if (!cache) {
@@ -204,6 +208,10 @@ gulp.task('bundle-component', function(cb) {
           'isObject',
           'isRegExp',
           'isInteger',
+        ],
+        'node_modules/urbit-ob/dist/index.js': [
+          'tierOfadd',
+          'patp'
         ]
       }
     }),

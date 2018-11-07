@@ -1,26 +1,26 @@
 {
   "name": "PaperCollateralRenderer",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "private": true,
   "main": "dist/PaperCollateralRenderer.js",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "figma-js": "^1.5.1",
     "flat": "^4.1.0",
     "lodash": "^4.17.10",
     "qr-image": "^3.2.0",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "sigil-js": "github:urbit/sigil-js.git",
-    "urbit-ob": "^1.4.2"
+    "sigil-js": "github:urbit/sigil-js",
+    "urbit-ob": "^1.4.4"
   },
   "devDependencies": {
+    "figma-js": "^1.5.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
     "@babel/core": "^7.0.0-beta.34",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/plugin-transform-react-jsx": "^7.0.0-beta.34",
     "@babel/preset-env": "^7.0.0-beta.34",
     "babel-plugin-lodash": "^3.3.4",
-    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp": "4.0",
     "gulp-babel": "^7.0.0",
     "gulp-copy": "^1.1.0",
     "gulp-cssfont64": "0.0.1",
@@ -46,7 +46,7 @@
   },
   "scripts": {
     "start": "gulp watch",
-    "build": "gulp",
-    "build.component": "gulp bundle-component"
+    "build:dev": "gulp",
+    "build:component": "gulp bundle-component"
   }
 }

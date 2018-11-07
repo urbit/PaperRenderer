@@ -1,5 +1,5 @@
-import { map, get, isUndefined } from 'lodash';
-import ob from 'urbit-ob';
+import { get, isUndefined } from 'lodash';
+import {tierOfadd, patp} from 'urbit-ob';
 import flatten from 'flat'
 import { values, match, replace } from './reset';
 
@@ -113,8 +113,8 @@ const retrieve = (obj, path) => {
 
 
 const getTicketSize = (seedName, classOf) => {
-  if (seedName === 'masterTicket' && classOf === 'galaxy') return '384 Bits'
-  if (seedName === 'masterTicketShard' && classOf === 'galaxy') return '128 Bits'
+  // if (seedName === 'masterTicket' && classOf === 'galaxy') return '384 Bits'
+  if (seedName === 'masterTicketShard' && classOf === 'galaxy') return '256 Bits'
   if (seedName === 'masterTicket' && classOf === 'planet') return '64 Bits'
   return '128 Bits'
 }
@@ -124,11 +124,11 @@ const getTicketSize = (seedName, classOf) => {
 // transform the wallet from keygen-js into a shape more easily iterable
 const shim = kg_wallet => {
   const reshaped = Object.entries(kg_wallet).map(([shipAddr, shipWallet]) => {
-    const shipClass = ob.tierOfadd(parseInt(shipAddr));
+    const shipClass = tierOfadd(parseInt(shipAddr));
     return {
       ...shipWallet,
       ship: {
-        patp: `~${ob.add2patp(parseInt(shipAddr))}`,
+        patp: patp(parseInt(shipAddr)),
         addr: shipAddr,
         class: shipClass,
       },
@@ -139,7 +139,7 @@ const shim = kg_wallet => {
 
 
 
-const mapInsert = (c, t) => map(values(t.renderables), r => insert(flatten(c), r));
+const mapInsert = (c, t) => values(t.renderables).map(r => insert(flatten(c), r));
 
 const insert = (fc, r) => {
   const { type, text, data } = r;
