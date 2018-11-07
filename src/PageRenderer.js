@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import ReactDOMServer from 'react-dom/server';
-import { map, filter, forEach, get } from 'lodash';
+import { get } from 'lodash';
 
 import {
   initCanvas,
@@ -30,7 +29,7 @@ class PageRenderer extends Component {
 
 
   componentDidMount = () => {
-    this.canvas = initCanvas(this.pcr_ref, { x: 612, y: 792 }, 10);
+    this.canvas = initCanvas(this.pcr_ref, { x: 612, y: 792 }, 5);
     this.drawLayout(this.props.page);
   };
 
@@ -46,7 +45,7 @@ class PageRenderer extends Component {
 
     ctx.fillStyle="#000";
 
-    forEach(page.renderables, r => {
+    page.renderables.forEach(r => {
       if (r.type === 'QR') return drawQR({ ctx, ...r });
       if (r.type === 'PATQ') return drawPatQ({ ctx, ...r });
       if (r.type === 'ADDR_LONG') return drawEthereumAddressLong({ ctx, ...r });

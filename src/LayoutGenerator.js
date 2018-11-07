@@ -37,7 +37,7 @@ class LayoutGenerator extends Component {
   componentDidMount = () => {
     figma.pull('a4u6jBsdTgiXcrDGW61q5ngY', res => {
 
-      const KEY = 'Layouts-rc-0.1'
+      const KEY = 'Registration-1.0'
       const page = filter(res.document.children, page => page.name === KEY)[0]
 
       const layouts = reduce(page.children, (acc, lo) => {
@@ -70,11 +70,13 @@ class LayoutGenerator extends Component {
               };
 
               if (child.type === 'TEXT') {
+                console.log(child.style)
                 return {
                   type: 'TEXT',
-                  fontPostScriptName: child.style.fontPostScriptName,
+                  fontFamily: child.style.fontFamily,
                   fontSize: child.style.fontSize,
                   text: child.characters,
+                  fontWeight: child.style.fontWeight,
                   maxWidth: child.absoluteBoundingBox.width,
                   lineHeightPx: child.style.lineHeightPx,
                   x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
@@ -85,8 +87,9 @@ class LayoutGenerator extends Component {
               if (child.type === 'PATQ') {
                 return {
                   type: 'PATQ',
-                  fontPostScriptName: child.style.fontPostScriptName,
+                  fontFamily: child.style.fontFamily,
                   fontSize: child.style.fontSize,
+                  fontWeight: child.style.fontWeight,
                   text: child.characters.split(':')[1],
                   maxWidth: child.absoluteBoundingBox.width,
                   lineHeightPx: child.style.lineHeightPx,
@@ -98,7 +101,8 @@ class LayoutGenerator extends Component {
               if (child.type === 'ADDR_LONG') {
                 return {
                   type: 'ADDR_LONG',
-                  fontPostScriptName: child.style.fontPostScriptName,
+                  fontWeight: child.style.fontWeight,
+                  fontFamily: child.style.fontFamily,
                   fontSize: child.style.fontSize,
                   text: child.characters.split(':')[1],
                   maxWidth: child.absoluteBoundingBox.width,
@@ -111,7 +115,8 @@ class LayoutGenerator extends Component {
               if (child.type === 'ADDR_COMPACT') {
                 return {
                   type: 'ADDR_COMPACT',
-                  fontPostScriptName: child.style.fontPostScriptName,
+                  fontWeight: child.style.fontWeight,
+                  fontFamily: child.style.fontFamily,
                   fontSize: child.style.fontSize,
                   text: child.characters.split(':')[1],
                   maxWidth: child.absoluteBoundingBox.width,
@@ -127,7 +132,7 @@ class LayoutGenerator extends Component {
         }
       }, {});
 
-      console.log(JSON.stringify(layouts));
+      console.log(JSON.stringify(layouts, null, 2));
     })
   }
 

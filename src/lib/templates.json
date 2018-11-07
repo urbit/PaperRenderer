@@ -1,1 +1,3087 @@
-{"MASTER_TICKET_SHARD:GALAXY":{"key":"MASTER_TICKET_SHARD:GALAXY","absoluteBoundingBox":{"x":23010,"y":-2333,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":36},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Securely store this document.","maxWidth":126,"lineHeightPx":10.546875,"x":316,"y":225},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"This master ticket or ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network without your permission.","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":243},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"If you lose a child seed, you can recover it from your master ticket or ownership seed.\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":288},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":324},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"For information on storing cryptographic material securely, see: \n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":360},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/using/identity#custody","maxWidth":223,"lineHeightPx":13.7109375,"x":337,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":207},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":513},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":414},{"type":"PATQ","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@shard.data","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":360},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Master Ticket","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":342},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Address","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":549},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":657},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":639},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":315},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":297},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":702},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":603},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":684},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":585},{"type":"SIGIL","size":72,"name":">sigil:@sigil","data":"@sigil","x":48,"y":207},{"type":"QR","size":48.000099182128906,"name":">qr:@ownership.ethereum.qr","data":"@ownership.ethereum.qr","x":48,"y":567},{"type":"ADDR_COMPACT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.ethereum.address","maxWidth":190,"lineHeightPx":10.546875,"x":106,"y":567},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/bridge","maxWidth":114,"lineHeightPx":13.7109375,"x":396,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Download Bridge: ","maxWidth":84,"lineHeightPx":13.7109375,"x":316,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Use the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":459}]},"ESCAPE":{"key":"ESCAPE","absoluteBoundingBox":{"x":21428,"y":1121,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"SourceCodePro-Bold","fontSize":10,"text":"@patp","maxWidth":257,"lineHeightPx":12.890625,"x":177,"y":337},{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":22,"text":"@heading","maxWidth":258,"lineHeightPx":32,"x":177,"y":372},{"type":"SIGIL","size":258,"name":">sigil:@patp","data":"@patp","x":177,"y":79},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"This is the most critical part of the HD Wallet to store securely. This ticket can authenticate any wallet action or rekey an entire wallet from scratch.\n\n","maxWidth":258,"lineHeightPx":11.6015625,"x":177,"y":516},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Store cold in a paper or hardware wallet away from other seeds.\n\n","maxWidth":258,"lineHeightPx":11.6015625,"x":177,"y":480},{"type":"TEXT","fontPostScriptName":"SFProText-Bold","fontSize":9,"text":"Do not share.\nThis is the most important part of your wallet.","maxWidth":258,"lineHeightPx":16,"x":177,"y":444},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":10,"text":"@ticket","maxWidth":258,"lineHeightPx":14.0625,"x":177,"y":408},{"type":"TEXT","fontPostScriptName":"WorkSans-Medium","fontSize":10,"text":"Ethereum Ownership Address ","maxWidth":258,"lineHeightPx":12.890625,"x":177,"y":564},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@walletVersion","maxWidth":117.1551742553711,"lineHeightPx":11.6015625,"x":263,"y":624},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Wallet Version: ","maxWidth":86,"lineHeightPx":11.6015625,"x":177,"y":624},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@seedInfo","maxWidth":173,"lineHeightPx":11.6015625,"x":263,"y":600},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Seed Info: ","maxWidth":86,"lineHeightPx":11.6015625,"x":177,"y":600},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@createdOn","maxWidth":149.26437377929688,"lineHeightPx":11.6015625,"x":263,"y":648},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Date Created: ","maxWidth":86,"lineHeightPx":11.6015625,"x":177,"y":648},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@moreInformation","maxWidth":151,"lineHeightPx":11.6015625,"x":263,"y":672},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Information: ","maxWidth":86,"lineHeightPx":11.6015625,"x":177,"y":672},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownershipAddress","maxWidth":258,"lineHeightPx":11.6015625,"x":177,"y":576}]},"MASTER_TICKET:GALAXY":{"key":"MASTER_TICKET:GALAXY","absoluteBoundingBox":{"x":23695,"y":-2333,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"PATQ","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.data","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":360},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Master Ticket","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":342},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Address","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":531},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":639},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":621},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Seed BIP39 Mnemonic","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":414},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":315},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":297},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":684},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":666},{"type":"SIGIL","size":72,"name":">sigil:@sigil","data":"@sigil","x":48,"y":207},{"type":"QR","size":48.000099182128906,"name":">qr:@ownership.ethereum.qr","data":"@ownership.ethereum.qr","x":48,"y":553},{"type":"ADDR_COMPACT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.ethereum.address","maxWidth":190,"lineHeightPx":10.546875,"x":106,"y":549},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":432},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.size","maxWidth":222.93544006347656,"lineHeightPx":10.546875,"x":70,"y":486},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":25,"lineHeightPx":11.6015625,"x":48,"y":486},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.size","maxWidth":222.93544006347656,"lineHeightPx":10.546875,"x":70,"y":387},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":25,"lineHeightPx":11.6015625,"x":48,"y":387},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":504},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":504},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Securely store this document.","maxWidth":126,"lineHeightPx":10.546875,"x":316,"y":225},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"This master ticket or ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network without your permission.","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":243},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"If you lose a child seed, you can recover it from your master ticket or ownership seed.\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":288},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":324},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"For information on storing cryptographic material securely, see: \n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":360},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/using/identity#custody","maxWidth":223,"lineHeightPx":13.7109375,"x":337,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":207},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":513},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":414},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":603},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":585},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/bridge","maxWidth":114,"lineHeightPx":13.7109375,"x":396,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Download Bridge: ","maxWidth":84,"lineHeightPx":13.7109375,"x":316,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Use the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":459}]},"VOTING:GALAXY":{"key":"VOTING:GALAXY","absoluteBoundingBox":{"x":24347,"y":-2333,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@voting.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":370},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Spawn Seed BIP39 Mnemonic","maxWidth":141,"lineHeightPx":12.890625,"x":48,"y":350},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":670},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":720},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":650},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":700},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@voting.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":441},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":441},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@voting.seed.size","maxWidth":224.8125,"lineHeightPx":11.6015625,"x":71.18659973144531,"y":423},{"type":"TEXT","fontPostScriptName":null,"fontSize":9,"text":"Size: ","maxWidth":23.02734375,"lineHeightPx":11.6015625,"x":48,"y":423},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":320},{"type":"TEXT","fontPostScriptName":null,"fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":300},{"type":"SIGIL","size":70,"name":">sigil:@sigil","data":"@sigil","x":48,"y":210},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Securely store this document.","maxWidth":126,"lineHeightPx":10.546875,"x":316,"y":225},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"This master ticket or ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network without your permission.","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":243},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"If you lose a child seed, you can recover it from your master ticket or ownership seed.\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":288},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":324},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"For information on storing cryptographic material securely, see: \n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":360},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/using/identity#custody","maxWidth":223,"lineHeightPx":13.7109375,"x":337,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":207},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":513},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":414},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":603},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":585},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/bridge","maxWidth":114,"lineHeightPx":13.7109375,"x":396,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Download Bridge: ","maxWidth":84,"lineHeightPx":13.7109375,"x":316,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Use the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":459}]},"MANAGEMENT:GALAXY":{"key":"MANAGEMENT:GALAXY","absoluteBoundingBox":{"x":24999,"y":-2333,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Securely store this document.","maxWidth":126,"lineHeightPx":10.546875,"x":316,"y":225},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"This master ticket or ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network without your permission.","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":243},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"If you lose a child seed, you can recover it from your master ticket or ownership seed.\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":288},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":324},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"For information on storing cryptographic material securely, see: \n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":360},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/using/identity#custody","maxWidth":223,"lineHeightPx":13.7109375,"x":337,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":207},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":513},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":414},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":603},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":585},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/bridge","maxWidth":114,"lineHeightPx":13.7109375,"x":396,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Download Bridge: ","maxWidth":84,"lineHeightPx":13.7109375,"x":316,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Use the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":459},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@management.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Spawn Seed BIP39 Mnemonic","maxWidth":141,"lineHeightPx":12.890625,"x":48,"y":350},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":670},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":720},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":650},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":700},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@management.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":441},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":441},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@management.seed.size","maxWidth":224.8125,"lineHeightPx":11.6015625,"x":71.18659973144531,"y":423},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":23.02734375,"lineHeightPx":11.6015625,"x":48,"y":423},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":320},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":300},{"type":"SIGIL","size":70,"name":">sigil:@sigil","data":"@sigil","x":48,"y":210}]},"MANAGEMENT:STAR":{"key":"MANAGEMENT:STAR","absoluteBoundingBox":{"x":24999,"y":-1441,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Securely store this document.","maxWidth":126,"lineHeightPx":10.546875,"x":316,"y":225},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"This master ticket or ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network without your permission.","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":243},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"If you lose a child seed, you can recover it from your master ticket or ownership seed.\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":288},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":324},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"For information on storing cryptographic material securely, see: \n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":360},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/using/identity#custody","maxWidth":223,"lineHeightPx":13.7109375,"x":337,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":207},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":513},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":414},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":603},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":585},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/bridge","maxWidth":114,"lineHeightPx":13.7109375,"x":396,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Download Bridge: ","maxWidth":84,"lineHeightPx":13.7109375,"x":316,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Use the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":459},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@management.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Spawn Seed BIP39 Mnemonic","maxWidth":141,"lineHeightPx":12.890625,"x":48,"y":350},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":670},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":720},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":650},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":700},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@management.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":441},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":441},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@management.seed.size","maxWidth":224.8125,"lineHeightPx":11.6015625,"x":71.18659973144531,"y":423},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":23.02734375,"lineHeightPx":11.6015625,"x":48,"y":423},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":320},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":300},{"type":"SIGIL","size":70,"name":">sigil:@sigil","data":"@sigil","x":48,"y":210}]},"MANAGEMENT:PLANET":{"key":"MANAGEMENT:PLANET","absoluteBoundingBox":{"x":24999,"y":-549,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Securely store this document.","maxWidth":126,"lineHeightPx":10.546875,"x":316,"y":225},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"This master ticket or ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network without your permission.","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":243},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"If you lose a child seed, you can recover it from your master ticket or ownership seed.\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":288},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":324},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"For information on storing cryptographic material securely, see: \n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":360},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/using/identity#custody","maxWidth":223,"lineHeightPx":13.7109375,"x":337,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":207},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":513},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":414},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":603},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":585},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/bridge","maxWidth":114,"lineHeightPx":13.7109375,"x":396,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Download Bridge: ","maxWidth":84,"lineHeightPx":13.7109375,"x":316,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Use the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":459},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@management.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Spawn Seed BIP39 Mnemonic","maxWidth":141,"lineHeightPx":12.890625,"x":48,"y":350},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":670},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":720},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":650},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":700},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@management.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":441},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":441},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@management.seed.size","maxWidth":224.8125,"lineHeightPx":11.6015625,"x":71.18659973144531,"y":423},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":23.02734375,"lineHeightPx":11.6015625,"x":48,"y":423},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":320},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":300},{"type":"SIGIL","size":70,"name":">sigil:@sigil","data":"@sigil","x":48,"y":210}]},"SPAWN:GALAXY":{"key":"SPAWN:GALAXY","absoluteBoundingBox":{"x":25651,"y":-2333,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Securely store this document.","maxWidth":126,"lineHeightPx":10.546875,"x":316,"y":225},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"This master ticket or ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network without your permission.","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":243},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"If you lose a child seed, you can recover it from your master ticket or ownership seed.\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":288},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":324},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"For information on storing cryptographic material securely, see: \n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":360},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/using/identity#custody","maxWidth":223,"lineHeightPx":13.7109375,"x":337,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":207},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":513},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":414},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":603},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":585},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/bridge","maxWidth":114,"lineHeightPx":13.7109375,"x":396,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Download Bridge: ","maxWidth":84,"lineHeightPx":13.7109375,"x":316,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Use the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":459},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@spawn.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Spawn Seed BIP39 Mnemonic","maxWidth":141,"lineHeightPx":12.890625,"x":48,"y":350},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":670},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":720},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":650},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":700},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@spawn.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":441},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":441},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@spawn.seed.size","maxWidth":224.8125,"lineHeightPx":11.6015625,"x":71.18659973144531,"y":423},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":23.02734375,"lineHeightPx":11.6015625,"x":48,"y":423},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":320},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":300},{"type":"SIGIL","size":70,"name":">sigil:@sigil","data":"@sigil","x":48,"y":210}]},"SPAWN:STAR":{"key":"SPAWN:STAR","absoluteBoundingBox":{"x":25651,"y":-1441,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Securely store this document.","maxWidth":126,"lineHeightPx":10.546875,"x":316,"y":225},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"This master ticket or ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network without your permission.","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":243},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"If you lose a child seed, you can recover it from your master ticket or ownership seed.\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":288},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":324},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"For information on storing cryptographic material securely, see: \n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":360},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/using/identity#custody","maxWidth":223,"lineHeightPx":13.7109375,"x":337,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":207},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":513},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":414},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":603},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":585},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/bridge","maxWidth":114,"lineHeightPx":13.7109375,"x":396,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Download Bridge: ","maxWidth":84,"lineHeightPx":13.7109375,"x":316,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Use the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":459},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@spawn.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Spawn Seed BIP39 Mnemonic","maxWidth":141,"lineHeightPx":12.890625,"x":48,"y":350},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":670},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":720},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":650},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":700},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@spawn.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":441},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":441},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@spawn.seed.size","maxWidth":224.8125,"lineHeightPx":11.6015625,"x":71.18659973144531,"y":423},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":23.02734375,"lineHeightPx":11.6015625,"x":48,"y":423},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":320},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":300},{"type":"SIGIL","size":70,"name":">sigil:@sigil","data":"@sigil","x":48,"y":210}]},"MASTER_TICKET:STAR":{"key":"MASTER_TICKET:STAR","absoluteBoundingBox":{"x":23695,"y":-1441,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"PATQ","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.data","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":360},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Master Ticket","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":342},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Address","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":531},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":639},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":621},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Seed BIP39 Mnemonic","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":414},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":315},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":297},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":684},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":666},{"type":"SIGIL","size":72,"name":">sigil:@sigil","data":"@sigil","x":48,"y":207},{"type":"QR","size":48.000099182128906,"name":">qr:@ownership.ethereum.qr","data":"@ownership.ethereum.qr","x":48,"y":553},{"type":"ADDR_COMPACT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.ethereum.address","maxWidth":190,"lineHeightPx":10.546875,"x":106,"y":549},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":432},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.size","maxWidth":222.93544006347656,"lineHeightPx":10.546875,"x":70,"y":486},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":25,"lineHeightPx":11.6015625,"x":48,"y":486},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.size","maxWidth":222.93544006347656,"lineHeightPx":10.546875,"x":70,"y":387},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":25,"lineHeightPx":11.6015625,"x":48,"y":387},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":504},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":504},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Securely store this document.","maxWidth":126,"lineHeightPx":10.546875,"x":316,"y":225},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"This master ticket or ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network without your permission.","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":243},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"If you lose a child seed, you can recover it from your master ticket or ownership seed.\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":288},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":324},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"For information on storing cryptographic material securely, see: \n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":360},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/using/identity#custody","maxWidth":223,"lineHeightPx":13.7109375,"x":337,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":207},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":513},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":414},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":603},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":585},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/bridge","maxWidth":114,"lineHeightPx":13.7109375,"x":396,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Download Bridge: ","maxWidth":84,"lineHeightPx":13.7109375,"x":316,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Use the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":459}]},"MASTER_TICKET:PLANET":{"key":"MASTER_TICKET:PLANET","absoluteBoundingBox":{"x":23695,"y":-549,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"@heading","maxWidth":248,"lineHeightPx":37.5,"x":48,"y":40},{"type":"PATQ","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.data","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":360},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Master Ticket","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":342},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Address","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":531},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":172,"lineHeightPx":11.6015625,"x":48,"y":639},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Created On","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":621},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ownership Seed BIP39 Mnemonic","maxWidth":248,"lineHeightPx":11.71875,"x":48,"y":414},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@patp","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":315},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Ship","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":297},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":158,"lineHeightPx":11.6015625,"x":48,"y":684},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Wallet Version","maxWidth":248,"lineHeightPx":12.890625,"x":48,"y":666},{"type":"SIGIL","size":72,"name":">sigil:@sigil","data":"@sigil","x":48,"y":207},{"type":"QR","size":48.000099182128906,"name":">qr:@ownership.ethereum.qr","data":"@ownership.ethereum.qr","x":48,"y":553},{"type":"ADDR_COMPACT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.ethereum.address","maxWidth":190,"lineHeightPx":10.546875,"x":106,"y":549},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.mnemonic","maxWidth":248,"lineHeightPx":10.546875,"x":48,"y":432},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.size","maxWidth":222.93544006347656,"lineHeightPx":10.546875,"x":70,"y":486},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":25,"lineHeightPx":11.6015625,"x":48,"y":486},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ticket.size","maxWidth":222.93544006347656,"lineHeightPx":10.546875,"x":70,"y":387},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Size: ","maxWidth":25,"lineHeightPx":11.6015625,"x":48,"y":387},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@ownership.seed.derivationPath","maxWidth":170.73727416992188,"lineHeightPx":11.6015625,"x":124,"y":504},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Derivation Path: ","maxWidth":248,"lineHeightPx":11.6015625,"x":48,"y":504},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Securely store this document.","maxWidth":126,"lineHeightPx":10.546875,"x":316,"y":225},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"This master ticket or ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network without your permission.","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":243},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"If you lose a child seed, you can recover it from your master ticket or ownership seed.\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":288},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The ownership seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":324},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"For information on storing cryptographic material securely, see: \n\n","maxWidth":246,"lineHeightPx":10.546875,"x":316,"y":360},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/using/identity#custody","maxWidth":223,"lineHeightPx":13.7109375,"x":337,"y":370},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Custody Recommendations","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":207},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"The Master Ticket and Ownership seed can be used to recover Transfer Proxy, Spawn, Delegate, and Management Seeds. ","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":513},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"Usage","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":414},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":159,"lineHeightPx":11.6015625,"x":316,"y":603},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"More Information","maxWidth":248,"lineHeightPx":12.890625,"x":316,"y":585},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"urbit.org/docs/bridge","maxWidth":114,"lineHeightPx":13.7109375,"x":396,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Download Bridge: ","maxWidth":84,"lineHeightPx":13.7109375,"x":316,"y":432},{"type":"TEXT","fontPostScriptName":"SFProText-Light","fontSize":9,"text":"Use the master ticket or ownership seed to Boot, Transfer, Escape to a new sponsor, Set up transfer and management proxies, Re-key, and Recover child seeds.","maxWidth":248,"lineHeightPx":13.7109375,"x":316,"y":459}]},"ADDRESS_MANIFEST:FIRST":{"key":"ADDRESS_MANIFEST:FIRST","absoluteBoundingBox":{"x":21441,"y":-2333,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"Ownership Address Manifest","maxWidth":364,"lineHeightPx":37.5,"x":48,"y":36},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"It is ok to store in a trusted environment but be aware that possession of this document will reveal how much address space you own to whoever sees it.\n\nYou can check any spawn, management, delegate or transfer address with this address.","maxWidth":258,"lineHeightPx":11.6015625,"x":48,"y":144},{"type":"TEXT","fontPostScriptName":"SFProText-Bold","fontSize":9,"text":"This is public information.","maxWidth":172,"lineHeightPx":16,"x":48,"y":120},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"@pageAofB","maxWidth":86,"lineHeightPx":12.890625,"x":48,"y":24},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.walletVersion","maxWidth":117.1551742553711,"lineHeightPx":11.6015625,"x":157,"y":228},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Wallet Version: ","maxWidth":86,"lineHeightPx":11.6015625,"x":48,"y":228},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.createdOn","maxWidth":149.26437377929688,"lineHeightPx":11.6015625,"x":157,"y":252},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Date Created: ","maxWidth":86,"lineHeightPx":11.6015625,"x":48,"y":252},{"type":"TEXT","fontPostScriptName":"SourceCodePro-Regular","fontSize":9,"text":"@meta.moreInformation","maxWidth":149,"lineHeightPx":11.6015625,"x":157,"y":276},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":9,"text":"Information: ","maxWidth":86,"lineHeightPx":11.6015625,"x":48,"y":276}]},"ADDRESS_MANIFEST:OVERFLOW":{"key":"ADDRESS_MANIFEST:OVERFLOW","absoluteBoundingBox":{"x":22073,"y":-2333,"width":612,"height":792},"renderables":[{"type":"TEXT","fontPostScriptName":"WorkSans-SemiBold","fontSize":32,"text":"Ownership Address Manifest","maxWidth":364,"lineHeightPx":37.5,"x":48,"y":36},{"type":"TEXT","fontPostScriptName":"SFProText-Regular","fontSize":10,"text":"@pageAofB","maxWidth":86,"lineHeightPx":12.890625,"x":48,"y":24},{"type":"TEXT","fontPostScriptName":"SFProText-Bold","fontSize":9,"text":"This is public information.","maxWidth":172,"lineHeightPx":16,"x":48,"y":120}]},"COMPONENT:ADDRESS_LIST_ITEM":{"key":"COMPONENT:ADDRESS_LIST_ITEM","absoluteBoundingBox":{"x":21106,"y":-2333,"width":322,"height":322},"renderables":[{"type":"TEXT","fontPostScriptName":"SourceCodePro-Bold","fontSize":16,"text":"@patp","maxWidth":215,"lineHeightPx":24,"x":0,"y":0},{"type":"QR","size":36.00005340576172,"name":">qr:@ownership.ethereum.qr","data":"@ownership.ethereum.qr","x":0,"y":60},{"type":"ADDR_LONG","fontPostScriptName":"SourceCodePro-Regular","fontSize":12,"text":"@ownership.ethereum.address","maxWidth":190,"lineHeightPx":15.46875,"x":43,"y":60},{"type":"TEXT","fontPostScriptName":"SFProText-Medium","fontSize":10,"text":"Ownership Address","maxWidth":129,"lineHeightPx":11.953125,"x":0,"y":36}]}}
+{
+  "MASTER_TICKET_SHARD:GALAXY": {
+    "key": "MASTER_TICKET_SHARD:GALAXY",
+    "absoluteBoundingBox": {
+      "x": 23010,
+      "y": -2333,
+      "width": 612,
+      "height": 792
+    },
+    "renderables": [
+      {
+        "type": "TEXT",
+        "fontFamily": "Work Sans",
+        "fontSize": 32,
+        "text": "@heading",
+        "fontWeight": 600,
+        "maxWidth": 248,
+        "lineHeightPx": 37.5,
+        "x": 48,
+        "y": 36
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Securely store this document.",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 10.546875,
+        "x": 316,
+        "y": 234
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "A complete master ticket could be used to transfer ownership or impersonate your Galaxy on the Urbit network without your permission.\n",
+        "fontWeight": 300,
+        "maxWidth": 246,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 252
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "You can lose a single shard, but if you lose two shards, or your master ticket, there is no way to recover it and you will no longer be able to control your Galaxy.\n\n",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 306
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Custody Recommendations",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 316,
+        "y": 207
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "The master ticket and ownership seed can be used to recover transfer, spawn, delegate, and management proxies.",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 513
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Usage",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 316,
+        "y": 360
+      },
+      {
+        "type": "PATQ",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "fontWeight": 400,
+        "text": "@shard.data",
+        "maxWidth": 248,
+        "lineHeightPx": 10.546875,
+        "x": 48,
+        "y": 360
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Master Ticket Shard",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 11.71875,
+        "x": 48,
+        "y": 342
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@patp",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 315
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Ship",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 297
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.moreInformation",
+        "fontWeight": 400,
+        "maxWidth": 159,
+        "lineHeightPx": 11.6015625,
+        "x": 316,
+        "y": 594
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "More Information",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 316,
+        "y": 576
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Ownership Address",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 468
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.createdOn",
+        "fontWeight": 400,
+        "maxWidth": 172,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 576
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Created On",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 558
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.walletVersion",
+        "fontWeight": 400,
+        "maxWidth": 158,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 621
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Wallet Version",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 603
+      },
+      {
+        "type": "QR",
+        "size": 44.99997329711914,
+        "name": ">qr:@ownership.ethereum.qr",
+        "data": "@ownership.ethereum.qr",
+        "x": 48,
+        "y": 486
+      },
+      {
+        "type": "ADDR_COMPACT",
+        "fontWeight": 400,
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@ownership.ethereum.address",
+        "maxWidth": 190,
+        "lineHeightPx": 10.546875,
+        "x": 106,
+        "y": 486
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "urbit.org/docs/bridge",
+        "fontWeight": 400,
+        "maxWidth": 114,
+        "lineHeightPx": 13.7109375,
+        "x": 396,
+        "y": 386
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Download Bridge: ",
+        "fontWeight": 300,
+        "maxWidth": 84,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 387
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Combine this master ticket shard with another shard to produce a master ticket or ownership seed, which can be used to activate, transfer, escape to a new sponsor, set up transfer and management proxies, set an operator, set network keys, set DNS domains, spawn stars, and recover child seeds.",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 414
+      },
+      {
+        "type": "SIGIL",
+        "size": 81,
+        "name": ">sigil:@sigil",
+        "data": "@sigil",
+        "x": 48,
+        "y": 207
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@shard.number",
+        "fontWeight": 400,
+        "maxWidth": 225,
+        "lineHeightPx": 11.6015625,
+        "x": 117,
+        "y": 423
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Shard Number: ",
+        "fontWeight": 400,
+        "maxWidth": 81,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 423
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@shard.size",
+        "fontWeight": 400,
+        "maxWidth": 222.99420166015625,
+        "lineHeightPx": 10.546875,
+        "x": 70.00579833984375,
+        "y": 441.0000000000002
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Size: ",
+        "fontWeight": 400,
+        "maxWidth": 25.006589889526367,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 441
+      }
+    ]
+  },
+  "VOTING:GALAXY": {
+    "key": "VOTING:GALAXY",
+    "absoluteBoundingBox": {
+      "x": 24347,
+      "y": -2333,
+      "width": 612,
+      "height": 792
+    },
+    "renderables": [
+      {
+        "type": "TEXT",
+        "fontFamily": "Work Sans",
+        "fontSize": 32,
+        "text": "Voting Seed",
+        "fontWeight": 600,
+        "maxWidth": 248,
+        "lineHeightPx": 37.5,
+        "x": 48,
+        "y": 40
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@voting.seed.mnemonic",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 10.546875,
+        "x": 48,
+        "y": 360
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Voting Seed BIP39 Mnemonic",
+        "fontWeight": 500,
+        "maxWidth": 143,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 342
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.createdOn",
+        "fontWeight": 400,
+        "maxWidth": 172,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 495
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.walletVersion",
+        "fontWeight": 400,
+        "maxWidth": 158,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 540
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Created On",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 477
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Wallet Version",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 522
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@voting.seed.derivationPath",
+        "fontWeight": 400,
+        "maxWidth": 170.73727416992188,
+        "lineHeightPx": 11.6015625,
+        "x": 124,
+        "y": 441
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Derivation Path: ",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 441
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@voting.seed.size",
+        "fontWeight": 400,
+        "maxWidth": 224.8125,
+        "lineHeightPx": 11.6015625,
+        "x": 71.18659973144531,
+        "y": 423
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Size: ",
+        "fontWeight": 400,
+        "maxWidth": 23.02734375,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 423
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@patp",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 315
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Ship",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 297
+      },
+      {
+        "type": "SIGIL",
+        "size": 81,
+        "name": ">sigil:@sigil",
+        "data": "@sigil",
+        "x": 48,
+        "y": 207
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Securely store this document.",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 10.546875,
+        "x": 316,
+        "y": 234
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "This voting seed could be used to vote on behalf of your Galaxy without your permission.",
+        "fontWeight": 300,
+        "maxWidth": 246,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 261
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "If you lose your voting seed, you can recover it from your master ticket or ownership seed.\n",
+        "fontWeight": 300,
+        "maxWidth": 246,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 307
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "The voting seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n\n",
+        "fontWeight": 300,
+        "maxWidth": 246,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 351
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Custody Recommendations",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 316,
+        "y": 207
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Usage",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 316,
+        "y": 405
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.moreInformation",
+        "fontWeight": 400,
+        "maxWidth": 159,
+        "lineHeightPx": 11.6015625,
+        "x": 316,
+        "y": 541
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "More Information",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 316,
+        "y": 523
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "urbit.org/docs/bridge",
+        "fontWeight": 400,
+        "maxWidth": 114,
+        "lineHeightPx": 13.7109375,
+        "x": 396,
+        "y": 423
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Download Bridge: ",
+        "fontWeight": 300,
+        "maxWidth": 84,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 423
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Use the voting seed to vote on proposals. ",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 450
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@voting.seed.derivationPath",
+        "fontWeight": 400,
+        "maxWidth": 169,
+        "lineHeightPx": 11.6015625,
+        "x": 384,
+        "y": 491
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "To sign transactions, derive the private key using the BIP32 derivation path ",
+        "fontWeight": 300,
+        "maxWidth": 255,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 477
+      }
+    ]
+  },
+  "MANAGEMENT:GALAXY": {
+    "key": "MANAGEMENT:GALAXY",
+    "absoluteBoundingBox": {
+      "x": 24998,
+      "y": -2334,
+      "width": 612,
+      "height": 792
+    },
+    "renderables": [
+      {
+        "type": "TEXT",
+        "fontFamily": "Work Sans",
+        "fontSize": 32,
+        "text": "Management Seed",
+        "fontWeight": 600,
+        "maxWidth": 248,
+        "lineHeightPx": 37.5,
+        "x": 48,
+        "y": 40
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Securely store this document.",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 234
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "This management seed could be used to boot your Galaxy or impersonate your planet on the Urbit network without your permission.",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 261
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "If you lose your management seed, you can recover it from your master ticket or ownership seed.\n\n",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 315
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "The management seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n\n",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 360
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Custody Recommendations",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 316,
+        "y": 207
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Usage",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 316,
+        "y": 413
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.moreInformation",
+        "fontWeight": 400,
+        "maxWidth": 159,
+        "lineHeightPx": 11.6015625,
+        "x": 316,
+        "y": 585
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "More Information",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 316,
+        "y": 567
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "urbit.org/docs/bridge",
+        "fontWeight": 400,
+        "maxWidth": 114,
+        "lineHeightPx": 13.7109375,
+        "x": 392,
+        "y": 440
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Download Bridge: ",
+        "fontWeight": 300,
+        "maxWidth": 84,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 441
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@management.seed.mnemonic",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 10.546875,
+        "x": 48,
+        "y": 370
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Management Seed BIP39 Mnemonic",
+        "fontWeight": 500,
+        "maxWidth": 175,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 350
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@management.seed.derivationPath",
+        "fontWeight": 400,
+        "maxWidth": 170.73727416992188,
+        "lineHeightPx": 11.6015625,
+        "x": 124,
+        "y": 441
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Derivation Path: ",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 441
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@management.seed.size",
+        "fontWeight": 400,
+        "maxWidth": 224.8125,
+        "lineHeightPx": 11.6015625,
+        "x": 71.18659973144531,
+        "y": 423
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Size: ",
+        "fontWeight": 400,
+        "maxWidth": 23.02734375,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 423
+      },
+      {
+        "type": "SIGIL",
+        "size": 81,
+        "name": ">sigil:@sigil",
+        "data": "@sigil",
+        "x": 48,
+        "y": 207
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@patp",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 315
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Ship",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 297
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.createdOn",
+        "fontWeight": 400,
+        "maxWidth": 172,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 495
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.walletVersion",
+        "fontWeight": 400,
+        "maxWidth": 158,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 540
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Created On",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 477
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Wallet Version",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 522
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Use the management seed to activate your Galaxy, generate network keys, and escape to a new sponsor Galaxy.\n",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 468
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@management.seed.derivationPath",
+        "fontWeight": 400,
+        "maxWidth": 169,
+        "lineHeightPx": 11.6015625,
+        "x": 384,
+        "y": 536
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "To sign transactions, derive the private key using the BIP32 derivation path ",
+        "fontWeight": 300,
+        "maxWidth": 255,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 522
+      }
+    ]
+  },
+  "MANAGEMENT:STAR": {
+    "key": "MANAGEMENT:STAR",
+    "absoluteBoundingBox": {
+      "x": 24999,
+      "y": -1441,
+      "width": 612,
+      "height": 792
+    },
+    "renderables": [
+      {
+        "type": "TEXT",
+        "fontFamily": "Work Sans",
+        "fontSize": 32,
+        "text": "Management Seed",
+        "fontWeight": 600,
+        "maxWidth": 248,
+        "lineHeightPx": 37.5,
+        "x": 48,
+        "y": 40
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Usage",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 316,
+        "y": 414
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.moreInformation",
+        "fontWeight": 400,
+        "maxWidth": 159,
+        "lineHeightPx": 11.6015625,
+        "x": 316,
+        "y": 594
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "More Information",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 316,
+        "y": 576
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "urbit.org/docs/bridge",
+        "fontWeight": 400,
+        "maxWidth": 114,
+        "lineHeightPx": 13.7109375,
+        "x": 396,
+        "y": 440
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Download Bridge: ",
+        "fontWeight": 300,
+        "maxWidth": 84,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 441
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Use the management seed to activate your planet, generate network keys, and escape to a new sponsor galaxy.\n",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 468
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@management.seed.mnemonic",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 10.546875,
+        "x": 48,
+        "y": 370
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Management Seed BIP39 Mnemonic",
+        "fontWeight": 500,
+        "maxWidth": 175,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 350
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@management.seed.derivationPath",
+        "fontWeight": 400,
+        "maxWidth": 170.73727416992188,
+        "lineHeightPx": 11.6015625,
+        "x": 124,
+        "y": 441
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Derivation Path: ",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 441
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@management.seed.size",
+        "fontWeight": 400,
+        "maxWidth": 224.8125,
+        "lineHeightPx": 11.6015625,
+        "x": 71.18659973144531,
+        "y": 423
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Size: ",
+        "fontWeight": 400,
+        "maxWidth": 23.02734375,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 423
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@management.seed.derivationPath",
+        "fontWeight": 400,
+        "maxWidth": 169,
+        "lineHeightPx": 11.6015625,
+        "x": 384,
+        "y": 536
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "To sign transactions, derive the private key using the BIP32 derivation path ",
+        "fontWeight": 300,
+        "maxWidth": 255,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 522
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Securely store this document.",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 234
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "This management seed could be used to boot your Galaxy or impersonate your planet on the Urbit network without your permission.",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 261
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "If you lose your management seed, you can recover it from your master ticket or ownership seed.\n\n",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 315
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "The management seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n\n",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 360
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Custody Recommendations",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 316,
+        "y": 207
+      },
+      {
+        "type": "SIGIL",
+        "size": 81,
+        "name": ">sigil:@sigil",
+        "data": "@sigil",
+        "x": 48,
+        "y": 207
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@patp",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 315
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Ship",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 297
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.createdOn",
+        "fontWeight": 400,
+        "maxWidth": 172,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 495
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.walletVersion",
+        "fontWeight": 400,
+        "maxWidth": 158,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 540
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Created On",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 477
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Wallet Version",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 522
+      }
+    ]
+  },
+  "MANAGEMENT:PLANET": {
+    "key": "MANAGEMENT:PLANET",
+    "absoluteBoundingBox": {
+      "x": 24999,
+      "y": -549,
+      "width": 612,
+      "height": 792
+    },
+    "renderables": [
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Securely store this document.",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 10.546875,
+        "x": 316,
+        "y": 234
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Custody Recommendations",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 316,
+        "y": 207
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Usage",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 316,
+        "y": 414
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.moreInformation",
+        "fontWeight": 400,
+        "maxWidth": 159,
+        "lineHeightPx": 11.6015625,
+        "x": 316,
+        "y": 576
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "More Information",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 316,
+        "y": 558
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "urbit.org/docs/bridge",
+        "fontWeight": 400,
+        "maxWidth": 114,
+        "lineHeightPx": 13.7109375,
+        "x": 396,
+        "y": 431
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Download Bridge: ",
+        "fontWeight": 300,
+        "maxWidth": 84,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 432
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Use the management seed to activate your planet, generate network keys, and escape to a new sponsor star.",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 459
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@management.seed.mnemonic",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 10.546875,
+        "x": 48,
+        "y": 370
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Management Seed BIP39 Mnemonic",
+        "fontWeight": 500,
+        "maxWidth": 175,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 350
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@management.seed.derivationPath",
+        "fontWeight": 400,
+        "maxWidth": 170.73727416992188,
+        "lineHeightPx": 11.6015625,
+        "x": 124,
+        "y": 441
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Derivation Path: ",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 441
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@management.seed.size",
+        "fontWeight": 400,
+        "maxWidth": 224.8125,
+        "lineHeightPx": 11.6015625,
+        "x": 71.18659973144531,
+        "y": 423
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Size: ",
+        "fontWeight": 400,
+        "maxWidth": 23.02734375,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 423
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "This management seed could be used to boot your Planet or impersonate your planet on the Urbit network without your permission.",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 261
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "If you lose your Planet seed, you can recover it from your master ticket or ownership seed.\n\n",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 315
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "The management seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n\n",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 360
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@management.seed.derivationPath",
+        "fontWeight": 400,
+        "maxWidth": 176,
+        "lineHeightPx": 11.6015625,
+        "x": 384,
+        "y": 518
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "To sign transactions, derive the private key using the BIP32 derivation path ",
+        "fontWeight": 300,
+        "maxWidth": 255,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 504
+      },
+      {
+        "type": "SIGIL",
+        "size": 81,
+        "name": ">sigil:@sigil",
+        "data": "@sigil",
+        "x": 48,
+        "y": 207
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@patp",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 315
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Ship",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 297
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.createdOn",
+        "fontWeight": 400,
+        "maxWidth": 172,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 495
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.walletVersion",
+        "fontWeight": 400,
+        "maxWidth": 158,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 540
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Created On",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 477
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Wallet Version",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 522
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Work Sans",
+        "fontSize": 32,
+        "text": "Management Seed",
+        "fontWeight": 600,
+        "maxWidth": 248,
+        "lineHeightPx": 37.5,
+        "x": 48,
+        "y": 40
+      }
+    ]
+  },
+  "SPAWN:GALAXY": {
+    "key": "SPAWN:GALAXY",
+    "absoluteBoundingBox": {
+      "x": 25651,
+      "y": -2333,
+      "width": 612,
+      "height": 792
+    },
+    "renderables": [
+      {
+        "type": "TEXT",
+        "fontFamily": "Work Sans",
+        "fontSize": 32,
+        "text": "Spawn Seed",
+        "fontWeight": 600,
+        "maxWidth": 248,
+        "lineHeightPx": 37.5,
+        "x": 48,
+        "y": 40
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Securely store this document.",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 10.546875,
+        "x": 316,
+        "y": 234
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "This spawn proxy seed could be used to spawn Stars under your Galaxy without your permission.\n",
+        "fontWeight": 300,
+        "maxWidth": 246,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 261
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Custody Recommendations",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 316,
+        "y": 207
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Usage",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 316,
+        "y": 405
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.moreInformation",
+        "fontWeight": 400,
+        "maxWidth": 159,
+        "lineHeightPx": 11.6015625,
+        "x": 316,
+        "y": 558
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "More Information",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 316,
+        "y": 540
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "urbit.org/docs/bridge",
+        "fontWeight": 400,
+        "maxWidth": 114,
+        "lineHeightPx": 13.7109375,
+        "x": 396,
+        "y": 431
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Download Bridge: ",
+        "fontWeight": 300,
+        "maxWidth": 84,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 432
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Use the spawn seed to spawn stars under your galaxy.",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 459
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@spawn.seed.mnemonic",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 10.546875,
+        "x": 48,
+        "y": 370
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Spawn Seed BIP39 Mnemonic",
+        "fontWeight": 500,
+        "maxWidth": 144,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 350
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@spawn.seed.derivationPath",
+        "fontWeight": 400,
+        "maxWidth": 170.73727416992188,
+        "lineHeightPx": 11.6015625,
+        "x": 124,
+        "y": 441
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Derivation Path: ",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 441
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@spawn.seed.size",
+        "fontWeight": 400,
+        "maxWidth": 224.8125,
+        "lineHeightPx": 11.6015625,
+        "x": 71.18659973144531,
+        "y": 423
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Size: ",
+        "fontWeight": 400,
+        "maxWidth": 23.02734375,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 423
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "If you lose your spawn seed, you can recover it from your master ticket or ownership seed.\n\n",
+        "fontWeight": 300,
+        "maxWidth": 246,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 306
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "The spawn seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n\n",
+        "fontWeight": 300,
+        "maxWidth": 246,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 351
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@spawn.seed.derivationPath",
+        "fontWeight": 400,
+        "maxWidth": 178,
+        "lineHeightPx": 11.6015625,
+        "x": 384,
+        "y": 499
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "To sign transactions, derive the private key using the BIP32 derivation path ",
+        "fontWeight": 300,
+        "maxWidth": 255,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 485
+      },
+      {
+        "type": "SIGIL",
+        "size": 81,
+        "name": ">sigil:@sigil",
+        "data": "@sigil",
+        "x": 48,
+        "y": 207
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@patp",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 315
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Ship",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 297
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.createdOn",
+        "fontWeight": 400,
+        "maxWidth": 172,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 495
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.walletVersion",
+        "fontWeight": 400,
+        "maxWidth": 158,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 540
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Created On",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 477
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Wallet Version",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 522
+      }
+    ]
+  },
+  "SPAWN:STAR": {
+    "key": "SPAWN:STAR",
+    "absoluteBoundingBox": {
+      "x": 25651,
+      "y": -1441,
+      "width": 612,
+      "height": 792
+    },
+    "renderables": [
+      {
+        "type": "TEXT",
+        "fontFamily": "Work Sans",
+        "fontSize": 32,
+        "text": "Spawn Seed",
+        "fontWeight": 600,
+        "maxWidth": 248,
+        "lineHeightPx": 37.5,
+        "x": 48,
+        "y": 40
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Securely store this document.",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 10.546875,
+        "x": 316,
+        "y": 234
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "This master ticket or ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network without your permission.",
+        "fontWeight": 300,
+        "maxWidth": 246,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 261
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "If you lose a child seed, you can recover it from your master ticket or ownership seed.\n",
+        "fontWeight": 300,
+        "maxWidth": 246,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 315
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "The ownership seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n",
+        "fontWeight": 300,
+        "maxWidth": 246,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 351
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Custody Recommendations",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 316,
+        "y": 207
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Usage",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 316,
+        "y": 405
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.moreInformation",
+        "fontWeight": 400,
+        "maxWidth": 159,
+        "lineHeightPx": 11.6015625,
+        "x": 316,
+        "y": 558
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "More Information",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 316,
+        "y": 540
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "urbit.org/docs/bridge",
+        "fontWeight": 400,
+        "maxWidth": 114,
+        "lineHeightPx": 13.7109375,
+        "x": 396,
+        "y": 431
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Download Bridge: ",
+        "fontWeight": 300,
+        "maxWidth": 84,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 432
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@spawn.seed.mnemonic",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 10.546875,
+        "x": 48,
+        "y": 370
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Spawn Seed BIP39 Mnemonic",
+        "fontWeight": 500,
+        "maxWidth": 144,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 350
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@spawn.seed.derivationPath",
+        "fontWeight": 400,
+        "maxWidth": 171,
+        "lineHeightPx": 11.6015625,
+        "x": 124,
+        "y": 441
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Derivation Path: ",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 441
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@spawn.seed.size",
+        "fontWeight": 400,
+        "maxWidth": 224.8125,
+        "lineHeightPx": 11.6015625,
+        "x": 71.18659973144531,
+        "y": 423
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Size: ",
+        "fontWeight": 400,
+        "maxWidth": 23.02734375,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 423
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Use the spawn seed to spawn Planets under your Star.",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 459
+      },
+      {
+        "type": "SIGIL",
+        "size": 81,
+        "name": ">sigil:@sigil",
+        "data": "@sigil",
+        "x": 48,
+        "y": 207
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@patp",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 315
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Ship",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 297
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.createdOn",
+        "fontWeight": 400,
+        "maxWidth": 172,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 495
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.walletVersion",
+        "fontWeight": 400,
+        "maxWidth": 158,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 540
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Created On",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 477
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Wallet Version",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 522
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@spawn.seed.derivationPath",
+        "fontWeight": 400,
+        "maxWidth": 178,
+        "lineHeightPx": 11.6015625,
+        "x": 384,
+        "y": 499
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "To sign transactions, derive the private key using the BIP32 derivation path ",
+        "fontWeight": 300,
+        "maxWidth": 255,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 485
+      }
+    ]
+  },
+  "MASTER_TICKET:STAR": {
+    "key": "MASTER_TICKET:STAR",
+    "absoluteBoundingBox": {
+      "x": 23695,
+      "y": -1441,
+      "width": 612,
+      "height": 792
+    },
+    "renderables": [
+      {
+        "type": "TEXT",
+        "fontFamily": "Work Sans",
+        "fontSize": 32,
+        "text": "Master Ticket",
+        "fontWeight": 600,
+        "maxWidth": 248,
+        "lineHeightPx": 37.5,
+        "x": 48,
+        "y": 40
+      },
+      {
+        "type": "PATQ",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "fontWeight": 400,
+        "text": "@ticket.data",
+        "maxWidth": 248,
+        "lineHeightPx": 10.546875,
+        "x": 48,
+        "y": 360
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Master Ticket",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 11.71875,
+        "x": 48,
+        "y": 342
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Ownership Address",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 531
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.createdOn",
+        "fontWeight": 400,
+        "maxWidth": 172,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 648
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Created On",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 630
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Ownership Seed BIP39 Mnemonic",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 11.71875,
+        "x": 48,
+        "y": 414
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@patp",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 315
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Ship",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 297
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.walletVersion",
+        "fontWeight": 400,
+        "maxWidth": 158,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 693
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Wallet Version",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 675
+      },
+      {
+        "type": "QR",
+        "size": 48.000099182128906,
+        "name": ">qr:@ownership.ethereum.qr",
+        "data": "@ownership.ethereum.qr",
+        "x": 48,
+        "y": 549
+      },
+      {
+        "type": "ADDR_COMPACT",
+        "fontWeight": 400,
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@ownership.ethereum.address",
+        "maxWidth": 190,
+        "lineHeightPx": 10.546875,
+        "x": 106,
+        "y": 549
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@ownership.seed.mnemonic",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 10.546875,
+        "x": 48,
+        "y": 432
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@ownership.seed.size",
+        "fontWeight": 400,
+        "maxWidth": 222.93544006347656,
+        "lineHeightPx": 10.546875,
+        "x": 70,
+        "y": 486
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Size: ",
+        "fontWeight": 400,
+        "maxWidth": 25,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 486
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@ticket.size",
+        "fontWeight": 400,
+        "maxWidth": 222.93544006347656,
+        "lineHeightPx": 10.546875,
+        "x": 70,
+        "y": 387
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Size: ",
+        "fontWeight": 400,
+        "maxWidth": 25,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 387
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@ownership.seed.derivationPath",
+        "fontWeight": 400,
+        "maxWidth": 170.73727416992188,
+        "lineHeightPx": 11.6015625,
+        "x": 124,
+        "y": 504
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Derivation Path: ",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 504
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Securely store this document.",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 234
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "This master ticket or ownership seed could be used to transfer ownership or impersonate your Star on the Urbit network without your permission.",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 261
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "If you lose your master ticket, there is no way to recover it and you will no longer be able to control your Star.\n",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 315
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Custody Recommendations",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 316,
+        "y": 207
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "The master ticket and ownership seed can be used to recover transfer proxy, spawn proxy, delegate, and management seeds.\n",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 495
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Usage",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 316,
+        "y": 369
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.moreInformation",
+        "fontWeight": 400,
+        "maxWidth": 159,
+        "lineHeightPx": 11.6015625,
+        "x": 316,
+        "y": 576
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "More Information",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 316,
+        "y": 558
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "urbit.org/docs/bridge",
+        "fontWeight": 400,
+        "maxWidth": 114,
+        "lineHeightPx": 13.7109375,
+        "x": 395,
+        "y": 395
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Download Bridge: ",
+        "fontWeight": 300,
+        "maxWidth": 84,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 396
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Use the master ticket or ownership seed to activate, transfer, escape to a new sponsor, set up transfer and management proxies, set an operator, set network keys, and set DNS domains.",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 423
+      },
+      {
+        "type": "SIGIL",
+        "size": 81,
+        "name": ">sigil:@sigil",
+        "data": "@sigil",
+        "x": 48,
+        "y": 207
+      }
+    ]
+  },
+  "MASTER_TICKET:PLANET": {
+    "key": "MASTER_TICKET:PLANET",
+    "absoluteBoundingBox": {
+      "x": 23695,
+      "y": -549,
+      "width": 612,
+      "height": 792
+    },
+    "renderables": [
+      {
+        "type": "TEXT",
+        "fontFamily": "Work Sans",
+        "fontSize": 32,
+        "text": "Master Ticket",
+        "fontWeight": 600,
+        "maxWidth": 248,
+        "lineHeightPx": 37.5,
+        "x": 48,
+        "y": 40
+      },
+      {
+        "type": "PATQ",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "fontWeight": 400,
+        "text": "@ticket.data",
+        "maxWidth": 248,
+        "lineHeightPx": 10.546875,
+        "x": 48,
+        "y": 360
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Master Ticket",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 11.71875,
+        "x": 48,
+        "y": 342
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Ownership Address",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 531
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.createdOn",
+        "fontWeight": 400,
+        "maxWidth": 172,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 648
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Created On",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 630
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Ownership Seed BIP39 Mnemonic",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 11.71875,
+        "x": 48,
+        "y": 414
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@patp",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 315
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Ship",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 297
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.walletVersion",
+        "fontWeight": 400,
+        "maxWidth": 158,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 693
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Wallet Version",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 675
+      },
+      {
+        "type": "QR",
+        "size": 48.000099182128906,
+        "name": ">qr:@ownership.ethereum.qr",
+        "data": "@ownership.ethereum.qr",
+        "x": 48,
+        "y": 549
+      },
+      {
+        "type": "ADDR_COMPACT",
+        "fontWeight": 400,
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@ownership.ethereum.address",
+        "maxWidth": 190,
+        "lineHeightPx": 10.546875,
+        "x": 106,
+        "y": 549
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@ownership.seed.mnemonic",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 10.546875,
+        "x": 48,
+        "y": 432
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@ownership.seed.size",
+        "fontWeight": 400,
+        "maxWidth": 222.93544006347656,
+        "lineHeightPx": 10.546875,
+        "x": 70,
+        "y": 486
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Size: ",
+        "fontWeight": 400,
+        "maxWidth": 25,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 486
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@ticket.size",
+        "fontWeight": 400,
+        "maxWidth": 222.93544006347656,
+        "lineHeightPx": 10.546875,
+        "x": 70,
+        "y": 387
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Size: ",
+        "fontWeight": 400,
+        "maxWidth": 25,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 387
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@ownership.seed.derivationPath",
+        "fontWeight": 400,
+        "maxWidth": 170.73727416992188,
+        "lineHeightPx": 11.6015625,
+        "x": 124,
+        "y": 504
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Derivation Path: ",
+        "fontWeight": 400,
+        "maxWidth": 248,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 504
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Securely store this document.",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 234
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "This master ticket or ownership seed could be used to transfer ownership or impersonate your Planet on the Urbit network without your permission.",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 261
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "If you lose your master ticket, there is no way to recover it and you will no longer be able to control your Planet.\n",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 315
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Custody Recommendations",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 316,
+        "y": 207
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "The master ticket and ownership seed can be used to recover transfer proxy, spawn proxy, delegate, and management seeds.\n",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 495
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Usage",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 316,
+        "y": 369
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.moreInformation",
+        "fontWeight": 400,
+        "maxWidth": 159,
+        "lineHeightPx": 11.6015625,
+        "x": 316,
+        "y": 576
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "More Information",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 316,
+        "y": 558
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "urbit.org/docs/bridge",
+        "fontWeight": 400,
+        "maxWidth": 114,
+        "lineHeightPx": 13.7109375,
+        "x": 395,
+        "y": 395
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Download Bridge: ",
+        "fontWeight": 300,
+        "maxWidth": 84,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 396
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Use the master ticket or ownership seed to activate, transfer, escape to a new sponsor, set up transfer and management proxies, set an operator, set network keys, and set DNS domains.",
+        "fontWeight": 300,
+        "maxWidth": 248,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 423
+      },
+      {
+        "type": "SIGIL",
+        "size": 81,
+        "name": ">sigil:@sigil",
+        "data": "@sigil",
+        "x": 48,
+        "y": 207
+      }
+    ]
+  },
+  "ADDRESS_MANIFEST:FIRST": {
+    "key": "ADDRESS_MANIFEST:FIRST",
+    "absoluteBoundingBox": {
+      "x": 21441,
+      "y": -2333,
+      "width": 612,
+      "height": 792
+    },
+    "renderables": [
+      {
+        "type": "TEXT",
+        "fontFamily": "Work Sans",
+        "fontSize": 32,
+        "text": "Ownership Address Manifest",
+        "fontWeight": 600,
+        "maxWidth": 516,
+        "lineHeightPx": 37.5,
+        "x": 48,
+        "y": 36
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "It is ok to store in a trusted environment but be aware that possession of this document will reveal how much address space you own to whoever sees it.",
+        "fontWeight": 300,
+        "maxWidth": 258,
+        "lineHeightPx": 13.7109375,
+        "x": 48,
+        "y": 144
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "This is public information.",
+        "fontWeight": 700,
+        "maxWidth": 172,
+        "lineHeightPx": 16,
+        "x": 48,
+        "y": 117
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "@pageAofB",
+        "fontWeight": 400,
+        "maxWidth": 86,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 90
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.walletVersion",
+        "fontWeight": 400,
+        "maxWidth": 135,
+        "lineHeightPx": 11.6015625,
+        "x": 134,
+        "y": 243
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Wallet Version: ",
+        "fontWeight": 400,
+        "maxWidth": 86,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 243
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.createdOn",
+        "fontWeight": 400,
+        "maxWidth": 172,
+        "lineHeightPx": 11.6015625,
+        "x": 134,
+        "y": 261
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Date Created: ",
+        "fontWeight": 400,
+        "maxWidth": 86,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 261
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.moreInformation",
+        "fontWeight": 400,
+        "maxWidth": 171.89833068847656,
+        "lineHeightPx": 11.6015625,
+        "x": 134.10166931152344,
+        "y": 279
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "Information: ",
+        "fontWeight": 400,
+        "maxWidth": 86.10166931152344,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 279
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "You can check any spawn, management, delegate or transfer address with this address.",
+        "fontWeight": 300,
+        "maxWidth": 258,
+        "lineHeightPx": 13.7109375,
+        "x": 48,
+        "y": 198
+      }
+    ]
+  },
+  "ADDRESS_MANIFEST:OVERFLOW": {
+    "key": "ADDRESS_MANIFEST:OVERFLOW",
+    "absoluteBoundingBox": {
+      "x": 22070,
+      "y": -2333,
+      "width": 612,
+      "height": 792
+    },
+    "renderables": [
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "This is public information.",
+        "fontWeight": 700,
+        "maxWidth": 172,
+        "lineHeightPx": 16,
+        "x": 48,
+        "y": 120
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Work Sans",
+        "fontSize": 32,
+        "text": "Ownership Address Manifest",
+        "fontWeight": 600,
+        "maxWidth": 516,
+        "lineHeightPx": 37.5,
+        "x": 48,
+        "y": 36
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "@pageAofB",
+        "fontWeight": 400,
+        "maxWidth": 86,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 96
+      }
+    ]
+  },
+  "COMPONENT:ADDRESS_LIST_ITEM": {
+    "key": "COMPONENT:ADDRESS_LIST_ITEM",
+    "absoluteBoundingBox": {
+      "x": 21106,
+      "y": -2333,
+      "width": 322,
+      "height": 322
+    },
+    "renderables": [
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 16,
+        "text": "@patp",
+        "fontWeight": 700,
+        "maxWidth": 215,
+        "lineHeightPx": 24,
+        "x": 0,
+        "y": 0
+      },
+      {
+        "type": "QR",
+        "size": 36.00005340576172,
+        "name": ">qr:@ownership.ethereum.qr",
+        "data": "@ownership.ethereum.qr",
+        "x": 0,
+        "y": 60
+      },
+      {
+        "type": "ADDR_LONG",
+        "fontWeight": 400,
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "@ownership.ethereum.address",
+        "maxWidth": 190,
+        "lineHeightPx": 15.46875,
+        "x": 43,
+        "y": 56
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Ownership Address",
+        "fontWeight": 500,
+        "maxWidth": 129,
+        "lineHeightPx": 11.953125,
+        "x": 0,
+        "y": 36
+      }
+    ]
+  }
+}

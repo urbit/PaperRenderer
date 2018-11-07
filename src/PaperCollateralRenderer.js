@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import ReactDOMServer from 'react-dom/server';
-import { map, reduce, isUndefined } from 'lodash';
 import PageRenderer from './PageRenderer';
-import ob from 'urbit-ob';
 
 import { shim } from './lib/utils';
 
@@ -26,7 +23,7 @@ import {
 // ts: templates
 // Use partial application to make asynchonous execution easier later
 const PROFILES = {
-  'CONVENTIONAL': {
+  'REGISTRATION': {
     'galaxy': [
       // (w, cs, ts) => () => MasterTicketComponent(w, cs, ts),
       (w, cs, ts) => () => MasterTicketShardsComponent(w, cs, ts),
@@ -86,17 +83,20 @@ class PaperCollateralRenderer extends Component {
 
     const docket = PROFILES[this.props.mode];
 
-    const docketFunctions = reduce(wallets, (acc, wallet) => {
+    const docketFunctions = wallets.reduce((acc, wallet) => {
       const collateral = docket[wallet.ship.class]
-      const componentFunctions = map(collateral, f => f(wallet, constants, templates))
+      const componentFunctions = collateral.map(f => f(wallet, constants, templates))
       return [...acc, ...componentFunctions];
     }, []);
 
-    const withManifest = [...docketFunctions, ...map(docket.manifest, f => f(wallets, constants, templates))]
+    const withManifest = [
+      ...docketFunctions,
+      ...docket.manifest.map(f => f(wallets, constants, templates))
+    ]
 
-    Promise.all(map(withManifest, f => f()))
+    Promise.all(withManifest.map(f => f()))
       .then(pageGroups => {
-        const flats = reduce(pageGroups, (acc, arr) => [...acc, ...arr], []);
+        const flats = pageGroups.reduce((acc, arr) => [...acc, ...arr], []);
         this.setState({ pages: flats, totalPages: flats.length });
     });
 
@@ -112,8 +112,14 @@ class PaperCollateralRenderer extends Component {
       return (
         <div className={ this.props.className }>
           {
-            map(pages, page => {
-              return <PageRenderer page={page} callback={output => this.handleOutput(output, totalPages)}/>
+            pages.map(page => {
+              return (
+                <PageRenderer
+                  key={`pageRenderer:${page.pageTitle}`}
+                  page={page}
+                  callback={output => this.handleOutput(output, totalPages)}
+                />
+              )
             })
           }
         </div>
