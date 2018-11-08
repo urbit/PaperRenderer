@@ -114,7 +114,7 @@
         "text": "@patp",
         "fontWeight": 400,
         "maxWidth": 248,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
         "y": 315
       },
@@ -136,7 +136,7 @@
         "text": "@meta.moreInformation",
         "fontWeight": 400,
         "maxWidth": 159,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 316,
         "y": 594
       },
@@ -169,7 +169,7 @@
         "text": "@meta.createdOn",
         "fontWeight": 400,
         "maxWidth": 172,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
         "y": 576
       },
@@ -191,7 +191,7 @@
         "text": "@meta.walletVersion",
         "fontWeight": 400,
         "maxWidth": 158,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
         "y": 621
       },
@@ -232,9 +232,9 @@
         "text": "urbit.org/docs/bridge",
         "fontWeight": 400,
         "maxWidth": 114,
-        "lineHeightPx": 13.7109375,
+        "lineHeightPx": 10.546875,
         "x": 396,
-        "y": 386
+        "y": 387
       },
       {
         "type": "TEXT",
@@ -243,7 +243,7 @@
         "text": "Download Bridge: ",
         "fontWeight": 300,
         "maxWidth": 84,
-        "lineHeightPx": 13.7109375,
+        "lineHeightPx": 10.546875,
         "x": 316,
         "y": 387
       },
@@ -273,7 +273,7 @@
         "text": "@shard.number",
         "fontWeight": 400,
         "maxWidth": 225,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 117,
         "y": 423
       },
@@ -284,7 +284,7 @@
         "text": "Shard Number: ",
         "fontWeight": 400,
         "maxWidth": 81,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
         "y": 423
       },
@@ -297,7 +297,7 @@
         "maxWidth": 222.99420166015625,
         "lineHeightPx": 10.546875,
         "x": 70.00579833984375,
-        "y": 441.0000000000002
+        "y": 441
       },
       {
         "type": "TEXT",
@@ -306,7 +306,7 @@
         "text": "Size: ",
         "fontWeight": 400,
         "maxWidth": 25.006589889526367,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
         "y": 441
       }
@@ -392,7 +392,7 @@
         "fontFamily": "SF Pro Text",
         "fontSize": 10,
         "text": "Wallet Version",
-        "fontWeight": 400,
+        "fontWeight": 500,
         "maxWidth": 248,
         "lineHeightPx": 12.890625,
         "x": 48,
@@ -405,7 +405,7 @@
         "text": "@voting.seed.derivationPath",
         "fontWeight": 400,
         "maxWidth": 170.73727416992188,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 124,
         "y": 441
       },
@@ -416,7 +416,7 @@
         "text": "Derivation Path: ",
         "fontWeight": 400,
         "maxWidth": 248,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
         "y": 441
       },
@@ -427,7 +427,7 @@
         "text": "@voting.seed.size",
         "fontWeight": 400,
         "maxWidth": 224.8125,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 71.18659973144531,
         "y": 423
       },
@@ -438,7 +438,7 @@
         "text": "Size: ",
         "fontWeight": 400,
         "maxWidth": 23.02734375,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
         "y": 423
       },
@@ -567,7 +567,7 @@
         "text": "urbit.org/docs/bridge",
         "fontWeight": 400,
         "maxWidth": 114,
-        "lineHeightPx": 13.7109375,
+        "lineHeightPx": 10.546875,
         "x": 396,
         "y": 423
       },
@@ -578,7 +578,7 @@
         "text": "Download Bridge: ",
         "fontWeight": 300,
         "maxWidth": 84,
-        "lineHeightPx": 13.7109375,
+        "lineHeightPx": 10.546875,
         "x": 316,
         "y": 423
       },
@@ -600,7 +600,7 @@
         "text": "@voting.seed.derivationPath",
         "fontWeight": 400,
         "maxWidth": 169,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 13.7109375,
         "x": 384,
         "y": 491
       },
@@ -732,9 +732,9 @@
         "text": "urbit.org/docs/bridge",
         "fontWeight": 400,
         "maxWidth": 114,
-        "lineHeightPx": 13.7109375,
+        "lineHeightPx": 10.546875,
         "x": 392,
-        "y": 440
+        "y": 441
       },
       {
         "type": "TEXT",
@@ -743,7 +743,7 @@
         "text": "Download Bridge: ",
         "fontWeight": 300,
         "maxWidth": 84,
-        "lineHeightPx": 13.7109375,
+        "lineHeightPx": 10.546875,
         "x": 316,
         "y": 441
       },
@@ -776,7 +776,7 @@
         "text": "@management.seed.derivationPath",
         "fontWeight": 400,
         "maxWidth": 170.73727416992188,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 124,
         "y": 441
       },
@@ -787,7 +787,7 @@
         "text": "Derivation Path: ",
         "fontWeight": 400,
         "maxWidth": 248,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
         "y": 441
       },
@@ -798,7 +798,7 @@
         "text": "@management.seed.size",
         "fontWeight": 400,
         "maxWidth": 224.8125,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 71.18659973144531,
         "y": 423
       },
@@ -809,7 +809,7 @@
         "text": "Size: ",
         "fontWeight": 400,
         "maxWidth": 23.02734375,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
         "y": 423
       },
@@ -905,7 +905,7 @@
         "text": "@management.seed.derivationPath",
         "fontWeight": 400,
         "maxWidth": 169,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 13.7109375,
         "x": 384,
         "y": 536
       },
@@ -982,9 +982,9 @@
         "text": "urbit.org/docs/bridge",
         "fontWeight": 400,
         "maxWidth": 114,
-        "lineHeightPx": 13.7109375,
+        "lineHeightPx": 10.546875,
         "x": 396,
-        "y": 440
+        "y": 441
       },
       {
         "type": "TEXT",
@@ -993,7 +993,7 @@
         "text": "Download Bridge: ",
         "fontWeight": 300,
         "maxWidth": 84,
-        "lineHeightPx": 13.7109375,
+        "lineHeightPx": 10.546875,
         "x": 316,
         "y": 441
       },
@@ -1037,7 +1037,7 @@
         "text": "@management.seed.derivationPath",
         "fontWeight": 400,
         "maxWidth": 170.73727416992188,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 124,
         "y": 441
       },
@@ -1048,7 +1048,7 @@
         "text": "Derivation Path: ",
         "fontWeight": 400,
         "maxWidth": 248,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
         "y": 441
       },
@@ -1059,7 +1059,7 @@
         "text": "@management.seed.size",
         "fontWeight": 400,
         "maxWidth": 224.8125,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 71.18659973144531,
         "y": 423
       },
@@ -1070,7 +1070,7 @@
         "text": "Size: ",
         "fontWeight": 400,
         "maxWidth": 23.02734375,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
         "y": 423
       },
@@ -1081,7 +1081,7 @@
         "text": "@management.seed.derivationPath",
         "fontWeight": 400,
         "maxWidth": 169,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 13.7109375,
         "x": 384,
         "y": 536
       },
@@ -1298,9 +1298,9 @@
         "text": "urbit.org/docs/bridge",
         "fontWeight": 400,
         "maxWidth": 114,
-        "lineHeightPx": 13.7109375,
+        "lineHeightPx": 10.546875,
         "x": 396,
-        "y": 431
+        "y": 432
       },
       {
         "type": "TEXT",
@@ -1309,7 +1309,7 @@
         "text": "Download Bridge: ",
         "fontWeight": 300,
         "maxWidth": 84,
-        "lineHeightPx": 13.7109375,
+        "lineHeightPx": 10.546875,
         "x": 316,
         "y": 432
       },
@@ -1353,7 +1353,7 @@
         "text": "@management.seed.derivationPath",
         "fontWeight": 400,
         "maxWidth": 170.73727416992188,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 124,
         "y": 441
       },
@@ -1364,7 +1364,7 @@
         "text": "Derivation Path: ",
         "fontWeight": 400,
         "maxWidth": 248,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
         "y": 441
       },
@@ -1375,7 +1375,7 @@
         "text": "@management.seed.size",
         "fontWeight": 400,
         "maxWidth": 224.8125,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 71.18659973144531,
         "y": 423
       },
@@ -1386,7 +1386,7 @@
         "text": "Size: ",
         "fontWeight": 400,
         "maxWidth": 23.02734375,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
         "y": 423
       },
@@ -1430,7 +1430,7 @@
         "text": "@management.seed.derivationPath",
         "fontWeight": 400,
         "maxWidth": 176,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 13.7109375,
         "x": 384,
         "y": 518
       },
@@ -1625,9 +1625,9 @@
         "text": "urbit.org/docs/bridge",
         "fontWeight": 400,
         "maxWidth": 114,
-        "lineHeightPx": 13.7109375,
+        "lineHeightPx": 10.546875,
         "x": 396,
-        "y": 431
+        "y": 432
       },
       {
         "type": "TEXT",
@@ -1636,7 +1636,7 @@
         "text": "Download Bridge: ",
         "fontWeight": 300,
         "maxWidth": 84,
-        "lineHeightPx": 13.7109375,
+        "lineHeightPx": 10.546875,
         "x": 316,
         "y": 432
       },
@@ -1680,7 +1680,7 @@
         "text": "@spawn.seed.derivationPath",
         "fontWeight": 400,
         "maxWidth": 170.73727416992188,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 124,
         "y": 441
       },
@@ -1691,7 +1691,7 @@
         "text": "Derivation Path: ",
         "fontWeight": 400,
         "maxWidth": 248,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
         "y": 441
       },
@@ -1701,9 +1701,9 @@
         "fontSize": 9,
         "text": "@spawn.seed.size",
         "fontWeight": 400,
-        "maxWidth": 224.8125,
-        "lineHeightPx": 11.6015625,
-        "x": 71.18659973144531,
+        "maxWidth": 225,
+        "lineHeightPx": 10.546875,
+        "x": 71,
         "y": 423
       },
       {
@@ -1712,8 +1712,8 @@
         "fontSize": 9,
         "text": "Size: ",
         "fontWeight": 400,
-        "maxWidth": 23.02734375,
-        "lineHeightPx": 11.6015625,
+        "maxWidth": 23,
+        "lineHeightPx": 10.546875,
         "x": 48,
         "y": 423
       },
@@ -1746,7 +1746,7 @@
         "text": "@spawn.seed.derivationPath",
         "fontWeight": 400,
         "maxWidth": 178,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 13.7109375,
         "x": 384,
         "y": 499
       },
@@ -1952,9 +1952,9 @@
         "text": "urbit.org/docs/bridge",
         "fontWeight": 400,
         "maxWidth": 114,
-        "lineHeightPx": 13.7109375,
+        "lineHeightPx": 10.546875,
         "x": 396,
-        "y": 431
+        "y": 433
       },
       {
         "type": "TEXT",
@@ -1963,7 +1963,7 @@
         "text": "Download Bridge: ",
         "fontWeight": 300,
         "maxWidth": 84,
-        "lineHeightPx": 13.7109375,
+        "lineHeightPx": 10.546875,
         "x": 316,
         "y": 432
       },
@@ -1996,7 +1996,7 @@
         "text": "@spawn.seed.derivationPath",
         "fontWeight": 400,
         "maxWidth": 171,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 124,
         "y": 441
       },
@@ -2007,7 +2007,7 @@
         "text": "Derivation Path: ",
         "fontWeight": 400,
         "maxWidth": 248,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
         "y": 441
       },
@@ -2018,7 +2018,7 @@
         "text": "@spawn.seed.size",
         "fontWeight": 400,
         "maxWidth": 224.8125,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 71.18659973144531,
         "y": 423
       },
@@ -2029,7 +2029,7 @@
         "text": "Size: ",
         "fontWeight": 400,
         "maxWidth": 23.02734375,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
         "y": 423
       },
@@ -2125,7 +2125,7 @@
         "text": "@spawn.seed.derivationPath",
         "fontWeight": 400,
         "maxWidth": 178,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 13.7109375,
         "x": 384,
         "y": 499
       },
@@ -2202,7 +2202,7 @@
         "text": "@meta.createdOn",
         "fontWeight": 400,
         "maxWidth": 172,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
         "y": 648
       },
@@ -2235,7 +2235,7 @@
         "text": "@patp",
         "fontWeight": 400,
         "maxWidth": 248,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
         "y": 315
       },
@@ -2257,7 +2257,7 @@
         "text": "@meta.walletVersion",
         "fontWeight": 400,
         "maxWidth": 158,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
         "y": 693
       },
@@ -2266,7 +2266,7 @@
         "fontFamily": "SF Pro Text",
         "fontSize": 10,
         "text": "Wallet Version",
-        "fontWeight": 400,
+        "fontWeight": 500,
         "maxWidth": 248,
         "lineHeightPx": 12.890625,
         "x": 48,
@@ -2320,7 +2320,7 @@
         "text": "Size: ",
         "fontWeight": 400,
         "maxWidth": 25,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
         "y": 486
       },
@@ -2342,7 +2342,7 @@
         "text": "Size: ",
         "fontWeight": 400,
         "maxWidth": 25,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
         "y": 387
       },
@@ -2353,7 +2353,7 @@
         "text": "@ownership.seed.derivationPath",
         "fontWeight": 400,
         "maxWidth": 170.73727416992188,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 124,
         "y": 504
       },
@@ -2364,7 +2364,7 @@
         "text": "Derivation Path: ",
         "fontWeight": 400,
         "maxWidth": 248,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
         "y": 504
       },
@@ -2441,7 +2441,7 @@
         "text": "@meta.moreInformation",
         "fontWeight": 400,
         "maxWidth": 159,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 316,
         "y": 576
       },
@@ -2463,9 +2463,9 @@
         "text": "urbit.org/docs/bridge",
         "fontWeight": 400,
         "maxWidth": 114,
-        "lineHeightPx": 13.7109375,
+        "lineHeightPx": 10.546875,
         "x": 395,
-        "y": 395
+        "y": 396
       },
       {
         "type": "TEXT",
@@ -2474,7 +2474,7 @@
         "text": "Download Bridge: ",
         "fontWeight": 300,
         "maxWidth": 84,
-        "lineHeightPx": 13.7109375,
+        "lineHeightPx": 10.546875,
         "x": 316,
         "y": 396
       },
@@ -2535,7 +2535,7 @@
         "fontFamily": "SF Pro Text",
         "fontSize": 10,
         "text": "Master Ticket",
-        "fontWeight": 400,
+        "fontWeight": 500,
         "maxWidth": 248,
         "lineHeightPx": 11.71875,
         "x": 48,
@@ -2550,7 +2550,7 @@
         "maxWidth": 248,
         "lineHeightPx": 12.890625,
         "x": 48,
-        "y": 531
+        "y": 522
       },
       {
         "type": "TEXT",
@@ -2559,9 +2559,9 @@
         "text": "@meta.createdOn",
         "fontWeight": 400,
         "maxWidth": 172,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
-        "y": 648
+        "y": 639
       },
       {
         "type": "TEXT",
@@ -2572,7 +2572,7 @@
         "maxWidth": 248,
         "lineHeightPx": 12.890625,
         "x": 48,
-        "y": 630
+        "y": 621
       },
       {
         "type": "TEXT",
@@ -2592,7 +2592,7 @@
         "text": "@patp",
         "fontWeight": 400,
         "maxWidth": 248,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
         "y": 315
       },
@@ -2614,20 +2614,20 @@
         "text": "@meta.walletVersion",
         "fontWeight": 400,
         "maxWidth": 158,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
-        "y": 693
+        "y": 684
       },
       {
         "type": "TEXT",
         "fontFamily": "SF Pro Text",
         "fontSize": 10,
         "text": "Wallet Version",
-        "fontWeight": 400,
+        "fontWeight": 500,
         "maxWidth": 248,
         "lineHeightPx": 12.890625,
         "x": 48,
-        "y": 675
+        "y": 666
       },
       {
         "type": "QR",
@@ -2635,7 +2635,7 @@
         "name": ">qr:@ownership.ethereum.qr",
         "data": "@ownership.ethereum.qr",
         "x": 48,
-        "y": 549
+        "y": 540
       },
       {
         "type": "ADDR_COMPACT",
@@ -2646,7 +2646,7 @@
         "maxWidth": 190,
         "lineHeightPx": 10.546875,
         "x": 106,
-        "y": 549
+        "y": 540
       },
       {
         "type": "TEXT",
@@ -2668,7 +2668,7 @@
         "maxWidth": 222.93544006347656,
         "lineHeightPx": 10.546875,
         "x": 70,
-        "y": 486
+        "y": 477
       },
       {
         "type": "TEXT",
@@ -2677,9 +2677,9 @@
         "text": "Size: ",
         "fontWeight": 400,
         "maxWidth": 25,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
-        "y": 486
+        "y": 477
       },
       {
         "type": "TEXT",
@@ -2687,7 +2687,7 @@
         "fontSize": 9,
         "text": "@ticket.size",
         "fontWeight": 400,
-        "maxWidth": 222.93544006347656,
+        "maxWidth": 223,
         "lineHeightPx": 10.546875,
         "x": 70,
         "y": 387
@@ -2699,7 +2699,7 @@
         "text": "Size: ",
         "fontWeight": 400,
         "maxWidth": 25,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
         "y": 387
       },
@@ -2710,9 +2710,9 @@
         "text": "@ownership.seed.derivationPath",
         "fontWeight": 400,
         "maxWidth": 170.73727416992188,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 124,
-        "y": 504
+        "y": 495
       },
       {
         "type": "TEXT",
@@ -2721,9 +2721,9 @@
         "text": "Derivation Path: ",
         "fontWeight": 400,
         "maxWidth": 248,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
-        "y": 504
+        "y": 495
       },
       {
         "type": "TEXT",
@@ -2798,7 +2798,7 @@
         "text": "@meta.moreInformation",
         "fontWeight": 400,
         "maxWidth": 159,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 316,
         "y": 576
       },
@@ -2820,9 +2820,9 @@
         "text": "urbit.org/docs/bridge",
         "fontWeight": 400,
         "maxWidth": 114,
-        "lineHeightPx": 13.7109375,
+        "lineHeightPx": 10.546875,
         "x": 395,
-        "y": 395
+        "y": 396
       },
       {
         "type": "TEXT",
@@ -2831,7 +2831,7 @@
         "text": "Download Bridge: ",
         "fontWeight": 300,
         "maxWidth": 84,
-        "lineHeightPx": 13.7109375,
+        "lineHeightPx": 10.546875,
         "x": 316,
         "y": 396
       },
@@ -2916,7 +2916,7 @@
         "text": "@meta.walletVersion",
         "fontWeight": 400,
         "maxWidth": 135,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 134,
         "y": 243
       },
@@ -2927,7 +2927,7 @@
         "text": "Wallet Version: ",
         "fontWeight": 400,
         "maxWidth": 86,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
         "y": 243
       },
@@ -2938,7 +2938,7 @@
         "text": "@meta.createdOn",
         "fontWeight": 400,
         "maxWidth": 172,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 134,
         "y": 261
       },
@@ -2949,7 +2949,7 @@
         "text": "Date Created: ",
         "fontWeight": 400,
         "maxWidth": 86,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
         "y": 261
       },
@@ -2960,7 +2960,7 @@
         "text": "@meta.moreInformation",
         "fontWeight": 400,
         "maxWidth": 171.89833068847656,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 134.10166931152344,
         "y": 279
       },
@@ -2971,7 +2971,7 @@
         "text": "Information: ",
         "fontWeight": 400,
         "maxWidth": 86.10166931152344,
-        "lineHeightPx": 11.6015625,
+        "lineHeightPx": 10.546875,
         "x": 48,
         "y": 279
       },

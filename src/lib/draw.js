@@ -9,11 +9,13 @@ const drawSigil = ({ ctx, img, x, y, size, type }) => ctx.drawImage(img, x, y, s
 
 const drawText = ({ctx, fontWeight, fontSize, lineHeightPx, maxWidth, x, y, fontFamily, text, type }) => {
   ctx.font = `${fontWeight} ${fontSize}px ${fontFamily}`;
+  // const offset = fontFamily === 'Source Code Pro' ? 1 : 0
   ctx.fillText(text, x, y+lineHeightPx);
 };
 
 
 const drawWrappedText = ({ctx, fontWeight, fontSize, lineHeightPx, maxWidth, x, y, fontFamily, text, type }) => {
+  // const offset = fontFamily === 'Source Code Pro' ? 1 : 0
   ctx.font = `${fontWeight} ${fontSize}px ${fontFamily}`;
   wordWrap(ctx, text, x, y+lineHeightPx, lineHeightPx, maxWidth);
 };

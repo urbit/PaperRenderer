@@ -144,14 +144,13 @@ gulp.task('inline', function () {
 
 gulp.task('default', gulp.series(
   // 'fonts',
-  gulp.parallel('bundle-js', 'bundle-css'),
+  gulp.parallel('bundle-js'),
   // 'inline',
 ));
 
 
 gulp.task('watch', gulp.series('default', function() {
   gulp.watch('src/**/*.js', gulp.parallel('bundle-js'));
-  gulp.watch('src/**/*.css', gulp.parallel('bundle-css'));
 }));
 
 
