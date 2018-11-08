@@ -21,7 +21,7 @@ import { loadQR, loadSigil } from './load';
 
 
 const SEEDSIZE = '128 Bits';
-const BIP32_DERIVATION_PATH = `/m/44'/60'/0'/0/0`;
+const BIP32_DERIVATION_PATH = `m/44'/60'/0'/0/0`;
 const AT_LOAD_QR_SIZE = 100;
 const AT_LOAD_SIGIL_SIZE = 100;
 const PAT = /(\@)/g;
