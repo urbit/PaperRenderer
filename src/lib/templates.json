@@ -406,7 +406,7 @@
         "fontWeight": 400,
         "maxWidth": 170.73727416992188,
         "lineHeightPx": 10.546875,
-        "x": 124,
+        "x": 120,
         "y": 441
       },
       {
@@ -428,7 +428,7 @@
         "fontWeight": 400,
         "maxWidth": 224.8125,
         "lineHeightPx": 10.546875,
-        "x": 71.18659973144531,
+        "x": 73.1875,
         "y": 423
       },
       {
@@ -756,7 +756,7 @@
         "maxWidth": 248,
         "lineHeightPx": 10.546875,
         "x": 48,
-        "y": 370
+        "y": 369
       },
       {
         "type": "TEXT",
@@ -767,7 +767,7 @@
         "maxWidth": 175,
         "lineHeightPx": 12.890625,
         "x": 48,
-        "y": 350
+        "y": 351
       },
       {
         "type": "TEXT",
@@ -777,7 +777,7 @@
         "fontWeight": 400,
         "maxWidth": 170.73727416992188,
         "lineHeightPx": 10.546875,
-        "x": 124,
+        "x": 120,
         "y": 441
       },
       {
@@ -799,7 +799,7 @@
         "fontWeight": 400,
         "maxWidth": 224.8125,
         "lineHeightPx": 10.546875,
-        "x": 71.18659973144531,
+        "x": 73.1875,
         "y": 423
       },
       {
@@ -1017,7 +1017,7 @@
         "maxWidth": 248,
         "lineHeightPx": 10.546875,
         "x": 48,
-        "y": 370
+        "y": 369
       },
       {
         "type": "TEXT",
@@ -1028,7 +1028,7 @@
         "maxWidth": 175,
         "lineHeightPx": 12.890625,
         "x": 48,
-        "y": 350
+        "y": 351
       },
       {
         "type": "TEXT",
@@ -1038,7 +1038,7 @@
         "fontWeight": 400,
         "maxWidth": 170.73727416992188,
         "lineHeightPx": 10.546875,
-        "x": 124,
+        "x": 120,
         "y": 441
       },
       {
@@ -1060,7 +1060,7 @@
         "fontWeight": 400,
         "maxWidth": 224.8125,
         "lineHeightPx": 10.546875,
-        "x": 71.18659973144531,
+        "x": 73.1875,
         "y": 423
       },
       {
@@ -1333,7 +1333,7 @@
         "maxWidth": 248,
         "lineHeightPx": 10.546875,
         "x": 48,
-        "y": 370
+        "y": 369
       },
       {
         "type": "TEXT",
@@ -1344,7 +1344,7 @@
         "maxWidth": 175,
         "lineHeightPx": 12.890625,
         "x": 48,
-        "y": 350
+        "y": 351
       },
       {
         "type": "TEXT",
@@ -1352,9 +1352,9 @@
         "fontSize": 9,
         "text": "@management.seed.derivationPath",
         "fontWeight": 400,
-        "maxWidth": 170.73727416992188,
+        "maxWidth": 171,
         "lineHeightPx": 10.546875,
-        "x": 124,
+        "x": 120,
         "y": 441
       },
       {
@@ -1374,9 +1374,9 @@
         "fontSize": 9,
         "text": "@management.seed.size",
         "fontWeight": 400,
-        "maxWidth": 224.8125,
+        "maxWidth": 225,
         "lineHeightPx": 10.546875,
-        "x": 71.18659973144531,
+        "x": 73,
         "y": 423
       },
       {
@@ -1385,7 +1385,7 @@
         "fontSize": 9,
         "text": "Size: ",
         "fontWeight": 400,
-        "maxWidth": 23.02734375,
+        "maxWidth": 23,
         "lineHeightPx": 10.546875,
         "x": 48,
         "y": 423
@@ -1660,7 +1660,7 @@
         "maxWidth": 248,
         "lineHeightPx": 10.546875,
         "x": 48,
-        "y": 370
+        "y": 369
       },
       {
         "type": "TEXT",
@@ -1671,7 +1671,7 @@
         "maxWidth": 144,
         "lineHeightPx": 12.890625,
         "x": 48,
-        "y": 350
+        "y": 351
       },
       {
         "type": "TEXT",
@@ -1681,7 +1681,7 @@
         "fontWeight": 400,
         "maxWidth": 170.73727416992188,
         "lineHeightPx": 10.546875,
-        "x": 124,
+        "x": 119,
         "y": 441
       },
       {
@@ -1703,7 +1703,7 @@
         "fontWeight": 400,
         "maxWidth": 225,
         "lineHeightPx": 10.546875,
-        "x": 71,
+        "x": 73,
         "y": 423
       },
       {
@@ -1976,7 +1976,7 @@
         "maxWidth": 248,
         "lineHeightPx": 10.546875,
         "x": 48,
-        "y": 370
+        "y": 369
       },
       {
         "type": "TEXT",
@@ -1984,10 +1984,10 @@
         "fontSize": 10,
         "text": "Spawn Seed BIP39 Mnemonic",
         "fontWeight": 500,
-        "maxWidth": 144,
+        "maxWidth": 176,
         "lineHeightPx": 12.890625,
         "x": 48,
-        "y": 350
+        "y": 351
       },
       {
         "type": "TEXT",
@@ -1997,7 +1997,7 @@
         "fontWeight": 400,
         "maxWidth": 171,
         "lineHeightPx": 10.546875,
-        "x": 124,
+        "x": 120,
         "y": 441
       },
       {
@@ -2019,7 +2019,7 @@
         "fontWeight": 400,
         "maxWidth": 224.8125,
         "lineHeightPx": 10.546875,
-        "x": 71.18659973144531,
+        "x": 73.1875,
         "y": 423
       },
       {
@@ -2310,7 +2310,7 @@
         "fontWeight": 400,
         "maxWidth": 222.93544006347656,
         "lineHeightPx": 10.546875,
-        "x": 70,
+        "x": 73,
         "y": 486
       },
       {
@@ -2354,7 +2354,7 @@
         "fontWeight": 400,
         "maxWidth": 170.73727416992188,
         "lineHeightPx": 10.546875,
-        "x": 124,
+        "x": 120,
         "y": 504
       },
       {
@@ -2667,7 +2667,7 @@
         "fontWeight": 400,
         "maxWidth": 222.93544006347656,
         "lineHeightPx": 10.546875,
-        "x": 70,
+        "x": 72,
         "y": 477
       },
       {
@@ -2711,7 +2711,7 @@
         "fontWeight": 400,
         "maxWidth": 170.73727416992188,
         "lineHeightPx": 10.546875,
-        "x": 124,
+        "x": 120,
         "y": 495
       },
       {
