@@ -34,29 +34,29 @@
         "type": "TEXT",
         "fontFamily": "SF Pro Text",
         "fontSize": 9,
-        "text": "A complete master ticket could be used to transfer ownership or impersonate your Galaxy on the Urbit network without your permission.\n",
+        "text": "A complete master ticket could be used to transfer ownership or impersonate your galaxy on the Urbit network without your permission.\n",
         "fontWeight": 300,
         "maxWidth": 246,
         "lineHeightPx": 13.7109375,
         "x": 316,
-        "y": 252
+        "y": 261
       },
       {
         "type": "TEXT",
         "fontFamily": "SF Pro Text",
         "fontSize": 9,
-        "text": "You can lose a single shard, but if you lose two shards, or your master ticket, there is no way to recover it and you will no longer be able to control your Galaxy.\n\n",
+        "text": "You can lose a single shard, but if you lose two shards, or your master ticket, there is no way to recover it and you will no longer be able to control your galaxy.\n\n",
         "fontWeight": 300,
         "maxWidth": 248,
         "lineHeightPx": 13.7109375,
         "x": 316,
-        "y": 306
+        "y": 315
       },
       {
         "type": "TEXT",
         "fontFamily": "SF Pro Text",
         "fontSize": 10,
-        "text": "Custody Recommendations",
+        "text": "Custody",
         "fontWeight": 500,
         "maxWidth": 248,
         "lineHeightPx": 12.890625,
@@ -72,7 +72,7 @@
         "maxWidth": 248,
         "lineHeightPx": 13.7109375,
         "x": 316,
-        "y": 513
+        "y": 522
       },
       {
         "type": "TEXT",
@@ -83,7 +83,7 @@
         "maxWidth": 248,
         "lineHeightPx": 12.890625,
         "x": 316,
-        "y": 360
+        "y": 369
       },
       {
         "type": "PATQ",
@@ -138,7 +138,7 @@
         "maxWidth": 159,
         "lineHeightPx": 10.546875,
         "x": 316,
-        "y": 594
+        "y": 603
       },
       {
         "type": "TEXT",
@@ -149,7 +149,7 @@
         "maxWidth": 248,
         "lineHeightPx": 12.890625,
         "x": 316,
-        "y": 576
+        "y": 585
       },
       {
         "type": "TEXT",
@@ -234,7 +234,7 @@
         "maxWidth": 114,
         "lineHeightPx": 10.546875,
         "x": 396,
-        "y": 387
+        "y": 396
       },
       {
         "type": "TEXT",
@@ -245,7 +245,7 @@
         "maxWidth": 84,
         "lineHeightPx": 10.546875,
         "x": 316,
-        "y": 387
+        "y": 396
       },
       {
         "type": "TEXT",
@@ -256,7 +256,7 @@
         "maxWidth": 248,
         "lineHeightPx": 13.7109375,
         "x": 316,
-        "y": 414
+        "y": 423
       },
       {
         "type": "SIGIL",
@@ -325,7 +325,7 @@
         "type": "TEXT",
         "fontFamily": "Work Sans",
         "fontSize": 32,
-        "text": "Voting Seed",
+        "text": "Voting Proxy",
         "fontWeight": 600,
         "maxWidth": 248,
         "lineHeightPx": 37.5,
@@ -487,7 +487,7 @@
         "type": "TEXT",
         "fontFamily": "SF Pro Text",
         "fontSize": 9,
-        "text": "This voting seed could be used to vote on behalf of your Galaxy without your permission.",
+        "text": "This voting seed could be used to vote on behalf of your galaxy without your permission.",
         "fontWeight": 300,
         "maxWidth": 246,
         "lineHeightPx": 13.7109375,
@@ -520,7 +520,7 @@
         "type": "TEXT",
         "fontFamily": "SF Pro Text",
         "fontSize": 10,
-        "text": "Custody Recommendations",
+        "text": "Custody",
         "fontWeight": 500,
         "maxWidth": 248,
         "lineHeightPx": 12.890625,
@@ -630,7 +630,7 @@
         "type": "TEXT",
         "fontFamily": "Work Sans",
         "fontSize": 32,
-        "text": "Management Seed",
+        "text": "Management Proxy",
         "fontWeight": 600,
         "maxWidth": 248,
         "lineHeightPx": 37.5,
@@ -644,7 +644,7 @@
         "text": "Securely store this document.",
         "fontWeight": 300,
         "maxWidth": 248,
-        "lineHeightPx": 13.7109375,
+        "lineHeightPx": 10.546875,
         "x": 316,
         "y": 234
       },
@@ -652,7 +652,7 @@
         "type": "TEXT",
         "fontFamily": "SF Pro Text",
         "fontSize": 9,
-        "text": "This management seed could be used to boot your Galaxy or impersonate your planet on the Urbit network without your permission.",
+        "text": "This management seed could be used to boot your galaxy or impersonate your galaxy on the Urbit network without your permission.",
         "fontWeight": 300,
         "maxWidth": 248,
         "lineHeightPx": 13.7109375,
@@ -685,7 +685,7 @@
         "type": "TEXT",
         "fontFamily": "SF Pro Text",
         "fontSize": 10,
-        "text": "Custody Recommendations",
+        "text": "Custody",
         "fontWeight": 500,
         "maxWidth": 248,
         "lineHeightPx": 12.890625,
@@ -891,7 +891,7 @@
         "type": "TEXT",
         "fontFamily": "SF Pro Text",
         "fontSize": 9,
-        "text": "Use the management seed to activate your Galaxy, generate network keys, and escape to a new sponsor Galaxy.\n",
+        "text": "Use the management seed to activate your galaxy, generate network keys, and escape to a new sponsor galaxy.\n",
         "fontWeight": 300,
         "maxWidth": 248,
         "lineHeightPx": 13.7109375,
@@ -935,7 +935,7 @@
         "type": "TEXT",
         "fontFamily": "Work Sans",
         "fontSize": 32,
-        "text": "Management Seed",
+        "text": "Management Proxy",
         "fontWeight": 600,
         "maxWidth": 248,
         "lineHeightPx": 37.5,
@@ -1001,7 +1001,7 @@
         "type": "TEXT",
         "fontFamily": "SF Pro Text",
         "fontSize": 9,
-        "text": "Use the management seed to activate your planet, generate network keys, and escape to a new sponsor galaxy.\n",
+        "text": "Use the management seed to activate your star, generate network keys, and escape to a new sponsor galaxy.\n",
         "fontWeight": 300,
         "maxWidth": 248,
         "lineHeightPx": 13.7109375,
@@ -1103,7 +1103,7 @@
         "text": "Securely store this document.",
         "fontWeight": 300,
         "maxWidth": 248,
-        "lineHeightPx": 13.7109375,
+        "lineHeightPx": 10.546875,
         "x": 316,
         "y": 234
       },
@@ -1111,7 +1111,7 @@
         "type": "TEXT",
         "fontFamily": "SF Pro Text",
         "fontSize": 9,
-        "text": "This management seed could be used to boot your Galaxy or impersonate your planet on the Urbit network without your permission.",
+        "text": "This management seed could be used to boot your star or impersonate your star on the Urbit network without your permission.",
         "fontWeight": 300,
         "maxWidth": 248,
         "lineHeightPx": 13.7109375,
@@ -1144,7 +1144,7 @@
         "type": "TEXT",
         "fontFamily": "SF Pro Text",
         "fontSize": 10,
-        "text": "Custody Recommendations",
+        "text": "Custody",
         "fontWeight": 500,
         "maxWidth": 248,
         "lineHeightPx": 12.890625,
@@ -1251,7 +1251,7 @@
         "type": "TEXT",
         "fontFamily": "SF Pro Text",
         "fontSize": 10,
-        "text": "Custody Recommendations",
+        "text": "Custody",
         "fontWeight": 500,
         "maxWidth": 248,
         "lineHeightPx": 12.890625,
@@ -1394,7 +1394,7 @@
         "type": "TEXT",
         "fontFamily": "SF Pro Text",
         "fontSize": 9,
-        "text": "This management seed could be used to boot your Planet or impersonate your planet on the Urbit network without your permission.",
+        "text": "This management seed could be used to boot your planet or impersonate your planet on the Urbit network without your permission.",
         "fontWeight": 300,
         "maxWidth": 248,
         "lineHeightPx": 13.7109375,
@@ -1405,7 +1405,7 @@
         "type": "TEXT",
         "fontFamily": "SF Pro Text",
         "fontSize": 9,
-        "text": "If you lose your Planet seed, you can recover it from your master ticket or ownership seed.\n\n",
+        "text": "If you lose your planet seed, you can recover it from your master ticket or ownership seed.\n\n",
         "fontWeight": 300,
         "maxWidth": 248,
         "lineHeightPx": 13.7109375,
@@ -1523,7 +1523,7 @@
         "type": "TEXT",
         "fontFamily": "Work Sans",
         "fontSize": 32,
-        "text": "Management Seed",
+        "text": "Management Proxy",
         "fontWeight": 600,
         "maxWidth": 248,
         "lineHeightPx": 37.5,
@@ -1545,7 +1545,7 @@
         "type": "TEXT",
         "fontFamily": "Work Sans",
         "fontSize": 32,
-        "text": "Spawn Seed",
+        "text": "Spawn Proxy",
         "fontWeight": 600,
         "maxWidth": 248,
         "lineHeightPx": 37.5,
@@ -1567,7 +1567,7 @@
         "type": "TEXT",
         "fontFamily": "SF Pro Text",
         "fontSize": 9,
-        "text": "This spawn proxy seed could be used to spawn Stars under your Galaxy without your permission.\n",
+        "text": "This spawn proxy seed could be used to spawn stars under your galaxy without your permission.\n",
         "fontWeight": 300,
         "maxWidth": 246,
         "lineHeightPx": 13.7109375,
@@ -1578,7 +1578,7 @@
         "type": "TEXT",
         "fontFamily": "SF Pro Text",
         "fontSize": 10,
-        "text": "Custody Recommendations",
+        "text": "Custody",
         "fontWeight": 500,
         "maxWidth": 248,
         "lineHeightPx": 12.890625,
@@ -1850,7 +1850,7 @@
         "type": "TEXT",
         "fontFamily": "Work Sans",
         "fontSize": 32,
-        "text": "Spawn Seed",
+        "text": "Spawn Proxy",
         "fontWeight": 600,
         "maxWidth": 248,
         "lineHeightPx": 37.5,
@@ -1872,28 +1872,6 @@
         "type": "TEXT",
         "fontFamily": "SF Pro Text",
         "fontSize": 9,
-        "text": "This master ticket or ownership seed could be used to transfer ownership or impersonate your planet on the Urbit network without your permission.",
-        "fontWeight": 300,
-        "maxWidth": 246,
-        "lineHeightPx": 13.7109375,
-        "x": 316,
-        "y": 261
-      },
-      {
-        "type": "TEXT",
-        "fontFamily": "SF Pro Text",
-        "fontSize": 9,
-        "text": "If you lose a child seed, you can recover it from your master ticket or ownership seed.\n",
-        "fontWeight": 300,
-        "maxWidth": 246,
-        "lineHeightPx": 13.7109375,
-        "x": 316,
-        "y": 315
-      },
-      {
-        "type": "TEXT",
-        "fontFamily": "SF Pro Text",
-        "fontSize": 9,
         "text": "The ownership seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n",
         "fontWeight": 300,
         "maxWidth": 246,
@@ -1905,7 +1883,7 @@
         "type": "TEXT",
         "fontFamily": "SF Pro Text",
         "fontSize": 10,
-        "text": "Custody Recommendations",
+        "text": "Custody",
         "fontWeight": 500,
         "maxWidth": 248,
         "lineHeightPx": 12.890625,
@@ -1954,7 +1932,7 @@
         "maxWidth": 114,
         "lineHeightPx": 10.546875,
         "x": 396,
-        "y": 433
+        "y": 432
       },
       {
         "type": "TEXT",
@@ -2037,7 +2015,7 @@
         "type": "TEXT",
         "fontFamily": "SF Pro Text",
         "fontSize": 9,
-        "text": "Use the spawn seed to spawn Planets under your Star.",
+        "text": "Use the spawn seed to spawn planets under your star.",
         "fontWeight": 300,
         "maxWidth": 248,
         "lineHeightPx": 13.7109375,
@@ -2139,6 +2117,28 @@
         "lineHeightPx": 13.7109375,
         "x": 316,
         "y": 485
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "This spawn proxy seed could be used to spawn planets under your star without your permission.\n",
+        "fontWeight": 300,
+        "maxWidth": 246,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 261
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 9,
+        "text": "If you lose your spawn seed, you can recover it from your master ticket or ownership seed.\n\n",
+        "fontWeight": 300,
+        "maxWidth": 246,
+        "lineHeightPx": 13.7109375,
+        "x": 316,
+        "y": 306
       }
     ]
   },
@@ -2375,7 +2375,7 @@
         "text": "Securely store this document.",
         "fontWeight": 300,
         "maxWidth": 248,
-        "lineHeightPx": 13.7109375,
+        "lineHeightPx": 10.546875,
         "x": 316,
         "y": 234
       },
@@ -2383,7 +2383,7 @@
         "type": "TEXT",
         "fontFamily": "SF Pro Text",
         "fontSize": 9,
-        "text": "This master ticket or ownership seed could be used to transfer ownership or impersonate your Star on the Urbit network without your permission.",
+        "text": "This master ticket or ownership seed could be used to transfer ownership or impersonate your star on the Urbit network without your permission.",
         "fontWeight": 300,
         "maxWidth": 248,
         "lineHeightPx": 13.7109375,
@@ -2394,7 +2394,7 @@
         "type": "TEXT",
         "fontFamily": "SF Pro Text",
         "fontSize": 9,
-        "text": "If you lose your master ticket, there is no way to recover it and you will no longer be able to control your Star.\n",
+        "text": "If you lose your master ticket, there is no way to recover it and you will no longer be able to control your star.\n",
         "fontWeight": 300,
         "maxWidth": 248,
         "lineHeightPx": 13.7109375,
@@ -2405,7 +2405,7 @@
         "type": "TEXT",
         "fontFamily": "SF Pro Text",
         "fontSize": 10,
-        "text": "Custody Recommendations",
+        "text": "Custody",
         "fontWeight": 500,
         "maxWidth": 248,
         "lineHeightPx": 12.890625,
@@ -2732,7 +2732,7 @@
         "text": "Securely store this document.",
         "fontWeight": 300,
         "maxWidth": 248,
-        "lineHeightPx": 13.7109375,
+        "lineHeightPx": 10.546875,
         "x": 316,
         "y": 234
       },
@@ -2762,7 +2762,7 @@
         "type": "TEXT",
         "fontFamily": "SF Pro Text",
         "fontSize": 10,
-        "text": "Custody Recommendations",
+        "text": "Custody",
         "fontWeight": 500,
         "maxWidth": 248,
         "lineHeightPx": 12.890625,
@@ -2880,7 +2880,7 @@
         "type": "TEXT",
         "fontFamily": "SF Pro Text",
         "fontSize": 9,
-        "text": "It is ok to store in a trusted environment but be aware that possession of this document will reveal how much address space you own to whoever sees it.",
+        "text": "Store this document in a trusted environment. It reveals how much address space you own.",
         "fontWeight": 300,
         "maxWidth": 258,
         "lineHeightPx": 13.7109375,
@@ -2918,7 +2918,7 @@
         "maxWidth": 135,
         "lineHeightPx": 10.546875,
         "x": 134,
-        "y": 243
+        "y": 234
       },
       {
         "type": "TEXT",
@@ -2929,7 +2929,7 @@
         "maxWidth": 86,
         "lineHeightPx": 10.546875,
         "x": 48,
-        "y": 243
+        "y": 234
       },
       {
         "type": "TEXT",
@@ -2940,7 +2940,7 @@
         "maxWidth": 172,
         "lineHeightPx": 10.546875,
         "x": 134,
-        "y": 261
+        "y": 252
       },
       {
         "type": "TEXT",
@@ -2951,7 +2951,7 @@
         "maxWidth": 86,
         "lineHeightPx": 10.546875,
         "x": 48,
-        "y": 261
+        "y": 252
       },
       {
         "type": "TEXT",
@@ -2961,8 +2961,8 @@
         "fontWeight": 400,
         "maxWidth": 171.89833068847656,
         "lineHeightPx": 10.546875,
-        "x": 134.10166931152344,
-        "y": 279
+        "x": 134.1015625,
+        "y": 270
       },
       {
         "type": "TEXT",
@@ -2973,7 +2973,7 @@
         "maxWidth": 86.10166931152344,
         "lineHeightPx": 10.546875,
         "x": 48,
-        "y": 279
+        "y": 270
       },
       {
         "type": "TEXT",
@@ -2984,7 +2984,7 @@
         "maxWidth": 258,
         "lineHeightPx": 13.7109375,
         "x": 48,
-        "y": 198
+        "y": 189
       }
     ]
   },

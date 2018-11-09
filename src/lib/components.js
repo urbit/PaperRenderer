@@ -119,7 +119,7 @@ const AddressManifestComponent = async (wallets, constants, templates) => {
 
     const firstPageRenderableListItems = firstListItemData.reduce((acc, props, listItemIndex) => {
       const moved = mapInsert(props, LI_COMPONENT).map(_r => {
-        const r = {..._r}
+        const r = {..._r};
         r.x = _r.x + P1_LIST_START_X;
         r.y = _r.y + P1_LIST_START_Y + (LI_COMPONENT_HEIGHT * listItemIndex);
         return r;
@@ -143,7 +143,7 @@ const AddressManifestComponent = async (wallets, constants, templates) => {
 
     return {
       renderables: [
-        ...mapInsert({...props, pageAofB: `Page ${pageIndex + 1} of ${pageCount}`}, TEMP_X),
+        ...mapInsert({...props, pageAofB: `Page ${pageIndex + 2} of ${pageCount}`}, TEMP_X),
         ...listItemsWithData,
       ],
       bin: '0',
