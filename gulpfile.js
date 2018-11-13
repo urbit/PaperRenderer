@@ -155,7 +155,7 @@ gulp.task('watch', gulp.series('default', function() {
 
 
 
-gulp.task('bundle-component', function(cb) {
+gulp.task('bundle-prod', function(cb) {
   return rollup({
   input: './src/PaperCollateralRenderer.js',
   format: 'cjs',
