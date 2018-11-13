@@ -1,6 +1,6 @@
 {
   "name": "PaperCollateralRenderer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": true,
   "main": "dist/PaperCollateralRenderer.js",
   "dependencies": {
@@ -47,6 +47,6 @@
   "scripts": {
     "start": "gulp watch",
     "build:dev": "gulp",
-    "build:component": "gulp bundle-component"
+    "build:prod": "gulp bundle-prod"
   }
 }

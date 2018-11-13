@@ -81,6 +81,8 @@ class PaperCollateralRenderer extends Component {
 
     const wallets = shim(this.props.wallet);
 
+    console.log(JSON.stringify(wallets, null, 2))
+
     const docket = PROFILES[this.props.mode];
 
     const docketFunctions = wallets.reduce((acc, wallet) => {
