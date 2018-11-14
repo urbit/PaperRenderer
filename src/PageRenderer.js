@@ -62,7 +62,7 @@ class PageRenderer extends Component {
       page: get(page, 'page', '1'),
       pageTitle: page.pageTitle,
       png: dataURItoBlob(this.canvas.toDataURL("image/png")),
-      durl: this.canvas.toDataURL("image/png"),
+      // durl: this.canvas.toDataURL("image/png"),
     };
 
     return pageWithImageData;
