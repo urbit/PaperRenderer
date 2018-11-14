@@ -29,8 +29,9 @@ class PageRenderer extends Component {
 
 
   componentDidMount = () => {
-    this.canvas = initCanvas(this.pcr_ref, { x: 612, y: 792 }, 5);
-    this.drawLayout(this.props.page);
+    this.canvas = initCanvas(this.pcr_ref, { x: 612, y: 792 }, 4);
+    const results = this.props.pages.map(page => this.drawLayout(page));
+    this.props.callback(results);
   };
 
 
@@ -61,9 +62,10 @@ class PageRenderer extends Component {
       page: get(page, 'page', '1'),
       pageTitle: page.pageTitle,
       png: dataURItoBlob(this.canvas.toDataURL("image/png")),
+      // durl: this.canvas.toDataURL("image/png"),
     };
 
-    this.props.callback(pageWithImageData);
+    return pageWithImageData;
   };
 
 

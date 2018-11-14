@@ -61,19 +61,27 @@ class PaperCollateralRenderer extends Component {
       totalPages: null,
     };
     this.latch = false;
-    this.counter = 0;
-    this.results = [];
+    // this.counter = 0;
+    // this.results = [];
   }
 
-  handleOutput = (output, total) => {
-    this.counter = this.counter + 1
-
-    this.results = [...this.results, output]
-
-    if (this.counter === total) {
-      this.props.callback(this.results)
-    }
-  }
+  // handleOutput = (output, total) => {
+  //   this.counter = this.counter + 1
+  //
+  //   this.results = [...this.results, output]
+  //
+  //   if (this.counter === total) {
+  //     this.props.callback(this.results)
+  //   }
+  // }
+  //
+  //
+  //
+  // handleOutput = (output, total) => {
+  //   if (this.counter === total) {
+  //     this.props.callback(this.results)
+  //   }
+  // }
 
 
 
@@ -111,17 +119,12 @@ class PaperCollateralRenderer extends Component {
 
       return (
         <div className={ this.props.className }>
-          {
-            pages.map(page => {
-              return (
-                <PageRenderer
-                  key={`pageRenderer:${page.pageTitle}`}
-                  page={page}
-                  callback={output => this.handleOutput(output, totalPages)}
-                />
-              )
-            })
-          }
+
+        <PageRenderer
+          pages={pages}
+          callback={data => this.props.callback(data)}
+        />
+
         </div>
       );
     } else {
