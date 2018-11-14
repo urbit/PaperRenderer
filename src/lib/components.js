@@ -240,6 +240,10 @@ const SpawnSeedComponent = async (wallet, constants, templates) => {
         size: SEEDSIZE,
         derivationPath: BIP32_DERIVATION_PATH,
       },
+      ethereum: {
+        address: retrieve(wallet, 'spawn.keys.address'),
+        qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'spawn.keys.address')),
+      },
     },
     meta: {
       createdOn: dateToDa(new Date()),
@@ -278,6 +282,10 @@ const VotingSeedComponent = async (wallet, constants, templates) => {
         size: SEEDSIZE,
         derivationPath: BIP32_DERIVATION_PATH,
       },
+      ethereum: {
+        address: retrieve(wallet, 'voting.keys.address'),
+        qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'voting.keys.address')),
+      },
     },
     meta: {
       createdOn: dateToDa(new Date()),
@@ -315,6 +323,10 @@ const ManagementSeedComponent = async (wallet, constants, templates) => {
         mnemonic: retrieve(wallet, 'management.seed'),
         size: SEEDSIZE,
         derivationPath: BIP32_DERIVATION_PATH,
+      },
+      ethereum: {
+        address: retrieve(wallet, 'management.keys.address'),
+        qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'management.keys.address')),
       },
     },
     meta: {

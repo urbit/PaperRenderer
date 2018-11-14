@@ -363,7 +363,7 @@
         "maxWidth": 172,
         "lineHeightPx": 11.6015625,
         "x": 48,
-        "y": 495
+        "y": 594
       },
       {
         "type": "TEXT",
@@ -374,7 +374,7 @@
         "maxWidth": 158,
         "lineHeightPx": 11.6015625,
         "x": 48,
-        "y": 540
+        "y": 639
       },
       {
         "type": "TEXT",
@@ -385,7 +385,7 @@
         "maxWidth": 248,
         "lineHeightPx": 12.890625,
         "x": 48,
-        "y": 477
+        "y": 576
       },
       {
         "type": "TEXT",
@@ -396,7 +396,7 @@
         "maxWidth": 248,
         "lineHeightPx": 12.890625,
         "x": 48,
-        "y": 522
+        "y": 621
       },
       {
         "type": "TEXT",
@@ -614,14 +614,44 @@
         "lineHeightPx": 13.7109375,
         "x": 316,
         "y": 477
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Voting Address",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 477
+      },
+      {
+        "type": "QR",
+        "size": 48.000099182128906,
+        "name": ">qr:@voting.ethereum.qr",
+        "data": "@voting.ethereum.qr",
+        "x": 48,
+        "y": 495
+      },
+      {
+        "type": "ADDR_COMPACT",
+        "fontWeight": 400,
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@voting.ethereum.address",
+        "maxWidth": 190,
+        "lineHeightPx": 10.546875,
+        "x": 106,
+        "y": 495
       }
     ]
   },
   "MANAGEMENT:GALAXY": {
     "key": "MANAGEMENT:GALAXY",
     "absoluteBoundingBox": {
-      "x": 24998,
-      "y": -2334,
+      "x": 24999,
+      "y": -2333,
       "width": 612,
       "height": 792
     },
@@ -845,50 +875,6 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Source Code Pro",
-        "fontSize": 9,
-        "text": "@meta.createdOn",
-        "fontWeight": 400,
-        "maxWidth": 172,
-        "lineHeightPx": 11.6015625,
-        "x": 48,
-        "y": 495
-      },
-      {
-        "type": "TEXT",
-        "fontFamily": "Source Code Pro",
-        "fontSize": 9,
-        "text": "@meta.walletVersion",
-        "fontWeight": 400,
-        "maxWidth": 158,
-        "lineHeightPx": 11.6015625,
-        "x": 48,
-        "y": 540
-      },
-      {
-        "type": "TEXT",
-        "fontFamily": "SF Pro Text",
-        "fontSize": 10,
-        "text": "Created On",
-        "fontWeight": 500,
-        "maxWidth": 248,
-        "lineHeightPx": 12.890625,
-        "x": 48,
-        "y": 477
-      },
-      {
-        "type": "TEXT",
-        "fontFamily": "SF Pro Text",
-        "fontSize": 10,
-        "text": "Wallet Version",
-        "fontWeight": 500,
-        "maxWidth": 248,
-        "lineHeightPx": 12.890625,
-        "x": 48,
-        "y": 522
-      },
-      {
-        "type": "TEXT",
         "fontFamily": "SF Pro Text",
         "fontSize": 9,
         "text": "Use the management seed to activate your galaxy, generate network keys, and escape to a new sponsor galaxy.\n",
@@ -919,6 +905,80 @@
         "lineHeightPx": 13.7109375,
         "x": 316,
         "y": 522
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Management Address",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 476
+      },
+      {
+        "type": "QR",
+        "size": 48.000099182128906,
+        "name": ">qr:@management.ethereum.qr",
+        "data": "@management.ethereum.qr",
+        "x": 48,
+        "y": 494
+      },
+      {
+        "type": "ADDR_COMPACT",
+        "fontWeight": 400,
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@management.ethereum.address",
+        "maxWidth": 190,
+        "lineHeightPx": 10.546875,
+        "x": 106,
+        "y": 494
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.createdOn",
+        "fontWeight": 400,
+        "maxWidth": 172,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 594
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.walletVersion",
+        "fontWeight": 400,
+        "maxWidth": 158,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 639
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Created On",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 576
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Wallet Version",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 621
       }
     ]
   },
@@ -1183,6 +1243,36 @@
       },
       {
         "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Management Address",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 476
+      },
+      {
+        "type": "QR",
+        "size": 48.000099182128906,
+        "name": ">qr:@management.ethereum.qr",
+        "data": "@management.ethereum.qr",
+        "x": 48,
+        "y": 494
+      },
+      {
+        "type": "ADDR_COMPACT",
+        "fontWeight": 400,
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@management.ethereum.address",
+        "maxWidth": 190,
+        "lineHeightPx": 10.546875,
+        "x": 106,
+        "y": 494
+      },
+      {
+        "type": "TEXT",
         "fontFamily": "Source Code Pro",
         "fontSize": 9,
         "text": "@meta.createdOn",
@@ -1190,7 +1280,7 @@
         "maxWidth": 172,
         "lineHeightPx": 11.6015625,
         "x": 48,
-        "y": 495
+        "y": 594
       },
       {
         "type": "TEXT",
@@ -1201,7 +1291,7 @@
         "maxWidth": 158,
         "lineHeightPx": 11.6015625,
         "x": 48,
-        "y": 540
+        "y": 639
       },
       {
         "type": "TEXT",
@@ -1212,7 +1302,7 @@
         "maxWidth": 248,
         "lineHeightPx": 12.890625,
         "x": 48,
-        "y": 477
+        "y": 576
       },
       {
         "type": "TEXT",
@@ -1223,7 +1313,7 @@
         "maxWidth": 248,
         "lineHeightPx": 12.890625,
         "x": 48,
-        "y": 522
+        "y": 621
       }
     ]
   },
@@ -1477,6 +1567,47 @@
       },
       {
         "type": "TEXT",
+        "fontFamily": "Work Sans",
+        "fontSize": 32,
+        "text": "Management Proxy",
+        "fontWeight": 600,
+        "maxWidth": 248,
+        "lineHeightPx": 37.5,
+        "x": 48,
+        "y": 40
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Management Address",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 476
+      },
+      {
+        "type": "QR",
+        "size": 48.000099182128906,
+        "name": ">qr:@management.ethereum.qr",
+        "data": "@management.ethereum.qr",
+        "x": 48,
+        "y": 494
+      },
+      {
+        "type": "ADDR_COMPACT",
+        "fontWeight": 400,
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@management.ethereum.address",
+        "maxWidth": 190,
+        "lineHeightPx": 10.546875,
+        "x": 106,
+        "y": 494
+      },
+      {
+        "type": "TEXT",
         "fontFamily": "Source Code Pro",
         "fontSize": 9,
         "text": "@meta.createdOn",
@@ -1484,7 +1615,7 @@
         "maxWidth": 172,
         "lineHeightPx": 11.6015625,
         "x": 48,
-        "y": 495
+        "y": 594
       },
       {
         "type": "TEXT",
@@ -1495,7 +1626,7 @@
         "maxWidth": 158,
         "lineHeightPx": 11.6015625,
         "x": 48,
-        "y": 540
+        "y": 639
       },
       {
         "type": "TEXT",
@@ -1506,7 +1637,7 @@
         "maxWidth": 248,
         "lineHeightPx": 12.890625,
         "x": 48,
-        "y": 477
+        "y": 576
       },
       {
         "type": "TEXT",
@@ -1517,18 +1648,7 @@
         "maxWidth": 248,
         "lineHeightPx": 12.890625,
         "x": 48,
-        "y": 522
-      },
-      {
-        "type": "TEXT",
-        "fontFamily": "Work Sans",
-        "fontSize": 32,
-        "text": "Management Proxy",
-        "fontWeight": 600,
-        "maxWidth": 248,
-        "lineHeightPx": 37.5,
-        "x": 48,
-        "y": 40
+        "y": 621
       }
     ]
   },
@@ -1793,6 +1913,36 @@
       },
       {
         "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Spawn Address",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 476
+      },
+      {
+        "type": "QR",
+        "size": 48.000099182128906,
+        "name": ">qr:@spawn.ethereum.qr",
+        "data": "@spawn.ethereum.qr",
+        "x": 48,
+        "y": 494
+      },
+      {
+        "type": "ADDR_COMPACT",
+        "fontWeight": 400,
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@spawn.ethereum.address",
+        "maxWidth": 190,
+        "lineHeightPx": 10.546875,
+        "x": 106,
+        "y": 494
+      },
+      {
+        "type": "TEXT",
         "fontFamily": "Source Code Pro",
         "fontSize": 9,
         "text": "@meta.createdOn",
@@ -1800,7 +1950,7 @@
         "maxWidth": 172,
         "lineHeightPx": 11.6015625,
         "x": 48,
-        "y": 495
+        "y": 594
       },
       {
         "type": "TEXT",
@@ -1811,7 +1961,7 @@
         "maxWidth": 158,
         "lineHeightPx": 11.6015625,
         "x": 48,
-        "y": 540
+        "y": 639
       },
       {
         "type": "TEXT",
@@ -1822,7 +1972,7 @@
         "maxWidth": 248,
         "lineHeightPx": 12.890625,
         "x": 48,
-        "y": 477
+        "y": 576
       },
       {
         "type": "TEXT",
@@ -1833,7 +1983,7 @@
         "maxWidth": 248,
         "lineHeightPx": 12.890625,
         "x": 48,
-        "y": 522
+        "y": 621
       }
     ]
   },
@@ -2056,50 +2206,6 @@
         "type": "TEXT",
         "fontFamily": "Source Code Pro",
         "fontSize": 9,
-        "text": "@meta.createdOn",
-        "fontWeight": 400,
-        "maxWidth": 172,
-        "lineHeightPx": 11.6015625,
-        "x": 48,
-        "y": 495
-      },
-      {
-        "type": "TEXT",
-        "fontFamily": "Source Code Pro",
-        "fontSize": 9,
-        "text": "@meta.walletVersion",
-        "fontWeight": 400,
-        "maxWidth": 158,
-        "lineHeightPx": 11.6015625,
-        "x": 48,
-        "y": 540
-      },
-      {
-        "type": "TEXT",
-        "fontFamily": "SF Pro Text",
-        "fontSize": 10,
-        "text": "Created On",
-        "fontWeight": 500,
-        "maxWidth": 248,
-        "lineHeightPx": 12.890625,
-        "x": 48,
-        "y": 477
-      },
-      {
-        "type": "TEXT",
-        "fontFamily": "SF Pro Text",
-        "fontSize": 10,
-        "text": "Wallet Version",
-        "fontWeight": 500,
-        "maxWidth": 248,
-        "lineHeightPx": 12.890625,
-        "x": 48,
-        "y": 522
-      },
-      {
-        "type": "TEXT",
-        "fontFamily": "Source Code Pro",
-        "fontSize": 9,
         "text": "@spawn.seed.derivationPath",
         "fontWeight": 400,
         "maxWidth": 178,
@@ -2139,6 +2245,80 @@
         "lineHeightPx": 13.7109375,
         "x": 316,
         "y": 306
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Spawn Address",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 476
+      },
+      {
+        "type": "QR",
+        "size": 48.000099182128906,
+        "name": ">qr:@spawn.ethereum.qr",
+        "data": "@spawn.ethereum.qr",
+        "x": 48,
+        "y": 494
+      },
+      {
+        "type": "ADDR_COMPACT",
+        "fontWeight": 400,
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@spawn.ethereum.address",
+        "maxWidth": 190,
+        "lineHeightPx": 10.546875,
+        "x": 106,
+        "y": 494
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.createdOn",
+        "fontWeight": 400,
+        "maxWidth": 172,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 594
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 9,
+        "text": "@meta.walletVersion",
+        "fontWeight": 400,
+        "maxWidth": 158,
+        "lineHeightPx": 11.6015625,
+        "x": 48,
+        "y": 639
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Created On",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 576
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "SF Pro Text",
+        "fontSize": 10,
+        "text": "Wallet Version",
+        "fontWeight": 500,
+        "maxWidth": 248,
+        "lineHeightPx": 12.890625,
+        "x": 48,
+        "y": 621
       }
     ]
   },
