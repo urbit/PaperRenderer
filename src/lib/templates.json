@@ -349,7 +349,7 @@
         "fontSize": 10,
         "text": "Voting Seed BIP39 Mnemonic",
         "fontWeight": 500,
-        "maxWidth": 143,
+        "maxWidth": 248,
         "lineHeightPx": 12.890625,
         "x": 48,
         "y": 342
@@ -764,7 +764,7 @@
         "fontSize": 10,
         "text": "Management Seed BIP39 Mnemonic",
         "fontWeight": 500,
-        "maxWidth": 175,
+        "maxWidth": 248,
         "lineHeightPx": 12.890625,
         "x": 48,
         "y": 351
@@ -1025,7 +1025,7 @@
         "fontSize": 10,
         "text": "Management Seed BIP39 Mnemonic",
         "fontWeight": 500,
-        "maxWidth": 175,
+        "maxWidth": 248,
         "lineHeightPx": 12.890625,
         "x": 48,
         "y": 351
@@ -1341,7 +1341,7 @@
         "fontSize": 10,
         "text": "Management Seed BIP39 Mnemonic",
         "fontWeight": 500,
-        "maxWidth": 175,
+        "maxWidth": 248,
         "lineHeightPx": 12.890625,
         "x": 48,
         "y": 351
@@ -1668,7 +1668,7 @@
         "fontSize": 10,
         "text": "Spawn Seed BIP39 Mnemonic",
         "fontWeight": 500,
-        "maxWidth": 144,
+        "maxWidth": 248,
         "lineHeightPx": 12.890625,
         "x": 48,
         "y": 351
@@ -1962,7 +1962,7 @@
         "fontSize": 10,
         "text": "Spawn Seed BIP39 Mnemonic",
         "fontWeight": 500,
-        "maxWidth": 176,
+        "maxWidth": 248,
         "lineHeightPx": 12.890625,
         "x": 48,
         "y": 351
@@ -3077,7 +3077,7 @@
         "fontSize": 10,
         "text": "Ownership Address",
         "fontWeight": 500,
-        "maxWidth": 129,
+        "maxWidth": 248,
         "lineHeightPx": 11.953125,
         "x": 0,
         "y": 36
