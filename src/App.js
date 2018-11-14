@@ -9,17 +9,36 @@ import PaperCollateralRenderer from './PaperCollateralRenderer';
 import LayoutGenerator from './LayoutGenerator';
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      pages: [],
+    };
+  };
+
+
+  handleOutput = data => {
+    this.setState({pages: data})
+    console.log('App Scope: ', data)
+  }
+
+
   render() {
     return (
       <div>
         <PaperCollateralRenderer
           wallet={wallet5}
           className={''}
-          callback={data => console.log('App Scope: ', data)}
+          callback={data => this.handleOutput(data)}
           mode={'REGISTRATION'}
         />
         {
-          <LayoutGenerator />
+          // <LayoutGenerator />
+        }
+        {
+          this.state.pages.map(p => {
+            return <img style={{maxWidth:'550px', border:'1px solid black'}} src={p.durl} />
+          })
         }
       </div>
     )
