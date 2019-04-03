@@ -16,7 +16,6 @@ var builtins = require('rollup-plugin-node-builtins');
 var rootImport = require('rollup-plugin-root-import');
 var globals = require('rollup-plugin-node-globals');
 var uglify = require('rollup-plugin-uglify-es');
-var cssfont64 = require('gulp-cssfont64');
 
 /***
   End main config options
@@ -29,13 +28,6 @@ gulp.task('bundle-css', function() {
     .pipe(cssnano())
     .pipe(gulp.dest('./public/css'));
 });
-
-gulp.task('fonts', function () {
-  return gulp
-    .src('src/styles/fonts/*')
-		.pipe(cssfont64())
-		.pipe(gulp.dest('./public/css'));
-})
 
 var cache;
 
