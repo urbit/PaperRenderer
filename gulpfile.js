@@ -15,9 +15,7 @@ var json = require('rollup-plugin-json');
 var builtins = require('rollup-plugin-node-builtins');
 var rootImport = require('rollup-plugin-root-import');
 var globals = require('rollup-plugin-node-globals');
-var inline = require('gulp-inline');
 var uglify = require('rollup-plugin-uglify-es');
-var cssfont64 = require('gulp-cssfont64');
 
 /***
   End main config options
@@ -30,13 +28,6 @@ gulp.task('bundle-css', function() {
     .pipe(cssnano())
     .pipe(gulp.dest('./public/css'));
 });
-
-gulp.task('fonts', function () {
-  return gulp
-    .src('src/styles/fonts/*')
-		.pipe(cssfont64())
-		.pipe(gulp.dest('./public/css'));
-})
 
 var cache;
 
@@ -130,22 +121,8 @@ gulp.task('bundle-js', function(cb) {
     .on('end', cb);
 });
 
-
-gulp.task('inline', function () {
-  return gulp
-    .src('./public/index.html')
-    .pipe(inline({
-      base: './public/',
-      disabledTypes: ['svg', 'img'],
-    }))
-    .pipe(gulp.dest('./build/'));
-});
-
-
 gulp.task('default', gulp.series(
-  // 'fonts',
   gulp.parallel('bundle-js'),
-  // 'inline',
 ));
 
 
