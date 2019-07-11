@@ -1,0 +1,215 @@
+{
+  "value": {
+    "5556": {
+      "ticket": "~baldeg-dispun-paches-litmyn-torbyt-ragtyr-patwyt-lopmun",
+      "shards": [
+        "~baldeg-dispun-paches-litmyn-torbyt-ragtyr-patwyt-lopmun"
+      ],
+      "ownership": {
+        "meta": {
+          "type": "ownership",
+          "revision": 0,
+          "ship": null
+        },
+        "seed": "grape invest tail worry foil media surround gift oblige ginger illness never next upset habit cushion upset tired guess trust account mind check test",
+        "keys": {
+          "public": "036ecf6b9a44c9e85a5841a134c40c6851819528497b96cb63a7a6fbdc37fd61ae",
+          "private": "e1c626a8ca5edf680e972cf0b56cad08fa513750a0e9e3de1fb2e2f89ac5b7ca",
+          "chain": "c09feb8756017f18c7fbee85dbdda8f42468e0a6d6f13029acdaf97a376c607f",
+          "address": "0x0581e9F74400F34CdC90d6FF5BAC29A58F298885"
+        }
+      },
+      "transfer": {
+        "meta": {
+          "type": "transfer",
+          "revision": 0,
+          "ship": null
+        },
+        "seed": "pen gap whip help scan still embark crush scissors demand runway also announce pioneer rhythm company chair spot ice industry ketchup topple horse aunt",
+        "keys": {
+          "public": "02c02bed1f5b3c39c339212aa985f75551eb36fa4b3418ef7d1c18a720995358cb",
+          "private": "670a460bb1e04c79640e35a596117782e0e373e04f575853cb800dbc02a7ff31",
+          "chain": "de0a9002869d5013448316f38f828dac0923e0e1f9ba4492343b3bd733379689",
+          "address": "0x73180Dc3C89e1925B81Edb12FDf7723d7D87048a"
+        }
+      },
+      "spawn": {
+        "meta": {
+          "type": "spawn",
+          "revision": 0,
+          "ship": null
+        },
+        "seed": "deal bench try identify absorb mammal major pluck blast castle into spend forget clown help kiss night flock boy interest yard wine plate horn",
+        "keys": {
+          "public": "022cf892b21ae96b09da8b661f54689c102401ab36368c11a8e43605d3ca1f4a05",
+          "private": "6fd3e9045faa8f56b003a315f4274fe53917479c4a32f453aef3117d441761c8",
+          "chain": "8bb1f92d17b6084badd35e066d6f7ee4a7eb2cfba44cf11272110ce0213b5d39",
+          "address": "0xF2286DfF41Fbf0150773935b445e9365CC78EcF9"
+        }
+      },
+      "voting": {},
+      "management": {
+        "meta": {
+          "type": "management",
+          "revision": 0,
+          "ship": null
+        },
+        "seed": "hill offer cattle lesson empty item car card attract debate garage monitor crew guide apple divide worry top provide manage soft jungle question shell",
+        "keys": {
+          "public": "03015248720ffa889f3a2e2167f3679d2ce86a3ae74d66a18b7dc036d15e2d0939",
+          "private": "033a40a3416c785625624b40ffdf410b3d0ae6f2861703b5fcf23f462f8d0406",
+          "chain": "2f6eea54a9793df5d0297b6debdc8f80e2afa8beb577af802c1c5166f13eec87",
+          "address": "0x83F2a1359aED862E061dF0bF0391FB5516fa86FA"
+        }
+      },
+      "network": {}
+    },
+    "18086": {
+      "ticket": "~sipmud-finmut-nimnev-wiclug-watrel-danryd-watrud-nalrud",
+      "shards": [
+        "~sipmud-finmut-nimnev-wiclug-watrel-danryd-watrud-nalrud"
+      ],
+      "ownership": {
+        "meta": {
+          "type": "ownership",
+          "revision": 0,
+          "ship": null
+        },
+        "seed": "imitate abandon original offer seven path whale magnet explain shaft bread furnace adjust there double bulk anger month hidden remind fine wine famous guilt",
+        "keys": {
+          "public": "02573086f3fc6e112788996d968ea1469a33bb3c21f1ebc6e3eab1e1dda228ba77",
+          "private": "530e9acdd4789a24942c0a13eab24d1d584502e7fb10cab78f016eeb2d5ee4cf",
+          "chain": "36194c21a7ba345e68a616da42a16996da31345e093f02c6b29143cb982d4294",
+          "address": "0x2897ecF0537E192938ad26cA27126E209A06a582"
+        }
+      },
+      "transfer": {
+        "meta": {
+          "type": "transfer",
+          "revision": 0,
+          "ship": null
+        },
+        "seed": "wedding senior seed equal humble erode bar private bless enlist waste long suggest tank walnut captain suit parade sugar holiday enlist pool collect make",
+        "keys": {
+          "public": "03daebb80fe3410ab335a43395c19ede930a13cea5936ef3cb83b5cd6c204a9b8c",
+          "private": "cf48af6dbf07c2bbc0f2203672693fefffa5bb2d3179bd4f1f907317484e4023",
+          "chain": "f61b6970e0b234dbf3d0ce5695db001e34dfac990eb50ff275619102fd21d9d0",
+          "address": "0x1bF2822d821f3D2D3651FD8726e5747E8480138c"
+        }
+      },
+      "spawn": {
+        "meta": {
+          "type": "spawn",
+          "revision": 0,
+          "ship": null
+        },
+        "seed": "pink helmet celery ankle dial season faculty until rare basket recycle setup field wreck panel modify cousin asset grit flame hill someone essence behind",
+        "keys": {
+          "public": "0231dcae59b76b67176162c813e65c747f6cee02f397bac76609156bf54739d09f",
+          "private": "ba8cd7042902b61086a3931f19bb605e7512b3bed4955526b43cd7c671eecca6",
+          "chain": "c8377c78f30302f30a059a608b0783d19ef410334af744f56f060569eff663ba",
+          "address": "0x857efB4069DcE5dE4Bb8B5340B699c2C00baf440"
+        }
+      },
+      "voting": {},
+      "management": {
+        "meta": {
+          "type": "management",
+          "revision": 0,
+          "ship": null
+        },
+        "seed": "agree grab turkey hobby exit dash radio spoil burst promote slam coconut snake chase isolate empty chronic uniform stone access lens input depart van",
+        "keys": {
+          "public": "021c7599c374c3bfb864c4a1bd2cf91404ced63680152e62be6b5269f6438a569e",
+          "private": "4783bf69c3d5787e34319539c1dd1354e1aa59e0356a1b6758e6985a024b4f29",
+          "chain": "61184715ca2bd495f2cf94fe9936ff9cea6ec522976180c7881dde4d3dfe3d50",
+          "address": "0x281A31144af09787ffe3F8F781e8faffe99d0315"
+        }
+      },
+      "network": {}
+    },
+    "24707584": {
+      "ticket": "~savfed-nosrev-nibweg-difret",
+      "shards": [
+        "~savfed-nosrev-nibweg-difret"
+      ],
+      "ownership": {
+        "meta": {
+          "type": "ownership",
+          "revision": 0,
+          "ship": null
+        },
+        "seed": "alien inner bright tell trade upper seek hockey essence waste loud assault basic pumpkin scatter symbol mimic chase innocent saddle dune faculty more cave",
+        "keys": {
+          "public": "0303bae8a428899fa7ed4807cf107e8a67258b818a2ea3c38a6f513e4a3852ef56",
+          "private": "5149ddfc1a8da1d617801c70a1a14fe66385621d98de0f23ecac20ed195915ca",
+          "chain": "67b2c4f962c722c86efcdac97b76fcbc33a21d1ffe53c80c026c86a0b630a38c",
+          "address": "0x8C89149b1298018426724A3D9E8aD16653Df90aD"
+        }
+      },
+      "transfer": {
+        "meta": {
+          "type": "transfer",
+          "revision": 0,
+          "ship": null
+        },
+        "seed": "during garlic impose lion write begin multiply rail aisle deputy shrug view sadness net outer wonder obvious manage accident pig spatial increase school brush",
+        "keys": {
+          "public": "02a333140bfb2a4d6e8d987c5a204a45b958cfcfc60056398bf3574437d0ddcab5",
+          "private": "cb37a33b8c1b47656f6e165297b9a1f00d247e9cc529bee0ab95c0245a8ea703",
+          "chain": "a246678d66fd1c4312eaebf780f5bf303e74f09a8136b13c18599caa3bee1dec",
+          "address": "0xD12Db0D23b360eA27B1AB6e32AC630eB2916d653"
+        }
+      },
+      "spawn": {
+        "meta": {
+          "type": "spawn",
+          "revision": 0,
+          "ship": null
+        },
+        "seed": "round yellow raven hen tool furnace load daring wave walnut pole torch oven rival capital regular umbrella chat story mask liquid hidden invite choose",
+        "keys": {
+          "public": "03f56a3376abc4ec9208996e91b800fe595fe77f3d5f262ff1c00c6a57b642e67f",
+          "private": "c529d94460624f6742a672622126f16e27ccda4676fa105dd45caf81132cb3cc",
+          "chain": "ac07e3a184f6f9d6b12774f9200759b2b90dddddbf06215577725409e312c1a2",
+          "address": "0x2b1C0f987402B05FE5e963d9462c29e44790898A"
+        }
+      },
+      "voting": {},
+      "management": {
+        "meta": {
+          "type": "management",
+          "revision": 0,
+          "ship": null
+        },
+        "seed": "fit cotton trick soft sick camera soap unfair carbon tunnel tissue meadow cart tennis people tissue exotic twice tuition pact apology nature clinic win",
+        "keys": {
+          "public": "03ac6ee98bee711e11c6d8e350a37c03009b12dd6cd8460c71b79e195c07f9c12e",
+          "private": "8412243a16ee9e103a56e903141be3d94ea72d5a0644a54dc8c5e1785370e17c",
+          "chain": "9fce443fd404b18c7c7353d5e515a41178382f6ee09ce4965e8662d086e25d7d",
+          "address": "0xcE1460fA95A50b610D68BA3B1c8b9c841BF6E21a"
+        }
+      },
+      "network": {
+        "seed": "d12e7a6896b88af66c57d8f620eecc88e05c4a615022a57551ab76c5d4d2073a",
+        "keys": {
+          "crypt": {
+            "private": "8ce5b0b5c1941cdb93d4532237cccaef3c8e2f330e51effba18ef07e6f1ce272",
+            "public": "92bd102d09b1d8ad48ac67e7154cb49f723bce78264b224634a60e6321b118a9",
+            "address": "0xcBD58Fd76529D41545579A4a312C28ae287ce5ce"
+          },
+          "auth": {
+            "private": "5a817703b8e4db7c5ae9442f3aaa380b49b9124f6e103dde5941495dec0d1e20",
+            "public": "2e82eb0bef5fcca79b3e82175d756b32ff6bd6dd43cfb054402feb3d103c88f8",
+            "address": "0x26F38F5435f837ecA0e452A144b7e11be72BD34c"
+          }
+        },
+        "meta": {
+          "type": "network",
+          "revision": 0,
+          "ship": null
+        }
+      }
+    }
+  }
+}

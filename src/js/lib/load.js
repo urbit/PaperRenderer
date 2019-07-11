@@ -1,5 +1,5 @@
 import qr from 'qr-image';
-import { pour, PlainSVGStringRenderer } from 'sigil-js';
+import { sigil, stringRenderer } from './pour';
 
 
 const loadImg = (base64, cb) => new Promise(resolve => {
@@ -29,12 +29,11 @@ const loadQR = (size, data) => {
 
 
 const loadSigil = (size, patp) => {
-  const svg = pour({
+  const svg = sigil({
     size: size,
     patp,
-    colorway: ['white', 'black'],
-    renderer: PlainSVGStringRenderer,
-    margin: 'auto',
+    colors: ['white', 'black'],
+    renderer: stringRenderer,
   });
   const svg64 = btoa(svg);
   const image64 = DATA_URI_PREFIX + svg64;

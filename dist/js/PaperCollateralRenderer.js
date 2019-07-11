@@ -1,4 +1,4 @@
-const _jsxFileName = "/Users/gavinatkinson/Tlon/PaperCollateralRenderer/src/js/PaperCollateralRenderer.js";import React, { Component } from 'react';
+const _jsxFileName = "/Users/chris/Documents/PaperCollateralRenderer/src/js/PaperCollateralRenderer.js";import React, { Component } from 'react';
 import PageRenderer from './PageRenderer';
 
 import { shim } from './lib/utils';

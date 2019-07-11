@@ -6,8 +6,8 @@ var sucrase = require('@sucrase/gulp-plugin');
 var minify = require('gulp-minify');
 var exec = require('child_process').exec;
 
-var resolve = require('rollup-plugin-node-resolve');
 var commonjs = require('rollup-plugin-commonjs');
+var resolve = require('rollup-plugin-node-resolve');
 var replace = require('rollup-plugin-replace');
 var json = require('rollup-plugin-json');
 var builtins = require('rollup-plugin-node-builtins');
@@ -87,7 +87,44 @@ gulp.task('js-imports', function(cb) {
       plugins: [
         commonjs({
           namedExports: {
-            'node_modules/react/index.js': [ 'Component' ]
+            'node_modules/react/index.js': [ 'Component' ],
+            'node_modules/lodash/lodash.js': [
+                     'map',
+                     'forEach',
+                     'get',
+                     'set',
+                     'cloneDeep',
+                     'entries',
+                     'reduce',
+                     'filter',
+                     'last',
+                     'flatten',
+                     'size',
+                     'groupBy',
+                     'head',
+                     'uniq',
+                     'mergeWith',
+                     'chunk',
+                     'some',
+                     'isEmpty',
+                     'isNumber',
+                     'isString',
+                     'isArray',
+                     'isFunction',
+                     'isArrayBuffer',
+                     'isBoolean',
+                     'isUndefined',
+                     'isObject',
+                     'isRegExp',
+                     'isInteger',
+                   ],
+                   'node_modules/urbit-ob/dist/index.js': [
+                     'tierOfadd',
+                     'patp'
+                   ],
+                    'node_modules/sigil-js/dist/bundle.js': [
+                     'pour'
+                   ]
           }
         }),
         replace({
@@ -102,7 +139,7 @@ gulp.task('js-imports', function(cb) {
         globals(),
         builtins(),
         resolve()
-      ]
+        ],
     }, 'umd'))
     .on('error', function(e){
       console.log(e);
@@ -113,8 +150,13 @@ gulp.task('js-imports', function(cb) {
 });
 
 gulp.task('copy-json', function () {
-  return gulp.src('./dist/js/*.json')
+  return gulp.src('./src/js/*.json')
   .pipe(gulp.dest('./dist/js/'));
+})
+
+gulp.task('copy-json', function () {
+  return gulp.src('./src/js/sampleWallets/*.json')
+  .pipe(gulp.dest('./dist/js/sampleWallets'));
 })
 
 gulp.task('js-minify', function () {

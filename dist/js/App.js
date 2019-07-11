@@ -1,9 +1,9 @@
-const _jsxFileName = "/Users/gavinatkinson/Tlon/PaperCollateralRenderer/src/js/App.js";import React, { Component } from 'react';
+const _jsxFileName = "/Users/chris/Documents/PaperCollateralRenderer/src/js/App.js";import React, { Component } from 'react';
 // import wallet1 from './sampleWallets/wallet1.json'; // walletX.value
 // import wallet2 from './sampleWallets/wallet2.json'; // walletX.value
 // import wallet3 from './sampleWallets/wallet3.json'; // walletX.value
 // import wallet4 from './sampleWallets/wallet4.json'; // walletX.value
-import wallet5 from './wallet5.json';
+import wallet5 from './sampleWallets/wallet5.json';
 
 import PaperCollateralRenderer from './PaperCollateralRenderer';
 
