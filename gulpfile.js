@@ -149,14 +149,14 @@ gulp.task('js-imports', function(cb) {
     .on('end', cb);
 });
 
-gulp.task('copy-json', function () {
-  return gulp.src('./src/js/*.json')
-  .pipe(gulp.dest('./dist/js/'));
-})
-
-gulp.task('copy-json', function () {
+gulp.task('copy-json-wallet', function () {
   return gulp.src('./src/js/sampleWallets/*.json')
   .pipe(gulp.dest('./dist/js/sampleWallets'));
+})
+
+gulp.task('copy-template-json', function () {
+  return gulp.src('./src/js/templates.json')
+  .pipe(gulp.dest('./dist/js/'));
 })
 
 gulp.task('js-minify', function () {
@@ -191,8 +191,8 @@ gulp.task('js-cachebust', function(cb) {
 //   return ret;
 // });
 
-gulp.task('js-bundle-dev', gulp.series('copy-json', 'jsx-transform', 'js-imports'));
-gulp.task('js-bundle-prod', gulp.series('jsx-transform', 'js-imports', 'js-minify', 'js-cachebust'))
+gulp.task('js-bundle-dev', gulp.series('copy-template-json', 'copy-json-wallet', 'jsx-transform', 'js-imports'));
+gulp.task('js-bundle-prod', gulp.series('copy-template-json', 'jsx-transform', 'js-imports', 'js-minify', 'js-cachebust'))
 
 gulp.task('bundle-dev',
   gulp.series(
