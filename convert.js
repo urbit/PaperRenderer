@@ -1,3 +1,4 @@
+require('dotenv').config()
 const { map, reduce, filter } = require('lodash');
 const Figma = require('figma-js');
 const fs = require('fs')
@@ -24,8 +25,7 @@ const flatPack = (lo) => {
   }, []);
   return extracted
 };
-
-const TOKEN = '1952-9da74b1b-551c-4acf-83b4-23b31743ab51'
+const TOKEN = process.env.FIGMA_API_TOKEN
 
 const client = Figma.Client({ personalAccessToken: TOKEN })
 
