@@ -29,8 +29,7 @@ const TOKEN = '1952-9da74b1b-551c-4acf-83b4-23b31743ab51'
 
 const client = Figma.Client({ personalAccessToken: TOKEN })
 
-
-client.file('ita90hVMPTUXNj7FgLpBRr').then(res => {
+client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
 
 
   const KEY = 'Registration-1.0'
