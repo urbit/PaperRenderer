@@ -14,6 +14,9 @@ var builtins = require('rollup-plugin-node-builtins');
 var rootImport = require('rollup-plugin-root-import');
 var globals = require('rollup-plugin-node-globals');
 
+var browserSync = require('browser-sync');
+var run = require('gulp-run');
+
 /***
 
   MAIN COMMANDS TO RUN:
@@ -30,6 +33,16 @@ var globals = require('rollup-plugin-node-globals');
 /**
   Tasks
 **/
+
+
+gulp.task('serve', function() {
+  browserSync.exit;
+  return browserSync.init({
+    server: 'build',
+    open: false,
+    port: 8000
+  });
+});
 
 gulp.task('css-bundle', function() {
   return gulp
@@ -191,6 +204,11 @@ gulp.task('js-cachebust', function(cb) {
 //   return ret;
 // });
 
+// convert currently broken--unable to find figma api token
+gulp.task('run-convert', function() {
+  return run('node convert.js').exec();
+});
+
 gulp.task('js-bundle-dev', gulp.series('copy-template-json', 'copy-json-wallet', 'jsx-transform', 'js-imports'));
 gulp.task('js-bundle-prod', gulp.series('copy-template-json', 'jsx-transform', 'js-imports', 'js-minify', 'js-cachebust'))
 
@@ -215,9 +233,20 @@ gulp.task('bundle-prod',
 );
 
 gulp.task('default', gulp.series('bundle-dev'));
-gulp.task('watch', gulp.series('default', function() {
+// gulp.task('watch', gulp.series('default', function() {
+//   gulp.watch('src/**/*.js', gulp.parallel('js-bundle-dev'));
+//   gulp.watch('src/**/*.css', gulp.parallel('css-bundle'));
+//
+//   // gulp.watch('urbit-code/**/*', gulp.parallel('urbit-copy'));
+// }));
+
+
+gulp.task('watch', function() {
   gulp.watch('src/**/*.js', gulp.parallel('js-bundle-dev'));
   gulp.watch('src/**/*.css', gulp.parallel('css-bundle'));
 
   // gulp.watch('urbit-code/**/*', gulp.parallel('urbit-copy'));
-}));
+});
+
+// broke after changes but allowed to watch and serve in one fell swoop
+// gulp.task('run', gulp.parallel('watch', 'serve'));

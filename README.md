@@ -16,11 +16,18 @@ $ npm install
 
 ## Build
 
-|Commands              | Description                                   |
+| Commands             | Description                                   |
 | -------------------- | --------------------------------------------- |
 |`$ npm run build:prod`| Build the library from source                 |
-|`npm run build:dev` or `npm run start` | Run the development testing page |
+|`npm run build:dev`   | Run the development testing page              |
+|  or `npm run start`  |                                               |
+|`npm run serve`       | Serve build on localhost:8000                 |  
 
+"convert": "node convert.js",
+"start": "gulp watch",
+"build:dev": "gulp",
+"build:prod": "gulp bundle-prod",
+"serve": "python -m SimpleHTTPServer 8000"
 
 ## Usage
 
