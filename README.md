@@ -18,16 +18,17 @@ $ npm install
 
 | Commands             | Description                                   |
 | -------------------- | --------------------------------------------- |
-|`$ npm run build:prod`| Build the library from source                 |
+|`$ npm run convert`   | Import Figma design                           |
 |`npm run build:dev`   | Run the development testing page              |
 |  or `npm run start`  |                                               |
-|`npm run serve`       | Serve build on localhost:8000                 |  
+|`npm run serve`       | Serve & watch build on localhost:8000         |  
+|`$ npm run build:prod`| Build the library from source                 |
 
-"convert": "node convert.js",
-"start": "gulp watch",
-"build:dev": "gulp",
-"build:prod": "gulp bundle-prod",
-"serve": "python -m SimpleHTTPServer 8000"
+"convert": "node convert.js"
+"build:dev": "gulp"
+"serve": "gulp run"
+"start": "gulp watch"
+"build:prod": "gulp bundle-prod"
 
 ## Usage
 
