@@ -31,8 +31,7 @@ const client = Figma.Client({ personalAccessToken: TOKEN })
 
 client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
 
-
-  const KEY = 'Registration-1.0'
+  const KEY = 'Registration 1.1'
   const page = filter(res.data.document.children, page => page.name === KEY)[0]
 
   const layouts = reduce(page.children, (acc, lo) => {
@@ -110,6 +109,20 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
           if (child.type === 'ADDR_COMPACT') {
             return {
               type: 'ADDR_COMPACT',
+              fontWeight: child.style.fontWeight,
+              fontFamily: child.style.fontFamily,
+              fontSize: child.style.fontSize,
+              text: child.characters.split(':')[1],
+              maxWidth: child.absoluteBoundingBox.width,
+              lineHeightPx: child.style.lineHeightPx,
+              x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
+              y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
+            };
+          };
+
+          if (child.type === 'addrSplitFour') {
+            return {
+              type: 'addrSplitFour',
               fontWeight: child.style.fontWeight,
               fontFamily: child.style.fontFamily,
               fontSize: child.style.fontSize,

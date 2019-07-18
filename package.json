@@ -53,10 +53,10 @@
     "uglifycss": "0.0.29"
   },
   "scripts": {
-    "convert": "node convert.js", //broken, cannot find figma api token
-    "start": "gulp watch",
+    "convert": "node convert.js",
     "build:dev": "gulp",
-    "build:prod": "gulp bundle-prod",
-    "serve": "python -m SimpleHTTPServer 8000" //replace with gulp serve once fixed
+    "serve": "gulp run",
+    "start": "gulp watch",
+    "build:prod": "gulp bundle-prod"
   }
 }
