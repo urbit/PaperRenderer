@@ -55,8 +55,8 @@ class PageRenderer extends Component {
       if (r.type === 'ADDR_SPLIT_FOUR') return drawEthereumAddressLong({ ctx, ...r });
       if (r.type === 'ADDR_COMPACT') return drawEthereumAddressCompact({ ctx, ...r });
       if (r.type === 'SIGIL') return drawSigil({ ctx, ...r });
-      if (r.type === 'ROUND_RECT') return drawRoundRect({ ctx, true, ...r });
-      if (r.type === 'LONG_RECT') return drawLongRect({ ctx, false, ...r });
+      if (r.type === 'RECT') return drawRect({ ctx, ...r });
+      if (r. type === 'HR') return drawLine({ ctx, ...r });      
     });
 
     const pageWithImageData = {

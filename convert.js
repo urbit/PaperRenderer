@@ -63,6 +63,17 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
             };
           };
 
+          if (child.type === 'IMG') {
+            return {
+              type: 'IMG',
+              size: child.absoluteBoundingBox.height,
+              name: child.name,
+              data: child.name.split(':')[1],
+              x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
+              y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
+            };
+          };
+
           if (child.type === 'TEXT') {
             console.log(child.style)
             return {
@@ -131,6 +142,34 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
               lineHeightPx: child.style.lineHeightPx,
               x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
               y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
+            };
+          };
+
+          if (child.type === 'RECT') {
+            return {
+              type: 'RECT',
+              cornerRadius: child.cornerRadius,
+              dashes: child.strokeDashes,
+              x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
+              y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
+              width: child.absoluteBoundingBox.width,
+              height: child.absoluteBoundingBox.height,
+              fillColor: child.fills,
+              strokeColor: child.strokes,
+              strokeWeight: child.strokeWeight,
+            };
+          };
+
+          if (child.type === 'HR') {
+            return {
+              type: 'HR',
+              dashes: child.strokeDashes,
+              x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
+              y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
+              width: child.absoluteBoundingBox.width,
+              height: child.absoluteBoundingBox.height,
+              strokeColor: child.strokes,
+              strokeWeight: child.strokeWeight,
             };
           };
 

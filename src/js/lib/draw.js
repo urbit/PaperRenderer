@@ -101,10 +101,23 @@ const drawPatQ = ({ ctx, fontSize, lineHeightPx, x, y, fontFamily, text }) => {
   throw Error(`patq ${text} of length ${text.length} supplied to drawPatQ is unsupported`)
 }
 
-const drawRect = ({ ctx, round, x, y, width, height, fillColor, strokeColor, strokeWidth}) => {
-  var cornerRadius = 20;
 
-  if(round){
+
+const drawRect = ({ ctx, cornerRadius, dashes, x, y, width, height, fillColors, strokeColors, strokeWeight}) => {
+
+  var fillColor, strokeColor;
+  if (fillColors.length > 0) {
+    fillColor = fillColors[0];
+  }
+  if (strokeColors.length > 0) {
+    strokeColor = strokeColors[0];
+  }
+
+  ctx.strokeStyle = strokeColor === "" ? fillColor : strokeColor;
+  ctx.lineWidth = (strokeWeight != null && strokeWeight > 0) ? strokeWeight : 1;
+  ctx.setLineDash(dashes);
+
+  if(cornerRadius > 0) {
     // Rounded corners are created with round stroke border
     ctx.lineJoin = "round";
     ctx.lineWidth = cornerRadius;
@@ -114,19 +127,40 @@ const drawRect = ({ ctx, round, x, y, width, height, fillColor, strokeColor, str
     y += cornerRadius/2;
     width -= cornerRadius;
     height -= cornerRadius;
-    ctx.strokeStyle = strokeColor === "" ? fillColor : strokeColor;
+
     ctx.strokeRect(x, y, width, height);
   }
 
-  else if(fillColor === ""){
-    ctx.strokeStyle = strokeColor;
-    ctx.lineWidth = strokeWidth;
+  if(fillColor === "") {
     ctx.strokeRect(x, y, width, height);
-    return
   }
 
-  ctx.fillStyle = fillColor;
-  ctx.fillRect(x, y, width, height);
+  else {
+    ctx.fillStyle = fillColor;
+    ctx.fillRect(x, y, width, height);
+  }
+}
+
+
+const drawLine = ({ ctx, dashes, x, y, width, height, strokeColors, strokeWeight}) => {
+
+  var strokeColor;
+  if (strokeColors.length > 0) {
+    strokeColor = strokeColors[0];
+  }
+
+  ctx.strokeStyle = strokeColor === "" ? "#000000" : strokeColor;
+  ctx.lineWidth = (strokeWeight != null && strokeWeight > 0) ? strokeWeight : 1;
+  ctx.setLineDash(dashes);
+
+  x2 = x + width;
+  y2 = y + height;
+
+  ctx.beginPath();
+  ctx.moveTo(x,y);
+  ctx.lineTo(x2,y2);
+  ctx.stroke();
+
 }
 
 export {
