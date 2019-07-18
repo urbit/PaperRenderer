@@ -2,6 +2,8 @@
 
 [Github](https://github.com/urbit/PaperCollateralRenderer)
 
+[Figma](https://www.figma.com/file/a4u6jBsdTgiXcrDGW61q5ngY/Tlon-Paper-Wallet-v1.2?node-id=574%3A0)
+
 `PaperCollateralRenderer` generates PNG wallets that can be printed from [keygen-js](https://github.com/urbit/keygen-js). The layouts and static text content exist in Figma, and are imported via the LayoutGenerator component. This JSON is then saved to disk and bundled with the `PaperCollateralRenderer` and `PageRenderer` for prod. The layout objects contain variable strings like `@heading` or ``` @management.seed.length ```. `PaperCollateralRenderer` replaces these with real data. Variables can also specify special layout components like `>sigil:@patp`.
 
 ## Install
@@ -15,18 +17,23 @@ $ npm install
 ## Build
 
 How to build/run for development:
-1. `npm run convert` translates the Figma design to JSON via the Figma API.  You can target a specific Figma document by updating the document string and page name that are found in [convert.js](./convert.js), lines 32 and 34.  You can retrieve a document's string identifier by opening the document in your browser and copying the string that appears before the document name.  Each document has pages, which you can target with a name string, such as "Registration 1.0".
+
+1. `npm run convert` translates the Figma design to JSON via the Figma API. You can target a specific Figma document by updating the document string and page name that are found in [convert.js](https://github.com/urbit/PaperCollateralRenderer/blob/c51c80e0e5895142b41ef06d2d48de1357f328f6/convert.js#L32), lines 32 and 34.  You can retrieve a Figma document's string id by opening the document in your browser and copying the string that appears before the document name.  Each document has pages, which you can target with a name string, such as our current page [Registration 1.0](https://www.figma.com/file/a4u6jBsdTgiXcrDGW61q5ngY/Tlon-Paper-Wallet-v1.2?node-id=574%3A0).
+
 2. `npm run build:dev` builds all files for development.
+
 3. `npm run serve` will watch for any JavaScript changes and serve the build on localhost:8000.
 
 Making changes:
-1. If you make changes to your targeted Figma document, you must re-convert the JSON (1).
+
+1. If you make changes to your targeted Figma document, you must re-convert the JSON with `npm run convert`.
+
 2. Refreshing the webpage with `cmd+shift+r` will ensure that your browser doesn't render an older, cached version.
 
 | Commands                 | Description                                   |
 | -------------------------| --------------------------------------------- |
-|`npm run convert`       | Import Figma design                           |
-|`npm run build:dev` or `$ npm run build:prod`     | Run the development testing page              |
+|`npm run convert`         | Import Figma design                           |
+|`npm run build:dev`       | Run the development testing page              |
 | or `$ npm run build:prod`| Build the library from source                 |
 |`npm run serve`           | Serve & watch build on localhost:8000         |  
 
@@ -52,7 +59,7 @@ Making changes:
 
 
 #### Sample Wallet Input
-[Here](./docs/sample-wallet.json) is a sample wallet's JSON.  More sample wallets can be found in [src/sampleWallets](https://github.com/urbit/PaperCollateralRenderer/tree/master/src/sampleWallets)
+[Here](https://github.com/urbit/PaperCollateralRenderer/tree/fixes/docs/sample-wallet.json) is a sample wallet's JSON.  More sample wallets can be found in [src/sampleWallets](https://github.com/urbit/PaperCollateralRenderer/tree/master/src/sampleWallets)
 
 
 #
