@@ -10,11 +10,13 @@ import {
 import {
   drawQR,
   drawSigil,
+  drawImg,
   drawText,
   drawWrappedText,
   drawEthereumAddressCompact,
   drawEthereumAddressLong,
   drawPatQ,
+  drawRect,
 } from './lib/draw';
 
 
@@ -49,10 +51,12 @@ class PageRenderer extends Component {
     page.renderables.forEach(r => {
       if (r.type === 'QR') return drawQR({ ctx, ...r });
       if (r.type === 'PATQ') return drawPatQ({ ctx, ...r });
-      if (r.type === 'ADDR_LONG') return drawEthereumAddressLong({ ctx, ...r });
+      if (r.type === 'IMG') return drawImg({ ctx, ...r });
+      if (r.type === 'ADDR_SPLIT_FOUR') return drawEthereumAddressLong({ ctx, ...r });
       if (r.type === 'ADDR_COMPACT') return drawEthereumAddressCompact({ ctx, ...r });
       if (r.type === 'SIGIL') return drawSigil({ ctx, ...r });
-      if (r.type === 'TEXT') return drawWrappedText({ ctx, ...r });
+      if (r.type === 'ROUND_RECT') return drawRoundRect({ ctx, true, ...r });
+      if (r.type === 'LONG_RECT') return drawLongRect({ ctx, false, ...r });
     });
 
     const pageWithImageData = {

@@ -5,7 +5,7 @@ const drawQR = ({ ctx, img, x, y, size, type }) => ctx.drawImage(img, x, y+3, si
 
 const drawSigil = ({ ctx, img, x, y, size, type }) => ctx.drawImage(img, x, y, size, size)
 
-
+const drawImg = ({ ctx, img, x, y, size, type }) => ctx.drawImage(img, x, y, size, size)
 
 const drawText = ({ctx, fontWeight, fontSize, lineHeightPx, maxWidth, x, y, fontFamily, text, type }) => {
   ctx.font = `${fontWeight} ${fontSize}px ${fontFamily}`;
@@ -101,13 +101,42 @@ const drawPatQ = ({ ctx, fontSize, lineHeightPx, x, y, fontFamily, text }) => {
   throw Error(`patq ${text} of length ${text.length} supplied to drawPatQ is unsupported`)
 }
 
+const drawRect = ({ ctx, round, x, y, width, height, fillColor, strokeColor, strokeWidth}) => {
+  var cornerRadius = 20;
+
+  if(round){
+    // Rounded corners are created with round stroke border
+    ctx.lineJoin = "round";
+    ctx.lineWidth = cornerRadius;
+
+    // Compensate for the round stroke border by decreasing rect dimensions
+    x += cornerRadius/2;
+    y += cornerRadius/2;
+    width -= cornerRadius;
+    height -= cornerRadius;
+    ctx.strokeStyle = strokeColor === "" ? fillColor : strokeColor;
+    ctx.strokeRect(x, y, width, height);
+  }
+
+  else if(fillColor === ""){
+    ctx.strokeStyle = strokeColor;
+    ctx.lineWidth = strokeWidth;
+    ctx.strokeRect(x, y, width, height);
+    return
+  }
+
+  ctx.fillStyle = fillColor;
+  ctx.fillRect(x, y, width, height);
+}
 
 export {
   drawSigil,
   drawQR,
+  drawImg,
   drawText,
   drawWrappedText,
   drawEthereumAddressCompact,
   drawEthereumAddressLong,
   drawPatQ,
+  drawRect,
 }

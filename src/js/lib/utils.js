@@ -119,7 +119,16 @@ const getTicketSize = (seedName, classOf) => {
   return '128 Bits'
 }
 
+const getCustodyLevel = (classOf) => {
+  if (classOf === 'planet') return 'Low'
+  if (classOf === 'star') return 'Medium'
+  return 'High'
+}
 
+const getTitleByCustody = (classOf) => {
+  if (classOf === 'planet') return 'Management Proxy'
+  return 'Spawn Proxy'
+}
 
 // transform the wallet from keygen-js into a shape more easily iterable
 const shim = kg_wallet => {
@@ -153,6 +162,9 @@ const insert = (fc, r) => {
   if (type === 'PATQ') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
   if (type === 'SIGIL') return {...r, img: retrieve(fc, data.replace(PAT, '')) };
   if (type === 'QR') return {...r, img: retrieve(fc, data.replace(PAT, '')) };
+  if (type === 'ROUND_RECT') return {...r, img: retrieve(fc, data.replace(PAT,'')) };
+  if (type === 'LONG_RECT') return {...r, img: retrieve(fc, data.replace(PAT,'')) };
+  if (type === 'IMG') return {...r, img: retrieve(fc, data.replace(PAT,'')) };
   throw new Error(`insert() cannot find a renderables for type: ${type}`);
 };
 
@@ -198,6 +210,8 @@ export {
   dateToDa,
   retrieve,
   getTicketSize,
+  getCustodyLevel,
+  getTitleByCustody,
   shim,
   mapInsert,
   assignBin,
