@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+const _jsxFileName = "/Users/chris/Documents/PaperCollateralRenderer/src/js/PaperCollateralRenderer.js";import React, { Component } from 'react';
 import PageRenderer from './PageRenderer';
 
 import { shim } from './lib/utils';
@@ -7,11 +7,12 @@ import constants from './lib/copy';
 
 import {
   MasterTicketComponent,
-  MasterTicketShardsComponent,
-  AddressManifestComponent,
-  SpawnSeedComponent,
-  VotingSeedComponent,
-  ManagementSeedComponent,
+  // MasterTicketShardsComponent,
+  // AddressManifestComponent,
+  // SpawnSeedComponent,
+  // VotingSeedComponent,
+  ManagementComponent,
+  MultipassComponent,
 } from './lib/components'
 
 
@@ -24,28 +25,30 @@ import {
 const PROFILES = {
   'REGISTRATION': {
     'galaxy': [
-      // (w, cs, ts) => () => MasterTicketComponent(w, cs, ts),
-      (w, cs, ts) => () => MasterTicketShardsComponent(w, cs, ts),
-      (w, cs, ts) => () => SpawnSeedComponent(w, cs, ts),
-      (w, cs, ts) => () => VotingSeedComponent(w, cs, ts),
+      (w, cs, ts) => () => MasterTicketComponent(w, cs, ts),
+      // (w, cs, ts) => () => MasterTicketShardsComponent(w, cs, ts),
+      // (w, cs, ts) => () => SpawnSeedComponent(w, cs, ts),
+      // (w, cs, ts) => () => VotingSeedComponent(w, cs, ts),
       // (w, cs, ts) => () => TransferSeedComponent(w, copy, ts),
-      (w, cs, ts) => () => ManagementSeedComponent(w, cs, ts),
-
+      (w, cs, ts) => () => ManagementComponent(w, cs, ts),
+      (w, cs, ts) => () => MultipassComponent(w, cs, ts),
     ],
     'star': [
       (w, cs, ts) => () => MasterTicketComponent(w, cs, ts),
-      (w, cs, ts) => () => SpawnSeedComponent(w, cs, ts),
+      // (w, cs, ts) => () => SpawnSeedComponent(w, cs, ts),
       // (w, cs, ts) => () => TransferSeedComponent(w, cs, ts),
-      (w, cs, ts) => () => ManagementSeedComponent(w, cs, ts),
+      (w, cs, ts) => () => ManagementComponent(w, cs, ts),
+      (w, cs, ts) => () => MultipassComponent(w, cs, ts),
     ],
     'planet': [
       (w, cs, ts) => () => MasterTicketComponent(w, cs, ts),
       // (w, cs, ts) => () => TransferSeedComponent(w, cs, ts),
-      (w, cs, ts) => () => ManagementSeedComponent(w, cs, ts),
-    ],
-    'manifest': [
-      (ws, cs, ts) => () => AddressManifestComponent(ws, cs, ts),
+      (w, cs, ts) => () => ManagementComponent(w, cs, ts),
+      (w, cs, ts) => () => MultipassComponent(w, cs, ts),
     ]
+    // 'manifest': [
+      // (ws, cs, ts) => () => AddressManifestComponent(ws, cs, ts),
+    // ]
   }
 }
 
@@ -53,7 +56,7 @@ const PROFILES = {
 
 class PaperCollateralRenderer extends Component {
   constructor(props) {
-    super(props)
+    super(props);PaperCollateralRenderer.prototype.__init.call(this);
     this.state = {
       results: [],
       pages: null,
@@ -84,7 +87,7 @@ class PaperCollateralRenderer extends Component {
 
 
 
-  componentDidMount = () => {
+  __init() {this.componentDidMount = () => {
 
     const wallets = shim(this.props.wallet);
 
@@ -107,7 +110,7 @@ class PaperCollateralRenderer extends Component {
         this.setState({ pages: flats, totalPages: flats.length });
     });
 
-  }
+  }}
 
 
 
@@ -117,17 +120,17 @@ class PaperCollateralRenderer extends Component {
       this.latch = true;
 
       return (
-        <div className={ this.props.className }>
+        React.createElement('div', { className:  this.props.className , __self: this, __source: {fileName: _jsxFileName, lineNumber: 120}}
 
-        <PageRenderer
-          pages={pages}
-          callback={data => this.props.callback(data)}
-        />
+        , React.createElement(PageRenderer, {
+          pages: pages,
+          callback: data => this.props.callback(data), __self: this, __source: {fileName: _jsxFileName, lineNumber: 122}}
+        )
 
-        </div>
+        )
       );
     } else {
-      return <div/>
+      return React.createElement('div', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 130}})
     }
   };
 };
