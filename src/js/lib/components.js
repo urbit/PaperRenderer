@@ -34,6 +34,7 @@ const MasterTicketComponent = async (wallet, constants, templates) => {
   const props = {
     heading: 'Master Ticket',
     patp: retrieve(wallet, 'ship.patp'),
+    patp_azimuth: `${retrieve(wallet, 'ship.patp')}.azimuth.network`,
     sigil: await loadSigil(AT_LOAD_SIGIL_SIZE, retrieve(wallet, 'ship.patp')),
     ticket: {
       data: retrieve(wallet, 'ticket'),
