@@ -7,10 +7,6 @@ import constants from './lib/copy';
 
 import {
   MasterTicketComponent,
-  // MasterTicketShardsComponent,
-  // AddressManifestComponent,
-  // SpawnSeedComponent,
-  // VotingSeedComponent,
   ManagementComponent,
   MultipassComponent,
 } from './lib/components'
@@ -26,29 +22,19 @@ const PROFILES = {
   'REGISTRATION': {
     'galaxy': [
       (w, cs, ts) => () => MasterTicketComponent(w, cs, ts),
-      // (w, cs, ts) => () => MasterTicketShardsComponent(w, cs, ts),
-      // (w, cs, ts) => () => SpawnSeedComponent(w, cs, ts),
-      // (w, cs, ts) => () => VotingSeedComponent(w, cs, ts),
-      // (w, cs, ts) => () => TransferSeedComponent(w, copy, ts),
       (w, cs, ts) => () => ManagementComponent(w, cs, ts),
       (w, cs, ts) => () => MultipassComponent(w, cs, ts),
     ],
     'star': [
       (w, cs, ts) => () => MasterTicketComponent(w, cs, ts),
-      // (w, cs, ts) => () => SpawnSeedComponent(w, cs, ts),
-      // (w, cs, ts) => () => TransferSeedComponent(w, cs, ts),
       (w, cs, ts) => () => ManagementComponent(w, cs, ts),
       (w, cs, ts) => () => MultipassComponent(w, cs, ts),
     ],
     'planet': [
       (w, cs, ts) => () => MasterTicketComponent(w, cs, ts),
-      // (w, cs, ts) => () => TransferSeedComponent(w, cs, ts),
       (w, cs, ts) => () => ManagementComponent(w, cs, ts),
       (w, cs, ts) => () => MultipassComponent(w, cs, ts),
     ]
-    // 'manifest': [
-      // (ws, cs, ts) => () => AddressManifestComponent(ws, cs, ts),
-    // ]
   }
 }
 

@@ -125,11 +125,6 @@ const getCustodyLevel = (classOf) => {
   return 'High'
 }
 
-const getTitleByCustody = (classOf) => {
-  if (classOf === 'planet') return 'Management Proxy'
-  return 'Spawn Proxy'
-}
-
 // transform the wallet from keygen-js into a shape more easily iterable
 const shim = kg_wallet => {
   const reshaped = Object.entries(kg_wallet).map(([shipAddr, shipWallet]) => {
@@ -157,13 +152,15 @@ const insert = (fc, r) => {
     if (text.match(PAT)) return {...r, text: retrieve(fc, text.replace(PAT, '')) };
     return r;
   };
+  if (type === 'TEMPLATE_TEXT') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
   if (type === 'ADDR_COMPACT') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
   if (type === 'ADDR_LONG') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
+  if (type === 'ADDR_SPLIT_FOUR') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
   if (type === 'PATQ') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
   if (type === 'SIGIL') return {...r, img: retrieve(fc, data.replace(PAT, '')) };
   if (type === 'QR') return {...r, img: retrieve(fc, data.replace(PAT, '')) };
-  if (type === 'ROUND_RECT') return {...r, img: retrieve(fc, data.replace(PAT,'')) };
-  if (type === 'LONG_RECT') return {...r, img: retrieve(fc, data.replace(PAT,'')) };
+  if (type === 'HR') return {...r, img: retrieve(fc, data.replace(PAT, '')) };
+  if (type === 'RECT') return {...r, img: retrieve(fc, data.replace(PAT,'')) };
   if (type === 'IMG') return {...r, img: retrieve(fc, data.replace(PAT,'')) };
   throw new Error(`insert() cannot find a renderables for type: ${type}`);
 };
@@ -173,32 +170,35 @@ const insert = (fc, r) => {
 const assignBin = (classOf, pageType) => {
   if (classOf === 'galaxy') {
     if (pageType === 'masterTicket') return '1';
-    if (pageType === 'masterTicketShard') return '1';
-    if (pageType === 'spawn') return '2';
-    if (pageType === 'voting') return '3';
+    // if (pageType === 'masterTicketShard') return '1';
+    // if (pageType === 'spawn') return '2';
+    // if (pageType === 'voting') return '3';
     if (pageType === 'management') return '3';
-    if (pageType === 'transfer') return '1';
-    if (pageType === 'public') return '0';
-    if (pageType === 'manifest') return '0';
+    // if (pageType === 'transfer') return '1';
+    // if (pageType === 'public') return '0';
+    // if (pageType === 'manifest') return '0';
+    // if (pageType === 'multipass') return ??;
   };
 
   if (classOf === 'star') {
     if (pageType === 'masterTicket') return '2';
-    if (pageType === 'masterTicketShard') return '2';
-    if (pageType === 'spawn') return '3';
+    // if (pageType === 'masterTicketShard') return '2';
+    // if (pageType === 'spawn') return '3';
     if (pageType === 'management') return '3';
-    if (pageType === 'transfer') return '2';
-    if (pageType === 'public') return '0';
-    if (pageType === 'manifest') return '0';
+    // if (pageType === 'transfer') return '2';
+    // if (pageType === 'public') return '0';
+    // if (pageType === 'manifest') return '0';
+    // if (pageType === 'multipass') return ??;
   };
 
   if (classOf === 'planet') {
     if (pageType === 'masterTicket') return '3';
-    if (pageType === 'masterTicketShard') return '3';
+    // if (pageType === 'masterTicketShard') return '3';
     if (pageType === 'management') return '4';
-    if (pageType === 'transfer') return '3';
-    if (pageType === 'public') return '0';
-    if (pageType === 'manifest') return '0';
+    // if (pageType === 'transfer') return '3';
+    // if (pageType === 'public') return '0';
+    // if (pageType === 'manifest') return '0';
+    // if (pageType === 'multipass') return ??;
   };
 };
 
@@ -211,7 +211,6 @@ export {
   retrieve,
   getTicketSize,
   getCustodyLevel,
-  getTitleByCustody,
   shim,
   mapInsert,
   assignBin,

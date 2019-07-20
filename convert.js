@@ -11,12 +11,15 @@ const flatPack = (lo) => {
       // look for special items we don't need to parse
       if (child.name.split(':')[0] === '>qr') return [...acc, {...child, type: 'QR'}];
       if (child.name.split(':')[0] === '>sigil') return [...acc, {...child, type: 'SIGIL'}];
+      if (child.name.split(':')[0] === '>img') return [...acc, {...child, type: 'IMG'}];
+      if (child.name.split(':')[0] === '>rect') return [...acc, {...child, type: 'RECT'}];
+      if (child.name.split(':')[0] === '>hr') return [...acc, {...child, type: 'HR'}];
       // if no special items are found, tranverse down into group
       return [...acc, ...flatPack(child)]
     } else {
       if (child.name.split(':')[0] === '>patq') return [...acc, {...child, type: 'PATQ'}];
-      if (child.name.split(':')[0] === '>addr_long') return [...acc, {...child, type: 'ADDR_LONG'}];
-      if (child.name.split(':')[0] === '>addr_compact') return [...acc, {...child, type: 'ADDR_COMPACT'}];
+      if (child.name.split(':')[0] === '>addr_split_four') return [...acc, {...child, type: 'ADDR_SPLIT_FOUR'}];
+      if (child.name.split(':')[0] === '>template_text') return [...acc, {...child, type: 'TEMPLATE_TEXT'}];
 
       if (child.type === 'TEXT') return [...acc, {...child, type: 'TEXT'}];
       console.warn('Reminder: There are more children on board that will not be included in flatpack.')
@@ -103,37 +106,9 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
             };
           };
 
-          if (child.type === 'ADDR_LONG') {
+          if (child.type === 'ADDR_SPLIT_FOUR') {
             return {
               type: 'ADDR_LONG',
-              fontWeight: child.style.fontWeight,
-              fontFamily: child.style.fontFamily,
-              fontSize: child.style.fontSize,
-              text: child.characters.split(':')[1],
-              maxWidth: child.absoluteBoundingBox.width,
-              lineHeightPx: child.style.lineHeightPx,
-              x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
-              y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
-            };
-          };
-
-          if (child.type === 'ADDR_COMPACT') {
-            return {
-              type: 'ADDR_COMPACT',
-              fontWeight: child.style.fontWeight,
-              fontFamily: child.style.fontFamily,
-              fontSize: child.style.fontSize,
-              text: child.characters.split(':')[1],
-              maxWidth: child.absoluteBoundingBox.width,
-              lineHeightPx: child.style.lineHeightPx,
-              x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
-              y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
-            };
-          };
-
-          if (child.type === 'addrSplitFour') {
-            return {
-              type: 'addrSplitFour',
               fontWeight: child.style.fontWeight,
               fontFamily: child.style.fontFamily,
               fontSize: child.style.fontSize,
@@ -170,6 +145,20 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
               height: child.absoluteBoundingBox.height,
               strokeColor: child.strokes,
               strokeWeight: child.strokeWeight,
+            };
+          };
+
+          if (child.type === 'TEMPLATE_TEXT') {
+            return {
+              type: 'TEMPLATE_TEXT',
+              fontFamily: child.style.fontFamily,
+              fontSize: child.style.fontSize,
+              text: child.name,
+              fontWeight: child.style.fontWeight,
+              maxWidth: child.absoluteBoundingBox.width,
+              lineHeightPx: child.style.lineHeightPx,
+              x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
+              y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
             };
           };
 
