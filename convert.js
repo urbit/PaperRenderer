@@ -22,7 +22,7 @@ const flatPack = (lo) => {
       if (child.name.split(':')[0] === '>template_text') return [...acc, {...child, type: 'TEMPLATE_TEXT'}];
 
       if (child.type === 'TEXT') return [...acc, {...child, type: 'TEXT'}];
-      console.warn('Reminder: There are more children on board that will not be included in flatpack.')
+      // console.warn('Reminder: There are more children on board that will not be included in flatpack.')
       return acc
     }
   }, []);
@@ -78,7 +78,6 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
           };
 
           if (child.type === 'TEXT') {
-            console.log(child.style)
             return {
               type: 'TEXT',
               fontFamily: child.style.fontFamily,
@@ -98,7 +97,7 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
               fontFamily: child.style.fontFamily,
               fontSize: child.style.fontSize,
               fontWeight: child.style.fontWeight,
-              text: child.characters.split(':')[1],
+              text: child.name.split(':')[1],
               maxWidth: child.absoluteBoundingBox.width,
               lineHeightPx: child.style.lineHeightPx,
               x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
@@ -108,11 +107,11 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
 
           if (child.type === 'ADDR_SPLIT_FOUR') {
             return {
-              type: 'ADDR_LONG',
+              type: 'ADDR_SPLIT_FOUR',
               fontWeight: child.style.fontWeight,
               fontFamily: child.style.fontFamily,
               fontSize: child.style.fontSize,
-              text: child.characters.split(':')[1],
+              text: child.name.split(':')[1],
               maxWidth: child.absoluteBoundingBox.width,
               lineHeightPx: child.style.lineHeightPx,
               x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
@@ -153,7 +152,7 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
               type: 'TEMPLATE_TEXT',
               fontFamily: child.style.fontFamily,
               fontSize: child.style.fontSize,
-              text: child.name,
+              text: child.name.split(':')[1],
               fontWeight: child.style.fontWeight,
               maxWidth: child.absoluteBoundingBox.width,
               lineHeightPx: child.style.lineHeightPx,
@@ -168,8 +167,7 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
     }
   }, {});
 
-
-    console.log(JSON.stringify(layouts, null, 2));
+    // console.log(JSON.stringify(layouts, null, 2));
     fs.writeFile(OUTPUT_PATH, JSON.stringify(layouts, null, 2), (err) => {
       console.log('layouts saved')
       process.exit()
