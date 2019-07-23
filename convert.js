@@ -19,8 +19,8 @@ const flatPack = (lo) => {
     } else {
       if (child.name.split(':')[0] === '>patq') return [...acc, {...child, type: 'PATQ'}];
       if (child.name.split(':')[0] === '>addr_split_four') return [...acc, {...child, type: 'ADDR_SPLIT_FOUR'}];
+      if (child.name.split(':')[0] === '>wrap_addr_split_four') return [...acc, {...child, type: 'WRAP_ADDR_SPLIT_FOUR'}];
       if (child.name.split(':')[0] === '>template_text') return [...acc, {...child, type: 'TEMPLATE_TEXT'}];
-
       if (child.type === 'TEXT') return [...acc, {...child, type: 'TEXT'}];
       // console.warn('Reminder: There are more children on board that will not be included in flatpack.')
       return acc
@@ -119,6 +119,19 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
             };
           };
 
+          if (child.type === 'WRAP_ADDR_SPLIT_FOUR') {
+            return {
+              type: 'WRAP_ADDR_SPLIT_FOUR',
+              fontWeight: child.style.fontWeight,
+              fontFamily: child.style.fontFamily,
+              fontSize: child.style.fontSize,
+              text: child.name.split(':')[1],
+              maxWidth: child.absoluteBoundingBox.width,
+              lineHeightPx: child.style.lineHeightPx,
+              x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
+              y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
+            };
+          };
           if (child.type === 'RECT') {
             return {
               type: 'RECT',

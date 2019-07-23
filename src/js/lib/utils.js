@@ -101,6 +101,18 @@ const dateToDa = (d, mil) => {
 }
 
 
+const shortDateToDa = (d, mil) => {
+  var fil = function(n) {
+    return n >= 10 ? n : "0" + n;
+  };
+  return (
+    `${d.getUTCFullYear()}.` +
+    `${(d.getUTCMonth() + 1)}.` +
+    `${fil(d.getUTCDate())}`
+  );
+}
+
+
 
 const retrieve = (obj, path) => {
   const result = get(obj, path)
@@ -161,6 +173,7 @@ const insert = (fc, r) => {
   if (type === 'ADDR_COMPACT') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
   if (type === 'ADDR_LONG') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
   if (type === 'ADDR_SPLIT_FOUR') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
+  if (type === 'WRAP_ADDR_SPLIT_FOUR') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
   if (type === 'PATQ') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
   if (type === 'SIGIL') return {...r, img: retrieve(fc, data.replace(PAT, '')) };
   if (type === 'QR') return {...r, img: retrieve(fc, data.replace(PAT, '')) };
@@ -213,6 +226,7 @@ export {
   dataURItoBlob,
   wordWrap,
   dateToDa,
+  shortDateToDa,
   retrieve,
   getTicketSize,
   getCustodyLevel,

@@ -10,6 +10,7 @@ import {
 
 import {
   dateToDa,
+  shortDateToDa,
   retrieve,
   getCustodyLevel,
   getTitleByClass,
@@ -48,10 +49,10 @@ const MasterTicketComponent = async (wallet, constants, templates) => {
       },
     },
     meta: {
-      createdOn: dateToDa(new Date()),
+      createdOn: shortDateToDa(new Date()),
       custodyLevel: getCustodyLevel(retrieve(wallet,'ship.class')),
     },
-    keyIcon: await loadImg(AT_LOAD_IMG_SIZE, IMG_DATA),
+    keyIcon: await loadImg(IMG_DATA, img => img),
     _classOf: retrieve(wallet, 'ship.class'),
     _type: KEY,
     _bin: assignBin(retrieve(wallet, 'ship.class'), KEY)
@@ -68,6 +69,7 @@ const MasterTicketComponent = async (wallet, constants, templates) => {
 }
 
 const ManagementComponent = async (wallet, constants, templates) => {
+  // console.log(wallet);
   const KEY = 'management';
   const TEMPLATE = `MANAGEMENT:${toUpperCase(retrieve(wallet, 'ship.class'))}`;
   const TITLE = getTitleByClass(retrieve(wallet,'ship.class'));
@@ -87,7 +89,7 @@ const ManagementComponent = async (wallet, constants, templates) => {
       },
     },
     meta: {
-      createdOn: dateToDa(new Date()),
+      createdOn: shortDateToDa(new Date()),
       custodyLevel: getCustodyLevel(retrieve(wallet,'ship.class')),
     },
     _classOf: retrieve(wallet, 'ship.class'),
@@ -110,142 +112,42 @@ const ManagementComponent = async (wallet, constants, templates) => {
 
 
 
-const AddressManifestComponent = async (wallets, constants, templates) => {
-
+const MultipassComponent = async (wallet, constants, templates) => {
+  const KEY = 'multipass';
+  const TEMPLATE = `MULTIPASS`;
   const props = {
-    meta: {
-      createdOn: dateToDa(new Date()),
-      walletVersion: constants.meta.walletVersion,
-      // moreInformation: constants.meta.moreInformation,
+    heading: 'Multipass',
+    patp: retrieve(wallet, 'ship.patp'),
+    patp_azimuth: `${retrieve(wallet, 'ship.patp')}.azimuth.network`,
+    sigil: await loadSigil(AT_LOAD_SIGIL_SIZE, retrieve(wallet, 'ship.patp')),
+    ownership: {
+      ethereum: {
+        address: retrieve(wallet, 'management.keys.address'),
+        qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'management.keys.address')),
+      },
     },
+    meta: {
+      createdOn: shortDateToDa(new Date()),
+    },
+    _classOf: retrieve(wallet, 'ship.class'),
+    _type: KEY,
+    _bin: assignBin(retrieve(wallet, 'ship.class'), KEY)
   };
 
-  const listItems = wallets.map(async wallet => {
-    return {
-      patp: retrieve(wallet, 'ship.patp'),
-      ownership: {
-        ethereum: {
-          address: retrieve(wallet, 'ownership.keys.address'),
-          qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'ownership.keys.address')),
-        }
-      }
-    };
-  });
+  const page = [{
+    renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
+    bin: assignBin(props._classOf, props._type),
+    collateralType: props._type,
+    ship: props.patp,
+    pageTitle: `${props.patp} Multipass`,
+  }];
 
-  return Promise.all(listItems).then(li => {
-    const LI_TOTAL_1 = 4
-    const LI_TOTAL_X = 5
-
-    const pageCount = Math.ceil((li.length - LI_TOTAL_1) / LI_TOTAL_X) + 1;
-
-    const firstListItemData = li.slice(0, LI_TOTAL_1);
-    const subsequentListItemData = li.slice(LI_TOTAL_1);
-
-    const TEMP_1 = retrieve(templates, 'ADDRESS_MANIFEST:FIRST');
-    const TEMP_X = retrieve(templates, 'ADDRESS_MANIFEST:OVERFLOW');
-
-    const LI_COMPONENT = retrieve(templates, 'COMPONENT:ADDRESS_LIST_ITEM');
-    const LI_COMPONENT_HEIGHT = 112;
-
-    const P1_LIST_START_Y = 300;
-    const P1_LIST_START_X = 48;
-    const PX_LIST_START_Y = 160;
-    const PX_LIST_START_X = 48;
-
-    const firstPageRenderableListItems = firstListItemData.reduce((acc, props, listItemIndex) => {
-      const moved = mapInsert(props, LI_COMPONENT).map(_r => {
-        const r = {..._r};
-        r.x = _r.x + P1_LIST_START_X;
-        r.y = _r.y + P1_LIST_START_Y + (LI_COMPONENT_HEIGHT * listItemIndex);
-        return r;
-      });
-      return [...acc, ...moved];
-    }, []);
-
-    const listItemsBySubsequentPage = chunk(subsequentListItemData, LI_TOTAL_X)
-
-    const subsequentPages = listItemsBySubsequentPage.map((page, pageIndex) => {
-
-      const listItemsWithData = page.reduce((acc, props, listItemIndex) => {
-        const moved = mapInsert(props, LI_COMPONENT).map(_r => {
-          const r = {..._r}
-          r.x = _r.x + PX_LIST_START_X;
-          r.y = _r.y + PX_LIST_START_Y + (LI_COMPONENT_HEIGHT * listItemIndex);
-          return r;
-        });
-      return [...acc, ...moved];
-    }, []);
-
-    return {
-      renderables: [
-        ...mapInsert({...props, pageAofB: `Page ${pageIndex + 2} of ${pageCount}`}, TEMP_X),
-        ...listItemsWithData,
-      ],
-      bin: '0',
-      collateralType: 'ownership_address_manifest',
-      ship: 'all',
-      pageTitle: `Ownership Address Manifest page ${pageIndex + 2} of ${pageCount}`,
-      page: pageIndex + 2,
-    }
-  });
-
-    const pages = [
-      {
-        renderables: [
-          ...mapInsert({...props, pageAofB: `Page 1 of ${pageCount}`}, TEMP_1),
-          ...firstPageRenderableListItems,
-        ],
-        bin: '0',
-        collateralType: 'ownership_address_manifest',
-        ship: 'all',
-        pageTitle: `Ownership Address Manifest page 1 of ${pageCount}`,
-        page: 1,
-      },
-      ...subsequentPages
-
-    ];
-
-    return pages
-  });
-}
-
-// const MultipassComponent = async (wallet, constants, templates) => {
-//   const KEY = 'multipass';
-//   const TEMPLATE = `MULTIPASS:${toUpperCase(retrieve(wallet, 'ship.class'))}`
-//
-//   const props = {
-//     heading: 'Multipass',
-//     patp: retrieve(wallet, 'ship.patp'),
-//     azimuthLink: `${patp}.azimuth.network`,
-//     sigil: await loadSigil(AT_LOAD_SIGIL_SIZE, retrieve(wallet, 'ship.patp')),
-//     ownership: {
-//       ethereum: {
-//         address: retrieve(wallet, 'management.keys.address'),
-//         qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'management.keys.address')),
-//       },
-//     },
-//     meta: {
-//       createdOn: dateToDa(new Date()),
-//     },
-//     _classOf: retrieve(wallet, 'ship.class'),
-//     _type: KEY,
-//     _bin: assignBin(retrieve(wallet, 'ship.class'), KEY)
-//   };
-//
-//   const page = [{
-//     renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
-//     bin: assignBin(props._classOf, props._type),
-//     collateralType: props._type,
-//     ship: props.patp,
-//     pageTitle: `${props.patp} Multipass`,
-//   }];
-//
-//   return page;
-// };
+  return page;
+};
 
 export {
   MasterTicketComponent,
   ManagementComponent,
-  AddressManifestComponent,
-  // MultipassComponent,
+  // AddressManifestComponent,
+  MultipassComponent,
 }

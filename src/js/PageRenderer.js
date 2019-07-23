@@ -11,7 +11,6 @@ import {
   drawSigil,
   drawQR,
   drawImg,
-  drawUriImg,
   drawText,
   drawWrappedText,
   drawEthereumAddressCompact,
@@ -50,14 +49,21 @@ class PageRenderer extends Component {
     ctx.fillStyle="#000";
 
     page.renderables.forEach(r => {
+      // console.log(r);
+      // console.log(r.text);
+      // console.log(r.type);
+
       if (r.type === 'QR') return drawQR({ ctx, ...r });
       if (r.type === 'PATQ') return drawPatQ({ ctx, ...r });
       if (r.type === 'IMG') return drawImg({ ctx, ...r });
       if (r.type === 'ADDR_SPLIT_FOUR') return drawEthereumAddressLong({ ctx, ...r });
+      if (r.type === 'WRAP_ADDR_SPLIT_FOUR') return drawEthereumAddressLong({ ctx, ...r });
       if (r.type === 'ADDR_COMPACT') return drawEthereumAddressCompact({ ctx, ...r });
       if (r.type === 'SIGIL') return drawSigil({ ctx, ...r });
       if (r.type === 'RECT') return drawRect({ ctx, ...r });
       if (r.type === 'HR') return drawLine({ ctx, ...r });
+      if (r.type === 'TEXT') return drawWrappedText({ ctx, ...r });
+      if (r.type === 'TEMPLATE_TEXT') return drawWrappedText({ ctx, ...r });
     });
 
     const pageWithImageData = {
