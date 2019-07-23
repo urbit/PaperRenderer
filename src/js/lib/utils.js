@@ -125,6 +125,11 @@ const getCustodyLevel = (classOf) => {
   return 'High'
 }
 
+const getTitleByClass = (classOf) => {
+  if (classOf === 'planet') return 'Mangement Proxy'
+  return 'Spawn Proxy'
+}
+
 // transform the wallet from keygen-js into a shape more easily iterable
 const shim = kg_wallet => {
   const reshaped = Object.entries(kg_wallet).map(([shipAddr, shipWallet]) => {
@@ -211,6 +216,7 @@ export {
   retrieve,
   getTicketSize,
   getCustodyLevel,
+  getTitleByClass,
   shim,
   mapInsert,
   assignBin,

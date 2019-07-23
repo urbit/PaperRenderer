@@ -8,9 +8,10 @@ import {
 } from './lib/utils';
 
 import {
-  drawQR,
   drawSigil,
+  drawQR,
   drawImg,
+  drawUriImg,
   drawText,
   drawWrappedText,
   drawEthereumAddressCompact,
@@ -37,7 +38,6 @@ class PageRenderer extends Component {
     this.props.callback(results);
   };
 
-
   drawLayout = (page) => {
 
     const ctx = this.canvas.getContext('2d');
@@ -57,7 +57,7 @@ class PageRenderer extends Component {
       if (r.type === 'ADDR_COMPACT') return drawEthereumAddressCompact({ ctx, ...r });
       if (r.type === 'SIGIL') return drawSigil({ ctx, ...r });
       if (r.type === 'RECT') return drawRect({ ctx, ...r });
-      if (r. type === 'HR') return drawLine({ ctx, ...r });
+      if (r.type === 'HR') return drawLine({ ctx, ...r });
     });
 
     const pageWithImageData = {
@@ -69,7 +69,6 @@ class PageRenderer extends Component {
       png: dataURItoBlob(this.canvas.toDataURL("image/png")),
       durl: this.canvas.toDataURL("image/png"),
     };
-
     return pageWithImageData;
   };
 

@@ -5,15 +5,15 @@ const drawQR = ({ ctx, img, x, y, size, type }) => ctx.drawImage(img, x, y+3, si
 
 const drawSigil = ({ ctx, img, x, y, size, type }) => ctx.drawImage(img, x, y, size, size)
 
-const drawImg = ({ ctx, img, x, y, size, type }) => ctx.drawImage(img, x, y, size, size)
+const drawImg = ({ ctx, img, x, y, size, type }) => ctx.drawImage(, x, y, size, size)
 
-const drawUriImg = ({ ctx, data_uri, x, y, size, type }) => ctx.drawImage(img, x, y, size, size) => {
-  var img = new Image;
-  img.onload = function(){
-    ctx.drawImage(img,x,y,size,size);
-  };
-  img.src = data_uri;
-};
+// const drawUriImg = ({ ctx, data_uri, x, y, size, type }) => {
+//   var img = new Image();
+//   img.onload = function () {
+//     ctx.drawImage(img, x, y, size, size);
+//   };
+//   img.src = data_uri;
+// }
 
 const drawText = ({ctx, fontWeight, fontSize, lineHeightPx, maxWidth, x, y, fontFamily, text, type }) => {
   ctx.font = `${fontWeight} ${fontSize}px ${fontFamily}`;
@@ -175,6 +175,7 @@ export {
   drawSigil,
   drawQR,
   drawImg,
+  drawUriImg,
   drawText,
   drawWrappedText,
   drawEthereumAddressCompact,

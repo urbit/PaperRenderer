@@ -1,12 +1,12 @@
 import qr from 'qr-image';
-import { sigil, stringRenderer } from 'sigil-js';
+import { sigil, stringRenderer } from 'urbit-sigil-js';
 
 
 const loadImg = (base64, cb) => new Promise(resolve => {
-  const img = new Image();
-  img.onload = () => resolve(cb(img));
-  img.onerror = () => reject('Error loading image');
-  img.src = base64;
+  // const img = new Image();
+  // img.onload = () => resolve(cb(img));
+  // img.onerror = () => reject('Error loading image');
+  // img.src = base64;
 });
 
 

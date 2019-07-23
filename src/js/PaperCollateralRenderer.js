@@ -1,4 +1,4 @@
-const _jsxFileName = "/Users/chris/Documents/PaperCollateralRenderer/src/js/PaperCollateralRenderer.js";import React, { Component } from 'react';
+import React, { Component } from 'react';
 import PageRenderer from './PageRenderer';
 
 import { shim } from './lib/utils';
@@ -8,7 +8,7 @@ import constants from './lib/copy';
 import {
   MasterTicketComponent,
   ManagementComponent,
-  MultipassComponent,
+  AddressManifestComponent,
 } from './lib/components'
 
 
@@ -22,18 +22,26 @@ const PROFILES = {
   'REGISTRATION': {
     'galaxy': [
       (w, cs, ts) => () => MasterTicketComponent(w, cs, ts),
+      // (w, cs, ts) => () => MasterTicketShardsComponent(w, cs, ts),
+      // (w, cs, ts) => () => SpawnSeedComponent(w, cs, ts),
+      // (w, cs, ts) => () => VotingSeedComponent(w, cs, ts),
+      // (w, cs, ts) => () => TransferSeedComponent(w, copy, ts),
       (w, cs, ts) => () => ManagementComponent(w, cs, ts),
-      (w, cs, ts) => () => MultipassComponent(w, cs, ts),
+
     ],
     'star': [
       (w, cs, ts) => () => MasterTicketComponent(w, cs, ts),
+      // (w, cs, ts) => () => SpawnSeedComponent(w, cs, ts),
+      // (w, cs, ts) => () => TransferSeedComponent(w, cs, ts),
       (w, cs, ts) => () => ManagementComponent(w, cs, ts),
-      (w, cs, ts) => () => MultipassComponent(w, cs, ts),
     ],
     'planet': [
       (w, cs, ts) => () => MasterTicketComponent(w, cs, ts),
+      // (w, cs, ts) => () => TransferSeedComponent(w, cs, ts),
       (w, cs, ts) => () => ManagementComponent(w, cs, ts),
-      (w, cs, ts) => () => MultipassComponent(w, cs, ts),
+    ],
+    'manifest': [
+      (ws, cs, ts) => () => AddressManifestComponent(ws, cs, ts),
     ]
   }
 }
@@ -42,7 +50,7 @@ const PROFILES = {
 
 class PaperCollateralRenderer extends Component {
   constructor(props) {
-    super(props);PaperCollateralRenderer.prototype.__init.call(this);
+    super(props)
     this.state = {
       results: [],
       pages: null,
@@ -73,7 +81,7 @@ class PaperCollateralRenderer extends Component {
 
 
 
-  __init() {this.componentDidMount = () => {
+  componentDidMount = () => {
 
     const wallets = shim(this.props.wallet);
 
@@ -89,14 +97,13 @@ class PaperCollateralRenderer extends Component {
       ...docketFunctions,
       ...docket.manifest.map(f => f(wallets, constants, templates))
     ]
-
     Promise.all(withManifest.map(f => f()))
       .then(pageGroups => {
         const flats = pageGroups.reduce((acc, arr) => [...acc, ...arr], []);
         this.setState({ pages: flats, totalPages: flats.length });
     });
 
-  }}
+  }
 
 
 
@@ -106,17 +113,17 @@ class PaperCollateralRenderer extends Component {
       this.latch = true;
 
       return (
-        React.createElement('div', { className:  this.props.className , __self: this, __source: {fileName: _jsxFileName, lineNumber: 120}}
+        <div className={ this.props.className }>
 
-        , React.createElement(PageRenderer, {
-          pages: pages,
-          callback: data => this.props.callback(data), __self: this, __source: {fileName: _jsxFileName, lineNumber: 122}}
-        )
+        <PageRenderer
+          pages={pages}
+          callback={data => this.props.callback(data)}
+        />
 
-        )
+        </div>
       );
     } else {
-      return React.createElement('div', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 130}})
+      return <div/>
     }
   };
 };
