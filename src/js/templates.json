@@ -241,6 +241,14 @@
         "strokeWeight": 1
       },
       {
+        "type": "SIGIL",
+        "size": 48,
+        "name": ">sigil:@sigil",
+        "data": "@sigil",
+        "x": 168,
+        "y": 206
+      },
+      {
         "type": "TEMPLATE_TEXT",
         "fontFamily": "Source Code Pro",
         "fontSize": 8,
@@ -717,6 +725,14 @@
             }
           }
         ]
+      },
+      {
+        "type": "SIGIL",
+        "size": 63.999969482421875,
+        "name": ">sigil:@sigil",
+        "data": "@sigil",
+        "x": 72,
+        "y": 50
       },
       {
         "type": "TEXT",
@@ -1259,6 +1275,14 @@
         ]
       },
       {
+        "type": "SIGIL",
+        "size": 31.735517501831055,
+        "name": ">sigil:@sigil",
+        "data": "@sigil",
+        "x": 72,
+        "y": 50
+      },
+      {
         "type": "TEXT",
         "fontFamily": "Source Code Pro",
         "fontSize": 12,
@@ -1729,6 +1753,14 @@
             }
           }
         ]
+      },
+      {
+        "type": "SIGIL",
+        "size": 64,
+        "name": ">sigil:@sigil",
+        "data": "@sigil",
+        "x": 72,
+        "y": 48
       },
       {
         "type": "TEXT",
@@ -2338,6 +2370,14 @@
             }
           }
         ]
+      },
+      {
+        "type": "SIGIL",
+        "size": 64,
+        "name": ">sigil:@sigil",
+        "data": "@sigil",
+        "x": 0,
+        "y": 6
       },
       {
         "type": "TEXT",
@@ -3002,6 +3042,14 @@
         ]
       },
       {
+        "type": "SIGIL",
+        "size": 63.999969482421875,
+        "name": ">sigil:@sigil",
+        "data": "@sigil",
+        "x": 72,
+        "y": 50
+      },
+      {
         "type": "TEXT",
         "fontFamily": "Source Code Pro",
         "fontSize": 12,
@@ -3583,6 +3631,14 @@
             }
           }
         ]
+      },
+      {
+        "type": "SIGIL",
+        "size": 31.735517501831055,
+        "name": ">sigil:@sigil",
+        "data": "@sigil",
+        "x": 72,
+        "y": 50
       },
       {
         "type": "TEXT",
@@ -4474,6 +4530,14 @@
           }
         ],
         "strokeWeight": 2
+      },
+      {
+        "type": "SIGIL",
+        "size": 64,
+        "name": ">sigil:@sigil",
+        "data": "@sigil",
+        "x": 72,
+        "y": 50
       }
     ]
   }

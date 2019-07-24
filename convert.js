@@ -10,13 +10,15 @@ const flatPack = (lo) => {
     if (child.type === 'GROUP') {
       // look for special items we don't need to parse
       if (child.name.split(':')[0] === '>qr') return [...acc, {...child, type: 'QR'}];
-      if (child.name.split(':')[0] === '>sigil') return [...acc, {...child, type: 'SIGIL'}];
       if (child.name.split(':')[0] === '>template_text') return [...acc, {...child, type: 'TEMPLATE_TEXT'}];
       if (child.name.split(':')[0] === '>rect') return [...acc, {...child, type: 'RECT'}];
 
       // if no special items are found, tranverse down into group
       return [...acc, ...flatPack(child)]
     } else {
+      if (child.name.split(':')[0] === '>sigil')
+{     console.log(child);
+      return [...acc, {...child, type: 'SIGIL'}];}
       if (child.name.split(':')[0] === '>img') return [...acc, {...child, type: 'IMG'}];
       if (child.name.split(':')[0] === '>patq') return [...acc, {...child, type: 'PATQ'}];
       if (child.name.split(':')[0] === '>addr_split_four') return [...acc, {...child, type: 'ADDR_SPLIT_FOUR'}];
