@@ -51,17 +51,17 @@ class PageRenderer extends Component {
     page.renderables.forEach(r => {
       if (r.type === 'QR') return drawQR({ ctx, ...r });
       if (r.type === 'PATQ') return drawPatQ({ ctx, ...r });
-      // if (r.type === 'IMG') return drawImg({ ctx, ...r });
+      if (r.type === 'IMG') {
+        // console.log(r);
+        return drawImg({ ctx, ...r }); }
+      // return drawImg({ ctx, ...r });
       if (r.type === 'ADDR_SPLIT_FOUR') return drawEthereumAddressLong({ ctx, ...r });
-      if (r.type === 'WRAP_ADDR_SPLIT_FOUR') return drawEthereumAddressLong({ ctx, ...r });
+      if (r.type === 'WRAP_ADDR_SPLIT_FOUR') return drawEthereumAddressCompact({ ctx, ...r });
       if (r.type === 'ADDR_COMPACT') return drawEthereumAddressCompact({ ctx, ...r });
       if (r.type === 'SIGIL') return drawSigil({ ctx, ...r });
-      if (r.type === 'RECT') {
-        
-        return drawRect({ ctx, ...r });
-      }
+      if (r.type === 'RECT') return drawRect({ ctx, ...r });
       if (r.type === 'HR') return drawLine({ ctx, ...r });
-      if (r.type === 'TEMPLATE_TEXT') {
+      if (r.type === 'TEMPLATE_TEXT') { console.log(r);
         return drawWrappedText({ ctx, ...r });
       }
       if (r.type === 'TEXT') {

@@ -17,6 +17,7 @@ const flatPack = (lo) => {
       // if no special items are found, tranverse down into group
       return [...acc, ...flatPack(child)]
     } else {
+      if (child.name.split(':')[0] === '>img') return [...acc, {...child, type: 'IMG'}];
       if (child.name.split(':')[0] === '>patq') return [...acc, {...child, type: 'PATQ'}];
       if (child.name.split(':')[0] === '>addr_split_four') return [...acc, {...child, type: 'ADDR_SPLIT_FOUR'}];
       if (child.name.split(':')[0] === '>wrap_addr_split_four') return [...acc, {...child, type: 'WRAP_ADDR_SPLIT_FOUR'}];
@@ -24,7 +25,6 @@ const flatPack = (lo) => {
       if (child.type === 'TEXT') return [...acc, {...child, type: 'TEXT'}];
       if (child.name.split(':')[0] === '>hr') return [...acc, {...child, type: 'HR'}];
       if (child.name.split(':')[0] === '>rect') return [...acc, {...child, type: 'RECT'}];
-      // if (child.name.split(':')[0] === '>img') return [...acc, {...child, type: 'IMG'}];
       // console.warn('Reminder: There are more children on board that will not be included in flatpack.')
       return acc
     }
@@ -70,9 +70,11 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
           };
 
           if (child.type === 'IMG') {
+            console.log(child);
             return {
               type: 'IMG',
-              size: child.absoluteBoundingBox.height,
+              width: child.absoluteBoundingBox.height,
+              height: child.absoluteBoundingBox.width,
               name: child.name,
               data: child.name.split(':')[1],
               x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
@@ -91,7 +93,22 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
               lineHeightPx: child.style.lineHeightPx,
               x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
               y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
-              fontColor: child.style.fills,
+              fontColor: child.fills,
+            };
+          };
+
+          if (child.type === 'TEMPLATE_TEXT') {
+            return {
+              type: 'TEMPLATE_TEXT',
+              fontFamily: child.style.fontFamily,
+              fontSize: child.style.fontSize,
+              text: child.name.split(':')[1],
+              fontWeight: child.style.fontWeight,
+              maxWidth: child.absoluteBoundingBox.width,
+              lineHeightPx: child.style.lineHeightPx,
+              x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
+              y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
+              fontColor: child.fills,
             };
           };
 
@@ -120,6 +137,7 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
               lineHeightPx: child.style.lineHeightPx,
               x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
               y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
+              fontColor: child.fills,
             };
           };
 
@@ -134,10 +152,11 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
               lineHeightPx: child.style.lineHeightPx,
               x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
               y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
+              fontColor: child.fills,
             };
           };
+
           if (child.type === 'RECT') {
-            console.log('rect');
             return {
               type: 'RECT',
               cornerRadius: child.cornerRadius,
@@ -165,21 +184,7 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
             };
           };
 
-          if (child.type === 'TEMPLATE_TEXT') {
-            // console.log(child.style.fontFamily);
-            return {
-              type: 'TEMPLATE_TEXT',
-              fontFamily: child.style.fontFamily,
-              fontSize: child.style.fontSize,
-              text: child.name.split(':')[1],
-              fontWeight: child.style.fontWeight,
-              maxWidth: child.absoluteBoundingBox.width,
-              lineHeightPx: child.style.lineHeightPx,
-              x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
-              y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
-              fontColor: child.style.fills,
-            };
-          };
+
 
           console.warn(`Untyped child ${child.name} in flat layouts`)
         }),

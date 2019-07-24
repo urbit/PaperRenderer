@@ -17,7 +17,19 @@
         "maxWidth": 48,
         "lineHeightPx": 14.0625,
         "x": 137,
-        "y": 551
+        "y": 551,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "RECT",
@@ -50,7 +62,19 @@
         "maxWidth": 24,
         "lineHeightPx": 9.375,
         "x": 200,
-        "y": 554
+        "y": 554,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -61,7 +85,19 @@
         "maxWidth": 45,
         "lineHeightPx": 14.0625,
         "x": 137,
-        "y": 454
+        "y": 454,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -72,7 +108,19 @@
         "maxWidth": 92,
         "lineHeightPx": 11.061599731445312,
         "x": 138,
-        "y": 750
+        "y": 750,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.49803921580314636,
+              "g": 0.49803921580314636,
+              "b": 0.49803921580314636,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -83,7 +131,19 @@
         "maxWidth": 106,
         "lineHeightPx": 9.375,
         "x": 246,
-        "y": 750
+        "y": 750,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.49803921580314636,
+              "g": 0.49803921580314636,
+              "b": 0.49803921580314636,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEMPLATE_TEXT",
@@ -94,7 +154,19 @@
         "maxWidth": 140,
         "lineHeightPx": 9.375,
         "x": 138,
-        "y": 731
+        "y": 731,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.49803921580314636,
+              "g": 0.49803921580314636,
+              "b": 0.49803921580314636,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -105,7 +177,19 @@
         "maxWidth": 329,
         "lineHeightPx": 16,
         "x": 137,
-        "y": 483
+        "y": 483,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -116,7 +200,19 @@
         "maxWidth": 344,
         "lineHeightPx": 16,
         "x": 138,
-        "y": 580
+        "y": 580,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "RECT",
@@ -153,18 +249,42 @@
         "maxWidth": 48,
         "lineHeightPx": 9.375,
         "x": 230,
-        "y": 245
+        "y": 245,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
         "fontFamily": "Source Code Pro",
         "fontSize": 8,
-        "text": "birth time",
+        "text": "BIRTH TIME",
         "fontWeight": 400,
         "maxWidth": 48,
         "lineHeightPx": 12,
         "x": 230,
-        "y": 231
+        "y": 231,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "WRAP_ADDR_SPLIT_FOUR",
@@ -175,7 +295,19 @@
         "maxWidth": 217,
         "lineHeightPx": 16,
         "x": 168,
-        "y": 331
+        "y": 331,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEMPLATE_TEXT",
@@ -186,7 +318,19 @@
         "maxWidth": 125,
         "lineHeightPx": 24,
         "x": 230,
-        "y": 204
+        "y": 204,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -197,7 +341,19 @@
         "maxWidth": 63,
         "lineHeightPx": 16,
         "x": 168,
-        "y": 266
+        "y": 266,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -208,7 +364,19 @@
         "maxWidth": 82,
         "lineHeightPx": 16,
         "x": 168,
-        "y": 312
+        "y": 312,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -219,7 +387,19 @@
         "maxWidth": 239,
         "lineHeightPx": 24,
         "x": 168,
-        "y": 282
+        "y": 282,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "QR",
@@ -238,7 +418,19 @@
         "maxWidth": 48,
         "lineHeightPx": 9.375,
         "x": 138,
-        "y": 713
+        "y": 713,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.49803921580314636,
+              "g": 0.49803921580314636,
+              "b": 0.49803921580314636,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -249,7 +441,19 @@
         "maxWidth": 15,
         "lineHeightPx": 9.375,
         "x": 198,
-        "y": 713
+        "y": 713,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.49803921580314636,
+              "g": 0.49803921580314636,
+              "b": 0.49803921580314636,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -260,7 +464,19 @@
         "maxWidth": 78,
         "lineHeightPx": 18.75,
         "x": 267,
-        "y": 81
+        "y": 81,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       }
     ]
   },
@@ -282,7 +498,19 @@
         "maxWidth": 48,
         "lineHeightPx": 14.0625,
         "x": 68,
-        "y": 597
+        "y": 597,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "RECT",
@@ -315,7 +543,19 @@
         "maxWidth": 31,
         "lineHeightPx": 9.375,
         "x": 132,
-        "y": 600
+        "y": 600,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -326,7 +566,19 @@
         "maxWidth": 45,
         "lineHeightPx": 14.0625,
         "x": 68,
-        "y": 468
+        "y": 468,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -337,7 +589,19 @@
         "maxWidth": 106,
         "lineHeightPx": 11.061599731445312,
         "x": 69,
-        "y": 731
+        "y": 731,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -348,7 +612,19 @@
         "maxWidth": 101,
         "lineHeightPx": 9.375,
         "x": 154,
-        "y": 750
+        "y": 750,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -359,7 +635,19 @@
         "maxWidth": 77,
         "lineHeightPx": 9.375,
         "x": 69,
-        "y": 750
+        "y": 750,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -370,7 +658,19 @@
         "maxWidth": 459,
         "lineHeightPx": 16,
         "x": 68,
-        "y": 497
+        "y": 497,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -381,18 +681,42 @@
         "maxWidth": 459,
         "lineHeightPx": 16,
         "x": 68,
-        "y": 541
+        "y": 541,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
-        "type": "TEXT",
+        "type": "TEMPLATE_TEXT",
         "fontFamily": "Inter",
         "fontSize": 12,
-        "text": "This requires a Medium Friction Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.",
+        "text": "@meta.custodyText",
         "fontWeight": 400,
         "maxWidth": 448,
         "lineHeightPx": 16,
         "x": 69,
-        "y": 626
+        "y": 626,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -403,7 +727,19 @@
         "maxWidth": 94,
         "lineHeightPx": 16,
         "x": 160,
-        "y": 78
+        "y": 78,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEMPLATE_TEXT",
@@ -414,7 +750,19 @@
         "maxWidth": 380,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 247
+        "y": 247,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEMPLATE_TEXT",
@@ -425,7 +773,19 @@
         "maxWidth": 48,
         "lineHeightPx": 24,
         "x": 160,
-        "y": 46
+        "y": 46,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -436,7 +796,19 @@
         "maxWidth": 94,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 167
+        "y": 167,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "PATQ",
@@ -450,6 +822,15 @@
         "y": 191
       },
       {
+        "type": "IMG",
+        "width": 12.000008583068848,
+        "height": 26.000001907348633,
+        "name": ">img:@keyIcon",
+        "data": "@keyIcon",
+        "x": 72,
+        "y": 193.14208984375
+      },
+      {
         "type": "TEXT",
         "fontFamily": "Source Code Pro",
         "fontSize": 12,
@@ -458,7 +839,19 @@
         "maxWidth": 101,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 223
+        "y": 223,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -469,7 +862,19 @@
         "maxWidth": 123,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 327
+        "y": 327,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "ADDR_SPLIT_FOUR",
@@ -480,7 +885,19 @@
         "maxWidth": 193,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 352
+        "y": 352,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "QR",
@@ -499,7 +916,19 @@
         "maxWidth": 48,
         "lineHeightPx": 9.375,
         "x": 69,
-        "y": 713
+        "y": 713,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -510,7 +939,19 @@
         "maxWidth": 15,
         "lineHeightPx": 9.375,
         "x": 129,
-        "y": 713
+        "y": 713,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "RECT",
@@ -543,7 +984,19 @@
         "maxWidth": 31,
         "lineHeightPx": 9.375,
         "x": 168,
-        "y": 103
+        "y": 103,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "HR",
@@ -607,7 +1060,19 @@
         "maxWidth": 31,
         "lineHeightPx": 9.375,
         "x": 132,
-        "y": 600
+        "y": 600,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -618,7 +1083,19 @@
         "maxWidth": 48,
         "lineHeightPx": 14.0625,
         "x": 68,
-        "y": 597
+        "y": 597,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -629,7 +1106,19 @@
         "maxWidth": 45,
         "lineHeightPx": 14.0625,
         "x": 68,
-        "y": 468
+        "y": 468,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -640,7 +1129,19 @@
         "maxWidth": 106,
         "lineHeightPx": 11.061599731445312,
         "x": 69,
-        "y": 731
+        "y": 731,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -651,7 +1152,19 @@
         "maxWidth": 101,
         "lineHeightPx": 9.375,
         "x": 154,
-        "y": 750
+        "y": 750,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -662,7 +1175,19 @@
         "maxWidth": 77,
         "lineHeightPx": 9.375,
         "x": 69,
-        "y": 750
+        "y": 750,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -673,7 +1198,19 @@
         "maxWidth": 459,
         "lineHeightPx": 16,
         "x": 68,
-        "y": 497
+        "y": 497,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -684,18 +1221,42 @@
         "maxWidth": 459,
         "lineHeightPx": 16,
         "x": 68,
-        "y": 541
+        "y": 541,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
-        "type": "TEXT",
+        "type": "TEMPLATE_TEXT",
         "fontFamily": "Inter",
         "fontSize": 12,
-        "text": "This requires a Medium Friction Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.",
+        "text": "@meta.custodyText",
         "fontWeight": 400,
         "maxWidth": 448,
         "lineHeightPx": 16,
         "x": 69,
-        "y": 626
+        "y": 626,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -706,7 +1267,19 @@
         "maxWidth": 94,
         "lineHeightPx": 16,
         "x": 160,
-        "y": 78
+        "y": 78,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEMPLATE_TEXT",
@@ -717,7 +1290,19 @@
         "maxWidth": 380,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 247
+        "y": 247,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEMPLATE_TEXT",
@@ -728,7 +1313,19 @@
         "maxWidth": 48,
         "lineHeightPx": 24,
         "x": 160,
-        "y": 46
+        "y": 46,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -739,7 +1336,19 @@
         "maxWidth": 94,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 167
+        "y": 167,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "PATQ",
@@ -753,6 +1362,15 @@
         "y": 191
       },
       {
+        "type": "IMG",
+        "width": 12.000008583068848,
+        "height": 26.000001907348633,
+        "name": ">img:@keyIcon",
+        "data": "@keyIcon",
+        "x": 72,
+        "y": 193.1422119140625
+      },
+      {
         "type": "TEXT",
         "fontFamily": "Source Code Pro",
         "fontSize": 12,
@@ -761,7 +1379,19 @@
         "maxWidth": 101,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 223
+        "y": 223,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -772,7 +1402,19 @@
         "maxWidth": 123,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 327
+        "y": 327,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "ADDR_SPLIT_FOUR",
@@ -783,7 +1425,19 @@
         "maxWidth": 193,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 352
+        "y": 352,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "QR",
@@ -802,7 +1456,19 @@
         "maxWidth": 44,
         "lineHeightPx": 9.375,
         "x": 69,
-        "y": 713
+        "y": 713,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -813,7 +1479,19 @@
         "maxWidth": 15,
         "lineHeightPx": 9.375,
         "x": 129,
-        "y": 713
+        "y": 713,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "RECT",
@@ -846,7 +1524,19 @@
         "maxWidth": 32,
         "lineHeightPx": 9.375,
         "x": 168,
-        "y": 103
+        "y": 103,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "HR",
@@ -888,7 +1578,19 @@
         "maxWidth": 50,
         "lineHeightPx": 14.0625,
         "x": 72,
-        "y": 560
+        "y": 560,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -899,7 +1601,19 @@
         "maxWidth": 48,
         "lineHeightPx": 14.0625,
         "x": 72,
-        "y": 424
+        "y": 424,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -910,7 +1624,19 @@
         "maxWidth": 455,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 448
+        "y": 448,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -921,18 +1647,42 @@
         "maxWidth": 455,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 488
+        "y": 488,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
-        "type": "TEXT",
+        "type": "TEMPLATE_TEXT",
         "fontFamily": "Inter",
         "fontSize": 12,
-        "text": "This requires a Medium Friction Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.",
+        "text": "@meta.custodyText",
         "fontWeight": 400,
         "maxWidth": 448,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 584
+        "y": 584,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -943,7 +1693,19 @@
         "maxWidth": 50,
         "lineHeightPx": 14.0625,
         "x": 72,
-        "y": 648
+        "y": 648,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -954,7 +1716,19 @@
         "maxWidth": 448,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 672
+        "y": 672,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -965,7 +1739,19 @@
         "maxWidth": 94,
         "lineHeightPx": 16,
         "x": 152,
-        "y": 72
+        "y": 72,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEMPLATE_TEXT",
@@ -976,7 +1762,19 @@
         "maxWidth": 380,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 248
+        "y": 248,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEMPLATE_TEXT",
@@ -987,7 +1785,19 @@
         "maxWidth": 48,
         "lineHeightPx": 24,
         "x": 152,
-        "y": 42
+        "y": 42,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -998,7 +1808,19 @@
         "maxWidth": 94,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 168
+        "y": 168,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "PATQ",
@@ -1012,6 +1834,15 @@
         "y": 192
       },
       {
+        "type": "IMG",
+        "width": 12.000008583068848,
+        "height": 26.000001907348633,
+        "name": ">img:@keyIcon",
+        "data": "@keyIcon",
+        "x": 72,
+        "y": 193.14215087890625
+      },
+      {
         "type": "TEXT",
         "fontFamily": "Source Code Pro",
         "fontSize": 12,
@@ -1020,7 +1851,19 @@
         "maxWidth": 101,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 224
+        "y": 224,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1031,7 +1874,19 @@
         "maxWidth": 123,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 328
+        "y": 328,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "ADDR_SPLIT_FOUR",
@@ -1042,7 +1897,19 @@
         "maxWidth": 380,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 352
+        "y": 352,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "QR",
@@ -1083,7 +1950,19 @@
         "maxWidth": 31,
         "lineHeightPx": 9.375,
         "x": 160,
-        "y": 99
+        "y": 99,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "HR",
@@ -1136,7 +2015,19 @@
         "maxWidth": 31,
         "lineHeightPx": 9.375,
         "x": 139,
-        "y": 563
+        "y": 563,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1147,7 +2038,19 @@
         "maxWidth": 224,
         "lineHeightPx": 11.71875,
         "x": 72,
-        "y": 712
+        "y": 712,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1158,7 +2061,19 @@
         "maxWidth": 305,
         "lineHeightPx": 11.71875,
         "x": 235,
-        "y": 712
+        "y": 712,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1169,7 +2084,19 @@
         "maxWidth": 224,
         "lineHeightPx": 11.71875,
         "x": 72,
-        "y": 696
+        "y": 696,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1180,7 +2107,19 @@
         "maxWidth": 305,
         "lineHeightPx": 11.71875,
         "x": 235,
-        "y": 696
+        "y": 696,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1191,7 +2130,19 @@
         "maxWidth": 224,
         "lineHeightPx": 11.71875,
         "x": 72,
-        "y": 528
+        "y": 528,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1202,7 +2153,19 @@
         "maxWidth": 305,
         "lineHeightPx": 11.71875,
         "x": 235,
-        "y": 528
+        "y": 528,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       }
     ]
   },
@@ -1224,7 +2187,19 @@
         "maxWidth": 50,
         "lineHeightPx": 14.0625,
         "x": 0,
-        "y": 518
+        "y": 518,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1235,7 +2210,19 @@
         "maxWidth": 48,
         "lineHeightPx": 14.0625,
         "x": 0,
-        "y": 382
+        "y": 382,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1246,7 +2233,19 @@
         "maxWidth": 455,
         "lineHeightPx": 16,
         "x": 0,
-        "y": 406
+        "y": 406,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1257,7 +2256,19 @@
         "maxWidth": 455,
         "lineHeightPx": 16,
         "x": 0,
-        "y": 446
+        "y": 446,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1268,7 +2279,19 @@
         "maxWidth": 448,
         "lineHeightPx": 16,
         "x": 0,
-        "y": 542
+        "y": 542,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1279,7 +2302,19 @@
         "maxWidth": 50,
         "lineHeightPx": 14.0625,
         "x": 0,
-        "y": 606
+        "y": 606,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1290,7 +2325,19 @@
         "maxWidth": 448,
         "lineHeightPx": 16,
         "x": 0,
-        "y": 630
+        "y": 630,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1301,7 +2348,19 @@
         "maxWidth": 94,
         "lineHeightPx": 16,
         "x": 80,
-        "y": 30
+        "y": 30,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1312,7 +2371,19 @@
         "maxWidth": 380,
         "lineHeightPx": 16,
         "x": 0,
-        "y": 206
+        "y": 206,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEMPLATE_TEXT",
@@ -1323,7 +2394,19 @@
         "maxWidth": 48,
         "lineHeightPx": 24,
         "x": 80,
-        "y": 0
+        "y": 0,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1334,7 +2417,19 @@
         "maxWidth": 94,
         "lineHeightPx": 16,
         "x": 0,
-        "y": 126
+        "y": 126,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "PATQ",
@@ -1348,6 +2443,15 @@
         "y": 150
       },
       {
+        "type": "IMG",
+        "width": 12.000008583068848,
+        "height": 26.000001907348633,
+        "name": ">img:keyIcon",
+        "data": "keyIcon",
+        "x": 0,
+        "y": 151.1421356201172
+      },
+      {
         "type": "TEXT",
         "fontFamily": "Source Code Pro",
         "fontSize": 12,
@@ -1356,7 +2460,19 @@
         "maxWidth": 101,
         "lineHeightPx": 16,
         "x": 0,
-        "y": 182
+        "y": 182,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1367,7 +2483,19 @@
         "maxWidth": 123,
         "lineHeightPx": 16,
         "x": 0,
-        "y": 286
+        "y": 286,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "ADDR_SPLIT_FOUR",
@@ -1378,7 +2506,19 @@
         "maxWidth": 380,
         "lineHeightPx": 16,
         "x": 0,
-        "y": 310
+        "y": 310,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "QR",
@@ -1419,7 +2559,19 @@
         "maxWidth": 31,
         "lineHeightPx": 9.375,
         "x": 88,
-        "y": 57
+        "y": 57,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "HR",
@@ -1472,7 +2624,19 @@
         "maxWidth": 31,
         "lineHeightPx": 9.375,
         "x": 67,
-        "y": 521
+        "y": 521,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1483,7 +2647,19 @@
         "maxWidth": 224,
         "lineHeightPx": 13.82699966430664,
         "x": 0,
-        "y": 670
+        "y": 670,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1494,7 +2670,19 @@
         "maxWidth": 305,
         "lineHeightPx": 13.82699966430664,
         "x": 163,
-        "y": 670
+        "y": 670,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1505,7 +2693,19 @@
         "maxWidth": 224,
         "lineHeightPx": 11.71875,
         "x": 0,
-        "y": 654
+        "y": 654,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1516,7 +2716,19 @@
         "maxWidth": 305,
         "lineHeightPx": 11.71875,
         "x": 163,
-        "y": 654
+        "y": 654,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1527,7 +2739,19 @@
         "maxWidth": 224,
         "lineHeightPx": 11.71875,
         "x": 0,
-        "y": 486
+        "y": 486,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1538,7 +2762,19 @@
         "maxWidth": 305,
         "lineHeightPx": 11.71875,
         "x": 163,
-        "y": 486
+        "y": 486,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       }
     ]
   },
@@ -1590,7 +2826,19 @@
         "maxWidth": 48,
         "lineHeightPx": 14.0625,
         "x": 68,
-        "y": 597
+        "y": 597,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1601,7 +2849,19 @@
         "maxWidth": 45,
         "lineHeightPx": 14.0625,
         "x": 68,
-        "y": 468
+        "y": 468,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1612,7 +2872,19 @@
         "maxWidth": 106,
         "lineHeightPx": 11.061599731445312,
         "x": 69,
-        "y": 731
+        "y": 731,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1623,7 +2895,19 @@
         "maxWidth": 101,
         "lineHeightPx": 9.375,
         "x": 154,
-        "y": 750
+        "y": 750,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1634,7 +2918,19 @@
         "maxWidth": 77,
         "lineHeightPx": 9.375,
         "x": 69,
-        "y": 750
+        "y": 750,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1645,7 +2941,19 @@
         "maxWidth": 459,
         "lineHeightPx": 16,
         "x": 68,
-        "y": 497
+        "y": 497,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1656,18 +2964,42 @@
         "maxWidth": 459,
         "lineHeightPx": 16,
         "x": 68,
-        "y": 541
+        "y": 541,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
-        "type": "TEXT",
+        "type": "TEMPLATE_TEXT",
         "fontFamily": "Inter",
         "fontSize": 12,
-        "text": "This requires a Medium Friction Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.",
+        "text": "@meta.custodyText",
         "fontWeight": 400,
         "maxWidth": 448,
         "lineHeightPx": 16,
         "x": 69,
-        "y": 626
+        "y": 626,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1678,7 +3010,19 @@
         "maxWidth": 116,
         "lineHeightPx": 16,
         "x": 160,
-        "y": 78
+        "y": 78,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1689,7 +3033,19 @@
         "maxWidth": 380,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 191
+        "y": 191,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEMPLATE_TEXT",
@@ -1700,7 +3056,19 @@
         "maxWidth": 48,
         "lineHeightPx": 24,
         "x": 160,
-        "y": 46
+        "y": 46,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1711,7 +3079,19 @@
         "maxWidth": 152,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 167
+        "y": 167,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1722,7 +3102,19 @@
         "maxWidth": 108,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 271
+        "y": 271,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1733,7 +3125,19 @@
         "maxWidth": 123,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 327
+        "y": 327,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "ADDR_SPLIT_FOUR",
@@ -1744,7 +3148,19 @@
         "maxWidth": 196,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 351
+        "y": 351,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "QR",
@@ -1763,7 +3179,19 @@
         "maxWidth": 48,
         "lineHeightPx": 9.375,
         "x": 69,
-        "y": 713
+        "y": 713,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1774,7 +3202,19 @@
         "maxWidth": 15,
         "lineHeightPx": 9.375,
         "x": 129,
-        "y": 713
+        "y": 713,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "RECT",
@@ -1807,7 +3247,19 @@
         "maxWidth": 18,
         "lineHeightPx": 9.375,
         "x": 169,
-        "y": 103
+        "y": 103,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "RECT",
@@ -1840,7 +3292,19 @@
         "maxWidth": 18,
         "lineHeightPx": 9.375,
         "x": 134,
-        "y": 600
+        "y": 600,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEMPLATE_TEXT",
@@ -1851,7 +3315,19 @@
         "maxWidth": 101,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 295
+        "y": 295,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "HR",
@@ -1933,7 +3409,19 @@
         "maxWidth": 48,
         "lineHeightPx": 14.0625,
         "x": 68,
-        "y": 597
+        "y": 597,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1944,7 +3432,19 @@
         "maxWidth": 45,
         "lineHeightPx": 14.0625,
         "x": 68,
-        "y": 468
+        "y": 468,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1955,7 +3455,19 @@
         "maxWidth": 106,
         "lineHeightPx": 11.061599731445312,
         "x": 69,
-        "y": 731
+        "y": 731,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1966,7 +3478,19 @@
         "maxWidth": 101,
         "lineHeightPx": 9.375,
         "x": 154,
-        "y": 750
+        "y": 750,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1977,7 +3501,19 @@
         "maxWidth": 77,
         "lineHeightPx": 9.375,
         "x": 69,
-        "y": 750
+        "y": 750,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1988,7 +3524,19 @@
         "maxWidth": 459,
         "lineHeightPx": 16,
         "x": 68,
-        "y": 497
+        "y": 497,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -1999,18 +3547,42 @@
         "maxWidth": 459,
         "lineHeightPx": 16,
         "x": 68,
-        "y": 541
+        "y": 541,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
-        "type": "TEXT",
+        "type": "TEMPLATE_TEXT",
         "fontFamily": "Inter",
         "fontSize": 12,
-        "text": "This requires a Medium Friction Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.",
+        "text": "@meta.custodyText",
         "fontWeight": 400,
         "maxWidth": 448,
         "lineHeightPx": 16,
         "x": 69,
-        "y": 626
+        "y": 626,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -2021,7 +3593,19 @@
         "maxWidth": 80,
         "lineHeightPx": 16,
         "x": 160,
-        "y": 78
+        "y": 78,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEMPLATE_TEXT",
@@ -2032,7 +3616,19 @@
         "maxWidth": 380,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 191
+        "y": 191,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEMPLATE_TEXT",
@@ -2043,7 +3639,19 @@
         "maxWidth": 48,
         "lineHeightPx": 24,
         "x": 160,
-        "y": 46
+        "y": 46,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -2054,7 +3662,19 @@
         "maxWidth": 116,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 167
+        "y": 167,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -2065,7 +3685,19 @@
         "maxWidth": 108,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 271
+        "y": 271,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -2076,7 +3708,19 @@
         "maxWidth": 123,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 327
+        "y": 327,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "ADDR_SPLIT_FOUR",
@@ -2087,7 +3731,19 @@
         "maxWidth": 196,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 351
+        "y": 351,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "QR",
@@ -2106,7 +3762,19 @@
         "maxWidth": 48,
         "lineHeightPx": 9.375,
         "x": 69,
-        "y": 713
+        "y": 713,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -2117,7 +3785,19 @@
         "maxWidth": 15,
         "lineHeightPx": 9.375,
         "x": 129,
-        "y": 713
+        "y": 713,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "RECT",
@@ -2150,7 +3830,19 @@
         "maxWidth": 16,
         "lineHeightPx": 9.375,
         "x": 170,
-        "y": 102
+        "y": 102,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "RECT",
@@ -2183,7 +3875,19 @@
         "maxWidth": 16,
         "lineHeightPx": 9.375,
         "x": 135,
-        "y": 600
+        "y": 600,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEMPLATE_TEXT",
@@ -2194,7 +3898,19 @@
         "maxWidth": 101,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 295
+        "y": 295,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "HR",
@@ -2236,7 +3952,19 @@
         "maxWidth": 48,
         "lineHeightPx": 14.0625,
         "x": 68,
-        "y": 597
+        "y": 597,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -2247,7 +3975,19 @@
         "maxWidth": 45,
         "lineHeightPx": 14.0625,
         "x": 68,
-        "y": 468
+        "y": 468,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -2258,7 +3998,19 @@
         "maxWidth": 106,
         "lineHeightPx": 11.061599731445312,
         "x": 69,
-        "y": 731
+        "y": 731,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -2269,7 +4021,19 @@
         "maxWidth": 101,
         "lineHeightPx": 9.375,
         "x": 154,
-        "y": 750
+        "y": 750,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -2280,7 +4044,19 @@
         "maxWidth": 77,
         "lineHeightPx": 9.375,
         "x": 69,
-        "y": 750
+        "y": 750,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -2291,7 +4067,19 @@
         "maxWidth": 459,
         "lineHeightPx": 16,
         "x": 68,
-        "y": 497
+        "y": 497,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -2302,18 +4090,42 @@
         "maxWidth": 459,
         "lineHeightPx": 16,
         "x": 68,
-        "y": 541
+        "y": 541,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
-        "type": "TEXT",
+        "type": "TEMPLATE_TEXT",
         "fontFamily": "Inter",
         "fontSize": 12,
-        "text": "This requires a Medium Friction Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.",
+        "text": "@meta.custodyText",
         "fontWeight": 400,
         "maxWidth": 448,
         "lineHeightPx": 16,
         "x": 69,
-        "y": 626
+        "y": 626,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -2324,7 +4136,19 @@
         "maxWidth": 80,
         "lineHeightPx": 16,
         "x": 160,
-        "y": 78
+        "y": 78,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -2335,7 +4159,19 @@
         "maxWidth": 380,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 189
+        "y": 189,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEMPLATE_TEXT",
@@ -2346,7 +4182,19 @@
         "maxWidth": 48,
         "lineHeightPx": 24,
         "x": 160,
-        "y": 46
+        "y": 46,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -2357,7 +4205,19 @@
         "maxWidth": 116,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 167
+        "y": 167,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -2368,7 +4228,19 @@
         "maxWidth": 108,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 271
+        "y": 271,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -2379,7 +4251,19 @@
         "maxWidth": 123,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 327
+        "y": 327,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "ADDR_SPLIT_FOUR",
@@ -2390,7 +4274,19 @@
         "maxWidth": 196,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 351
+        "y": 351,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "QR",
@@ -2409,7 +4305,19 @@
         "maxWidth": 48,
         "lineHeightPx": 9.375,
         "x": 69,
-        "y": 713
+        "y": 713,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEXT",
@@ -2420,7 +4328,19 @@
         "maxWidth": 15,
         "lineHeightPx": 9.375,
         "x": 129,
-        "y": 713
+        "y": 713,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "RECT",
@@ -2453,7 +4373,19 @@
         "maxWidth": 16,
         "lineHeightPx": 9.375,
         "x": 170,
-        "y": 103
+        "y": 103,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "RECT",
@@ -2486,7 +4418,19 @@
         "maxWidth": 16,
         "lineHeightPx": 9.375,
         "x": 135,
-        "y": 600
+        "y": 600,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 1,
+              "g": 1,
+              "b": 1,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "TEMPLATE_TEXT",
@@ -2497,7 +4441,19 @@
         "maxWidth": 101,
         "lineHeightPx": 16,
         "x": 72,
-        "y": 295
+        "y": 295,
+        "fontColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ]
       },
       {
         "type": "HR",
