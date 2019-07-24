@@ -8,7 +8,8 @@ import constants from './lib/copy';
 import {
   MasterTicketComponent,
   ManagementComponent,
-  AddressManifestComponent,
+  MultipassComponent,
+  // AddressManifestComponent,
 } from './lib/components'
 
 
@@ -27,6 +28,7 @@ const PROFILES = {
       // (w, cs, ts) => () => VotingSeedComponent(w, cs, ts),
       // (w, cs, ts) => () => TransferSeedComponent(w, copy, ts),
       (w, cs, ts) => () => ManagementComponent(w, cs, ts),
+      (w, cs, ts) => () => MultipassComponent(w, cs, ts),
 
     ],
     'star': [
@@ -34,15 +36,18 @@ const PROFILES = {
       // (w, cs, ts) => () => SpawnSeedComponent(w, cs, ts),
       // (w, cs, ts) => () => TransferSeedComponent(w, cs, ts),
       (w, cs, ts) => () => ManagementComponent(w, cs, ts),
+      (w, cs, ts) => () => MultipassComponent(w, cs, ts),
+
     ],
     'planet': [
       (w, cs, ts) => () => MasterTicketComponent(w, cs, ts),
       // (w, cs, ts) => () => TransferSeedComponent(w, cs, ts),
       (w, cs, ts) => () => ManagementComponent(w, cs, ts),
+      (w, cs, ts) => () => MultipassComponent(w, cs, ts),
     ],
-    'manifest': [
-      (ws, cs, ts) => () => AddressManifestComponent(ws, cs, ts),
-    ]
+    // 'manifest': [
+    //   (ws, cs, ts) => () => AddressManifestComponent(ws, cs, ts),
+    // ]
   }
 }
 
@@ -95,14 +100,14 @@ class PaperCollateralRenderer extends Component {
 
     const withManifest = [
       ...docketFunctions,
-      ...docket.manifest.map(f => f(wallets, constants, templates))
+      // ...docket.manifest.map(f => f(wallets, constants, templates))
     ]
     Promise.all(withManifest.map(f => f()))
       .then(pageGroups => {
         const flats = pageGroups.reduce((acc, arr) => [...acc, ...arr], []);
         this.setState({ pages: flats, totalPages: flats.length });
-    });
-
+    })
+    .catch(err => console.error(err));
   }
 
 

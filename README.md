@@ -62,4 +62,4 @@ Making changes:
 [Here](https://github.com/urbit/PaperCollateralRenderer/tree/fixes/docs/sample-wallet.json) is a sample wallet's JSON.  More sample wallets can be found in [src/sampleWallets](https://github.com/urbit/PaperCollateralRenderer/tree/master/src/sampleWallets)
 
 
-#
+#### License

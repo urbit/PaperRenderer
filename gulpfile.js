@@ -179,6 +179,14 @@ gulp.task('js-minify', function () {
     .pipe(gulp.dest('./dist/js/'));
 });
 
+// copy fonts to dist folder
+// gulp.task('js-minify', function () {
+//   return gulp.src('./dist/js/index.js')
+//     .pipe(minify())
+//     .pipe(gulp.dest('./dist/js/'));
+// });
+
+
 gulp.task('js-cachebust', function(cb) {
   return Promise.resolve(
     exec('git log', function (err, stdout, stderr) {

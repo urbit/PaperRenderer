@@ -5,6 +5,7 @@ const drawQR = ({ ctx, img, x, y, size, type }) => ctx.drawImage(img, x, y+3, si
 
 const drawSigil = ({ ctx, img, x, y, size, type }) => ctx.drawImage(img, x, y, size, size)
 
+const drawImg = ({ ctx, img, x, y, size, type }) => ctx.drawImage(img, x, y, size, size)
 
 
 const drawText = ({ctx, fontWeight, fontSize, lineHeightPx, maxWidth, x, y, fontFamily, text, type }) => {
@@ -14,10 +15,10 @@ const drawText = ({ctx, fontWeight, fontSize, lineHeightPx, maxWidth, x, y, font
 };
 
 
-const drawWrappedText = ({ctx, fontWeight, fontSize, lineHeightPx, maxWidth, x, y, fontFamily, text, type }) => {
+const drawWrappedText = ({ctx, fontWeight, fontSize, lineHeightPx, maxWidth, x, y, fontFamily, text, type, fontColor }) => {
   // const offset = fontFamily === 'Source Code Pro' ? 1 : 0
-  ctx.font = `${fontWeight} ${fontSize}px ${fontFamily}`;
-  wordWrap(ctx, text, x, y+lineHeightPx, lineHeightPx, maxWidth);
+  ctx.font = `${fontWeight} ${fontSize}px "${fontFamily}"`;
+  wordWrap(ctx, text, x, y+lineHeightPx, lineHeightPx, maxWidth, fontColor);
 };
 
 
@@ -66,48 +67,118 @@ const drawEthereumAddressLong = ({ ctx, fontWeight, fontSize, lineHeightPx, x, y
 
 }
 
-
-
 const drawPatQ = ({ ctx, fontSize, lineHeightPx, x, y, fontFamily, text }) => {
   ctx.font = `${fontSize}px ${fontFamily}`;
 
   const OFFSET = 1.2;
 
-  if (text.length === 28) {
-    ctx.fillText(text, x, y+lineHeightPx);
-    return
+  var start = 0, end = 0, offset = 1;
+
+  for(var lineNum = 1; lineNum < text.length/28; lineNum++){
+    // 28 chars per line, unless string is < 28
+    end = text.length > 28 ? 28 : text.length;
+
+    ctx.fillText(text, x, y+lineHeightPx * lineNum) * offset;
+
+    // no offset on first line
+    offset = OFFSET;
+
+    // remove drawn text for next iteration
+    text = text.substring(end);
   }
 
-  if (text.length === 56) {
-    const line1 = text.substring(0, 28);
-    const line2 = text.substring(28);
-    ctx.fillText(line1, x, y + lineHeightPx);
-    ctx.fillText(line2, x, y + (lineHeightPx * 2) * OFFSET);
-    return
+}
+// const resetCanvasTools = (ctx){
+//   ctx.lineWidth = 0;
+//   ctx.strokeStyle = ;
+// }
+//
+
+const drawRect = ({ ctx, cornerRadius, dashes, x, y, width, height, fillColor, strokeColor, strokeWeight}) => {
+
+  var rgbFill, rgbStroke;
+
+  ctx.setLineDash([]);
+
+  if (fillColor.length != 0) {
+    rgbFill = `rgba(${fillColor[0].color.r}, ${fillColor[0].color.g}, ${fillColor[0].color.b}, ${fillColor[0].color.a})`;
+    // console.log(rgbFill);
+  }
+  if (strokeColor.length != 0) {
+    rgbStroke = `rgba(${strokeColor[0].color.r}, ${strokeColor[0].color.g}, ${strokeColor[0].color.b}, ${strokeColor[0].color.a})`;
   }
 
-  if (text.length === 112) {
-    const line1 = text.substring(0, 28);
-    const line2 = text.substring(28, 56);
-    const line3 = text.substring(56, 84);
-    const line4 = text.substring(84);
-    ctx.fillText(line1, x, y + lineHeightPx);
-    ctx.fillText(line2, x, y + (lineHeightPx * 2) * OFFSET);
-    ctx.fillText(line3, x, y + (lineHeightPx * 3) * OFFSET);
-    ctx.fillText(line4, x, y + (lineHeightPx * 4) * OFFSET);
-    return
+
+
+  if (dashes != null){
+    ctx.setLineDash(dashes);
   }
 
-  throw Error(`patq ${text} of length ${text.length} supplied to drawPatQ is unsupported`)
+  if(cornerRadius > 0) {
+    // offset corner radius
+    x += cornerRadius/2;
+    y += cornerRadius/2;
+    width -= cornerRadius/2;
+    height -= cornerRadius/2;
+
+    ctx.beginPath();
+    ctx.moveTo(x + cornerRadius, y);
+    ctx.lineTo(x + width - cornerRadius, y);
+    ctx.quadraticCurveTo(x + width, y, x + width, y + cornerRadius);
+    ctx.lineTo(x + width, y + height - cornerRadius);
+    ctx.quadraticCurveTo(x + width, y + height, x + width - cornerRadius, y + height);
+    ctx.lineTo(x + cornerRadius, y + height);
+    ctx.quadraticCurveTo(x, y + height, x, y + height - cornerRadius);
+    ctx.lineTo(x, y + cornerRadius);
+    ctx.quadraticCurveTo(x, y, x + cornerRadius, y);
+    ctx.closePath();
+  }
+  if(rgbStroke != undefined) {
+    ctx.strokeStyle = rgbStroke;
+    ctx.lineWidth = strokeWeight;
+    ctx.stroke();
+  }
+  else if(rgbFill != undefined){
+    console.log(rgbFill);
+    ctx.fillStyle = rgbFill;
+    ctx.fill();
+  }
+
 }
 
+
+const drawLine = ({ ctx, dashes, x, y, width, height, strokeColor, strokeWeight}) => {
+  var rgbStroke;
+
+  if (strokeColor.length != 0) {
+      rgbStroke = `rgba(${strokeColor[0].color.r}, ${strokeColor[0].color.g}, ${strokeColor[0].color.b}, ${strokeColor[0].color.a})`;
+    }
+
+  ctx.strokeStyle = strokeColor;
+
+  // canvas renders strokes twice as big
+  ctx.lineWidth = (strokeWeight != null && strokeWeight > 0) ? strokeWeight/2 : 1;
+  // ctx.setLineDash(dashes);
+
+  var x2 = x + width;
+  var y2 = y + height;
+
+  ctx.beginPath();
+  ctx.moveTo(x,y);
+  ctx.lineTo(x2,y2);
+  ctx.stroke();
+
+}
 
 export {
   drawSigil,
   drawQR,
+  drawImg,
   drawText,
   drawWrappedText,
   drawEthereumAddressCompact,
   drawEthereumAddressLong,
   drawPatQ,
+  drawRect,
+  drawLine,
 }

@@ -18,7 +18,7 @@ class App extends Component {
 
   __init() {this.handleOutput = data => {
     this.setState({pages: data})
-    console.log('App Scope: ', data)
+    // console.log('App Scope: ', data)
   }}
 
 

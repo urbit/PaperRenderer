@@ -11,9 +11,9 @@ const flatPack = (lo) => {
       // look for special items we don't need to parse
       if (child.name.split(':')[0] === '>qr') return [...acc, {...child, type: 'QR'}];
       if (child.name.split(':')[0] === '>sigil') return [...acc, {...child, type: 'SIGIL'}];
-      if (child.name.split(':')[0] === '>img') return [...acc, {...child, type: 'IMG'}];
+      if (child.name.split(':')[0] === '>template_text') return [...acc, {...child, type: 'TEMPLATE_TEXT'}];
       if (child.name.split(':')[0] === '>rect') return [...acc, {...child, type: 'RECT'}];
-      if (child.name.split(':')[0] === '>hr') return [...acc, {...child, type: 'HR'}];
+
       // if no special items are found, tranverse down into group
       return [...acc, ...flatPack(child)]
     } else {
@@ -22,6 +22,9 @@ const flatPack = (lo) => {
       if (child.name.split(':')[0] === '>wrap_addr_split_four') return [...acc, {...child, type: 'WRAP_ADDR_SPLIT_FOUR'}];
       if (child.name.split(':')[0] === '>template_text') return [...acc, {...child, type: 'TEMPLATE_TEXT'}];
       if (child.type === 'TEXT') return [...acc, {...child, type: 'TEXT'}];
+      if (child.name.split(':')[0] === '>hr') return [...acc, {...child, type: 'HR'}];
+      if (child.name.split(':')[0] === '>rect') return [...acc, {...child, type: 'RECT'}];
+      // if (child.name.split(':')[0] === '>img') return [...acc, {...child, type: 'IMG'}];
       // console.warn('Reminder: There are more children on board that will not be included in flatpack.')
       return acc
     }
@@ -88,6 +91,7 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
               lineHeightPx: child.style.lineHeightPx,
               x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
               y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
+              fontColor: child.style.fills,
             };
           };
 
@@ -133,6 +137,7 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
             };
           };
           if (child.type === 'RECT') {
+            console.log('rect');
             return {
               type: 'RECT',
               cornerRadius: child.cornerRadius,
@@ -161,6 +166,7 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
           };
 
           if (child.type === 'TEMPLATE_TEXT') {
+            // console.log(child.style.fontFamily);
             return {
               type: 'TEMPLATE_TEXT',
               fontFamily: child.style.fontFamily,
@@ -171,6 +177,7 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
               lineHeightPx: child.style.lineHeightPx,
               x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
               y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
+              fontColor: child.style.fills,
             };
           };
 

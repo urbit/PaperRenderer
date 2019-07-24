@@ -20,6 +20,28 @@
         "y": 551
       },
       {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 194,
+        "y": 551,
+        "width": 35,
+        "height": 16,
+        "fillColor": [],
+        "strokeColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 1
+      },
+      {
         "type": "TEXT",
         "fontFamily": "Inter",
         "fontSize": 8,
@@ -97,6 +119,32 @@
         "y": 580
       },
       {
+        "type": "RECT",
+        "cornerRadius": 8,
+        "dashes": [
+          4,
+          4
+        ],
+        "x": 137,
+        "y": 182,
+        "width": 328.7197265625,
+        "height": 200,
+        "fillColor": [],
+        "strokeColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 1
+      },
+      {
         "type": "TEMPLATE_TEXT",
         "fontFamily": "Source Code Pro",
         "fontSize": 8,
@@ -119,7 +167,7 @@
         "y": 231
       },
       {
-        "type": "ADDR_SPLIT_FOUR",
+        "type": "WRAP_ADDR_SPLIT_FOUR",
         "fontWeight": 400,
         "fontFamily": "Source Code Pro",
         "fontSize": 12,
@@ -220,7 +268,7 @@
     "key": "MASTER_TICKET:PLANET",
     "absoluteBoundingBox": {
       "x": 19,
-      "y": 1824,
+      "y": 2924,
       "width": 612,
       "height": 792
     },
@@ -237,6 +285,28 @@
         "y": 597
       },
       {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 124,
+        "y": 597,
+        "width": 47,
+        "height": 16,
+        "fillColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ],
+        "strokeColor": [],
+        "strokeWeight": 1
+      },
+      {
         "type": "TEMPLATE_TEXT",
         "fontFamily": "Inter",
         "fontSize": 8,
@@ -246,6 +316,309 @@
         "lineHeightPx": 9.375,
         "x": 132,
         "y": 600
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Abilities",
+        "fontWeight": 400,
+        "maxWidth": 45,
+        "lineHeightPx": 14.0625,
+        "x": 68,
+        "y": 468
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "urbit.org/docs/azimuth",
+        "fontWeight": 400,
+        "maxWidth": 106,
+        "lineHeightPx": 11.061599731445312,
+        "x": 69,
+        "y": 731
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "urbit.org/docs/bridge",
+        "fontWeight": 400,
+        "maxWidth": 101,
+        "lineHeightPx": 9.375,
+        "x": 154,
+        "y": 750
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "bridge.urbit.org",
+        "fontWeight": 400,
+        "maxWidth": 77,
+        "lineHeightPx": 9.375,
+        "x": 69,
+        "y": 750
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Use your master ticket to verify your identity, change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains.",
+        "fontWeight": 400,
+        "maxWidth": 459,
+        "lineHeightPx": 16,
+        "x": 68,
+        "y": 497
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "The master ticket and ownership seed can be used to recover transfer proxy, spawn proxy, delegate, and management seeds.",
+        "fontWeight": 400,
+        "maxWidth": 459,
+        "lineHeightPx": 16,
+        "x": 68,
+        "y": 541
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "This requires a Medium Friction Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.",
+        "fontWeight": 400,
+        "maxWidth": 448,
+        "lineHeightPx": 16,
+        "x": 69,
+        "y": 626
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "Master Ticket",
+        "fontWeight": 400,
+        "maxWidth": 94,
+        "lineHeightPx": 16,
+        "x": 160,
+        "y": 78
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "@ownership.seed.mnemonic",
+        "fontWeight": 400,
+        "maxWidth": 380,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 247
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 16,
+        "text": "@patp",
+        "fontWeight": 500,
+        "maxWidth": 48,
+        "lineHeightPx": 24,
+        "x": 160,
+        "y": 46
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "MASTER TICKET",
+        "fontWeight": 400,
+        "maxWidth": 94,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 167
+      },
+      {
+        "type": "PATQ",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "fontWeight": 400,
+        "text": "@ticket.data",
+        "maxWidth": 195,
+        "lineHeightPx": 16,
+        "x": 104,
+        "y": 191
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "OWNERSHIP SEED",
+        "fontWeight": 400,
+        "maxWidth": 101,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 223
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "OWNERSHIP ADDRESS",
+        "fontWeight": 400,
+        "maxWidth": 123,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 327
+      },
+      {
+        "type": "ADDR_SPLIT_FOUR",
+        "fontWeight": 400,
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "@ownership.ethereum.address",
+        "maxWidth": 193,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 352
+      },
+      {
+        "type": "QR",
+        "size": 44.99997329711914,
+        "name": ">qr:@ownership.ethereum.qr",
+        "data": "@ownership.ethereum.qr",
+        "x": 486,
+        "y": 352
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "@meta.createdOn",
+        "fontWeight": 400,
+        "maxWidth": 48,
+        "lineHeightPx": 9.375,
+        "x": 69,
+        "y": 713
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "UP8",
+        "fontWeight": 400,
+        "maxWidth": 15,
+        "lineHeightPx": 9.375,
+        "x": 129,
+        "y": 713
+      },
+      {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 160,
+        "y": 100,
+        "width": 47,
+        "height": 16,
+        "fillColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ],
+        "strokeColor": [],
+        "strokeWeight": 1
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 8,
+        "text": "@meta.custodyLevel",
+        "fontWeight": 500,
+        "maxWidth": 31,
+        "lineHeightPx": 9.375,
+        "x": 168,
+        "y": 103
+      },
+      {
+        "type": "HR",
+        "x": 0,
+        "y": 443,
+        "width": 619,
+        "height": 1,
+        "strokeColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.6941176652908325,
+              "g": 0.6980392336845398,
+              "b": 0.7019608020782471,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 2
+      }
+    ]
+  },
+  "MASTER_TICKET:STAR": {
+    "key": "MASTER_TICKET:STAR",
+    "absoluteBoundingBox": {
+      "x": 19,
+      "y": 1824,
+      "width": 612,
+      "height": 792
+    },
+    "renderables": [
+      {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 124,
+        "y": 597,
+        "width": 47,
+        "height": 16,
+        "fillColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ],
+        "strokeColor": [],
+        "strokeWeight": 1
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 8,
+        "text": "@meta.custodyLevel",
+        "fontWeight": 500,
+        "maxWidth": 31,
+        "lineHeightPx": 9.375,
+        "x": 132,
+        "y": 600
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Custody",
+        "fontWeight": 400,
+        "maxWidth": 48,
+        "lineHeightPx": 14.0625,
+        "x": 68,
+        "y": 597
       },
       {
         "type": "TEXT",
@@ -443,15 +816,57 @@
         "y": 713
       },
       {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 160,
+        "y": 100,
+        "width": 47,
+        "height": 16,
+        "fillColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ],
+        "strokeColor": [],
+        "strokeWeight": 1
+      },
+      {
         "type": "TEMPLATE_TEXT",
         "fontFamily": "Inter",
         "fontSize": 8,
         "text": "@meta.custodyLevel",
-        "fontWeight": 500,
-        "maxWidth": 31,
+        "fontWeight": 400,
+        "maxWidth": 32,
         "lineHeightPx": 9.375,
         "x": 168,
         "y": 103
+      },
+      {
+        "type": "HR",
+        "x": 0,
+        "y": 443,
+        "width": 619,
+        "height": 1,
+        "strokeColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.6941176652908325,
+              "g": 0.6980392336845398,
+              "b": 0.7019608020782471,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 2
       }
     ]
   },
@@ -638,6 +1053,28 @@
         "y": 324
       },
       {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 152,
+        "y": 96,
+        "width": 47,
+        "height": 16,
+        "fillColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ],
+        "strokeColor": [],
+        "strokeWeight": 1
+      },
+      {
         "type": "TEMPLATE_TEXT",
         "fontFamily": "Inter",
         "fontSize": 8,
@@ -647,6 +1084,48 @@
         "lineHeightPx": 9.375,
         "x": 160,
         "y": 99
+      },
+      {
+        "type": "HR",
+        "x": 72,
+        "y": 396,
+        "width": 468,
+        "height": 1,
+        "strokeColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.6941176652908325,
+              "g": 0.6980392336845398,
+              "b": 0.7019608020782471,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 2
+      },
+      {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 131,
+        "y": 560,
+        "width": 47,
+        "height": 16,
+        "fillColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ],
+        "strokeColor": [],
+        "strokeWeight": 1
       },
       {
         "type": "TEMPLATE_TEXT",
@@ -910,6 +1389,28 @@
         "y": 282
       },
       {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 80,
+        "y": 54,
+        "width": 47,
+        "height": 16,
+        "fillColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ],
+        "strokeColor": [],
+        "strokeWeight": 1
+      },
+      {
         "type": "TEMPLATE_TEXT",
         "fontFamily": "Inter",
         "fontSize": 8,
@@ -919,6 +1420,48 @@
         "lineHeightPx": 9.375,
         "x": 88,
         "y": 57
+      },
+      {
+        "type": "HR",
+        "x": 0,
+        "y": 354,
+        "width": 468,
+        "height": 1,
+        "strokeColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.6941176652908325,
+              "g": 0.6980392336845398,
+              "b": 0.7019608020782471,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 2
+      },
+      {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 59,
+        "y": 518,
+        "width": 47,
+        "height": 16,
+        "fillColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ],
+        "strokeColor": [],
+        "strokeWeight": 1
       },
       {
         "type": "TEMPLATE_TEXT",
@@ -1197,7 +1740,7 @@
         "fontWeight": 400,
         "fontFamily": "Source Code Pro",
         "fontSize": 12,
-        "text": "@ownership.ethereum.address",
+        "text": "@management.ethereum.address",
         "maxWidth": 196,
         "lineHeightPx": 16,
         "x": 72,
@@ -1206,8 +1749,8 @@
       {
         "type": "QR",
         "size": 44.99997329711914,
-        "name": ">qr:@ownership.ethereum.qr",
-        "data": "@ownership.ethereum.qr",
+        "name": ">qr:@management.ethereum.qr",
+        "data": "@management.ethereum.qr",
         "x": 486,
         "y": 351
       },
@@ -1234,6 +1777,28 @@
         "y": 713
       },
       {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 160,
+        "y": 100,
+        "width": 35,
+        "height": 16,
+        "fillColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ],
+        "strokeColor": [],
+        "strokeWeight": 1
+      },
+      {
         "type": "TEMPLATE_TEXT",
         "fontFamily": "Inter",
         "fontSize": 8,
@@ -1243,6 +1808,28 @@
         "lineHeightPx": 9.375,
         "x": 169,
         "y": 103
+      },
+      {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 125,
+        "y": 597,
+        "width": 35,
+        "height": 16,
+        "fillColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ],
+        "strokeColor": [],
+        "strokeWeight": 1
       },
       {
         "type": "TEMPLATE_TEXT",
@@ -1265,6 +1852,26 @@
         "lineHeightPx": 16,
         "x": 72,
         "y": 295
+      },
+      {
+        "type": "HR",
+        "x": 0,
+        "y": 443,
+        "width": 619,
+        "height": 1,
+        "strokeColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.6941176652908325,
+              "g": 0.6980392336845398,
+              "b": 0.7019608020782471,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 2
       }
     ]
   },
@@ -1308,8 +1915,8 @@
     },
     "renderables": []
   },
-  "MANAGEMENT: STAR": {
-    "key": "MANAGEMENT: STAR",
+  "MANAGEMENT:STAR": {
+    "key": "MANAGEMENT:STAR",
     "absoluteBoundingBox": {
       "x": 671,
       "y": 1824,
@@ -1476,7 +2083,7 @@
         "fontWeight": 400,
         "fontFamily": "Source Code Pro",
         "fontSize": 12,
-        "text": "@ownership.ethereum.address",
+        "text": "@management.ethereum.address",
         "maxWidth": 196,
         "lineHeightPx": 16,
         "x": 72,
@@ -1485,9 +2092,9 @@
       {
         "type": "QR",
         "size": 44.99997329711914,
-        "name": ">qr:@ownership.ethereum.qr",
-        "data": "@ownership.ethereum.qr",
-        "x": 486,
+        "name": ">qr:@management.ethereum.qr",
+        "data": "@management.ethereum.qr",
+        "x": 482,
         "y": 351
       },
       {
@@ -1513,6 +2120,28 @@
         "y": 713
       },
       {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 160,
+        "y": 99,
+        "width": 35,
+        "height": 16,
+        "fillColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.49803921580314636,
+              "g": 0.49803921580314636,
+              "b": 0.49803921580314636,
+              "a": 1
+            }
+          }
+        ],
+        "strokeColor": [],
+        "strokeWeight": 1
+      },
+      {
         "type": "TEMPLATE_TEXT",
         "fontFamily": "Inter",
         "fontSize": 8,
@@ -1521,7 +2150,29 @@
         "maxWidth": 16,
         "lineHeightPx": 9.375,
         "x": 170,
-        "y": 103
+        "y": 102
+      },
+      {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 125,
+        "y": 597,
+        "width": 35,
+        "height": 16,
+        "fillColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.49803921580314636,
+              "g": 0.49803921580314636,
+              "b": 0.49803921580314636,
+              "a": 1
+            }
+          }
+        ],
+        "strokeColor": [],
+        "strokeWeight": 1
       },
       {
         "type": "TEMPLATE_TEXT",
@@ -1544,11 +2195,31 @@
         "lineHeightPx": 16,
         "x": 72,
         "y": 295
+      },
+      {
+        "type": "HR",
+        "x": 0,
+        "y": 443,
+        "width": 619,
+        "height": 1,
+        "strokeColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.6941176652908325,
+              "g": 0.6980392336845398,
+              "b": 0.7019608020782471,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 2
       }
     ]
   },
-  "MANAGEMENT: GALAXY": {
-    "key": "MANAGEMENT: GALAXY",
+  "MANAGEMENT:GALAXY": {
+    "key": "MANAGEMENT:GALAXY",
     "absoluteBoundingBox": {
       "x": 671,
       "y": 704,
@@ -1656,10 +2327,10 @@
         "y": 78
       },
       {
-        "type": "TEMPLATE_TEXT",
+        "type": "TEXT",
         "fontFamily": "Source Code Pro",
         "fontSize": 12,
-        "text": "@management.seed.mnemonic",
+        "text": "elite trim craft rookie time place open\nfire read gravity piece fringe lesson moment critic leader tortoise wreck crack water security ecology color",
         "fontWeight": 400,
         "maxWidth": 380,
         "lineHeightPx": 16,
@@ -1715,7 +2386,7 @@
         "fontWeight": 400,
         "fontFamily": "Source Code Pro",
         "fontSize": 12,
-        "text": "@ownership.ethereum.address",
+        "text": "@management.ethereum.address",
         "maxWidth": 196,
         "lineHeightPx": 16,
         "x": 72,
@@ -1724,8 +2395,8 @@
       {
         "type": "QR",
         "size": 44.99997329711914,
-        "name": ">qr:@ownership.ethereum.qr",
-        "data": "@ownership.ethereum.qr",
+        "name": ">qr:@management.ethereum.qr",
+        "data": "@management.ethereum.qr",
         "x": 486,
         "y": 351
       },
@@ -1752,6 +2423,28 @@
         "y": 713
       },
       {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 160,
+        "y": 100,
+        "width": 35,
+        "height": 16,
+        "fillColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.49803921580314636,
+              "g": 0.49803921580314636,
+              "b": 0.49803921580314636,
+              "a": 1
+            }
+          }
+        ],
+        "strokeColor": [],
+        "strokeWeight": 1
+      },
+      {
         "type": "TEMPLATE_TEXT",
         "fontFamily": "Inter",
         "fontSize": 8,
@@ -1761,6 +2454,28 @@
         "lineHeightPx": 9.375,
         "x": 170,
         "y": 103
+      },
+      {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 125,
+        "y": 597,
+        "width": 35,
+        "height": 16,
+        "fillColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.49803921580314636,
+              "g": 0.49803921580314636,
+              "b": 0.49803921580314636,
+              "a": 1
+            }
+          }
+        ],
+        "strokeColor": [],
+        "strokeWeight": 1
       },
       {
         "type": "TEMPLATE_TEXT",
@@ -1783,6 +2498,26 @@
         "lineHeightPx": 16,
         "x": 72,
         "y": 295
+      },
+      {
+        "type": "HR",
+        "x": 0,
+        "y": 443,
+        "width": 619,
+        "height": 1,
+        "strokeColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.6941176652908325,
+              "g": 0.6980392336845398,
+              "b": 0.7019608020782471,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 2
       }
     ]
   }

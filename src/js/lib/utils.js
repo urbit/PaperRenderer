@@ -10,6 +10,8 @@ const initCanvas = (canvas, size, ratio) => {
   const { x, y } = size;
   let ctx = canvas.getContext('2d');
 
+  // offset since canvas renders half a pixel larger
+  ctx.translate(.5,.5);
   // let ratio = ctx.webkitBackingStorePixelRatio < 2
   //   ? window.devicePixelRatio
   //   : 1;
@@ -177,9 +179,10 @@ const insert = (fc, r) => {
   if (type === 'PATQ') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
   if (type === 'SIGIL') return {...r, img: retrieve(fc, data.replace(PAT, '')) };
   if (type === 'QR') return {...r, img: retrieve(fc, data.replace(PAT, '')) };
-  if (type === 'HR') return {...r, img: retrieve(fc, data.replace(PAT, '')) };
-  if (type === 'RECT') return {...r, img: retrieve(fc, data.replace(PAT,'')) };
-  if (type === 'IMG') return {...r, img: retrieve(fc, data.replace(PAT,'')) };
+  if (type === 'HR') return {...r, data: r };
+  if (type === 'RECT') return {...r, data: r };
+  if (type === 'IMG') return {...r, img: retrieve(fc, data.replace(PAT, '')) };
+  // return {...r, img: r };
   throw new Error(`insert() cannot find a renderables for type: ${type}`);
 };
 
