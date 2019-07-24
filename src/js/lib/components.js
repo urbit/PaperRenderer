@@ -1,5 +1,6 @@
 import flatten from 'flat';
 import { isUndefined, chunk } from 'lodash';
+import { getTicketSize } from './utils';
 
 import {
   values,
@@ -31,7 +32,7 @@ const KEY_ICON_DATA = `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE4AAAAlCAY
 
 const MasterTicketComponent = async (wallet, constants, templates) => {
   const KEY = 'masterTicket';
-  const TEMPLATE = `MASTER_TICKET:${toUpperCase(retrieve(wallet, 'ship.class'))}`
+  const TEMPLATE = `MASTER_TICKET:${retrieve(wallet, 'ship.class').toUpperCase()}`
   const props = {
     heading: 'Master Ticket',
     patp: retrieve(wallet, 'ship.patp'),
@@ -70,28 +71,81 @@ const MasterTicketComponent = async (wallet, constants, templates) => {
   return page;
 }
 
-const ManagementComponent = async (wallet, constants, templates) => {
-  // console.log(wallet);
-  const KEY = 'management';
-  const TEMPLATE = `MANAGEMENT:${toUpperCase(retrieve(wallet, 'ship.class'))}`;
-  const TITLE = getTitleByClass(retrieve(wallet,'ship.class'));
 
+
+
+const MasterTicketShardsComponent = async (wallet, constants, templates) => {
+  const pages = await wallet.shards.map(async (shard, index) => {
+    const KEY = `masterTicketShard_${index + 1}`;
+    const TEMPLATE = `MASTER_TICKET_SHARD:${retrieve(wallet, 'ship.class').toUpperCase()}`;
+    const props = {
+      patp: retrieve(wallet, 'ship.patp'),
+      sigil: await loadSigil(AT_LOAD_SIGIL_SIZE, retrieve(wallet, 'ship.patp')),
+      shard: {
+        number: `MASTER SHARD ${index + 1}`,
+        data: shard,
+        size: `OF ${wallet.shards.length}`,
+        ticketSize: getTicketSize('masterTicketShard', retrieve(wallet, 'ship.class')),
+      },
+      ownership: {
+        ethereum: {
+          address: retrieve(wallet, 'ownership.keys.address'),
+          qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'ownership.keys.address')),
+        },
+        seed: {
+          mnemonic: retrieve(wallet, 'management.seed'),
+          derivationPath: BIP32_DERIVATION_PATH,
+        },
+      },
+      meta: {
+        custodyLevel: getCustodyLevel(retrieve(wallet,'ship.class')),
+        custodyText: `This requires a ${getCustodyLevel(retrieve(wallet,'ship.class'))} Friction Custody. Securely store this document. If you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.`,
+      },
+      _classOf: retrieve(wallet, 'ship.class'),
+      _type: 'masterTicketShard',
+      _bin: assignBin(retrieve(wallet, 'ship.class'), KEY)
+    };
+
+    const page = {
+      renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
+      bin: assignBin(props._classOf, props._type),
+      collateralType: props._type,
+      pageTitle: `${props.patp} Master Ticket Shard ${index + 1} of ${wallet.shards.length}`,
+      ship: props.patp,
+    };
+
+    return page;
+
+  });
+
+  return Promise.all(pages).then(results => results);
+};
+
+
+
+
+
+
+const ManagementComponent = async (wallet, constants, templates) => {
+  const KEY = 'masterTicket';
+  const TEMPLATE = `MANAGEMENT:${retrieve(wallet, 'ship.class').toUpperCase()}`
   const props = {
-    heading: TITLE,
     patp: retrieve(wallet, 'ship.patp'),
     sigil: await loadSigil(AT_LOAD_SIGIL_SIZE, retrieve(wallet, 'ship.patp')),
+    ticket: {
+      data: retrieve(wallet, 'ticket'),
+    },
     management: {
       seed: {
         mnemonic: retrieve(wallet, 'management.seed'),
         derivationPath: BIP32_DERIVATION_PATH,
       },
       ethereum: {
-        address: retrieve(wallet, 'management.keys.address'),
-        qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'management.keys.address')),
+        address: retrieve(wallet, 'ownership.keys.address'),
+        qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'ownership.keys.address')),
       },
     },
     meta: {
-      createdOn: shortDateToDa(new Date()),
       custodyLevel: getCustodyLevel(retrieve(wallet,'ship.class')),
       custodyText: `This requires a ${getCustodyLevel(retrieve(wallet,'ship.class'))} Friction Custody. Securely store this document. If you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.`,
     },
@@ -99,16 +153,19 @@ const ManagementComponent = async (wallet, constants, templates) => {
     _type: KEY,
     _bin: assignBin(retrieve(wallet, 'ship.class'), KEY)
   };
-
   const page = [{
     renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
     collateralType: props._type,
     bin: assignBin(props._classOf, props._type),
+    pageTitle: `${props.patp} Master Ticket`,
     ship: props.patp,
-    pageTitle: `${props.patp} ${TITLE}`,
   }];
+
   return page;
-};
+}
+
+
+
 
 
 
@@ -148,9 +205,141 @@ const MultipassComponent = async (wallet, constants, templates) => {
   return page;
 };
 
+
+
+const SpawnComponent = async (wallet, constants, templates) => {
+  const KEY = 'spawn';
+  const TEMPLATE = `SPAWN:${retrieve(wallet, 'ship.class').toUpperCase()}`;
+  const TITLE = 'SPAWN PROXY'
+
+  const props = {
+    heading: TITLE,
+    patp: retrieve(wallet, 'ship.patp'),
+    sigil: await loadSigil(AT_LOAD_SIGIL_SIZE, retrieve(wallet, 'ship.patp')),
+    spawn: {
+      seed: {
+        mnemonic: retrieve(wallet, 'management.seed'),
+        derivationPath: BIP32_DERIVATION_PATH,
+      },
+      ethereum: {
+        address: retrieve(wallet, 'management.keys.address'),
+        qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'management.keys.address')),
+      },
+    },
+    meta: {
+      custodyLevel: getCustodyLevel(retrieve(wallet,'ship.class')),
+      custodyText: `This requires a ${getCustodyLevel(retrieve(wallet,'ship.class'))} Friction Custody. Securely store this document. If you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.`,
+    },
+    _classOf: retrieve(wallet, 'ship.class'),
+    _type: KEY,
+    _bin: assignBin(retrieve(wallet, 'ship.class'), KEY)
+  };
+
+  const page = [{
+    renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
+    collateralType: props._type,
+    bin: assignBin(props._classOf, props._type),
+    ship: props.patp,
+    pageTitle: `${props.patp} ${TITLE}`,
+  }];
+  return page;
+};
+
+
+
+
+
+
+const TransferComponent = async (wallet, constants, templates) => {
+  // console.log(wallet);
+  const KEY = `TRANSFER:${retrieve(wallet, 'ship.class').toUpperCase()}`;
+  const TEMPLATE = `TRANSFER:${retrieve(wallet, 'ship.class').toUpperCase()}`;
+  const TITLE = 'TRANSFER PROXY'
+
+  const props = {
+    heading: TITLE,
+    patp: retrieve(wallet, 'ship.patp'),
+    sigil: await loadSigil(AT_LOAD_SIGIL_SIZE, retrieve(wallet, 'ship.patp')),
+    transfer: {
+      seed: {
+        mnemonic: retrieve(wallet, 'management.seed'),
+        derivationPath: BIP32_DERIVATION_PATH,
+      },
+      ethereum: {
+        address: retrieve(wallet, 'management.keys.address'),
+        qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'management.keys.address')),
+      },
+    },
+    meta: {
+      custodyLevel: getCustodyLevel(retrieve(wallet,'ship.class')),
+      custodyText: `This requires a ${getCustodyLevel(retrieve(wallet,'ship.class'))} Friction Custody. Securely store this document. If you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.`,
+    },
+    _classOf: retrieve(wallet, 'ship.class'),
+    _type: KEY,
+    _bin: assignBin(retrieve(wallet, 'ship.class'), KEY)
+  };
+
+  const page = [{
+    renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
+    collateralType: props._type,
+    bin: assignBin(props._classOf, props._type),
+    ship: props.patp,
+    pageTitle: `${props.patp} ${TITLE}`,
+  }];
+  return page;
+};
+
+
+
+
+
+
+
+const VotingComponent = async (wallet, constants, templates) => {
+  // console.log(wallet);
+  const KEY = 'voting';
+  const TEMPLATE = `VOTING:${retrieve(wallet, 'ship.class').toUpperCase()}`;
+  const TITLE = 'VOTING PROXY'
+
+  const props = {
+    heading: TITLE,
+    patp: retrieve(wallet, 'ship.patp'),
+    sigil: await loadSigil(AT_LOAD_SIGIL_SIZE, retrieve(wallet, 'ship.patp')),
+    voting: {
+      seed: {
+        mnemonic: retrieve(wallet, 'management.seed'),
+        derivationPath: BIP32_DERIVATION_PATH,
+      },
+      ethereum: {
+        address: retrieve(wallet, 'management.keys.address'),
+        qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'management.keys.address')),
+      },
+    },
+    meta: {
+      custodyLevel: getCustodyLevel(retrieve(wallet,'ship.class')),
+      custodyText: `This requires a ${getCustodyLevel(retrieve(wallet,'ship.class'))} Friction Custody. Securely store this document. If you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.`,
+    },
+    _classOf: retrieve(wallet, 'ship.class'),
+    _type: KEY,
+    _bin: assignBin(retrieve(wallet, 'ship.class'), KEY)
+  };
+
+  const page = [{
+    renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
+    collateralType: props._type,
+    bin: assignBin(props._classOf, props._type),
+    ship: props.patp,
+    pageTitle: `${props.patp} ${TITLE}`,
+  }];
+  return page;
+};
+
 export {
   MasterTicketComponent,
+  MasterTicketShardsComponent,
   ManagementComponent,
-  // AddressManifestComponent,
   MultipassComponent,
+  SpawnComponent,
+  TransferComponent,
+  VotingComponent,
 }

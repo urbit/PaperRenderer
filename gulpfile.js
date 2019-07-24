@@ -135,10 +135,10 @@ gulp.task('js-imports', function(cb) {
                    'node_modules/urbit-ob/dist/index.js': [
                      'tierOfadd',
                      'patp'
-                   ],
-                    'node_modules/sigil-js/dist/bundle.js': [
-                     'pour'
                    ]
+                   //  'node_modules/sigil-js/dist/bundle.js': [
+                   //   'pour'
+                   // ]
           }
         }),
         replace({

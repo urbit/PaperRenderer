@@ -12,13 +12,13 @@ const flatPack = (lo) => {
       if (child.name.split(':')[0] === '>qr') return [...acc, {...child, type: 'QR'}];
       if (child.name.split(':')[0] === '>template_text') return [...acc, {...child, type: 'TEMPLATE_TEXT'}];
       if (child.name.split(':')[0] === '>rect') return [...acc, {...child, type: 'RECT'}];
-
+      if (child.name.split(':')[0] === '>patq') return [...acc, {...child, type: 'PATQ'}];
+      if (child.type === 'TEXT') return [...acc, {...child, type: 'TEXT'}];
       // if no special items are found, tranverse down into group
       return [...acc, ...flatPack(child)]
     } else {
-      if (child.name.split(':')[0] === '>sigil')
-{     console.log(child);
-      return [...acc, {...child, type: 'SIGIL'}];}
+
+      if (child.name.split(':')[0] === '>sigil') return [...acc, {...child, type: 'SIGIL'}];
       if (child.name.split(':')[0] === '>img') return [...acc, {...child, type: 'IMG'}];
       if (child.name.split(':')[0] === '>patq') return [...acc, {...child, type: 'PATQ'}];
       if (child.name.split(':')[0] === '>addr_split_four') return [...acc, {...child, type: 'ADDR_SPLIT_FOUR'}];
@@ -29,17 +29,22 @@ const flatPack = (lo) => {
       if (child.name.split(':')[0] === '>rect') return [...acc, {...child, type: 'RECT'}];
       // console.warn('Reminder: There are more children on board that will not be included in flatpack.')
       return acc
+
     }
+
   }, []);
+
   return extracted
+
 };
+
 const TOKEN = process.env.FIGMA_API_TOKEN
 
 const client = Figma.Client({ personalAccessToken: TOKEN })
 
 client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
 
-  const KEY = 'Registration 1.1'
+  const KEY = 'Registration 1.2'
   const page = filter(res.data.document.children, page => page.name === KEY)[0]
 
   const layouts = reduce(page.children, (acc, lo) => {
