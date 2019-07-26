@@ -31,7 +31,7 @@ const client = Figma.Client({ personalAccessToken: TOKEN })
 
 client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
 
-  const KEY = 'Registration 1.1'
+  const KEY = 'Release v1.1.1'
   const page = filter(res.data.document.children, page => page.name === KEY)[0]
 
   const layouts = reduce(page.children, (acc, lo) => {
