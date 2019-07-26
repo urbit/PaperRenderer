@@ -6,32 +6,32 @@ const fs = require('fs')
 const OUTPUT_PATH = __dirname + '/src/js/templates.json'
 
 // Figma Naming Convention: >componentName:@data
-// to parse and import new Figma components, add a new value to TYPES
-const TYPES = [
-  "QR",
-  "TEMPLATE_TEXT",
-  "RECT",
-  "PATQ",
-  "TEXT",
-  "SIGIL",
-  "IMG",
-  "TEXT",
-  "WRAP_ADDR_SPLIT_FOUR",
-  "ADDR_SPLIT_FOUR",
-  "TEMPLATE_TEXT",
-  "HR"
+// to parse and import new Figma components, add a new value to figmaTypes
+const figmaTypes = [
+  "qr",
+  "template_text",
+  "rect",
+  "patq",
+  "text",
+  "sigil",
+  "img",
+  "text",
+  "wrap_addr_split_four",
+  "addr_split_four",
+  "template_text",
+  "hr"
 ];
 
 // types whose data is retrieved asynchronously (we do not import the figma data)
-const ASYNC_TYPES = [
-  "SIGIL",
-  "QR"
+const asyncTypes = [
+  "sigil",
+  "qr"
 ];
 
-// these Figma types house children elements, so we need to transverse all children nodes when we find a ROLLED_TYPE
-const ROLLED_TYPES = [
-  "GROUP",
-  "INSTANCE"
+// these Figma types house children elements, so we need to transverse all children nodes when we find a parentType
+const parentTypes = [
+  "group",
+  "instance"
 ]
 
 // removes data portion of Figma name and retrieves component name
@@ -39,13 +39,13 @@ const formatName = (type) => {
   return type
     .split(':')[0]
     .replace('>','')
-    .toUpperCase();
+    .toLowerCase();
 }
 
 // we use the name as the component ID. for plain text components, we use Figma's type attribute
 const getComponent = (child, name) => {
-  if (child.type === 'TEXT') return 'TEXT'
-  if (TYPES.includes(name)) return name
+  if (child.type === 'TEXT') return 'text'
+  if (figmaTypes.includes(name)) return name
   if (child === null) return null
 
   throw new Error(`Child: ${child.type} \n\t with Name: ${name}\n\tnot supported`);
@@ -56,9 +56,9 @@ const flatPack = (lo) => {
 
     const name = formatName(child.name)
 
-    if (ROLLED_TYPES.includes(child.type)) {
+    if (parentTypes.includes(child.type.toLowerCase())) {
       // do not traverse into children of sigil and qr
-      if (ASYNC_TYPES.includes(name)) return [...acc, {...child, type: name}];
+      if (asyncTypes.includes(name)) return [...acc, {...child, type: name}];
       // if no special items are found, tranverse down into group
       return [...acc, ...flatPack(child)]
     }
@@ -88,9 +88,9 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
         key: lo.name,
         absoluteBoundingBox: lo.absoluteBoundingBox,
         renderables: flatPack(lo).map(child => {
-          if (child.type === 'QR') {
+          if (child.type === 'qr') {
             return {
-              type: 'QR',
+              type: 'qr',
               size: child.absoluteBoundingBox.height,
               name: child.name,
               data: child.name.split(':')[1],
@@ -99,9 +99,9 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
             };
           };
 
-          if (child.type === 'SIGIL') {
+          if (child.type === 'sigil') {
             return {
-              type: 'SIGIL',
+              type: 'sigil',
               size: child.absoluteBoundingBox.height,
               name: child.name,
               data: child.name.split(':')[1],
@@ -110,9 +110,9 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
             };
           };
 
-          if (child.type === 'IMG') {
+          if (child.type === 'img') {
             return {
-              type: 'IMG',
+              type: 'img',
               width: child.absoluteBoundingBox.height,
               height: child.absoluteBoundingBox.width,
               name: child.name,
@@ -122,9 +122,9 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
             };
           };
 
-          if (child.type === 'TEXT') {
+          if (child.type === 'text') {
             return {
-              type: 'TEXT',
+              type: 'text',
               fontFamily: child.style.fontFamily,
               fontSize: child.style.fontSize,
               text: child.characters,
@@ -137,9 +137,9 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
             };
           };
 
-          if (child.type === 'TEMPLATE_TEXT') {
+          if (child.type === 'template_text') {
             return {
-              type: 'TEMPLATE_TEXT',
+              type: 'template_text',
               fontFamily: child.style.fontFamily,
               fontSize: child.style.fontSize,
               text: child.name.split(':')[1],
@@ -152,9 +152,9 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
             };
           };
 
-          if (child.type === 'PATQ') {
+          if (child.type === 'patq') {
             return {
-              type: 'PATQ',
+              type: 'patq',
               fontFamily: child.style.fontFamily,
               fontSize: child.style.fontSize,
               fontWeight: child.style.fontWeight,
@@ -166,24 +166,9 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
             };
           };
 
-          if (child.type === 'ADDR_SPLIT_FOUR') {
+          if (child.type === 'addr_split_four') {
             return {
-              type: 'ADDR_SPLIT_FOUR',
-              fontWeight: child.style.fontWeight,
-              fontFamily: child.style.fontFamily,
-              fontSize: child.style.fontSize,
-              text: child.name.split(':')[1],
-              maxWidth: child.absoluteBoundingBox.width,
-              lineHeightPx: child.style.lineHeightPx,
-              x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
-              y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
-              fontColor: child.fills,
-            };
-          };
-
-          if (child.type === 'WRAP_ADDR_SPLIT_FOUR') {
-            return {
-              type: 'WRAP_ADDR_SPLIT_FOUR',
+              type: 'addr_split_four',
               fontWeight: child.style.fontWeight,
               fontFamily: child.style.fontFamily,
               fontSize: child.style.fontSize,
@@ -196,9 +181,24 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
             };
           };
 
-          if (child.type === 'RECT') {
+          if (child.type === 'wrap_addr_split_four') {
             return {
-              type: 'RECT',
+              type: 'wrap_addr_split_four',
+              fontWeight: child.style.fontWeight,
+              fontFamily: child.style.fontFamily,
+              fontSize: child.style.fontSize,
+              text: child.name.split(':')[1],
+              maxWidth: child.absoluteBoundingBox.width,
+              lineHeightPx: child.style.lineHeightPx,
+              x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
+              y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
+              fontColor: child.fills,
+            };
+          };
+
+          if (child.type === 'rect') {
+            return {
+              type: 'rect',
               cornerRadius: child.cornerRadius,
               dashes: child.strokeDashes,
               x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
@@ -211,9 +211,9 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
             };
           };
 
-          if (child.type === 'HR') {
+          if (child.type === 'hr') {
             return {
-              type: 'HR',
+              type: 'hr',
               dashes: child.strokeDashes,
               x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
               y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
