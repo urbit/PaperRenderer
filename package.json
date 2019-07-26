@@ -5,6 +5,7 @@
   "main": "dist/PaperCollateralRenderer.js",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "dotenv": "^8.0.0",
     "flat": "^4.1.0",
     "lodash": "^4.17.10",
     "qr-image": "^3.2.0",
@@ -12,20 +13,20 @@
     "urbit-ob": "^1.4.4"
   },
   "devDependencies": {
-    "figma-js": "^1.5.1",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
     "@babel/core": "^7.0.0-beta.34",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/plugin-transform-react-jsx": "^7.0.0-beta.34",
     "@babel/preset-env": "^7.0.0-beta.34",
     "babel-plugin-lodash": "^3.3.4",
+    "figma-js": "^1.5.1",
     "gulp": "4.0",
     "gulp-babel": "^7.0.0",
     "gulp-copy": "^1.1.0",
     "gulp-cssimport": "^6.0.0",
     "gulp-cssnano": "^2.1.2",
-    "rollup-plugin-babel": "rollup/rollup-plugin-babel",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "rollup-plugin-babel": "github:rollup/rollup-plugin-babel",
     "rollup-plugin-commonjs": "^8.2.6",
     "rollup-plugin-json": "^2.3.0",
     "rollup-plugin-node-builtins": "^2.1.2",
@@ -44,6 +45,7 @@
   "scripts": {
     "start": "gulp watch",
     "build:dev": "gulp",
-    "build:prod": "gulp bundle-prod"
+    "build:prod": "gulp bundle-prod",
+    "convert": "node convert.js"
   }
 }
