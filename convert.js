@@ -5,31 +5,55 @@ const fs = require('fs')
 
 const OUTPUT_PATH = __dirname + '/src/js/templates.json'
 
+// to add new figma components to be parsed, add a new value to TYPES
+const TYPES = [
+  "qr",
+  "template_text",
+  "rect",
+  "patq",
+  "text",
+  "sigil",
+  "img",
+  "text",
+  "wrap_addr_split_four",
+  "addr_split_four",
+  "template_text",
+  "hr",
+  "rect"
+];
+
+// examples -->
+// if (child.name.split(':')[0] === '>qr') return [...acc, {...child, type: 'QR'}];
+// if (child.type === "TEXT") return [...acc, {...child, type: 'TEXT'}];
+
+// checks for children that are included in TYPES
+const findType = (child, t) => new Promise(resolve => {
+  if (child.type === 'TEXT') t = child.type;
+  else t = child.name.split(':')[0].replace('>','');
+
+  if(TYPES.includes(t.toLowerCase()))
+    t = t.toUpperCase();
+  return '';
+});
+
+
 const flatPack = (lo) => {
   const extracted = reduce(lo.children, (acc, child) => {
-    if (child.type === 'GROUP') {
-      // look for special items we don't need to parse
-      if (child.name.split(':')[0] === '>qr') return [...acc, {...child, type: 'QR'}];
-      if (child.name.split(':')[0] === '>template_text') return [...acc, {...child, type: 'TEMPLATE_TEXT'}];
-      if (child.name.split(':')[0] === '>rect') return [...acc, {...child, type: 'RECT'}];
-      if (child.name.split(':')[0] === '>patq') return [...acc, {...child, type: 'PATQ'}];
-      if (child.type === 'TEXT') return [...acc, {...child, type: 'TEXT'}];
-      // if no special items are found, tranverse down into group
-      return [...acc, ...flatPack(child)]
+
+    const t = '';
+
+    if (child.type === 'GROUP' || child.type === 'INSTANCE') {
+        // look for special items we don't need to parse
+        findType(child, t => t);
+        if (t != '') return [...acc, {...child, type: t}];
+
+        // if no special items are found, tranverse down into group
+        return [...acc, ...flatPack(child)];
     } else {
-
-      if (child.name.split(':')[0] === '>sigil') return [...acc, {...child, type: 'SIGIL'}];
-      if (child.name.split(':')[0] === '>img') return [...acc, {...child, type: 'IMG'}];
-      if (child.name.split(':')[0] === '>patq') return [...acc, {...child, type: 'PATQ'}];
-      if (child.name.split(':')[0] === '>addr_split_four') return [...acc, {...child, type: 'ADDR_SPLIT_FOUR'}];
-      if (child.name.split(':')[0] === '>wrap_addr_split_four') return [...acc, {...child, type: 'WRAP_ADDR_SPLIT_FOUR'}];
-      if (child.name.split(':')[0] === '>template_text') return [...acc, {...child, type: 'TEMPLATE_TEXT'}];
-      if (child.type === 'TEXT') return [...acc, {...child, type: 'TEXT'}];
-      if (child.name.split(':')[0] === '>hr') return [...acc, {...child, type: 'HR'}];
-      if (child.name.split(':')[0] === '>rect') return [...acc, {...child, type: 'RECT'}];
-      // console.warn('Reminder: There are more children on board that will not be included in flatpack.')
-      return acc
-
+        findType(child, t => t);
+        if (t != '') return [...acc, {...child, type: t}];
+        // console.warn('Reminder: There are more children on board that will not be included in flatpack.')
+        return acc
     }
 
   }, []);
@@ -37,6 +61,46 @@ const flatPack = (lo) => {
   return extracted
 
 };
+
+//
+// function findType(child){
+//     var type = child.name.split(':')[0].replace('>',''); // ex: '>qr'--> 'qr'
+//     if (TYPES.includes(type))
+//       return child;
+//     return '';
+// }
+//
+// const flatPack = (lo) => {
+//   const extracted = reduce(lo.children, (acc, child) => {
+//
+//     // figma groups and instances (layouts such as VotingLayout) need special parsing
+//     var t = '';
+//     if (child.type === 'GROUP'){
+//       try {
+//         t = findType(child);
+//       }
+//       catch(err) {
+//         console.log('could not find child');
+//       }
+//       if (t != '') return [...acc, {...child, type: t }];
+//       return [...acc, ...flatPack(child)];
+//     }
+//
+//     // else if (child.type === 'INSTANCE'){
+//     //   for (i of child.children) {
+//     //     return findChild(acc, child); }
+//     // }
+//
+//     else {
+//       t = findType(child);
+//       if (t != '') return [...acc, {...child, type: t }];
+//       return acc;
+//     }
+//
+//   return extracted;
+//
+//   });
+// }
 
 const TOKEN = process.env.FIGMA_API_TOKEN
 
@@ -77,7 +141,6 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
           };
 
           if (child.type === 'IMG') {
-            console.log(child);
             return {
               type: 'IMG',
               width: child.absoluteBoundingBox.height,
@@ -191,18 +254,9 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
             };
           };
 
-
-
           console.warn(`Untyped child ${child.name} in flat layouts`)
         }),
       }
     }
   }, {});
-
-    // console.log(JSON.stringify(layouts, null, 2));
-    fs.writeFile(OUTPUT_PATH, JSON.stringify(layouts, null, 2), (err) => {
-      console.log('layouts saved')
-      process.exit()
-    })
-
-  })
+})
