@@ -5,102 +5,72 @@ const fs = require('fs')
 
 const OUTPUT_PATH = __dirname + '/src/js/templates.json'
 
-// to add new figma components to be parsed, add a new value to TYPES
+// Figma Naming Convention: >componentName:@data
+// to parse and import new Figma components, add a new value to TYPES
 const TYPES = [
-  "qr",
-  "template_text",
-  "rect",
-  "patq",
-  "text",
-  "sigil",
-  "img",
-  "text",
-  "wrap_addr_split_four",
-  "addr_split_four",
-  "template_text",
-  "hr",
-  "rect"
+  "QR",
+  "TEMPLATE_TEXT",
+  "RECT",
+  "PATQ",
+  "TEXT",
+  "SIGIL",
+  "IMG",
+  "TEXT",
+  "WRAP_ADDR_SPLIT_FOUR",
+  "ADDR_SPLIT_FOUR",
+  "TEMPLATE_TEXT",
+  "HR"
 ];
 
-// examples -->
-// if (child.name.split(':')[0] === '>qr') return [...acc, {...child, type: 'QR'}];
-// if (child.type === "TEXT") return [...acc, {...child, type: 'TEXT'}];
+// types whose data is retrieved asynchronously (we do not import the figma data)
+const ASYNC_TYPES = [
+  "SIGIL",
+  "QR"
+];
 
-// checks for children that are included in TYPES
-const findType = (child, t) => new Promise(resolve => {
-  if (child.type === 'TEXT') t = child.type;
-  else t = child.name.split(':')[0].replace('>','');
+// these Figma types house children elements, so we need to transverse all children nodes when we find a ROLLED_TYPE
+const ROLLED_TYPES = [
+  "GROUP",
+  "INSTANCE"
+]
 
-  if(TYPES.includes(t.toLowerCase()))
-    t = t.toUpperCase();
-  return '';
-});
+// removes data portion of Figma name and retrieves component name
+const formatName = (type) => {
+  return type
+    .split(':')[0]
+    .replace('>','')
+    .toUpperCase();
+}
 
+// we use the name as the component ID. for plain text components, we use Figma's type attribute
+const getComponent = (child, name) => {
+  if (child.type === 'TEXT') return 'TEXT'
+  if (TYPES.includes(name)) return name
+  if (child === null) return null
+
+  throw new Error(`Child: ${child.type} \n\t with Name: ${name}\n\tnot supported`);
+}
 
 const flatPack = (lo) => {
   const extracted = reduce(lo.children, (acc, child) => {
 
-    const t = '';
+    const name = formatName(child.name)
 
-    if (child.type === 'GROUP' || child.type === 'INSTANCE') {
-        // look for special items we don't need to parse
-        findType(child, t => t);
-        if (t != '') return [...acc, {...child, type: t}];
-
-        // if no special items are found, tranverse down into group
-        return [...acc, ...flatPack(child)];
-    } else {
-        findType(child, t => t);
-        if (t != '') return [...acc, {...child, type: t}];
-        // console.warn('Reminder: There are more children on board that will not be included in flatpack.')
-        return acc
+    if (ROLLED_TYPES.includes(child.type)) {
+      // do not traverse into children of sigil and qr
+      if (ASYNC_TYPES.includes(name)) return [...acc, {...child, type: name}];
+      // if no special items are found, tranverse down into group
+      return [...acc, ...flatPack(child)]
     }
 
+    const component = getComponent(child, name);
+    if (component != null) return [...acc, {...child, type: component}];
+
+    return acc
+
   }, []);
-
   return extracted
-
 };
-
-//
-// function findType(child){
-//     var type = child.name.split(':')[0].replace('>',''); // ex: '>qr'--> 'qr'
-//     if (TYPES.includes(type))
-//       return child;
-//     return '';
-// }
-//
-// const flatPack = (lo) => {
-//   const extracted = reduce(lo.children, (acc, child) => {
-//
-//     // figma groups and instances (layouts such as VotingLayout) need special parsing
-//     var t = '';
-//     if (child.type === 'GROUP'){
-//       try {
-//         t = findType(child);
-//       }
-//       catch(err) {
-//         console.log('could not find child');
-//       }
-//       if (t != '') return [...acc, {...child, type: t }];
-//       return [...acc, ...flatPack(child)];
-//     }
-//
-//     // else if (child.type === 'INSTANCE'){
-//     //   for (i of child.children) {
-//     //     return findChild(acc, child); }
-//     // }
-//
-//     else {
-//       t = findType(child);
-//       if (t != '') return [...acc, {...child, type: t }];
-//       return acc;
-//     }
-//
-//   return extracted;
-//
-//   });
-// }
 
 const TOKEN = process.env.FIGMA_API_TOKEN
 
@@ -117,7 +87,7 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
       [lo.name]: {
         key: lo.name,
         absoluteBoundingBox: lo.absoluteBoundingBox,
-        renderables: map(flatPack(lo), child => {
+        renderables: flatPack(lo).map(child => {
           if (child.type === 'QR') {
             return {
               type: 'QR',
@@ -259,4 +229,11 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
       }
     }
   }, {});
+
+  // console.log(JSON.stringify(layouts, null, 2));
+  fs.writeFile(OUTPUT_PATH, JSON.stringify(layouts, null, 2), (err) => {
+    console.log('layouts saved')
+    process.exit()
+  })
+
 })
