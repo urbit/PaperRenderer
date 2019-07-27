@@ -1,4 +1,4 @@
-import { get, isUndefined } from 'lodash';
+import { get } from 'lodash';
 import {tierOfadd, patp} from 'urbit-ob';
 import flatten from 'flat'
 // import { values, match, replace } from './reset';
@@ -118,7 +118,7 @@ const shortDateToDa = (d, mil) => {
 
 const retrieve = (obj, path) => {
   const result = get(obj, path)
-  if (isUndefined(result)) {
+  if (result === undefined) {
    throw new Error(`Tried to get item at path ${path} from object ${JSON.stringify(obj, null, 2)} and failed.`)
   } else {
     return result;

@@ -1,5 +1,4 @@
 import flatten from 'flat';
-import { isUndefined, chunk } from 'lodash';
 import { getTicketSize } from './utils';
 
 import {
