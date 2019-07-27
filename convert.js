@@ -1,5 +1,4 @@
 require('dotenv').config()
-const { map, reduce, filter } = require('lodash');
 const Figma = require('figma-js');
 const fs = require('fs')
 
@@ -52,7 +51,7 @@ const getComponent = (child, name) => {
 }
 
 const flatPack = (lo) => {
-  const extracted = reduce(lo.children, (acc, child) => {
+  const extracted = lo.children.reduce((acc, child) => {
 
     const name = formatName(child.name)
 
@@ -79,9 +78,10 @@ const client = Figma.Client({ personalAccessToken: TOKEN })
 client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
 
   const KEY = 'Registration 1.2'
-  const page = filter(res.data.document.children, page => page.name === KEY)[0]
+  const arr = res.data.document.children
+  const page = arr.filter(page => page.name === KEY)[0]
 
-  const layouts = reduce(page.children, (acc, lo) => {
+  const layouts = page.children.reduce((acc, lo) => {
     return {
       ...acc,
       [lo.name]: {
