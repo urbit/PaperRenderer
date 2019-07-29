@@ -5,8 +5,7 @@ import wallet3 from './sampleWallets/wallet3.json'; // walletX.value
 import wallet4 from './sampleWallets/wallet4.json'; // walletX.value
 import wallet5 from './sampleWallets/wallet5.json';
 
-import PaperCollateralRenderer from './PaperCollateralRenderer';
-import LayoutGenerator from './LayoutGenerator';
+import PaperCollateralRenderer from '../../../../lib/dist/index'
 
 class App extends Component {
   constructor(props) {
