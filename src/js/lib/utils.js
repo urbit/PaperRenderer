@@ -5,7 +5,6 @@ import flatten from 'flat'
 
 const PAT = /(\@)/g;
 
-
 const initCanvas = (canvas, size, ratio) => {
   const { x, y } = size;
   let ctx = canvas.getContext('2d');
@@ -30,6 +29,19 @@ const initCanvas = (canvas, size, ratio) => {
   return canvas;
 }
 
+var getByPath = function(obj, path, def) {
+    path = path
+        .replace(/\[/g, '.')
+        .replace(/]/g, '')
+        .split('.');
+    path.forEach(function (level) {
+        obj = obj[level];
+    });
+    if (obj === undefined) {
+        return def;
+    }
+    return obj;
+};
 
 
 const dataURItoBlob = dataURI => {
@@ -115,9 +127,35 @@ const shortDateToDa = (d, mil) => {
 }
 
 
+const isString = (str) => {
+  return (typeof str === 'string' || str instanceof String)
+}
+
+const isFunction = (func) => {
+  return (func instanceof Function)
+}
+
+const isObject = (obj) => {
+  return (typeof obj === "object" && obj !== null) || typeof obj === "function";
+}
+
+const isUndefined = (obj) => {
+  return (obj === undefined)
+}
+
+const isRegExp = (obj) => {
+  return obj instanceof RegExp
+}
+
+// const isArrayBuffer = (arr) => {
+//   if (arr instanceof ArrayBuffer)
+//     return true
+//   return false
+// }
 
 const retrieve = (obj, path) => {
   const result = get(obj, path)
+  // const result = getObjectByPath(obj,path,def)
   if (result === undefined) {
    throw new Error(`Tried to get item at path ${path} from object ${JSON.stringify(obj, null, 2)} and failed.`)
   } else {
@@ -228,6 +266,12 @@ export {
   wordWrap,
   dateToDa,
   shortDateToDa,
+  isString,
+  isFunction,
+  isObject,
+  isUndefined,
+  isRegExp,
+  // isArrayBuffer,
   retrieve,
   getTicketSize,
   getCustodyLevel,
