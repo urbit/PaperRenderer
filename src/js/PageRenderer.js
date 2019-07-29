@@ -49,19 +49,16 @@ class PageRenderer extends Component {
     ctx.fillStyle="#000";
 
     page.renderables.forEach(r => {
-      if (r.type === 'QR') return drawQR({ ctx, ...r });
-      if (r.type === 'PATQ') return drawPatQ({ ctx, ...r });
-      if (r.type === 'IMG') return drawImg({ ctx, ...r }); 
-      if (r.type === 'ADDR_SPLIT_FOUR') return drawEthereumAddressLong({ ctx, ...r });
-      if (r.type === 'WRAP_ADDR_SPLIT_FOUR') return drawEthereumAddressCompact({ ctx, ...r });
-      if (r.type === 'ADDR_COMPACT') return drawEthereumAddressCompact({ ctx, ...r });
-      if (r.type === 'SIGIL') return drawSigil({ ctx, ...r });
-      if (r.type === 'RECT') return drawRect({ ctx, ...r });
-      if (r.type === 'HR') return drawLine({ ctx, ...r });
-      if (r.type === 'TEMPLATE_TEXT') return drawWrappedText({ ctx, ...r });
-      if (r.type === 'TEXT') {
-        return drawWrappedText({ ctx, ...r });
-      }
+      if (r.type === 'qr') return drawQR({ ctx, ...r });
+      if (r.type === 'patq') return drawPatQ({ ctx, ...r });
+      if (r.type === 'img') return drawImg({ ctx, ...r });
+      if (r.type === 'addr_split_four') return drawEthereumAddressLong({ ctx, ...r });
+      if (r.type === 'wrap_addr_split_four') return drawEthereumAddressCompact({ ctx, ...r });
+      if (r.type === 'sigil') return drawSigil({ ctx, ...r });
+      if (r.type === 'rect') return drawRect({ ctx, ...r });
+      if (r.type === 'hr') return drawLine({ ctx, ...r });
+      if (r.type === 'template_text') return drawWrappedText({ ctx, ...r });
+      if (r.type === 'text') return drawWrappedText({ ctx, ...r });
     });
 
     const pageWithImageData = {

@@ -166,22 +166,20 @@ const mapInsert = (c, t) => Object.values(t.renderables).map(r => insert(flatten
 
 const insert = (fc, r) => {
   const { type, text, data } = r;
-  if (type === 'TEXT') {
+  if (type === 'text') {
     // if this is a template variable, replace the @key with actual data
     if (text.match(PAT)) return {...r, text: retrieve(fc, text.replace(PAT, '')) };
     return r;
   };
-  if (type === 'TEMPLATE_TEXT') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
-  if (type === 'ADDR_COMPACT') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
-  if (type === 'ADDR_LONG') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
-  if (type === 'ADDR_SPLIT_FOUR') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
-  if (type === 'WRAP_ADDR_SPLIT_FOUR') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
-  if (type === 'PATQ') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
-  if (type === 'SIGIL') return {...r, img: retrieve(fc, data.replace(PAT, '')) };
-  if (type === 'QR') return {...r, img: retrieve(fc, data.replace(PAT, '')) };
-  if (type === 'HR') return {...r, data: r };
-  if (type === 'RECT') return {...r, data: r };
-  if (type === 'IMG') return {...r, img: retrieve(fc, data.replace(PAT, '')) };
+  if (type === 'template_text') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
+  if (type === 'addr_split_four') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
+  if (type === 'wrap_addr_split_four') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
+  if (type === 'patq') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
+  if (type === 'sigil') return {...r, img: retrieve(fc, data.replace(PAT, '')) };
+  if (type === 'qr') return {...r, img: retrieve(fc, data.replace(PAT, '')) };
+  if (type === 'hr') return {...r, data: r };
+  if (type === 'rect') return {...r, data: r };
+  if (type === 'img') return {...r, img: retrieve(fc, data.replace(PAT, '')) };
   // return {...r, img: r };
   throw new Error(`insert() cannot find a renderables for type: ${type}`);
 };

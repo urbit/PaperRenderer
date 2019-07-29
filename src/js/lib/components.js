@@ -66,7 +66,6 @@ const MasterTicketComponent = async (wallet, constants, templates) => {
     pageTitle: `${props.patp} Master Ticket`,
     ship: props.patp,
   }];
-
   return page;
 }
 

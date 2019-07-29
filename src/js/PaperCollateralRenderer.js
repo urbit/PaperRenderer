@@ -99,6 +99,7 @@ class PaperCollateralRenderer extends Component {
       ...docketFunctions,
       // ...docket.manifest.map(f => f(wallets, constants, templates))
     ]
+    // console.log(withManifest);
     Promise.all(withManifest.map(f => f()))
       .then(pageGroups => {
         const flats = pageGroups.reduce((acc, arr) => [...acc, ...arr], []);
