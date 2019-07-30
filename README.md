@@ -18,7 +18,7 @@ $ npm install
 
 How to build/run for development:
 
-1. `npm run convert` translates the Figma design to JSON via the Figma API. You can target a specific Figma document by updating the document string and page name that are found in [convert.js](https://github.com/urbit/PaperCollateralRenderer/blob/c51c80e0e5895142b41ef06d2d48de1357f328f6/convert.js#L32), lines 32 and 34.  You can retrieve a Figma document's string id by opening the document in your browser and copying the string that appears before the document name.  Each document has pages, which you can target with a name string, such as our current page [Registration 1.0](https://www.figma.com/file/a4u6jBsdTgiXcrDGW61q5ngY/Tlon-Paper-Wallet-v1.2?node-id=574%3A0).
+1. `npm run convert` translates the Figma design to JSON via the Figma API. You can target a specific Figma document by updating the document string and page name that are found in [convert.js](https://github.com/urbit/PaperCollateralRenderer/blob/c51c80e0e5895142b41ef06d2d48de1357f328f6/convert.js#L32), lines 32 and 34.  You can retrieve a Figma document string id by opening the document in your browser and copying the string that appears before the document name.  Each document has pages, which you can target with a name string, such as our current page [Registration 1.2](https://www.figma.com/file/a4u6jBsdTgiXcrDGW61q5ngY/Tlon-Paper-Wallet-v1.2?node-id=574%3A0).
 
 2. `npm run build:dev` builds all files for development.
 
@@ -59,7 +59,9 @@ Making changes:
 
 
 #### Sample Wallet Input
-[Here](https://github.com/urbit/PaperCollateralRenderer/tree/fixes/docs/sample-wallet.json) is a sample wallet's JSON.  More sample wallets can be found in [src/sampleWallets](https://github.com/urbit/PaperCollateralRenderer/tree/master/src/sampleWallets)
+[Here](docs/sample-wallet.json) is a sample wallet's JSON.  More sample wallets can be found in [src/sampleWallets](src/sampleWallets)
 
 
 #### License
+This project is licensed under the MIT License - see the [LICENSE.txt](docs/LICENSE.txt) file for details
+
