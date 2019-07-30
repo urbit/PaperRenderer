@@ -10,7 +10,7 @@
     "renderables": [
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 32,
         "text": "@heading",
         "fontWeight": 600,
@@ -21,7 +21,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Securely store this document.",
         "fontWeight": 400,
@@ -32,7 +32,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "A complete master ticket could be used to transfer ownership or impersonate your galaxy on the Urbit network without your permission.\n",
         "fontWeight": 400,
@@ -43,7 +43,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "You can lose a single shard, but if you lose two shards, or your master ticket or forget your ship name, there is no way to recover it and you will no longer be able to control your galaxy.\n\n",
         "fontWeight": 400,
@@ -54,7 +54,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Custody",
         "fontWeight": 500,
@@ -65,7 +65,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "The master ticket and ownership seed can be used to recover transfer, spawn, delegate, and management proxies.",
         "fontWeight": 400,
@@ -76,7 +76,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Usage",
         "fontWeight": 500,
@@ -98,7 +98,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Master Ticket Shard",
         "fontWeight": 500,
@@ -120,7 +120,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Ship",
         "fontWeight": 500,
@@ -142,7 +142,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "More Information",
         "fontWeight": 500,
@@ -153,7 +153,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Ownership Address",
         "fontWeight": 500,
@@ -175,7 +175,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Created On",
         "fontWeight": 500,
@@ -197,7 +197,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Wallet Version",
         "fontWeight": 500,
@@ -238,7 +238,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Download Bridge: ",
         "fontWeight": 400,
@@ -249,7 +249,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Combine this master ticket shard with another shard to produce a master ticket or ownership seed, which can be used to activate, transfer, escape to a new sponsor, set up transfer and management proxies, set an operator, set network keys, set DNS domains, spawn stars, and recover child seeds.",
         "fontWeight": 400,
@@ -279,7 +279,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Shard Number: ",
         "fontWeight": 400,
@@ -301,7 +301,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Size: ",
         "fontWeight": 400,
@@ -323,7 +323,7 @@
     "renderables": [
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 32,
         "text": "Voting Proxy",
         "fontWeight": 600,
@@ -345,7 +345,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Voting Seed BIP39 Mnemonic",
         "fontWeight": 500,
@@ -378,7 +378,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Created On",
         "fontWeight": 500,
@@ -389,7 +389,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Wallet Version",
         "fontWeight": 500,
@@ -411,7 +411,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Derivation Path: ",
         "fontWeight": 400,
@@ -433,7 +433,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Size: ",
         "fontWeight": 400,
@@ -455,7 +455,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Ship",
         "fontWeight": 500,
@@ -474,7 +474,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Securely store this document.",
         "fontWeight": 400,
@@ -485,7 +485,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "This voting seed could be used to vote on behalf of your galaxy without your permission.",
         "fontWeight": 400,
@@ -496,7 +496,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "If you lose your voting seed, you can recover it from your master ticket or ownership seed.\n",
         "fontWeight": 400,
@@ -507,7 +507,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "The voting seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n\n",
         "fontWeight": 400,
@@ -518,7 +518,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Custody",
         "fontWeight": 500,
@@ -529,7 +529,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Usage",
         "fontWeight": 500,
@@ -551,7 +551,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "More Information",
         "fontWeight": 500,
@@ -573,7 +573,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Download Bridge: ",
         "fontWeight": 400,
@@ -584,7 +584,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Use the voting seed to vote on proposals. ",
         "fontWeight": 400,
@@ -606,7 +606,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "To sign transactions, derive the private key using the BIP32 derivation path ",
         "fontWeight": 400,
@@ -617,7 +617,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Voting Address",
         "fontWeight": 500,
@@ -658,7 +658,7 @@
     "renderables": [
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 32,
         "text": "Management Proxy",
         "fontWeight": 600,
@@ -669,7 +669,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Securely store this document.",
         "fontWeight": 400,
@@ -680,7 +680,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "This management seed could be used to boot your galaxy or impersonate your galaxy on the Urbit network without your permission.",
         "fontWeight": 400,
@@ -691,7 +691,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "If you lose your management seed, you can recover it from your master ticket or ownership seed.\n\n",
         "fontWeight": 400,
@@ -702,7 +702,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "The management seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n\n",
         "fontWeight": 400,
@@ -713,7 +713,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Custody",
         "fontWeight": 500,
@@ -724,7 +724,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Usage",
         "fontWeight": 500,
@@ -746,7 +746,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "More Information",
         "fontWeight": 500,
@@ -768,7 +768,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Download Bridge: ",
         "fontWeight": 400,
@@ -790,7 +790,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Management Seed BIP39 Mnemonic",
         "fontWeight": 500,
@@ -812,7 +812,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Derivation Path: ",
         "fontWeight": 400,
@@ -834,7 +834,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Size: ",
         "fontWeight": 400,
@@ -864,7 +864,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Ship",
         "fontWeight": 500,
@@ -875,7 +875,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Use the management seed to activate your galaxy, generate network keys, and escape to a new sponsor galaxy.\n",
         "fontWeight": 400,
@@ -897,7 +897,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "To sign transactions, derive the private key using the BIP32 derivation path ",
         "fontWeight": 400,
@@ -908,7 +908,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Management Address",
         "fontWeight": 500,
@@ -960,7 +960,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Created On",
         "fontWeight": 500,
@@ -971,7 +971,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Wallet Version",
         "fontWeight": 500,
@@ -993,7 +993,7 @@
     "renderables": [
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 32,
         "text": "Management Proxy",
         "fontWeight": 600,
@@ -1004,7 +1004,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Usage",
         "fontWeight": 500,
@@ -1026,7 +1026,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "More Information",
         "fontWeight": 500,
@@ -1048,7 +1048,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Download Bridge: ",
         "fontWeight": 400,
@@ -1059,7 +1059,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Use the management seed to activate your star, generate network keys, and escape to a new sponsor galaxy.\n",
         "fontWeight": 400,
@@ -1081,7 +1081,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Management Seed BIP39 Mnemonic",
         "fontWeight": 500,
@@ -1103,7 +1103,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Derivation Path: ",
         "fontWeight": 400,
@@ -1125,7 +1125,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Size: ",
         "fontWeight": 400,
@@ -1147,7 +1147,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "To sign transactions, derive the private key using the BIP32 derivation path ",
         "fontWeight": 400,
@@ -1158,7 +1158,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Securely store this document.",
         "fontWeight": 400,
@@ -1169,7 +1169,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "This management seed could be used to boot your star or impersonate your star on the Urbit network without your permission.",
         "fontWeight": 400,
@@ -1180,7 +1180,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "If you lose your management seed, you can recover it from your master ticket or ownership seed.\n\n",
         "fontWeight": 400,
@@ -1191,7 +1191,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "The management seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n\n",
         "fontWeight": 400,
@@ -1202,7 +1202,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Custody",
         "fontWeight": 500,
@@ -1232,7 +1232,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Ship",
         "fontWeight": 500,
@@ -1243,7 +1243,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Management Address",
         "fontWeight": 500,
@@ -1295,7 +1295,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Created On",
         "fontWeight": 500,
@@ -1306,7 +1306,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Wallet Version",
         "fontWeight": 500,
@@ -1328,7 +1328,7 @@
     "renderables": [
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Securely store this document.",
         "fontWeight": 400,
@@ -1339,7 +1339,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Custody",
         "fontWeight": 500,
@@ -1350,7 +1350,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Usage",
         "fontWeight": 500,
@@ -1372,7 +1372,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "More Information",
         "fontWeight": 500,
@@ -1394,7 +1394,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Download Bridge: ",
         "fontWeight": 400,
@@ -1405,7 +1405,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Use the management seed to activate your planet, generate network keys, and escape to a new sponsor star.",
         "fontWeight": 400,
@@ -1427,7 +1427,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Management Seed BIP39 Mnemonic",
         "fontWeight": 500,
@@ -1449,7 +1449,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Derivation Path: ",
         "fontWeight": 400,
@@ -1471,7 +1471,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Size: ",
         "fontWeight": 400,
@@ -1482,7 +1482,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "This management seed could be used to boot your planet or impersonate your planet on the Urbit network without your permission.",
         "fontWeight": 400,
@@ -1493,7 +1493,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "If you lose your planet seed, you can recover it from your master ticket or ownership seed.\n\n",
         "fontWeight": 400,
@@ -1504,7 +1504,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "The management seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n\n",
         "fontWeight": 400,
@@ -1526,7 +1526,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "To sign transactions, derive the private key using the BIP32 derivation path ",
         "fontWeight": 400,
@@ -1556,7 +1556,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Ship",
         "fontWeight": 500,
@@ -1567,7 +1567,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 32,
         "text": "Management Proxy",
         "fontWeight": 600,
@@ -1578,7 +1578,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Management Address",
         "fontWeight": 500,
@@ -1630,7 +1630,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Created On",
         "fontWeight": 500,
@@ -1641,7 +1641,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Wallet Version",
         "fontWeight": 500,
@@ -1663,7 +1663,7 @@
     "renderables": [
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 32,
         "text": "Spawn Proxy",
         "fontWeight": 600,
@@ -1674,7 +1674,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Securely store this document.",
         "fontWeight": 400,
@@ -1685,7 +1685,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "This spawn proxy seed could be used to spawn stars under your galaxy without your permission.\n",
         "fontWeight": 400,
@@ -1696,7 +1696,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Custody",
         "fontWeight": 500,
@@ -1707,7 +1707,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Usage",
         "fontWeight": 500,
@@ -1729,7 +1729,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "More Information",
         "fontWeight": 500,
@@ -1751,7 +1751,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Download Bridge: ",
         "fontWeight": 400,
@@ -1762,7 +1762,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Use the spawn seed to spawn stars under your galaxy.",
         "fontWeight": 400,
@@ -1784,7 +1784,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Spawn Seed BIP39 Mnemonic",
         "fontWeight": 500,
@@ -1806,7 +1806,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Derivation Path: ",
         "fontWeight": 400,
@@ -1828,7 +1828,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Size: ",
         "fontWeight": 400,
@@ -1839,7 +1839,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "If you lose your spawn seed, you can recover it from your master ticket or ownership seed.\n\n",
         "fontWeight": 400,
@@ -1850,7 +1850,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "The spawn seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n\n",
         "fontWeight": 400,
@@ -1872,7 +1872,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "To sign transactions, derive the private key using the BIP32 derivation path ",
         "fontWeight": 400,
@@ -1902,7 +1902,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Ship",
         "fontWeight": 500,
@@ -1913,7 +1913,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Spawn Address",
         "fontWeight": 500,
@@ -1965,7 +1965,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Created On",
         "fontWeight": 500,
@@ -1976,7 +1976,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Wallet Version",
         "fontWeight": 500,
@@ -1998,7 +1998,7 @@
     "renderables": [
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 32,
         "text": "Spawn Proxy",
         "fontWeight": 600,
@@ -2009,7 +2009,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Securely store this document.",
         "fontWeight": 400,
@@ -2020,7 +2020,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "The ownership seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.\n\n",
         "fontWeight": 400,
@@ -2031,7 +2031,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Custody",
         "fontWeight": 500,
@@ -2042,7 +2042,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Usage",
         "fontWeight": 500,
@@ -2064,7 +2064,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "More Information",
         "fontWeight": 500,
@@ -2086,7 +2086,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Download Bridge: ",
         "fontWeight": 400,
@@ -2108,7 +2108,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Spawn Seed BIP39 Mnemonic",
         "fontWeight": 500,
@@ -2130,7 +2130,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Derivation Path: ",
         "fontWeight": 400,
@@ -2152,7 +2152,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Size: ",
         "fontWeight": 400,
@@ -2163,7 +2163,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Use the spawn seed to spawn planets under your star.",
         "fontWeight": 400,
@@ -2193,7 +2193,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Ship",
         "fontWeight": 500,
@@ -2215,7 +2215,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "To sign transactions, derive the private key using the BIP32 derivation path ",
         "fontWeight": 400,
@@ -2226,7 +2226,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "This spawn proxy seed could be used to spawn planets under your star without your permission.\n",
         "fontWeight": 400,
@@ -2237,7 +2237,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "If you lose your spawn seed, you can recover it from your master ticket or ownership seed.\n\n",
         "fontWeight": 400,
@@ -2248,7 +2248,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Spawn Address",
         "fontWeight": 500,
@@ -2300,7 +2300,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Created On",
         "fontWeight": 500,
@@ -2311,7 +2311,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Wallet Version",
         "fontWeight": 500,
@@ -2333,7 +2333,7 @@
     "renderables": [
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 32,
         "text": "Master Ticket",
         "fontWeight": 600,
@@ -2355,7 +2355,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Master Ticket",
         "fontWeight": 500,
@@ -2366,7 +2366,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Ownership Address",
         "fontWeight": 500,
@@ -2388,7 +2388,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Created On",
         "fontWeight": 500,
@@ -2399,7 +2399,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Ownership Seed BIP39 Mnemonic",
         "fontWeight": 500,
@@ -2421,7 +2421,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Ship",
         "fontWeight": 500,
@@ -2443,7 +2443,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Wallet Version",
         "fontWeight": 500,
@@ -2495,7 +2495,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Size: ",
         "fontWeight": 400,
@@ -2517,7 +2517,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Size: ",
         "fontWeight": 400,
@@ -2539,7 +2539,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Derivation Path: ",
         "fontWeight": 400,
@@ -2550,7 +2550,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Securely store this document.",
         "fontWeight": 400,
@@ -2561,7 +2561,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "This master ticket or ownership seed could be used to transfer ownership or impersonate your star on the Urbit network without your permission.",
         "fontWeight": 400,
@@ -2572,7 +2572,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "If you lose your master ticket or your ship name, there is no way to recover it and you will no longer be able to control your star.\n",
         "fontWeight": 400,
@@ -2583,7 +2583,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Custody",
         "fontWeight": 500,
@@ -2594,7 +2594,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "The master ticket and ownership seed can be used to recover transfer proxy, spawn proxy, delegate, and management seeds.\n",
         "fontWeight": 400,
@@ -2605,7 +2605,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Usage",
         "fontWeight": 500,
@@ -2627,7 +2627,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "More Information",
         "fontWeight": 500,
@@ -2649,7 +2649,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Download Bridge: ",
         "fontWeight": 400,
@@ -2660,7 +2660,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Use the master ticket or ownership seed to activate, transfer, escape to a new sponsor, set up transfer and management proxies, set an operator, set network keys, and set DNS domains.",
         "fontWeight": 400,
@@ -2690,7 +2690,7 @@
     "renderables": [
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 32,
         "text": "Master Ticket",
         "fontWeight": 600,
@@ -2712,7 +2712,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Master Ticket",
         "fontWeight": 500,
@@ -2723,7 +2723,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Ownership Address",
         "fontWeight": 500,
@@ -2745,7 +2745,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Created On",
         "fontWeight": 500,
@@ -2756,7 +2756,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Ownership Seed BIP39 Mnemonic",
         "fontWeight": 500,
@@ -2778,7 +2778,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Ship",
         "fontWeight": 500,
@@ -2800,7 +2800,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Wallet Version",
         "fontWeight": 500,
@@ -2852,7 +2852,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Size: ",
         "fontWeight": 400,
@@ -2874,7 +2874,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Size: ",
         "fontWeight": 400,
@@ -2896,7 +2896,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Derivation Path: ",
         "fontWeight": 400,
@@ -2907,7 +2907,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Securely store this document.",
         "fontWeight": 400,
@@ -2918,7 +2918,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "This master ticket or ownership seed could be used to transfer ownership or impersonate your Planet on the Urbit network without your permission.",
         "fontWeight": 400,
@@ -2929,7 +2929,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "If you lose your master ticket or your ship name, there is no way to recover it and you will no longer be able to control your Planet.\n",
         "fontWeight": 400,
@@ -2940,7 +2940,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Custody",
         "fontWeight": 500,
@@ -2951,7 +2951,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "The master ticket and ownership seed can be used to recover transfer proxy, spawn proxy, delegate, and management seeds.\n",
         "fontWeight": 400,
@@ -2962,7 +2962,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Usage",
         "fontWeight": 500,
@@ -2984,7 +2984,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "More Information",
         "fontWeight": 500,
@@ -3006,7 +3006,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Download Bridge: ",
         "fontWeight": 400,
@@ -3017,7 +3017,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Use the master ticket or ownership seed to activate, transfer, escape to a new sponsor, set up transfer and management proxies, set an operator, set network keys, and set DNS domains.",
         "fontWeight": 400,
@@ -3047,7 +3047,7 @@
     "renderables": [
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 32,
         "text": "Ownership Address Manifest",
         "fontWeight": 600,
@@ -3058,7 +3058,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Store this document in a trusted environment. It reveals how much address space you own.",
         "fontWeight": 400,
@@ -3069,7 +3069,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "This is public information.",
         "fontWeight": 700,
@@ -3080,7 +3080,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "@pageAofB",
         "fontWeight": 400,
@@ -3102,7 +3102,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Wallet Version: ",
         "fontWeight": 400,
@@ -3124,7 +3124,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Date Created: ",
         "fontWeight": 400,
@@ -3146,7 +3146,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "Information: ",
         "fontWeight": 400,
@@ -3157,7 +3157,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "You can check any spawn, management, delegate or transfer address with this address.",
         "fontWeight": 400,
@@ -3179,7 +3179,7 @@
     "renderables": [
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "This is public information.",
         "fontWeight": 700,
@@ -3190,7 +3190,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 32,
         "text": "Ownership Address Manifest",
         "fontWeight": 600,
@@ -3201,7 +3201,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 9,
         "text": "@pageAofB",
         "fontWeight": 400,
@@ -3253,7 +3253,7 @@
       },
       {
         "type": "TEXT",
-        "fontFamily": "Inter",
+        "fontFamily": "Inter UI",
         "fontSize": 10,
         "text": "Ownership Address",
         "fontWeight": 500,
