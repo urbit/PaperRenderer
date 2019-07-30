@@ -3,7 +3,10 @@ import { wordWrap } from './utils'
 
 const drawQR = ({ ctx, img, x, y, size, type }) => ctx.drawImage(img, x, y+3, size, size)
 
-const drawSigil = ({ ctx, img, x, y, size, type }) => ctx.drawImage(img, x, y, size, size)
+const drawSigil = ({ ctx, img, x, y, size, type }) => {
+  console.log(img)
+  ctx.drawImage(img, x, y, size, size)
+}
 
 
 
