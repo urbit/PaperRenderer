@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import wallet1 from './sampleWallets/wallet1.json'; // walletX.value
-import wallet2 from './sampleWallets/wallet2.json'; // walletX.value
-import wallet3 from './sampleWallets/wallet3.json'; // walletX.value
-import wallet4 from './sampleWallets/wallet4.json'; // walletX.value
-import wallet5 from './sampleWallets/wallet5.json';
+// import wallet1 from './sampleWallets/wallet1.json'; // walletX.value
+// import wallet2 from './sampleWallets/wallet2.json'; // walletX.value
+// import wallet3 from './sampleWallets/wallet3.json'; // walletX.value
+// import wallet4 from './sampleWallets/wallet4.json'; // walletX.value
+import wallet5 from './testWallets/wallet4.json';
 
-import PaperCollateralRenderer from '../../../../lib/dist/index'
+import PaperCollateralRenderer from '../../../lib/dist/index'
 
 class App extends Component {
   constructor(props) {
@@ -16,7 +16,7 @@ class App extends Component {
   };
 
 
-  handleOutput = data => {
+  handleOutput(data) {
     this.setState({pages: data})
     console.log('App Scope: ', data)
   }
