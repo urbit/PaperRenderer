@@ -47,15 +47,3 @@
     font-weight: bold;
     font-style: normal;
 }
-
-
-canvas {
-  border: 1px solid purple;
-  /* background-color: #222 */
-}
-
-img {
-  border: 1px solid green;
-  max-width: 850px;
-  height: auto;
-}

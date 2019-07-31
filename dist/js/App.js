@@ -24,20 +24,21 @@ class App extends Component {
 
   render() {
     return (
-      React.createElement('div', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 27}}, "hello"
-
+      React.createElement('div', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 27}}
+      , React.createElement('h4', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 28}}, "Fonts")
+      , React.createElement('p', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 29}}, "In order to test this, you must open font book and disable Inter, Inter UI and Source Code Pro or any fonts this library uses."                        )
         , 
           React.createElement(PaperCollateralRenderer, {
             wallet: wallet5,
             className: '',
             callback: data => this.handleOutput(data),
-            mode: 'REGISTRATION', __self: this, __source: {fileName: _jsxFileName, lineNumber: 30}}
+            mode: 'REGISTRATION', __self: this, __source: {fileName: _jsxFileName, lineNumber: 31}}
           )
         
 
         , 
           this.state.pages.map(p => {
-            return React.createElement('img', { style: {maxWidth:'550px', border:'1px solid black'}, src: p.durl, __self: this, __source: {fileName: _jsxFileName, lineNumber: 40}} )
+            return React.createElement('img', { style: {maxWidth:'550px', border:'1px solid black'}, src: p.durl, __self: this, __source: {fileName: _jsxFileName, lineNumber: 41}} )
           })
         
       )

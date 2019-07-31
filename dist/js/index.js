@@ -77961,20 +77961,21 @@ lyrtesmudnytbyrsenwegfyrmurtelreptegpecnelnevfes\
 
 	  render() {
 	    return (
-	      react.createElement('div', {__self: this, __source: {fileName: _jsxFileName$1, lineNumber: 27}}, "hello"
-
+	      react.createElement('div', {__self: this, __source: {fileName: _jsxFileName$1, lineNumber: 27}}
+	      , react.createElement('h4', {__self: this, __source: {fileName: _jsxFileName$1, lineNumber: 28}}, "Fonts")
+	      , react.createElement('p', {__self: this, __source: {fileName: _jsxFileName$1, lineNumber: 29}}, "In order to test this, you must open font book and disable Inter, Inter UI and Source Code Pro or any fonts this library uses."                        )
 	        , 
 	          react.createElement(PaperCollateralRenderer, {
 	            wallet: wallet5,
 	            className: '',
 	            callback: data => this.handleOutput(data),
-	            mode: 'REGISTRATION', __self: this, __source: {fileName: _jsxFileName$1, lineNumber: 30}}
+	            mode: 'REGISTRATION', __self: this, __source: {fileName: _jsxFileName$1, lineNumber: 31}}
 	          )
 	        
 
 	        , 
 	          this.state.pages.map(p => {
-	            return react.createElement('img', { style: {maxWidth:'550px', border:'1px solid black'}, src: p.durl, __self: this, __source: {fileName: _jsxFileName$1, lineNumber: 40}} )
+	            return react.createElement('img', { style: {maxWidth:'550px', border:'1px solid black'}, src: p.durl, __self: this, __source: {fileName: _jsxFileName$1, lineNumber: 41}} )
 	          })
 	        
 	      )
