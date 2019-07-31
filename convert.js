@@ -2,7 +2,7 @@ require('dotenv').config()
 const Figma = require('figma-js');
 const fs = require('fs')
 
-const OUTPUT_PATH = __dirname + '/src/js/templates.json'
+const OUTPUT_PATH = __dirname + 'lib/src/templates.json'
 
 // Figma Naming Convention: >componentName:@data
 // to parse and import new Figma components, add a new value to figmaTypes
