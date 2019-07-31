@@ -5,24 +5,40 @@ const drawQR = ({ ctx, img, x, y, size, type }) => ctx.drawImage(img, x, y+3, si
 
 const drawSigil = ({ ctx, img, x, y, size, type }) => ctx.drawImage(img, x, y, size, size)
 
-const drawImg = ({ ctx, img, x, y, size, type }) => ctx.drawImage(img, x, y, size, size)
+const drawImg = ({ ctx, img, x, y, width, height, type }) => ctx.drawImage(img, x, y+3, height, width)
 
+// figma colors are r, g, b values 0 - 1
+const toRgba = (figmaColor) => {
 
-const drawText = ({ctx, fontWeight, fontSize, lineHeightPx, maxWidth, x, y, fontFamily, text, type }) => {
+  if(figmaColor.length != 0) {
+    return `rgba(${figmaColor[0].color.r*255}, ${figmaColor[0].color.g*255}, ${figmaColor[0].color.b*255}, ${figmaColor[0].color.a})`;
+  }
+
+  return "";
+}
+
+const drawText = ({ctx, fontWeight, fontSize, lineHeightPx, maxWidth, x, y, fontFamily, text, type, fontColor }) => {
+
   ctx.font = `${fontWeight} ${fontSize}px ${fontFamily}`;
+  ctx.fillStyle = toRgba(fontColor);
+
   // const offset = fontFamily === 'Source Code Pro' ? 1 : 0
+
   ctx.fillText(text, x, y+lineHeightPx);
 };
 
 
 const drawWrappedText = ({ctx, fontWeight, fontSize, lineHeightPx, maxWidth, x, y, fontFamily, text, type, fontColor }) => {
   // const offset = fontFamily === 'Source Code Pro' ? 1 : 0
+
   ctx.font = `${fontWeight} ${fontSize}px "${fontFamily}"`;
+  ctx.fillStyle = toRgba(fontColor);
+
   wordWrap(ctx, text, x, y+lineHeightPx, lineHeightPx, maxWidth, fontColor);
 };
 
 
-const drawEthereumAddressCompact = ({ ctx, fontWeight, fontSize, lineHeightPx, x, y, fontFamily, text }) => {
+const drawEthereumAddressCompact = ({ ctx, fontWeight, fontSize, lineHeightPx, x, y, fontFamily, text, fontColor }) => {
 
 
   const _0x = text.substring(0, 2);
@@ -43,6 +59,7 @@ const drawEthereumAddressCompact = ({ ctx, fontWeight, fontSize, lineHeightPx, x
   const row2r = row2c.join(' ');
 
   ctx.font = `${fontWeight} ${fontSize}px ${fontFamily}`;
+  // ctx.fillStyle = toRgba(fontColor);
 
   ctx.fillText(row1r, x, y + lineHeightPx);
   ctx.fillText(row2r, x + (ctx.measureText('0x ').width), y + (lineHeightPx * 2));
@@ -50,7 +67,8 @@ const drawEthereumAddressCompact = ({ ctx, fontWeight, fontSize, lineHeightPx, x
 
 
 
-const drawEthereumAddressLong = ({ ctx, fontWeight, fontSize, lineHeightPx, x, y, fontFamily, text }) => {
+const drawEthereumAddressLong = ({ ctx, fontWeight, fontSize, lineHeightPx, x, y, fontFamily, text, fontColor }) => {
+
   const _0x = text.substring(0, 2);
   const rest = text.substring(2);
 
@@ -62,12 +80,13 @@ const drawEthereumAddressLong = ({ ctx, fontWeight, fontSize, lineHeightPx, x, y
   const newText = [_0x, ...chunks].join(' ')
 
   ctx.font = `${fontWeight} ${fontSize}px ${fontFamily}`;
+  // ctx.fillStyle = toRgba(fontColor);
 
   ctx.fillText(newText, x, y+lineHeightPx);
-
 }
 
 const drawPatQ = ({ ctx, fontSize, lineHeightPx, x, y, fontFamily, text }) => {
+
   ctx.font = `${fontSize}px ${fontFamily}`;
 
   const OFFSET = 1.2;
@@ -88,27 +107,13 @@ const drawPatQ = ({ ctx, fontSize, lineHeightPx, x, y, fontFamily, text }) => {
   }
 
 }
-// const resetCanvasTools = (ctx){
-//   ctx.lineWidth = 0;
-//   ctx.strokeStyle = ;
-// }
-//
 
 const drawRect = ({ ctx, cornerRadius, dashes, x, y, width, height, fillColor, strokeColor, strokeWeight}) => {
 
-  var rgbFill, rgbStroke;
+  var rgbStroke = toRgba(strokeColor);
+  var rgbFill = toRgba(fillColor);
 
   ctx.setLineDash([]);
-
-  if (fillColor.length != 0) {
-    rgbFill = `rgba(${fillColor[0].color.r}, ${fillColor[0].color.g}, ${fillColor[0].color.b}, ${fillColor[0].color.a})`;
-    // console.log(rgbFill);
-  }
-  if (strokeColor.length != 0) {
-    rgbStroke = `rgba(${strokeColor[0].color.r}, ${strokeColor[0].color.g}, ${strokeColor[0].color.b}, ${strokeColor[0].color.a})`;
-  }
-
-
 
   if (dashes != null){
     ctx.setLineDash(dashes);
@@ -133,13 +138,12 @@ const drawRect = ({ ctx, cornerRadius, dashes, x, y, width, height, fillColor, s
     ctx.quadraticCurveTo(x, y, x + cornerRadius, y);
     ctx.closePath();
   }
-  if(rgbStroke != undefined) {
+  if(rgbStroke != "") {
     ctx.strokeStyle = rgbStroke;
     ctx.lineWidth = strokeWeight;
     ctx.stroke();
   }
-  else if(rgbFill != undefined){
-    console.log(rgbFill);
+  else if(rgbFill != ""){
     ctx.fillStyle = rgbFill;
     ctx.fill();
   }
@@ -148,17 +152,17 @@ const drawRect = ({ ctx, cornerRadius, dashes, x, y, width, height, fillColor, s
 
 
 const drawLine = ({ ctx, dashes, x, y, width, height, strokeColor, strokeWeight}) => {
-  var rgbStroke;
 
-  if (strokeColor.length != 0) {
-      rgbStroke = `rgba(${strokeColor[0].color.r}, ${strokeColor[0].color.g}, ${strokeColor[0].color.b}, ${strokeColor[0].color.a})`;
-    }
-
-  ctx.strokeStyle = strokeColor;
+  ctx.strokeStyle = toRgba(strokeColor);
 
   // canvas renders strokes twice as big
   ctx.lineWidth = (strokeWeight != null && strokeWeight > 0) ? strokeWeight/2 : 1;
-  // ctx.setLineDash(dashes);
+
+  ctx.setLineDash([]);
+
+  if(dashes != null){
+    ctx.setLineDash(dashes);
+  }
 
   var x2 = x + width;
   var y2 = y + height;

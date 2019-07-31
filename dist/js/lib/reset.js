@@ -1,15 +1,11 @@
 import {
-  isNumber,
-  isInteger,
   isString,
-  isArray,
   isFunction,
-  isArrayBuffer,
-  isBoolean,
-  isUndefined,
   isObject,
+  isUndefined,
   isRegExp,
-} from 'lodash';
+  // isArrayBuffer,
+} from './utils'
 
 
 const keys = obj => isObject(obj)
@@ -17,11 +13,9 @@ const keys = obj => isObject(obj)
   : TypeError('Argument to keys() must be type object');
 
 
-
 const entries = obj => isObject(obj)
   ? Object.entries(obj)
   : TypeError('Argument to entries() must be type object');
-
 
 
 const values = obj => isObject(obj)
@@ -30,14 +24,14 @@ const values = obj => isObject(obj)
 
 
 
-const includes = (arr, any) => isArray(arr)
+const includes = (arr, any) => Array.isArray(arr)
   ? arr.includes(any)
   : TypeError('Argument to includes() must be type array');
 
 
 
 const numToString = (num, rad) => {
-  if (!isNumber(num)) TypeError('Argument int to numToString() must be type number');
+  if (!Number.isNumber(num)) TypeError('Argument int to numToString() must be type number');
   if (!isInteger(rad)) TypeError('Argument rad to numToString() must be type integer');
   return num.toString(rad);
 };
@@ -54,14 +48,14 @@ const split = (str, sep, lim) => {
 
 
 const join = (arr, sep) => {
-  if (!isArray(arr)) TypeError('Argument arr to join() must be type array');
+  if (!Array.isArray(arr)) TypeError('Argument arr to join() must be type array');
   if (!isString(sep) && !isUndefined(sep)) TypeError('Argument sep to join() must be type string');
   return arr.join(sep);
 };
 
 
 
-const concat = (arr, any) => isArray(arr)
+const concat = (arr, any) => Array.isArray(arr)
   ? [...arr, any]
   : TypeError('Argument arr to concat() must be type array');
 
@@ -107,26 +101,26 @@ const sliceString = (str, start, end) => {
 
 
 const sliceArray = (arr, start, end) => {
-  if (!isArray(arr)) TypeError('Argument arr to slice() must be type arr');
+  if (!Array.isArray(arr)) TypeError('Argument arr to slice() must be type arr');
   if (!isInteger(start) && !isUndefined(start)) TypeError('Argument start to slice() must be type int');
   if (!isInteger(end) && !isUndefined(end)) TypeError('Argument end to slice() must be type int');
   return arr.slice(start, end);
 }
 
 
-const isOdd = num => isNumber(num)
+const isOdd = num => Number.isNumber(num)
   ? !!(num & 1)
   : TypeError('Argument num to isOdd() must be type number');
 
 
 
-const isEven = n => isNumber(n)
+const isEven = n => Number.isNumber(n)
   ? !(n & 1)
   : TypeError('Argument num to isEven() must be type number');
 
 
 
-const indexOf = (arr, any) => isArray(arr)
+const indexOf = (arr, any) => Array.isArray(arr)
   ? arr.indexOf(any)
   : TypeError('Argument arr to indexOf() must be type arr');
 
