@@ -4,13 +4,13 @@ During the development process of `PaperCollateralRenderer` we have encountered 
 
 ### Fixes
 
-1. Font rendering
+**1. Font rendering**
 
 - If the desired font is not rendering, this is because the lib requires base64 encoded fonts in order to guarantee font availability.
 
 - How to test: In order to test for font availability, you must open font book and disable Inter, Inter UI and Source Code Pro or any fonts this library uses.
 
-2. Package issues
+**2. Package issues**
 
 - If your stack trace is something along the lines of:
 `'urbit-sigil-js' is imported by dist/js/lib/load.js, but could not be resolved – treating it as an external dependency`
