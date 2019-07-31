@@ -1,4 +1,4 @@
-const _jsxFileName = "/Users/chris/Documents/PaperCollateralRenderer/src/js/App.js";import React, { Component } from 'react';
+const _jsxFileName = "/Users/gavinatkinson/Tlon/PaperCollateralRenderer/src/js/App.js";import React, { Component } from 'react';
 // import wallet1 from './sampleWallets/wallet1.json'; // walletX.value
 // import wallet2 from './sampleWallets/wallet2.json'; // walletX.value
 // import wallet3 from './sampleWallets/wallet3.json'; // walletX.value

@@ -1,9 +1,28 @@
 import React, { Component } from 'react';
-import PageRenderer from './PageRenderer';
-
-import { shim } from './lib/utils';
+// import PageRenderer from './PageRenderer';
+import { get } from 'lodash';
 import templates from './templates.json';
 import constants from './lib/copy';
+
+import {
+  initCanvas,
+  dataURItoBlob,
+  wordWrap,
+  shim
+} from './lib/utils';
+
+import {
+  drawSigil,
+  drawQR,
+  drawImg,
+  drawText,
+  drawWrappedText,
+  drawEthereumAddressCompact,
+  drawEthereumAddressLong,
+  drawPatQ,
+  drawRect,
+  drawLine,
+} from './lib/draw';
 
 import {
   MasterTicketComponent,
@@ -53,37 +72,23 @@ const PROFILES = {
 class PaperCollateralRenderer extends Component {
   constructor(props) {
     super(props)
+    this.latch = false;
+    this.canvasRef = React.createRef();
+    this.canvas = null;
     this.state = {
       results: [],
       pages: null,
       totalPages: null,
     };
-    this.latch = false;
-    // this.counter = 0;
-    // this.results = [];
+
   }
-
-  // handleOutput = (output, total) => {
-  //   this.counter = this.counter + 1
-  //
-  //   this.results = [...this.results, output]
-  //
-  //   if (this.counter === total) {
-  //     this.props.callback(this.results)
-  //   }
-  // }
-  //
-  //
-  //
-  // handleOutput = (output, total) => {
-  //   if (this.counter === total) {
-  //     this.props.callback(this.results)
-  //   }
-  // }
-
 
 
   componentDidMount = () => {
+
+    console.log(this.refs, this.canvasRef, this.canvas)
+
+    this.canvas = initCanvas(this.canvasRef.current, { x: 612, y: 792 }, 4);
 
     const wallets = shim(this.props.wallet);
 
@@ -103,27 +108,60 @@ class PaperCollateralRenderer extends Component {
     Promise.all(withManifest.map(f => f()))
       .then(pageGroups => {
         const flats = pageGroups.reduce((acc, arr) => [...acc, ...arr], []);
-        this.setState({ pages: flats, totalPages: flats.length });
+        // this.setState({ pages: flats, totalPages: flats.length });
+
+        const results = flats.map(page => this.drawLayout(page));
+        // this.latch=true
+        this.props.callback(results);
     })
     .catch(err => console.error(err));
   }
 
 
+  drawLayout = (page) => {
+
+    const ctx = this.canvas.getContext('2d');
+
+    ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+    ctx.fillStyle="#FFF";
+    ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
+    ctx.fillStyle="#000";
+
+    page.renderables.forEach(r => {
+      if (r.type === 'qr') return drawQR({ ctx, ...r });
+      if (r.type === 'patq') return drawPatQ({ ctx, ...r });
+      if (r.type === 'img') return drawImg({ ctx, ...r });
+      if (r.type === 'addr_split_four') return drawEthereumAddressLong({ ctx, ...r });
+      if (r.type === 'wrap_addr_split_four') return drawEthereumAddressCompact({ ctx, ...r });
+      if (r.type === 'sigil') return drawSigil({ ctx, ...r });
+      if (r.type === 'rect') return drawRect({ ctx, ...r });
+      if (r.type === 'hr') return drawLine({ ctx, ...r });
+      if (r.type === 'template_text') return drawWrappedText({ ctx, ...r });
+      if (r.type === 'text') return drawWrappedText({ ctx, ...r });
+    });
+
+    const pageWithImageData = {
+      ship: page.ship,
+      collateralType: page.collateralType,
+      bin: page.bin,
+      page: get(page, 'page', '1'),
+      pageTitle: page.pageTitle,
+      png: dataURItoBlob(this.canvas.toDataURL("image/png")),
+      durl: this.canvas.toDataURL("image/png"),
+    };
+    return pageWithImageData;
+  };
+
+
 
   render() {
-    const { pages, totalPages } = this.state
-    if (this.latch === false && pages !== null) {
+    // const { pages, totalPages } = this.state
+    if (this.latch === false) {
       this.latch = true;
-
       return (
-        <div className={ this.props.className }>
-
-        <PageRenderer
-          pages={pages}
-          callback={data => this.props.callback(data)}
-        />
-
-        </div>
+        <canvas className={ this.props.className } ref={ this.canvasRef } />
       );
     } else {
       return <div/>

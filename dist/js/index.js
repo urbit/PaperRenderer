@@ -37496,6 +37496,30 @@
 	var lodash_27 = lodash.isRegExp;
 	var lodash_28 = lodash.isInteger;
 
+	var MULTIPASS = {"key":"MULTIPASS","absoluteBoundingBox":{"x":-1302,"y":2063,"width":612,"height":792},"renderables":[{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Custody","fontWeight":400,"maxWidth":48,"lineHeightPx":14.0625,"x":137,"y":551,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"rect","cornerRadius":4,"x":194,"y":551,"width":35,"height":16,"fillColor":[],"strokeColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}],"strokeWeight":1},{"type":"text","fontFamily":"Inter","fontSize":8,"text":"Public","fontWeight":500,"maxWidth":24,"lineHeightPx":9.375,"x":200,"y":554,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Abilities","fontWeight":400,"maxWidth":45,"lineHeightPx":14.0625,"x":137,"y":454,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":8,"text":"azimuth.network/faq","fontWeight":400,"maxWidth":92,"lineHeightPx":11.061599731445312,"x":138,"y":750,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.49803921580314636,"g":0.49803921580314636,"b":0.49803921580314636,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":8,"text":"urbit.org/docs/azimuth","fontWeight":400,"maxWidth":106,"lineHeightPx":9.375,"x":246,"y":750,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.49803921580314636,"g":0.49803921580314636,"b":0.49803921580314636,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":8,"text":"litmel-sicwes.azimuth.network","fontWeight":400,"maxWidth":140,"lineHeightPx":9.375,"x":138,"y":731,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.49803921580314636,"g":0.49803921580314636,"b":0.49803921580314636,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Use your ownership address to check your spawn, management, delegate or transfer addresses. Thus, you can also check your total address space.","fontWeight":400,"maxWidth":329,"lineHeightPx":16,"x":137,"y":483,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"This is public information. Store this in a place you won’t forget.","fontWeight":400,"maxWidth":344,"lineHeightPx":16,"x":138,"y":580,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"rect","cornerRadius":8,"dashes":[4,4],"x":137,"y":182,"width":328.7197265625,"height":200,"fillColor":[],"strokeColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}],"strokeWeight":1},{"type":"sigil","size":48,"name":">sigil:@sigil","data":"@sigil","x":168,"y":206},{"type":"text","fontFamily":"Source Code Pro","fontSize":8,"text":"2019.18.16","fontWeight":400,"maxWidth":48,"lineHeightPx":9.375,"x":230,"y":245,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":8,"text":"BIRTH TIME","fontWeight":400,"maxWidth":48,"lineHeightPx":12,"x":230,"y":231,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"0x12d d3f0 230c e681c b4fc 7d3b 288b 9b81 d962 ab27","fontWeight":400,"maxWidth":217,"lineHeightPx":16,"x":168,"y":331,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":16,"text":"litmel-sicwes","fontWeight":500,"maxWidth":125,"lineHeightPx":24,"x":230,"y":204,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":8,"text":"MASTER TICKET","fontWeight":400,"maxWidth":63,"lineHeightPx":16,"x":168,"y":266,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":8,"text":"OWNERSHIP ADDRESS","fontWeight":400,"maxWidth":82,"lineHeightPx":16,"x":168,"y":312,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Arial","fontSize":12,"text":"░▒░▒░▒░▒░▒▒░▒░░░░░░▒░░░▒░░░▒","fontWeight":400,"maxWidth":239,"lineHeightPx":24,"x":168,"y":282,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"qr","size":32,"name":">qr:@ownership.ethereum.qr","data":"@ownership.ethereum.qr","x":411,"y":334},{"type":"text","fontFamily":"Source Code Pro","fontSize":8,"text":"2019.18.16","fontWeight":400,"maxWidth":48,"lineHeightPx":9.375,"x":138,"y":713,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.49803921580314636,"g":0.49803921580314636,"b":0.49803921580314636,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":8,"text":"UP8","fontWeight":400,"maxWidth":15,"lineHeightPx":9.375,"x":198,"y":713,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.49803921580314636,"g":0.49803921580314636,"b":0.49803921580314636,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":16,"text":"Multipass","fontWeight":700,"maxWidth":78,"lineHeightPx":18.75,"x":267,"y":81,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]}]};
+	var templates = {
+		MULTIPASS: MULTIPASS,
+		"MASTER_TICKET:PLANET": {"key":"MASTER_TICKET:PLANET","absoluteBoundingBox":{"x":-362,"y":4283,"width":612,"height":792},"renderables":[{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Custody","fontWeight":400,"maxWidth":50,"lineHeightPx":14.0625,"x":72,"y":544,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Abilities","fontWeight":400,"maxWidth":48,"lineHeightPx":14.0625,"x":72,"y":408,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Use your master ticket to verify your identity, change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains.","fontWeight":400,"maxWidth":455,"lineHeightPx":16,"x":72,"y":433,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"The master ticket and ownership seed can be used to recover transfer proxy, spawn proxy, delegate, and management seeds.","fontWeight":400,"maxWidth":455,"lineHeightPx":16,"x":72,"y":472,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"This requires a Medium Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":568,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Support","fontWeight":400,"maxWidth":50,"lineHeightPx":14.0625,"x":72,"y":632,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"If you need support or information, please visit the following resources.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":656,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Created on","fontWeight":400,"maxWidth":65,"lineHeightPx":14.0625,"x":72,"y":728,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"2019/7/24 5:31 PM","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":751,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"sigil","size":64,"name":">sigil:@sigil","data":"@sigil","x":72,"y":25},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"MASTER TICKET","fontWeight":400,"maxWidth":94,"lineHeightPx":16,"x":153,"y":57,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":16,"text":"@patp","fontWeight":500,"maxWidth":48,"lineHeightPx":24,"x":153,"y":25,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"MASTER TICKET","fontWeight":600,"maxWidth":94,"lineHeightPx":16,"x":72,"y":119,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"dottem-migmeb-ridlur-ropdyl","fontWeight":400,"maxWidth":195,"lineHeightPx":16,"x":104,"y":135,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"img","width":12.000008583068848,"height":26.000001907348633,"name":">img:keyIcon","data":"keyIcon","x":72,"y":137},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"elite trim craft rookie time place open\nfire read gravity piece fringe lesson moment critic leader tortoise wreck crack water security ecology color","fontWeight":400,"maxWidth":305,"lineHeightPx":16,"x":72,"y":183,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"OWNERSHIP SEED","fontWeight":600,"maxWidth":101,"lineHeightPx":16,"x":72,"y":167,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"OWNERSHIP ADDRESS","fontWeight":600,"maxWidth":123,"lineHeightPx":16,"x":72,"y":313,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"0x12d d3f0 230c e681c b4fc 7d3b 288b 9b81 d962 ab27","fontWeight":400,"maxWidth":380,"lineHeightPx":16,"x":72,"y":329,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"qr","size":56.000003814697266,"name":">qr:@ownership.ethereum.qr","data":"@ownership.ethereum.qr","x":484,"y":313},{"type":"rect","cornerRadius":4,"x":153,"y":77,"width":54,"height":18,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"text","fontFamily":"Inter","fontSize":8,"text":"Medium","fontWeight":500,"maxWidth":31,"lineHeightPx":9.375,"x":165,"y":81,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1}}]},{"type":"hr","x":72,"y":391,"width":468,"height":1,"strokeColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.6941176652908325,"g":0.6980392336845398,"b":0.7019608020782471,"a":1}}],"strokeWeight":2},{"type":"rect","cornerRadius":4,"x":130,"y":543,"width":54,"height":18,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"text","fontFamily":"Inter","fontSize":8,"text":"Medium","fontWeight":500,"maxWidth":31,"lineHeightPx":9.375,"x":142,"y":547,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> Azimuth Documentation","fontWeight":400,"maxWidth":224,"lineHeightPx":13.82699966430664,"x":72,"y":696,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"urbit.org/docs/azimuth","fontWeight":400,"maxWidth":305,"lineHeightPx":13.82699966430664,"x":235,"y":696,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> How to use Bridge","fontWeight":400,"maxWidth":224,"lineHeightPx":11.71875,"x":72,"y":680,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"urbit.org/docs/bridge","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":235,"y":680,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> Use Bridge","fontWeight":400,"maxWidth":143,"lineHeightPx":11.71875,"x":72,"y":512,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"bridge.urbit.org","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":235,"y":512,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"DERIVATION PATH","fontWeight":600,"maxWidth":108,"lineHeightPx":16,"x":72,"y":265,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"m/44'/60'/0'/0","fontWeight":400,"maxWidth":101,"lineHeightPx":16,"x":72,"y":281,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]}]},
+		"MASTER_TICKET:STAR": {"key":"MASTER_TICKET:STAR","absoluteBoundingBox":{"x":-362,"y":3183,"width":612,"height":792},"renderables":[{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Custody","fontWeight":400,"maxWidth":50,"lineHeightPx":14.0625,"x":72,"y":544,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Abilities","fontWeight":400,"maxWidth":48,"lineHeightPx":14.0625,"x":72,"y":408,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Use your master ticket to verify your identity, change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains.","fontWeight":400,"maxWidth":455,"lineHeightPx":16,"x":72,"y":433,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"The master ticket and ownership seed can be used to recover transfer proxy, spawn proxy, delegate, and management seeds.","fontWeight":400,"maxWidth":455,"lineHeightPx":16,"x":72,"y":472,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"This requires a Very High Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":568,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Support","fontWeight":400,"maxWidth":50,"lineHeightPx":14.0625,"x":72,"y":632,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"If you need support or information, please visit the following resources.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":656,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Created on","fontWeight":400,"maxWidth":65,"lineHeightPx":14.0625,"x":72,"y":728,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"2019/7/24 5:31 PM","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":751,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"sigil","size":64,"name":">sigil:@sigil","data":"@sigil","x":72,"y":25},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"MASTER TICKET","fontWeight":400,"maxWidth":94,"lineHeightPx":16,"x":153,"y":57,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":16,"text":"@patp","fontWeight":500,"maxWidth":48,"lineHeightPx":24,"x":153,"y":25,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"MASTER TICKET","fontWeight":600,"maxWidth":94,"lineHeightPx":16,"x":72,"y":119,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"dottem-migmeb-ridlur-ropdyl","fontWeight":400,"maxWidth":195,"lineHeightPx":16,"x":104,"y":135,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"img","width":12.000008583068848,"height":26.000001907348633,"name":">img:keyIcon","data":"keyIcon","x":72,"y":137},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"elite trim craft rookie time place open\nfire read gravity piece fringe lesson moment critic leader tortoise wreck crack water security ecology color","fontWeight":400,"maxWidth":305,"lineHeightPx":16,"x":72,"y":183,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"OWNERSHIP SEED","fontWeight":600,"maxWidth":101,"lineHeightPx":16,"x":72,"y":167,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"OWNERSHIP ADDRESS","fontWeight":600,"maxWidth":123,"lineHeightPx":16,"x":72,"y":313,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"0x12d d3f0 230c e681c b4fc 7d3b 288b 9b81 d962 ab27","fontWeight":400,"maxWidth":380,"lineHeightPx":16,"x":72,"y":329,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"qr","size":56.000003814697266,"name":">qr:@ownership.ethereum.qr","data":"@ownership.ethereum.qr","x":484,"y":313},{"type":"rect","cornerRadius":4,"x":153,"y":77,"width":54,"height":18,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"text","fontFamily":"Inter","fontSize":8,"text":"Very High","fontWeight":500,"maxWidth":38,"lineHeightPx":9.375,"x":161,"y":81,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1}}]},{"type":"hr","x":72,"y":391,"width":468,"height":1,"strokeColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.6941176652908325,"g":0.6980392336845398,"b":0.7019608020782471,"a":1}}],"strokeWeight":2},{"type":"rect","cornerRadius":4,"x":130,"y":543,"width":54,"height":18,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"text","fontFamily":"Inter","fontSize":8,"text":"Very High","fontWeight":500,"maxWidth":38,"lineHeightPx":9.375,"x":138,"y":547,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> Azimuth Documentation","fontWeight":400,"maxWidth":224,"lineHeightPx":13.82699966430664,"x":72,"y":696,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"urbit.org/docs/azimuth","fontWeight":400,"maxWidth":305,"lineHeightPx":13.82699966430664,"x":235,"y":696,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> How to use Bridge","fontWeight":400,"maxWidth":224,"lineHeightPx":11.71875,"x":72,"y":680,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"urbit.org/docs/bridge","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":235,"y":680,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> Use Bridge","fontWeight":400,"maxWidth":143,"lineHeightPx":11.71875,"x":72,"y":512,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"bridge.urbit.org","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":235,"y":512,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"DERIVATION PATH","fontWeight":600,"maxWidth":108,"lineHeightPx":16,"x":72,"y":265,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"m/44'/60'/0'/0","fontWeight":400,"maxWidth":101,"lineHeightPx":16,"x":72,"y":281,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]}]},
+		"MASTER_TICKET_SHARD:GALAXY": {"key":"MASTER_TICKET_SHARD:GALAXY","absoluteBoundingBox":{"x":-362,"y":2063,"width":612,"height":792},"renderables":[{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Custody","fontWeight":400,"maxWidth":50,"lineHeightPx":14.0625,"x":72,"y":542,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Abilities","fontWeight":400,"maxWidth":48,"lineHeightPx":14.0625,"x":72,"y":406,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Use your master ticket to verify your identity, change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains.","fontWeight":400,"maxWidth":455,"lineHeightPx":16,"x":72,"y":430,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"The master ticket and ownership seed can be used to recover transfer proxy, spawn proxy, delegate, and management seeds.","fontWeight":400,"maxWidth":455,"lineHeightPx":16,"x":72,"y":470,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"This requires a Very High Friction Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":566,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Support","fontWeight":400,"maxWidth":50,"lineHeightPx":14.0625,"x":72,"y":630,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"If you need support or information, please visit the following resources.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":654,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"sigil","size":64,"name":">sigil:@sigil","data":"@sigil","x":72,"y":24},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"MASTER SHARD 1","fontWeight":400,"maxWidth":101,"lineHeightPx":16,"x":152,"y":54,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"OF 3","fontWeight":400,"maxWidth":29,"lineHeightPx":16,"x":261,"y":54,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":16,"text":"@patp","fontWeight":500,"maxWidth":48,"lineHeightPx":24,"x":152,"y":24,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"elite trim craft rookie time place open\nfire read gravity piece fringe lesson moment critic leader tortoise wreck crack water security ecology color","fontWeight":400,"maxWidth":305,"lineHeightPx":16,"x":72,"y":180,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"MASTER SHARD 1","fontWeight":600,"maxWidth":101,"lineHeightPx":16,"x":72,"y":164,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"SEED","fontWeight":600,"maxWidth":29,"lineHeightPx":16,"x":181,"y":164,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"OWNERSHIP ADDRESS","fontWeight":600,"maxWidth":123,"lineHeightPx":16,"x":72,"y":260,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"0x12d d3f0 230c e681c b4fc 7d3b 288b 9b81 d962 ab27","fontWeight":400,"maxWidth":380,"lineHeightPx":16,"x":72,"y":276,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"qr","size":52.99998474121094,"name":">qr:@ownership.ethereum.qr","data":"@ownership.ethereum.qr","x":487,"y":260},{"type":"rect","cornerRadius":4,"x":152,"y":73,"width":54,"height":18,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"text","fontFamily":"Inter","fontSize":8,"text":"Very High","fontWeight":500,"maxWidth":38,"lineHeightPx":9.375,"x":160,"y":77,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1}}]},{"type":"hr","x":72,"y":378,"width":468,"height":1,"strokeColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.6941176652908325,"g":0.6980392336845398,"b":0.7019608020782471,"a":1}}],"strokeWeight":2},{"type":"rect","cornerRadius":4,"x":130,"y":541,"width":54,"height":18,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"text","fontFamily":"Inter","fontSize":8,"text":"Very High","fontWeight":500,"maxWidth":38,"lineHeightPx":9.375,"x":138,"y":545,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> Azimuth Documentation","fontWeight":400,"maxWidth":224,"lineHeightPx":13.82699966430664,"x":72,"y":694,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"urbit.org/docs/azimuth","fontWeight":400,"maxWidth":305,"lineHeightPx":13.82699966430664,"x":235,"y":694,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> How to use Bridge","fontWeight":400,"maxWidth":224,"lineHeightPx":11.71875,"x":72,"y":678,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"urbit.org/docs/bridge","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":235,"y":678,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> Use Bridge","fontWeight":400,"maxWidth":224,"lineHeightPx":11.71875,"x":72,"y":510,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"bridge.urbit.org","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":235,"y":510,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Created on","fontWeight":400,"maxWidth":65,"lineHeightPx":14.0625,"x":72,"y":729,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"2019/7/24 5:31 PM","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":753,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]}]},
+		"MANAGEMENT:GALAXY": {"key":"MANAGEMENT:GALAXY","absoluteBoundingBox":{"x":330,"y":2063,"width":612,"height":792},"renderables":[{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Custody","fontWeight":400,"maxWidth":50,"lineHeightPx":14.0625,"x":72,"y":544,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Abilities","fontWeight":400,"maxWidth":48,"lineHeightPx":14.0625,"x":72,"y":408,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"This management seed could be used to boot your star or impersonate your star on the Urbit network without your permission.","fontWeight":400,"maxWidth":455,"lineHeightPx":16,"x":72,"y":432,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"The management seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.","fontWeight":400,"maxWidth":455,"lineHeightPx":16,"x":72,"y":472,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"This requires a Medium Friction Custody. Securely store this document. \nIIf you lose your management seed, you can recover it from your master ticket or ownership seed.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":568,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Support","fontWeight":400,"maxWidth":50,"lineHeightPx":14.0625,"x":72,"y":632,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"If you need support or information, please visit the following resources.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":656,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"sigil","size":64,"name":">sigil:@sigil","data":"@sigil","x":72,"y":26},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"MANAGEMENT PROXY","fontWeight":400,"maxWidth":116,"lineHeightPx":16,"x":152,"y":56,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":16,"text":"@patp","fontWeight":500,"maxWidth":48,"lineHeightPx":24,"x":152,"y":26,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"elite trim craft rookie time place open\nfire read gravity piece fringe lesson moment critic leader tortoise wreck crack water security ecology color","fontWeight":400,"maxWidth":305,"lineHeightPx":16,"x":72,"y":182,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"MANAGEMENT SEED","fontWeight":600,"maxWidth":108,"lineHeightPx":16,"x":72,"y":166,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"MANAGEMENT ADDRESS","fontWeight":600,"maxWidth":130,"lineHeightPx":16,"x":72,"y":310,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"0x12d d3f0 230c e681c b4fc 7d3b 288b 9b81 d962 ab27","fontWeight":400,"maxWidth":380,"lineHeightPx":16,"x":72,"y":326,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"qr","size":52.99998474121094,"name":">qr:@management.ethereum.qr","data":"@management.ethereum.qr","x":487,"y":310},{"type":"rect","cornerRadius":4,"x":152,"y":76,"width":54,"height":18,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"text","fontFamily":"Inter","fontSize":8,"text":"Medium","fontWeight":500,"maxWidth":31,"lineHeightPx":9.375,"x":164,"y":80,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1}}]},{"type":"hr","x":72,"y":380,"width":468,"height":1,"strokeColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.6941176652908325,"g":0.6980392336845398,"b":0.7019608020782471,"a":1}}],"strokeWeight":2},{"type":"rect","cornerRadius":4,"x":130,"y":543,"width":54,"height":18,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"text","fontFamily":"Inter","fontSize":8,"text":"Medium","fontWeight":500,"maxWidth":31,"lineHeightPx":9.375,"x":141,"y":547,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> Azimuth Documentation","fontWeight":400,"maxWidth":224,"lineHeightPx":13.82699966430664,"x":72,"y":696,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"urbit.org/docs/azimuth","fontWeight":400,"maxWidth":305,"lineHeightPx":13.82699966430664,"x":235,"y":696,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> How to use Bridge","fontWeight":400,"maxWidth":224,"lineHeightPx":11.71875,"x":72,"y":680,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"urbit.org/docs/bridge","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":235,"y":680,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> Use Bridge","fontWeight":400,"maxWidth":224,"lineHeightPx":11.71875,"x":72,"y":512,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"bridge.urbit.org","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":235,"y":512,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"DERIVATION PATH","fontWeight":600,"maxWidth":108,"lineHeightPx":16,"x":72,"y":262,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"m/44'/60'/0'/0","fontWeight":400,"maxWidth":101,"lineHeightPx":16,"x":72,"y":278,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Created on","fontWeight":400,"maxWidth":65,"lineHeightPx":14.0625,"x":72,"y":727,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"2019/7/24 5:31 PM","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":751,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]}]},
+		"MANAGEMENT:STAR": {"key":"MANAGEMENT:STAR","absoluteBoundingBox":{"x":330,"y":3183,"width":612,"height":792},"renderables":[{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Custody","fontWeight":400,"maxWidth":50,"lineHeightPx":14.0625,"x":72,"y":544,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Abilities","fontWeight":400,"maxWidth":48,"lineHeightPx":14.0625,"x":72,"y":408,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"This management seed could be used to boot your star or impersonate your star on the Urbit network without your permission.","fontWeight":400,"maxWidth":455,"lineHeightPx":16,"x":72,"y":432,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"The management seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.","fontWeight":400,"maxWidth":455,"lineHeightPx":16,"x":72,"y":472,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"This requires a Medium Friction Custody. Securely store this document. \nIIf you lose your management seed, you can recover it from your master ticket or ownership seed.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":568,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Support","fontWeight":400,"maxWidth":50,"lineHeightPx":14.0625,"x":72,"y":632,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"If you need support or information, please visit the following resources.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":656,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"sigil","size":64,"name":">sigil:@sigil","data":"@sigil","x":72,"y":26},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"MANAGEMENT PROXY","fontWeight":400,"maxWidth":116,"lineHeightPx":16,"x":152,"y":56,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":16,"text":"@patp","fontWeight":500,"maxWidth":48,"lineHeightPx":24,"x":152,"y":26,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"elite trim craft rookie time place open\nfire read gravity piece fringe lesson moment critic leader tortoise wreck crack water security ecology color","fontWeight":400,"maxWidth":305,"lineHeightPx":16,"x":72,"y":182,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"MANAGEMENT SEED","fontWeight":600,"maxWidth":108,"lineHeightPx":16,"x":72,"y":166,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"MANAGEMENT ADDRESS","fontWeight":600,"maxWidth":130,"lineHeightPx":16,"x":72,"y":310,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"0x12d d3f0 230c e681c b4fc 7d3b 288b 9b81 d962 ab27","fontWeight":400,"maxWidth":380,"lineHeightPx":16,"x":72,"y":326,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"qr","size":52.99998474121094,"name":">qr:@management.ethereum.qr","data":"@management.ethereum.qr","x":487,"y":310},{"type":"rect","cornerRadius":4,"x":152,"y":76,"width":54,"height":18,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"text","fontFamily":"Inter","fontSize":8,"text":"Medium","fontWeight":500,"maxWidth":31,"lineHeightPx":9.375,"x":164,"y":80,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1}}]},{"type":"hr","x":72,"y":380,"width":468,"height":1,"strokeColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.6941176652908325,"g":0.6980392336845398,"b":0.7019608020782471,"a":1}}],"strokeWeight":2},{"type":"rect","cornerRadius":4,"x":130,"y":543,"width":54,"height":18,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"text","fontFamily":"Inter","fontSize":8,"text":"Medium","fontWeight":500,"maxWidth":31,"lineHeightPx":9.375,"x":141,"y":547,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> Azimuth Documentation","fontWeight":400,"maxWidth":224,"lineHeightPx":13.82699966430664,"x":72,"y":696,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"urbit.org/docs/azimuth","fontWeight":400,"maxWidth":305,"lineHeightPx":13.82699966430664,"x":235,"y":696,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> How to use Bridge","fontWeight":400,"maxWidth":224,"lineHeightPx":11.71875,"x":72,"y":680,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"urbit.org/docs/bridge","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":235,"y":680,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> Use Bridge","fontWeight":400,"maxWidth":224,"lineHeightPx":11.71875,"x":72,"y":512,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"bridge.urbit.org","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":235,"y":512,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"DERIVATION PATH","fontWeight":600,"maxWidth":108,"lineHeightPx":16,"x":72,"y":262,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"m/44'/60'/0'/0","fontWeight":400,"maxWidth":101,"lineHeightPx":16,"x":72,"y":278,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Created on","fontWeight":400,"maxWidth":65,"lineHeightPx":14.0625,"x":72,"y":727,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"2019/7/24 5:31 PM","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":751,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]}]},
+		"MANAGEMENT:PLANET": {"key":"MANAGEMENT:PLANET","absoluteBoundingBox":{"x":330,"y":4283,"width":612,"height":792},"renderables":[{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Custody","fontWeight":400,"maxWidth":50,"lineHeightPx":14.0625,"x":72,"y":544,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Abilities","fontWeight":400,"maxWidth":48,"lineHeightPx":14.0625,"x":72,"y":408,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"This management seed could be used to boot your star or impersonate your star on the Urbit network without your permission.","fontWeight":400,"maxWidth":455,"lineHeightPx":16,"x":72,"y":432,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"The management seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.","fontWeight":400,"maxWidth":455,"lineHeightPx":16,"x":72,"y":472,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"This requires a Low Friction Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":568,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Support","fontWeight":400,"maxWidth":50,"lineHeightPx":14.0625,"x":72,"y":632,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"If you need support or information, please visit the following resources.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":656,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"sigil","size":64,"name":">sigil:@sigil","data":"@sigil","x":72,"y":26},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"MANAGEMENT PROXY","fontWeight":400,"maxWidth":116,"lineHeightPx":16,"x":152,"y":56,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":16,"text":"@patp","fontWeight":500,"maxWidth":48,"lineHeightPx":24,"x":152,"y":26,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"elite trim craft rookie time place open\nfire read gravity piece fringe lesson moment critic leader tortoise wreck crack water security ecology color","fontWeight":400,"maxWidth":305,"lineHeightPx":16,"x":72,"y":182,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"MANAGEMENT SEED","fontWeight":600,"maxWidth":108,"lineHeightPx":16,"x":72,"y":166,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"MANAGEMENT ADDRESS","fontWeight":600,"maxWidth":130,"lineHeightPx":16,"x":72,"y":310,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"0x12d d3f0 230c e681c b4fc 7d3b 288b 9b81 d962 ab27","fontWeight":400,"maxWidth":380,"lineHeightPx":16,"x":72,"y":326,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"qr","size":52.99998474121094,"name":">qr:@management.ethereum.qr","data":"@management.ethereum.qr","x":487,"y":310},{"type":"rect","cornerRadius":4,"x":152,"y":76,"width":54,"height":18,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"text","fontFamily":"Inter","fontSize":8,"text":"Low","fontWeight":500,"maxWidth":16,"lineHeightPx":9.375,"x":171,"y":80,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1}}]},{"type":"hr","x":72,"y":380,"width":468,"height":1,"strokeColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.6941176652908325,"g":0.6980392336845398,"b":0.7019608020782471,"a":1}}],"strokeWeight":2},{"type":"rect","cornerRadius":4,"x":130,"y":543,"width":54,"height":18,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"text","fontFamily":"Inter","fontSize":8,"text":"Low","fontWeight":500,"maxWidth":16,"lineHeightPx":9.375,"x":148,"y":547,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> Azimuth Documentation","fontWeight":400,"maxWidth":224,"lineHeightPx":13.82699966430664,"x":72,"y":696,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"urbit.org/docs/azimuth","fontWeight":400,"maxWidth":305,"lineHeightPx":13.82699966430664,"x":235,"y":696,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> How to use Bridge","fontWeight":400,"maxWidth":224,"lineHeightPx":11.71875,"x":72,"y":680,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"urbit.org/docs/bridge","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":235,"y":680,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> Use Bridge","fontWeight":400,"maxWidth":224,"lineHeightPx":11.71875,"x":72,"y":512,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"bridge.urbit.org","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":235,"y":512,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"DERIVATION PATH","fontWeight":600,"maxWidth":108,"lineHeightPx":16,"x":72,"y":262,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"m/44'/60'/0'/0","fontWeight":400,"maxWidth":101,"lineHeightPx":16,"x":72,"y":278,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Created on","fontWeight":400,"maxWidth":65,"lineHeightPx":14.0625,"x":72,"y":727,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"2019/7/24 5:31 PM","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":751,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]}]},
+		"SPAWN:GALAXY": {"key":"SPAWN:GALAXY","absoluteBoundingBox":{"x":975,"y":2063,"width":612,"height":792},"renderables":[{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Custody","fontWeight":400,"maxWidth":50,"lineHeightPx":14.0625,"x":72,"y":544,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Abilities","fontWeight":400,"maxWidth":48,"lineHeightPx":14.0625,"x":72,"y":408,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"This spawn proxy seed could be used to spawn stars under your galaxy without your permission.","fontWeight":400,"maxWidth":455,"lineHeightPx":16,"x":72,"y":432,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"The spawn seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.","fontWeight":400,"maxWidth":455,"lineHeightPx":16,"x":72,"y":472,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"This requires a High Friction Custody. Securely store this document. \nIf you lose your spawn seed, you can recover it from your master ticket or ownership seed.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":568,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Support","fontWeight":400,"maxWidth":50,"lineHeightPx":14.0625,"x":72,"y":632,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"If you need support or information, please visit the following resources.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":656,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"sigil","size":64,"name":">sigil:@sigil","data":"@sigil","x":72,"y":26},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"SPAWN PROXY","fontWeight":400,"maxWidth":80,"lineHeightPx":16,"x":152,"y":56,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":16,"text":"@patp","fontWeight":500,"maxWidth":48,"lineHeightPx":24,"x":152,"y":26,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"elite trim craft rookie time place open\nfire read gravity piece fringe lesson moment critic leader tortoise wreck crack water security ecology color","fontWeight":400,"maxWidth":305,"lineHeightPx":16,"x":72,"y":182,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"SPAWN SEED","fontWeight":600,"maxWidth":72,"lineHeightPx":16,"x":72,"y":166,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"SPAWN ADDRESS","fontWeight":600,"maxWidth":94,"lineHeightPx":16,"x":72,"y":311,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"0x12d d3f0 230c e681c b4fc 7d3b 288b 9b81 d962 ab27","fontWeight":400,"maxWidth":380,"lineHeightPx":16,"x":72,"y":327,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"qr","size":52.99998474121094,"name":">qr:@spawn.ethereum.qr","data":"@spawn.ethereum.qr","x":487,"y":311},{"type":"rect","cornerRadius":4,"x":152,"y":76,"width":54,"height":18,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"text","fontFamily":"Inter","fontSize":8,"text":"High","fontWeight":500,"maxWidth":18,"lineHeightPx":9.375,"x":170,"y":80,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1}}]},{"type":"rect","cornerRadius":4,"x":130,"y":543,"width":54,"height":18,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"text","fontFamily":"Inter","fontSize":8,"text":"High","fontWeight":500,"maxWidth":18,"lineHeightPx":9.375,"x":148,"y":547,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1}}]},{"type":"hr","x":72,"y":380,"width":468,"height":1,"strokeColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.6941176652908325,"g":0.6980392336845398,"b":0.7019608020782471,"a":1}}],"strokeWeight":2},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> Azimuth Documentation","fontWeight":400,"maxWidth":224,"lineHeightPx":13.82699966430664,"x":72,"y":696,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Created on","fontWeight":400,"maxWidth":65,"lineHeightPx":14.0625,"x":72,"y":727,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"2019/7/24 5:31 PM","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":751,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"urbit.org/docs/azimuth","fontWeight":400,"maxWidth":305,"lineHeightPx":13.82699966430664,"x":235,"y":696,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> How to use Bridge","fontWeight":400,"maxWidth":224,"lineHeightPx":11.71875,"x":72,"y":680,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"urbit.org/docs/bridge","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":235,"y":680,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> Use Bridge","fontWeight":400,"maxWidth":224,"lineHeightPx":11.71875,"x":72,"y":512,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"bridge.urbit.org","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":235,"y":512,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"DERIVATION PATH","fontWeight":600,"maxWidth":108,"lineHeightPx":16,"x":72,"y":262,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"m/44'/60'/0'/0","fontWeight":400,"maxWidth":101,"lineHeightPx":16,"x":72,"y":279,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]}]},
+		"TRANSFER:GALAXY": {"key":"TRANSFER:GALAXY","absoluteBoundingBox":{"x":1649,"y":2063,"width":612,"height":792},"renderables":[{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Custody","fontWeight":400,"maxWidth":50,"lineHeightPx":14.0625,"x":72,"y":542,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Abilities","fontWeight":400,"maxWidth":48,"lineHeightPx":14.0625,"x":72,"y":406,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Use your master ticket to verify your identity, change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains.","fontWeight":400,"maxWidth":455,"lineHeightPx":16,"x":72,"y":430,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"The master ticket and ownership seed can be used to recover transfer proxy, spawn proxy, delegate, and management seeds.","fontWeight":400,"maxWidth":455,"lineHeightPx":16,"x":72,"y":470,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"This requires a Very High Friction Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":566,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Support","fontWeight":400,"maxWidth":50,"lineHeightPx":14.0625,"x":72,"y":630,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"If you need support or information, please visit the following resources.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":654,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"sigil","size":64,"name":">sigil:@sigil","data":"@sigil","x":72,"y":24},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"TRANSFER PROXY","fontWeight":400,"maxWidth":101,"lineHeightPx":16,"x":152,"y":54,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":16,"text":"@patp","fontWeight":500,"maxWidth":48,"lineHeightPx":24,"x":152,"y":24,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"elite trim craft rookie time place open\nfire read gravity piece fringe lesson moment critic leader tortoise wreck crack water security ecology color","fontWeight":400,"maxWidth":305,"lineHeightPx":16,"x":72,"y":180,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"TRANSFER SEED","fontWeight":600,"maxWidth":94,"lineHeightPx":16,"x":72,"y":164,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"TRANSFER ADDRESS","fontWeight":600,"maxWidth":116,"lineHeightPx":16,"x":72,"y":308,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"0x12d d3f0 230c e681c b4fc 7d3b 288b 9b81 d962 ab27","fontWeight":400,"maxWidth":380,"lineHeightPx":16,"x":72,"y":324,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"qr","size":52.99998474121094,"name":">qr:@transfer.ethereum.qr","data":"@transfer.ethereum.qr","x":487,"y":308},{"type":"rect","cornerRadius":4,"x":152,"y":73,"width":54,"height":18,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"text","fontFamily":"Inter","fontSize":8,"text":"Very High","fontWeight":500,"maxWidth":38,"lineHeightPx":9.375,"x":160,"y":77,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1}}]},{"type":"hr","x":72,"y":378,"width":468,"height":1,"strokeColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.6941176652908325,"g":0.6980392336845398,"b":0.7019608020782471,"a":1}}],"strokeWeight":2},{"type":"rect","cornerRadius":4,"x":130,"y":541,"width":54,"height":18,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"text","fontFamily":"Inter","fontSize":8,"text":"Very High","fontWeight":500,"maxWidth":38,"lineHeightPx":9.375,"x":137,"y":545,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> Azimuth Documentation","fontWeight":400,"maxWidth":224,"lineHeightPx":13.82699966430664,"x":72,"y":694,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Created on","fontWeight":400,"maxWidth":65,"lineHeightPx":14.0625,"x":72,"y":729,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"2019/7/24 5:31 PM","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":753,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"urbit.org/docs/azimuth","fontWeight":400,"maxWidth":305,"lineHeightPx":13.82699966430664,"x":235,"y":694,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> How to use Bridge","fontWeight":400,"maxWidth":224,"lineHeightPx":11.71875,"x":72,"y":678,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"urbit.org/docs/bridge","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":235,"y":678,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> Use Bridge","fontWeight":400,"maxWidth":224,"lineHeightPx":11.71875,"x":72,"y":510,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"bridge.urbit.org","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":235,"y":510,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"DERIVATION PATH","fontWeight":600,"maxWidth":108,"lineHeightPx":16,"x":72,"y":260,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"m/44'/60'/0'/0","fontWeight":400,"maxWidth":101,"lineHeightPx":16,"x":72,"y":276,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]}]},
+		"TRANSFER:STAR": {"key":"TRANSFER:STAR","absoluteBoundingBox":{"x":1649,"y":3183,"width":612,"height":792},"renderables":[{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Custody","fontWeight":400,"maxWidth":50,"lineHeightPx":14.0625,"x":72,"y":542,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Abilities","fontWeight":400,"maxWidth":48,"lineHeightPx":14.0625,"x":72,"y":406,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Use your master ticket to verify your identity, change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains.","fontWeight":400,"maxWidth":455,"lineHeightPx":16,"x":72,"y":430,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"The master ticket and ownership seed can be used to recover transfer proxy, spawn proxy, delegate, and management seeds.","fontWeight":400,"maxWidth":455,"lineHeightPx":16,"x":72,"y":470,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"This requires a High Friction Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":566,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Support","fontWeight":400,"maxWidth":50,"lineHeightPx":14.0625,"x":72,"y":630,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"If you need support or information, please visit the following resources.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":654,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"sigil","size":64,"name":">sigil:@sigil","data":"@sigil","x":72,"y":24},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"TRANSFER PROXY","fontWeight":400,"maxWidth":101,"lineHeightPx":16,"x":152,"y":54,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":16,"text":"@patp","fontWeight":500,"maxWidth":48,"lineHeightPx":24,"x":152,"y":24,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"elite trim craft rookie time place open\nfire read gravity piece fringe lesson moment critic leader tortoise wreck crack water security ecology color","fontWeight":400,"maxWidth":305,"lineHeightPx":16,"x":72,"y":180,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"TRANSFER SEED","fontWeight":600,"maxWidth":94,"lineHeightPx":16,"x":72,"y":164,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"TRANSFER ADDRESS","fontWeight":600,"maxWidth":116,"lineHeightPx":16,"x":72,"y":308,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"0x12d d3f0 230c e681c b4fc 7d3b 288b 9b81 d962 ab27","fontWeight":400,"maxWidth":380,"lineHeightPx":16,"x":72,"y":324,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"qr","size":52.99998474121094,"name":">qr:@transfer.ethereum.qr","data":"@transfer.ethereum.qr","x":487,"y":308},{"type":"rect","cornerRadius":4,"x":152,"y":73,"width":54,"height":18,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"text","fontFamily":"Inter","fontSize":8,"text":"High","fontWeight":500,"maxWidth":18,"lineHeightPx":9.375,"x":170,"y":77,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1}}]},{"type":"hr","x":72,"y":378,"width":468,"height":1,"strokeColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.6941176652908325,"g":0.6980392336845398,"b":0.7019608020782471,"a":1}}],"strokeWeight":2},{"type":"rect","cornerRadius":4,"x":130,"y":541,"width":54,"height":18,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"text","fontFamily":"Inter","fontSize":8,"text":"High","fontWeight":500,"maxWidth":18,"lineHeightPx":9.375,"x":147,"y":545,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> Azimuth Documentation","fontWeight":400,"maxWidth":224,"lineHeightPx":13.82699966430664,"x":72,"y":694,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Created on","fontWeight":400,"maxWidth":65,"lineHeightPx":14.0625,"x":72,"y":729,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"2019/7/24 5:31 PM","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":753,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"urbit.org/docs/azimuth","fontWeight":400,"maxWidth":305,"lineHeightPx":13.82699966430664,"x":235,"y":694,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> How to use Bridge","fontWeight":400,"maxWidth":224,"lineHeightPx":11.71875,"x":72,"y":678,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"urbit.org/docs/bridge","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":235,"y":678,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> Use Bridge","fontWeight":400,"maxWidth":224,"lineHeightPx":11.71875,"x":72,"y":510,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"bridge.urbit.org","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":235,"y":510,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"DERIVATION PATH","fontWeight":600,"maxWidth":108,"lineHeightPx":16,"x":72,"y":260,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"m/44'/60'/0'/0","fontWeight":400,"maxWidth":101,"lineHeightPx":16,"x":72,"y":276,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]}]},
+		"TRANSFER:PLANET": {"key":"TRANSFER:PLANET","absoluteBoundingBox":{"x":1649,"y":4283,"width":612,"height":792},"renderables":[{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Custody","fontWeight":400,"maxWidth":50,"lineHeightPx":14.0625,"x":72,"y":542,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Abilities","fontWeight":400,"maxWidth":48,"lineHeightPx":14.0625,"x":72,"y":406,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Use your master ticket to verify your identity, change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains.","fontWeight":400,"maxWidth":455,"lineHeightPx":16,"x":72,"y":430,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"The master ticket and ownership seed can be used to recover transfer proxy, spawn proxy, delegate, and management seeds.","fontWeight":400,"maxWidth":455,"lineHeightPx":16,"x":72,"y":470,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"This requires a Medium Friction Custody. Securely store this document. \nIf you lose your transfer seed, you can recover it from your master ticket or ownership seed.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":566,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Support","fontWeight":400,"maxWidth":50,"lineHeightPx":14.0625,"x":72,"y":630,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"If you need support or information, please visit the following resources.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":654,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"sigil","size":64,"name":">sigil:@sigil","data":"@sigil","x":72,"y":24},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"TRANSFER PROXY","fontWeight":400,"maxWidth":101,"lineHeightPx":16,"x":152,"y":54,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":16,"text":"@patp","fontWeight":500,"maxWidth":48,"lineHeightPx":24,"x":152,"y":24,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"elite trim craft rookie time place openz\nfire read gravity piece fringe lesson moment critic leader tortoise wreck crack water security ecology color","fontWeight":400,"maxWidth":305,"lineHeightPx":16,"x":72,"y":180,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"TRANSFER SEED","fontWeight":600,"maxWidth":94,"lineHeightPx":16,"x":72,"y":164,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"TRANSFER ADDRESS","fontWeight":600,"maxWidth":116,"lineHeightPx":16,"x":72,"y":308,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"0x12d d3f0 230c e681c b4fc 7d3b 288b 9b81 d962 ab27","fontWeight":400,"maxWidth":380,"lineHeightPx":16,"x":72,"y":324,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"qr","size":52.99998474121094,"name":">qr:@transfer.ethereum.qr","data":"@transfer.ethereum.qr","x":487,"y":308},{"type":"rect","cornerRadius":4,"x":152,"y":73,"width":54,"height":18,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"text","fontFamily":"Inter","fontSize":8,"text":"Medium","fontWeight":500,"maxWidth":31,"lineHeightPx":9.375,"x":164,"y":77,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1}}]},{"type":"hr","x":72,"y":378,"width":468,"height":1,"strokeColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.6941176652908325,"g":0.6980392336845398,"b":0.7019608020782471,"a":1}}],"strokeWeight":2},{"type":"rect","cornerRadius":4,"x":130,"y":541,"width":54,"height":18,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"text","fontFamily":"Inter","fontSize":8,"text":"Medium","fontWeight":500,"maxWidth":31,"lineHeightPx":9.375,"x":141,"y":545,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> Azimuth Documentation","fontWeight":400,"maxWidth":224,"lineHeightPx":13.82699966430664,"x":72,"y":694,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Created on","fontWeight":400,"maxWidth":65,"lineHeightPx":14.0625,"x":72,"y":729,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"2019/7/24 5:31 PM","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":753,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"urbit.org/docs/azimuth","fontWeight":400,"maxWidth":305,"lineHeightPx":13.82699966430664,"x":235,"y":694,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> How to use Bridge","fontWeight":400,"maxWidth":224,"lineHeightPx":11.71875,"x":72,"y":678,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"urbit.org/docs/bridge","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":235,"y":678,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> Use Bridge","fontWeight":400,"maxWidth":224,"lineHeightPx":11.71875,"x":72,"y":510,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"bridge.urbit.org","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":235,"y":510,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"DERIVATION PATH","fontWeight":600,"maxWidth":108,"lineHeightPx":16,"x":72,"y":260,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"m/44'/60'/0'/0","fontWeight":400,"maxWidth":101,"lineHeightPx":16,"x":72,"y":276,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]}]},
+		"VOTING:GALAXY": {"key":"VOTING:GALAXY","absoluteBoundingBox":{"x":2323,"y":2063,"width":612,"height":792},"renderables":[{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Custody","fontWeight":400,"maxWidth":50,"lineHeightPx":14.0625,"x":72,"y":542,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Abilities","fontWeight":400,"maxWidth":48,"lineHeightPx":14.0625,"x":72,"y":406,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Use your master ticket to verify your identity, change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains.","fontWeight":400,"maxWidth":455,"lineHeightPx":16,"x":72,"y":430,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"The master ticket and ownership seed can be used to recover transfer proxy, spawn proxy, delegate, and management seeds.","fontWeight":400,"maxWidth":455,"lineHeightPx":16,"x":72,"y":470,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"This requires a Medium Friction Custody. Securely store this document. \nIf you lose your voting seed, you can recover it from your master ticket or ownership seed.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":566,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Support","fontWeight":400,"maxWidth":50,"lineHeightPx":14.0625,"x":72,"y":630,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"If you need support or information, please visit the following resources.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":654,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"sigil","size":64,"name":">sigil:@sigil","data":"@sigil","x":72,"y":24},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"VOTING PROXY","fontWeight":400,"maxWidth":87,"lineHeightPx":16,"x":152,"y":54,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":16,"text":"@patp","fontWeight":500,"maxWidth":48,"lineHeightPx":24,"x":152,"y":24,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"elite trim craft rookie time place open\nfire read gravity piece fringe lesson moment critic leader tortoise wreck crack water security ecology color","fontWeight":400,"maxWidth":305,"lineHeightPx":16,"x":72,"y":180,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"VOTING SEED","fontWeight":600,"maxWidth":80,"lineHeightPx":16,"x":72,"y":164,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"VOTING ADDRESS","fontWeight":600,"maxWidth":101,"lineHeightPx":16,"x":72,"y":308,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"0x12d d3f0 230c e681c b4fc 7d3b 288b 9b81 d962 ab27","fontWeight":400,"maxWidth":380,"lineHeightPx":16,"x":72,"y":324,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"qr","size":52.99998474121094,"name":">qr:@voting.ethereum.qr","data":"@voting.ethereum.qr","x":487,"y":308},{"type":"rect","cornerRadius":4,"x":152,"y":73,"width":54,"height":18,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"text","fontFamily":"Inter","fontSize":8,"text":"Medium","fontWeight":500,"maxWidth":31,"lineHeightPx":9.375,"x":164,"y":77,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1}}]},{"type":"hr","x":72,"y":378,"width":468,"height":1,"strokeColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.6941176652908325,"g":0.6980392336845398,"b":0.7019608020782471,"a":1}}],"strokeWeight":2},{"type":"rect","cornerRadius":4,"x":130,"y":541,"width":54,"height":18,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"text","fontFamily":"Inter","fontSize":8,"text":"Medium","fontWeight":500,"maxWidth":31,"lineHeightPx":9.375,"x":142,"y":545,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> Azimuth Documentation","fontWeight":400,"maxWidth":224,"lineHeightPx":13.82699966430664,"x":72,"y":694,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"urbit.org/docs/azimuth","fontWeight":400,"maxWidth":305,"lineHeightPx":13.82699966430664,"x":235,"y":694,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> How to use Bridge","fontWeight":400,"maxWidth":224,"lineHeightPx":11.71875,"x":72,"y":678,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"urbit.org/docs/bridge","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":235,"y":678,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> Use Bridge","fontWeight":400,"maxWidth":224,"lineHeightPx":11.71875,"x":72,"y":510,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"bridge.urbit.org","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":235,"y":510,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"DERIVATION PATH","fontWeight":600,"maxWidth":108,"lineHeightPx":16,"x":72,"y":260,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"m/44'/60'/0'/0","fontWeight":400,"maxWidth":101,"lineHeightPx":16,"x":72,"y":276,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Created on","fontWeight":400,"maxWidth":65,"lineHeightPx":14.0625,"x":72,"y":729,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"2019/7/24 5:31 PM","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":753,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]}]},
+		"SPAWN:STAR": {"key":"SPAWN:STAR","absoluteBoundingBox":{"x":975,"y":3183,"width":612,"height":792},"renderables":[{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Custody","fontWeight":400,"maxWidth":50,"lineHeightPx":14.0625,"x":96,"y":543,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Abilities","fontWeight":400,"maxWidth":48,"lineHeightPx":14.0625,"x":96,"y":407,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"This spawn proxy seed could be used to spawn stars under your galaxy without your permission.","fontWeight":400,"maxWidth":455,"lineHeightPx":16,"x":96,"y":431,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"The spawn seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.","fontWeight":400,"maxWidth":455,"lineHeightPx":16,"x":96,"y":471,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"This requires a High Friction Custody. Securely store this document. \nIf you lose your spawn seed, you can recover it from your master ticket or ownership seed.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":96,"y":567,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Support","fontWeight":400,"maxWidth":50,"lineHeightPx":14.0625,"x":96,"y":631,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"If you need support or information, please visit the following resources.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":96,"y":655,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"sigil","size":64,"name":">sigil:@sigil","data":"@sigil","x":96,"y":25},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"SPAWN PROXY","fontWeight":400,"maxWidth":80,"lineHeightPx":16,"x":176,"y":55,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":16,"text":"@patp","fontWeight":500,"maxWidth":48,"lineHeightPx":24,"x":176,"y":25,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"elite trim craft rookie time place open\nfire read gravity piece fringe lesson moment critic leader tortoise wreck crack water security ecology color","fontWeight":400,"maxWidth":305,"lineHeightPx":16,"x":96,"y":181,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"SPAWN SEED","fontWeight":600,"maxWidth":72,"lineHeightPx":16,"x":96,"y":165,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"SPAWN ADDRESS","fontWeight":600,"maxWidth":94,"lineHeightPx":16,"x":96,"y":310,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"0x12d d3f0 230c e681c b4fc 7d3b 288b 9b81 d962 ab27","fontWeight":400,"maxWidth":380,"lineHeightPx":16,"x":96,"y":326,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"qr","size":52.99998474121094,"name":">qr:@spawn.ethereum.qr","data":"@spawn.ethereum.qr","x":511,"y":310},{"type":"rect","cornerRadius":4,"x":176,"y":75,"width":54,"height":18,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"text","fontFamily":"Inter","fontSize":8,"text":"Very High","fontWeight":500,"maxWidth":38,"lineHeightPx":9.375,"x":184,"y":79,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1}}]},{"type":"rect","cornerRadius":4,"x":154,"y":542,"width":54,"height":18,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"text","fontFamily":"Inter","fontSize":8,"text":"High","fontWeight":500,"maxWidth":18,"lineHeightPx":9.375,"x":172,"y":546,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":1,"g":1,"b":1,"a":1}}]},{"type":"hr","x":96,"y":379,"width":468,"height":1,"strokeColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.6941176652908325,"g":0.6980392336845398,"b":0.7019608020782471,"a":1}}],"strokeWeight":2},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> Azimuth Documentation","fontWeight":400,"maxWidth":224,"lineHeightPx":13.82699966430664,"x":96,"y":695,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":12,"text":"Created on","fontWeight":400,"maxWidth":65,"lineHeightPx":14.0625,"x":96,"y":726,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"2019/7/24 5:31 PM","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":96,"y":750,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"urbit.org/docs/azimuth","fontWeight":400,"maxWidth":305,"lineHeightPx":13.82699966430664,"x":259,"y":695,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> How to use Bridge","fontWeight":400,"maxWidth":224,"lineHeightPx":11.71875,"x":96,"y":679,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"urbit.org/docs/bridge","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":259,"y":679,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Inter","fontSize":10,"text":"-> Use Bridge","fontWeight":400,"maxWidth":224,"lineHeightPx":11.71875,"x":96,"y":511,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":10,"text":"bridge.urbit.org","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":259,"y":511,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"DERIVATION PATH","fontWeight":600,"maxWidth":108,"lineHeightPx":16,"x":96,"y":261,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]},{"type":"text","fontFamily":"Source Code Pro","fontSize":12,"text":"m/44'/60'/0'/0","fontWeight":400,"maxWidth":101,"lineHeightPx":16,"x":96,"y":278,"fontColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}]}]}
+	};
+
+	const constants = {
+	  meta: {
+	    walletVersion: 'UP8',
+	    moreInformation: 'urbit.org/docs/pki',
+	  }
+	};
+
 	var dist = createCommonjsModule(function (module, exports) {
 	(function(f){{module.exports=f();}})(function(){return (function(){function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof commonjsRequire=="function"&&commonjsRequire;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r);}return n[o].exports}var i=typeof commonjsRequire=="function"&&commonjsRequire;for(var o=0;o<r.length;o++)s(r[o]);return s}return e})()({1:[function(require,module,exports){
 	(function (module, exports) {
@@ -60737,7 +60761,6 @@ lyrtesmudnytbyrsenwegfyrmurtelreptegpecnelnevfes\
 
 	const PAT = /(\@)/g;
 
-
 	const initCanvas = (canvas, size, ratio) => {
 	  const { x, y } = size;
 	  let ctx = canvas.getContext('2d');
@@ -60761,7 +60784,6 @@ lyrtesmudnytbyrsenwegfyrmurtelreptegpecnelnevfes\
 
 	  return canvas;
 	};
-
 
 
 	const dataURItoBlob = dataURI => {
@@ -60830,25 +60852,33 @@ lyrtesmudnytbyrsenwegfyrmurtelreptegpecnelnevfes\
 	  );
 	};
 
-
+	// const isArrayBuffer = (arr) => {
+	//   if (arr instanceof ArrayBuffer)
+	//     return true
+	//   return false
+	// }
 
 	const retrieve = (obj, path) => {
 	  const result = lodash_3(obj, path);
-	  if (lodash_25(result)) {
+	  // const result = getObjectByPath(obj,path,def)
+	  if (result === undefined) {
 	   throw new Error(`Tried to get item at path ${path} from object ${JSON.stringify(obj, null, 2)} and failed.`)
 	  } else {
 	    return result;
 	  }};
 
+
+	const getTicketSize = (seedName, classOf) => {
+	  // if (seedName === 'masterTicket' && classOf === 'galaxy') return '384 Bits'
+	  if (seedName === 'masterTicketShard' && classOf === 'galaxy') return '256 Bits'
+	  if (seedName === 'masterTicket' && classOf === 'planet') return '64 Bits'
+	  return '128 Bits'
+	};
+
 	const getCustodyLevel = (classOf) => {
 	  if (classOf === 'planet') return 'Low'
 	  if (classOf === 'star') return 'Medium'
 	  return 'High'
-	};
-
-	const getTitleByClass = (classOf) => {
-	  if (classOf === 'planet') return 'Mangement Proxy'
-	  return 'Spawn Proxy'
 	};
 
 	// transform the wallet from keygen-js into a shape more easily iterable
@@ -60873,21 +60903,19 @@ lyrtesmudnytbyrsenwegfyrmurtelreptegpecnelnevfes\
 
 	const insert = (fc, r) => {
 	  const { type, text, data } = r;
-	  if (type === 'TEXT') {
+	  if (type === 'text') {
 	    // if this is a template variable, replace the @key with actual data
 	    if (text.match(PAT)) return {...r, text: retrieve(fc, text.replace(PAT, '')) };
 	    return r;
-	  }  if (type === 'TEMPLATE_TEXT') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
-	  if (type === 'ADDR_COMPACT') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
-	  if (type === 'ADDR_LONG') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
-	  if (type === 'ADDR_SPLIT_FOUR') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
-	  if (type === 'WRAP_ADDR_SPLIT_FOUR') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
-	  if (type === 'PATQ') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
-	  if (type === 'SIGIL') return {...r, img: retrieve(fc, data.replace(PAT, '')) };
-	  if (type === 'QR') return {...r, img: retrieve(fc, data.replace(PAT, '')) };
-	  if (type === 'HR') return {...r, data: r };
-	  if (type === 'RECT') return {...r, data: r };
-	  if (type === 'IMG') return {...r, img: retrieve(fc, data.replace(PAT, '')) };
+	  }  if (type === 'template_text') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
+	  if (type === 'addr_split_four') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
+	  if (type === 'wrap_addr_split_four') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
+	  if (type === 'patq') return {...r, text: retrieve(fc, text.replace(PAT, '')) };
+	  if (type === 'sigil') return {...r, img: retrieve(fc, data.replace(PAT, '')) };
+	  if (type === 'qr') return {...r, img: retrieve(fc, data.replace(PAT, '')) };
+	  if (type === 'hr') return {...r, data: r };
+	  if (type === 'rect') return {...r, data: r };
+	  if (type === 'img') return {...r, img: retrieve(fc, data.replace(PAT, '')) };
 	  // return {...r, img: r };
 	  throw new Error(`insert() cannot find a renderables for type: ${type}`);
 	};
@@ -60930,15 +60958,30 @@ lyrtesmudnytbyrsenwegfyrmurtelreptegpecnelnevfes\
 
 	const drawSigil = ({ ctx, img, x, y, size, type }) => ctx.drawImage(img, x, y, size, size);
 
+	const drawImg = ({ ctx, img, x, y, width, height, type }) => ctx.drawImage(img, x, y+3, height, width);
+
+	// figma colors are r, g, b values 0 - 1
+	const toRgba = (figmaColor) => {
+
+	  if(figmaColor.length != 0) {
+	    return `rgba(${figmaColor[0].color.r*255}, ${figmaColor[0].color.g*255}, ${figmaColor[0].color.b*255}, ${figmaColor[0].color.a})`;
+	  }
+
+	  return "";
+	};
+
 
 	const drawWrappedText = ({ctx, fontWeight, fontSize, lineHeightPx, maxWidth, x, y, fontFamily, text, type, fontColor }) => {
 	  // const offset = fontFamily === 'Source Code Pro' ? 1 : 0
+
 	  ctx.font = `${fontWeight} ${fontSize}px "${fontFamily}"`;
+	  ctx.fillStyle = toRgba(fontColor);
+
 	  wordWrap(ctx, text, x, y+lineHeightPx, lineHeightPx, maxWidth);
 	};
 
 
-	const drawEthereumAddressCompact = ({ ctx, fontWeight, fontSize, lineHeightPx, x, y, fontFamily, text }) => {
+	const drawEthereumAddressCompact = ({ ctx, fontWeight, fontSize, lineHeightPx, x, y, fontFamily, text, fontColor }) => {
 
 
 	  const _0x = text.substring(0, 2);
@@ -60959,6 +61002,7 @@ lyrtesmudnytbyrsenwegfyrmurtelreptegpecnelnevfes\
 	  const row2r = row2c.join(' ');
 
 	  ctx.font = `${fontWeight} ${fontSize}px ${fontFamily}`;
+	  // ctx.fillStyle = toRgba(fontColor);
 
 	  ctx.fillText(row1r, x, y + lineHeightPx);
 	  ctx.fillText(row2r, x + (ctx.measureText('0x ').width), y + (lineHeightPx * 2));
@@ -60966,7 +61010,8 @@ lyrtesmudnytbyrsenwegfyrmurtelreptegpecnelnevfes\
 
 
 
-	const drawEthereumAddressLong = ({ ctx, fontWeight, fontSize, lineHeightPx, x, y, fontFamily, text }) => {
+	const drawEthereumAddressLong = ({ ctx, fontWeight, fontSize, lineHeightPx, x, y, fontFamily, text, fontColor }) => {
+
 	  const _0x = text.substring(0, 2);
 	  const rest = text.substring(2);
 
@@ -60978,12 +61023,13 @@ lyrtesmudnytbyrsenwegfyrmurtelreptegpecnelnevfes\
 	  const newText = [_0x, ...chunks].join(' ');
 
 	  ctx.font = `${fontWeight} ${fontSize}px ${fontFamily}`;
+	  // ctx.fillStyle = toRgba(fontColor);
 
 	  ctx.fillText(newText, x, y+lineHeightPx);
-
 	};
 
 	const drawPatQ = ({ ctx, fontSize, lineHeightPx, x, y, fontFamily, text }) => {
+
 	  ctx.font = `${fontSize}px ${fontFamily}`;
 
 	  const OFFSET = 1.2;
@@ -61004,27 +61050,13 @@ lyrtesmudnytbyrsenwegfyrmurtelreptegpecnelnevfes\
 	  }
 
 	};
-	// const resetCanvasTools = (ctx){
-	//   ctx.lineWidth = 0;
-	//   ctx.strokeStyle = ;
-	// }
-	//
 
 	const drawRect = ({ ctx, cornerRadius, dashes, x, y, width, height, fillColor, strokeColor, strokeWeight}) => {
 
-	  var rgbFill, rgbStroke;
+	  var rgbStroke = toRgba(strokeColor);
+	  var rgbFill = toRgba(fillColor);
 
 	  ctx.setLineDash([]);
-
-	  if (fillColor.length != 0) {
-	    rgbFill = `rgba(${fillColor[0].color.r}, ${fillColor[0].color.g}, ${fillColor[0].color.b}, ${fillColor[0].color.a})`;
-	    // console.log(rgbFill);
-	  }
-	  if (strokeColor.length != 0) {
-	    rgbStroke = `rgba(${strokeColor[0].color.r}, ${strokeColor[0].color.g}, ${strokeColor[0].color.b}, ${strokeColor[0].color.a})`;
-	  }
-
-
 
 	  if (dashes != null){
 	    ctx.setLineDash(dashes);
@@ -61049,13 +61081,12 @@ lyrtesmudnytbyrsenwegfyrmurtelreptegpecnelnevfes\
 	    ctx.quadraticCurveTo(x, y, x + cornerRadius, y);
 	    ctx.closePath();
 	  }
-	  if(rgbStroke != undefined) {
+	  if(rgbStroke != "") {
 	    ctx.strokeStyle = rgbStroke;
 	    ctx.lineWidth = strokeWeight;
 	    ctx.stroke();
 	  }
-	  else if(rgbFill != undefined){
-	    console.log(rgbFill);
+	  else if(rgbFill != ""){
 	    ctx.fillStyle = rgbFill;
 	    ctx.fill();
 	  }
@@ -61064,17 +61095,17 @@ lyrtesmudnytbyrsenwegfyrmurtelreptegpecnelnevfes\
 
 
 	const drawLine = ({ ctx, dashes, x, y, width, height, strokeColor, strokeWeight}) => {
-	  var rgbStroke;
 
-	  if (strokeColor.length != 0) {
-	      rgbStroke = `rgba(${strokeColor[0].color.r}, ${strokeColor[0].color.g}, ${strokeColor[0].color.b}, ${strokeColor[0].color.a})`;
-	    }
-
-	  ctx.strokeStyle = strokeColor;
+	  ctx.strokeStyle = toRgba(strokeColor);
 
 	  // canvas renders strokes twice as big
 	  ctx.lineWidth = (strokeWeight != null && strokeWeight > 0) ? strokeWeight/2 : 1;
-	  // ctx.setLineDash(dashes);
+
+	  ctx.setLineDash([]);
+
+	  if(dashes != null){
+	    ctx.setLineDash(dashes);
+	  }
 
 	  var x2 = x + width;
 	  var y2 = y + height;
@@ -61084,115 +61115,6 @@ lyrtesmudnytbyrsenwegfyrmurtelreptegpecnelnevfes\
 	  ctx.lineTo(x2,y2);
 	  ctx.stroke();
 
-	};
-
-	const _jsxFileName = "/Users/chris/Documents/PaperCollateralRenderer/src/js/PageRenderer.js";
-
-	class PageRenderer extends react_1 {
-	  constructor(props) {
-	    super(props);PageRenderer.prototype.__init.call(this);PageRenderer.prototype.__init2.call(this);
-	    this.pcr_ref = react.createRef();
-	    this.canvas = null;
-	    this.state = {
-	    };
-	  }
-
-
-	  __init() {this.componentDidMount = () => {
-	    this.canvas = initCanvas(this.pcr_ref, { x: 612, y: 792 }, 4);
-	    const results = this.props.pages.map(page => this.drawLayout(page));
-	    this.props.callback(results);
-	  };}
-
-	  __init2() {this.drawLayout = (page) => {
-
-	    const ctx = this.canvas.getContext('2d');
-
-	    ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
-	    ctx.fillStyle="#FFF";
-	    ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-
-	    ctx.fillStyle="#000";
-
-	    page.renderables.forEach(r => {
-	      if (r.type === 'QR') return drawQR({ ctx, ...r });
-	      if (r.type === 'PATQ') return drawPatQ({ ctx, ...r });
-	      // if (r.type === 'IMG') return drawImg({ ctx, ...r });
-	      if (r.type === 'ADDR_SPLIT_FOUR') return drawEthereumAddressLong({ ctx, ...r });
-	      if (r.type === 'WRAP_ADDR_SPLIT_FOUR') return drawEthereumAddressLong({ ctx, ...r });
-	      if (r.type === 'ADDR_COMPACT') return drawEthereumAddressCompact({ ctx, ...r });
-	      if (r.type === 'SIGIL') return drawSigil({ ctx, ...r });
-	      if (r.type === 'RECT') {
-	        
-	        return drawRect({ ctx, ...r });
-	      }
-	      if (r.type === 'HR') return drawLine({ ctx, ...r });
-	      if (r.type === 'TEMPLATE_TEXT') {
-	        return drawWrappedText({ ctx, ...r });
-	      }
-	      if (r.type === 'TEXT') {
-	        return drawWrappedText({ ctx, ...r });
-	      }
-	    });
-
-	    const pageWithImageData = {
-	      ship: page.ship,
-	      collateralType: page.collateralType,
-	      bin: page.bin,
-	      page: lodash_3(page, 'page', '1'),
-	      pageTitle: page.pageTitle,
-	      png: dataURItoBlob(this.canvas.toDataURL("image/png")),
-	      durl: this.canvas.toDataURL("image/png"),
-	    };
-	    return pageWithImageData;
-	  };}
-
-
-	  render() {
-	    return (
-	      react.createElement('div', { className: 'flex flex-column', __self: this, __source: {fileName: _jsxFileName, lineNumber: 87}}
-	        , react.createElement('canvas', { ref:  pcr_ref => this.pcr_ref = pcr_ref , __self: this, __source: {fileName: _jsxFileName, lineNumber: 88}} )
-	      )
-
-	    );
-	  };
-	}
-
-	var MULTIPASS = {"key":"MULTIPASS","absoluteBoundingBox":{"x":-633,"y":-396,"width":612,"height":792},"renderables":[{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"Custody","fontWeight":400,"maxWidth":48,"lineHeightPx":14.0625,"x":137,"y":551},{"type":"RECT","cornerRadius":4,"x":194,"y":551,"width":35,"height":16,"fillColor":[],"strokeColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}],"strokeWeight":1},{"type":"TEXT","fontFamily":"Inter","fontSize":8,"text":"Public","fontWeight":500,"maxWidth":24,"lineHeightPx":9.375,"x":200,"y":554},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"Abilities","fontWeight":400,"maxWidth":45,"lineHeightPx":14.0625,"x":137,"y":454},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"azimuth.network/faq","fontWeight":400,"maxWidth":92,"lineHeightPx":11.061599731445312,"x":138,"y":750},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"urbit.org/docs/azimuth","fontWeight":400,"maxWidth":106,"lineHeightPx":9.375,"x":246,"y":750},{"type":"TEMPLATE_TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"@patp_azimuth","fontWeight":400,"maxWidth":140,"lineHeightPx":9.375,"x":138,"y":731},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"Use your ownership address to check your spawn, management, delegate or transfer addresses. Thus, you can also check your total address space.","fontWeight":400,"maxWidth":329,"lineHeightPx":16,"x":137,"y":483},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"This is public information. Store this in a place you won’t forget.","fontWeight":400,"maxWidth":344,"lineHeightPx":16,"x":138,"y":580},{"type":"RECT","cornerRadius":8,"dashes":[4,4],"x":137,"y":182,"width":328.7197265625,"height":200,"fillColor":[],"strokeColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}],"strokeWeight":1},{"type":"TEMPLATE_TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"@meta.createdOn","fontWeight":400,"maxWidth":48,"lineHeightPx":9.375,"x":230,"y":245},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"birth time","fontWeight":400,"maxWidth":48,"lineHeightPx":12,"x":230,"y":231},{"type":"WRAP_ADDR_SPLIT_FOUR","fontWeight":400,"fontFamily":"Source Code Pro","fontSize":12,"text":"@ownership.ethereum.address","maxWidth":217,"lineHeightPx":16,"x":168,"y":331},{"type":"TEMPLATE_TEXT","fontFamily":"Source Code Pro","fontSize":16,"text":"@patp","fontWeight":500,"maxWidth":125,"lineHeightPx":24,"x":230,"y":204},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"MASTER TICKET","fontWeight":400,"maxWidth":63,"lineHeightPx":16,"x":168,"y":266},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"OWNERSHIP ADDRESS","fontWeight":400,"maxWidth":82,"lineHeightPx":16,"x":168,"y":312},{"type":"TEXT","fontFamily":"Arial","fontSize":12,"text":"░▒░▒░▒░▒░▒▒░▒░░░░░░▒░░░▒░░░▒","fontWeight":400,"maxWidth":239,"lineHeightPx":24,"x":168,"y":282},{"type":"QR","size":32,"name":">qr:@ownership.ethereum.qr","data":"@ownership.ethereum.qr","x":411,"y":334},{"type":"TEMPLATE_TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"@meta.createdOn","fontWeight":400,"maxWidth":48,"lineHeightPx":9.375,"x":138,"y":713},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"UP8","fontWeight":400,"maxWidth":15,"lineHeightPx":9.375,"x":198,"y":713},{"type":"TEXT","fontFamily":"Inter","fontSize":16,"text":"Multipass","fontWeight":700,"maxWidth":78,"lineHeightPx":18.75,"x":267,"y":81}]};
-	var Layout = {"key":"Layout","absoluteBoundingBox":{"x":266,"y":-347,"width":468.000244140625,"height":694},"renderables":[{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"Custody","fontWeight":400,"maxWidth":50,"lineHeightPx":14.0625,"x":0,"y":518},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"Abilities","fontWeight":400,"maxWidth":48,"lineHeightPx":14.0625,"x":0,"y":382},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"Use your master ticket to verify your identity, change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains.","fontWeight":400,"maxWidth":455,"lineHeightPx":16,"x":0,"y":406},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"The master ticket and ownership seed can be used to recover transfer proxy, spawn proxy, delegate, and management seeds.","fontWeight":400,"maxWidth":455,"lineHeightPx":16,"x":0,"y":446},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"This requires a Medium Friction Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":0,"y":542},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"Support","fontWeight":400,"maxWidth":50,"lineHeightPx":14.0625,"x":0,"y":606},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"If you need support or information, please visit the following resources.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":0,"y":630},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"Master Ticket","fontWeight":400,"maxWidth":94,"lineHeightPx":16,"x":80,"y":30},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"elite trim craft rookie time place open\nfire read gravity piece fringe lesson moment critic leader tortoise wreck crack water security ecology color","fontWeight":400,"maxWidth":380,"lineHeightPx":16,"x":0,"y":206},{"type":"TEMPLATE_TEXT","fontFamily":"Source Code Pro","fontSize":16,"text":"@patp","fontWeight":500,"maxWidth":48,"lineHeightPx":24,"x":80,"y":0},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"MASTER TICKET","fontWeight":600,"maxWidth":94,"lineHeightPx":16,"x":0,"y":126},{"type":"PATQ","fontFamily":"Source Code Pro","fontSize":12,"fontWeight":400,"text":"@ticket.data","maxWidth":195,"lineHeightPx":16,"x":32,"y":150},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"OWNERSHIP SEED","fontWeight":600,"maxWidth":101,"lineHeightPx":16,"x":0,"y":182},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"OWNERSHIP ADDRESS","fontWeight":600,"maxWidth":123,"lineHeightPx":16,"x":0,"y":286},{"type":"ADDR_SPLIT_FOUR","fontWeight":400,"fontFamily":"Source Code Pro","fontSize":12,"text":"@ownership.ethereum.address","maxWidth":380,"lineHeightPx":16,"x":0,"y":310},{"type":"QR","size":52.99998474121094,"name":">qr:@ownership.ethereum.qr","data":"@ownership.ethereum.qr","x":415,"y":282},{"type":"RECT","cornerRadius":4,"x":80,"y":54,"width":47,"height":16,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"TEMPLATE_TEXT","fontFamily":"Inter","fontSize":8,"text":"@meta.custodyLevel","fontWeight":500,"maxWidth":31,"lineHeightPx":9.375,"x":88,"y":57},{"type":"HR","x":0,"y":354,"width":468,"height":1,"strokeColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.6941176652908325,"g":0.6980392336845398,"b":0.7019608020782471,"a":1}}],"strokeWeight":2},{"type":"RECT","cornerRadius":4,"x":59,"y":518,"width":47,"height":16,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"TEMPLATE_TEXT","fontFamily":"Inter","fontSize":8,"text":"@meta.custodyLevel","fontWeight":500,"maxWidth":31,"lineHeightPx":9.375,"x":67,"y":521},{"type":"TEXT","fontFamily":"Inter","fontSize":10,"text":"-> Azimuth Documentation","fontWeight":400,"maxWidth":224,"lineHeightPx":13.82699966430664,"x":0,"y":670},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":10,"text":"urbit.org/docs/azimuth","fontWeight":400,"maxWidth":305,"lineHeightPx":13.82699966430664,"x":163,"y":670},{"type":"TEXT","fontFamily":"Inter","fontSize":10,"text":"-> How to use Bridge","fontWeight":400,"maxWidth":224,"lineHeightPx":11.71875,"x":0,"y":654},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":10,"text":"urbit.org/docs/bridge","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":163,"y":654},{"type":"TEXT","fontFamily":"Inter","fontSize":10,"text":"-> Use Bridge","fontWeight":400,"maxWidth":224,"lineHeightPx":11.71875,"x":0,"y":486},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":10,"text":"bridge.urbit.org","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":163,"y":486}]};
-	var UP8 = {"key":"UP8","absoluteBoundingBox":{"x":-116,"y":1341,"width":31,"height":16},"renderables":[]};
-	var Planet = {"key":"Planet","absoluteBoundingBox":{"x":-612,"y":3240,"width":374,"height":160},"renderables":[]};
-	var Star = {"key":"Star","absoluteBoundingBox":{"x":-482,"y":2140,"width":244,"height":160},"renderables":[]};
-	var Galaxy = {"key":"Galaxy","absoluteBoundingBox":{"x":-641,"y":1020,"width":403,"height":160},"renderables":[]};
-	var templates = {
-		MULTIPASS: MULTIPASS,
-		Layout: Layout,
-		UP8: UP8,
-		Planet: Planet,
-		Star: Star,
-		Galaxy: Galaxy,
-		"MASTER_TICKET:PLANET": {"key":"MASTER_TICKET:PLANET","absoluteBoundingBox":{"x":19,"y":2924,"width":612,"height":792},"renderables":[{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"Custody","fontWeight":400,"maxWidth":48,"lineHeightPx":14.0625,"x":68,"y":597},{"type":"RECT","cornerRadius":4,"x":124,"y":597,"width":47,"height":16,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"TEMPLATE_TEXT","fontFamily":"Inter","fontSize":8,"text":"@meta.custodyLevel","fontWeight":500,"maxWidth":31,"lineHeightPx":9.375,"x":132,"y":600},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"Abilities","fontWeight":400,"maxWidth":45,"lineHeightPx":14.0625,"x":68,"y":468},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"urbit.org/docs/azimuth","fontWeight":400,"maxWidth":106,"lineHeightPx":11.061599731445312,"x":69,"y":731},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"urbit.org/docs/bridge","fontWeight":400,"maxWidth":101,"lineHeightPx":9.375,"x":154,"y":750},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"bridge.urbit.org","fontWeight":400,"maxWidth":77,"lineHeightPx":9.375,"x":69,"y":750},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"Use your master ticket to verify your identity, change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains.","fontWeight":400,"maxWidth":459,"lineHeightPx":16,"x":68,"y":497},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"The master ticket and ownership seed can be used to recover transfer proxy, spawn proxy, delegate, and management seeds.","fontWeight":400,"maxWidth":459,"lineHeightPx":16,"x":68,"y":541},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"This requires a Medium Friction Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":69,"y":626},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"Master Ticket","fontWeight":400,"maxWidth":94,"lineHeightPx":16,"x":160,"y":78},{"type":"TEMPLATE_TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"@ownership.seed.mnemonic","fontWeight":400,"maxWidth":380,"lineHeightPx":16,"x":72,"y":247},{"type":"TEMPLATE_TEXT","fontFamily":"Source Code Pro","fontSize":16,"text":"@patp","fontWeight":500,"maxWidth":48,"lineHeightPx":24,"x":160,"y":46},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"MASTER TICKET","fontWeight":400,"maxWidth":94,"lineHeightPx":16,"x":72,"y":167},{"type":"PATQ","fontFamily":"Source Code Pro","fontSize":12,"fontWeight":400,"text":"@ticket.data","maxWidth":195,"lineHeightPx":16,"x":104,"y":191},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"OWNERSHIP SEED","fontWeight":400,"maxWidth":101,"lineHeightPx":16,"x":72,"y":223},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"OWNERSHIP ADDRESS","fontWeight":400,"maxWidth":123,"lineHeightPx":16,"x":72,"y":327},{"type":"ADDR_SPLIT_FOUR","fontWeight":400,"fontFamily":"Source Code Pro","fontSize":12,"text":"@ownership.ethereum.address","maxWidth":193,"lineHeightPx":16,"x":72,"y":352},{"type":"QR","size":44.99997329711914,"name":">qr:@ownership.ethereum.qr","data":"@ownership.ethereum.qr","x":486,"y":352},{"type":"TEMPLATE_TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"@meta.createdOn","fontWeight":400,"maxWidth":48,"lineHeightPx":9.375,"x":69,"y":713},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"UP8","fontWeight":400,"maxWidth":15,"lineHeightPx":9.375,"x":129,"y":713},{"type":"RECT","cornerRadius":4,"x":160,"y":100,"width":47,"height":16,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"TEMPLATE_TEXT","fontFamily":"Inter","fontSize":8,"text":"@meta.custodyLevel","fontWeight":500,"maxWidth":31,"lineHeightPx":9.375,"x":168,"y":103},{"type":"HR","x":0,"y":443,"width":619,"height":1,"strokeColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.6941176652908325,"g":0.6980392336845398,"b":0.7019608020782471,"a":1}}],"strokeWeight":2}]},
-		"MASTER_TICKET:STAR": {"key":"MASTER_TICKET:STAR","absoluteBoundingBox":{"x":19,"y":1824,"width":612,"height":792},"renderables":[{"type":"RECT","cornerRadius":4,"x":124,"y":597,"width":47,"height":16,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"TEMPLATE_TEXT","fontFamily":"Inter","fontSize":8,"text":"@meta.custodyLevel","fontWeight":500,"maxWidth":31,"lineHeightPx":9.375,"x":132,"y":600},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"Custody","fontWeight":400,"maxWidth":48,"lineHeightPx":14.0625,"x":68,"y":597},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"Abilities","fontWeight":400,"maxWidth":45,"lineHeightPx":14.0625,"x":68,"y":468},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"urbit.org/docs/azimuth","fontWeight":400,"maxWidth":106,"lineHeightPx":11.061599731445312,"x":69,"y":731},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"urbit.org/docs/bridge","fontWeight":400,"maxWidth":101,"lineHeightPx":9.375,"x":154,"y":750},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"bridge.urbit.org","fontWeight":400,"maxWidth":77,"lineHeightPx":9.375,"x":69,"y":750},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"Use your master ticket to verify your identity, change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains.","fontWeight":400,"maxWidth":459,"lineHeightPx":16,"x":68,"y":497},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"The master ticket and ownership seed can be used to recover transfer proxy, spawn proxy, delegate, and management seeds.","fontWeight":400,"maxWidth":459,"lineHeightPx":16,"x":68,"y":541},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"This requires a Medium Friction Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":69,"y":626},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"Master Ticket","fontWeight":400,"maxWidth":94,"lineHeightPx":16,"x":160,"y":78},{"type":"TEMPLATE_TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"@ownership.seed.mnemonic","fontWeight":400,"maxWidth":380,"lineHeightPx":16,"x":72,"y":247},{"type":"TEMPLATE_TEXT","fontFamily":"Source Code Pro","fontSize":16,"text":"@patp","fontWeight":500,"maxWidth":48,"lineHeightPx":24,"x":160,"y":46},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"MASTER TICKET","fontWeight":400,"maxWidth":94,"lineHeightPx":16,"x":72,"y":167},{"type":"PATQ","fontFamily":"Source Code Pro","fontSize":12,"fontWeight":400,"text":"@ticket.data","maxWidth":195,"lineHeightPx":16,"x":104,"y":191},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"OWNERSHIP SEED","fontWeight":400,"maxWidth":101,"lineHeightPx":16,"x":72,"y":223},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"OWNERSHIP ADDRESS","fontWeight":400,"maxWidth":123,"lineHeightPx":16,"x":72,"y":327},{"type":"ADDR_SPLIT_FOUR","fontWeight":400,"fontFamily":"Source Code Pro","fontSize":12,"text":"@ownership.ethereum.address","maxWidth":193,"lineHeightPx":16,"x":72,"y":352},{"type":"QR","size":44.99997329711914,"name":">qr:@ownership.ethereum.qr","data":"@ownership.ethereum.qr","x":486,"y":352},{"type":"TEMPLATE_TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"@meta.createdOn","fontWeight":400,"maxWidth":44,"lineHeightPx":9.375,"x":69,"y":713},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"UP8","fontWeight":400,"maxWidth":15,"lineHeightPx":9.375,"x":129,"y":713},{"type":"RECT","cornerRadius":4,"x":160,"y":100,"width":47,"height":16,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"TEMPLATE_TEXT","fontFamily":"Inter","fontSize":8,"text":"@meta.custodyLevel","fontWeight":400,"maxWidth":32,"lineHeightPx":9.375,"x":168,"y":103},{"type":"HR","x":0,"y":443,"width":619,"height":1,"strokeColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.6941176652908325,"g":0.6980392336845398,"b":0.7019608020782471,"a":1}}],"strokeWeight":2}]},
-		"MASTER_TICKET:GALAXY": {"key":"MASTER_TICKET:GALAXY","absoluteBoundingBox":{"x":19,"y":704,"width":612,"height":792},"renderables":[{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"Custody","fontWeight":400,"maxWidth":50,"lineHeightPx":14.0625,"x":72,"y":560},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"Abilities","fontWeight":400,"maxWidth":48,"lineHeightPx":14.0625,"x":72,"y":424},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"Use your master ticket to verify your identity, change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains.","fontWeight":400,"maxWidth":455,"lineHeightPx":16,"x":72,"y":448},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"The master ticket and ownership seed can be used to recover transfer proxy, spawn proxy, delegate, and management seeds.","fontWeight":400,"maxWidth":455,"lineHeightPx":16,"x":72,"y":488},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"This requires a Medium Friction Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":584},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"Support","fontWeight":400,"maxWidth":50,"lineHeightPx":14.0625,"x":72,"y":648},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"If you need support or information, please visit the following resources.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":72,"y":672},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"Master Ticket","fontWeight":400,"maxWidth":94,"lineHeightPx":16,"x":152,"y":72},{"type":"TEMPLATE_TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"@ownership.seed.mnemonic","fontWeight":400,"maxWidth":380,"lineHeightPx":16,"x":72,"y":248},{"type":"TEMPLATE_TEXT","fontFamily":"Source Code Pro","fontSize":16,"text":"@patp","fontWeight":500,"maxWidth":48,"lineHeightPx":24,"x":152,"y":42},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"MASTER TICKET","fontWeight":600,"maxWidth":94,"lineHeightPx":16,"x":72,"y":168},{"type":"PATQ","fontFamily":"Source Code Pro","fontSize":12,"fontWeight":400,"text":"@ticket.data","maxWidth":195,"lineHeightPx":16,"x":104,"y":192},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"OWNERSHIP SEED","fontWeight":600,"maxWidth":101,"lineHeightPx":16,"x":72,"y":224},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"OWNERSHIP ADDRESS","fontWeight":600,"maxWidth":123,"lineHeightPx":16,"x":72,"y":328},{"type":"ADDR_SPLIT_FOUR","fontWeight":400,"fontFamily":"Source Code Pro","fontSize":12,"text":"@ownership.ethereum.address","maxWidth":380,"lineHeightPx":16,"x":72,"y":352},{"type":"QR","size":52.99998474121094,"name":">qr:@ownership.ethereum.qr","data":"@ownership.ethereum.qr","x":487,"y":324},{"type":"RECT","cornerRadius":4,"x":152,"y":96,"width":47,"height":16,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"TEMPLATE_TEXT","fontFamily":"Inter","fontSize":8,"text":"@meta.custodyLevel","fontWeight":500,"maxWidth":31,"lineHeightPx":9.375,"x":160,"y":99},{"type":"HR","x":72,"y":396,"width":468,"height":1,"strokeColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.6941176652908325,"g":0.6980392336845398,"b":0.7019608020782471,"a":1}}],"strokeWeight":2},{"type":"RECT","cornerRadius":4,"x":131,"y":560,"width":47,"height":16,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.3019607961177826,"g":0.3019607961177826,"b":0.3019607961177826,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"TEMPLATE_TEXT","fontFamily":"Inter","fontSize":8,"text":"@meta.custodyLevel","fontWeight":500,"maxWidth":31,"lineHeightPx":9.375,"x":139,"y":563},{"type":"TEXT","fontFamily":"Inter","fontSize":10,"text":"-> Azimuth Documentation","fontWeight":400,"maxWidth":224,"lineHeightPx":11.71875,"x":72,"y":712},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":10,"text":"urbit.org/docs/azimuth","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":235,"y":712},{"type":"TEXT","fontFamily":"Inter","fontSize":10,"text":"-> How to use Bridge","fontWeight":400,"maxWidth":224,"lineHeightPx":11.71875,"x":72,"y":696},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":10,"text":"urbit.org/docs/bridge","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":235,"y":696},{"type":"TEXT","fontFamily":"Inter","fontSize":10,"text":"-> Use Bridge","fontWeight":400,"maxWidth":224,"lineHeightPx":11.71875,"x":72,"y":528},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":10,"text":"bridge.urbit.org","fontWeight":400,"maxWidth":305,"lineHeightPx":11.71875,"x":235,"y":528}]},
-		"Wallet Revision": {"key":"Wallet Revision","absoluteBoundingBox":{"x":-238,"y":1341,"width":144,"height":16},"renderables":[]},
-		"Created on 2019.18.16": {"key":"Created on 2019.18.16","absoluteBoundingBox":{"x":-238,"y":1316,"width":244,"height":16},"renderables":[]},
-		"MANAGEMENT:PLANET": {"key":"MANAGEMENT:PLANET","absoluteBoundingBox":{"x":671,"y":2924,"width":612,"height":792},"renderables":[{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"Custody","fontWeight":400,"maxWidth":48,"lineHeightPx":14.0625,"x":68,"y":597},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"Abilities","fontWeight":400,"maxWidth":45,"lineHeightPx":14.0625,"x":68,"y":468},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"urbit.org/docs/azimuth","fontWeight":400,"maxWidth":106,"lineHeightPx":11.061599731445312,"x":69,"y":731},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"urbit.org/docs/bridge","fontWeight":400,"maxWidth":101,"lineHeightPx":9.375,"x":154,"y":750},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"bridge.urbit.org","fontWeight":400,"maxWidth":77,"lineHeightPx":9.375,"x":69,"y":750},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"Use your master ticket to verify your identity, change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains.","fontWeight":400,"maxWidth":459,"lineHeightPx":16,"x":68,"y":497},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"The master ticket and ownership seed can be used to recover transfer proxy, spawn proxy, delegate, and management seeds.","fontWeight":400,"maxWidth":459,"lineHeightPx":16,"x":68,"y":541},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"This requires a Medium Friction Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":69,"y":626},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"MANAGEMENT PROXY","fontWeight":400,"maxWidth":116,"lineHeightPx":16,"x":160,"y":78},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"elite trim craft rookie time place open\nfire read gravity piece fringe lesson moment critic leader tortoise wreck crack water security ecology color","fontWeight":400,"maxWidth":380,"lineHeightPx":16,"x":72,"y":191},{"type":"TEMPLATE_TEXT","fontFamily":"Source Code Pro","fontSize":16,"text":"@patp","fontWeight":500,"maxWidth":48,"lineHeightPx":24,"x":160,"y":46},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"MANAGEMENT PROXY SEED","fontWeight":400,"maxWidth":152,"lineHeightPx":16,"x":72,"y":167},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"DERIVATION PATH","fontWeight":400,"maxWidth":108,"lineHeightPx":16,"x":72,"y":271},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"OWNERSHIP ADDRESS","fontWeight":400,"maxWidth":123,"lineHeightPx":16,"x":72,"y":327},{"type":"ADDR_SPLIT_FOUR","fontWeight":400,"fontFamily":"Source Code Pro","fontSize":12,"text":"@management.ethereum.address","maxWidth":196,"lineHeightPx":16,"x":72,"y":351},{"type":"QR","size":44.99997329711914,"name":">qr:@management.ethereum.qr","data":"@management.ethereum.qr","x":486,"y":351},{"type":"TEMPLATE_TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"@meta.createdOn","fontWeight":400,"maxWidth":48,"lineHeightPx":9.375,"x":69,"y":713},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"UP8","fontWeight":400,"maxWidth":15,"lineHeightPx":9.375,"x":129,"y":713},{"type":"RECT","cornerRadius":4,"x":160,"y":100,"width":35,"height":16,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"TEMPLATE_TEXT","fontFamily":"Inter","fontSize":8,"text":"@meta.custodyLevel","fontWeight":500,"maxWidth":18,"lineHeightPx":9.375,"x":169,"y":103},{"type":"RECT","cornerRadius":4,"x":125,"y":597,"width":35,"height":16,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0,"g":0,"b":0,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"TEMPLATE_TEXT","fontFamily":"Inter","fontSize":8,"text":"@meta.custodyLevel","fontWeight":500,"maxWidth":18,"lineHeightPx":9.375,"x":134,"y":600},{"type":"TEMPLATE_TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"@management.seed.derivationPath","fontWeight":400,"maxWidth":101,"lineHeightPx":16,"x":72,"y":295},{"type":"HR","x":0,"y":443,"width":619,"height":1,"strokeColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.6941176652908325,"g":0.6980392336845398,"b":0.7019608020782471,"a":1}}],"strokeWeight":2}]},
-		"Multipass (Public)": {"key":"Multipass (Public)","absoluteBoundingBox":{"x":-1947,"y":-124,"width":1069,"height":160},"renderables":[]},
-		"MANAGEMENT:STAR": {"key":"MANAGEMENT:STAR","absoluteBoundingBox":{"x":671,"y":1824,"width":612,"height":792},"renderables":[{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"Custody","fontWeight":400,"maxWidth":48,"lineHeightPx":14.0625,"x":68,"y":597},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"Abilities","fontWeight":400,"maxWidth":45,"lineHeightPx":14.0625,"x":68,"y":468},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"urbit.org/docs/azimuth","fontWeight":400,"maxWidth":106,"lineHeightPx":11.061599731445312,"x":69,"y":731},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"urbit.org/docs/bridge","fontWeight":400,"maxWidth":101,"lineHeightPx":9.375,"x":154,"y":750},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"bridge.urbit.org","fontWeight":400,"maxWidth":77,"lineHeightPx":9.375,"x":69,"y":750},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"Use your master ticket to verify your identity, change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains.","fontWeight":400,"maxWidth":459,"lineHeightPx":16,"x":68,"y":497},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"The master ticket and ownership seed can be used to recover transfer proxy, spawn proxy, delegate, and management seeds.","fontWeight":400,"maxWidth":459,"lineHeightPx":16,"x":68,"y":541},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"This requires a Medium Friction Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":69,"y":626},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"SPAWN PROXY","fontWeight":400,"maxWidth":80,"lineHeightPx":16,"x":160,"y":78},{"type":"TEMPLATE_TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"@management.seed.mnemonic","fontWeight":400,"maxWidth":380,"lineHeightPx":16,"x":72,"y":191},{"type":"TEMPLATE_TEXT","fontFamily":"Source Code Pro","fontSize":16,"text":"@patp","fontWeight":500,"maxWidth":48,"lineHeightPx":24,"x":160,"y":46},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"SPAWN PROXY SEED","fontWeight":400,"maxWidth":116,"lineHeightPx":16,"x":72,"y":167},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"DERIVATION PATH","fontWeight":400,"maxWidth":108,"lineHeightPx":16,"x":72,"y":271},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"OWNERSHIP ADDRESS","fontWeight":400,"maxWidth":123,"lineHeightPx":16,"x":72,"y":327},{"type":"ADDR_SPLIT_FOUR","fontWeight":400,"fontFamily":"Source Code Pro","fontSize":12,"text":"@management.ethereum.address","maxWidth":196,"lineHeightPx":16,"x":72,"y":351},{"type":"QR","size":44.99997329711914,"name":">qr:@management.ethereum.qr","data":"@management.ethereum.qr","x":482,"y":351},{"type":"TEMPLATE_TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"@meta.createdOn","fontWeight":400,"maxWidth":48,"lineHeightPx":9.375,"x":69,"y":713},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"UP8","fontWeight":400,"maxWidth":15,"lineHeightPx":9.375,"x":129,"y":713},{"type":"RECT","cornerRadius":4,"x":160,"y":99,"width":35,"height":16,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.49803921580314636,"g":0.49803921580314636,"b":0.49803921580314636,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"TEMPLATE_TEXT","fontFamily":"Inter","fontSize":8,"text":"@meta.custodyLevel","fontWeight":500,"maxWidth":16,"lineHeightPx":9.375,"x":170,"y":102},{"type":"RECT","cornerRadius":4,"x":125,"y":597,"width":35,"height":16,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.49803921580314636,"g":0.49803921580314636,"b":0.49803921580314636,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"TEMPLATE_TEXT","fontFamily":"Inter","fontSize":8,"text":"@meta.custodyLevel","fontWeight":500,"maxWidth":16,"lineHeightPx":9.375,"x":135,"y":600},{"type":"TEMPLATE_TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"@management.seed.derivationPath","fontWeight":400,"maxWidth":101,"lineHeightPx":16,"x":72,"y":295},{"type":"HR","x":0,"y":443,"width":619,"height":1,"strokeColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.6941176652908325,"g":0.6980392336845398,"b":0.7019608020782471,"a":1}}],"strokeWeight":2}]},
-		"MANAGEMENT:GALAXY": {"key":"MANAGEMENT:GALAXY","absoluteBoundingBox":{"x":671,"y":704,"width":612,"height":792},"renderables":[{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"Custody","fontWeight":400,"maxWidth":48,"lineHeightPx":14.0625,"x":68,"y":597},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"Abilities","fontWeight":400,"maxWidth":45,"lineHeightPx":14.0625,"x":68,"y":468},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"urbit.org/docs/azimuth","fontWeight":400,"maxWidth":106,"lineHeightPx":11.061599731445312,"x":69,"y":731},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"urbit.org/docs/bridge","fontWeight":400,"maxWidth":101,"lineHeightPx":9.375,"x":154,"y":750},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"bridge.urbit.org","fontWeight":400,"maxWidth":77,"lineHeightPx":9.375,"x":69,"y":750},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"Use your master ticket to verify your identity, change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains.","fontWeight":400,"maxWidth":459,"lineHeightPx":16,"x":68,"y":497},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"The master ticket and ownership seed can be used to recover transfer proxy, spawn proxy, delegate, and management seeds.","fontWeight":400,"maxWidth":459,"lineHeightPx":16,"x":68,"y":541},{"type":"TEXT","fontFamily":"Inter","fontSize":12,"text":"This requires a Medium Friction Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.","fontWeight":400,"maxWidth":448,"lineHeightPx":16,"x":69,"y":626},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"SPAWN PROXY","fontWeight":400,"maxWidth":80,"lineHeightPx":16,"x":160,"y":78},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"elite trim craft rookie time place open\nfire read gravity piece fringe lesson moment critic leader tortoise wreck crack water security ecology color","fontWeight":400,"maxWidth":380,"lineHeightPx":16,"x":72,"y":189},{"type":"TEMPLATE_TEXT","fontFamily":"Source Code Pro","fontSize":16,"text":"@patp","fontWeight":500,"maxWidth":48,"lineHeightPx":24,"x":160,"y":46},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"SPAWN PROXY SEED","fontWeight":400,"maxWidth":116,"lineHeightPx":16,"x":72,"y":167},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"DERIVATION PATH","fontWeight":400,"maxWidth":108,"lineHeightPx":16,"x":72,"y":271},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"OWNERSHIP ADDRESS","fontWeight":400,"maxWidth":123,"lineHeightPx":16,"x":72,"y":327},{"type":"ADDR_SPLIT_FOUR","fontWeight":400,"fontFamily":"Source Code Pro","fontSize":12,"text":"@management.ethereum.address","maxWidth":196,"lineHeightPx":16,"x":72,"y":351},{"type":"QR","size":44.99997329711914,"name":">qr:@management.ethereum.qr","data":"@management.ethereum.qr","x":486,"y":351},{"type":"TEMPLATE_TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"@meta.createdOn","fontWeight":400,"maxWidth":48,"lineHeightPx":9.375,"x":69,"y":713},{"type":"TEXT","fontFamily":"Source Code Pro","fontSize":8,"text":"UP8","fontWeight":400,"maxWidth":15,"lineHeightPx":9.375,"x":129,"y":713},{"type":"RECT","cornerRadius":4,"x":160,"y":100,"width":35,"height":16,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.49803921580314636,"g":0.49803921580314636,"b":0.49803921580314636,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"TEMPLATE_TEXT","fontFamily":"Inter","fontSize":8,"text":"@meta.custodyLevel","fontWeight":500,"maxWidth":16,"lineHeightPx":9.375,"x":170,"y":103},{"type":"RECT","cornerRadius":4,"x":125,"y":597,"width":35,"height":16,"fillColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.49803921580314636,"g":0.49803921580314636,"b":0.49803921580314636,"a":1}}],"strokeColor":[],"strokeWeight":1},{"type":"TEMPLATE_TEXT","fontFamily":"Inter","fontSize":8,"text":"@meta.custodyLevel","fontWeight":500,"maxWidth":16,"lineHeightPx":9.375,"x":135,"y":600},{"type":"TEMPLATE_TEXT","fontFamily":"Source Code Pro","fontSize":12,"text":"@management.seed.derivationPath","fontWeight":400,"maxWidth":101,"lineHeightPx":16,"x":72,"y":295},{"type":"HR","x":0,"y":443,"width":619,"height":1,"strokeColor":[{"blendMode":"NORMAL","type":"SOLID","color":{"r":0.6941176652908325,"g":0.6980392336845398,"b":0.7019608020782471,"a":1}}],"strokeWeight":2}]}
-	};
-
-	const constants = {
-	  meta: {
-	    walletVersion: 'UP8',
-	    moreInformation: 'urbit.org/docs/pki',
-	  }
-	};
-
-	const toUpperCase = str => {
-	  if (!lodash_20(str)) ;
-	  return str.toUpperCase();
 	};
 
 	var global$1 = (typeof global !== "undefined" ? global :
@@ -73710,6 +73632,54 @@ lyrtesmudnytbyrsenwegfyrmurtelreptegpecnelnevfes\
 
 	Object.defineProperty(exports, '__esModule', { value: true });
 
+	function _defineProperty(obj, key, value) {
+	  if (key in obj) {
+	    Object.defineProperty(obj, key, {
+	      value: value,
+	      enumerable: true,
+	      configurable: true,
+	      writable: true
+	    });
+	  } else {
+	    obj[key] = value;
+	  }
+
+	  return obj;
+	}
+
+	function ownKeys(object, enumerableOnly) {
+	  var keys = Object.keys(object);
+
+	  if (Object.getOwnPropertySymbols) {
+	    keys.push.apply(keys, Object.getOwnPropertySymbols(object));
+	  }
+
+	  if (enumerableOnly) keys = keys.filter(function (sym) {
+	    return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+	  });
+	  return keys;
+	}
+
+	function _objectSpread2(target) {
+	  for (var i = 1; i < arguments.length; i++) {
+	    var source = arguments[i] != null ? arguments[i] : {};
+
+	    if (i % 2) {
+	      ownKeys(source, true).forEach(function (key) {
+	        _defineProperty(target, key, source[key]);
+	      });
+	    } else if (Object.getOwnPropertyDescriptors) {
+	      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+	    } else {
+	      ownKeys(source).forEach(function (key) {
+	        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+	      });
+	    }
+	  }
+
+	  return target;
+	}
+
 	/**
 	 * @ignore
 	 * @type {RegExp}
@@ -74260,7 +74230,7 @@ lyrtesmudnytbyrsenwegfyrmurtelreptegpecnelnevfes\
 
 	const stringRenderer = ast => {
 	  if (ast.attributes.style !== undefined) delete ast.attributes.style;
-	  return stringify(ast)
+	  return stringify(ast);
 	};
 
 	/*
@@ -76312,31 +76282,20 @@ lyrtesmudnytbyrsenwegfyrmurtelreptegpecnelnevfes\
 	});
 	var react_1 = react.Component;
 
-	// const toCamelCase = (s) => s
-	//   .toLowerCase()
-	//   .replace(/-(.)/g, (m, g) => g.toUpperCase());
+	const toCamelCase = s => s.replace(/-([a-z])/g, g => g[1].toUpperCase());
 
-	const toCamelCase = s => s
-	  .replace(/-([a-z])/g, g => g[1].toUpperCase());
-
-
-	const attributesToProps = (o) => Object
-	  .entries(o)
-	  .reduce((a, [k, v]) => {
-	    if (k === 'class') k = 'className';
-	    return {...a, [`${toCamelCase(k)}`]: v}
+	const attributesToProps = o => Object.entries(o).reduce((a, [k, v]) => {
+	  if (k === 'class') k = 'className';
+	  return _objectSpread2({}, a, {
+	    [`${toCamelCase(k)}`]: v
+	  });
 	}, {});
-
 
 	const reactRenderer = (node, i) => {
 	  if (i === undefined) i = '';
-	  return (
-	    react.createElement(
-	      node.name,
-	       {...attributesToProps(node.attributes), key:`${i}`},
-	      node.children.map((child, j) => reactRenderer(child, `${i}:${j}`))
-	    )
-	  )
+	  return react.createElement(node.name, _objectSpread2({}, attributesToProps(node.attributes), {
+	    key: `${i}`
+	  }), node.children.map((child, j) => reactRenderer(child, `${i}:${j}`)));
 	};
 
 	const bac = {"name":"g","value":"","attributes":{},"children":[{"name":"g","value":"","attributes":{"fill":"none"},"children":[{"name":"path","value":"","attributes":{"d":"M0 0C0 70.6925 57.3075 128 128 128V0H0Z","fill":1},"children":[]},{"name":"line","value":"","attributes":{"x1":"-0.0029152","x2":"127.983","y2":"127.986","stroke":0,"stroke-linecap":"square","fill":"none"},"children":[]},{"name":"circle","value":"","attributes":{"cx":"64","cy":"64","r":"11.5","fill":1,"stroke":1},"children":[]},{"name":"circle","value":"","attributes":{"cx":"64","cy":"64","r":"9","fill":0,"stroke":0,"stroke-width":"2"},"children":[]},{"name":"circle","value":"","attributes":{"cx":"16","cy":"112","r":"11.5","fill":0,"stroke":0},"children":[]},{"name":"circle","value":"","attributes":{"cx":"16","cy":"112","r":"9","fill":1,"stroke":1,"stroke-width":"2"},"children":[]}]}]};
@@ -77368,23 +77327,15 @@ lyrtesmudnytbyrsenwegfyrmurtelreptegpecnelnevfes\
 	const MARGIN_RATIO = 0.1;
 	const BG = 0;
 
-	class ConfigError extends Error {}
+	class ConfigError extends Error {} // apply color preference
 
 
-	// apply color preference
 	const paint = (node, colors, strokeWidth) => {
-
-	  if (
-	    node.attributes.fill !== undefined
-	    && node.attributes.fill !== 'none'
-	  ) {
+	  if (node.attributes.fill !== undefined && node.attributes.fill !== 'none') {
 	    node.attributes.fill = colors[node.attributes.fill];
 	  }
 
-	  if (
-	    node.attributes.stroke !== undefined
-	    && node.attributes.stroke !== 'none'
-	  ) {
+	  if (node.attributes.stroke !== undefined && node.attributes.stroke !== 'none') {
 	    node.attributes.stroke = colors[node.attributes.stroke];
 	    node.attributes['stroke-width'] = strokeWidth + 'px';
 	    node.attributes['stroke-linecap'] = 'square';
@@ -77394,161 +77345,109 @@ lyrtesmudnytbyrsenwegfyrmurtelreptegpecnelnevfes\
 	    name: node.name,
 	    attributes: node.attributes,
 	    children: node.children.map(n => paint(n, colors, strokeWidth))
-	  }
-	};
+	  };
+	}; // perform transformations
 
 
-	// perform transformations
 	const transformations = (symbols, grid, scaleFactor) => {
 	  return symbols.map((symbol, i) => {
 	    const x = grid[i][0];
 	    const y = grid[i][1];
+	    let affineMatrix; // If the symbols has no transformations, generate affine matrix
 
-	    let affineMatrix;
-	    // If the symbols has no transformations, generate affine matrix
 	    if (symbol.attributes === undefined) {
-	     affineMatrix = transform(
-	        translate(x, y),
-	        scale(scaleFactor, scaleFactor),
-	      );
+	      affineMatrix = transform(translate(x, y), scale(scaleFactor, scaleFactor));
 	      symbol.attributes = {};
 	    } else {
-	      let existingTransformation = symbol.attributes.transform === undefined
-	        ? identity()
-	        : fromString(symbol.attributes.transform);
-
-	      affineMatrix = transform(
-	        translate(x, y),
-	        scale(scaleFactor, scaleFactor),
-	        existingTransformation
-	      );
+	      let existingTransformation = symbol.attributes.transform === undefined ? identity() : fromString(symbol.attributes.transform);
+	      affineMatrix = transform(translate(x, y), scale(scaleFactor, scaleFactor), existingTransformation);
 	    }
 
 	    symbol.attributes.transform = toSVG(affineMatrix);
-	    return symbol
-	  })
-	};
-
-
-	//==============================================================================
+	    return symbol;
+	  });
+	}; //==============================================================================
 	// Main function
 	//
+
+
 	const sigil = params => {
-
 	  // Set default values from config
-	  const colors = params.colors === undefined
-	    ? ['#000', '#fff']
-	    : params.colors;
+	  const colors = params.colors === undefined ? ['#000', '#fff'] : params.colors;
+	  params.attributes = params.attributes === undefined ? {} : params.attributes;
+	  params.style = params.style === undefined ? {} : params.style;
+	  params.class = params.class === undefined ? '' : params.class;
+	  const sw = params.size / 128 + 0.33; // get phonemes as array from patp input
 
-	  params.attributes = params.attributes === undefined
-	    ? {}
-	    : params.attributes;
-
-	  params.class = params.class === undefined
-	    ? ''
-	    : params.class;
-
-	  const sw = ((params.size / 128) + 0.33);
-
-	  // get phonemes as array from patp input
-	  let phonemes = params.patp.replace(/[\^~-]/g,'').match(/.{1,3}/g);
+	  let phonemes = params.patp.replace(/[\^~-]/g, '').match(/.{1,3}/g);
 
 	  if (params.iconMode === true) {
 	    phonemes = [phonemes[0]];
 	  }
 
-
 	  if (phonemes.length !== 1 && phonemes.length !== 2 && phonemes.length !== 4) {
-	    throw new ConfigError(`sigil.js cannot render @p of length ${phonemes.length}. Only lengths of 1 (galaxy), 2 (star), and 4 (planet) are supported at this time.`)
-	  }
+	    throw new ConfigError(`sigil.js cannot render @p of length ${phonemes.length}. Only lengths of 1 (galaxy), 2 (star), and 4 (planet) are supported at this time.`);
+	  } // get symbols and clone them.
 
 
-	  // get symbols and clone them.
 	  const symbols = phonemes.map(phoneme => {
 	    const ast = index[phoneme];
+
 	    if (ast !== undefined) {
-	      return JSON.parse(JSON.stringify(ast))
+	      return JSON.parse(JSON.stringify(ast));
 	    } else {
-	      throw new ConfigError(`@p is invalid. Recieved '${params.patp}'`)
+	      throw new ConfigError(`@p is invalid. Recieved '${params.patp}'`);
 	    }
 	  });
-
-
 	  const ss = params.size;
-	  const ma = params.margin = params.margin === undefined
-	      ? symbols.length === 1
-	      ? MARGIN_RATIO * (ss / 2)
-	      : MARGIN_RATIO * ss
-	      : params.margin;
-
-
-
-
-	  const sz = (ss - (ma*2) - sw) / 2;
-
+	  const ma = params.margin = params.margin === undefined ? MARGIN_RATIO * ss : params.margin;
+	  const sz = (ss - ma * 2 - sw) / 2;
 	  const grids = {
-	    4:[
-	      [ma, ma],
-	      [ma + sz + sw, ma],
-	      [ma, ma + sz + sw],
-	      [ma + sz + sw, ma + sz + sw]
-	    ],
-	    2:[
-	      [ma, ss - (ss/2) - (sz/2)],
-	      [ma + sz + sw, ss - (ss/2) - (sz/2)],
-	    ],
-	    1:[
-	      [ss - (ss/2) - (sz/2), ss - (ss/2) - (sz/2)]
-	    ]
+	    4: [[ma, ma], [ma + sz + sw, ma], [ma, ma + sz + sw], [ma + sz + sw, ma + sz + sw]],
+	    2: [[ma, ss - ss / 2 - sz / 2], [ma + sz + sw, ss - ss / 2 - sz / 2]],
+	    1: [[ss - ss / 2 - sz / 2, ss - ss / 2 - sz / 2]]
 	  };
-
 	  const grid = grids[symbols.length];
+	  const scaleFactor = sz / UNIT; // apply the transformations
 
-	  const scaleFactor = sz / UNIT;
-
-
-	  // apply the transformations
 	  const arranged = transformations(symbols, grid, scaleFactor);
 
-	  // wrap symbols in SVG tag and add background rect. Also merge in values from the params including class and attributes.
+	  if (params.style.width === undefined) {
+	    params.style.width = `${params.size}px`;
+	  }
+
+	  if (params.style.height === undefined) {
+	    params.style.height = `${params.size}px`;
+	  } // wrap symbols in SVG tag and add background rect. Also merge in values from the params including class and attributes.
+
+
 	  const wrapped = {
 	    name: 'svg',
-	    attributes: {
-	      style: {
-	        width: `${params.size}px`,
-	        height: `${params.size}px`,
+	    attributes: _objectSpread2({
+	      style: _objectSpread2({
 	        // prevent bottom margin on svg tag
 	        display: 'block'
-	      },
+	      }, params.style),
 	      viewBox: `0 0 ${params.size} ${params.size}`,
 	      version: '1.1',
 	      xmlns: "http://www.w3.org/2000/svg",
-	      class: params.class,
-	      ...params.attributes,
-	    },
-	    children: [
-	      {
-	        name: 'rect',
-	        attributes: {
-	          fill: BG,
-	          width: `${params.size}px`,
-	          height: `${params.size}px`,
-	          x: 0,
-	          y: 0,
-	        },
-	        children: [],
+	      class: params.class
+	    }, params.attributes),
+	    children: [{
+	      name: 'rect',
+	      attributes: {
+	        fill: BG,
+	        width: `${params.size}px`,
+	        height: `${params.size}px`,
+	        x: 0,
+	        y: 0
 	      },
-	      ...arranged,
-	    ],
+	      children: []
+	    }, ...arranged] // apply color
+
 	  };
-
-	  // apply color
 	  const resultAST = paint(wrapped, colors, sw / scaleFactor);
-
-	  return params.renderer === undefined
-	    ? resultASTs
-	    : params.renderer(resultAST)
-
+	  return params.renderer === undefined ? resultASTs : params.renderer(resultAST);
 	};
 
 	exports.reactRenderer = reactRenderer;
@@ -77602,11 +77501,12 @@ lyrtesmudnytbyrsenwegfyrmurtelreptegpecnelnevfes\
 	const BIP32_DERIVATION_PATH = `m/44'/60'/0'/0/0`;
 	const AT_LOAD_QR_SIZE = 100;
 	const AT_LOAD_SIGIL_SIZE = 100;
-	const IMG_DATA = `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE4AAAAlCAYAAADsmd+EAAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAANRSURBVHgB7Zo9dtpAEMcHQR9yA6VzF3ICixvgMpXxCey0fnyIjz64Swd06eKUqSJOEN0gSpd0zgGA/EesFCHtygILmZX5vaeHnnYlpL9mNLOzW6E9ub29bVSr1UalUjGxveJj6/X6L7YHbG6tVnNt236gklLZpXOn07EgVh+7DWz1DKc4q9VqjnMciOhRicgk3GAwuIYANmUTS8UMljkoi4CpwuEhG3C7j9i1KB88vIDBaDSakeZUVQ1sZRBtht0zyo86rK5lWVZ9sVh8I42RWhxE6wvXPCT3EPFK1wBSix8oSDSmBYvm3wvSkC1XRdRswQo+UXGc6eq2oavCZUxYwHfsmlQwy+WyOR6PHdIII9iBaJyfmY/0d9DvjtMKyhHkeVO8uKekOoXjW5ywtp/KThuhJsGH/LH+h8QwjHa/35/L2kT6NMX9XqjyRZw7xU+b0vFwjWZazulbnLA21QXe2RuOIvohcM0QwC7jx4Vo/Knxf/nlxvtkFI0xVdcICFy1JWkLVHfpyGDxer1e+LIjogXunnjwHUQj1TWiVDiS4hvzJdGwybFmspOe01Wj4B5suO7XmGhR/JcvPKpN+yF1W/yvYUk6OyrRjgk8kJ0iGsMv+AftL1pwjYTlGfjzt5S8oTvSh/oT27OQEI+/cWa8Fzrc04k4W+LJhPPohIpQPEPSWNqqbU6weFOZcFpl8M8AR9krFs6LNZi6DX8KJExNWLhEgotBd4tOxNnK5wz46694D+R2l3QiSiIJ5gRYlnpY3W73hk4w8pEDDjgkiaQQtM9jQHrZKKskflRVjBTqnLPA8tr0MnFFZciTNQZzDhNs15RMReqwvCkqC+cIGPMDV2k9Oh48UdNT5rTR0rmdUpcLL0j/o3CekddDje0NaUR0loutjqOpmdLfpAPMSfB3hDQjHDmwWbJ5UsFDLli5lssitqYHHcf53Ww2/1C+bqiERRsOhzZpSGIJBMRzIR4nxQcVT2fRGOWiG1HH55K6SfnzAcFgQhqjXHQj3Jbr+a/x7csrEebc6D1E+0yak2l9HKzPEqmKRfvhibVxMyoJO63I5MonpuZuIMI5bVZlpsHRmVckzcWwrlTsJFwUUbPzl7RiVBGOODDVyIK5OqYYu/APFvmht/y+ZBwAAAAASUVORK5CYII=`;
+	const KEY_ICON_DATA = `data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE4AAAAlCAYAAADsmd+EAAAACXBIWXMAACE4AAAhOAFFljFgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAANRSURBVHgB7Zo9dtpAEMcHQR9yA6VzF3ICixvgMpXxCey0fnyIjz64Swd06eKUqSJOEN0gSpd0zgGA/EesFCHtygILmZX5vaeHnnYlpL9mNLOzW6E9ub29bVSr1UalUjGxveJj6/X6L7YHbG6tVnNt236gklLZpXOn07EgVh+7DWz1DKc4q9VqjnMciOhRicgk3GAwuIYANmUTS8UMljkoi4CpwuEhG3C7j9i1KB88vIDBaDSakeZUVQ1sZRBtht0zyo86rK5lWVZ9sVh8I42RWhxE6wvXPCT3EPFK1wBSix8oSDSmBYvm3wvSkC1XRdRswQo+UXGc6eq2oavCZUxYwHfsmlQwy+WyOR6PHdIII9iBaJyfmY/0d9DvjtMKyhHkeVO8uKekOoXjW5ywtp/KThuhJsGH/LH+h8QwjHa/35/L2kT6NMX9XqjyRZw7xU+b0vFwjWZazulbnLA21QXe2RuOIvohcM0QwC7jx4Vo/Knxf/nlxvtkFI0xVdcICFy1JWkLVHfpyGDxer1e+LIjogXunnjwHUQj1TWiVDiS4hvzJdGwybFmspOe01Wj4B5suO7XmGhR/JcvPKpN+yF1W/yvYUk6OyrRjgk8kJ0iGsMv+AftL1pwjYTlGfjzt5S8oTvSh/oT27OQEI+/cWa8Fzrc04k4W+LJhPPohIpQPEPSWNqqbU6weFOZcFpl8M8AR9krFs6LNZi6DX8KJExNWLhEgotBd4tOxNnK5wz46694D+R2l3QiSiIJ5gRYlnpY3W73hk4w8pEDDjgkiaQQtM9jQHrZKKskflRVjBTqnLPA8tr0MnFFZciTNQZzDhNs15RMReqwvCkqC+cIGPMDV2k9Oh48UdNT5rTR0rmdUpcLL0j/o3CekddDje0NaUR0loutjqOpmdLfpAPMSfB3hDQjHDmwWbJ5UsFDLli5lssitqYHHcf53Ww2/1C+bqiERRsOhzZpSGIJBMRzIR4nxQcVT2fRGOWiG1HH55K6SfnzAcFgQhqjXHQj3Jbr+a/x7csrEebc6D1E+0yak2l9HKzPEqmKRfvhibVxMyoJO63I5MonpuZuIMI5bVZlpsHRmVckzcWwrlTsJFwUUbPzl7RiVBGOODDVyIK5OqYYu/APFvmht/y+ZBwAAAAASUVORK5CYII=`;
+
 
 	const MasterTicketComponent = async (wallet, constants, templates) => {
 	  const KEY = 'masterTicket';
-	  const TEMPLATE = `MASTER_TICKET:${toUpperCase(retrieve(wallet, 'ship.class'))}`;
+	  const TEMPLATE = `MASTER_TICKET:${retrieve(wallet, 'ship.class').toUpperCase()}`;
 	  const props = {
 	    heading: 'Master Ticket',
 	    patp: retrieve(wallet, 'ship.patp'),
@@ -77627,8 +77527,101 @@ lyrtesmudnytbyrsenwegfyrmurtelreptegpecnelnevfes\
 	    meta: {
 	      createdOn: shortDateToDa(new Date()),
 	      custodyLevel: getCustodyLevel(retrieve(wallet,'ship.class')),
+	      custodyText: `This requires a ${getCustodyLevel(retrieve(wallet,'ship.class'))} Friction Custody. Securely store this document. If you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.`,
 	    },
-	    keyIcon: await loadImg(IMG_DATA, img => img),
+	    keyIcon: await loadImg(KEY_ICON_DATA, img => img),
+	    _classOf: retrieve(wallet, 'ship.class'),
+	    _type: KEY,
+	    _bin: assignBin(retrieve(wallet, 'ship.class'), KEY)
+	  };
+	  const page = [{
+	    renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
+	    collateralType: props._type,
+	    bin: assignBin(props._classOf, props._type),
+	    pageTitle: `${props.patp} Master Ticket`,
+	    ship: props.patp,
+	  }];
+	  return page;
+	};
+
+
+
+
+	const MasterTicketShardsComponent = async (wallet, constants, templates) => {
+	  const pages = await wallet.shards.map(async (shard, index) => {
+	    const KEY = `masterTicketShard_${index + 1}`;
+	    const TEMPLATE = `MASTER_TICKET_SHARD:${retrieve(wallet, 'ship.class').toUpperCase()}`;
+	    const props = {
+	      patp: retrieve(wallet, 'ship.patp'),
+	      sigil: await loadSigil(AT_LOAD_SIGIL_SIZE, retrieve(wallet, 'ship.patp')),
+	      shard: {
+	        number: `MASTER SHARD ${index + 1}`,
+	        data: shard,
+	        size: `OF ${wallet.shards.length}`,
+	        ticketSize: getTicketSize('masterTicketShard', retrieve(wallet, 'ship.class')),
+	      },
+	      ownership: {
+	        ethereum: {
+	          address: retrieve(wallet, 'ownership.keys.address'),
+	          qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'ownership.keys.address')),
+	        },
+	        seed: {
+	          mnemonic: retrieve(wallet, 'management.seed'),
+	          derivationPath: BIP32_DERIVATION_PATH,
+	        },
+	      },
+	      meta: {
+	        custodyLevel: getCustodyLevel(retrieve(wallet,'ship.class')),
+	        custodyText: `This requires a ${getCustodyLevel(retrieve(wallet,'ship.class'))} Friction Custody. Securely store this document. If you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.`,
+	      },
+	      _classOf: retrieve(wallet, 'ship.class'),
+	      _type: 'masterTicketShard',
+	      _bin: assignBin(retrieve(wallet, 'ship.class'), KEY)
+	    };
+
+	    const page = {
+	      renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
+	      bin: assignBin(props._classOf, props._type),
+	      collateralType: props._type,
+	      pageTitle: `${props.patp} Master Ticket Shard ${index + 1} of ${wallet.shards.length}`,
+	      ship: props.patp,
+	    };
+
+	    return page;
+
+	  });
+
+	  return Promise.all(pages).then(results => results);
+	};
+
+
+
+
+
+
+	const ManagementComponent = async (wallet, constants, templates) => {
+	  const KEY = 'masterTicket';
+	  const TEMPLATE = `MANAGEMENT:${retrieve(wallet, 'ship.class').toUpperCase()}`;
+	  const props = {
+	    patp: retrieve(wallet, 'ship.patp'),
+	    sigil: await loadSigil(AT_LOAD_SIGIL_SIZE, retrieve(wallet, 'ship.patp')),
+	    ticket: {
+	      data: retrieve(wallet, 'ticket'),
+	    },
+	    management: {
+	      seed: {
+	        mnemonic: retrieve(wallet, 'management.seed'),
+	        derivationPath: BIP32_DERIVATION_PATH,
+	      },
+	      ethereum: {
+	        address: retrieve(wallet, 'ownership.keys.address'),
+	        qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'ownership.keys.address')),
+	      },
+	    },
+	    meta: {
+	      custodyLevel: getCustodyLevel(retrieve(wallet,'ship.class')),
+	      custodyText: `This requires a ${getCustodyLevel(retrieve(wallet,'ship.class'))} Friction Custody. Securely store this document. If you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.`,
+	    },
 	    _classOf: retrieve(wallet, 'ship.class'),
 	    _type: KEY,
 	    _bin: assignBin(retrieve(wallet, 'ship.class'), KEY)
@@ -77644,44 +77637,8 @@ lyrtesmudnytbyrsenwegfyrmurtelreptegpecnelnevfes\
 	  return page;
 	};
 
-	const ManagementComponent = async (wallet, constants, templates) => {
-	  // console.log(wallet);
-	  const KEY = 'management';
-	  const TEMPLATE = `MANAGEMENT:${toUpperCase(retrieve(wallet, 'ship.class'))}`;
-	  const TITLE = getTitleByClass(retrieve(wallet,'ship.class'));
 
-	  const props = {
-	    heading: TITLE,
-	    patp: retrieve(wallet, 'ship.patp'),
-	    sigil: await loadSigil(AT_LOAD_SIGIL_SIZE, retrieve(wallet, 'ship.patp')),
-	    management: {
-	      seed: {
-	        mnemonic: retrieve(wallet, 'management.seed'),
-	        derivationPath: BIP32_DERIVATION_PATH,
-	      },
-	      ethereum: {
-	        address: retrieve(wallet, 'management.keys.address'),
-	        qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'management.keys.address')),
-	      },
-	    },
-	    meta: {
-	      createdOn: shortDateToDa(new Date()),
-	      custodyLevel: getCustodyLevel(retrieve(wallet,'ship.class')),
-	    },
-	    _classOf: retrieve(wallet, 'ship.class'),
-	    _type: KEY,
-	    _bin: assignBin(retrieve(wallet, 'ship.class'), KEY)
-	  };
 
-	  const page = [{
-	    renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
-	    collateralType: props._type,
-	    bin: assignBin(props._classOf, props._type),
-	    ship: props.patp,
-	    pageTitle: `${props.patp} ${TITLE}`,
-	  }];
-	  return page;
-	};
 
 
 
@@ -77721,7 +77678,136 @@ lyrtesmudnytbyrsenwegfyrmurtelreptegpecnelnevfes\
 	  return page;
 	};
 
-	const _jsxFileName$1 = "/Users/chris/Documents/PaperCollateralRenderer/src/js/PaperCollateralRenderer.js";
+
+
+	const SpawnComponent = async (wallet, constants, templates) => {
+	  const KEY = 'spawn';
+	  const TEMPLATE = `SPAWN:${retrieve(wallet, 'ship.class').toUpperCase()}`;
+	  const TITLE = 'SPAWN PROXY';
+
+	  const props = {
+	    heading: TITLE,
+	    patp: retrieve(wallet, 'ship.patp'),
+	    sigil: await loadSigil(AT_LOAD_SIGIL_SIZE, retrieve(wallet, 'ship.patp')),
+	    spawn: {
+	      seed: {
+	        mnemonic: retrieve(wallet, 'management.seed'),
+	        derivationPath: BIP32_DERIVATION_PATH,
+	      },
+	      ethereum: {
+	        address: retrieve(wallet, 'management.keys.address'),
+	        qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'management.keys.address')),
+	      },
+	    },
+	    meta: {
+	      custodyLevel: getCustodyLevel(retrieve(wallet,'ship.class')),
+	      custodyText: `This requires a ${getCustodyLevel(retrieve(wallet,'ship.class'))} Friction Custody. Securely store this document. If you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.`,
+	    },
+	    _classOf: retrieve(wallet, 'ship.class'),
+	    _type: KEY,
+	    _bin: assignBin(retrieve(wallet, 'ship.class'), KEY)
+	  };
+
+	  const page = [{
+	    renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
+	    collateralType: props._type,
+	    bin: assignBin(props._classOf, props._type),
+	    ship: props.patp,
+	    pageTitle: `${props.patp} ${TITLE}`,
+	  }];
+	  return page;
+	};
+
+
+
+
+
+
+	const TransferComponent = async (wallet, constants, templates) => {
+	  // console.log(wallet);
+	  const KEY = `TRANSFER:${retrieve(wallet, 'ship.class').toUpperCase()}`;
+	  const TEMPLATE = `TRANSFER:${retrieve(wallet, 'ship.class').toUpperCase()}`;
+	  const TITLE = 'TRANSFER PROXY';
+
+	  const props = {
+	    heading: TITLE,
+	    patp: retrieve(wallet, 'ship.patp'),
+	    sigil: await loadSigil(AT_LOAD_SIGIL_SIZE, retrieve(wallet, 'ship.patp')),
+	    transfer: {
+	      seed: {
+	        mnemonic: retrieve(wallet, 'management.seed'),
+	        derivationPath: BIP32_DERIVATION_PATH,
+	      },
+	      ethereum: {
+	        address: retrieve(wallet, 'management.keys.address'),
+	        qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'management.keys.address')),
+	      },
+	    },
+	    meta: {
+	      custodyLevel: getCustodyLevel(retrieve(wallet,'ship.class')),
+	      custodyText: `This requires a ${getCustodyLevel(retrieve(wallet,'ship.class'))} Friction Custody. Securely store this document. If you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.`,
+	    },
+	    _classOf: retrieve(wallet, 'ship.class'),
+	    _type: KEY,
+	    _bin: assignBin(retrieve(wallet, 'ship.class'), KEY)
+	  };
+
+	  const page = [{
+	    renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
+	    collateralType: props._type,
+	    bin: assignBin(props._classOf, props._type),
+	    ship: props.patp,
+	    pageTitle: `${props.patp} ${TITLE}`,
+	  }];
+	  return page;
+	};
+
+
+
+
+
+
+
+	const VotingComponent = async (wallet, constants, templates) => {
+	  // console.log(wallet);
+	  const KEY = 'voting';
+	  const TEMPLATE = `VOTING:${retrieve(wallet, 'ship.class').toUpperCase()}`;
+	  const TITLE = 'VOTING PROXY';
+
+	  const props = {
+	    heading: TITLE,
+	    patp: retrieve(wallet, 'ship.patp'),
+	    sigil: await loadSigil(AT_LOAD_SIGIL_SIZE, retrieve(wallet, 'ship.patp')),
+	    voting: {
+	      seed: {
+	        mnemonic: retrieve(wallet, 'management.seed'),
+	        derivationPath: BIP32_DERIVATION_PATH,
+	      },
+	      ethereum: {
+	        address: retrieve(wallet, 'management.keys.address'),
+	        qr: await loadQR(AT_LOAD_QR_SIZE, retrieve(wallet, 'management.keys.address')),
+	      },
+	    },
+	    meta: {
+	      custodyLevel: getCustodyLevel(retrieve(wallet,'ship.class')),
+	      custodyText: `This requires a ${getCustodyLevel(retrieve(wallet,'ship.class'))} Friction Custody. Securely store this document. If you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.`,
+	    },
+	    _classOf: retrieve(wallet, 'ship.class'),
+	    _type: KEY,
+	    _bin: assignBin(retrieve(wallet, 'ship.class'), KEY)
+	  };
+
+	  const page = [{
+	    renderables: mapInsert(props, retrieve(templates, TEMPLATE)),
+	    collateralType: props._type,
+	    bin: assignBin(props._classOf, props._type),
+	    ship: props.patp,
+	    pageTitle: `${props.patp} ${TITLE}`,
+	  }];
+	  return page;
+	};
+
+	const _jsxFileName = "/Users/gavinatkinson/Tlon/PaperCollateralRenderer/src/js/PaperCollateralRenderer.js";
 
 
 	// w: wallet
@@ -77732,32 +77818,26 @@ lyrtesmudnytbyrsenwegfyrmurtelreptegpecnelnevfes\
 	const PROFILES = {
 	  'REGISTRATION': {
 	    'galaxy': [
-	      (w, cs, ts) => () => MasterTicketComponent(w, cs, ts),
-	      // (w, cs, ts) => () => MasterTicketShardsComponent(w, cs, ts),
-	      // (w, cs, ts) => () => SpawnSeedComponent(w, cs, ts),
-	      // (w, cs, ts) => () => VotingSeedComponent(w, cs, ts),
-	      // (w, cs, ts) => () => TransferSeedComponent(w, copy, ts),
+	      (w, cs, ts) => () => MasterTicketShardsComponent(w, cs, ts),
 	      (w, cs, ts) => () => ManagementComponent(w, cs, ts),
 	      (w, cs, ts) => () => MultipassComponent(w, cs, ts),
-
+	      (w, cs, ts) => () => SpawnComponent(w, cs, ts),
+	      (w, cs, ts) => () => TransferComponent(w, cs, ts),
+	      (w, cs, ts) => () => VotingComponent(w, cs, ts),
 	    ],
 	    'star': [
 	      (w, cs, ts) => () => MasterTicketComponent(w, cs, ts),
-	      // (w, cs, ts) => () => SpawnSeedComponent(w, cs, ts),
-	      // (w, cs, ts) => () => TransferSeedComponent(w, cs, ts),
 	      (w, cs, ts) => () => ManagementComponent(w, cs, ts),
 	      (w, cs, ts) => () => MultipassComponent(w, cs, ts),
-
+	      (w, cs, ts) => () => SpawnComponent(w, cs, ts),
+	      (w, cs, ts) => () => TransferComponent(w, cs, ts),
 	    ],
 	    'planet': [
 	      (w, cs, ts) => () => MasterTicketComponent(w, cs, ts),
-	      // (w, cs, ts) => () => TransferSeedComponent(w, cs, ts),
 	      (w, cs, ts) => () => ManagementComponent(w, cs, ts),
 	      (w, cs, ts) => () => MultipassComponent(w, cs, ts),
+	      (w, cs, ts) => () => TransferComponent(w, cs, ts),
 	    ],
-	    // 'manifest': [
-	    //   (ws, cs, ts) => () => AddressManifestComponent(ws, cs, ts),
-	    // ]
 	  }
 	};
 
@@ -77765,38 +77845,24 @@ lyrtesmudnytbyrsenwegfyrmurtelreptegpecnelnevfes\
 
 	class PaperCollateralRenderer extends react_1 {
 	  constructor(props) {
-	    super(props);PaperCollateralRenderer.prototype.__init.call(this);
+	    super(props);PaperCollateralRenderer.prototype.__init.call(this);PaperCollateralRenderer.prototype.__init2.call(this);
+	    this.latch = false;
+	    this.canvasRef = react.createRef();
+	    this.canvas = null;
 	    this.state = {
 	      results: [],
 	      pages: null,
 	      totalPages: null,
 	    };
-	    this.latch = false;
-	    // this.counter = 0;
-	    // this.results = [];
+
 	  }
-
-	  // handleOutput = (output, total) => {
-	  //   this.counter = this.counter + 1
-	  //
-	  //   this.results = [...this.results, output]
-	  //
-	  //   if (this.counter === total) {
-	  //     this.props.callback(this.results)
-	  //   }
-	  // }
-	  //
-	  //
-	  //
-	  // handleOutput = (output, total) => {
-	  //   if (this.counter === total) {
-	  //     this.props.callback(this.results)
-	  //   }
-	  // }
-
 
 
 	  __init() {this.componentDidMount = () => {
+
+	    console.log(this.refs, this.canvasRef, this.canvas);
+
+	    this.canvas = initCanvas(this.canvasRef.current, { x: 612, y: 792 }, 4);
 
 	    const wallets = shim(this.props.wallet);
 
@@ -77812,38 +77878,72 @@ lyrtesmudnytbyrsenwegfyrmurtelreptegpecnelnevfes\
 	      ...docketFunctions,
 	      // ...docket.manifest.map(f => f(wallets, constants, templates))
 	    ];
+	    // console.log(withManifest);
 	    Promise.all(withManifest.map(f => f()))
 	      .then(pageGroups => {
 	        const flats = pageGroups.reduce((acc, arr) => [...acc, ...arr], []);
-	        this.setState({ pages: flats, totalPages: flats.length });
+	        // this.setState({ pages: flats, totalPages: flats.length });
+
+	        const results = flats.map(page => this.drawLayout(page));
+	        // this.latch=true
+	        this.props.callback(results);
 	    })
 	    .catch(err => console.error(err));
 	  };}
 
 
+	  __init2() {this.drawLayout = (page) => {
+
+	    const ctx = this.canvas.getContext('2d');
+
+	    ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+	    ctx.fillStyle="#FFF";
+	    ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
+	    ctx.fillStyle="#000";
+
+	    page.renderables.forEach(r => {
+	      if (r.type === 'qr') return drawQR({ ctx, ...r });
+	      if (r.type === 'patq') return drawPatQ({ ctx, ...r });
+	      if (r.type === 'img') return drawImg({ ctx, ...r });
+	      if (r.type === 'addr_split_four') return drawEthereumAddressLong({ ctx, ...r });
+	      if (r.type === 'wrap_addr_split_four') return drawEthereumAddressCompact({ ctx, ...r });
+	      if (r.type === 'sigil') return drawSigil({ ctx, ...r });
+	      if (r.type === 'rect') return drawRect({ ctx, ...r });
+	      if (r.type === 'hr') return drawLine({ ctx, ...r });
+	      if (r.type === 'template_text') return drawWrappedText({ ctx, ...r });
+	      if (r.type === 'text') return drawWrappedText({ ctx, ...r });
+	    });
+
+	    const pageWithImageData = {
+	      ship: page.ship,
+	      collateralType: page.collateralType,
+	      bin: page.bin,
+	      page: lodash_3(page, 'page', '1'),
+	      pageTitle: page.pageTitle,
+	      png: dataURItoBlob(this.canvas.toDataURL("image/png")),
+	      durl: this.canvas.toDataURL("image/png"),
+	    };
+	    return pageWithImageData;
+	  };}
+
+
 
 	  render() {
-	    const { pages, totalPages } = this.state;
-	    if (this.latch === false && pages !== null) {
+	    // const { pages, totalPages } = this.state
+	    if (this.latch === false) {
 	      this.latch = true;
-
 	      return (
-	        react.createElement('div', { className:  this.props.className , __self: this, __source: {fileName: _jsxFileName$1, lineNumber: 121}}
-
-	        , react.createElement(PageRenderer, {
-	          pages: pages,
-	          callback: data => this.props.callback(data), __self: this, __source: {fileName: _jsxFileName$1, lineNumber: 123}}
-	        )
-
-	        )
+	        react.createElement('canvas', { className:  this.props.className , ref:  this.canvasRef , __self: this, __source: {fileName: _jsxFileName, lineNumber: 164}} )
 	      );
 	    } else {
-	      return react.createElement('div', {__self: this, __source: {fileName: _jsxFileName$1, lineNumber: 131}})
+	      return react.createElement('div', {__self: this, __source: {fileName: _jsxFileName, lineNumber: 167}})
 	    }
 	  };
 	}
 
-	const _jsxFileName$2 = "/Users/chris/Documents/PaperCollateralRenderer/src/js/App.js";
+	const _jsxFileName$1 = "/Users/gavinatkinson/Tlon/PaperCollateralRenderer/src/js/App.js";
 	class App extends react_1 {
 	  constructor(props) {
 	    super(props);App.prototype.__init.call(this);
@@ -77861,20 +77961,20 @@ lyrtesmudnytbyrsenwegfyrmurtelreptegpecnelnevfes\
 
 	  render() {
 	    return (
-	      react.createElement('div', {__self: this, __source: {fileName: _jsxFileName$2, lineNumber: 27}}, "hello"
+	      react.createElement('div', {__self: this, __source: {fileName: _jsxFileName$1, lineNumber: 27}}, "hello"
 
 	        , 
 	          react.createElement(PaperCollateralRenderer, {
 	            wallet: wallet5,
 	            className: '',
 	            callback: data => this.handleOutput(data),
-	            mode: 'REGISTRATION', __self: this, __source: {fileName: _jsxFileName$2, lineNumber: 30}}
+	            mode: 'REGISTRATION', __self: this, __source: {fileName: _jsxFileName$1, lineNumber: 30}}
 	          )
 	        
 
 	        , 
 	          this.state.pages.map(p => {
-	            return react.createElement('img', { style: {maxWidth:'550px', border:'1px solid black'}, src: p.durl, __self: this, __source: {fileName: _jsxFileName$2, lineNumber: 40}} )
+	            return react.createElement('img', { style: {maxWidth:'550px', border:'1px solid black'}, src: p.durl, __self: this, __source: {fileName: _jsxFileName$1, lineNumber: 40}} )
 	          })
 	        
 	      )
@@ -77884,8 +77984,8 @@ lyrtesmudnytbyrsenwegfyrmurtelreptegpecnelnevfes\
 
 	}
 
-	const _jsxFileName$3 = "/Users/chris/Documents/PaperCollateralRenderer/src/js/index.js";// import "babel-polyfill";
+	const _jsxFileName$2 = "/Users/gavinatkinson/Tlon/PaperCollateralRenderer/src/js/index.js";// import "babel-polyfill";
 
-	reactDom.render(react.createElement(App, {__self: undefined, __source: {fileName: _jsxFileName$3, lineNumber: 7}} ), document.getElementById('root'));
+	reactDom.render(react.createElement(App, {__self: undefined, __source: {fileName: _jsxFileName$2, lineNumber: 7}} ), document.getElementById('root'));
 
 }));
