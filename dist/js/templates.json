@@ -1,0 +1,2524 @@
+{
+  "MULTIPASS": {
+    "key": "MULTIPASS",
+    "absoluteBoundingBox": {
+      "x": -633,
+      "y": -396,
+      "width": 612,
+      "height": 792
+    },
+    "renderables": [
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Custody",
+        "fontWeight": 400,
+        "maxWidth": 48,
+        "lineHeightPx": 14.0625,
+        "x": 137,
+        "y": 551
+      },
+      {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 194,
+        "y": 551,
+        "width": 35,
+        "height": 16,
+        "fillColor": [],
+        "strokeColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 1
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 8,
+        "text": "Public",
+        "fontWeight": 500,
+        "maxWidth": 24,
+        "lineHeightPx": 9.375,
+        "x": 200,
+        "y": 554
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Abilities",
+        "fontWeight": 400,
+        "maxWidth": 45,
+        "lineHeightPx": 14.0625,
+        "x": 137,
+        "y": 454
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "azimuth.network/faq",
+        "fontWeight": 400,
+        "maxWidth": 92,
+        "lineHeightPx": 11.061599731445312,
+        "x": 138,
+        "y": 750
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "urbit.org/docs/azimuth",
+        "fontWeight": 400,
+        "maxWidth": 106,
+        "lineHeightPx": 9.375,
+        "x": 246,
+        "y": 750
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "@patp_azimuth",
+        "fontWeight": 400,
+        "maxWidth": 140,
+        "lineHeightPx": 9.375,
+        "x": 138,
+        "y": 731
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Use your ownership address to check your spawn, management, delegate or transfer addresses. Thus, you can also check your total address space.",
+        "fontWeight": 400,
+        "maxWidth": 329,
+        "lineHeightPx": 16,
+        "x": 137,
+        "y": 483
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "This is public information. Store this in a place you won’t forget.",
+        "fontWeight": 400,
+        "maxWidth": 344,
+        "lineHeightPx": 16,
+        "x": 138,
+        "y": 580
+      },
+      {
+        "type": "RECT",
+        "cornerRadius": 8,
+        "dashes": [
+          4,
+          4
+        ],
+        "x": 137,
+        "y": 182,
+        "width": 328.7197265625,
+        "height": 200,
+        "fillColor": [],
+        "strokeColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 1
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "@meta.createdOn",
+        "fontWeight": 400,
+        "maxWidth": 48,
+        "lineHeightPx": 9.375,
+        "x": 230,
+        "y": 245
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "birth time",
+        "fontWeight": 400,
+        "maxWidth": 48,
+        "lineHeightPx": 12,
+        "x": 230,
+        "y": 231
+      },
+      {
+        "type": "WRAP_ADDR_SPLIT_FOUR",
+        "fontWeight": 400,
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "@ownership.ethereum.address",
+        "maxWidth": 217,
+        "lineHeightPx": 16,
+        "x": 168,
+        "y": 331
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 16,
+        "text": "@patp",
+        "fontWeight": 500,
+        "maxWidth": 125,
+        "lineHeightPx": 24,
+        "x": 230,
+        "y": 204
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "MASTER TICKET",
+        "fontWeight": 400,
+        "maxWidth": 63,
+        "lineHeightPx": 16,
+        "x": 168,
+        "y": 266
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "OWNERSHIP ADDRESS",
+        "fontWeight": 400,
+        "maxWidth": 82,
+        "lineHeightPx": 16,
+        "x": 168,
+        "y": 312
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Arial",
+        "fontSize": 12,
+        "text": "░▒░▒░▒░▒░▒▒░▒░░░░░░▒░░░▒░░░▒",
+        "fontWeight": 400,
+        "maxWidth": 239,
+        "lineHeightPx": 24,
+        "x": 168,
+        "y": 282
+      },
+      {
+        "type": "QR",
+        "size": 32,
+        "name": ">qr:@ownership.ethereum.qr",
+        "data": "@ownership.ethereum.qr",
+        "x": 411,
+        "y": 334
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "@meta.createdOn",
+        "fontWeight": 400,
+        "maxWidth": 48,
+        "lineHeightPx": 9.375,
+        "x": 138,
+        "y": 713
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "UP8",
+        "fontWeight": 400,
+        "maxWidth": 15,
+        "lineHeightPx": 9.375,
+        "x": 198,
+        "y": 713
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 16,
+        "text": "Multipass",
+        "fontWeight": 700,
+        "maxWidth": 78,
+        "lineHeightPx": 18.75,
+        "x": 267,
+        "y": 81
+      }
+    ]
+  },
+  "MASTER_TICKET:PLANET": {
+    "key": "MASTER_TICKET:PLANET",
+    "absoluteBoundingBox": {
+      "x": 19,
+      "y": 2924,
+      "width": 612,
+      "height": 792
+    },
+    "renderables": [
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Custody",
+        "fontWeight": 400,
+        "maxWidth": 48,
+        "lineHeightPx": 14.0625,
+        "x": 68,
+        "y": 597
+      },
+      {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 124,
+        "y": 597,
+        "width": 47,
+        "height": 16,
+        "fillColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ],
+        "strokeColor": [],
+        "strokeWeight": 1
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 8,
+        "text": "@meta.custodyLevel",
+        "fontWeight": 500,
+        "maxWidth": 31,
+        "lineHeightPx": 9.375,
+        "x": 132,
+        "y": 600
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Abilities",
+        "fontWeight": 400,
+        "maxWidth": 45,
+        "lineHeightPx": 14.0625,
+        "x": 68,
+        "y": 468
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "urbit.org/docs/azimuth",
+        "fontWeight": 400,
+        "maxWidth": 106,
+        "lineHeightPx": 11.061599731445312,
+        "x": 69,
+        "y": 731
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "urbit.org/docs/bridge",
+        "fontWeight": 400,
+        "maxWidth": 101,
+        "lineHeightPx": 9.375,
+        "x": 154,
+        "y": 750
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "bridge.urbit.org",
+        "fontWeight": 400,
+        "maxWidth": 77,
+        "lineHeightPx": 9.375,
+        "x": 69,
+        "y": 750
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Use your master ticket to verify your identity, change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains.",
+        "fontWeight": 400,
+        "maxWidth": 459,
+        "lineHeightPx": 16,
+        "x": 68,
+        "y": 497
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "The master ticket and ownership seed can be used to recover transfer proxy, spawn proxy, delegate, and management seeds.",
+        "fontWeight": 400,
+        "maxWidth": 459,
+        "lineHeightPx": 16,
+        "x": 68,
+        "y": 541
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "This requires a Medium Friction Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.",
+        "fontWeight": 400,
+        "maxWidth": 448,
+        "lineHeightPx": 16,
+        "x": 69,
+        "y": 626
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "Master Ticket",
+        "fontWeight": 400,
+        "maxWidth": 94,
+        "lineHeightPx": 16,
+        "x": 160,
+        "y": 78
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "@ownership.seed.mnemonic",
+        "fontWeight": 400,
+        "maxWidth": 380,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 247
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 16,
+        "text": "@patp",
+        "fontWeight": 500,
+        "maxWidth": 48,
+        "lineHeightPx": 24,
+        "x": 160,
+        "y": 46
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "MASTER TICKET",
+        "fontWeight": 400,
+        "maxWidth": 94,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 167
+      },
+      {
+        "type": "PATQ",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "fontWeight": 400,
+        "text": "@ticket.data",
+        "maxWidth": 195,
+        "lineHeightPx": 16,
+        "x": 104,
+        "y": 191
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "OWNERSHIP SEED",
+        "fontWeight": 400,
+        "maxWidth": 101,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 223
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "OWNERSHIP ADDRESS",
+        "fontWeight": 400,
+        "maxWidth": 123,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 327
+      },
+      {
+        "type": "ADDR_SPLIT_FOUR",
+        "fontWeight": 400,
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "@ownership.ethereum.address",
+        "maxWidth": 193,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 352
+      },
+      {
+        "type": "QR",
+        "size": 44.99997329711914,
+        "name": ">qr:@ownership.ethereum.qr",
+        "data": "@ownership.ethereum.qr",
+        "x": 486,
+        "y": 352
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "@meta.createdOn",
+        "fontWeight": 400,
+        "maxWidth": 48,
+        "lineHeightPx": 9.375,
+        "x": 69,
+        "y": 713
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "UP8",
+        "fontWeight": 400,
+        "maxWidth": 15,
+        "lineHeightPx": 9.375,
+        "x": 129,
+        "y": 713
+      },
+      {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 160,
+        "y": 100,
+        "width": 47,
+        "height": 16,
+        "fillColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ],
+        "strokeColor": [],
+        "strokeWeight": 1
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 8,
+        "text": "@meta.custodyLevel",
+        "fontWeight": 500,
+        "maxWidth": 31,
+        "lineHeightPx": 9.375,
+        "x": 168,
+        "y": 103
+      },
+      {
+        "type": "HR",
+        "x": 0,
+        "y": 443,
+        "width": 619,
+        "height": 1,
+        "strokeColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.6941176652908325,
+              "g": 0.6980392336845398,
+              "b": 0.7019608020782471,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 2
+      }
+    ]
+  },
+  "MASTER_TICKET:STAR": {
+    "key": "MASTER_TICKET:STAR",
+    "absoluteBoundingBox": {
+      "x": 19,
+      "y": 1824,
+      "width": 612,
+      "height": 792
+    },
+    "renderables": [
+      {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 124,
+        "y": 597,
+        "width": 47,
+        "height": 16,
+        "fillColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ],
+        "strokeColor": [],
+        "strokeWeight": 1
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 8,
+        "text": "@meta.custodyLevel",
+        "fontWeight": 500,
+        "maxWidth": 31,
+        "lineHeightPx": 9.375,
+        "x": 132,
+        "y": 600
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Custody",
+        "fontWeight": 400,
+        "maxWidth": 48,
+        "lineHeightPx": 14.0625,
+        "x": 68,
+        "y": 597
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Abilities",
+        "fontWeight": 400,
+        "maxWidth": 45,
+        "lineHeightPx": 14.0625,
+        "x": 68,
+        "y": 468
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "urbit.org/docs/azimuth",
+        "fontWeight": 400,
+        "maxWidth": 106,
+        "lineHeightPx": 11.061599731445312,
+        "x": 69,
+        "y": 731
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "urbit.org/docs/bridge",
+        "fontWeight": 400,
+        "maxWidth": 101,
+        "lineHeightPx": 9.375,
+        "x": 154,
+        "y": 750
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "bridge.urbit.org",
+        "fontWeight": 400,
+        "maxWidth": 77,
+        "lineHeightPx": 9.375,
+        "x": 69,
+        "y": 750
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Use your master ticket to verify your identity, change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains.",
+        "fontWeight": 400,
+        "maxWidth": 459,
+        "lineHeightPx": 16,
+        "x": 68,
+        "y": 497
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "The master ticket and ownership seed can be used to recover transfer proxy, spawn proxy, delegate, and management seeds.",
+        "fontWeight": 400,
+        "maxWidth": 459,
+        "lineHeightPx": 16,
+        "x": 68,
+        "y": 541
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "This requires a Medium Friction Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.",
+        "fontWeight": 400,
+        "maxWidth": 448,
+        "lineHeightPx": 16,
+        "x": 69,
+        "y": 626
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "Master Ticket",
+        "fontWeight": 400,
+        "maxWidth": 94,
+        "lineHeightPx": 16,
+        "x": 160,
+        "y": 78
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "@ownership.seed.mnemonic",
+        "fontWeight": 400,
+        "maxWidth": 380,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 247
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 16,
+        "text": "@patp",
+        "fontWeight": 500,
+        "maxWidth": 48,
+        "lineHeightPx": 24,
+        "x": 160,
+        "y": 46
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "MASTER TICKET",
+        "fontWeight": 400,
+        "maxWidth": 94,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 167
+      },
+      {
+        "type": "PATQ",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "fontWeight": 400,
+        "text": "@ticket.data",
+        "maxWidth": 195,
+        "lineHeightPx": 16,
+        "x": 104,
+        "y": 191
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "OWNERSHIP SEED",
+        "fontWeight": 400,
+        "maxWidth": 101,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 223
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "OWNERSHIP ADDRESS",
+        "fontWeight": 400,
+        "maxWidth": 123,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 327
+      },
+      {
+        "type": "ADDR_SPLIT_FOUR",
+        "fontWeight": 400,
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "@ownership.ethereum.address",
+        "maxWidth": 193,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 352
+      },
+      {
+        "type": "QR",
+        "size": 44.99997329711914,
+        "name": ">qr:@ownership.ethereum.qr",
+        "data": "@ownership.ethereum.qr",
+        "x": 486,
+        "y": 352
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "@meta.createdOn",
+        "fontWeight": 400,
+        "maxWidth": 44,
+        "lineHeightPx": 9.375,
+        "x": 69,
+        "y": 713
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "UP8",
+        "fontWeight": 400,
+        "maxWidth": 15,
+        "lineHeightPx": 9.375,
+        "x": 129,
+        "y": 713
+      },
+      {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 160,
+        "y": 100,
+        "width": 47,
+        "height": 16,
+        "fillColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ],
+        "strokeColor": [],
+        "strokeWeight": 1
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 8,
+        "text": "@meta.custodyLevel",
+        "fontWeight": 400,
+        "maxWidth": 32,
+        "lineHeightPx": 9.375,
+        "x": 168,
+        "y": 103
+      },
+      {
+        "type": "HR",
+        "x": 0,
+        "y": 443,
+        "width": 619,
+        "height": 1,
+        "strokeColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.6941176652908325,
+              "g": 0.6980392336845398,
+              "b": 0.7019608020782471,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 2
+      }
+    ]
+  },
+  "MASTER_TICKET:GALAXY": {
+    "key": "MASTER_TICKET:GALAXY",
+    "absoluteBoundingBox": {
+      "x": 19,
+      "y": 704,
+      "width": 612,
+      "height": 792
+    },
+    "renderables": [
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Custody",
+        "fontWeight": 400,
+        "maxWidth": 50,
+        "lineHeightPx": 14.0625,
+        "x": 72,
+        "y": 560
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Abilities",
+        "fontWeight": 400,
+        "maxWidth": 48,
+        "lineHeightPx": 14.0625,
+        "x": 72,
+        "y": 424
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Use your master ticket to verify your identity, change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains.",
+        "fontWeight": 400,
+        "maxWidth": 455,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 448
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "The master ticket and ownership seed can be used to recover transfer proxy, spawn proxy, delegate, and management seeds.",
+        "fontWeight": 400,
+        "maxWidth": 455,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 488
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "This requires a Medium Friction Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.",
+        "fontWeight": 400,
+        "maxWidth": 448,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 584
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Support",
+        "fontWeight": 400,
+        "maxWidth": 50,
+        "lineHeightPx": 14.0625,
+        "x": 72,
+        "y": 648
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "If you need support or information, please visit the following resources.",
+        "fontWeight": 400,
+        "maxWidth": 448,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 672
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "Master Ticket",
+        "fontWeight": 400,
+        "maxWidth": 94,
+        "lineHeightPx": 16,
+        "x": 152,
+        "y": 72
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "@ownership.seed.mnemonic",
+        "fontWeight": 400,
+        "maxWidth": 380,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 248
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 16,
+        "text": "@patp",
+        "fontWeight": 500,
+        "maxWidth": 48,
+        "lineHeightPx": 24,
+        "x": 152,
+        "y": 42
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "MASTER TICKET",
+        "fontWeight": 600,
+        "maxWidth": 94,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 168
+      },
+      {
+        "type": "PATQ",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "fontWeight": 400,
+        "text": "@ticket.data",
+        "maxWidth": 195,
+        "lineHeightPx": 16,
+        "x": 104,
+        "y": 192
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "OWNERSHIP SEED",
+        "fontWeight": 600,
+        "maxWidth": 101,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 224
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "OWNERSHIP ADDRESS",
+        "fontWeight": 600,
+        "maxWidth": 123,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 328
+      },
+      {
+        "type": "ADDR_SPLIT_FOUR",
+        "fontWeight": 400,
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "@ownership.ethereum.address",
+        "maxWidth": 380,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 352
+      },
+      {
+        "type": "QR",
+        "size": 52.99998474121094,
+        "name": ">qr:@ownership.ethereum.qr",
+        "data": "@ownership.ethereum.qr",
+        "x": 487,
+        "y": 324
+      },
+      {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 152,
+        "y": 96,
+        "width": 47,
+        "height": 16,
+        "fillColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ],
+        "strokeColor": [],
+        "strokeWeight": 1
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 8,
+        "text": "@meta.custodyLevel",
+        "fontWeight": 500,
+        "maxWidth": 31,
+        "lineHeightPx": 9.375,
+        "x": 160,
+        "y": 99
+      },
+      {
+        "type": "HR",
+        "x": 72,
+        "y": 396,
+        "width": 468,
+        "height": 1,
+        "strokeColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.6941176652908325,
+              "g": 0.6980392336845398,
+              "b": 0.7019608020782471,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 2
+      },
+      {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 131,
+        "y": 560,
+        "width": 47,
+        "height": 16,
+        "fillColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ],
+        "strokeColor": [],
+        "strokeWeight": 1
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 8,
+        "text": "@meta.custodyLevel",
+        "fontWeight": 500,
+        "maxWidth": 31,
+        "lineHeightPx": 9.375,
+        "x": 139,
+        "y": 563
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 10,
+        "text": "-> Azimuth Documentation",
+        "fontWeight": 400,
+        "maxWidth": 224,
+        "lineHeightPx": 11.71875,
+        "x": 72,
+        "y": 712
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 10,
+        "text": "urbit.org/docs/azimuth",
+        "fontWeight": 400,
+        "maxWidth": 305,
+        "lineHeightPx": 11.71875,
+        "x": 235,
+        "y": 712
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 10,
+        "text": "-> How to use Bridge",
+        "fontWeight": 400,
+        "maxWidth": 224,
+        "lineHeightPx": 11.71875,
+        "x": 72,
+        "y": 696
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 10,
+        "text": "urbit.org/docs/bridge",
+        "fontWeight": 400,
+        "maxWidth": 305,
+        "lineHeightPx": 11.71875,
+        "x": 235,
+        "y": 696
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 10,
+        "text": "-> Use Bridge",
+        "fontWeight": 400,
+        "maxWidth": 224,
+        "lineHeightPx": 11.71875,
+        "x": 72,
+        "y": 528
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 10,
+        "text": "bridge.urbit.org",
+        "fontWeight": 400,
+        "maxWidth": 305,
+        "lineHeightPx": 11.71875,
+        "x": 235,
+        "y": 528
+      }
+    ]
+  },
+  "Layout": {
+    "key": "Layout",
+    "absoluteBoundingBox": {
+      "x": 266,
+      "y": -347,
+      "width": 468.000244140625,
+      "height": 694
+    },
+    "renderables": [
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Custody",
+        "fontWeight": 400,
+        "maxWidth": 50,
+        "lineHeightPx": 14.0625,
+        "x": 0,
+        "y": 518
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Abilities",
+        "fontWeight": 400,
+        "maxWidth": 48,
+        "lineHeightPx": 14.0625,
+        "x": 0,
+        "y": 382
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Use your master ticket to verify your identity, change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains.",
+        "fontWeight": 400,
+        "maxWidth": 455,
+        "lineHeightPx": 16,
+        "x": 0,
+        "y": 406
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "The master ticket and ownership seed can be used to recover transfer proxy, spawn proxy, delegate, and management seeds.",
+        "fontWeight": 400,
+        "maxWidth": 455,
+        "lineHeightPx": 16,
+        "x": 0,
+        "y": 446
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "This requires a Medium Friction Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.",
+        "fontWeight": 400,
+        "maxWidth": 448,
+        "lineHeightPx": 16,
+        "x": 0,
+        "y": 542
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Support",
+        "fontWeight": 400,
+        "maxWidth": 50,
+        "lineHeightPx": 14.0625,
+        "x": 0,
+        "y": 606
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "If you need support or information, please visit the following resources.",
+        "fontWeight": 400,
+        "maxWidth": 448,
+        "lineHeightPx": 16,
+        "x": 0,
+        "y": 630
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "Master Ticket",
+        "fontWeight": 400,
+        "maxWidth": 94,
+        "lineHeightPx": 16,
+        "x": 80,
+        "y": 30
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "elite trim craft rookie time place open\nfire read gravity piece fringe lesson moment critic leader tortoise wreck crack water security ecology color",
+        "fontWeight": 400,
+        "maxWidth": 380,
+        "lineHeightPx": 16,
+        "x": 0,
+        "y": 206
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 16,
+        "text": "@patp",
+        "fontWeight": 500,
+        "maxWidth": 48,
+        "lineHeightPx": 24,
+        "x": 80,
+        "y": 0
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "MASTER TICKET",
+        "fontWeight": 600,
+        "maxWidth": 94,
+        "lineHeightPx": 16,
+        "x": 0,
+        "y": 126
+      },
+      {
+        "type": "PATQ",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "fontWeight": 400,
+        "text": "@ticket.data",
+        "maxWidth": 195,
+        "lineHeightPx": 16,
+        "x": 32,
+        "y": 150
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "OWNERSHIP SEED",
+        "fontWeight": 600,
+        "maxWidth": 101,
+        "lineHeightPx": 16,
+        "x": 0,
+        "y": 182
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "OWNERSHIP ADDRESS",
+        "fontWeight": 600,
+        "maxWidth": 123,
+        "lineHeightPx": 16,
+        "x": 0,
+        "y": 286
+      },
+      {
+        "type": "ADDR_SPLIT_FOUR",
+        "fontWeight": 400,
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "@ownership.ethereum.address",
+        "maxWidth": 380,
+        "lineHeightPx": 16,
+        "x": 0,
+        "y": 310
+      },
+      {
+        "type": "QR",
+        "size": 52.99998474121094,
+        "name": ">qr:@ownership.ethereum.qr",
+        "data": "@ownership.ethereum.qr",
+        "x": 415,
+        "y": 282
+      },
+      {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 80,
+        "y": 54,
+        "width": 47,
+        "height": 16,
+        "fillColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ],
+        "strokeColor": [],
+        "strokeWeight": 1
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 8,
+        "text": "@meta.custodyLevel",
+        "fontWeight": 500,
+        "maxWidth": 31,
+        "lineHeightPx": 9.375,
+        "x": 88,
+        "y": 57
+      },
+      {
+        "type": "HR",
+        "x": 0,
+        "y": 354,
+        "width": 468,
+        "height": 1,
+        "strokeColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.6941176652908325,
+              "g": 0.6980392336845398,
+              "b": 0.7019608020782471,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 2
+      },
+      {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 59,
+        "y": 518,
+        "width": 47,
+        "height": 16,
+        "fillColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.3019607961177826,
+              "g": 0.3019607961177826,
+              "b": 0.3019607961177826,
+              "a": 1
+            }
+          }
+        ],
+        "strokeColor": [],
+        "strokeWeight": 1
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 8,
+        "text": "@meta.custodyLevel",
+        "fontWeight": 500,
+        "maxWidth": 31,
+        "lineHeightPx": 9.375,
+        "x": 67,
+        "y": 521
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 10,
+        "text": "-> Azimuth Documentation",
+        "fontWeight": 400,
+        "maxWidth": 224,
+        "lineHeightPx": 13.82699966430664,
+        "x": 0,
+        "y": 670
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 10,
+        "text": "urbit.org/docs/azimuth",
+        "fontWeight": 400,
+        "maxWidth": 305,
+        "lineHeightPx": 13.82699966430664,
+        "x": 163,
+        "y": 670
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 10,
+        "text": "-> How to use Bridge",
+        "fontWeight": 400,
+        "maxWidth": 224,
+        "lineHeightPx": 11.71875,
+        "x": 0,
+        "y": 654
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 10,
+        "text": "urbit.org/docs/bridge",
+        "fontWeight": 400,
+        "maxWidth": 305,
+        "lineHeightPx": 11.71875,
+        "x": 163,
+        "y": 654
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 10,
+        "text": "-> Use Bridge",
+        "fontWeight": 400,
+        "maxWidth": 224,
+        "lineHeightPx": 11.71875,
+        "x": 0,
+        "y": 486
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 10,
+        "text": "bridge.urbit.org",
+        "fontWeight": 400,
+        "maxWidth": 305,
+        "lineHeightPx": 11.71875,
+        "x": 163,
+        "y": 486
+      }
+    ]
+  },
+  "Wallet Revision": {
+    "key": "Wallet Revision",
+    "absoluteBoundingBox": {
+      "x": -238,
+      "y": 1341,
+      "width": 144,
+      "height": 16
+    },
+    "renderables": []
+  },
+  "UP8": {
+    "key": "UP8",
+    "absoluteBoundingBox": {
+      "x": -116,
+      "y": 1341,
+      "width": 31,
+      "height": 16
+    },
+    "renderables": []
+  },
+  "Created on 2019.18.16": {
+    "key": "Created on 2019.18.16",
+    "absoluteBoundingBox": {
+      "x": -238,
+      "y": 1316,
+      "width": 244,
+      "height": 16
+    },
+    "renderables": []
+  },
+  "MANAGEMENT:PLANET": {
+    "key": "MANAGEMENT:PLANET",
+    "absoluteBoundingBox": {
+      "x": 671,
+      "y": 2924,
+      "width": 612,
+      "height": 792
+    },
+    "renderables": [
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Custody",
+        "fontWeight": 400,
+        "maxWidth": 48,
+        "lineHeightPx": 14.0625,
+        "x": 68,
+        "y": 597
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Abilities",
+        "fontWeight": 400,
+        "maxWidth": 45,
+        "lineHeightPx": 14.0625,
+        "x": 68,
+        "y": 468
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "urbit.org/docs/azimuth",
+        "fontWeight": 400,
+        "maxWidth": 106,
+        "lineHeightPx": 11.061599731445312,
+        "x": 69,
+        "y": 731
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "urbit.org/docs/bridge",
+        "fontWeight": 400,
+        "maxWidth": 101,
+        "lineHeightPx": 9.375,
+        "x": 154,
+        "y": 750
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "bridge.urbit.org",
+        "fontWeight": 400,
+        "maxWidth": 77,
+        "lineHeightPx": 9.375,
+        "x": 69,
+        "y": 750
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Use your master ticket to verify your identity, change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains.",
+        "fontWeight": 400,
+        "maxWidth": 459,
+        "lineHeightPx": 16,
+        "x": 68,
+        "y": 497
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "The master ticket and ownership seed can be used to recover transfer proxy, spawn proxy, delegate, and management seeds.",
+        "fontWeight": 400,
+        "maxWidth": 459,
+        "lineHeightPx": 16,
+        "x": 68,
+        "y": 541
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "This requires a Medium Friction Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.",
+        "fontWeight": 400,
+        "maxWidth": 448,
+        "lineHeightPx": 16,
+        "x": 69,
+        "y": 626
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "MANAGEMENT PROXY",
+        "fontWeight": 400,
+        "maxWidth": 116,
+        "lineHeightPx": 16,
+        "x": 160,
+        "y": 78
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "elite trim craft rookie time place open\nfire read gravity piece fringe lesson moment critic leader tortoise wreck crack water security ecology color",
+        "fontWeight": 400,
+        "maxWidth": 380,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 191
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 16,
+        "text": "@patp",
+        "fontWeight": 500,
+        "maxWidth": 48,
+        "lineHeightPx": 24,
+        "x": 160,
+        "y": 46
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "MANAGEMENT PROXY SEED",
+        "fontWeight": 400,
+        "maxWidth": 152,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 167
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "DERIVATION PATH",
+        "fontWeight": 400,
+        "maxWidth": 108,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 271
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "OWNERSHIP ADDRESS",
+        "fontWeight": 400,
+        "maxWidth": 123,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 327
+      },
+      {
+        "type": "ADDR_SPLIT_FOUR",
+        "fontWeight": 400,
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "@management.ethereum.address",
+        "maxWidth": 196,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 351
+      },
+      {
+        "type": "QR",
+        "size": 44.99997329711914,
+        "name": ">qr:@management.ethereum.qr",
+        "data": "@management.ethereum.qr",
+        "x": 486,
+        "y": 351
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "@meta.createdOn",
+        "fontWeight": 400,
+        "maxWidth": 48,
+        "lineHeightPx": 9.375,
+        "x": 69,
+        "y": 713
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "UP8",
+        "fontWeight": 400,
+        "maxWidth": 15,
+        "lineHeightPx": 9.375,
+        "x": 129,
+        "y": 713
+      },
+      {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 160,
+        "y": 100,
+        "width": 35,
+        "height": 16,
+        "fillColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ],
+        "strokeColor": [],
+        "strokeWeight": 1
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 8,
+        "text": "@meta.custodyLevel",
+        "fontWeight": 500,
+        "maxWidth": 18,
+        "lineHeightPx": 9.375,
+        "x": 169,
+        "y": 103
+      },
+      {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 125,
+        "y": 597,
+        "width": 35,
+        "height": 16,
+        "fillColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0,
+              "g": 0,
+              "b": 0,
+              "a": 1
+            }
+          }
+        ],
+        "strokeColor": [],
+        "strokeWeight": 1
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 8,
+        "text": "@meta.custodyLevel",
+        "fontWeight": 500,
+        "maxWidth": 18,
+        "lineHeightPx": 9.375,
+        "x": 134,
+        "y": 600
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "@management.seed.derivationPath",
+        "fontWeight": 400,
+        "maxWidth": 101,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 295
+      },
+      {
+        "type": "HR",
+        "x": 0,
+        "y": 443,
+        "width": 619,
+        "height": 1,
+        "strokeColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.6941176652908325,
+              "g": 0.6980392336845398,
+              "b": 0.7019608020782471,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 2
+      }
+    ]
+  },
+  "Planet": {
+    "key": "Planet",
+    "absoluteBoundingBox": {
+      "x": -612,
+      "y": 3240,
+      "width": 374,
+      "height": 160
+    },
+    "renderables": []
+  },
+  "Star": {
+    "key": "Star",
+    "absoluteBoundingBox": {
+      "x": -482,
+      "y": 2140,
+      "width": 244,
+      "height": 160
+    },
+    "renderables": []
+  },
+  "Galaxy": {
+    "key": "Galaxy",
+    "absoluteBoundingBox": {
+      "x": -641,
+      "y": 1020,
+      "width": 403,
+      "height": 160
+    },
+    "renderables": []
+  },
+  "Multipass (Public)": {
+    "key": "Multipass (Public)",
+    "absoluteBoundingBox": {
+      "x": -1947,
+      "y": -124,
+      "width": 1069,
+      "height": 160
+    },
+    "renderables": []
+  },
+  "MANAGEMENT:STAR": {
+    "key": "MANAGEMENT:STAR",
+    "absoluteBoundingBox": {
+      "x": 671,
+      "y": 1824,
+      "width": 612,
+      "height": 792
+    },
+    "renderables": [
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Custody",
+        "fontWeight": 400,
+        "maxWidth": 48,
+        "lineHeightPx": 14.0625,
+        "x": 68,
+        "y": 597
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Abilities",
+        "fontWeight": 400,
+        "maxWidth": 45,
+        "lineHeightPx": 14.0625,
+        "x": 68,
+        "y": 468
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "urbit.org/docs/azimuth",
+        "fontWeight": 400,
+        "maxWidth": 106,
+        "lineHeightPx": 11.061599731445312,
+        "x": 69,
+        "y": 731
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "urbit.org/docs/bridge",
+        "fontWeight": 400,
+        "maxWidth": 101,
+        "lineHeightPx": 9.375,
+        "x": 154,
+        "y": 750
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "bridge.urbit.org",
+        "fontWeight": 400,
+        "maxWidth": 77,
+        "lineHeightPx": 9.375,
+        "x": 69,
+        "y": 750
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Use your master ticket to verify your identity, change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains.",
+        "fontWeight": 400,
+        "maxWidth": 459,
+        "lineHeightPx": 16,
+        "x": 68,
+        "y": 497
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "The master ticket and ownership seed can be used to recover transfer proxy, spawn proxy, delegate, and management seeds.",
+        "fontWeight": 400,
+        "maxWidth": 459,
+        "lineHeightPx": 16,
+        "x": 68,
+        "y": 541
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "This requires a Medium Friction Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.",
+        "fontWeight": 400,
+        "maxWidth": 448,
+        "lineHeightPx": 16,
+        "x": 69,
+        "y": 626
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "SPAWN PROXY",
+        "fontWeight": 400,
+        "maxWidth": 80,
+        "lineHeightPx": 16,
+        "x": 160,
+        "y": 78
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "@management.seed.mnemonic",
+        "fontWeight": 400,
+        "maxWidth": 380,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 191
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 16,
+        "text": "@patp",
+        "fontWeight": 500,
+        "maxWidth": 48,
+        "lineHeightPx": 24,
+        "x": 160,
+        "y": 46
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "SPAWN PROXY SEED",
+        "fontWeight": 400,
+        "maxWidth": 116,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 167
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "DERIVATION PATH",
+        "fontWeight": 400,
+        "maxWidth": 108,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 271
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "OWNERSHIP ADDRESS",
+        "fontWeight": 400,
+        "maxWidth": 123,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 327
+      },
+      {
+        "type": "ADDR_SPLIT_FOUR",
+        "fontWeight": 400,
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "@management.ethereum.address",
+        "maxWidth": 196,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 351
+      },
+      {
+        "type": "QR",
+        "size": 44.99997329711914,
+        "name": ">qr:@management.ethereum.qr",
+        "data": "@management.ethereum.qr",
+        "x": 482,
+        "y": 351
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "@meta.createdOn",
+        "fontWeight": 400,
+        "maxWidth": 48,
+        "lineHeightPx": 9.375,
+        "x": 69,
+        "y": 713
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "UP8",
+        "fontWeight": 400,
+        "maxWidth": 15,
+        "lineHeightPx": 9.375,
+        "x": 129,
+        "y": 713
+      },
+      {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 160,
+        "y": 99,
+        "width": 35,
+        "height": 16,
+        "fillColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.49803921580314636,
+              "g": 0.49803921580314636,
+              "b": 0.49803921580314636,
+              "a": 1
+            }
+          }
+        ],
+        "strokeColor": [],
+        "strokeWeight": 1
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 8,
+        "text": "@meta.custodyLevel",
+        "fontWeight": 500,
+        "maxWidth": 16,
+        "lineHeightPx": 9.375,
+        "x": 170,
+        "y": 102
+      },
+      {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 125,
+        "y": 597,
+        "width": 35,
+        "height": 16,
+        "fillColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.49803921580314636,
+              "g": 0.49803921580314636,
+              "b": 0.49803921580314636,
+              "a": 1
+            }
+          }
+        ],
+        "strokeColor": [],
+        "strokeWeight": 1
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 8,
+        "text": "@meta.custodyLevel",
+        "fontWeight": 500,
+        "maxWidth": 16,
+        "lineHeightPx": 9.375,
+        "x": 135,
+        "y": 600
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "@management.seed.derivationPath",
+        "fontWeight": 400,
+        "maxWidth": 101,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 295
+      },
+      {
+        "type": "HR",
+        "x": 0,
+        "y": 443,
+        "width": 619,
+        "height": 1,
+        "strokeColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.6941176652908325,
+              "g": 0.6980392336845398,
+              "b": 0.7019608020782471,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 2
+      }
+    ]
+  },
+  "MANAGEMENT:GALAXY": {
+    "key": "MANAGEMENT:GALAXY",
+    "absoluteBoundingBox": {
+      "x": 671,
+      "y": 704,
+      "width": 612,
+      "height": 792
+    },
+    "renderables": [
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Custody",
+        "fontWeight": 400,
+        "maxWidth": 48,
+        "lineHeightPx": 14.0625,
+        "x": 68,
+        "y": 597
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Abilities",
+        "fontWeight": 400,
+        "maxWidth": 45,
+        "lineHeightPx": 14.0625,
+        "x": 68,
+        "y": 468
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "urbit.org/docs/azimuth",
+        "fontWeight": 400,
+        "maxWidth": 106,
+        "lineHeightPx": 11.061599731445312,
+        "x": 69,
+        "y": 731
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "urbit.org/docs/bridge",
+        "fontWeight": 400,
+        "maxWidth": 101,
+        "lineHeightPx": 9.375,
+        "x": 154,
+        "y": 750
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "bridge.urbit.org",
+        "fontWeight": 400,
+        "maxWidth": 77,
+        "lineHeightPx": 9.375,
+        "x": 69,
+        "y": 750
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "Use your master ticket to verify your identity, change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains.",
+        "fontWeight": 400,
+        "maxWidth": 459,
+        "lineHeightPx": 16,
+        "x": 68,
+        "y": 497
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "The master ticket and ownership seed can be used to recover transfer proxy, spawn proxy, delegate, and management seeds.",
+        "fontWeight": 400,
+        "maxWidth": 459,
+        "lineHeightPx": 16,
+        "x": 68,
+        "y": 541
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 12,
+        "text": "This requires a Medium Friction Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.",
+        "fontWeight": 400,
+        "maxWidth": 448,
+        "lineHeightPx": 16,
+        "x": 69,
+        "y": 626
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "SPAWN PROXY",
+        "fontWeight": 400,
+        "maxWidth": 80,
+        "lineHeightPx": 16,
+        "x": 160,
+        "y": 78
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "elite trim craft rookie time place open\nfire read gravity piece fringe lesson moment critic leader tortoise wreck crack water security ecology color",
+        "fontWeight": 400,
+        "maxWidth": 380,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 189
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 16,
+        "text": "@patp",
+        "fontWeight": 500,
+        "maxWidth": 48,
+        "lineHeightPx": 24,
+        "x": 160,
+        "y": 46
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "SPAWN PROXY SEED",
+        "fontWeight": 400,
+        "maxWidth": 116,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 167
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "DERIVATION PATH",
+        "fontWeight": 400,
+        "maxWidth": 108,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 271
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "OWNERSHIP ADDRESS",
+        "fontWeight": 400,
+        "maxWidth": 123,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 327
+      },
+      {
+        "type": "ADDR_SPLIT_FOUR",
+        "fontWeight": 400,
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "@management.ethereum.address",
+        "maxWidth": 196,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 351
+      },
+      {
+        "type": "QR",
+        "size": 44.99997329711914,
+        "name": ">qr:@management.ethereum.qr",
+        "data": "@management.ethereum.qr",
+        "x": 486,
+        "y": 351
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "@meta.createdOn",
+        "fontWeight": 400,
+        "maxWidth": 48,
+        "lineHeightPx": 9.375,
+        "x": 69,
+        "y": 713
+      },
+      {
+        "type": "TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 8,
+        "text": "UP8",
+        "fontWeight": 400,
+        "maxWidth": 15,
+        "lineHeightPx": 9.375,
+        "x": 129,
+        "y": 713
+      },
+      {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 160,
+        "y": 100,
+        "width": 35,
+        "height": 16,
+        "fillColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.49803921580314636,
+              "g": 0.49803921580314636,
+              "b": 0.49803921580314636,
+              "a": 1
+            }
+          }
+        ],
+        "strokeColor": [],
+        "strokeWeight": 1
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 8,
+        "text": "@meta.custodyLevel",
+        "fontWeight": 500,
+        "maxWidth": 16,
+        "lineHeightPx": 9.375,
+        "x": 170,
+        "y": 103
+      },
+      {
+        "type": "RECT",
+        "cornerRadius": 4,
+        "x": 125,
+        "y": 597,
+        "width": 35,
+        "height": 16,
+        "fillColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.49803921580314636,
+              "g": 0.49803921580314636,
+              "b": 0.49803921580314636,
+              "a": 1
+            }
+          }
+        ],
+        "strokeColor": [],
+        "strokeWeight": 1
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Inter",
+        "fontSize": 8,
+        "text": "@meta.custodyLevel",
+        "fontWeight": 500,
+        "maxWidth": 16,
+        "lineHeightPx": 9.375,
+        "x": 135,
+        "y": 600
+      },
+      {
+        "type": "TEMPLATE_TEXT",
+        "fontFamily": "Source Code Pro",
+        "fontSize": 12,
+        "text": "@management.seed.derivationPath",
+        "fontWeight": 400,
+        "maxWidth": 101,
+        "lineHeightPx": 16,
+        "x": 72,
+        "y": 295
+      },
+      {
+        "type": "HR",
+        "x": 0,
+        "y": 443,
+        "width": 619,
+        "height": 1,
+        "strokeColor": [
+          {
+            "blendMode": "NORMAL",
+            "type": "SOLID",
+            "color": {
+              "r": 0.6941176652908325,
+              "g": 0.6980392336845398,
+              "b": 0.7019608020782471,
+              "a": 1
+            }
+          }
+        ],
+        "strokeWeight": 2
+      }
+    ]
+  }
+}

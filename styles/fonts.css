@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: "WorkSans-Medium";
   src: url("/fonts/WorkSans-Medium.ttf") format("truetype"),
 }
@@ -22,4 +22,17 @@
 @font-face {
   font-family: "SourceCodePro-Regular";
   src: url("/fonts/SourceCodePro-Regular.ttf") format("truetype"),
+} */
+
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 400;
+  src: url("/fonts/Inter-Regular.woff") format("woff"),
+}
+
+@font-face {
+  font-family: "Inter";
+  font-weight: 600;
+  src: url("/fonts/Inter-SemiBold.woff") format("woff"),
 }
