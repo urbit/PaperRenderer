@@ -176,7 +176,7 @@ gulp.task('js-bundle-preview', gulp.series(
 gulp.task("watch-lib-js", function() {
   gulp.watch(
     `${PATHS.src}/**/*.{js,json}`,
-    gulp.series("js-bundle-lib")
+    gulp.series("js-bundle-lib", "js-bundle-preview")
   );
 });
 
@@ -186,6 +186,7 @@ gulp.task("watch-preview-js", function() {
     gulp.series("js-bundle-preview")
   );
 });
+
 
 gulp.task("watch-preview-css", function() {
   gulp.watch(
@@ -206,6 +207,7 @@ gulp.task(
   "run",
   gulp.series(
     gulp.series(
+      "js-bundle-lib",
       "js-bundle-preview",
       "copy-preview-html",
       "css-bundle-preview"
