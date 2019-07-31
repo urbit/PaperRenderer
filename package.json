@@ -54,9 +54,8 @@
   },
   "scripts": {
     "convert": "node convert.js",
-    "build:dev": "gulp",
-    "serve": "gulp run",
-    "start": "gulp watch",
-    "build:prod": "gulp bundle-prod"
+    "start": "gulp",
+    "build": "gulp bundle-prod",
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
