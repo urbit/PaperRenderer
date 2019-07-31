@@ -49,7 +49,7 @@ gulp.task('css-bundle', function() {
   return gulp
     .src('src/css/index.css')
     .pipe(cssimport())
-    .pipe(cssnano())
+    // .pipe(cssnano())
     .pipe(gulp.dest('./dist/css'));
 });
 

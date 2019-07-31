@@ -25,7 +25,8 @@ class App extends Component {
   render() {
     return (
       <div>
-      hello
+      <h4>Fonts</h4>
+      <p>In order to test this, you must open font book and disable Inter, Inter UI and Source Code Pro or any fonts this library uses.</p>
         {
           <PaperCollateralRenderer
             wallet={wallet5}
