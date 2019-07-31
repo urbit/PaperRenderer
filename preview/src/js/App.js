@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import wallet from './sampleWallets/wallet.json';
+import wallets from './sampleWallets/wallet.json';
 
 import PaperCollateralRenderer from '../../../lib/dist/index.js';
 
@@ -25,7 +25,7 @@ class App extends Component {
       <p>In order to test this, you must open font book and disable Inter, Inter UI and Source Code Pro or any fonts this library uses.</p>
         {
           <PaperCollateralRenderer
-            wallet={wallet}
+            wallets={wallets}
             className={''}
             callback={data => this.handleOutput(data)}
             // mode={'REGISTRATION'}
