@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
-// import wallet1 from './sampleWallets/wallet1.json'; // walletX.value
-// import wallet2 from './sampleWallets/wallet2.json'; // walletX.value
-// import wallet3 from './sampleWallets/wallet3.json'; // walletX.value
-// import wallet4 from './sampleWallets/wallet4.json'; // walletX.value
-import wallet5 from './sampleWallets/wallet5.json';
+import wallet from './sampleWallets/wallet.json';
 
 import PaperCollateralRenderer from '../../../lib/dist/index.js';
 
@@ -18,7 +14,7 @@ class App extends Component {
 
   handleOutput = data => {
     this.setState({pages: data})
-    // console.log('App Scope: ', data)
+    console.log('App.js scope: ', data)
   }
 
 
@@ -29,10 +25,10 @@ class App extends Component {
       <p>In order to test this, you must open font book and disable Inter, Inter UI and Source Code Pro or any fonts this library uses.</p>
         {
           <PaperCollateralRenderer
-            wallet={wallet5}
+            wallet={wallet}
             className={''}
             callback={data => this.handleOutput(data)}
-            mode={'REGISTRATION'}
+            // mode={'REGISTRATION'}
           />
         }
 
