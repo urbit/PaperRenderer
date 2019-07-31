@@ -17,22 +17,6 @@ var globals = require('rollup-plugin-node-globals');
 var browserSync = require('browser-sync');
 var run = require('gulp-run');
 
-/***
-
-  MAIN COMMANDS TO RUN:
-
-  `gulp bundle-dev`: Bundle everything for development
-  `gulp bundle-prod`:  Bundle everything for production
-  `gulp watch`: Watch files, `bundle-dev` on file change
-
-**/
-
-// If you want to copy this app into an Urbit ship, add pier directory here
-// var urbitrc = require('./.urbitrc');
-
-/**
-  Tasks
-**/
 
 const PATHS = {
   src: './lib/src',
@@ -173,46 +157,6 @@ gulp.task('copy-preview-html', function () {
     .pipe(gulp.dest(`${PATHS.previewDist}/`));
 })
 
-// gulp.task('js-minify', function () {
-//   return gulp
-//     .src('./dist/js/index.js')
-//     .pipe(minify())
-//     .pipe(gulp.dest('./dist/js/'));
-// });
-
-// copy fonts to dist folder
-// gulp.task('js-minify', function () {
-//   return gulp.src('./dist/js/index.js')
-//     .pipe(minify())
-//     .pipe(gulp.dest('./dist/js/'));
-// });
-
-
-// gulp.task('js-cachebust', function(cb) {
-//   return Promise.resolve(
-//     exec('git log', function (err, stdout, stderr) {
-//       let firstLine = stdout.split("\n")[0];
-//       let commitHash = firstLine.split(' ')[1].substr(0, 10);
-//       let newFilename = "index-" + commitHash + "-min.js";
-//
-//       exec('mv ./dist/js/index-min.js ./dist/js/' + newFilename);
-//     })
-//   );
-// })
-
-/* This is an example function.
-   If you want to actually use this, you need to pipe /dist to /web/landscape (or similar).
-   Sorry this isn't documented fully.
- */
-// gulp.task('urbit-copy', function () {
-//   let ret = gulp.src('urbit-code/**/*');
-//
-//   urbitrc.URBIT_PIERS.forEach(function(pier) {
-//     ret = ret.pipe(gulp.dest(path.join(pier, "web/landscape")));
-//   });
-//
-//   return ret;
-// });
 
 gulp.task('js-bundle-lib', gulp.series(
   'copy-template-json',
@@ -227,54 +171,6 @@ gulp.task('js-bundle-preview', gulp.series(
   'jsx-transpile-preview',
   'js-imports-preview'
 ));
-
-// gulp.task('js-bundle-dev', gulp.series(
-//   'copy-template-json',
-//   'copy-json-wallet',
-//   'jsx-transform',
-//   'js-imports'
-// ));
-//
-// gulp.task('js-bundle-prod', gulp.series(
-//   'copy-template-json',
-//   'jsx-transform',
-//   'js-imports',
-//   'js-minify',
-//   'js-cachebust'
-// ))
-
-
-// gulp.task('bundle-dev',
-//   gulp.series(
-//     gulp.parallel(
-//       'css-bundle',
-//       'js-bundle-dev'
-//     ),
-//     // 'urbit-copy'
-//   )
-// );
-
-// gulp.task('bundle-prod',
-//   gulp.series(
-//     gulp.parallel(
-//       // 'css-bundle',
-//       'js-bundle-prod',
-//     ),
-//     // 'urbit-copy'
-//   )
-// );
-
-
-//
-// gulp.task('watch',
-//   gulp.series('default', function() {
-//   gulp.watch('src/**/*.js', gulp.parallel('js-bundle-dev'));
-//   // gulp.watch('src/**/*.css', gulp.parallel('css-bundle'));
-//   // gulp.watch('urbit-code/**/*', gulp.parallel('urbit-copy'));
-// }));
-
-
-// gulp.task('run', gulp.parallel('watch', 'serve'));
 
 
 gulp.task("watch-lib-js", function() {
