@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 // import wallet4 from './sampleWallets/wallet4.json'; // walletX.value
 import wallet5 from './sampleWallets/wallet5.json';
 
-import PaperCollateralRenderer from './PaperCollateralRenderer';
+import PaperCollateralRenderer from '../../../lib/dist/index.js';
 
 class App extends Component {
   constructor(props) {
