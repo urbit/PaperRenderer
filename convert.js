@@ -81,39 +81,62 @@ const @templateSchema = [];
 //   classOf: '',
 // }
 
-// separates
-const frameTitleData(title) {
+const frame = {
+  classOf:"",
+  usage:"",
+  bin:'',
+}
+
+const splitFrameTitle(title){
   return title.split(",")
               .replace(" ". "")
 }
 
-const frameDataComponents = [
-  "class",
-  "usage",
-  "bin",
-]
 
-const resetPageSchema(){
-  // reset all values of pageSchema to null but keep all of its smaller values
-
+const getFrameData(title) {
+  var data = splitFrameTitle(title)
+  frame.classOf = data[0]
+  frame.usage = data[1]
+  frame.bin = data[3]
+  return frame
 }
+
 // parses the template title in figma to get basic page template data
 // example templateTitle = "star, master-ticket, 4"
 const setTemplateData(templateTitle){
-
-  var data = frameTitleData(templateTitle);
-
   // data[0] = star, data[1] = master-ticket, data[2] = 4
+  var data = getFrameData(templateTitle);
 
-  if(data.length > 0){ @pageSchema.bin = data[0]; }
+  if(data.length > 0){ @pageSchema.classOf = data.classOf }
   else{ console.log(`Unable to get class type for ${templateTitle} frame`); }
 
-  if(data.length > 1){ @pageSchema.bin = data[1]; }
+  if(data.length > 1){ @pageSchema.usage = data.usage; }
   else{ console.log(`Unable to get template title for ${templateTitle} frame`); }
 
-  if(data.length > 2){ @pageSchema.bin = data[2]; }
+  if(data.length > 2){ @pageSchema.bin = data.bin; }
   else{ console.log(`Unable to get bin data for ${templateTitle} frame`); }
 
+}
+
+// checks if the child is a wanted component, ie "qr"
+const isComponent(name){
+  if(asyncTypes.includes(name) || figmaTypes.includes(name))
+    return true
+  return false
+}
+
+const getEltData(child, name){
+  if(name === "qr") return 
+  // if its of type qr then make qr
+}
+
+// creates an element for pageschema
+const createElt(child){
+  var name = getComponentId(child)
+  if(isComponent(name))
+    // create the element
+    getEltData(child, name)
+  return null
 }
 
 // iteration number
@@ -122,21 +145,19 @@ const flatPack = (lo) => {
 
   const extracted = lo.children.reduce((acc, child) => {
 
-    // frame signals new template page
+    // frame signals a new template page
     if(child.type === "FRAME"){
       @templateSchema.push(@pageSchema); //push the previous frame's data
 
-      @pageSchema = null; // reset @pageSchema from the previous pageSchema
+      @pageSchema = null; // reset @pageSchema
 
-      if (@pageSchema === null) {
-        setTemplateData(child.name)
-      }
+      setTemplateData(child.name)
 
       // traverse down child element
       return acc
     }
 
-    console.log(child.name)
+    // console.log(child.name)
     const name = formatName(child.name)
 
     if (parentTypes.includes(child.type.toLowerCase())) {
@@ -147,8 +168,9 @@ const flatPack = (lo) => {
         // add a new element to pageSchema;elementSchema
 
         var elt = createElt(child); // here we'll check to see what its type is and that whole kit and kaboodle
+        if(elt != null)
+          @templateSchema[@templateSchema.length-1].elements.push(elt)
 
-        @templateSchema[@templateSchema.length-1].elements.push(elt)
         return [...acc, {...child, type: name}];
         // var elt =
         // @pageSchema.elements.push(elt)
