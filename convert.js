@@ -31,7 +31,8 @@ const asyncTypes = [
 const parentTypes = [
   "group",
   "instance"
-]
+];
+
 
 // removes data portion of Figma name and retrieves component name
 const formatName = (type) => {
@@ -42,7 +43,7 @@ const formatName = (type) => {
 }
 
 // we use the name as the component ID. for plain text components, we use Figma's type attribute
-const getComponent = (child, name) => {
+const getComponentId = (child, name) => {
   if (child.type === 'TEXT') return 'text'
   if (figmaTypes.includes(name)) return name
   if (child === null) return null
@@ -50,21 +51,121 @@ const getComponent = (child, name) => {
   throw new Error(`Child: ${child.type} \n\t with Name: ${name}\n\tnot supported`);
 }
 
+var currTemplate = "";
+
+const @templateSchema = [];
+
+// const @pageSchema = {
+//   // elements on the page in figma, ungrouped
+//   elements: [
+//     @elementSchema,
+//     @elementSchema,
+//     @elementSchema,
+//     @elementSchema,
+//     @elementSchema,
+//     ...etc,
+//   ],
+//   // which security group this page belongs to. Important for organizing the final ZIP folder that the user downloads.
+//   bin: 3,
+//   // output png per page, null until PNG is drawn
+//   output: null,
+//   type: 'management',
+//   class: 'star'
+// }
+//
+// const @pageSchema = {
+//   elements: [],
+//   bin: -1,
+//   output: null,
+//   type: '',
+//   classOf: '',
+// }
+
+// separates
+const frameTitleData(title) {
+  return title.split(",")
+              .replace(" ". "")
+}
+
+const frameDataComponents = [
+  "class",
+  "usage",
+  "bin",
+]
+
+const resetPageSchema(){
+  // reset all values of pageSchema to null but keep all of its smaller values
+
+}
+// parses the template title in figma to get basic page template data
+// example templateTitle = "star, master-ticket, 4"
+const setTemplateData(templateTitle){
+
+  var data = frameTitleData(templateTitle);
+
+  // data[0] = star, data[1] = master-ticket, data[2] = 4
+
+  if(data.length > 0){ @pageSchema.bin = data[0]; }
+  else{ console.log(`Unable to get class type for ${templateTitle} frame`); }
+
+  if(data.length > 1){ @pageSchema.bin = data[1]; }
+  else{ console.log(`Unable to get template title for ${templateTitle} frame`); }
+
+  if(data.length > 2){ @pageSchema.bin = data[2]; }
+  else{ console.log(`Unable to get bin data for ${templateTitle} frame`); }
+
+}
+
+// iteration number
+
 const flatPack = (lo) => {
+
   const extracted = lo.children.reduce((acc, child) => {
 
+    // frame signals new template page
+    if(child.type === "FRAME"){
+      @templateSchema.push(@pageSchema); //push the previous frame's data
+
+      @pageSchema = null; // reset @pageSchema from the previous pageSchema
+
+      if (@pageSchema === null) {
+        setTemplateData(child.name)
+      }
+
+      // traverse down child element
+      return acc
+    }
+
+    console.log(child.name)
     const name = formatName(child.name)
 
     if (parentTypes.includes(child.type.toLowerCase())) {
       // do not traverse into children of sigil and qr
-      if (asyncTypes.includes(name)) return [...acc, {...child, type: name}];
+
+      if (asyncTypes.includes(name)) {
+
+        // add a new element to pageSchema;elementSchema
+
+        var elt = createElt(child); // here we'll check to see what its type is and that whole kit and kaboodle
+
+        @templateSchema[@templateSchema.length-1].elements.push(elt)
+        return [...acc, {...child, type: name}];
+        // var elt =
+        // @pageSchema.elements.push(elt)
+      }
+
       // if no special items are found, tranverse down into group
+      // dont save any of the non-special items
       return [...acc, ...flatPack(child)]
     }
 
-    const component = getComponent(child, name);
-    if (component != null) return [...acc, {...child, type: component}];
 
+    const component = getComponentId(child, name);
+
+    if (component != null) {
+
+      // return [...acc, {...child, type: component}];
+    }
     return acc
 
   }, []);
@@ -81,6 +182,31 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
   const arr = res.data.document.children
   const page = arr.filter(page => page.name === KEY)[0]
 
+  //
+  // const layouts = page.children.reduce((acc, lo) => {
+  //
+  //   return {
+  //     ...acc,
+  //     [lo.name]: {
+  //       key: lo.name,
+  //       renderables: flatPack(lo).map(child => {
+  //               if (child.type === 'qr') {
+  //                 return {
+  //                   type: 'qr',
+  //                   size: child.absoluteBoundingBox.height,
+  //                   name: child.name,
+  //                   data: child.name.split(':')[1],
+  //                   x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
+  //                   y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
+  //                 };
+  //               };
+  //       }
+  //
+  //         console.warn(`Untyped child ${child.name} in flat layouts`)
+  //       }),
+  //     }
+  //   }
+  // }, {});
   const layouts = page.children.reduce((acc, lo) => {
     return {
       ...acc,
@@ -231,9 +357,9 @@ client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
   }, {});
 
   // console.log(JSON.stringify(layouts, null, 2));
-  fs.writeFile(OUTPUT_PATH, JSON.stringify(layouts, null, 2), (err) => {
-    console.log('layouts saved')
-    process.exit()
-  })
+  // fs.writeFile(OUTPUT_PATH, JSON.stringify(layouts, null, 2), (err) => {
+  //   console.log('layouts saved')
+  //   process.exit()
+  // })
 
 })
