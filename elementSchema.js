@@ -1,5 +1,34 @@
 const Figma = require('figma-js');
 
+
+const types = {
+  // Figma Naming Convention: >componentName:@data
+  // to parse and import new Figma components, add a new value to figmaTypes
+  figma: [
+    "qr",
+    "template_text",
+    "rect",
+    "patq",
+    "text",
+    "sigil",
+    "img",
+    "wrap_addr_split_four",
+    "addr_split_four",
+    "template_text",
+    "hr",
+  ],
+  // types whose data is retrieved asynchronously (we do not import the figma data)
+  async: [
+    "sigil",
+    "qr"
+  ],
+  // these Figma types house children elements, so we need to transverse all children nodes when we find a parentType
+  singleParent: [
+    "group",
+    "instance"
+  ],
+}
+
 const qr(child) = {
   return {
     data: null,
@@ -175,5 +204,6 @@ const getComponent(child, name){
 }
 
 export {
-  getComponent
+  getComponent,
+  types,
 }
