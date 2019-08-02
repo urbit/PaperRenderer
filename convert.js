@@ -4,6 +4,8 @@ const fs = require('fs')
 
 const OUTPUT_PATH = __dirname + 'lib/src/templates.json'
 
+import { getComponent } from './elementSchema'
+
 // Figma Naming Convention: >componentName:@data
 // to parse and import new Figma components, add a new value to figmaTypes
 const figmaTypes = [
@@ -14,11 +16,10 @@ const figmaTypes = [
   "text",
   "sigil",
   "img",
-  "text",
   "wrap_addr_split_four",
   "addr_split_four",
   "template_text",
-  "hr"
+  "hr",
 ];
 
 // types whose data is retrieved asynchronously (we do not import the figma data)
@@ -32,7 +33,6 @@ const parentTypes = [
   "group",
   "instance"
 ];
-
 
 // removes data portion of Figma name and retrieves component name
 const formatName = (type) => {
@@ -103,19 +103,14 @@ const getFrameData(title) {
 
 // parses the template title in figma to get basic page template data
 // example templateTitle = "star, master-ticket, 4"
-const setTemplateData(templateTitle){
+const getPageData(templateTitle){
   // data[0] = star, data[1] = master-ticket, data[2] = 4
   var data = getFrameData(templateTitle);
 
-  if(data.length > 0){ @pageSchema.classOf = data.classOf }
-  else{ console.log(`Unable to get class type for ${templateTitle} frame`); }
 
-  if(data.length > 1){ @pageSchema.usage = data.usage; }
-  else{ console.log(`Unable to get template title for ${templateTitle} frame`); }
 
-  if(data.length > 2){ @pageSchema.bin = data.bin; }
-  else{ console.log(`Unable to get bin data for ${templateTitle} frame`); }
 
+  return data
 }
 
 // checks if the child is a wanted component, ie "qr"
@@ -126,32 +121,45 @@ const isComponent(name){
 }
 
 const getEltData(child, name){
-  if(name === "qr") return 
-  // if its of type qr then make qr
+  // 
 }
 
 // creates an element for pageschema
 const createElt(child){
   var name = getComponentId(child)
-  if(isComponent(name))
-    // create the element
-    getEltData(child, name)
+  var component = getComponent(child,name)
+  if(component != null){
+    var data = getEltData(child, name)
+    if(data != null) component.data = data
+    // throw error that could not find any data
+  // throw error that the type found was not supported
   return null
 }
 
 // iteration number
-
 const flatPack = (lo) => {
-
+  @pageSchema = null
   const extracted = lo.children.reduce((acc, child) => {
 
     // frame signals a new template page
     if(child.type === "FRAME"){
-      @templateSchema.push(@pageSchema); //push the previous frame's data
 
-      @pageSchema = null; // reset @pageSchema
+      @pageSchema = null                  // reset pageSchema
+      elements = null                     // reset page elements
 
-      setTemplateData(child.name)
+      var data = getPageSchemaData(child)
+
+      if(data.length > 0){ @pageSchema.classOf = data.classOf }
+      else{ console.log(`Unable to get class type for ${templateTitle} frame`); }
+
+      if(data.length > 1){ @pageSchema.usage = data.usage; }
+      else{ console.log(`Unable to get template title for ${templateTitle} frame`); }
+
+      if(data.length > 2){ @pageSchema.bin = data.bin; }
+      else{ console.log(`Unable to get bin data for ${templateTitle} frame`); }
+      // pageSchema data now set
+
+      @templateSchema.push(@pageSchema);  // push the previous frame's data
 
       // traverse down child element
       return acc
@@ -160,23 +168,21 @@ const flatPack = (lo) => {
     // console.log(child.name)
     const name = formatName(child.name)
 
+    // do not traverse into children of sigil and qr
     if (parentTypes.includes(child.type.toLowerCase())) {
-      // do not traverse into children of sigil and qr
 
       if (asyncTypes.includes(name)) {
 
-        // add a new element to pageSchema;elementSchema
-
         var elt = createElt(child); // here we'll check to see what its type is and that whole kit and kaboodle
         if(elt != null)
-          @templateSchema[@templateSchema.length-1].elements.push(elt)
+          @templateSchema.@pageSchema.elements.push(elt)
 
         return [...acc, {...child, type: name}];
         // var elt =
         // @pageSchema.elements.push(elt)
       }
 
-      // if no special items are found, tranverse down into group
+      // if no special items are found, traverse down into group
       // dont save any of the non-special items
       return [...acc, ...flatPack(child)]
     }
