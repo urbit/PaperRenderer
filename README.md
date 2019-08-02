@@ -42,6 +42,10 @@ Making changes:
 | or `$ npm run build:prod`| Build the library from source                 |
 |`npm run serve`           | Serve & watch build on localhost:8000         |  
 
+## Debug
+
+See our [documentation of frequent bugs](docs/freq-bugs.md) and how to fix them.
+
 ## Usage
 
 ```js
