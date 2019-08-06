@@ -1,6 +1,6 @@
 /*
 
-To use this file, call the bottom function getTemplateSchema.
+To use this file, call getTemplateSchema at line 136 (optional figma document key param)
 
 This function will call extractSchema, which will parse the Figma JSON.
 
@@ -8,6 +8,8 @@ The return will be an array of pageSchemas called templateSchema.
 
 Each pageSchema has data such as the class, usage and bin #,
 along with an array of elementSchemas (created in elementSchema.js).
+
+templateSchema > pageSchemas > elementSchemas
 
 */
 
@@ -17,15 +19,7 @@ const fs = require('fs')
 
 const OUTPUT_PATH = __dirname + 'lib/src/templates.json'
 
-import { getComponent, types } from './elementSchema'
-
-const @templateSchema = [];
-
-const frame = {
-  classOf:'',
-  usage:'',
-  bin:'',
-}
+import { getComponent, types, isType } from './elementSchema'
 
 // "galaxy, management, 4" --> [galaxy, management, 4]
 const splitTitle(title){
@@ -33,7 +27,39 @@ const splitTitle(title){
               .replace(" ". "")
 }
 
-// [galaxy, mangagement, 4] --> frame { classOf: "galaxy", usage: "management", bin: 4}
+
+// removes data portion of Figma name and retrieves component name
+const formatName = (name) => {
+  return name
+    .split(':')[0]
+    .replace('>','')
+    .toLowerCase();
+}
+
+
+const getComponentId = (child) => {
+  const type = child.type.toLowerCase()
+  const name = formatName(child.name)
+
+  // we use figma's type identifier for type TEXT. otherwise we use name id
+  if(isType(type)) return type
+  if(isType(name)) return name
+
+  console.Error(`Component ID not supported for child of type ${type} and name ${name}`)
+  return null
+}
+
+
+// creates an elementSchema via /elementSchema.js
+const createElt(child){
+  const id = getComponentId(child)
+  const elt = getComponent(child, id)
+  if(elt === null) console.error(`Unsupported child type ${id}`)
+  return elt
+}
+
+
+// "galaxy, management, 4" --> [galaxy, mangagement, 4] --> frame { classOf: "galaxy", usage: "management", bin: 4}
 const getFrame(title) {
   const data = splitTitle(title)
   var frame = {}
@@ -53,97 +79,75 @@ const getFrame(title) {
   return frame
 }
 
-// we use the name as the component ID. for plain text components, we use Figma's type attribute
-const getComponentId = (child, name) => {
-  if (child.type === 'TEXT') return 'text'
-  if (types.figma.includes(name)) return name
-  if (child === null) return null
-
-  throw new Error(`Child: ${child.type} \n\t with Name: ${name}\n\tnot supported`);
-}
-
-// creates an elementSchema --> elementSchema.js
-const createElt(child){
-  var name = getComponentId(child)
-  var elt = getComponent(child,name)
-  if(elt != null){
-    return elt
-    // throw error that the type found was not supported
-  return null
-}
-
-// removes data portion of Figma name and retrieves component name
-const formatName = (type) => {
-  return type
-    .split(':')[0]
-    .replace('>','')
-    .toLowerCase();
-}
 
 const extractSchema = (lo) => {
-  @templateSchema = null
-  @pageSchema = null
+  var templateSchema = []
+  var pageSchema = null
   const extracted = lo.children.reduce((acc, child) => {
 
     if(child.type === "FRAME"){           // frame signals a new template page
-      @pageSchema = null                  // reset pageSchema
-      elements = null                     // reset page elements
+      pageSchema = { elements: null }     // reset pageSchema
 
       var data = getFrame(child)
-      @pageSchema.classOf = data.classOf
-      @pageSchema.usage = data.usage
-      @pageSchema.bin = data.bin;
-      @templateSchema.push(@pageSchema);  // push the previous frame's data
+      pageSchema.classOf = data.classOf
+      pageSchema.usage = data.usage
+      pageSchema.bin = data.bin
+      templateSchema.push(pageSchema)     // push the frame's data
 
       return acc                          // traverse child elements
     }
 
-    const name = formatName(child.name)
+    const name = getComponentId(child)
+    if(name === null){
+      return acc
+    }
 
     // do not traverse child elements of singleParent sigil/qr/group
-    if (types.singleParent.includes(child.type.toLowerCase())) {
+    if (types.singleParent.includes(name) {
       if (types.async.includes(name)) {
-        var elt = createElt(child);
-        if (elt != null) @templateSchema.@pageSchema.elements.push(elt)
+
+        var elt = createElt(child)
+
+        if(elt === null) return acc
+
+        // add element to most recent pageSchema in templateSchema
+        templateSchema[templateSchema.length-1].elements.push(elt)
         return [...acc, {...child, type: name}];
       }
+
       // if no special items are found, find next child
       return [...acc, ...flatPack(child)]
+
     }
 
-    // const component = getComponentId(child, name);
-    if ((component = getComponentId(child, name)) === null) {
-      console.error(`Could not find a component to match child ${child} with name ${name}`)
+    const elt = createElt(child)
+    if (elt === null) {
       return acc
     }
-    if ((elt = createElt(child)) === null) {
-      console.error(`Could not find create an elementSchema for ${component} with child ${child} and name ${name}.`)
-      return acc
-    }
-    @templateSchema.@pageSchema.elements.push(elt)
+    templateSchema[templateSchema.length-1].elements.push(elt)
     return [...acc, {...child, type: name}];
 
   }, []);
 
-  return @templateSchema
-  // return extracted
+  return templateSchema
 };
 
 
-const getTemplateSchema = () => {
+const getTemplateSchema = (KEY) => {
+
+  KEY = KEY || "Registration 1.2";
 
   const TOKEN = process.env.FIGMA_API_TOKEN
   const client = Figma.Client({ personalAccessToken: TOKEN })
 
   client.file('a4u6jBsdTgiXcrDGW61q5ngY').then(res => {
 
-    const KEY = 'Registration 1.2'
     const arr = res.data.document.children
     const page = arr.filter(page => page.name === KEY)[0]
 
-    const extracted = extractSchema(page)
-    if (extracted === null) throw new Error(`Unable to extract template schema from ${page}.`)
+    const schema = extractSchema(page)
+    if (schema === null) throw new Error(`Unable to extract template schema from ${page} with key ${KEY}.`)
 
-    return extracted
+    return schema
   });
 }

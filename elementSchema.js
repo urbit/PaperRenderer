@@ -1,9 +1,10 @@
 const Figma = require('figma-js');
 
+const EXTENDED_WALLET_PATH = '/preview/src/js/sampleWallets/wallet.json'
 
+// Figma Naming Convention: >componentName:@data
+// to parse and import new Figma components, add a new value
 const types = {
-  // Figma Naming Convention: >componentName:@data
-  // to parse and import new Figma components, add a new value to figmaTypes
   figma: [
     "qr",
     "template_text",
@@ -29,16 +30,22 @@ const types = {
   ],
 }
 
+const isType = (type) => {
+  if(types.figma.includes(type) ||
+     types.async.includes(type) ||
+     types.singleParent.includes(type))
+     return true
+  return false
+}
+
 const qr(child) = {
   return {
-    data: null,
-    path: '',
-    draw: 'qr',
-    data: null,
     type: 'qr',
+    draw: 'drawQR',
+    data: child.name.split(':')[1],
+    path: EXTENDED_WALLET_PATH,
     size: child.absoluteBoundingBox.height,
     name: child.name,
-    data: child.name.split(':')[1],
     x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
     y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
   };
@@ -46,10 +53,10 @@ const qr(child) = {
 
 const sigil(child) = {
   return {
-    data: null,
-    path: '',
-    draw: 'sigil',
     type: 'sigil',
+    draw: 'drawSigil',
+    data: child.name.split(':')[1],
+    path: EXTENDED_WALLET_PATH,
     size: child.absoluteBoundingBox.height,
     name: child.name,
     data: child.name.split(':')[1],
@@ -60,10 +67,10 @@ const sigil(child) = {
 
 const img(child) = {
   return {
-    data: null,
-    path: '',
-    draw: 'img',
     type: 'img',
+    draw: 'drawImg',
+    data: child.name.split(':')[1],
+    path: EXTENDED_WALLET_PATH,
     width: child.absoluteBoundingBox.height,
     height: child.absoluteBoundingBox.width,
     name: child.name,
@@ -75,9 +82,9 @@ const img(child) = {
 
 const text(child) = {
   return {
-    data: null,
-    path: '',
     type: 'text',
+    draw: 'drawWrappedText',
+    path: EXTENDED_WALLET_PATH,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
     text: child.characters,
@@ -92,9 +99,10 @@ const text(child) = {
 
 const template_text(child) = {
   return {
-    data: null,
-    path: '',
     type: 'template_text',
+    draw: 'drawWrappedText',
+    path: EXTENDED_WALLET_PATH,
+    data: child.name.split(':')[1],
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
     text: child.name.split(':')[1],
@@ -109,9 +117,10 @@ const template_text(child) = {
 
 const patq(child) = {
   return {
-    data: null,
-    path: '',
     type: 'patq',
+    draw: 'drawPatQ',
+    path: EXTENDED_WALLET_PATH,
+    data: child.name.split(':')[1],
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
     fontWeight: child.style.fontWeight,
@@ -124,9 +133,10 @@ const patq(child) = {
 };
 const addr_split_four(child) = {
   return {
-    data: null,
-    path: '',
     type: 'addr_split_four',
+    draw: 'drawEthereumAddressLong',
+    path: EXTENDED_WALLET_PATH,
+    data: child.name.split(':')[1],
     fontWeight: child.style.fontWeight,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
@@ -141,9 +151,10 @@ const addr_split_four(child) = {
 
 const wrap_addr_split_four(child) = {
   return {
-    data: null,
-    path: '',
     type: 'wrap_addr_split_four',
+    draw: 'drawEthereumAddressCompact',
+    path: EXTENDED_WALLET_PATH,
+    data: child.name.split(':')[1],
     fontWeight: child.style.fontWeight,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
@@ -158,9 +169,10 @@ const wrap_addr_split_four(child) = {
 
 const rect(child) = {
   return {
-    data: null,
-    path: '',
     type: 'rect',
+    draw: 'drawRect',
+    path: EXTENDED_WALLET_PATH,
+    data: child.name.split(':')[1],
     cornerRadius: child.cornerRadius,
     dashes: child.strokeDashes,
     x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
@@ -175,9 +187,10 @@ const rect(child) = {
 
 const hr(child) = {
   return {
-    data: null,
-    path: '',
     type: 'hr',
+    draw: 'drawLine',
+    path: EXTENDED_WALLET_PATH,
+    data: child.name.split(':')[1],
     dashes: child.strokeDashes,
     x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
     y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
@@ -189,21 +202,23 @@ const hr(child) = {
 };
 
 const getComponent(child, name){
-  if(name === "qr") return qr(child)
-  if(name === "template_text") return template_text(child)
-  if(name === "rect") return rect(child)
-  if(name === "patq") return patq(child)
-  if(name === "text") return text(child)
-  if(name === "sigil") return sigil(child)
-  if(name === "img") return img(child)
-  if(name === "wrap_addr_split_four") return wrap_addr_split_four(child)
-  if(name === "addr_split_four") return addr_split_four(child)
-  if(name === "template_text") return template_text(child)
-  if(name === "hr") return hr(child)
+  if(name === "qr")                    return qr(child)
+  if(name === "template_text")         return template_text(child)
+  if(name === "rect")                  return rect(child)
+  if(name === "patq")                  return patq(child)
+  if(name === "text")                  return text(child)
+  if(name === "sigil")                 return sigil(child)
+  if(name === "img")                   return img(child)
+  if(name === "wrap_addr_split_four")  return wrap_addr_split_four(child)
+  if(name === "addr_split_four")       return addr_split_four(child)
+  if(name === "template_text")         return template_text(child)
+  if(name === "hr")                    return hr(child)
+
   return null
 }
 
 export {
   getComponent,
   types,
+  isType,
 }
