@@ -1,11 +1,8 @@
 {
-  "name": "PaperCollateralRenderer",
+  "name": "urbit-paper-collateral-renderer",
   "version": "1.2.0",
-  "private": true,
+  "private": false,
   "repository": {
-    "url": ""
-  },
-  "bugs": {
     "url": ""
   },
   "main": "dist/PaperCollateralRenderer.js",
@@ -52,5 +49,12 @@
     "start": "gulp",
     "build": "gulp bundle-prod",
     "test": "echo \"Error: no test specified\" && exit 1"
-  }
+  },
+  "description": "[Github](https://github.com/urbit/PaperCollateralRenderer)",
+  "directories": {
+    "doc": "docs",
+    "lib": "lib"
+  },
+  "author": "",
+  "license": "MIT"
 }
