@@ -16,15 +16,16 @@ templateSchema > pageSchemas > elementSchemas
 require('dotenv').config()
 const Figma = require('figma-js');
 const fs = require('fs')
+const { getComponent, types, isType } = require('./elementSchema')
 
-const OUTPUT_PATH = __dirname + 'lib/src/templates.json'
 
-import { getComponent, types, isType } from './elementSchema'
+const OUTPUT_PATH = __dirname + '../lib/src/templates.json'
+
 
 // "galaxy, management, 4" --> [galaxy, management, 4]
-const splitTitle(title){
+const splitTitle = (title) => {
   return title.split(",")
-              .replace(" ". "")
+              .replace(" ", "")
 }
 
 
@@ -51,7 +52,7 @@ const getComponentId = (child) => {
 
 
 // creates an elementSchema via /elementSchema.js
-const createElt(child){
+const createElt = (child) => {
   const id = getComponentId(child)
   const elt = getComponent(child, id)
   if(elt === null) console.error(`Unsupported child type ${id}`)
@@ -60,7 +61,7 @@ const createElt(child){
 
 
 // "galaxy, management, 4" --> [galaxy, mangagement, 4] --> frame { classOf: "galaxy", usage: "management", bin: 4}
-const getFrame(title) {
+const getFrame = (title) => {
   const data = splitTitle(title)
   var frame = {}
 
@@ -102,11 +103,13 @@ const extractSchema = (lo) => {
       return acc
     }
 
+    var elt
+
     // do not traverse child elements of singleParent sigil/qr/group
-    if (types.singleParent.includes(name) {
+    if (types.singleParent.includes(name)) {
       if (types.async.includes(name)) {
 
-        var elt = createElt(child)
+        elt = createElt(child)
 
         if(elt === null) return acc
 
@@ -120,7 +123,7 @@ const extractSchema = (lo) => {
 
     }
 
-    const elt = createElt(child)
+    elt = createElt(child)
     if (elt === null) {
       return acc
     }
@@ -151,3 +154,6 @@ const getTemplateSchema = (KEY) => {
     return schema
   });
 }
+
+// call
+getTemplateSchema("Registration 1.2")

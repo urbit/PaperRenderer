@@ -38,7 +38,7 @@ const isType = (type) => {
   return false
 }
 
-const qr(child) = {
+const qr = (child) => {
   return {
     type: 'qr',
     draw: 'drawQR',
@@ -51,7 +51,7 @@ const qr(child) = {
   };
 };
 
-const sigil(child) = {
+const sigil = (child) => {
   return {
     type: 'sigil',
     draw: 'drawSigil',
@@ -65,7 +65,7 @@ const sigil(child) = {
   };
 };
 
-const img(child) = {
+const img = (child) => {
   return {
     type: 'img',
     draw: 'drawImg',
@@ -80,7 +80,7 @@ const img(child) = {
   };
 };
 
-const text(child) = {
+const text = (child) => {
   return {
     type: 'text',
     draw: 'drawWrappedText',
@@ -97,7 +97,7 @@ const text(child) = {
   };
 };
 
-const template_text(child) = {
+const template_text = (child) => {
   return {
     type: 'template_text',
     draw: 'drawWrappedText',
@@ -115,7 +115,7 @@ const template_text(child) = {
   };
 };
 
-const patq(child) = {
+const patq = (child) => {
   return {
     type: 'patq',
     draw: 'drawPatQ',
@@ -131,7 +131,7 @@ const patq(child) = {
     y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
   };
 };
-const addr_split_four(child) = {
+const addr_split_four = (child) => {
   return {
     type: 'addr_split_four',
     draw: 'drawEthereumAddressLong',
@@ -149,7 +149,7 @@ const addr_split_four(child) = {
   };
 };
 
-const wrap_addr_split_four(child) = {
+const wrap_addr_split_four = (child) => {
   return {
     type: 'wrap_addr_split_four',
     draw: 'drawEthereumAddressCompact',
@@ -167,7 +167,7 @@ const wrap_addr_split_four(child) = {
   };
 };
 
-const rect(child) = {
+const rect = (child) => {
   return {
     type: 'rect',
     draw: 'drawRect',
@@ -185,7 +185,7 @@ const rect(child) = {
   };
 };
 
-const hr(child) = {
+const hr = (child) => {
   return {
     type: 'hr',
     draw: 'drawLine',
@@ -201,7 +201,7 @@ const hr(child) = {
   };
 };
 
-const getComponent(child, name){
+const getComponent = (child, name) => {
   if(name === "qr")                    return qr(child)
   if(name === "template_text")         return template_text(child)
   if(name === "rect")                  return rect(child)
@@ -217,7 +217,7 @@ const getComponent(child, name){
   return null
 }
 
-export {
+module.exports = {
   getComponent,
   types,
   isType,
