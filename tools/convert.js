@@ -21,6 +21,7 @@ const { getComponent, types, isType } = require('./elementSchema')
 
 const OUTPUT_PATH = __dirname + '../lib/src/templates.json'
 
+var originX = 0, originY = 0
 
 const templateSchema = {
   figmaPageID: "",
@@ -68,7 +69,7 @@ const getComponentId = (child) => {
 
 // creates an elementSchema via /elementSchema.js
 const createElement = (child, name, lo) => {
-  const elt = getComponent(child, name, lo)
+  const elt = getComponent(child, name, originX, originY)
   if(elt === null) console.error(`Unsupported child type ${name}`)
   return elt
 }
@@ -133,8 +134,11 @@ const depthFirst = (node, callback) => {
         const name = getComponentId(child)
 
         // create a new pageSchema and add it to templateSchema
-        if(name === "frame")
+        if(name === "frame"){
           addPageSchema(child)
+          originX = child.absoluteBoundingBox.x
+          originY = child.absoluteBoundingBox.y
+        }
 
         // when we find a base figma type add it to this page's elements
         else if (types.figma.includes(name) && templateSchema.pageSchemas !== [])
@@ -164,7 +168,8 @@ const getTemplateSchema = (KEY) => {
 
     const arr = res.data.document.children
     const page = arr.filter(page => page.name === KEY)[0]
-
+    // const data = JSON.stringify(page, null, 2)
+    // fs.writeFile("tools/out.txt", data, (err) => { if(err) throw err; })
     extractSchema(page)
 
     if (templateSchema === null) throw new Error(`Unable to extract template schema from ${page} with key ${KEY}.`)

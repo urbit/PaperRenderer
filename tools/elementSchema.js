@@ -39,7 +39,7 @@ const isType = (type) => {
   return false
 }
 
-const qr = (child, lo) => {
+const qr = (child, originX, originY) => {
   return {
     type: 'qr',
     draw: 'drawQR',
@@ -47,12 +47,12 @@ const qr = (child, lo) => {
     path: EXTENDED_WALLET_PATH,
     size: child.absoluteBoundingBox.height,
     name: child.name,
-    x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
-    y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
+    x: child.absoluteBoundingBox.x - originX,
+    y: child.absoluteBoundingBox.y - originY,
   };
 };
 
-const sigil = (child, lo) => {
+const sigil = (child, originX, originY) => {
   return {
     type: 'sigil',
     draw: 'drawSigil',
@@ -61,12 +61,12 @@ const sigil = (child, lo) => {
     size: child.absoluteBoundingBox.height,
     name: child.name,
     data: child.name.split(':')[1],
-    x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
-    y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
+    x: child.absoluteBoundingBox.x - originX,
+    y: child.absoluteBoundingBox.y - originY,
   };
 };
 
-const img = (child, lo) => {
+const img = (child, originX, originY) => {
   return {
     type: 'img',
     draw: 'drawImg',
@@ -76,12 +76,12 @@ const img = (child, lo) => {
     height: child.absoluteBoundingBox.width,
     name: child.name,
     data: child.name.split(':')[1],
-    x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
-    y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
+    x: child.absoluteBoundingBox.x - originX,
+    y: child.absoluteBoundingBox.y - originY,
   };
 };
 
-const text = (child, lo) => {
+const text = (child, originX, originY) => {
   return {
     type: 'text',
     draw: 'drawWrappedText',
@@ -92,13 +92,13 @@ const text = (child, lo) => {
     fontWeight: child.style.fontWeight,
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
-    x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
-    y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
+    x: child.absoluteBoundingBox.x - originX,
+    y: child.absoluteBoundingBox.y - originY,
     fontColor: child.fills,
   };
 };
 
-const template_text = (child, lo) => {
+const template_text = (child, originX, originY) => {
   return {
     type: 'template_text',
     draw: 'drawWrappedText',
@@ -110,13 +110,13 @@ const template_text = (child, lo) => {
     fontWeight: child.style.fontWeight,
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
-    x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
-    y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
+    x: child.absoluteBoundingBox.x - originX,
+    y: child.absoluteBoundingBox.y - originY,
     fontColor: child.fills,
   };
 };
 
-const patq = (child, lo) => {
+const patq = (child, originX, originY) => {
   return {
     type: 'patq',
     draw: 'drawPatQ',
@@ -128,11 +128,11 @@ const patq = (child, lo) => {
     text: child.name.split(':')[1],
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
-    x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
-    y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
+    x: child.absoluteBoundingBox.x - originX,
+    y: child.absoluteBoundingBox.y - originY,
   };
 };
-const addr_split_four = (child, lo) => {
+const addr_split_four = (child, originX, originY) => {
   return {
     type: 'addr_split_four',
     draw: 'drawEthereumAddressLong',
@@ -144,13 +144,13 @@ const addr_split_four = (child, lo) => {
     text: child.name.split(':')[1],
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
-    x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
-    y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
+    x: child.absoluteBoundingBox.x - originX,
+    y: child.absoluteBoundingBox.y - originY,
     fontColor: child.fills,
   };
 };
 
-const wrap_addr_split_four = (child, lo) => {
+const wrap_addr_split_four = (child, originX, originY) => {
   return {
     type: 'wrap_addr_split_four',
     draw: 'drawEthereumAddressCompact',
@@ -162,13 +162,13 @@ const wrap_addr_split_four = (child, lo) => {
     text: child.name.split(':')[1],
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
-    x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
-    y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
+    x: child.absoluteBoundingBox.x - originX,
+    y: child.absoluteBoundingBox.y - originY,
     fontColor: child.fills,
   };
 };
 
-const rect = (child, lo) => {
+const rect = (child, originX, originY) => {
   return {
     type: 'rect',
     draw: 'drawRect',
@@ -176,8 +176,8 @@ const rect = (child, lo) => {
     data: child.name.split(':')[1],
     cornerRadius: child.cornerRadius,
     dashes: child.strokeDashes,
-    x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
-    y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
+    x: child.absoluteBoundingBox.x - originX,
+    y: child.absoluteBoundingBox.y - originY,
     width: child.absoluteBoundingBox.width,
     height: child.absoluteBoundingBox.height,
     fillColor: child.fills,
@@ -186,15 +186,15 @@ const rect = (child, lo) => {
   };
 };
 
-const hr = (child, lo) => {
+const hr = (child, originX, originY) => {
   return {
     type: 'hr',
     draw: 'drawLine',
     path: EXTENDED_WALLET_PATH,
     data: child.name.split(':')[1],
     dashes: child.strokeDashes,
-    x: child.absoluteBoundingBox.x - lo.absoluteBoundingBox.x,
-    y: child.absoluteBoundingBox.y - lo.absoluteBoundingBox.y,
+    x: child.absoluteBoundingBox.x - originX,
+    y: child.absoluteBoundingBox.y - originY,
     width: child.absoluteBoundingBox.width,
     height: child.absoluteBoundingBox.height,
     strokeColor: child.strokes,
@@ -202,18 +202,18 @@ const hr = (child, lo) => {
   };
 };
 
-const getComponent = (child, name, lo) => {
-  if(name === "qr")                    return qr(child, lo)
-  if(name === "template_text")         return template_text(child, lo)
-  if(name === "rect")                  return rect(child, lo)
-  if(name === "patq")                  return patq(child, lo)
-  if(name === "text")                  return text(child, lo)
-  if(name === "sigil")                 return sigil(child, lo)
-  if(name === "img")                   return img(child, lo)
-  if(name === "wrap_addr_split_four")  return wrap_addr_split_four(child, lo)
-  if(name === "addr_split_four")       return addr_split_four(child, lo)
-  if(name === "template_text")         return template_text(child, lo)
-  if(name === "hr")                    return hr(child, lo)
+const getComponent = (child, name, originX, originY) => {
+  if(name === "qr")                    return qr(child, originX, originY)
+  if(name === "template_text")         return template_text(child, originX, originY)
+  if(name === "rect")                  return rect(child, originX, originY)
+  if(name === "patq")                  return patq(child, originX, originY)
+  if(name === "text")                  return text(child, originX, originY)
+  if(name === "sigil")                 return sigil(child, originX, originY)
+  if(name === "img")                   return img(child, originX, originY)
+  if(name === "wrap_addr_split_four")  return wrap_addr_split_four(child, originX, originY)
+  if(name === "addr_split_four")       return addr_split_four(child, originX, originY)
+  if(name === "template_text")         return template_text(child, originX, originY)
+  if(name === "hr")                    return hr(child, originX, originY)
 
   return null
 }
