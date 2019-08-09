@@ -2,6 +2,9 @@
   "figmaPageID": "Registration 1.2",
   "pageSchemas": [
     {
+      "classOf": "star",
+      "usage": "spawn",
+      "bin": "4",
       "elementSchemas": [
         {
           "type": "text",
@@ -9097,11 +9100,12 @@
             }
           ]
         }
-      ],
-      "classOf": "star",
-      "usage": "spawn"
+      ]
     },
     {
+      "classOf": "star",
+      "usage": "spawn",
+      "bin": "4",
       "elementSchemas": [
         {
           "type": "text",
@@ -18197,11 +18201,12 @@
             }
           ]
         }
-      ],
-      "classOf": "star",
-      "usage": "spawn"
+      ]
     },
     {
+      "classOf": "star",
+      "usage": "spawn",
+      "bin": "4",
       "elementSchemas": [
         {
           "type": "text",
@@ -27297,11 +27302,12 @@
             }
           ]
         }
-      ],
-      "classOf": "star",
-      "usage": "spawn"
+      ]
     },
     {
+      "classOf": "star",
+      "usage": "spawn",
+      "bin": "4",
       "elementSchemas": [
         {
           "type": "text",
@@ -36397,11 +36403,12 @@
             }
           ]
         }
-      ],
-      "classOf": "star",
-      "usage": "spawn"
+      ]
     },
     {
+      "classOf": "star",
+      "usage": "spawn",
+      "bin": "4",
       "elementSchemas": [
         {
           "type": "text",
@@ -45497,11 +45504,12 @@
             }
           ]
         }
-      ],
-      "classOf": "star",
-      "usage": "spawn"
+      ]
     },
     {
+      "classOf": "star",
+      "usage": "spawn",
+      "bin": "4",
       "elementSchemas": [
         {
           "type": "text",
@@ -54597,11 +54605,12 @@
             }
           ]
         }
-      ],
-      "classOf": "star",
-      "usage": "spawn"
+      ]
     },
     {
+      "classOf": "star",
+      "usage": "spawn",
+      "bin": "4",
       "elementSchemas": [
         {
           "type": "text",
@@ -63697,11 +63706,12 @@
             }
           ]
         }
-      ],
-      "classOf": "star",
-      "usage": "spawn"
+      ]
     },
     {
+      "classOf": "star",
+      "usage": "spawn",
+      "bin": "4",
       "elementSchemas": [
         {
           "type": "text",
@@ -72797,11 +72807,12 @@
             }
           ]
         }
-      ],
-      "classOf": "star",
-      "usage": "spawn"
+      ]
     },
     {
+      "classOf": "star",
+      "usage": "spawn",
+      "bin": "4",
       "elementSchemas": [
         {
           "type": "text",
@@ -81897,11 +81908,12 @@
             }
           ]
         }
-      ],
-      "classOf": "star",
-      "usage": "spawn"
+      ]
     },
     {
+      "classOf": "star",
+      "usage": "spawn",
+      "bin": "4",
       "elementSchemas": [
         {
           "type": "text",
@@ -90997,11 +91009,12 @@
             }
           ]
         }
-      ],
-      "classOf": "star",
-      "usage": "spawn"
+      ]
     },
     {
+      "classOf": "star",
+      "usage": "spawn",
+      "bin": "4",
       "elementSchemas": [
         {
           "type": "text",
@@ -100097,11 +100110,12 @@
             }
           ]
         }
-      ],
-      "classOf": "star",
-      "usage": "spawn"
+      ]
     },
     {
+      "classOf": "star",
+      "usage": "spawn",
+      "bin": "4",
       "elementSchemas": [
         {
           "type": "text",
@@ -109197,11 +109211,12 @@
             }
           ]
         }
-      ],
-      "classOf": "star",
-      "usage": "spawn"
+      ]
     },
     {
+      "classOf": "star",
+      "usage": "spawn",
+      "bin": "4",
       "elementSchemas": [
         {
           "type": "text",
@@ -118297,9 +118312,7 @@
             }
           ]
         }
-      ],
-      "classOf": "star",
-      "usage": "spawn"
+      ]
     }
   ]
 }

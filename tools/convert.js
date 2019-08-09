@@ -28,10 +28,10 @@ const templateSchema = {
 }
 
 const pageSchema = {
-  elementSchemas: [],
   classOf: "",
   usage: "",
-  bin: 0
+  bin: 0,
+  elementSchemas: []
 }
 
 
@@ -61,7 +61,7 @@ const getComponentId = (child) => {
   if(isType(type)) return type
   if(isType(name)) return name
 
-  // console.error(`Component ID not supported for child of type ${type} and name ${name}`)
+  console.error(`Component ID not supported for child of type ${type} and name ${name}`)
   return null
 }
 
@@ -89,7 +89,7 @@ const getFrame = (title) => {
 
   if (data.length === 2)
     throw new Error(`Unable to get custody number for ${title}'s frame.`)
-  else frame.custody = data[2]
+  else frame.bin = data[2]
 
   return frame
 }
@@ -106,7 +106,6 @@ const addPageSchema = (child) => {
   pageSchema.classOf = data.classOf
   pageSchema.usage = data.usage
   pageSchema.bin = data.bin
-  // console.log(pageSchema)
   templateSchema.pageSchemas.push(pageSchema)
 }
 
@@ -149,12 +148,6 @@ const depthFirst = (node, callback) => {
     }
 
   }
-  //
-  // if(node.children === null)
-  // return
-
-
-
 
 const extractSchema = (lo) => {
   depthFirst(lo, function(node){})
