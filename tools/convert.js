@@ -22,12 +22,25 @@ const { getComponent, types, isType } = require('./elementSchema')
 const OUTPUT_PATH = __dirname + '../lib/src/templates.json'
 
 
+const templateSchema = {
+  figmaPageID: "",
+  pageSchemas: []
+}
+
+const pageSchema = {
+  elementSchemas: [],
+  classOf: "",
+  usage: "",
+  bin: 0
+}
+
+
 // "galaxy, management, 4" --> [galaxy, management, 4]
 const splitTitle = (title) => {
   return title.toString()
+              .replace(/\s/g, "")
               .split(",")
-              .toString()
-              .replace(" ", "")
+
 }
 
 
@@ -48,16 +61,15 @@ const getComponentId = (child) => {
   if(isType(type)) return type
   if(isType(name)) return name
 
-  console.Error(`Component ID not supported for child of type ${type} and name ${name}`)
+  // console.error(`Component ID not supported for child of type ${type} and name ${name}`)
   return null
 }
 
 
 // creates an elementSchema via /elementSchema.js
-const createElt = (child) => {
-  const id = getComponentId(child)
-  const elt = getComponent(child, id)
-  if(elt === null) console.error(`Unsupported child type ${id}`)
+const createElement = (child, name, lo) => {
+  const elt = getComponent(child, name, lo)
+  if(elt === null) console.error(`Unsupported child type ${name}`)
   return elt
 }
 
@@ -77,66 +89,76 @@ const getFrame = (title) => {
 
   if (data.length === 2)
     throw new Error(`Unable to get custody number for ${title}'s frame.`)
-  else frame.usage = data[2]
+  else frame.custody = data[2]
 
   return frame
 }
 
 
+const endTraverse = (name) => {
+  if(types.async.includes(name))
+    return true
+  return false
+}
+
+const addPageSchema = (child) => {
+  var data = getFrame(child.name)
+  pageSchema.classOf = data.classOf
+  pageSchema.usage = data.usage
+  pageSchema.bin = data.bin
+  // console.log(pageSchema)
+  templateSchema.pageSchemas.push(pageSchema)
+}
+
+const addElementSchema = (child, name, lo) => {
+  var elt = createElement(child, name, lo)
+  if(templateSchema.pageSchemas != [] && templateSchema.pageSchemas.length > 0)
+    templateSchema.pageSchemas[templateSchema.pageSchemas.length-1].elementSchemas.push(elt)
+  else
+    console.error(`Could not add element schema for child of name ${name} because elementSchema is null`)
+}
+
+const depthFirst = (node, callback) => {
+  callback(node);
+
+  if(node.children !== null || node.children.length > 0) {
+
+    for(c in node.children) {
+
+      var child = node.children[c]
+
+      if(child.hasBeenVisited === undefined)
+
+        child.hasBeenVisited = true
+
+        const name = getComponentId(child)
+
+        // create a new pageSchema and add it to templateSchema
+        if(name === "frame")
+          addPageSchema(child)
+
+        // when we find a base figma type add it to this page's elements
+        else if (types.figma.includes(name) && templateSchema.pageSchemas !== [])
+          addElementSchema(child, name, node)
+
+          // !endTraverse when name is NOT qr or sigil
+        if(!endTraverse(name))
+            depthFirst(child, callback)
+        }
+
+    }
+
+  }
+  //
+  // if(node.children === null)
+  // return
+
+
+
+
 const extractSchema = (lo) => {
-  var templateSchema = []
-  var pageSchema = null
-  const extracted = lo.children.reduce((acc, child) => {
-
-    if(child.type === "FRAME"){           // frame signals a new template page
-      pageSchema = { elements: null }     // reset pageSchema
-
-      var data = getFrame(child)
-      pageSchema.classOf = data.classOf
-      pageSchema.usage = data.usage
-      pageSchema.bin = data.bin
-      templateSchema.push(pageSchema)     // push the frame's data
-
-      return acc                          // traverse child elements
-    }
-
-    const name = getComponentId(child)
-    if(name === null){
-      return acc
-    }
-
-    var elt
-
-    // do not traverse child elements of singleParent sigil/qr/group
-    if (types.singleParent.includes(name)) {
-      if (types.async.includes(name)) {
-
-        elt = createElt(child)
-
-        if(elt === null) return acc
-
-        // add element to most recent pageSchema in templateSchema
-        templateSchema[templateSchema.length-1].elements.push(elt)
-        return [...acc, {...child, type: name}];
-      }
-
-      // if no special items are found, find next child
-      return [...acc, ...flatPack(child)]
-
-    }
-
-    elt = createElt(child)
-    if (elt === null) {
-      return acc
-    }
-    templateSchema[templateSchema.length-1].elements.push(elt)
-    return [...acc, {...child, type: name}];
-
-  }, []);
-
-  return templateSchema
+  depthFirst(lo, function(node){})
 };
-
 
 const getTemplateSchema = (KEY) => {
 
@@ -150,10 +172,14 @@ const getTemplateSchema = (KEY) => {
     const arr = res.data.document.children
     const page = arr.filter(page => page.name === KEY)[0]
 
-    const schema = extractSchema(page)
-    if (schema === null) throw new Error(`Unable to extract template schema from ${page} with key ${KEY}.`)
+    extractSchema(page)
 
-    return schema
+    if (templateSchema === null) throw new Error(`Unable to extract template schema from ${page} with key ${KEY}.`)
+    templateSchema.figmaPageID = KEY
+
+    const data = JSON.stringify(templateSchema, null, 2)
+    fs.writeFile("tools/out.txt", data, (err) => { if(err) throw err; })
+    return templateSchema
   });
 }
 
