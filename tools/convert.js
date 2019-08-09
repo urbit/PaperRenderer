@@ -24,7 +24,9 @@ const OUTPUT_PATH = __dirname + '../lib/src/templates.json'
 
 // "galaxy, management, 4" --> [galaxy, management, 4]
 const splitTitle = (title) => {
-  return title.split(",")
+  return title.toString()
+              .split(",")
+              .toString()
               .replace(" ", "")
 }
 
