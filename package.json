@@ -48,7 +48,7 @@
     "uglifycss": "0.0.29"
   },
   "scripts": {
-    "convert": "node convert.js",
+    "convert": "node tools/convert.js",
     "start": "gulp",
     "build": "gulp bundle-prod",
     "test": "echo \"Error: no test specified\" && exit 1"
