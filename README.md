@@ -1,8 +1,10 @@
 # PaperCollateralRenderer
 
-[Github](https://github.com/urbit/PaperCollateralRenderer)
+[→ Github](https://github.com/urbit/PaperCollateralRenderer)
 
-[Figma](https://www.figma.com/file/a4u6jBsdTgiXcrDGW61q5ngY/Tlon-Paper-Wallet-v1.2?node-id=574%3A0)
+[→ Figma](https://www.figma.com/file/a4u6jBsdTgiXcrDGW61q5ngY/Tlon-Paper-Wallet-v1.2?node-id=574%3A0)
+
+[→ NPM](https://www.npmjs.com/package/urbit-paper-collateral-renderer)
 
 `PaperCollateralRenderer` generates PNG wallets that can be printed from [keygen-js](https://github.com/urbit/keygen-js). The layouts and static text content exist in Figma, and are imported via the LayoutGenerator component. This JSON is then saved to disk and bundled with the `PaperCollateralRenderer` and `PageRenderer` for prod. The layout objects contain variable strings like `@heading` or ``` @management.seed.length ```. `PaperCollateralRenderer` replaces these with real data. Variables can also specify special layout components like `>sigil:@patp`.
 
