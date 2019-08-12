@@ -1,5 +1,7 @@
 # PaperCollateralRenderer
 
+🚧 Library under construction, use branch `rc-immediate` for working release. 🚧
+
 [→ Github](https://github.com/urbit/PaperCollateralRenderer)
 
 [→ Figma](https://www.figma.com/file/a4u6jBsdTgiXcrDGW61q5ngY/Tlon-Paper-Wallet-v1.2?node-id=574%3A0)
