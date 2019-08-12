@@ -1,7 +1,5 @@
 const Figma = require('figma-js');
 
-const EXTENDED_WALLET_PATH = '/preview/src/js/sampleWallets/wallet.json'
-
 // Figma Naming Convention: >componentName:@data
 // to parse and import new Figma components, add a new value
 const types = {
@@ -39,12 +37,19 @@ const isType = (type) => {
   return false
 }
 
+const getDataPath = (name) => {
+  return name
+    .split(':')[1]
+    .replace('>','')
+    .toLowerCase();
+}
+
 const qr = (child, originX, originY) => {
   return {
     type: 'qr',
     draw: 'drawQR',
-    data: child.name.split(':')[1],
-    path: EXTENDED_WALLET_PATH,
+    data: null,
+    path: getDataPath(child.name),
     size: child.absoluteBoundingBox.height,
     name: child.name,
     x: child.absoluteBoundingBox.x - originX,
@@ -56,11 +61,10 @@ const sigil = (child, originX, originY) => {
   return {
     type: 'sigil',
     draw: 'drawSigil',
-    data: child.name.split(':')[1],
-    path: EXTENDED_WALLET_PATH,
+    data: null,
+    path: getDataPath(child.name),
     size: child.absoluteBoundingBox.height,
     name: child.name,
-    data: child.name.split(':')[1],
     x: child.absoluteBoundingBox.x - originX,
     y: child.absoluteBoundingBox.y - originY,
   };
@@ -70,12 +74,11 @@ const img = (child, originX, originY) => {
   return {
     type: 'img',
     draw: 'drawImg',
-    data: child.name.split(':')[1],
-    path: EXTENDED_WALLET_PATH,
+    data: null,
+    path: getDataPath(child.name),
     width: child.absoluteBoundingBox.height,
     height: child.absoluteBoundingBox.width,
     name: child.name,
-    data: child.name.split(':')[1],
     x: child.absoluteBoundingBox.x - originX,
     y: child.absoluteBoundingBox.y - originY,
   };
@@ -85,7 +88,7 @@ const text = (child, originX, originY) => {
   return {
     type: 'text',
     draw: 'drawWrappedText',
-    path: EXTENDED_WALLET_PATH,
+    path: getDataPath(child.name),
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
     text: child.characters,
@@ -102,8 +105,8 @@ const template_text = (child, originX, originY) => {
   return {
     type: 'template_text',
     draw: 'drawWrappedText',
-    path: EXTENDED_WALLET_PATH,
-    data: child.name.split(':')[1],
+    path: getDataPath(child.name),
+    data: null,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
     text: child.name.split(':')[1],
@@ -120,8 +123,8 @@ const patq = (child, originX, originY) => {
   return {
     type: 'patq',
     draw: 'drawPatQ',
-    path: EXTENDED_WALLET_PATH,
-    data: child.name.split(':')[1],
+    path: getDataPath(child.name),
+    data: null,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
     fontWeight: child.style.fontWeight,
@@ -136,8 +139,8 @@ const addr_split_four = (child, originX, originY) => {
   return {
     type: 'addr_split_four',
     draw: 'drawEthereumAddressLong',
-    path: EXTENDED_WALLET_PATH,
-    data: child.name.split(':')[1],
+    path: getDataPath(child.name),
+    data: null,
     fontWeight: child.style.fontWeight,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
@@ -154,8 +157,8 @@ const wrap_addr_split_four = (child, originX, originY) => {
   return {
     type: 'wrap_addr_split_four',
     draw: 'drawEthereumAddressCompact',
-    path: EXTENDED_WALLET_PATH,
-    data: child.name.split(':')[1],
+    path: getDataPath(child.name),
+    data: null,
     fontWeight: child.style.fontWeight,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
@@ -172,8 +175,8 @@ const rect = (child, originX, originY) => {
   return {
     type: 'rect',
     draw: 'drawRect',
-    path: EXTENDED_WALLET_PATH,
-    data: child.name.split(':')[1],
+    path: getDataPath(child.name),
+    data: null,
     cornerRadius: child.cornerRadius,
     dashes: child.strokeDashes,
     x: child.absoluteBoundingBox.x - originX,
@@ -190,8 +193,8 @@ const hr = (child, originX, originY) => {
   return {
     type: 'hr',
     draw: 'drawLine',
-    path: EXTENDED_WALLET_PATH,
-    data: child.name.split(':')[1],
+    path: getDataPath(child.name),
+    data: null,
     dashes: child.strokeDashes,
     x: child.absoluteBoundingBox.x - originX,
     y: child.absoluteBoundingBox.y - originY,
