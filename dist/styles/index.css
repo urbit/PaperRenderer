@@ -2,12 +2,12 @@
 @import './fonts.css';
 
 canvas {
-  border: 1px solid purple;
-  /* background-color: #222 */
+    border: 1px solid purple;
+    /* background-color: #222 */
 }
 
 img {
-  border: 1px solid green;
-  max-width: 850px;
-  height: auto;
+    border: 1px solid green;
+    max-width: 850px;
+    height: auto;
 }
