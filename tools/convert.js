@@ -18,8 +18,9 @@ const Figma = require('figma-js');
 const fs = require('fs')
 const { getComponent, types, isType } = require('./elementSchema')
 
-
-const OUTPUT_PATH = __dirname + '../lib/src/templates.json'
+const FIGMA_PAGE_KEY = "Registration 1.2"
+const WALLET_PATH = 'preview/src/js/sampleWallets/wallet.json'
+const OUTPUT_PATH = 'tools/out.txt'
 
 var originX = 0, originY = 0
 
@@ -62,15 +63,18 @@ const getComponentId = (child) => {
   if(isType(type)) return type
   if(isType(name)) return name
 
-  console.error(`Component ID not supported for child of type ${type} and name ${name}`)
+  // console.error(`Component ID not supported for child of type ${type} and name ${name}`)
   return null
 }
 
-
 // creates an elementSchema via /elementSchema.js
 const createElement = (child, name, lo) => {
-  const elt = getComponent(child, name, originX, originY)
+  const currPage = templateSchema.pageSchemas[templateSchema.pageSchemas.length-1]
+  if(currPage === null) throw new Error(`Could not get the current page for the template: ${templateSchema}`)
+
+  const elt = getComponent(child, name, currPage)
   if(elt === null) console.error(`Unsupported child type ${name}`)
+
   return elt
 }
 
@@ -102,11 +106,26 @@ const endTraverse = (name) => {
   return false
 }
 
+// language matches the extendedWallet formatting
+const getDataPath = (usage) => {
+  if(usage.includes("shard"))
+    return "shards"
+  if(usage.includes("ticket"))
+    return "ticket"
+  if(usage.includes("multipass"))
+    return "network"
+  return usage
+}
+
 const addPageSchema = (child) => {
   var data = getFrame(child.name)
+  // console.log(data)
   pageSchema.classOf = data.classOf
   pageSchema.usage = data.usage
   pageSchema.bin = data.bin
+  pageSchema.originX = child.absoluteBoundingBox.x
+  pageSchema.originY = child.absoluteBoundingBox.y
+  pageSchema.dataPath = getDataPath(data.usage)
   templateSchema.pageSchemas.push(pageSchema)
 }
 
@@ -136,8 +155,6 @@ const depthFirst = (node, callback) => {
         // create a new pageSchema and add it to templateSchema
         if(name === "frame"){
           addPageSchema(child)
-          originX = child.absoluteBoundingBox.x
-          originY = child.absoluteBoundingBox.y
         }
 
         // when we find a base figma type add it to this page's elements
@@ -168,18 +185,18 @@ const getTemplateSchema = (KEY) => {
 
     const arr = res.data.document.children
     const page = arr.filter(page => page.name === KEY)[0]
-    // const data = JSON.stringify(page, null, 2)
-    // fs.writeFile("tools/out.txt", data, (err) => { if(err) throw err; })
+
     extractSchema(page)
 
     if (templateSchema === null) throw new Error(`Unable to extract template schema from ${page} with key ${KEY}.`)
     templateSchema.figmaPageID = KEY
 
     const data = JSON.stringify(templateSchema, null, 2)
-    fs.writeFile("tools/out.txt", data, (err) => { if(err) throw err; })
+    fs.writeFile(OUTPUT_PATH, data, (err) => { if(err) throw err; })
     return templateSchema
   });
+
 }
 
 // call
-getTemplateSchema("Registration 1.2")
+getTemplateSchema(FIGMA_PAGE_KEY)

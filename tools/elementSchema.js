@@ -37,75 +37,69 @@ const isType = (type) => {
   return false
 }
 
-const getDataPath = (name) => {
-  return name
-    .split(':')[1]
-    .replace('>','')
-    .toLowerCase();
-}
 
-const qr = (child, originX, originY) => {
+const qr = (child, page) => {
   return {
     type: 'qr',
     draw: 'drawQR',
     data: null,
-    path: getDataPath(child.name),
+    path: page.dataPath,
     size: child.absoluteBoundingBox.height,
     name: child.name,
-    x: child.absoluteBoundingBox.x - originX,
-    y: child.absoluteBoundingBox.y - originY,
+    x: child.absoluteBoundingBox.x - page.originX,
+    y: child.absoluteBoundingBox.y - page.originY,
   };
 };
 
-const sigil = (child, originX, originY) => {
+const sigil = (child, page) => {
   return {
     type: 'sigil',
     draw: 'drawSigil',
     data: null,
-    path: getDataPath(child.name),
+    path: page.dataPath,
     size: child.absoluteBoundingBox.height,
     name: child.name,
-    x: child.absoluteBoundingBox.x - originX,
-    y: child.absoluteBoundingBox.y - originY,
+    x: child.absoluteBoundingBox.x - page.originX,
+    y: child.absoluteBoundingBox.y - page.originY,
   };
 };
 
-const img = (child, originX, originY) => {
+const img = (child, page) => {
   return {
     type: 'img',
     draw: 'drawImg',
     data: null,
-    path: getDataPath(child.name),
+    path: page.dataPath,
     width: child.absoluteBoundingBox.height,
     height: child.absoluteBoundingBox.width,
     name: child.name,
-    x: child.absoluteBoundingBox.x - originX,
-    y: child.absoluteBoundingBox.y - originY,
+    x: child.absoluteBoundingBox.x - page.originX,
+    y: child.absoluteBoundingBox.y - page.originY,
   };
 };
 
-const text = (child, originX, originY) => {
+const text = (child, page) => {
   return {
     type: 'text',
     draw: 'drawWrappedText',
-    path: getDataPath(child.name),
+    path: page.dataPath,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
     text: child.characters,
     fontWeight: child.style.fontWeight,
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
-    x: child.absoluteBoundingBox.x - originX,
-    y: child.absoluteBoundingBox.y - originY,
+    x: child.absoluteBoundingBox.x - page.originX,
+    y: child.absoluteBoundingBox.y - page.originY,
     fontColor: child.fills,
   };
 };
 
-const template_text = (child, originX, originY) => {
+const template_text = (child, page) => {
   return {
     type: 'template_text',
     draw: 'drawWrappedText',
-    path: getDataPath(child.name),
+    path: page.dataPath,
     data: null,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
@@ -113,17 +107,17 @@ const template_text = (child, originX, originY) => {
     fontWeight: child.style.fontWeight,
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
-    x: child.absoluteBoundingBox.x - originX,
-    y: child.absoluteBoundingBox.y - originY,
+    x: child.absoluteBoundingBox.x - page.originX,
+    y: child.absoluteBoundingBox.y - page.originY,
     fontColor: child.fills,
   };
 };
 
-const patq = (child, originX, originY) => {
+const patq = (child, page) => {
   return {
     type: 'patq',
     draw: 'drawPatQ',
-    path: getDataPath(child.name),
+    path: page.dataPath,
     data: null,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
@@ -131,15 +125,15 @@ const patq = (child, originX, originY) => {
     text: child.name.split(':')[1],
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
-    x: child.absoluteBoundingBox.x - originX,
-    y: child.absoluteBoundingBox.y - originY,
+    x: child.absoluteBoundingBox.x - page.originX,
+    y: child.absoluteBoundingBox.y - page.originY,
   };
 };
-const addr_split_four = (child, originX, originY) => {
+const addr_split_four = (child, page) => {
   return {
     type: 'addr_split_four',
     draw: 'drawEthereumAddressLong',
-    path: getDataPath(child.name),
+    path: page.dataPath,
     data: null,
     fontWeight: child.style.fontWeight,
     fontFamily: child.style.fontFamily,
@@ -147,17 +141,17 @@ const addr_split_four = (child, originX, originY) => {
     text: child.name.split(':')[1],
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
-    x: child.absoluteBoundingBox.x - originX,
-    y: child.absoluteBoundingBox.y - originY,
+    x: child.absoluteBoundingBox.x - page.originX,
+    y: child.absoluteBoundingBox.y - page.originY,
     fontColor: child.fills,
   };
 };
 
-const wrap_addr_split_four = (child, originX, originY) => {
+const wrap_addr_split_four = (child, page) => {
   return {
     type: 'wrap_addr_split_four',
     draw: 'drawEthereumAddressCompact',
-    path: getDataPath(child.name),
+    path: page.dataPath,
     data: null,
     fontWeight: child.style.fontWeight,
     fontFamily: child.style.fontFamily,
@@ -165,22 +159,22 @@ const wrap_addr_split_four = (child, originX, originY) => {
     text: child.name.split(':')[1],
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
-    x: child.absoluteBoundingBox.x - originX,
-    y: child.absoluteBoundingBox.y - originY,
+    x: child.absoluteBoundingBox.x - page.originX,
+    y: child.absoluteBoundingBox.y - page.originY,
     fontColor: child.fills,
   };
 };
 
-const rect = (child, originX, originY) => {
+const rect = (child, page) => {
   return {
     type: 'rect',
     draw: 'drawRect',
-    path: getDataPath(child.name),
+    path: page.dataPath,
     data: null,
     cornerRadius: child.cornerRadius,
     dashes: child.strokeDashes,
-    x: child.absoluteBoundingBox.x - originX,
-    y: child.absoluteBoundingBox.y - originY,
+    x: child.absoluteBoundingBox.x - page.originX,
+    y: child.absoluteBoundingBox.y - page.originY,
     width: child.absoluteBoundingBox.width,
     height: child.absoluteBoundingBox.height,
     fillColor: child.fills,
@@ -189,15 +183,15 @@ const rect = (child, originX, originY) => {
   };
 };
 
-const hr = (child, originX, originY) => {
+const hr = (child, page) => {
   return {
     type: 'hr',
     draw: 'drawLine',
-    path: getDataPath(child.name),
+    path: page.dataPath,
     data: null,
     dashes: child.strokeDashes,
-    x: child.absoluteBoundingBox.x - originX,
-    y: child.absoluteBoundingBox.y - originY,
+    x: child.absoluteBoundingBox.x - page.originX,
+    y: child.absoluteBoundingBox.y - page.originY,
     width: child.absoluteBoundingBox.width,
     height: child.absoluteBoundingBox.height,
     strokeColor: child.strokes,
@@ -205,18 +199,18 @@ const hr = (child, originX, originY) => {
   };
 };
 
-const getComponent = (child, name, originX, originY) => {
-  if(name === "qr")                    return qr(child, originX, originY)
-  if(name === "template_text")         return template_text(child, originX, originY)
-  if(name === "rect")                  return rect(child, originX, originY)
-  if(name === "patq")                  return patq(child, originX, originY)
-  if(name === "text")                  return text(child, originX, originY)
-  if(name === "sigil")                 return sigil(child, originX, originY)
-  if(name === "img")                   return img(child, originX, originY)
-  if(name === "wrap_addr_split_four")  return wrap_addr_split_four(child, originX, originY)
-  if(name === "addr_split_four")       return addr_split_four(child, originX, originY)
-  if(name === "template_text")         return template_text(child, originX, originY)
-  if(name === "hr")                    return hr(child, originX, originY)
+const getComponent = (child, name, page) => {
+  if(name === "qr")                    return qr(child, page)
+  if(name === "template_text")         return template_text(child, page)
+  if(name === "rect")                  return rect(child, page)
+  if(name === "patq")                  return patq(child, page)
+  if(name === "text")                  return text(child, page)
+  if(name === "sigil")                 return sigil(child, page)
+  if(name === "img")                   return img(child, page)
+  if(name === "wrap_addr_split_four")  return wrap_addr_split_four(child, page)
+  if(name === "addr_split_four")       return addr_split_four(child, page)
+  if(name === "template_text")         return template_text(child, page)
+  if(name === "hr")                    return hr(child, page)
 
   return null
 }
