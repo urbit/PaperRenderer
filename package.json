@@ -1,13 +1,17 @@
 {
-    "name": "PaperCollateralRenderer",
+    "name": "urbit-paper-collateral-renderer",
     "version": "1.2.0",
-    "private": true,
+    "private": false,
     "repository": {
         "url": ""
     },
-    "bugs": {
-        "url": ""
+    "description": "[Github](https://github.com/urbit/PaperCollateralRenderer)",
+    "directories": {
+        "doc": "docs",
+        "lib": "lib"
     },
+    "author": "",
+    "license": "MIT",
     "main": "dist/PaperCollateralRenderer.js",
     "dependencies": {
         "lodash.get": "^4.4.2",
