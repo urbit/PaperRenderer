@@ -22,9 +22,6 @@ const FIGMA_PAGE_KEY = 'Registration 1.2'
 const WALLET_PATH = 'preview/src/js/sampleWallets/wallet.json'
 const OUTPUT_PATH = 'tools/out.txt'
 
-var originX = 0,
-    originY = 0
-
 const templateSchema = {
     figmaPageID: '',
     pageSchemas: [],
@@ -102,28 +99,14 @@ const getFrame = title => {
     return frame
 }
 
-const endTraverse = name => {
-    if (types.async.includes(name)) return true
-    return false
-}
-
-// language matches the extendedWallet formatting
-const getDataPath = usage => {
-    if (usage.includes('shard')) return 'shards'
-    if (usage.includes('ticket')) return 'ticket'
-    if (usage.includes('multipass')) return 'network'
-    return usage
-}
-
 const addPageSchema = child => {
     var data = getFrame(child.name)
-    // console.log(data)
     pageSchema.classOf = data.classOf
     pageSchema.usage = data.usage
     pageSchema.bin = data.bin
     pageSchema.originX = child.absoluteBoundingBox.x
     pageSchema.originY = child.absoluteBoundingBox.y
-    pageSchema.dataPath = getDataPath(data.usage)
+    pageSchema.dataPath = data.usage
     templateSchema.pageSchemas.push(pageSchema)
 }
 
@@ -140,6 +123,11 @@ const addElementSchema = (child, name, lo) => {
         console.error(
             `Could not add element schema for child of name ${name} because elementSchema is null`
         )
+}
+
+const endTraverse = name => {
+    if (types.async.includes(name)) return true
+    return false
 }
 
 const depthFirst = (node, callback) => {
