@@ -1,5 +1,3 @@
-const Figma = require('figma-js')
-
 // Figma Naming Convention: >componentName:@data
 // to parse and import new Figma components, add a new value
 const types = {
