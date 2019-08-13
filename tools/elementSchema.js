@@ -39,14 +39,22 @@ const isType = type => {
   return false
 }
 
+const getPath = child => {
+  const str = child.name
+  if (str.includes('@')) {
+    return str.split('@')[1]
+  }
+  return null
+}
+
 const qr = (child, page) => {
   return {
     type: 'qr',
     draw: 'drawQR',
     data: null,
-    path: page.dataPath,
+    path: getPath(child),
     size: child.absoluteBoundingBox.height,
-    name: child.name,
+    // name: child.name,
     x: child.absoluteBoundingBox.x - page.originX,
     y: child.absoluteBoundingBox.y - page.originY,
   }
@@ -57,9 +65,9 @@ const sigil = (child, page) => {
     type: 'sigil',
     draw: 'drawSigil',
     data: null,
-    path: page.dataPath,
+    path: getPath(child),
     size: child.absoluteBoundingBox.height,
-    name: child.name,
+    // name: child.name,
     x: child.absoluteBoundingBox.x - page.originX,
     y: child.absoluteBoundingBox.y - page.originY,
   }
@@ -70,10 +78,10 @@ const img = (child, page) => {
     type: 'img',
     draw: 'drawImg',
     data: null,
-    path: page.dataPath,
+    path: getPath(child),
     width: child.absoluteBoundingBox.height,
     height: child.absoluteBoundingBox.width,
-    name: child.name,
+    // name: child.name,
     x: child.absoluteBoundingBox.x - page.originX,
     y: child.absoluteBoundingBox.y - page.originY,
   }
@@ -83,10 +91,10 @@ const text = (child, page) => {
   return {
     type: 'text',
     draw: 'drawWrappedText',
-    path: page.dataPath,
+    path: getPath(child),
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
-    text: child.characters,
+    data: child.characters,
     fontWeight: child.style.fontWeight,
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
@@ -100,11 +108,11 @@ const template_text = (child, page) => {
   return {
     type: 'template_text',
     draw: 'drawWrappedText',
-    path: page.dataPath,
+    path: getPath(child),
     data: null,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
-    text: child.name.split(':')[1],
+    // text: getPath(child),
     fontWeight: child.style.fontWeight,
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
@@ -118,13 +126,13 @@ const patq = (child, page) => {
   return {
     type: 'patq',
     draw: 'drawPatQ',
-    path: page.dataPath,
+    path: getPath(child),
     data: null,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
     fontWeight: child.style.fontWeight,
     fontColor: rgba(child.fills),
-    text: child.name.split(':')[1],
+    // text: getPath(child),
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
     x: child.absoluteBoundingBox.x - page.originX,
@@ -135,12 +143,12 @@ const addr_split_four = (child, page) => {
   return {
     type: 'addr_split_four',
     draw: 'drawEthereumAddressLong',
-    path: page.dataPath,
+    path: getPath(child),
     data: null,
     fontWeight: child.style.fontWeight,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
-    text: child.name.split(':')[1],
+    text: getPath(child),
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
     x: child.absoluteBoundingBox.x - page.originX,
@@ -153,12 +161,12 @@ const wrap_addr_split_four = (child, page) => {
   return {
     type: 'wrap_addr_split_four',
     draw: 'drawEthereumAddressCompact',
-    path: page.dataPath,
+    path: getPath(child),
     data: null,
     fontWeight: child.style.fontWeight,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
-    text: child.name.split(':')[1],
+    // text: getPath(child),
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
     x: child.absoluteBoundingBox.x - page.originX,
@@ -171,7 +179,7 @@ const rect = (child, page) => {
   return {
     type: 'rect',
     draw: 'drawRect',
-    path: page.dataPath,
+    path: getPath(child),
     data: null,
     cornerRadius: child.cornerRadius,
     dashes: child.strokeDashes,
@@ -189,7 +197,7 @@ const hr = (child, page) => {
   return {
     type: 'hr',
     draw: 'drawLine',
-    path: page.dataPath,
+    path: getPath(child),
     data: null,
     dashes: child.strokeDashes,
     x: child.absoluteBoundingBox.x - page.originX,
