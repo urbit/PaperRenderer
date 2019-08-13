@@ -54,7 +54,6 @@ const qr = (child, page) => {
     data: null,
     path: getPath(child),
     size: child.absoluteBoundingBox.height,
-    // name: child.name,
     x: child.absoluteBoundingBox.x - page.originX,
     y: child.absoluteBoundingBox.y - page.originY,
   }
@@ -67,7 +66,6 @@ const sigil = (child, page) => {
     data: null,
     path: getPath(child),
     size: child.absoluteBoundingBox.height,
-    // name: child.name,
     x: child.absoluteBoundingBox.x - page.originX,
     y: child.absoluteBoundingBox.y - page.originY,
   }
@@ -81,7 +79,6 @@ const img = (child, page) => {
     path: getPath(child),
     width: child.absoluteBoundingBox.height,
     height: child.absoluteBoundingBox.width,
-    // name: child.name,
     x: child.absoluteBoundingBox.x - page.originX,
     y: child.absoluteBoundingBox.y - page.originY,
   }
@@ -112,7 +109,6 @@ const template_text = (child, page) => {
     data: null,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
-    // text: getPath(child),
     fontWeight: child.style.fontWeight,
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
@@ -132,7 +128,6 @@ const patq = (child, page) => {
     fontSize: child.style.fontSize,
     fontWeight: child.style.fontWeight,
     fontColor: rgba(child.fills),
-    // text: getPath(child),
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
     x: child.absoluteBoundingBox.x - page.originX,
@@ -166,7 +161,6 @@ const wrap_addr_split_four = (child, page) => {
     fontWeight: child.style.fontWeight,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
-    // text: getPath(child),
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
     x: child.absoluteBoundingBox.x - page.originX,
