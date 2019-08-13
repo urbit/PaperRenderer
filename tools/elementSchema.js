@@ -88,7 +88,7 @@ const text = (child, page) => {
   return {
     type: 'text',
     draw: 'drawWrappedText',
-    path: getPath(child),
+    path: null,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
     data: child.characters,
