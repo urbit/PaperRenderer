@@ -21,7 +21,7 @@ const { getComponent, types, isType } = require('./elementSchema')
 const FIGMA_FILE_KEY = 'a4u6jBsdTgiXcrDGW61q5ngY'
 const FIGMA_PAGE_KEY = 'Registration 1.2'
 const WALLET_PATH = 'preview/src/js/sampleWallets/wallet.json'
-const OUTPUT_PATH = __dirname + '/../lib/src/templates.json'
+const OUTPUT_PATH = 'lib/src/templates.json'
 
 const templateSchema = {
   figmaPageID: '',
@@ -54,12 +54,14 @@ const formatName = name => {
 const getComponentId = child => {
   const type = child.type.toLowerCase()
   const name = formatName(child.name)
-
   // we use figma's type identifier for type TEXT. otherwise we use name id
-  if (isType(type)) return type
   if (isType(name)) return name
+  if (isType(type)) return type
 
-  console.log(`Skipped child. Type: ${type}, Name: ${name}`)
+  if (type !== 'vector')
+    console.error(
+      `Component ID not supported for child of type ${type} and name ${name}`
+    )
   return null
 }
 
@@ -105,7 +107,7 @@ const addPageSchema = child => {
   pageSchema.originX = child.absoluteBoundingBox.x
   pageSchema.originY = child.absoluteBoundingBox.y
   pageSchema.dataPath = data.usage
-  templateSchema.pageSchemas.push(pageSchema)
+  templateSchema.pages.push(pageSchema)
 }
 
 const addElementSchema = (child, name, lo) => {
@@ -140,7 +142,10 @@ const depthFirst = (node, callback) => {
       }
 
       // when we find a base figma type add it to this page's elements
-      else if (types.figma.includes(name) && templateSchema.pages !== [])
+      else if (
+        (types.figma.includes(name) || types.async.includes(name)) &&
+        templateSchema.pages !== []
+      )
         addElementSchema(child, name, node)
 
       // !endTraverse when name is NOT qr or sigil
@@ -150,6 +155,7 @@ const depthFirst = (node, callback) => {
 }
 
 const extractSchema = lo => {
+  console.error('Figma component of type vector is not supported.')
   depthFirst(lo, function(node) {})
 }
 
