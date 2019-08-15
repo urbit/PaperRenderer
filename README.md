@@ -53,10 +53,10 @@ See our [documentation of frequent bugs](docs/freq-bugs.md) and how to fix them.
 
 ```js
 <PaperCollateralRenderer
-    wallet={wallet}
-    className={'extremely-hidden'}
-    callback={data => console.log(data)}
-    mode={'REGISTRATION'}
+  wallet={wallet}
+  className={'extremely-hidden'}
+  callback={data => console.log(data)}
+  mode={'REGISTRATION'}
 />
 ```
 
@@ -71,7 +71,7 @@ See our [documentation of frequent bugs](docs/freq-bugs.md) and how to fix them.
 
 #### Sample Wallet Input
 
-[Here](docs/sample-wallet.json) is a sample wallet's JSON. More sample wallets can be found in [src/sampleWallets](src/sampleWallets)
+[Here](docs/sample-wallet.json) is a sample wallet's JSON. More sample wallets can be found in [sampleWallets](preview/dist/js/sampleWallets)
 
 #### License
 
