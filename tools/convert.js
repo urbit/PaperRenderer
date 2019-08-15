@@ -107,7 +107,7 @@ const addPageSchema = child => {
   pageSchema.originX = child.absoluteBoundingBox.x
   pageSchema.originY = child.absoluteBoundingBox.y
   pageSchema.dataPath = data.usage
-  templateSchema.pageSchemas.push(pageSchema)
+  templateSchema.pages.push(pageSchema)
 }
 
 const addElementSchema = (child, name, lo) => {
@@ -144,7 +144,7 @@ const depthFirst = (node, callback) => {
       // when we find a base figma type add it to this page's elements
       else if (
         (types.figma.includes(name) || types.async.includes(name)) &&
-        templateSchema.pageSchemas !== []
+        templateSchema.pages !== []
       )
         addElementSchema(child, name, node)
 
