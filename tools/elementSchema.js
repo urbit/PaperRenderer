@@ -32,6 +32,22 @@ const isType = type => {
     return false
 }
 
+async function getFigmaImg(id) {
+    const TOKEN = process.env.FIGMA_API_TOKEN
+    const fileId = 'a4u6jBsdTgiXcrDGW61q5ngY'
+    const url = `https://api.figma.com/v1/images/${fileId}?ids=${id}`
+    let result = await fetch(url, {
+        method: 'GET',
+        headers: {
+            'X-Figma-Token': TOKEN,
+        },
+    })
+
+    let img = await result.json()
+    console.log(img)
+    return img.images.id
+}
+
 const qr = (child, page) => {
     return {
         type: 'qr',
