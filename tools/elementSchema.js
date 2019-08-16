@@ -1,6 +1,26 @@
 const fetch = require('node-fetch')
 const image2base64 = require('image-to-base64')
 
+const types = {
+  figma: [
+    'qr',
+    'template_text',
+    'rect',
+    'patq',
+    'text',
+    'sigil',
+    'img',
+    'wrap_addr_split_four',
+    'addr_split_four',
+    'template_text',
+    'hr',
+  ],
+  // types whose data is retrieved asynchronously (we do not import the figma data)
+  async: ['sigil', 'qr'],
+  // these Figma types house children elements, so we need to transverse all children nodes when we find a parentType
+  singleParent: ['group', 'instance', 'frame'],
+}
+
 const toBase64 = url => {
   image2base64(url)
     .then(response => {
@@ -26,33 +46,15 @@ async function getFigmaImg(id) {
 
   let img = await result.json()
   const urls = Object.values(img.images)
+
   const url = urls.length > 0 ? urls[0] : null
-  // console.log(url)
+  if (url === null) console.error(`Could not get url for image with id ${id}`)
+
   const based = toBase64(url)
   if (based === null)
     console.error(`Unable to get base64 for image with id ${id} and url ${url}`)
-  // console.log(based)
-  return based
-}
 
-const types = {
-  figma: [
-    'qr',
-    'template_text',
-    'rect',
-    'patq',
-    'text',
-    'sigil',
-    'img',
-    'wrap_addr_split_four',
-    'addr_split_four',
-    'template_text',
-    'hr',
-  ],
-  // types whose data is retrieved asynchronously (we do not import the figma data)
-  async: ['sigil', 'qr'],
-  // these Figma types house children elements, so we need to transverse all children nodes when we find a parentType
-  singleParent: ['group', 'instance', 'frame'],
+  return based
 }
 
 const rgba = fills => {
