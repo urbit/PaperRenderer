@@ -53,10 +53,10 @@ See our [documentation of frequent bugs](docs/freq-bugs.md) and how to fix them.
 
 ```js
 <PaperCollateralRenderer
-    wallet={wallet}
-    className={'extremely-hidden'}
-    callback={data => console.log(data)}
-    mode={'REGISTRATION'}
+  wallet={wallet}
+  className={'extremely-hidden'}
+  callback={data => console.log(data)}
+  mode={'REGISTRATION'}
 />
 ```
 
