@@ -66,7 +66,7 @@ const getComponentId = child => {
 }
 
 // creates an elementSchema via /elementSchema.js
-const createElement = (child, name, lo) => {
+const createElement = (child, name) => {
   const currPage = templateSchema.pages[templateSchema.pages.length - 1]
   if (currPage === null)
     throw new Error(
@@ -74,9 +74,9 @@ const createElement = (child, name, lo) => {
     )
 
   const elt = getComponent(child, name, currPage)
-  if (elt === null) console.error(`Unsupported child type ${name}`)
+  if (elt === null) e = name
 
-  return elt
+  return { elt, e }
 }
 
 // "galaxy, management, 4" --> [galaxy, mangagement, 4] --> frame { classOf: "galaxy", usage: "management", bin: 4}
@@ -110,8 +110,9 @@ const addPageSchema = child => {
   templateSchema.pages.push(pageSchema)
 }
 
-const addElementSchema = (child, name, lo) => {
-  var elt = createElement(child, name, lo)
+const addElementSchema = (child, name) => {
+  const elt = createElement(child, name)
+
   if (templateSchema.pages != [] && templateSchema.pages.length > 0)
     templateSchema.pages[templateSchema.pages.length - 1].elements.push(elt)
   else
