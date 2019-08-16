@@ -28,6 +28,13 @@ const templateSchema = {
   pages: [],
 }
 
+const writeData = (data, path) => {
+  const fmtData = JSON.stringify(data, null, 2)
+  fs.writeFile(path, fmtData, err => {
+    if (err) throw err
+  })
+}
+
 const pageSchema = {
   classOf: '',
   usage: '',
@@ -74,9 +81,9 @@ const createElement = (child, name) => {
     )
 
   const elt = getComponent(child, name, currPage)
-  if (elt === null) e = name
+  if (elt === null) console.error(`Component of type ${name} is unsupported.`)
 
-  return { elt, e }
+  return elt
 }
 
 // "galaxy, management, 4" --> [galaxy, mangagement, 4] --> frame { classOf: "galaxy", usage: "management", bin: 4}
@@ -175,14 +182,16 @@ const getTemplateSchema = (fileKey, pageKey) => {
         `Unable to extract template schema from ${page} with key ${KEY}.`
       )
     templateSchema.figmaPageID = pageKey
-
-    const data = JSON.stringify(templateSchema, null, 2)
-    fs.writeFile(OUTPUT_PATH, data, err => {
-      if (err) throw err
-    })
-    return templateSchema
+    writeData(templateSchema, OUTPUT_PATH)
+    console.log(`Templates saved in ${OUTPUT_PATH}`)
   })
 }
 
-// call
 getTemplateSchema(FIGMA_FILE_KEY, FIGMA_PAGE_KEY)
+
+// // const imgId = 'I1100:39843;1073:21'
+// // getFigmaImg(imgId)
+//
+//
+// const url = 'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/5c52/8729/0170f488cc9bcaeda41e4324d4b8140chttps://s3-us-west-2.amazonaws.com/figma-alpha-api/img/5c52/8729/0170f488cc9bcaeda41e4324d4b8140c'
+// toBase64(url)

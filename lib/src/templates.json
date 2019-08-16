@@ -258,7 +258,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "network.ethereum.qr",
           "size": 32,
           "x": 411,
           "y": 334
@@ -485,7 +485,7 @@
         {
           "type": "patq",
           "draw": "drawPatQ",
-          "path": "meta.passphrase",
+          "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -501,6 +501,7 @@
           "draw": "drawImg",
           "data": null,
           "path": "keyIcon",
+          "based": {},
           "width": 12.000008583068848,
           "height": 26.000001907348633,
           "x": 72,
@@ -567,7 +568,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 56.000003814697266,
           "x": 484,
           "y": 313
@@ -932,7 +933,7 @@
         {
           "type": "patq",
           "draw": "drawPatQ",
-          "path": "meta.passphrase",
+          "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -948,6 +949,7 @@
           "draw": "drawImg",
           "data": null,
           "path": null,
+          "based": {},
           "width": 12.000008583068848,
           "height": 26.000001907348633,
           "x": 72,
@@ -1014,7 +1016,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 56.000003814697266,
           "x": 484,
           "y": 313
@@ -1351,7 +1353,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "ownership.seed.mnemonic",
+          "path": "ownership.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -1423,7 +1425,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 260
@@ -2213,7 +2215,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "management.ethereum.qr",
+          "path": "management.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -2622,7 +2624,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "management.ethereum.qr",
+          "path": "management.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -3031,7 +3033,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "spawn.ethereum.qr",
+          "path": "spawn.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 311
@@ -3382,7 +3384,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -3791,7 +3793,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -3849,7 +3851,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "transfer.ethereum.qr",
+          "path": "transfer.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -4200,7 +4202,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -4258,7 +4260,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "transfer.ethereum.qr",
+          "path": "transfer.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -4609,7 +4611,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "voting.seed.mnemonic",
+          "path": "voting.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -4667,7 +4669,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "voting.ethereum.qr",
+          "path": "voting.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -4867,12 +4869,12 @@
           "fontColor": "rgba(0,0,0,1)"
         },
         {
-          "type": "text",
+          "type": "template_text",
           "draw": "drawWrappedText",
-          "path": null,
+          "path": "meta.createdOn",
+          "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "data": "2019/7/24 5:31 PM",
           "fontWeight": 400,
           "maxWidth": 448,
           "lineHeightPx": 16,
@@ -5076,7 +5078,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "spawn.ethereum.qr",
+          "path": "spawn.keys.qr",
           "size": 52.99998474121094,
           "x": 511,
           "y": 310
@@ -5551,7 +5553,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "network.ethereum.qr",
           "size": 32,
           "x": 411,
           "y": 334
@@ -5778,7 +5780,7 @@
         {
           "type": "patq",
           "draw": "drawPatQ",
-          "path": "meta.passphrase",
+          "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -5794,6 +5796,7 @@
           "draw": "drawImg",
           "data": null,
           "path": "keyIcon",
+          "based": {},
           "width": 12.000008583068848,
           "height": 26.000001907348633,
           "x": 72,
@@ -5860,7 +5863,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 56.000003814697266,
           "x": 484,
           "y": 313
@@ -6225,7 +6228,7 @@
         {
           "type": "patq",
           "draw": "drawPatQ",
-          "path": "meta.passphrase",
+          "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -6241,6 +6244,7 @@
           "draw": "drawImg",
           "data": null,
           "path": null,
+          "based": {},
           "width": 12.000008583068848,
           "height": 26.000001907348633,
           "x": 72,
@@ -6307,7 +6311,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 56.000003814697266,
           "x": 484,
           "y": 313
@@ -6644,7 +6648,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "ownership.seed.mnemonic",
+          "path": "ownership.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -6716,7 +6720,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 260
@@ -7506,7 +7510,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "management.ethereum.qr",
+          "path": "management.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -7915,7 +7919,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "management.ethereum.qr",
+          "path": "management.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -8324,7 +8328,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "spawn.ethereum.qr",
+          "path": "spawn.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 311
@@ -8675,7 +8679,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -9084,7 +9088,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -9142,7 +9146,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "transfer.ethereum.qr",
+          "path": "transfer.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -9493,7 +9497,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -9551,7 +9555,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "transfer.ethereum.qr",
+          "path": "transfer.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -9902,7 +9906,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "voting.seed.mnemonic",
+          "path": "voting.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -9960,7 +9964,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "voting.ethereum.qr",
+          "path": "voting.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -10160,12 +10164,12 @@
           "fontColor": "rgba(0,0,0,1)"
         },
         {
-          "type": "text",
+          "type": "template_text",
           "draw": "drawWrappedText",
-          "path": null,
+          "path": "meta.createdOn",
+          "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "data": "2019/7/24 5:31 PM",
           "fontWeight": 400,
           "maxWidth": 448,
           "lineHeightPx": 16,
@@ -10369,7 +10373,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "spawn.ethereum.qr",
+          "path": "spawn.keys.qr",
           "size": 52.99998474121094,
           "x": 511,
           "y": 310
@@ -10844,7 +10848,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "network.ethereum.qr",
           "size": 32,
           "x": 411,
           "y": 334
@@ -11071,7 +11075,7 @@
         {
           "type": "patq",
           "draw": "drawPatQ",
-          "path": "meta.passphrase",
+          "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -11087,6 +11091,7 @@
           "draw": "drawImg",
           "data": null,
           "path": "keyIcon",
+          "based": {},
           "width": 12.000008583068848,
           "height": 26.000001907348633,
           "x": 72,
@@ -11153,7 +11158,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 56.000003814697266,
           "x": 484,
           "y": 313
@@ -11518,7 +11523,7 @@
         {
           "type": "patq",
           "draw": "drawPatQ",
-          "path": "meta.passphrase",
+          "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -11534,6 +11539,7 @@
           "draw": "drawImg",
           "data": null,
           "path": null,
+          "based": {},
           "width": 12.000008583068848,
           "height": 26.000001907348633,
           "x": 72,
@@ -11600,7 +11606,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 56.000003814697266,
           "x": 484,
           "y": 313
@@ -11937,7 +11943,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "ownership.seed.mnemonic",
+          "path": "ownership.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -12009,7 +12015,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 260
@@ -12799,7 +12805,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "management.ethereum.qr",
+          "path": "management.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -13208,7 +13214,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "management.ethereum.qr",
+          "path": "management.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -13617,7 +13623,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "spawn.ethereum.qr",
+          "path": "spawn.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 311
@@ -13968,7 +13974,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -14377,7 +14383,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -14435,7 +14441,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "transfer.ethereum.qr",
+          "path": "transfer.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -14786,7 +14792,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -14844,7 +14850,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "transfer.ethereum.qr",
+          "path": "transfer.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -15195,7 +15201,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "voting.seed.mnemonic",
+          "path": "voting.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -15253,7 +15259,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "voting.ethereum.qr",
+          "path": "voting.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -15453,12 +15459,12 @@
           "fontColor": "rgba(0,0,0,1)"
         },
         {
-          "type": "text",
+          "type": "template_text",
           "draw": "drawWrappedText",
-          "path": null,
+          "path": "meta.createdOn",
+          "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "data": "2019/7/24 5:31 PM",
           "fontWeight": 400,
           "maxWidth": 448,
           "lineHeightPx": 16,
@@ -15662,7 +15668,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "spawn.ethereum.qr",
+          "path": "spawn.keys.qr",
           "size": 52.99998474121094,
           "x": 511,
           "y": 310
@@ -16137,7 +16143,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "network.ethereum.qr",
           "size": 32,
           "x": 411,
           "y": 334
@@ -16364,7 +16370,7 @@
         {
           "type": "patq",
           "draw": "drawPatQ",
-          "path": "meta.passphrase",
+          "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -16380,6 +16386,7 @@
           "draw": "drawImg",
           "data": null,
           "path": "keyIcon",
+          "based": {},
           "width": 12.000008583068848,
           "height": 26.000001907348633,
           "x": 72,
@@ -16446,7 +16453,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 56.000003814697266,
           "x": 484,
           "y": 313
@@ -16811,7 +16818,7 @@
         {
           "type": "patq",
           "draw": "drawPatQ",
-          "path": "meta.passphrase",
+          "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -16827,6 +16834,7 @@
           "draw": "drawImg",
           "data": null,
           "path": null,
+          "based": {},
           "width": 12.000008583068848,
           "height": 26.000001907348633,
           "x": 72,
@@ -16893,7 +16901,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 56.000003814697266,
           "x": 484,
           "y": 313
@@ -17230,7 +17238,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "ownership.seed.mnemonic",
+          "path": "ownership.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -17302,7 +17310,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 260
@@ -18092,7 +18100,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "management.ethereum.qr",
+          "path": "management.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -18501,7 +18509,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "management.ethereum.qr",
+          "path": "management.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -18910,7 +18918,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "spawn.ethereum.qr",
+          "path": "spawn.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 311
@@ -19261,7 +19269,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -19670,7 +19678,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -19728,7 +19736,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "transfer.ethereum.qr",
+          "path": "transfer.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -20079,7 +20087,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -20137,7 +20145,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "transfer.ethereum.qr",
+          "path": "transfer.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -20488,7 +20496,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "voting.seed.mnemonic",
+          "path": "voting.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -20546,7 +20554,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "voting.ethereum.qr",
+          "path": "voting.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -20746,12 +20754,12 @@
           "fontColor": "rgba(0,0,0,1)"
         },
         {
-          "type": "text",
+          "type": "template_text",
           "draw": "drawWrappedText",
-          "path": null,
+          "path": "meta.createdOn",
+          "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "data": "2019/7/24 5:31 PM",
           "fontWeight": 400,
           "maxWidth": 448,
           "lineHeightPx": 16,
@@ -20955,7 +20963,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "spawn.ethereum.qr",
+          "path": "spawn.keys.qr",
           "size": 52.99998474121094,
           "x": 511,
           "y": 310
@@ -21430,7 +21438,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "network.ethereum.qr",
           "size": 32,
           "x": 411,
           "y": 334
@@ -21657,7 +21665,7 @@
         {
           "type": "patq",
           "draw": "drawPatQ",
-          "path": "meta.passphrase",
+          "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -21673,6 +21681,7 @@
           "draw": "drawImg",
           "data": null,
           "path": "keyIcon",
+          "based": {},
           "width": 12.000008583068848,
           "height": 26.000001907348633,
           "x": 72,
@@ -21739,7 +21748,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 56.000003814697266,
           "x": 484,
           "y": 313
@@ -22104,7 +22113,7 @@
         {
           "type": "patq",
           "draw": "drawPatQ",
-          "path": "meta.passphrase",
+          "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -22120,6 +22129,7 @@
           "draw": "drawImg",
           "data": null,
           "path": null,
+          "based": {},
           "width": 12.000008583068848,
           "height": 26.000001907348633,
           "x": 72,
@@ -22186,7 +22196,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 56.000003814697266,
           "x": 484,
           "y": 313
@@ -22523,7 +22533,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "ownership.seed.mnemonic",
+          "path": "ownership.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -22595,7 +22605,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 260
@@ -23385,7 +23395,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "management.ethereum.qr",
+          "path": "management.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -23794,7 +23804,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "management.ethereum.qr",
+          "path": "management.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -24203,7 +24213,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "spawn.ethereum.qr",
+          "path": "spawn.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 311
@@ -24554,7 +24564,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -24963,7 +24973,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -25021,7 +25031,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "transfer.ethereum.qr",
+          "path": "transfer.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -25372,7 +25382,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -25430,7 +25440,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "transfer.ethereum.qr",
+          "path": "transfer.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -25781,7 +25791,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "voting.seed.mnemonic",
+          "path": "voting.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -25839,7 +25849,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "voting.ethereum.qr",
+          "path": "voting.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -26039,12 +26049,12 @@
           "fontColor": "rgba(0,0,0,1)"
         },
         {
-          "type": "text",
+          "type": "template_text",
           "draw": "drawWrappedText",
-          "path": null,
+          "path": "meta.createdOn",
+          "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "data": "2019/7/24 5:31 PM",
           "fontWeight": 400,
           "maxWidth": 448,
           "lineHeightPx": 16,
@@ -26248,7 +26258,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "spawn.ethereum.qr",
+          "path": "spawn.keys.qr",
           "size": 52.99998474121094,
           "x": 511,
           "y": 310
@@ -26723,7 +26733,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "network.ethereum.qr",
           "size": 32,
           "x": 411,
           "y": 334
@@ -26950,7 +26960,7 @@
         {
           "type": "patq",
           "draw": "drawPatQ",
-          "path": "meta.passphrase",
+          "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -26966,6 +26976,7 @@
           "draw": "drawImg",
           "data": null,
           "path": "keyIcon",
+          "based": {},
           "width": 12.000008583068848,
           "height": 26.000001907348633,
           "x": 72,
@@ -27032,7 +27043,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 56.000003814697266,
           "x": 484,
           "y": 313
@@ -27397,7 +27408,7 @@
         {
           "type": "patq",
           "draw": "drawPatQ",
-          "path": "meta.passphrase",
+          "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -27413,6 +27424,7 @@
           "draw": "drawImg",
           "data": null,
           "path": null,
+          "based": {},
           "width": 12.000008583068848,
           "height": 26.000001907348633,
           "x": 72,
@@ -27479,7 +27491,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 56.000003814697266,
           "x": 484,
           "y": 313
@@ -27816,7 +27828,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "ownership.seed.mnemonic",
+          "path": "ownership.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -27888,7 +27900,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 260
@@ -28678,7 +28690,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "management.ethereum.qr",
+          "path": "management.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -29087,7 +29099,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "management.ethereum.qr",
+          "path": "management.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -29496,7 +29508,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "spawn.ethereum.qr",
+          "path": "spawn.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 311
@@ -29847,7 +29859,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -30256,7 +30268,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -30314,7 +30326,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "transfer.ethereum.qr",
+          "path": "transfer.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -30665,7 +30677,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -30723,7 +30735,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "transfer.ethereum.qr",
+          "path": "transfer.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -31074,7 +31086,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "voting.seed.mnemonic",
+          "path": "voting.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -31132,7 +31144,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "voting.ethereum.qr",
+          "path": "voting.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -31332,12 +31344,12 @@
           "fontColor": "rgba(0,0,0,1)"
         },
         {
-          "type": "text",
+          "type": "template_text",
           "draw": "drawWrappedText",
-          "path": null,
+          "path": "meta.createdOn",
+          "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "data": "2019/7/24 5:31 PM",
           "fontWeight": 400,
           "maxWidth": 448,
           "lineHeightPx": 16,
@@ -31541,7 +31553,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "spawn.ethereum.qr",
+          "path": "spawn.keys.qr",
           "size": 52.99998474121094,
           "x": 511,
           "y": 310
@@ -32016,7 +32028,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "network.ethereum.qr",
           "size": 32,
           "x": 411,
           "y": 334
@@ -32243,7 +32255,7 @@
         {
           "type": "patq",
           "draw": "drawPatQ",
-          "path": "meta.passphrase",
+          "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -32259,6 +32271,7 @@
           "draw": "drawImg",
           "data": null,
           "path": "keyIcon",
+          "based": {},
           "width": 12.000008583068848,
           "height": 26.000001907348633,
           "x": 72,
@@ -32325,7 +32338,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 56.000003814697266,
           "x": 484,
           "y": 313
@@ -32690,7 +32703,7 @@
         {
           "type": "patq",
           "draw": "drawPatQ",
-          "path": "meta.passphrase",
+          "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -32706,6 +32719,7 @@
           "draw": "drawImg",
           "data": null,
           "path": null,
+          "based": {},
           "width": 12.000008583068848,
           "height": 26.000001907348633,
           "x": 72,
@@ -32772,7 +32786,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 56.000003814697266,
           "x": 484,
           "y": 313
@@ -33109,7 +33123,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "ownership.seed.mnemonic",
+          "path": "ownership.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -33181,7 +33195,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 260
@@ -33971,7 +33985,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "management.ethereum.qr",
+          "path": "management.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -34380,7 +34394,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "management.ethereum.qr",
+          "path": "management.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -34789,7 +34803,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "spawn.ethereum.qr",
+          "path": "spawn.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 311
@@ -35140,7 +35154,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -35549,7 +35563,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -35607,7 +35621,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "transfer.ethereum.qr",
+          "path": "transfer.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -35958,7 +35972,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -36016,7 +36030,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "transfer.ethereum.qr",
+          "path": "transfer.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -36367,7 +36381,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "voting.seed.mnemonic",
+          "path": "voting.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -36425,7 +36439,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "voting.ethereum.qr",
+          "path": "voting.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -36625,12 +36639,12 @@
           "fontColor": "rgba(0,0,0,1)"
         },
         {
-          "type": "text",
+          "type": "template_text",
           "draw": "drawWrappedText",
-          "path": null,
+          "path": "meta.createdOn",
+          "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "data": "2019/7/24 5:31 PM",
           "fontWeight": 400,
           "maxWidth": 448,
           "lineHeightPx": 16,
@@ -36834,7 +36848,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "spawn.ethereum.qr",
+          "path": "spawn.keys.qr",
           "size": 52.99998474121094,
           "x": 511,
           "y": 310
@@ -37309,7 +37323,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "network.ethereum.qr",
           "size": 32,
           "x": 411,
           "y": 334
@@ -37536,7 +37550,7 @@
         {
           "type": "patq",
           "draw": "drawPatQ",
-          "path": "meta.passphrase",
+          "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -37552,6 +37566,7 @@
           "draw": "drawImg",
           "data": null,
           "path": "keyIcon",
+          "based": {},
           "width": 12.000008583068848,
           "height": 26.000001907348633,
           "x": 72,
@@ -37618,7 +37633,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 56.000003814697266,
           "x": 484,
           "y": 313
@@ -37983,7 +37998,7 @@
         {
           "type": "patq",
           "draw": "drawPatQ",
-          "path": "meta.passphrase",
+          "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -37999,6 +38014,7 @@
           "draw": "drawImg",
           "data": null,
           "path": null,
+          "based": {},
           "width": 12.000008583068848,
           "height": 26.000001907348633,
           "x": 72,
@@ -38065,7 +38081,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 56.000003814697266,
           "x": 484,
           "y": 313
@@ -38402,7 +38418,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "ownership.seed.mnemonic",
+          "path": "ownership.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -38474,7 +38490,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 260
@@ -39264,7 +39280,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "management.ethereum.qr",
+          "path": "management.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -39673,7 +39689,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "management.ethereum.qr",
+          "path": "management.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -40082,7 +40098,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "spawn.ethereum.qr",
+          "path": "spawn.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 311
@@ -40433,7 +40449,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -40842,7 +40858,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -40900,7 +40916,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "transfer.ethereum.qr",
+          "path": "transfer.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -41251,7 +41267,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -41309,7 +41325,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "transfer.ethereum.qr",
+          "path": "transfer.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -41660,7 +41676,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "voting.seed.mnemonic",
+          "path": "voting.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -41718,7 +41734,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "voting.ethereum.qr",
+          "path": "voting.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -41918,12 +41934,12 @@
           "fontColor": "rgba(0,0,0,1)"
         },
         {
-          "type": "text",
+          "type": "template_text",
           "draw": "drawWrappedText",
-          "path": null,
+          "path": "meta.createdOn",
+          "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "data": "2019/7/24 5:31 PM",
           "fontWeight": 400,
           "maxWidth": 448,
           "lineHeightPx": 16,
@@ -42127,7 +42143,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "spawn.ethereum.qr",
+          "path": "spawn.keys.qr",
           "size": 52.99998474121094,
           "x": 511,
           "y": 310
@@ -42602,7 +42618,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "network.ethereum.qr",
           "size": 32,
           "x": 411,
           "y": 334
@@ -42829,7 +42845,7 @@
         {
           "type": "patq",
           "draw": "drawPatQ",
-          "path": "meta.passphrase",
+          "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -42845,6 +42861,7 @@
           "draw": "drawImg",
           "data": null,
           "path": "keyIcon",
+          "based": {},
           "width": 12.000008583068848,
           "height": 26.000001907348633,
           "x": 72,
@@ -42911,7 +42928,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 56.000003814697266,
           "x": 484,
           "y": 313
@@ -43276,7 +43293,7 @@
         {
           "type": "patq",
           "draw": "drawPatQ",
-          "path": "meta.passphrase",
+          "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -43292,6 +43309,7 @@
           "draw": "drawImg",
           "data": null,
           "path": null,
+          "based": {},
           "width": 12.000008583068848,
           "height": 26.000001907348633,
           "x": 72,
@@ -43358,7 +43376,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 56.000003814697266,
           "x": 484,
           "y": 313
@@ -43695,7 +43713,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "ownership.seed.mnemonic",
+          "path": "ownership.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -43767,7 +43785,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 260
@@ -44557,7 +44575,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "management.ethereum.qr",
+          "path": "management.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -44966,7 +44984,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "management.ethereum.qr",
+          "path": "management.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -45375,7 +45393,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "spawn.ethereum.qr",
+          "path": "spawn.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 311
@@ -45726,7 +45744,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -46135,7 +46153,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -46193,7 +46211,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "transfer.ethereum.qr",
+          "path": "transfer.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -46544,7 +46562,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -46602,7 +46620,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "transfer.ethereum.qr",
+          "path": "transfer.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -46953,7 +46971,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "voting.seed.mnemonic",
+          "path": "voting.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -47011,7 +47029,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "voting.ethereum.qr",
+          "path": "voting.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -47211,12 +47229,12 @@
           "fontColor": "rgba(0,0,0,1)"
         },
         {
-          "type": "text",
+          "type": "template_text",
           "draw": "drawWrappedText",
-          "path": null,
+          "path": "meta.createdOn",
+          "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "data": "2019/7/24 5:31 PM",
           "fontWeight": 400,
           "maxWidth": 448,
           "lineHeightPx": 16,
@@ -47420,7 +47438,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "spawn.ethereum.qr",
+          "path": "spawn.keys.qr",
           "size": 52.99998474121094,
           "x": 511,
           "y": 310
@@ -47895,7 +47913,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "network.ethereum.qr",
           "size": 32,
           "x": 411,
           "y": 334
@@ -48122,7 +48140,7 @@
         {
           "type": "patq",
           "draw": "drawPatQ",
-          "path": "meta.passphrase",
+          "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -48138,6 +48156,7 @@
           "draw": "drawImg",
           "data": null,
           "path": "keyIcon",
+          "based": {},
           "width": 12.000008583068848,
           "height": 26.000001907348633,
           "x": 72,
@@ -48204,7 +48223,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 56.000003814697266,
           "x": 484,
           "y": 313
@@ -48569,7 +48588,7 @@
         {
           "type": "patq",
           "draw": "drawPatQ",
-          "path": "meta.passphrase",
+          "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -48585,6 +48604,7 @@
           "draw": "drawImg",
           "data": null,
           "path": null,
+          "based": {},
           "width": 12.000008583068848,
           "height": 26.000001907348633,
           "x": 72,
@@ -48651,7 +48671,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 56.000003814697266,
           "x": 484,
           "y": 313
@@ -48988,7 +49008,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "ownership.seed.mnemonic",
+          "path": "ownership.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -49060,7 +49080,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 260
@@ -49850,7 +49870,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "management.ethereum.qr",
+          "path": "management.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -50259,7 +50279,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "management.ethereum.qr",
+          "path": "management.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -50668,7 +50688,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "spawn.ethereum.qr",
+          "path": "spawn.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 311
@@ -51019,7 +51039,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -51428,7 +51448,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -51486,7 +51506,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "transfer.ethereum.qr",
+          "path": "transfer.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -51837,7 +51857,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -51895,7 +51915,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "transfer.ethereum.qr",
+          "path": "transfer.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -52246,7 +52266,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "voting.seed.mnemonic",
+          "path": "voting.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -52304,7 +52324,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "voting.ethereum.qr",
+          "path": "voting.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -52504,12 +52524,12 @@
           "fontColor": "rgba(0,0,0,1)"
         },
         {
-          "type": "text",
+          "type": "template_text",
           "draw": "drawWrappedText",
-          "path": null,
+          "path": "meta.createdOn",
+          "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "data": "2019/7/24 5:31 PM",
           "fontWeight": 400,
           "maxWidth": 448,
           "lineHeightPx": 16,
@@ -52713,7 +52733,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "spawn.ethereum.qr",
+          "path": "spawn.keys.qr",
           "size": 52.99998474121094,
           "x": 511,
           "y": 310
@@ -53188,7 +53208,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "network.ethereum.qr",
           "size": 32,
           "x": 411,
           "y": 334
@@ -53415,7 +53435,7 @@
         {
           "type": "patq",
           "draw": "drawPatQ",
-          "path": "meta.passphrase",
+          "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -53431,6 +53451,7 @@
           "draw": "drawImg",
           "data": null,
           "path": "keyIcon",
+          "based": {},
           "width": 12.000008583068848,
           "height": 26.000001907348633,
           "x": 72,
@@ -53497,7 +53518,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 56.000003814697266,
           "x": 484,
           "y": 313
@@ -53862,7 +53883,7 @@
         {
           "type": "patq",
           "draw": "drawPatQ",
-          "path": "meta.passphrase",
+          "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -53878,6 +53899,7 @@
           "draw": "drawImg",
           "data": null,
           "path": null,
+          "based": {},
           "width": 12.000008583068848,
           "height": 26.000001907348633,
           "x": 72,
@@ -53944,7 +53966,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 56.000003814697266,
           "x": 484,
           "y": 313
@@ -54281,7 +54303,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "ownership.seed.mnemonic",
+          "path": "ownership.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -54353,7 +54375,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 260
@@ -55143,7 +55165,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "management.ethereum.qr",
+          "path": "management.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -55552,7 +55574,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "management.ethereum.qr",
+          "path": "management.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -55961,7 +55983,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "spawn.ethereum.qr",
+          "path": "spawn.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 311
@@ -56312,7 +56334,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -56721,7 +56743,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -56779,7 +56801,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "transfer.ethereum.qr",
+          "path": "transfer.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -57130,7 +57152,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -57188,7 +57210,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "transfer.ethereum.qr",
+          "path": "transfer.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -57539,7 +57561,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "voting.seed.mnemonic",
+          "path": "voting.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -57597,7 +57619,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "voting.ethereum.qr",
+          "path": "voting.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -57797,12 +57819,12 @@
           "fontColor": "rgba(0,0,0,1)"
         },
         {
-          "type": "text",
+          "type": "template_text",
           "draw": "drawWrappedText",
-          "path": null,
+          "path": "meta.createdOn",
+          "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "data": "2019/7/24 5:31 PM",
           "fontWeight": 400,
           "maxWidth": 448,
           "lineHeightPx": 16,
@@ -58006,7 +58028,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "spawn.ethereum.qr",
+          "path": "spawn.keys.qr",
           "size": 52.99998474121094,
           "x": 511,
           "y": 310
@@ -58481,7 +58503,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "network.ethereum.qr",
           "size": 32,
           "x": 411,
           "y": 334
@@ -58708,7 +58730,7 @@
         {
           "type": "patq",
           "draw": "drawPatQ",
-          "path": "meta.passphrase",
+          "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -58724,6 +58746,7 @@
           "draw": "drawImg",
           "data": null,
           "path": "keyIcon",
+          "based": {},
           "width": 12.000008583068848,
           "height": 26.000001907348633,
           "x": 72,
@@ -58790,7 +58813,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 56.000003814697266,
           "x": 484,
           "y": 313
@@ -59155,7 +59178,7 @@
         {
           "type": "patq",
           "draw": "drawPatQ",
-          "path": "meta.passphrase",
+          "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -59171,6 +59194,7 @@
           "draw": "drawImg",
           "data": null,
           "path": null,
+          "based": {},
           "width": 12.000008583068848,
           "height": 26.000001907348633,
           "x": 72,
@@ -59237,7 +59261,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 56.000003814697266,
           "x": 484,
           "y": 313
@@ -59574,7 +59598,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "ownership.seed.mnemonic",
+          "path": "ownership.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -59646,7 +59670,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 260
@@ -60436,7 +60460,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "management.ethereum.qr",
+          "path": "management.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -60845,7 +60869,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "management.ethereum.qr",
+          "path": "management.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -61254,7 +61278,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "spawn.ethereum.qr",
+          "path": "spawn.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 311
@@ -61605,7 +61629,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -62014,7 +62038,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -62072,7 +62096,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "transfer.ethereum.qr",
+          "path": "transfer.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -62423,7 +62447,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -62481,7 +62505,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "transfer.ethereum.qr",
+          "path": "transfer.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -62832,7 +62856,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "voting.seed.mnemonic",
+          "path": "voting.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -62890,7 +62914,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "voting.ethereum.qr",
+          "path": "voting.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -63090,12 +63114,12 @@
           "fontColor": "rgba(0,0,0,1)"
         },
         {
-          "type": "text",
+          "type": "template_text",
           "draw": "drawWrappedText",
-          "path": null,
+          "path": "meta.createdOn",
+          "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "data": "2019/7/24 5:31 PM",
           "fontWeight": 400,
           "maxWidth": 448,
           "lineHeightPx": 16,
@@ -63299,7 +63323,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "spawn.ethereum.qr",
+          "path": "spawn.keys.qr",
           "size": 52.99998474121094,
           "x": 511,
           "y": 310
@@ -63774,7 +63798,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "network.ethereum.qr",
           "size": 32,
           "x": 411,
           "y": 334
@@ -64001,7 +64025,7 @@
         {
           "type": "patq",
           "draw": "drawPatQ",
-          "path": "meta.passphrase",
+          "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -64017,6 +64041,7 @@
           "draw": "drawImg",
           "data": null,
           "path": "keyIcon",
+          "based": {},
           "width": 12.000008583068848,
           "height": 26.000001907348633,
           "x": 72,
@@ -64083,7 +64108,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 56.000003814697266,
           "x": 484,
           "y": 313
@@ -64448,7 +64473,7 @@
         {
           "type": "patq",
           "draw": "drawPatQ",
-          "path": "meta.passphrase",
+          "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -64464,6 +64489,7 @@
           "draw": "drawImg",
           "data": null,
           "path": null,
+          "based": {},
           "width": 12.000008583068848,
           "height": 26.000001907348633,
           "x": 72,
@@ -64530,7 +64556,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 56.000003814697266,
           "x": 484,
           "y": 313
@@ -64867,7 +64893,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "ownership.seed.mnemonic",
+          "path": "ownership.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -64939,7 +64965,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "ownership.ethereum.qr",
+          "path": "ownership.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 260
@@ -65729,7 +65755,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "management.ethereum.qr",
+          "path": "management.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -66138,7 +66164,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "management.ethereum.qr",
+          "path": "management.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -66547,7 +66573,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "spawn.ethereum.qr",
+          "path": "spawn.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 311
@@ -66898,7 +66924,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -67307,7 +67333,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -67365,7 +67391,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "transfer.ethereum.qr",
+          "path": "transfer.keys.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -67716,7 +67742,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "transfer.seed.mnemonic",
+          "path": "transfer.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -67774,7 +67800,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "transfer.ethereum.qr",
+          "path": "transfer.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -68125,7 +68151,7 @@
         {
           "type": "template_text",
           "draw": "drawWrappedText",
-          "path": "voting.seed.mnemonic",
+          "path": "voting.seed",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
@@ -68183,7 +68209,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "voting.ethereum.qr",
+          "path": "voting.qr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -68383,12 +68409,12 @@
           "fontColor": "rgba(0,0,0,1)"
         },
         {
-          "type": "text",
+          "type": "template_text",
           "draw": "drawWrappedText",
-          "path": null,
+          "path": "meta.createdOn",
+          "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "data": "2019/7/24 5:31 PM",
           "fontWeight": 400,
           "maxWidth": 448,
           "lineHeightPx": 16,
@@ -68592,7 +68618,7 @@
           "type": "qr",
           "draw": "drawQR",
           "data": null,
-          "path": "spawn.ethereum.qr",
+          "path": "spawn.keys.qr",
           "size": 52.99998474121094,
           "x": 511,
           "y": 310

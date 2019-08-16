@@ -1,5 +1,40 @@
-// Figma Naming Convention: >componentName:@data
-// to parse and import new Figma components, add a new value
+const fetch = require('node-fetch')
+const image2base64 = require('image-to-base64')
+
+const toBase64 = url => {
+  image2base64(url)
+    .then(response => {
+      console.log(response)
+      return response
+    })
+    .catch(error => {
+      console.error(error)
+      return null
+    })
+}
+
+async function getFigmaImg(id) {
+  const TOKEN = process.env.FIGMA_API_TOKEN
+  const fileId = 'a4u6jBsdTgiXcrDGW61q5ngY'
+  const u = `https://api.figma.com/v1/images/${fileId}?ids=${id}`
+  let result = await fetch(u, {
+    method: 'GET',
+    headers: {
+      'X-Figma-Token': TOKEN,
+    },
+  })
+
+  let img = await result.json()
+  const urls = Object.values(img.images)
+  const url = urls.length > 0 ? urls[0] : null
+  // console.log(url)
+  const based = toBase64(url)
+  if (based === null)
+    console.error(`Unable to get base64 for image with id ${id} and url ${url}`)
+  // console.log(based)
+  return based
+}
+
 const types = {
   figma: [
     'qr',
@@ -45,22 +80,6 @@ const getPath = child => {
   return null
 }
 
-async function getFigmaImg(id) {
-  const TOKEN = process.env.FIGMA_API_TOKEN
-  const fileId = 'a4u6jBsdTgiXcrDGW61q5ngY'
-  const url = `https://api.figma.com/v1/images/${fileId}?ids=${id}`
-  let result = await fetch(url, {
-    method: 'GET',
-    headers: {
-      'X-Figma-Token': TOKEN,
-    },
-  })
-
-  let img = await result.json()
-  console.log(img)
-  return img.images.id
-}
-
 const qr = (child, page) => {
   return {
     type: 'qr',
@@ -91,6 +110,8 @@ const img = (child, page) => {
     draw: 'drawImg',
     data: null,
     path: getPath(child),
+    // id: getFigmaImg(child.id),
+    based: getFigmaImg(child.id),
     width: child.absoluteBoundingBox.height,
     height: child.absoluteBoundingBox.width,
     x: child.absoluteBoundingBox.x - page.originX,
