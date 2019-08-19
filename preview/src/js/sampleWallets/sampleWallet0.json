@@ -1,0 +1,164 @@
+[
+  {
+    "meta": {
+      "generator": "urbit-key-generation-v0.16.1",
+      "ship": "2165243053",
+      "patp": "~falmur-ridrut",
+      "tier": "planet",
+      "derivationPath": "m/44'/60'/0'/0/0",
+      "passphrase": null
+    },
+    "ticket": "~falmur-ridrut",
+    "shards": ["~falmur-ridrut"],
+    "ownership": {
+      "type": "ownership",
+      "seed": "broom fox citizen spider advance bike trick rice current market visual expire gallery invest gesture talk coyote urge error describe six pigeon surface trade",
+      "keys": {
+        "public": "03e5e5310e4a0ddf5cc1c6be952476e8d46233d9a254bbd9a2f4c80ea5351b6b80",
+        "private": "b4327c65e8305903057de5df682f82ade101797e8e9c1f501a172533f464ba0d",
+        "chain": "b9c7fd7cbabbc4a4ed87fc59b8aa06b3a877264ecabf4a25b446cb0dfe11243e",
+        "address": "0x5af1a299e1571109B4BC8A79a4509Bf78Aa79Ee2"
+      }
+    },
+    "transfer": {
+      "type": "transfer",
+      "seed": "gate slow regret firm gold palm habit father poet sheriff dial dwarf drink mixed guilt climb moment someone belt heavy copper clerk glove palm",
+      "keys": {
+        "public": "02244e79d17c7740d81956c9ee3f5b44d8a28e84a01c0047ad162daa0073ae7122",
+        "private": "d7b24f81f39581b7c6ec12fa77c0527418b0cde9abe69e0e17c52842ca3523e7",
+        "chain": "ae905256a80d457213d292a3eed99e1ecc4958cddbd4a1ab6cafd686f9078726",
+        "address": "0x70C2501fE53377CAdB5D8B2DB3Ab8e4Bf62C3015"
+      }
+    },
+    "spawn": {
+      "type": "spawn",
+      "seed": "buyer require among ignore merry tribe able slow blind often tragic pond banana miss portion ostrich just super air target spawn joy heart service",
+      "keys": {
+        "public": "0344792bf347ffbf7789178630b398cf49dfe484dfb4f38730919f389984b1fc75",
+        "private": "7e465760a1952b0a353f96520e3e424c11ee1e40fc431676ccaa5ad10a8cf586",
+        "chain": "44c07fab923f0eaf573b1f7bc72edee853b417776c1da5a161cdbbf3ec5953ad",
+        "address": "0x01fb8904C5b2BBF102290390E06c2FF58c3dc8F3"
+      }
+    },
+    "voting": {},
+    "management": {
+      "type": "management",
+      "seed": "inquiry access mirror fuel large faint forum social flash middle drill amount tortoise retreat attract puppy coil proud repeat divert gallery across merge sausage",
+      "keys": {
+        "public": "02dec4e7aca4f2defa76581820b4dfb09bf141628f1ac360f7097bfc8091ca7729",
+        "private": "9170296a39c91556e7ba0ba13c0d8b3ead269f16fe9bab464c13b67c63a643f8",
+        "chain": "8f87531d60c07ba8c55e73afc0a0e38905b35a1639d33fe3a37f3e9eea7067f3",
+        "address": "0xd9560F556859a51c8DB3EC378c05D3a0A6b7e710"
+      }
+    },
+    "network": {}
+  },
+  {
+    "meta": {
+      "generator": "urbit-key-generation-v0.16.1",
+      "ship": "63115",
+      "patp": "~tonrev",
+      "tier": "star",
+      "derivationPath": "m/44'/60'/0'/0/0",
+      "passphrase": null
+    },
+    "ticket": "~tonrev",
+    "shards": ["~tonrev"],
+    "ownership": {
+      "type": "ownership",
+      "seed": "draw trick uncover auction chronic moral beyond you hollow domain deal wheat there clay stock ladder session injury scheme oxygen loop supply liberty soul",
+      "keys": {
+        "public": "02a32f403b7185eeb57808aa110f570f113b6cf5dd73ce5d6edc60968be750b943",
+        "private": "18f975fabf8545987e07a3531ff33c32a30ebd15faccc1e8cc6c44ad7bbd8378",
+        "chain": "bda1d3eb5b59ed0c9652da2b3c809aaa283c7cad0d5aa0b54d2b14399be08f71",
+        "address": "0xd84B95D7470addC583ddA1A96426cCb03115f4E1"
+      }
+    },
+    "transfer": {
+      "type": "transfer",
+      "seed": "immune alien reflect myself obscure belt bid only melody wash snow put zero renew describe sock raven animal deposit diet action exclude final agent",
+      "keys": {
+        "public": "0245d857ddbcf7ddfc05133377b076567d42c03840ad282e2b327be9b27ac27b1a",
+        "private": "74ca7ce66e64376c901dd75f10f0dbd2b958593a288d31a68fa6079db1809414",
+        "chain": "5d5515c26fdfcf7aa354e9e4feec61d7444b9a18c566b81fa78a5df32e624fa4",
+        "address": "0xf770fEC23436F1aF5E722F2d28D0DD0399e90879"
+      }
+    },
+    "spawn": {
+      "type": "spawn",
+      "seed": "immense echo lyrics color bless useless venture fall cushion trim express net web wheel shadow fee display spatial whale winner cinnamon solve year parent",
+      "keys": {
+        "public": "0350369a55333c22bfec8f7df4c4655fc8f3a8cb669395d4a4881ce031fef126b1",
+        "private": "13fa10f0dbf3aef2f6bf877452e4ba71f8573666fb886b8d00b8f3daa1fafccc",
+        "chain": "6e88015d0ee4fc7ba3eb0309ca46b1c08595764d3369ec2a54fe4cd7a12f4e03",
+        "address": "0xC12E9134b15aAEd9a4C265BdC6628bbEcFe2bDca"
+      }
+    },
+    "voting": {},
+    "management": {
+      "type": "management",
+      "seed": "hamster stock exchange alter episode ordinary sadness ordinary pilot hobby hollow pulp elegant age cereal express injury organ bundle divide stick latin comfort mass",
+      "keys": {
+        "public": "034b108546133399a777882b1b21eb762a3fded88f138538d825118b017d3acdf9",
+        "private": "df5d292672ac3dd9db3a64aac7b3f5ebd75c70d1b548ed3f803f10eccf491622",
+        "chain": "2af0fe7f226de335dbf83970d4952c42614815f249c34ad59518c79166a0caf3",
+        "address": "0xc8200Ba29FDe2c56D73174f2d0eBC932491a61FC"
+      }
+    },
+    "network": {}
+  },
+  {
+    "meta": {
+      "generator": "urbit-key-generation-v0.16.1",
+      "ship": "251",
+      "patp": "~teg",
+      "tier": "galaxy",
+      "derivationPath": "m/44'/60'/0'/0/0",
+      "passphrase": null
+    },
+    "ticket": "~teg",
+    "shards": ["~teg"],
+    "ownership": {
+      "type": "ownership",
+      "seed": "flat target shoulder symptom film arctic furnace transfer arrive curve gospel shadow identify rule boring orphan quick poverty media exile cable supreme chunk furnace",
+      "keys": {
+        "public": "0387b23ccb45f8f1fcfc6cc8eb98c91a3c5c61036b5650d1eb41816602e8e03f54",
+        "private": "9e665b9c7b503d4266c8fedc08cb39645a88fd02e9a513abf5f66ae4ef384382",
+        "chain": "369d2a6ea1b14ffef9c0197634fe01513e25383bb12fe7cf6b196975f1d28d8a",
+        "address": "0xFDaaBfc791223568d1fA3cDA87aE8568953B1570"
+      }
+    },
+    "transfer": {
+      "type": "transfer",
+      "seed": "slam sport area glide field spoil clay aspect spread mail other message police reject dawn trophy stadium wear radio govern monitor spice diary slice",
+      "keys": {
+        "public": "0212e463723f2ca4ff52bedcc297453fb33d5bbddf72ab3d6a120fd98929175464",
+        "private": "999a02b07163ec4844383bcee0981e92fbf8a01ba5d65d4c960763b4dfc16235",
+        "chain": "70a6d6dfc23e2f57f5c7dfbf6046a5d291e209f8fa981c036d9bc1d5665057ae",
+        "address": "0xC27BDc1397C7f6E993d08f3a3751084EAea21A02"
+      }
+    },
+    "spawn": {
+      "type": "spawn",
+      "seed": "become margin draw electric obtain else hunt mirror kiss gasp heart valve sudden pluck rude blush table century middle urban knock blind multiply angry",
+      "keys": {
+        "public": "03b6dcb50dbf1e57c0d8906cbd0feaa1e8610fb5e4e25eb02b320e005274476376",
+        "private": "8d5733009f3481666074a29d4e200cf2d530eeefaf10270523def0365d1e81e7",
+        "chain": "3fadc36792075e57a7b508b88abcfa3708a3e7b86aee14a600ca74c0960bd147",
+        "address": "0xE78DdF86d43e0EB6333C072B8A2d3BE0AC2Fce4F"
+      }
+    },
+    "voting": {},
+    "management": {
+      "type": "management",
+      "seed": "miss picture raw hold aisle resemble upgrade jump audit oak auction cloud salt hand dawn modify dentist bullet mango ability flame nephew away oblige",
+      "keys": {
+        "public": "027ecccf8022c794b10a710814683d68ad894776955295beedbbc9639874082f17",
+        "private": "a6c0996f507c25099ca46ca8b27d6c51940e12fadc55b09eb555c3fcd1007128",
+        "chain": "01f63a251821d5e48b8dc15a7cd67861eaa710c4dec81ddf22c46a6469d72593",
+        "address": "0x00898Bb3e6cc455De2333b8D3c8e98Fd75Eb55b2"
+      }
+    },
+    "network": {}
+  }
+]
