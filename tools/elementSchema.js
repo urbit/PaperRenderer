@@ -1,6 +1,3 @@
-const fetch = require('node-fetch')
-const image2base64 = require('image-to-base64')
-
 const types = {
   figma: [
     'qr',
@@ -21,19 +18,19 @@ const types = {
   singleParent: ['group', 'instance', 'frame'],
 }
 
-const toBase64 = url => {
-  image2base64(url)
-    .then(response => {
-      console.log(response)
-      return response
-    })
-    .catch(error => {
-      console.error(error)
-      return null
-    })
-}
+// const toBase64 = url => {
+//   image2base64(url)
+//     .then(response => {
+//       console.log(response)
+//       return response
+//     })
+//     .catch(error => {
+//       console.error(error)
+//       return null
+//     })
+// }
 
-const getSvgPath = child => {
+const getSvgPath = (child) => {
   const path = child.fillGeometry[0].path
 
   if (path === undefined || path === null || path === '')
@@ -45,14 +42,14 @@ const getSvgPath = child => {
   return ast
 }
 
-const rgba = fills => {
+const rgba = (fills) => {
   if (fills.length === 0) return `rgba(0,0,0,0)`
 
   const color = fills[0].color
   return `rgba(${color.r},${color.g},${color.b},${color.a})`
 }
 
-const isType = type => {
+const isType = (type) => {
   if (
     types.figma.includes(type) ||
     types.async.includes(type) ||
@@ -62,7 +59,7 @@ const isType = type => {
   return false
 }
 
-const getPath = child => {
+const getPath = (child) => {
   const str = child.name
   if (str.includes('@')) {
     return str.split('@')[1]
@@ -98,9 +95,9 @@ const img = (child, page) => {
   return {
     type: 'img',
     draw: 'drawImg',
-    data: null,
+    data: getSvgPath(child),
     path: getPath(child),
-    svg: getSvgPath(child),
+    // svg: getSvgPath(child),
     width: child.absoluteBoundingBox.height,
     height: child.absoluteBoundingBox.width,
     x: child.absoluteBoundingBox.x - page.originX,
