@@ -1,5 +1,6 @@
-// Figma Naming Convention: >componentName:@data
-// to parse and import new Figma components, add a new value
+const fetch = require('node-fetch')
+const image2base64 = require('image-to-base64')
+
 const types = {
   figma: [
     'qr',
@@ -18,6 +19,30 @@ const types = {
   async: ['sigil', 'qr'],
   // these Figma types house children elements, so we need to transverse all children nodes when we find a parentType
   singleParent: ['group', 'instance', 'frame'],
+}
+
+const toBase64 = url => {
+  image2base64(url)
+    .then(response => {
+      console.log(response)
+      return response
+    })
+    .catch(error => {
+      console.error(error)
+      return null
+    })
+}
+
+const getSvgPath = child => {
+  const path = child.fillGeometry[0].path
+
+  if (path === undefined || path === null || path === '')
+    console.error(
+      `Unable to get the path for the svg child: ${JSON.stringify(child)}`
+    )
+
+  const ast = `<svg height="${child.absoluteBoundingBox.height}" width="${child.absoluteBoundingBox.width}"><path d="${path}"/></svg>`
+  return ast
 }
 
 const rgba = fills => {
@@ -75,6 +100,7 @@ const img = (child, page) => {
     draw: 'drawImg',
     data: null,
     path: getPath(child),
+    svg: getSvgPath(child),
     width: child.absoluteBoundingBox.height,
     height: child.absoluteBoundingBox.width,
     x: child.absoluteBoundingBox.x - page.originX,
