@@ -37,13 +37,13 @@ var templateSchema = {
 
 const writeData = (data, path) => {
   const fmtData = JSON.stringify(data, null, 2)
-  fs.writeFile(path, fmtData, err => {
+  fs.writeFile(path, fmtData, (err) => {
     if (err) throw err
   })
 }
 
 // "galaxy, management, 4" --> [galaxy, management, 4]
-const splitTitle = title => {
+const splitTitle = (title) => {
   return title
     .toString()
     .replace(/\s/g, '')
@@ -51,14 +51,14 @@ const splitTitle = title => {
 }
 
 // removes data portion of Figma name and retrieves component name
-const formatName = name => {
+const formatName = (name) => {
   return name
     .split(':')[0]
     .replace('>', '')
     .toLowerCase()
 }
 
-const getComponentId = child => {
+const getComponentId = (child) => {
   const type = child.type.toLowerCase()
   const name = formatName(child.name)
   // we use figma's type identifier for type TEXT. otherwise we use name id
@@ -87,7 +87,7 @@ const createElement = (child, name) => {
 }
 
 // "galaxy, management, 4" --> [galaxy, mangagement, 4] --> frame { classOf: "galaxy", usage: "management", bin: 4}
-const getFrame = title => {
+const getFrame = (title) => {
   const data = splitTitle(title)
   var frame = {}
 
@@ -106,7 +106,7 @@ const getFrame = title => {
   return frame
 }
 
-const addPageSchema = child => {
+const addPageSchema = (child) => {
   var pageSchema = {
     classOf: '',
     usage: '',
@@ -136,7 +136,7 @@ const addElementSchema = (child, name) => {
     )
 }
 
-const endTraverse = name => {
+const endTraverse = (name) => {
   if (types.async.includes(name)) return true
   return false
 }
@@ -170,7 +170,7 @@ const depthFirst = (node, callback) => {
   }
 }
 
-const extractSchema = lo => {
+const extractSchema = (lo) => {
   console.error('Figma component of type vector is not supported.')
   depthFirst(lo, function(node) {})
 }
@@ -179,9 +179,9 @@ const getTemplateSchema = (fileKey, pageKey) => {
   const TOKEN = process.env.FIGMA_API_TOKEN
   const client = Figma.Client({ personalAccessToken: TOKEN })
 
-  client.file(fileKey, { geometry: 'paths' }).then(res => {
+  client.file(fileKey, { geometry: 'paths' }).then((res) => {
     const arr = res.data.document.children
-    const page = arr.filter(page => page.name === pageKey)[0]
+    const page = arr.filter((page) => page.name === pageKey)[0]
 
     extractSchema(page)
 
