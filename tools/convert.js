@@ -23,23 +23,23 @@ const FIGMA_PAGE_KEY = 'Registration 1.2'
 const WALLET_PATH = 'preview/src/js/sampleWallets/wallet.json'
 const OUTPUT_PATH = 'lib/src/templates.json'
 
-const templateSchema = {
+var templateSchema = {
   figmaPageID: '',
   pages: [],
 }
+
+// var pageSchema = {
+//   classOf: '',
+//   usage: '',
+//   bin: 0,
+//   elements: [],
+// }
 
 const writeData = (data, path) => {
   const fmtData = JSON.stringify(data, null, 2)
   fs.writeFile(path, fmtData, err => {
     if (err) throw err
   })
-}
-
-const pageSchema = {
-  classOf: '',
-  usage: '',
-  bin: 0,
-  elements: [],
 }
 
 // "galaxy, management, 4" --> [galaxy, management, 4]
@@ -107,7 +107,15 @@ const getFrame = title => {
 }
 
 const addPageSchema = child => {
+  var pageSchema = {
+    classOf: '',
+    usage: '',
+    bin: 0,
+    elements: [],
+  }
+
   var data = getFrame(child.name)
+
   pageSchema.classOf = data.classOf
   pageSchema.usage = data.usage
   pageSchema.bin = data.bin
@@ -174,7 +182,6 @@ const getTemplateSchema = (fileKey, pageKey) => {
   client.file(fileKey, { geometry: 'paths' }).then(res => {
     const arr = res.data.document.children
     const page = arr.filter(page => page.name === pageKey)[0]
-    writeData(arr, 'tools/figma-with-paths.txt')
 
     extractSchema(page)
 
@@ -189,10 +196,3 @@ const getTemplateSchema = (fileKey, pageKey) => {
 }
 
 getTemplateSchema(FIGMA_FILE_KEY, FIGMA_PAGE_KEY)
-
-// // const imgId = 'I1100:39843;1073:21'
-// // getFigmaImg(imgId)
-//
-//
-// const url = 'https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/5c52/8729/0170f488cc9bcaeda41e4324d4b8140chttps://s3-us-west-2.amazonaws.com/figma-alpha-api/img/5c52/8729/0170f488cc9bcaeda41e4324d4b8140c'
-// toBase64(url)
