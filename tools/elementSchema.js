@@ -33,28 +33,16 @@ const toBase64 = url => {
     })
 }
 
-async function getFigmaImg(id) {
-  const TOKEN = process.env.FIGMA_API_TOKEN
-  const fileId = 'a4u6jBsdTgiXcrDGW61q5ngY'
-  const u = `https://api.figma.com/v1/images/${fileId}?ids=${id}`
-  let result = await fetch(u, {
-    method: 'GET',
-    headers: {
-      'X-Figma-Token': TOKEN,
-    },
-  })
+const getSvgPath = child => {
+  const path = child.fillGeometry[0].path
 
-  let img = await result.json()
-  const urls = Object.values(img.images)
+  if (path === undefined || path === null || path === '')
+    console.error(
+      `Unable to get the path for the svg child: ${JSON.stringify(child)}`
+    )
 
-  const url = urls.length > 0 ? urls[0] : null
-  if (url === null) console.error(`Could not get url for image with id ${id}`)
-
-  const based = toBase64(url)
-  if (based === null)
-    console.error(`Unable to get base64 for image with id ${id} and url ${url}`)
-
-  return based
+  const ast = `<svg height="${child.absoluteBoundingBox.height}" width="${child.absoluteBoundingBox.width}"><path d="${path}"/></svg>`
+  return ast
 }
 
 const rgba = fills => {
@@ -112,8 +100,7 @@ const img = (child, page) => {
     draw: 'drawImg',
     data: null,
     path: getPath(child),
-    // id: getFigmaImg(child.id),
-    based: getFigmaImg(child.id),
+    svg: getSvgPath(child),
     width: child.absoluteBoundingBox.height,
     height: child.absoluteBoundingBox.width,
     x: child.absoluteBoundingBox.x - page.originX,

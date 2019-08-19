@@ -171,9 +171,10 @@ const getTemplateSchema = (fileKey, pageKey) => {
   const TOKEN = process.env.FIGMA_API_TOKEN
   const client = Figma.Client({ personalAccessToken: TOKEN })
 
-  client.file(fileKey).then(res => {
+  client.file(fileKey, { geometry: 'paths' }).then(res => {
     const arr = res.data.document.children
     const page = arr.filter(page => page.name === pageKey)[0]
+    writeData(arr, 'tools/figma-with-paths.txt')
 
     extractSchema(page)
 
