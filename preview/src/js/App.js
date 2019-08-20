@@ -11,7 +11,7 @@ class App extends Component {
     }
   }
 
-  handleOutput = data => {
+  handleOutput = (data) => {
     this.setState({ pages: data })
     console.log('App.js scope: ', data)
   }
@@ -28,12 +28,12 @@ class App extends Component {
           <PaperCollateralRenderer
             wallets={wallets}
             className={''}
-            callback={data => this.handleOutput(data)}
+            callback={(data) => this.handleOutput(data)}
             // mode={'REGISTRATION'}
           />
         }
 
-        {this.state.pages.map(p => {
+        {this.state.pages.map((p) => {
           return (
             <img
               style={{ maxWidth: '550px', border: '1px solid black' }}
