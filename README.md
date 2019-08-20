@@ -44,6 +44,7 @@ Making changes:
 | `npm run build:dev`       | Run the development testing page      |
 | or `$ npm run build:prod` | Build the library from source         |
 | `npm run serve`           | Serve & watch build on localhost:8000 |
+| `npm run genWallet`       | Generate random JSON wallets          |
 
 ## Debug
 
@@ -55,7 +56,7 @@ See our [documentation of frequent bugs](docs/freq-bugs.md) and how to fix them.
 <PaperCollateralRenderer
   wallet={wallet}
   className={'extremely-hidden'}
-  callback={data => console.log(data)}
+  callback={(data) => console.log(data)}
   mode={'REGISTRATION'}
 />
 ```
