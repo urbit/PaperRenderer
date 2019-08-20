@@ -74,7 +74,7 @@
           "lineHeightPx": 11.061599731445312,
           "x": 138,
           "y": 750,
-          "fontColor": "rgba(0.49803921580314636,0.49803921580314636,0.49803921580314636,1)"
+          "fontColor": "rgba(127.00000002980232,127.00000002980232,127.00000002980232,1)"
         },
         {
           "type": "text",
@@ -88,12 +88,12 @@
           "lineHeightPx": 9.375,
           "x": 246,
           "y": 750,
-          "fontColor": "rgba(0.49803921580314636,0.49803921580314636,0.49803921580314636,1)"
+          "fontColor": "rgba(127.00000002980232,127.00000002980232,127.00000002980232,1)"
         },
         {
           "type": "template_text",
           "draw": "wrappedText",
-          "path": "patp_azimuth",
+          "path": "meta.azimuthUrl",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 8,
@@ -102,7 +102,7 @@
           "lineHeightPx": 9.375,
           "x": 138,
           "y": 731,
-          "fontColor": "rgba(0.49803921580314636,0.49803921580314636,0.49803921580314636,1)"
+          "fontColor": "rgba(127.00000002980232,127.00000002980232,127.00000002980232,1)"
         },
         {
           "type": "text",
@@ -151,7 +151,7 @@
           "type": "sigil",
           "draw": "sigil",
           "data": null,
-          "path": "sigil",
+          "path": "meta.sigil",
           "size": 48,
           "x": 168,
           "y": 206
@@ -168,7 +168,7 @@
           "lineHeightPx": 9.375,
           "x": 230,
           "y": 245,
-          "fontColor": "rgba(0.3019607961177826,0.3019607961177826,0.3019607961177826,1)"
+          "fontColor": "rgba(77.00000301003456,77.00000301003456,77.00000301003456,1)"
         },
         {
           "type": "text",
@@ -187,7 +187,7 @@
         {
           "type": "wrap_addr_split_four",
           "draw": "ethereumAddressCompact",
-          "path": "network.keys.address",
+          "path": "ownership.keys.address",
           "data": null,
           "fontWeight": 400,
           "fontFamily": "Source Code Pro",
@@ -258,7 +258,7 @@
           "type": "qr",
           "draw": "qr",
           "data": null,
-          "path": "network.ethereum.qr",
+          "path": "ownership.keys.addrQr",
           "size": 32,
           "x": 411,
           "y": 334
@@ -275,7 +275,7 @@
           "lineHeightPx": 9.375,
           "x": 138,
           "y": 713,
-          "fontColor": "rgba(0.49803921580314636,0.49803921580314636,0.49803921580314636,1)"
+          "fontColor": "rgba(127.00000002980232,127.00000002980232,127.00000002980232,1)"
         },
         {
           "type": "text",
@@ -289,7 +289,7 @@
           "lineHeightPx": 9.375,
           "x": 198,
           "y": 713,
-          "fontColor": "rgba(0.49803921580314636,0.49803921580314636,0.49803921580314636,1)"
+          "fontColor": "rgba(127.00000002980232,127.00000002980232,127.00000002980232,1)"
         },
         {
           "type": "text",
@@ -377,7 +377,7 @@
           "path": null,
           "fontFamily": "Inter",
           "fontSize": 12,
-          "data": "This requires a Medium Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.",
+          "data": "This requires a Very High Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.",
           "fontWeight": 400,
           "maxWidth": 448,
           "lineHeightPx": 16,
@@ -428,12 +428,12 @@
           "fontColor": "rgba(0,0,0,1)"
         },
         {
-          "type": "text",
+          "type": "template_text",
           "draw": "wrappedText",
-          "path": null,
+          "path": "meta.createdOn",
+          "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "data": "2019/7/24 5:31 PM",
           "fontWeight": 400,
           "maxWidth": 448,
           "lineHeightPx": 16,
@@ -494,7 +494,7 @@
         },
         {
           "type": "patq",
-          "draw": "patQ",
+          "draw": "patq",
           "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
@@ -510,7 +510,7 @@
           "type": "img",
           "draw": "img",
           "data": "<svg height=\"12.000008583068848\" width=\"26.000001907348633\"><path d=\"M14.6216 8.82843L11.4008 8.82843L9.97572 7.41422L8.55062 8.82843L7.12551 7.41422L5.70041 8.82843L2.85021 8.82843L0 6L2.85021 3.17158L14.6216 3.17158C15.257 1.99191 16.2714 1.05678 17.5037 0.514729C18.7359 -0.0273196 20.1154 -0.145197 21.4229 0.179823C22.7305 0.504842 23.891 1.25412 24.7203 2.30862C25.5496 3.36313 26 4.66239 26 6C26 7.33762 25.5496 8.63688 24.7203 9.69138C23.891 10.7459 22.7305 11.4952 21.4229 11.8202C20.1154 12.1452 18.7359 12.0273 17.5037 11.4853C16.2714 10.9432 15.257 10.0081 14.6216 8.82843ZM21.3765 8.99814C21.9741 8.99777 22.5581 8.82169 23.0548 8.49214C23.5516 8.16258 23.9388 7.69434 24.1675 7.14654C24.3962 6.59875 24.4562 5.99597 24.34 5.41435C24.2237 4.83272 23.9363 4.29834 23.5142 3.87868C22.9469 3.31676 22.178 3.00138 21.3765 3.00187L21.3765 8.99814Z\"/></svg>",
-          "path": "keyIcon",
+          "path": null,
           "width": 12.000008583068848,
           "height": 26.000001907348633,
           "x": 72,
@@ -576,7 +576,7 @@
           "type": "qr",
           "draw": "qr",
           "data": null,
-          "path": "ownership.keys.qr",
+          "path": "ownership.keys.addrQr",
           "size": 56.000003814697266,
           "x": 484,
           "y": 313
@@ -591,23 +591,23 @@
           "y": 77,
           "width": 54,
           "height": 18,
-          "fillColor": "rgba(0.3019607961177826,0.3019607961177826,0.3019607961177826,1)",
+          "fillColor": "rgba(77.00000301003456,77.00000301003456,77.00000301003456,1)",
           "strokeColor": "rgba(0,0,0,0)",
           "strokeWeight": 1
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyLevel",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 8,
+          "data": "Very High",
           "fontWeight": 500,
-          "maxWidth": 31,
+          "maxWidth": 38,
           "lineHeightPx": 9.375,
-          "x": 165,
+          "x": 161,
           "y": 81,
-          "fontColor": "rgba(1,1,1,1)"
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "hr",
@@ -618,7 +618,7 @@
           "y": 391,
           "width": 468,
           "height": 1,
-          "strokeColor": "rgba(0.6941176652908325,0.6980392336845398,0.7019608020782471,1)",
+          "strokeColor": "rgba(177.0000046491623,178.00000458955765,179.000004529953,1)",
           "strokeWeight": 2
         },
         {
@@ -631,23 +631,23 @@
           "y": 543,
           "width": 54,
           "height": 18,
-          "fillColor": "rgba(0.3019607961177826,0.3019607961177826,0.3019607961177826,1)",
+          "fillColor": "rgba(77.00000301003456,77.00000301003456,77.00000301003456,1)",
           "strokeColor": "rgba(0,0,0,0)",
           "strokeWeight": 1
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyLevel",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 8,
+          "data": "Very High",
           "fontWeight": 500,
-          "maxWidth": 31,
+          "maxWidth": 38,
           "lineHeightPx": 9.375,
-          "x": 142,
+          "x": 138,
           "y": 547,
-          "fontColor": "rgba(1,1,1,1)"
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "text",
@@ -828,12 +828,12 @@
           "fontColor": "rgba(0,0,0,1)"
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyText",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 12,
+          "data": "This requires a Very High Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.",
           "fontWeight": 400,
           "maxWidth": 448,
           "lineHeightPx": 16,
@@ -884,12 +884,12 @@
           "fontColor": "rgba(0,0,0,1)"
         },
         {
-          "type": "text",
+          "type": "template_text",
           "draw": "wrappedText",
-          "path": null,
+          "path": "meta.createdOn",
+          "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "data": "2019/7/24 5:31 PM",
           "fontWeight": 400,
           "maxWidth": 448,
           "lineHeightPx": 16,
@@ -950,7 +950,7 @@
         },
         {
           "type": "patq",
-          "draw": "patQ",
+          "draw": "patq",
           "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
@@ -1032,7 +1032,7 @@
           "type": "qr",
           "draw": "qr",
           "data": null,
-          "path": "ownership.keys.qr",
+          "path": "ownership.keys.addrQr",
           "size": 56.000003814697266,
           "x": 484,
           "y": 313
@@ -1047,23 +1047,23 @@
           "y": 77,
           "width": 54,
           "height": 18,
-          "fillColor": "rgba(0.3019607961177826,0.3019607961177826,0.3019607961177826,1)",
+          "fillColor": "rgba(77.00000301003456,77.00000301003456,77.00000301003456,1)",
           "strokeColor": "rgba(0,0,0,0)",
           "strokeWeight": 1
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyLevel",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 8,
+          "data": "Very High",
           "fontWeight": 500,
           "maxWidth": 38,
           "lineHeightPx": 9.375,
           "x": 161,
           "y": 81,
-          "fontColor": "rgba(1,1,1,1)"
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "hr",
@@ -1074,7 +1074,7 @@
           "y": 391,
           "width": 468,
           "height": 1,
-          "strokeColor": "rgba(0.6941176652908325,0.6980392336845398,0.7019608020782471,1)",
+          "strokeColor": "rgba(177.0000046491623,178.00000458955765,179.000004529953,1)",
           "strokeWeight": 2
         },
         {
@@ -1087,23 +1087,23 @@
           "y": 543,
           "width": 54,
           "height": 18,
-          "fillColor": "rgba(0.3019607961177826,0.3019607961177826,0.3019607961177826,1)",
+          "fillColor": "rgba(77.00000301003456,77.00000301003456,77.00000301003456,1)",
           "strokeColor": "rgba(0,0,0,0)",
           "strokeWeight": 1
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyLevel",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 8,
+          "data": "Very High",
           "fontWeight": 500,
           "maxWidth": 38,
           "lineHeightPx": 9.375,
           "x": 138,
           "y": 547,
-          "fontColor": "rgba(1,1,1,1)"
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "text",
@@ -1284,12 +1284,12 @@
           "fontColor": "rgba(0,0,0,1)"
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyText",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 12,
+          "data": "This requires a Very High Friction Custody. Securely store this document. \nIf you lose your master ticket and ship name, there is no way to recover it and you will no longer able to control your identity.",
           "fontWeight": 400,
           "maxWidth": 448,
           "lineHeightPx": 16,
@@ -1429,7 +1429,7 @@
           "maxWidth": 123,
           "lineHeightPx": 16,
           "x": 72,
-          "y": 260,
+          "y": 308,
           "fontColor": "rgba(0,0,0,1)"
         },
         {
@@ -1443,17 +1443,17 @@
           "maxWidth": 380,
           "lineHeightPx": 16,
           "x": 72,
-          "y": 276,
+          "y": 324,
           "fontColor": "rgba(0,0,0,1)"
         },
         {
           "type": "qr",
           "draw": "qr",
           "data": null,
-          "path": "ownership.keys.qr",
+          "path": "ownership.keys.addrQr",
           "size": 52.99998474121094,
           "x": 487,
-          "y": 260
+          "y": 308
         },
         {
           "type": "rect",
@@ -1465,23 +1465,23 @@
           "y": 73,
           "width": 54,
           "height": 18,
-          "fillColor": "rgba(0.3019607961177826,0.3019607961177826,0.3019607961177826,1)",
+          "fillColor": "rgba(77.00000301003456,77.00000301003456,77.00000301003456,1)",
           "strokeColor": "rgba(0,0,0,0)",
           "strokeWeight": 1
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyLevel",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 8,
+          "data": "Very High",
           "fontWeight": 500,
           "maxWidth": 38,
           "lineHeightPx": 9.375,
           "x": 160,
           "y": 77,
-          "fontColor": "rgba(1,1,1,1)"
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "hr",
@@ -1492,7 +1492,7 @@
           "y": 378,
           "width": 468,
           "height": 1,
-          "strokeColor": "rgba(0.6941176652908325,0.6980392336845398,0.7019608020782471,1)",
+          "strokeColor": "rgba(177.0000046491623,178.00000458955765,179.000004529953,1)",
           "strokeWeight": 2
         },
         {
@@ -1505,23 +1505,23 @@
           "y": 541,
           "width": 54,
           "height": 18,
-          "fillColor": "rgba(0.3019607961177826,0.3019607961177826,0.3019607961177826,1)",
+          "fillColor": "rgba(77.00000301003456,77.00000301003456,77.00000301003456,1)",
           "strokeColor": "rgba(0,0,0,0)",
           "strokeWeight": 1
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyLevel",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 8,
+          "data": "Very High",
           "fontWeight": 500,
           "maxWidth": 38,
           "lineHeightPx": 9.375,
           "x": 138,
           "y": 545,
-          "fontColor": "rgba(1,1,1,1)"
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "text",
@@ -1634,6 +1634,34 @@
           "x": 72,
           "y": 753,
           "fontColor": "rgba(0,0,0,1)"
+        },
+        {
+          "type": "text",
+          "draw": "wrappedText",
+          "path": null,
+          "fontFamily": "Source Code Pro",
+          "fontSize": 12,
+          "data": "DERIVATION PATH",
+          "fontWeight": 600,
+          "maxWidth": 108,
+          "lineHeightPx": 16,
+          "x": 72,
+          "y": 260,
+          "fontColor": "rgba(0,0,0,1)"
+        },
+        {
+          "type": "template_text",
+          "draw": "wrappedText",
+          "path": "meta.derivationPath",
+          "data": null,
+          "fontFamily": "Source Code Pro",
+          "fontSize": 12,
+          "fontWeight": 400,
+          "maxWidth": 101,
+          "lineHeightPx": 16,
+          "x": 72,
+          "y": 276,
+          "fontColor": "rgba(0,0,0,1)"
         }
       ],
       "originX": -362,
@@ -1702,12 +1730,12 @@
           "fontColor": "rgba(0,0,0,1)"
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyText",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 12,
+          "data": "This requires a Medium Friction Custody. Securely store this document. \nIIf you lose your management seed, you can recover it from your master ticket or ownership seed.",
           "fontWeight": 400,
           "maxWidth": 448,
           "lineHeightPx": 16,
@@ -1840,7 +1868,7 @@
           "type": "qr",
           "draw": "qr",
           "data": null,
-          "path": "management.ethereum.qr",
+          "path": "management.keys.addrQr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -1855,23 +1883,23 @@
           "y": 76,
           "width": 54,
           "height": 18,
-          "fillColor": "rgba(0.3019607961177826,0.3019607961177826,0.3019607961177826,1)",
+          "fillColor": "rgba(77.00000301003456,77.00000301003456,77.00000301003456,1)",
           "strokeColor": "rgba(0,0,0,0)",
           "strokeWeight": 1
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyLevel",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 8,
+          "data": "Medium",
           "fontWeight": 500,
           "maxWidth": 31,
           "lineHeightPx": 9.375,
           "x": 164,
           "y": 80,
-          "fontColor": "rgba(1,1,1,1)"
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "hr",
@@ -1882,7 +1910,7 @@
           "y": 380,
           "width": 468,
           "height": 1,
-          "strokeColor": "rgba(0.6941176652908325,0.6980392336845398,0.7019608020782471,1)",
+          "strokeColor": "rgba(177.0000046491623,178.00000458955765,179.000004529953,1)",
           "strokeWeight": 2
         },
         {
@@ -1895,23 +1923,23 @@
           "y": 543,
           "width": 54,
           "height": 18,
-          "fillColor": "rgba(0.3019607961177826,0.3019607961177826,0.3019607961177826,1)",
+          "fillColor": "rgba(77.00000301003456,77.00000301003456,77.00000301003456,1)",
           "strokeColor": "rgba(0,0,0,0)",
           "strokeWeight": 1
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyLevel",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 8,
+          "data": "Medium",
           "fontWeight": 500,
           "maxWidth": 31,
           "lineHeightPx": 9.375,
           "x": 141,
           "y": 547,
-          "fontColor": "rgba(1,1,1,1)"
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "text",
@@ -2120,12 +2148,12 @@
           "fontColor": "rgba(0,0,0,1)"
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyText",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 12,
+          "data": "This requires a Medium Friction Custody. Securely store this document. \nIIf you lose your management seed, you can recover it from your master ticket or ownership seed.",
           "fontWeight": 400,
           "maxWidth": 448,
           "lineHeightPx": 16,
@@ -2258,7 +2286,7 @@
           "type": "qr",
           "draw": "qr",
           "data": null,
-          "path": "management.keys.qr",
+          "path": "management.keys.addrQr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -2273,23 +2301,23 @@
           "y": 76,
           "width": 54,
           "height": 18,
-          "fillColor": "rgba(0.3019607961177826,0.3019607961177826,0.3019607961177826,1)",
+          "fillColor": "rgba(77.00000301003456,77.00000301003456,77.00000301003456,1)",
           "strokeColor": "rgba(0,0,0,0)",
           "strokeWeight": 1
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyLevel",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 8,
+          "data": "Medium",
           "fontWeight": 500,
           "maxWidth": 31,
           "lineHeightPx": 9.375,
           "x": 164,
           "y": 80,
-          "fontColor": "rgba(1,1,1,1)"
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "hr",
@@ -2300,7 +2328,7 @@
           "y": 380,
           "width": 468,
           "height": 1,
-          "strokeColor": "rgba(0.6941176652908325,0.6980392336845398,0.7019608020782471,1)",
+          "strokeColor": "rgba(177.0000046491623,178.00000458955765,179.000004529953,1)",
           "strokeWeight": 2
         },
         {
@@ -2313,23 +2341,23 @@
           "y": 543,
           "width": 54,
           "height": 18,
-          "fillColor": "rgba(0.3019607961177826,0.3019607961177826,0.3019607961177826,1)",
+          "fillColor": "rgba(77.00000301003456,77.00000301003456,77.00000301003456,1)",
           "strokeColor": "rgba(0,0,0,0)",
           "strokeWeight": 1
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyLevel",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 8,
+          "data": "Medium",
           "fontWeight": 500,
           "maxWidth": 31,
           "lineHeightPx": 9.375,
           "x": 141,
           "y": 547,
-          "fontColor": "rgba(1,1,1,1)"
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "text",
@@ -2538,12 +2566,12 @@
           "fontColor": "rgba(0,0,0,1)"
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyText",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 12,
+          "data": "This requires a Medium Friction Custody. Securely store this document. \nIIf you lose your management seed, you can recover it from your master ticket or ownership seed.",
           "fontWeight": 400,
           "maxWidth": 448,
           "lineHeightPx": 16,
@@ -2676,7 +2704,7 @@
           "type": "qr",
           "draw": "qr",
           "data": null,
-          "path": "management.keys.qr",
+          "path": "management.keys.addrQr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 310
@@ -2691,23 +2719,23 @@
           "y": 76,
           "width": 54,
           "height": 18,
-          "fillColor": "rgba(0.3019607961177826,0.3019607961177826,0.3019607961177826,1)",
+          "fillColor": "rgba(77.00000301003456,77.00000301003456,77.00000301003456,1)",
           "strokeColor": "rgba(0,0,0,0)",
           "strokeWeight": 1
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyLevel",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 8,
+          "data": "Medium",
           "fontWeight": 500,
-          "maxWidth": 16,
+          "maxWidth": 31,
           "lineHeightPx": 9.375,
-          "x": 171,
+          "x": 164,
           "y": 80,
-          "fontColor": "rgba(1,1,1,1)"
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "hr",
@@ -2718,7 +2746,7 @@
           "y": 380,
           "width": 468,
           "height": 1,
-          "strokeColor": "rgba(0.6941176652908325,0.6980392336845398,0.7019608020782471,1)",
+          "strokeColor": "rgba(177.0000046491623,178.00000458955765,179.000004529953,1)",
           "strokeWeight": 2
         },
         {
@@ -2731,23 +2759,23 @@
           "y": 543,
           "width": 54,
           "height": 18,
-          "fillColor": "rgba(0.3019607961177826,0.3019607961177826,0.3019607961177826,1)",
+          "fillColor": "rgba(77.00000301003456,77.00000301003456,77.00000301003456,1)",
           "strokeColor": "rgba(0,0,0,0)",
           "strokeWeight": 1
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyLevel",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 8,
+          "data": "Medium",
           "fontWeight": 500,
-          "maxWidth": 16,
+          "maxWidth": 31,
           "lineHeightPx": 9.375,
-          "x": 148,
+          "x": 141,
           "y": 547,
-          "fontColor": "rgba(1,1,1,1)"
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "text",
@@ -2956,12 +2984,12 @@
           "fontColor": "rgba(0,0,0,1)"
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyText",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 12,
+          "data": "This requires a High Friction Custody. Securely store this document. \nIf you lose your spawn seed, you can recover it from your master ticket or ownership seed.",
           "fontWeight": 400,
           "maxWidth": 448,
           "lineHeightPx": 16,
@@ -3094,7 +3122,7 @@
           "type": "qr",
           "draw": "qr",
           "data": null,
-          "path": "spawn.keys.qr",
+          "path": "spawn.keys.addrQr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 311
@@ -3109,23 +3137,23 @@
           "y": 76,
           "width": 54,
           "height": 18,
-          "fillColor": "rgba(0.3019607961177826,0.3019607961177826,0.3019607961177826,1)",
+          "fillColor": "rgba(77.00000301003456,77.00000301003456,77.00000301003456,1)",
           "strokeColor": "rgba(0,0,0,0)",
           "strokeWeight": 1
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyLevel",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 8,
+          "data": "Very High",
           "fontWeight": 500,
-          "maxWidth": 18,
+          "maxWidth": 38,
           "lineHeightPx": 9.375,
-          "x": 170,
+          "x": 160,
           "y": 80,
-          "fontColor": "rgba(1,1,1,1)"
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "rect",
@@ -3137,23 +3165,23 @@
           "y": 543,
           "width": 54,
           "height": 18,
-          "fillColor": "rgba(0.3019607961177826,0.3019607961177826,0.3019607961177826,1)",
+          "fillColor": "rgba(77.00000301003456,77.00000301003456,77.00000301003456,1)",
           "strokeColor": "rgba(0,0,0,0)",
           "strokeWeight": 1
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyLevel",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 8,
+          "data": "High",
           "fontWeight": 500,
           "maxWidth": 18,
           "lineHeightPx": 9.375,
           "x": 148,
           "y": 547,
-          "fontColor": "rgba(1,1,1,1)"
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "hr",
@@ -3164,7 +3192,7 @@
           "y": 380,
           "width": 468,
           "height": 1,
-          "strokeColor": "rgba(0.6941176652908325,0.6980392336845398,0.7019608020782471,1)",
+          "strokeColor": "rgba(177.0000046491623,178.00000458955765,179.000004529953,1)",
           "strokeWeight": 2
         },
         {
@@ -3374,12 +3402,12 @@
           "fontColor": "rgba(0,0,0,1)"
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyText",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 12,
+          "data": "This requires a Medium Friction Custody. Securely store this document. \nIf you lose your transfer seed, you can recover it from your master ticket or ownership seed.",
           "fontWeight": 400,
           "maxWidth": 448,
           "lineHeightPx": 16,
@@ -3512,7 +3540,7 @@
           "type": "qr",
           "draw": "qr",
           "data": null,
-          "path": "transfer.ethereum.qr",
+          "path": "transfer.keys.addrQr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -3527,23 +3555,23 @@
           "y": 73,
           "width": 54,
           "height": 18,
-          "fillColor": "rgba(0.3019607961177826,0.3019607961177826,0.3019607961177826,1)",
+          "fillColor": "rgba(77.00000301003456,77.00000301003456,77.00000301003456,1)",
           "strokeColor": "rgba(0,0,0,0)",
           "strokeWeight": 1
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyLevel",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 8,
+          "data": "Very High",
           "fontWeight": 500,
           "maxWidth": 38,
           "lineHeightPx": 9.375,
           "x": 160,
           "y": 77,
-          "fontColor": "rgba(1,1,1,1)"
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "hr",
@@ -3554,7 +3582,7 @@
           "y": 378,
           "width": 468,
           "height": 1,
-          "strokeColor": "rgba(0.6941176652908325,0.6980392336845398,0.7019608020782471,1)",
+          "strokeColor": "rgba(177.0000046491623,178.00000458955765,179.000004529953,1)",
           "strokeWeight": 2
         },
         {
@@ -3567,23 +3595,23 @@
           "y": 541,
           "width": 54,
           "height": 18,
-          "fillColor": "rgba(0.3019607961177826,0.3019607961177826,0.3019607961177826,1)",
+          "fillColor": "rgba(77.00000301003456,77.00000301003456,77.00000301003456,1)",
           "strokeColor": "rgba(0,0,0,0)",
           "strokeWeight": 1
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyLevel",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 8,
+          "data": "Medium",
           "fontWeight": 500,
-          "maxWidth": 38,
+          "maxWidth": 31,
           "lineHeightPx": 9.375,
-          "x": 137,
+          "x": 141,
           "y": 545,
-          "fontColor": "rgba(1,1,1,1)"
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "text",
@@ -3792,12 +3820,12 @@
           "fontColor": "rgba(0,0,0,1)"
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyText",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 12,
+          "data": "This requires a Medium Friction Custody. Securely store this document. \nIf you lose your transfer seed, you can recover it from your master ticket or ownership seed.",
           "fontWeight": 400,
           "maxWidth": 448,
           "lineHeightPx": 16,
@@ -3930,7 +3958,7 @@
           "type": "qr",
           "draw": "qr",
           "data": null,
-          "path": "transfer.keys.qr",
+          "path": "transfer.keys.addrQr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -3945,23 +3973,23 @@
           "y": 73,
           "width": 54,
           "height": 18,
-          "fillColor": "rgba(0.3019607961177826,0.3019607961177826,0.3019607961177826,1)",
+          "fillColor": "rgba(77.00000301003456,77.00000301003456,77.00000301003456,1)",
           "strokeColor": "rgba(0,0,0,0)",
           "strokeWeight": 1
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyLevel",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 8,
+          "data": "Very High",
           "fontWeight": 500,
-          "maxWidth": 18,
+          "maxWidth": 38,
           "lineHeightPx": 9.375,
-          "x": 170,
+          "x": 160,
           "y": 77,
-          "fontColor": "rgba(1,1,1,1)"
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "hr",
@@ -3972,7 +4000,7 @@
           "y": 378,
           "width": 468,
           "height": 1,
-          "strokeColor": "rgba(0.6941176652908325,0.6980392336845398,0.7019608020782471,1)",
+          "strokeColor": "rgba(177.0000046491623,178.00000458955765,179.000004529953,1)",
           "strokeWeight": 2
         },
         {
@@ -3985,23 +4013,23 @@
           "y": 541,
           "width": 54,
           "height": 18,
-          "fillColor": "rgba(0.3019607961177826,0.3019607961177826,0.3019607961177826,1)",
+          "fillColor": "rgba(77.00000301003456,77.00000301003456,77.00000301003456,1)",
           "strokeColor": "rgba(0,0,0,0)",
           "strokeWeight": 1
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyLevel",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 8,
+          "data": "Medium",
           "fontWeight": 500,
-          "maxWidth": 18,
+          "maxWidth": 31,
           "lineHeightPx": 9.375,
-          "x": 147,
+          "x": 141,
           "y": 545,
-          "fontColor": "rgba(1,1,1,1)"
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "text",
@@ -4210,12 +4238,12 @@
           "fontColor": "rgba(0,0,0,1)"
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyText",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 12,
+          "data": "This requires a Medium Friction Custody. Securely store this document. \nIf you lose your transfer seed, you can recover it from your master ticket or ownership seed.",
           "fontWeight": 400,
           "maxWidth": 448,
           "lineHeightPx": 16,
@@ -4348,7 +4376,7 @@
           "type": "qr",
           "draw": "qr",
           "data": null,
-          "path": "transfer.qr",
+          "path": "transfer.keys.addrQr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -4363,23 +4391,23 @@
           "y": 73,
           "width": 54,
           "height": 18,
-          "fillColor": "rgba(0.3019607961177826,0.3019607961177826,0.3019607961177826,1)",
+          "fillColor": "rgba(77.00000301003456,77.00000301003456,77.00000301003456,1)",
           "strokeColor": "rgba(0,0,0,0)",
           "strokeWeight": 1
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyLevel",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 8,
+          "data": "Very High",
           "fontWeight": 500,
-          "maxWidth": 31,
+          "maxWidth": 38,
           "lineHeightPx": 9.375,
-          "x": 164,
+          "x": 160,
           "y": 77,
-          "fontColor": "rgba(1,1,1,1)"
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "hr",
@@ -4390,7 +4418,7 @@
           "y": 378,
           "width": 468,
           "height": 1,
-          "strokeColor": "rgba(0.6941176652908325,0.6980392336845398,0.7019608020782471,1)",
+          "strokeColor": "rgba(177.0000046491623,178.00000458955765,179.000004529953,1)",
           "strokeWeight": 2
         },
         {
@@ -4403,23 +4431,23 @@
           "y": 541,
           "width": 54,
           "height": 18,
-          "fillColor": "rgba(0.3019607961177826,0.3019607961177826,0.3019607961177826,1)",
+          "fillColor": "rgba(77.00000301003456,77.00000301003456,77.00000301003456,1)",
           "strokeColor": "rgba(0,0,0,0)",
           "strokeWeight": 1
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyLevel",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 8,
+          "data": "Medium",
           "fontWeight": 500,
           "maxWidth": 31,
           "lineHeightPx": 9.375,
           "x": 141,
           "y": 545,
-          "fontColor": "rgba(1,1,1,1)"
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "text",
@@ -4628,12 +4656,12 @@
           "fontColor": "rgba(0,0,0,1)"
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyText",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 12,
+          "data": "This requires a Medium Friction Custody. Securely store this document. \nIf you lose your voting seed, you can recover it from your master ticket or ownership seed.",
           "fontWeight": 400,
           "maxWidth": 448,
           "lineHeightPx": 16,
@@ -4751,7 +4779,7 @@
         {
           "type": "addr_split_four",
           "draw": "ethereumAddressLong",
-          "path": "voting.address",
+          "path": "voting.keys.address",
           "data": null,
           "fontWeight": 400,
           "fontFamily": "Source Code Pro",
@@ -4766,7 +4794,7 @@
           "type": "qr",
           "draw": "qr",
           "data": null,
-          "path": "voting.qr",
+          "path": "voting.keys.addrQr",
           "size": 52.99998474121094,
           "x": 487,
           "y": 308
@@ -4781,23 +4809,23 @@
           "y": 73,
           "width": 54,
           "height": 18,
-          "fillColor": "rgba(0.3019607961177826,0.3019607961177826,0.3019607961177826,1)",
+          "fillColor": "rgba(77.00000301003456,77.00000301003456,77.00000301003456,1)",
           "strokeColor": "rgba(0,0,0,0)",
           "strokeWeight": 1
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyLevel",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 8,
+          "data": "Medium",
           "fontWeight": 500,
           "maxWidth": 31,
           "lineHeightPx": 9.375,
           "x": 164,
           "y": 77,
-          "fontColor": "rgba(1,1,1,1)"
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "hr",
@@ -4808,36 +4836,22 @@
           "y": 378,
           "width": 468,
           "height": 1,
-          "strokeColor": "rgba(0.6941176652908325,0.6980392336845398,0.7019608020782471,1)",
+          "strokeColor": "rgba(177.0000046491623,178.00000458955765,179.000004529953,1)",
           "strokeWeight": 2
         },
         {
-          "type": "rect",
-          "draw": "rect",
-          "path": null,
-          "data": null,
-          "cornerRadius": 4,
-          "x": 130,
-          "y": 541,
-          "width": 54,
-          "height": 18,
-          "fillColor": "rgba(0.3019607961177826,0.3019607961177826,0.3019607961177826,1)",
-          "strokeColor": "rgba(0,0,0,0)",
-          "strokeWeight": 1
-        },
-        {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyLevel",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 8,
+          "data": "Medium",
           "fontWeight": 500,
           "maxWidth": 31,
           "lineHeightPx": 9.375,
           "x": 142,
           "y": 545,
-          "fontColor": "rgba(1,1,1,1)"
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "text",
@@ -5046,12 +5060,12 @@
           "fontColor": "rgba(0,0,0,1)"
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyText",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 12,
+          "data": "This requires a High Friction Custody. Securely store this document. \nIf you lose your spawn seed, you can recover it from your master ticket or ownership seed.",
           "fontWeight": 400,
           "maxWidth": 448,
           "lineHeightPx": 16,
@@ -5184,7 +5198,7 @@
           "type": "qr",
           "draw": "qr",
           "data": null,
-          "path": "spawn.keys.qr",
+          "path": "spawn.keys.addrQr",
           "size": 52.99998474121094,
           "x": 511,
           "y": 310
@@ -5199,23 +5213,23 @@
           "y": 75,
           "width": 54,
           "height": 18,
-          "fillColor": "rgba(0.3019607961177826,0.3019607961177826,0.3019607961177826,1)",
+          "fillColor": "rgba(77.00000301003456,77.00000301003456,77.00000301003456,1)",
           "strokeColor": "rgba(0,0,0,0)",
           "strokeWeight": 1
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyLevel",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 8,
+          "data": "Very High",
           "fontWeight": 500,
           "maxWidth": 38,
           "lineHeightPx": 9.375,
           "x": 184,
           "y": 79,
-          "fontColor": "rgba(1,1,1,1)"
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "rect",
@@ -5227,23 +5241,23 @@
           "y": 542,
           "width": 54,
           "height": 18,
-          "fillColor": "rgba(0.3019607961177826,0.3019607961177826,0.3019607961177826,1)",
+          "fillColor": "rgba(77.00000301003456,77.00000301003456,77.00000301003456,1)",
           "strokeColor": "rgba(0,0,0,0)",
           "strokeWeight": 1
         },
         {
-          "type": "template_text",
+          "type": "text",
           "draw": "wrappedText",
-          "path": "meta.custodyLevel",
-          "data": null,
+          "path": null,
           "fontFamily": "Inter",
           "fontSize": 8,
+          "data": "High",
           "fontWeight": 500,
           "maxWidth": 18,
           "lineHeightPx": 9.375,
           "x": 172,
           "y": 546,
-          "fontColor": "rgba(1,1,1,1)"
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "hr",
@@ -5254,7 +5268,7 @@
           "y": 379,
           "width": 468,
           "height": 1,
-          "strokeColor": "rgba(0.6941176652908325,0.6980392336845398,0.7019608020782471,1)",
+          "strokeColor": "rgba(177.0000046491623,178.00000458955765,179.000004529953,1)",
           "strokeWeight": 2
         },
         {

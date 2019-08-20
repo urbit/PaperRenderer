@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import wallets from './sampleWallets/wallets.json'
+import wallets from './sampleWallets/sampleWallets.json'
 
 import PaperCollateralRenderer from '../../../lib/dist/index.js'
 
@@ -13,7 +13,7 @@ class App extends Component {
 
   handleOutput = (data) => {
     this.setState({ pages: data })
-    console.log('App.js scope: ', data)
+    console.log('Out: ', data)
   }
 
   render() {

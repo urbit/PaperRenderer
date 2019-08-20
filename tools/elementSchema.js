@@ -45,7 +45,7 @@ const getSvgPath = (child) => {
 const rgba = (fills) => {
   if (fills.length === 0) return `rgba(0,0,0,0)`
   const color = fills[0].color
-  return `rgba(${color.r},${color.g},${color.b},${color.a})`
+  return `rgba(${color.r * 255},${color.g * 255},${color.b * 255},${color.a})`
 }
 
 const isType = (type) => {
@@ -105,6 +105,7 @@ const img = (child, page) => {
 }
 
 const text = (child, page) => {
+  console.log(child.characters)
   return {
     type: 'text',
     draw: 'wrappedText',
@@ -141,7 +142,7 @@ const template_text = (child, page) => {
 const patq = (child, page) => {
   return {
     type: 'patq',
-    draw: 'patQ',
+    draw: 'patq',
     path: getPath(child),
     data: null,
     fontFamily: child.style.fontFamily,
