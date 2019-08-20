@@ -44,7 +44,6 @@ const getSvgPath = (child) => {
 
 const rgba = (fills) => {
   if (fills.length === 0) return `rgba(0,0,0,0)`
-
   const color = fills[0].color
   return `rgba(${color.r},${color.g},${color.b},${color.a})`
 }
@@ -155,6 +154,7 @@ const patq = (child, page) => {
     y: child.absoluteBoundingBox.y - page.originY,
   }
 }
+
 const addr_split_four = (child, page) => {
   return {
     type: 'addr_split_four',
@@ -164,7 +164,7 @@ const addr_split_four = (child, page) => {
     fontWeight: child.style.fontWeight,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
-    text: getPath(child),
+    // text: getPath(child),
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
     x: child.absoluteBoundingBox.x - page.originX,
