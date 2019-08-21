@@ -225,20 +225,26 @@ const hr = (child, page) => {
   }
 }
 
-const getComponent = (child, name, page) => {
-  if (name === 'qr') return qr(child, page)
-  if (name === 'template_text') return template_text(child, page)
-  if (name === 'rect') return rect(child, page)
-  if (name === 'patq') return patq(child, page)
-  if (name === 'text') return text(child, page)
-  if (name === 'sigil') return sigil(child, page)
-  if (name === 'img') return img(child, page)
-  if (name === 'wrap_addr_split_four') return wrap_addr_split_four(child, page)
-  if (name === 'addr_split_four') return addr_split_four(child, page)
-  if (name === 'template_text') return template_text(child, page)
-  if (name === 'hr') return hr(child, page)
+const components = {
+  qr: (child, page) => qr(child, page),
+  template_text: (child, page) => template_text(child, page),
+  rect: (child, page) => rect(child, page),
+  patq: (child, page) => patq(child, page),
+  text: (child, page) => text(child, page),
+  sigil: (child, page) => sigil(child, page),
+  img: (child, page) => img(child, page),
+  wrap_addr_split_four: (child, page) => wrap_addr_split_four(child, page),
+  addr_split_four: (child, page) => addr_split_four(child, page),
+  template_text: (child, page) => template_text(child, page),
+  hr: (child, page) => hr(child, page),
+}
 
-  return null
+const getComponent = (child, name, page) => {
+  const component = components[name]
+  if (component === undefined) {
+    return null
+  }
+  return component(child, page)
 }
 
 module.exports = {

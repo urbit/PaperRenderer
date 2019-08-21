@@ -1,6 +1,6 @@
 /*
 
-To use this file, call getTemplateSchema at line 136 (optional figma document key param)
+To use this file, call getTemplateSchema at line 178 (optional figma document key param)
 
 This function will call extractSchema, which will parse the Figma JSON.
 
@@ -171,7 +171,7 @@ const depthFirst = (node, callback) => {
 }
 
 const extractSchema = (lo) => {
-  console.error('Figma component of type vector is not supported.')
+  // console.error('Figma component of type vector is not supported.')
   depthFirst(lo, function(node) {})
 }
 

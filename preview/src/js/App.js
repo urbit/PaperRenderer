@@ -33,7 +33,7 @@ class App extends Component {
           />
         }
         {this.state.out.map((wallet) => {
-          return wallet.imagePages.map((page) => {
+          return wallet.pages.map((page) => {
             return (
               <img
                 style={{

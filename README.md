@@ -72,7 +72,61 @@ See our [documentation of frequent bugs](docs/freq-bugs.md) and how to fix them.
 
 #### Sample Wallet Input
 
-[Here](docs/sample-wallet.json) is a sample wallet's JSON. More sample wallets can be found in [sampleWallets](preview/dist/js/sampleWallets)
+[Here](docs/sample-wallet.json) is a sample wallet's JSON. More sample wallets can be found in [sampleWallets](preview/src/js/sampleWallets)
+
+Below is a flattened extended wallet object for reference when making modifications to templates in Figma.
+
+```json
+{
+  "meta.generator": "urbit-key-generation-v0.16.1",
+  "meta.ship": 0,
+  "meta.patp": "~zod",
+  "meta.tier": "galaxy",
+  "meta.derivationPath": "m/44'/60'/0'/0/0",
+  "meta.passphrase": null,
+  "meta.sigil": {},
+  "meta.azimuthUrl": "~zod.azimuth.network",
+  "meta.createdOn": "Tue Aug 20 2019 17:04:22 GMT-0700 (Pacific Daylight Time)",
+  "ticket": "~zod",
+  "shards.0": "~zod",
+  "ownership.type": "ownership",
+  "ownership.seed": "donkey learn consider decade lunch raise bench jungle devote symbol master element rebuild leaf erode sketch chicken tree stock shell universe verb dilemma aware",
+  "ownership.keys.public": "03b934b362f1f56397127d9f302edcb95c60baebfc33c29e204a4d04d4c801d035",
+  "ownership.keys.private": "20abf551f3299ed1131806bed91cbcc4c6062933ced5bd92e93804c236811b2b",
+  "ownership.keys.chain": "2d12be042d0a750829a5765cef64076eee74775a609e6953dd6e5b2bf0d86509",
+  "ownership.keys.address": "0x864FEa342a7558661e9c170989A4B90C74431a3E",
+  "ownership.keys.addrQr": {},
+  "transfer.type": "transfer",
+  "transfer.seed": "yard gym sibling noodle trash maid shuffle fence monkey check toe rain ramp like truck inject situate balcony know embrace pledge ask summer little",
+  "transfer.keys.public": "0289a46fb1908ed8ccfd06e1d9402606b85f5e1523f8240d71a7cc0fff0f58dc27",
+  "transfer.keys.private": "c85d23d4b84790cbca8c87b50a75e1d8038cea05b182ee9a9a9f105f781cd5a8",
+  "transfer.keys.chain": "3b856427bba774576929b973f9b4dddd8920729dbb1e7d978c13fd5b018bebb1",
+  "transfer.keys.address": "0x67390AFC640099b24B542aa82F5fBD2526C1619d",
+  "transfer.keys.addrQr": {},
+  "spawn.type": "spawn",
+  "spawn.seed": "absurd gauge meadow gloom snake carbon power nuclear radar twice basket pig evolve occur song cradle wood open luggage else occur monkey wisdom beyond",
+  "spawn.keys.public": "030695526bb01ce4acd6e2d8364eb1e84b7ec97fb0492bb948d74ffb18be906779",
+  "spawn.keys.private": "8ca4c3e1b9752f7731d0c901e5082c563dbf6b71982875c69a7ef3134b5bb310",
+  "spawn.keys.chain": "2fab1c6601452d896ced3638cc621ccd915c6032f4ad75caa6b73ecad63c861f",
+  "spawn.keys.address": "0xd17AEC66F51f0469e29D1b3FF8A8316774B9D697",
+  "spawn.keys.addrQr": {},
+  "voting.type": "voting",
+  "voting.seed": "auction bomb shadow eagle inside basic prize used legend help earth lemon unfold fire swallow reject tiger stairs prevent hire lizard shiver result true",
+  "voting.keys.public": "03e7758d405f6418dea7558532dca198a73517e224b02eb5d2f60087903912a0f7",
+  "voting.keys.private": "dcb26c57387c760ce95f6114d2282eaa5b3fc13a0bb23a5f2d33a8f0fe74bf63",
+  "voting.keys.chain": "1158af1324a214b2638bcbc77a787e88eefa8e2ee91534d88bec0702bdf7783e",
+  "voting.keys.address": "0xC948Ee31194c1aaf90450a0E0B97c8a6CC3c711A",
+  "voting.keys.addrQr": {},
+  "management.type": "management",
+  "management.seed": "course loan animal skin dish renew inflict wheel hard rural garlic inhale alert pitch easily brick sugar input primary sphere hand roast fall enroll",
+  "management.keys.public": "03329fa95ef8048830ba9f67d141814ca1ae2f35c3d9af034b64eb17d6853b4667",
+  "management.keys.private": "c2e9eb73afdf8ed393fcb42eab8716ea9002bd911b0645e2918be275ce0ca55f",
+  "management.keys.chain": "93c8f1ce629521c18e5e6e5bb8da458fab3cd6ddc6a9a9006fa91e94f60ced6f",
+  "management.keys.address": "0x5570a29Fc8E81A21ae6720Ca6803D370E622dF79",
+  "management.keys.addrQr": {},
+  "network": {}
+}
+```
 
 #### License
 
