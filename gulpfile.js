@@ -13,6 +13,7 @@ var json = require('rollup-plugin-json')
 var builtins = require('rollup-plugin-node-builtins')
 var rootImport = require('rollup-plugin-root-import')
 var globals = require('rollup-plugin-node-globals')
+var babel = require('rollup-plugin-babel')
 
 var browserSync = require('browser-sync')
 var run = require('gulp-run')
@@ -115,6 +116,7 @@ gulp.task('js-imports-preview', function(cb) {
       rollup(
         {
           plugins: [
+            babel(),
             commonjs({
               namedExports: {
                 'node_modules/react/index.js': ['Component'],
