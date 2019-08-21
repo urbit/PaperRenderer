@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import wallets from './sampleWallets/wallets.json'
+import wallets from './sampleWallets/sampleWallets.json'
 
 import PaperCollateralRenderer from '../../../lib/dist/index.js'
 
@@ -7,13 +7,13 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      pages: [],
+      out: [],
     }
   }
 
   handleOutput = (data) => {
-    this.setState({ pages: data })
-    console.log('App.js scope: ', data)
+    this.setState({ out: data })
+    console.log('Out: ', data)
   }
 
   render() {
@@ -32,14 +32,19 @@ class App extends Component {
             // mode={'REGISTRATION'}
           />
         }
-
-        {this.state.pages.map((p) => {
-          return (
-            <img
-              style={{ maxWidth: '550px', border: '1px solid black' }}
-              src={p.durl}
-            />
-          )
+        {this.state.out.map((wallet) => {
+          return wallet.imagePages.map((page) => {
+            return (
+              <img
+                style={{
+                  maxWidth: '550px',
+                  height: 'auto',
+                  border: '1px solid black',
+                }}
+                src={page.uri}
+              />
+            )
+          })
         })}
       </div>
     )

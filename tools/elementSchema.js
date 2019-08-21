@@ -44,9 +44,8 @@ const getSvgPath = (child) => {
 
 const rgba = (fills) => {
   if (fills.length === 0) return `rgba(0,0,0,0)`
-
   const color = fills[0].color
-  return `rgba(${color.r},${color.g},${color.b},${color.a})`
+  return `rgba(${color.r * 255},${color.g * 255},${color.b * 255},${color.a})`
 }
 
 const isType = (type) => {
@@ -70,7 +69,7 @@ const getPath = (child) => {
 const qr = (child, page) => {
   return {
     type: 'qr',
-    draw: 'drawQR',
+    draw: 'qr',
     data: null,
     path: getPath(child),
     size: child.absoluteBoundingBox.height,
@@ -82,7 +81,7 @@ const qr = (child, page) => {
 const sigil = (child, page) => {
   return {
     type: 'sigil',
-    draw: 'drawSigil',
+    draw: 'sigil',
     data: null,
     path: getPath(child),
     size: child.absoluteBoundingBox.height,
@@ -94,7 +93,7 @@ const sigil = (child, page) => {
 const img = (child, page) => {
   return {
     type: 'img',
-    draw: 'drawImg',
+    draw: 'img',
     data: getSvgPath(child),
     path: getPath(child),
     // svg: getSvgPath(child),
@@ -106,9 +105,10 @@ const img = (child, page) => {
 }
 
 const text = (child, page) => {
+  console.log(child.characters)
   return {
     type: 'text',
-    draw: 'drawWrappedText',
+    draw: 'wrappedText',
     path: null,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
@@ -125,7 +125,7 @@ const text = (child, page) => {
 const template_text = (child, page) => {
   return {
     type: 'template_text',
-    draw: 'drawWrappedText',
+    draw: 'wrappedText',
     path: getPath(child),
     data: null,
     fontFamily: child.style.fontFamily,
@@ -142,7 +142,7 @@ const template_text = (child, page) => {
 const patq = (child, page) => {
   return {
     type: 'patq',
-    draw: 'drawPatQ',
+    draw: 'patq',
     path: getPath(child),
     data: null,
     fontFamily: child.style.fontFamily,
@@ -155,16 +155,17 @@ const patq = (child, page) => {
     y: child.absoluteBoundingBox.y - page.originY,
   }
 }
+
 const addr_split_four = (child, page) => {
   return {
     type: 'addr_split_four',
-    draw: 'drawEthereumAddressLong',
+    draw: 'ethereumAddressLong',
     path: getPath(child),
     data: null,
     fontWeight: child.style.fontWeight,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
-    text: getPath(child),
+    // text: getPath(child),
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
     x: child.absoluteBoundingBox.x - page.originX,
@@ -176,7 +177,7 @@ const addr_split_four = (child, page) => {
 const wrap_addr_split_four = (child, page) => {
   return {
     type: 'wrap_addr_split_four',
-    draw: 'drawEthereumAddressCompact',
+    draw: 'ethereumAddressCompact',
     path: getPath(child),
     data: null,
     fontWeight: child.style.fontWeight,
@@ -193,7 +194,7 @@ const wrap_addr_split_four = (child, page) => {
 const rect = (child, page) => {
   return {
     type: 'rect',
-    draw: 'drawRect',
+    draw: 'rect',
     path: getPath(child),
     data: null,
     cornerRadius: child.cornerRadius,
@@ -211,7 +212,7 @@ const rect = (child, page) => {
 const hr = (child, page) => {
   return {
     type: 'hr',
-    draw: 'drawLine',
+    draw: 'line',
     path: getPath(child),
     data: null,
     dashes: child.strokeDashes,

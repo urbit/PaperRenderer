@@ -1,0 +1,164 @@
+[
+  {
+    "meta": {
+      "generator": "urbit-key-generation-v0.16.1",
+      "ship": 0,
+      "patp": "~zod",
+      "tier": "galaxy",
+      "derivationPath": "m/44'/60'/0'/0/0",
+      "passphrase": null
+    },
+    "ticket": "~zod",
+    "shards": ["~zod"],
+    "ownership": {
+      "type": "ownership",
+      "seed": "donkey learn consider decade lunch raise bench jungle devote symbol master element rebuild leaf erode sketch chicken tree stock shell universe verb dilemma aware",
+      "keys": {
+        "public": "03b934b362f1f56397127d9f302edcb95c60baebfc33c29e204a4d04d4c801d035",
+        "private": "20abf551f3299ed1131806bed91cbcc4c6062933ced5bd92e93804c236811b2b",
+        "chain": "2d12be042d0a750829a5765cef64076eee74775a609e6953dd6e5b2bf0d86509",
+        "address": "0x864FEa342a7558661e9c170989A4B90C74431a3E"
+      }
+    },
+    "transfer": {
+      "type": "transfer",
+      "seed": "yard gym sibling noodle trash maid shuffle fence monkey check toe rain ramp like truck inject situate balcony know embrace pledge ask summer little",
+      "keys": {
+        "public": "0289a46fb1908ed8ccfd06e1d9402606b85f5e1523f8240d71a7cc0fff0f58dc27",
+        "private": "c85d23d4b84790cbca8c87b50a75e1d8038cea05b182ee9a9a9f105f781cd5a8",
+        "chain": "3b856427bba774576929b973f9b4dddd8920729dbb1e7d978c13fd5b018bebb1",
+        "address": "0x67390AFC640099b24B542aa82F5fBD2526C1619d"
+      }
+    },
+    "spawn": {
+      "type": "spawn",
+      "seed": "absurd gauge meadow gloom snake carbon power nuclear radar twice basket pig evolve occur song cradle wood open luggage else occur monkey wisdom beyond",
+      "keys": {
+        "public": "030695526bb01ce4acd6e2d8364eb1e84b7ec97fb0492bb948d74ffb18be906779",
+        "private": "8ca4c3e1b9752f7731d0c901e5082c563dbf6b71982875c69a7ef3134b5bb310",
+        "chain": "2fab1c6601452d896ced3638cc621ccd915c6032f4ad75caa6b73ecad63c861f",
+        "address": "0xd17AEC66F51f0469e29D1b3FF8A8316774B9D697"
+      }
+    },
+    "voting": {
+      "type": "voting",
+      "seed": "auction bomb shadow eagle inside basic prize used legend help earth lemon unfold fire swallow reject tiger stairs prevent hire lizard shiver result true",
+      "keys": {
+        "public": "03e7758d405f6418dea7558532dca198a73517e224b02eb5d2f60087903912a0f7",
+        "private": "dcb26c57387c760ce95f6114d2282eaa5b3fc13a0bb23a5f2d33a8f0fe74bf63",
+        "chain": "1158af1324a214b2638bcbc77a787e88eefa8e2ee91534d88bec0702bdf7783e",
+        "address": "0xC948Ee31194c1aaf90450a0E0B97c8a6CC3c711A"
+      }
+    },
+    "management": {
+      "type": "management",
+      "seed": "course loan animal skin dish renew inflict wheel hard rural garlic inhale alert pitch easily brick sugar input primary sphere hand roast fall enroll",
+      "keys": {
+        "public": "03329fa95ef8048830ba9f67d141814ca1ae2f35c3d9af034b64eb17d6853b4667",
+        "private": "c2e9eb73afdf8ed393fcb42eab8716ea9002bd911b0645e2918be275ce0ca55f",
+        "chain": "93c8f1ce629521c18e5e6e5bb8da458fab3cd6ddc6a9a9006fa91e94f60ced6f",
+        "address": "0x5570a29Fc8E81A21ae6720Ca6803D370E622dF79"
+      }
+    },
+    "network": {}
+  },
+  {
+    "meta": {
+      "generator": "urbit-key-generation-v0.16.1",
+      "ship": 9128,
+      "patp": "~rovtuc",
+      "tier": "star",
+      "derivationPath": "m/44'/60'/0'/0/0",
+      "passphrase": null
+    },
+    "ticket": "~binzod",
+    "shards": ["~binzod"],
+    "ownership": {
+      "type": "ownership",
+      "seed": "suit mean ordinary strong travel visa orbit cricket apology urban match drink dirt estate stone energy viable amateur tent sponsor pioneer vehicle few glass",
+      "keys": {
+        "public": "02f21d27c572202d98fd0130226a70f3c18c6e6d6af20dd9460c9183da0a55796c",
+        "private": "73e8b7935ec5a940ff64dc246d9f2ed3481c596fc0a53a2fac3b05bf7becd964",
+        "chain": "1bdade76bc01d2aa76dd11a020af70b0c2b1dab53ab06065f8fd7a2c937bfeb8",
+        "address": "0x910447ADb1316e47ebbc851daE6140f5B484b236"
+      }
+    },
+    "transfer": {
+      "type": "transfer",
+      "seed": "belt valve spice quit valid fox someone imitate collect soldier camera accident engage below side point sort wool melt maze pool over buffalo endorse",
+      "keys": {
+        "public": "02cd8abef062612120ff40c78addfbef3957aa3e00d516f4bc49c89ec83414c074",
+        "private": "cbb67877251dd399beefd73af5f19fedad1dd6df069db1546309868d7dd6df60",
+        "chain": "85b61c93d798c011e8c7d2c5a30187f32fb8940759891f6f6378642049700029",
+        "address": "0x7713e222e1C6f1768dA2a033cf4eC39f4EE0AAD0"
+      }
+    },
+    "spawn": {
+      "type": "spawn",
+      "seed": "viable select among mechanic cause battle bonus nephew bright pond penalty skull steel observe gadget parrot history equip deputy box patch grain apart reject",
+      "keys": {
+        "public": "03b80714ef0b703e00b7778826f5293ef70b171dd867b2192f22e40e511450c39f",
+        "private": "3d373919157dbbb0a70b5fb9943fac89108a69923217da12d8c7f9a05dad423f",
+        "chain": "384194df462d1987e4bfafcba9f0ddcf62d44ef8b5680024c7db118570315324",
+        "address": "0x081f2e42e239D5c93e5d9D1458201eC39242Bb4F"
+      }
+    },
+    "voting": {},
+    "management": {
+      "type": "management",
+      "seed": "kid exclude proof ready gravity peasant wasp own right delay dirt book tilt rebel harvest blush food rule jacket write country sad evoke fold",
+      "keys": {
+        "public": "0252f7effb52c60c886b0cd928d070eacce54c9f63d4f60dd2a2c08ace0fc6fdd2",
+        "private": "fbff998f5641e86339f255de6ca9803c050bfded2b3d129b97d1160299be784e",
+        "chain": "0e52588ec8abf639020da8328f56a421b4fa2d12de9cde07f0d69507d0acfe0a",
+        "address": "0x1Bcb806CbDa14c63211A132454987FEdAaeE289F"
+      }
+    },
+    "network": {}
+  },
+  {
+    "meta": {
+      "generator": "urbit-key-generation-v0.16.1",
+      "ship": 3234674,
+      "patp": "~rictex-picpen",
+      "tier": "planet",
+      "derivationPath": "m/44'/60'/0'/0/0",
+      "passphrase": null
+    },
+    "ticket": "~ridlur",
+    "shards": ["~ridlur"],
+    "ownership": {
+      "type": "ownership",
+      "seed": "check improve object wrong balcony post elder debris decide album magic sun surge motion slogan chaos solve eye roof proud deliver impose shadow educate",
+      "keys": {
+        "public": "02a0376fde6a9e07773d4842ecda47cafd7d22e684cd62b21176c6da5bbccb5d63",
+        "private": "fd29d8991716b90b3328022a50585282aee1bd31cc9986e3fceb907431c8be1d",
+        "chain": "aceac674d4e007a0251f9a85c8f49179ee4b8138fb17a3bf4e6f8fd5862521c5",
+        "address": "0x88A2cc763Bd24eB8ad16bB800D4950455dE7AECb"
+      }
+    },
+    "transfer": {
+      "type": "transfer",
+      "seed": "erode opinion fee paper olympic trophy element fortune blush into despair combine ivory spring coil island mind pyramid congress photo replace pony muffin recycle",
+      "keys": {
+        "public": "0344b888f8515bc81d7b977133066868dfc8ff128521e4ec62681bb397236bb10a",
+        "private": "e474b8bc7d2fce60cb2f2007e5e740052727ef13a0d7c95fafded9a6491f3584",
+        "chain": "e11b161615eda29bff7da4d5d196856991034255d08059619eb9c08d1c6855f8",
+        "address": "0xD655EB16fe5e9a97D6b8E35A5937EB5B0Ef3E988"
+      }
+    },
+    "spawn": {},
+    "voting": {},
+    "management": {
+      "type": "management",
+      "seed": "van push beef broken undo grant horse coffee pear market fold feel world method library hamster uncover fossil fiscal prepare head dress stove total",
+      "keys": {
+        "public": "031dbea66c770196faaa09ab84b9f576b23d29a36f128e15ccdb74eaff81781aa6",
+        "private": "1df599f27b4a6934cbcc97f0bf99a1c07e9c0a1ae7035ce5ddf36b5f9fe23721",
+        "chain": "04a3f3d6ff70ad8afc5b653025e85617be25a07a1361181233977fc9a279afd1",
+        "address": "0x259132F88Ff00a924A5a9E764bC31c10229F9E54"
+      }
+    },
+    "network": {}
+  }
+]
