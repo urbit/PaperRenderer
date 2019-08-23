@@ -18,7 +18,7 @@ During the development process of `PaperCollateralRenderer` we have encountered 
 `'urbit-sigil-js' is imported by dist/js/lib/load.js, but could not be resolved – treating it as an external dependency`
 
 - Solution #1: run `npm install` to install all necessary packages
-- Solution $2: if the error persists even after Solution #1, try to npm install each component individually, such as `npm i urbit-sigil-js`
+- Solution #2: if the error persists even after Solution #1, try to npm install each component individually, such as `npm i urbit-sigil-js`
 
 ### Non-issues
 
