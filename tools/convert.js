@@ -21,12 +21,12 @@ const { getComponent, types, isType } = require('./elementSchema')
 const FIGMA_FILE_KEY = 'a4u6jBsdTgiXcrDGW61q5ngY'
 const FIGMA_PAGE_KEY = 'Registration 1.2'
 const WALLET_PATH = 'preview/src/js/sampleWallets/wallet.json'
-// const OUTPUT_PATH = 'lib/src/templates.json'
-const OUTPUT_PATH = 'test.json'
+const OUTPUT_PATH = 'lib/src/templates.json'
 
 var templateSchema = {
   figmaPageID: '',
   pages: [],
+  fonts: [],
 }
 
 // var pageSchema = {
@@ -145,6 +145,8 @@ const addElementSchema = (child, name) => {
       const font = `${child.style.fontWeight} ${child.style.fontFamily}`
       if (currPage.fonts === [] || !currPage.fonts.includes(font))
         currPage.fonts.push(font)
+      if (template.fonts === [] || !template.fonts.includes(font))
+        template.fonts.push(font)
     }
   } else
     console.error(
