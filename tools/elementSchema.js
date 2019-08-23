@@ -12,6 +12,13 @@ const types = {
     'template_text',
     'hr',
   ],
+  text: [
+    'template_text',
+    'text',
+    'patq',
+    'wrap_addr_split_four',
+    'addr_split_four',
+  ],
   // types whose data is retrieved asynchronously (we do not import the figma data)
   async: ['sigil', 'qr'],
   // these Figma types house children elements, so we need to transverse all children nodes when we find a parentType

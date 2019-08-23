@@ -21,7 +21,8 @@ const { getComponent, types, isType } = require('./elementSchema')
 const FIGMA_FILE_KEY = 'a4u6jBsdTgiXcrDGW61q5ngY'
 const FIGMA_PAGE_KEY = 'Registration 1.2'
 const WALLET_PATH = 'preview/src/js/sampleWallets/wallet.json'
-const OUTPUT_PATH = 'lib/src/templates.json'
+// const OUTPUT_PATH = 'lib/src/templates.json'
+const OUTPUT_PATH = 'test.json'
 
 var templateSchema = {
   figmaPageID: '',
@@ -74,13 +75,19 @@ const getComponentId = (child) => {
 
 // creates an elementSchema via /elementSchema.js
 const createElement = (child, name) => {
-  const currPage = templateSchema.pages[templateSchema.pages.length - 1]
-  if (currPage === null)
+  if (
+    templateSchema.pages === null ||
+    templateSchema.pages[templateSchema.pages.length - 1] === null
+  )
     throw new Error(
       `Could not get the current page for the template: ${templateSchema}`
     )
 
-  const elt = getComponent(child, name, currPage)
+  const elt = getComponent(
+    child,
+    name,
+    templateSchema.pages[templateSchema.pages.length - 1]
+  )
   if (elt === null) console.error(`Component of type ${name} is unsupported.`)
 
   return elt
@@ -112,6 +119,7 @@ const addPageSchema = (child) => {
     usage: '',
     bin: 0,
     elements: [],
+    fonts: [],
   }
 
   var data = getFrame(child.name)
@@ -127,13 +135,23 @@ const addPageSchema = (child) => {
 
 const addElementSchema = (child, name) => {
   const elt = createElement(child, name)
+  const template = templateSchema
+  const currPage = template.pages[templateSchema.pages.length - 1]
 
-  if (templateSchema.pages != [] && templateSchema.pages.length > 0)
-    templateSchema.pages[templateSchema.pages.length - 1].elements.push(elt)
-  else
+  if (templateSchema.pages != [] && templateSchema.pages.length > 0) {
+    currPage.elements.push(elt)
+    // add font
+    if (types.text.includes(name)) {
+      const font = `${child.style.fontWeight} ${child.style.fontFamily}`
+      if (currPage.fonts === [] || !currPage.fonts.includes(font))
+        currPage.fonts.push(font)
+    }
+  } else
     console.error(
       `Could not add element schema for child of name ${name} because elementSchema is null`
     )
+  template.pages[templateSchema.pages.length - 1] = currPage
+  return template
 }
 
 const endTraverse = (name) => {
@@ -162,7 +180,7 @@ const depthFirst = (node, callback) => {
         (types.figma.includes(name) || types.async.includes(name)) &&
         templateSchema.pages !== []
       )
-        addElementSchema(child, name, node)
+        templateSchema = addElementSchema(child, name)
 
       // !endTraverse when name is NOT qr or sigil
       if (!endTraverse(name)) depthFirst(child, callback)
