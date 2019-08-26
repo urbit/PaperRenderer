@@ -54,15 +54,13 @@ const splitTitle = (title) => {
 
 // removes data portion of Figma name and retrieves component name
 const formatName = (name) => {
-  return name
-    .split(':')[0]
-    .replace('>', '')
-    .toLowerCase()
+  return name.split(':')[0].replace('>', '')
 }
 
 const getComponentId = (child) => {
   const type = child.type.toLowerCase()
   const name = formatName(child.name)
+
   // we use figma's type identifier for type TEXT. otherwise we use name id
   if (isType(name)) return name
   if (isType(type)) return type
