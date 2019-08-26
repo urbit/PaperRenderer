@@ -45,7 +45,11 @@ const getSvgPath = (child) => {
 const rgba = (fills) => {
   if (fills.length === 0) return `rgba(0,0,0,0)`
   const color = fills[0].color
-  return `rgba(${color.r * 255},${color.g * 255},${color.b * 255},${color.a})`
+  const red = Math.floor(color.r * 255)
+  const green = Math.floor(color.g * 255)
+  const blue = Math.floor(color.b * 255)
+  const alpha = Math.floor(color.a)
+  return `rgba(${red},${green},${blue},${alpha})`
 }
 
 const isType = (type) => {
