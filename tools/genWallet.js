@@ -11,37 +11,6 @@ const randNumBit = (num) => {
   return Math.random() * (max - min) + min
 }
 
-// const main = async () => {
-//   const galaxy = {
-//     ship: 0,
-//     ticket: '~zod',
-//   }
-//
-//   const star = {
-//     ship: 9128,
-//     ticket: '~binzod',
-//   }
-//
-//   const planet = {
-//     ship: 3234674,
-//     ticket: '~ridlur',
-//   }
-//
-//   const galaxyWallet = await kg.generateWallet(galaxy)
-//   const starWallet = await kg.generateWallet(star)
-//   const planetWallet = await kg.generateWallet(planet)
-//   console.log(galaxyWallet)
-//
-//   const wallets = [galaxyWallet, starWallet, planetWallet]
-//
-//   const json = JSON.stringify(wallets, null, 2)
-//
-//   fs.writeFileSync(`${OUTPUT_PATH}/sampleWallets.json`, json, (err) => {
-//     if (err) throw err
-//   })
-// }
-// main()
-
 const randGalaxy = () => {
   return ob.patp(randNumBit(8))
 }
@@ -64,6 +33,7 @@ const createWallet = async (patp) => {
   const config = {
     ship: num,
     ticket: patp,
+
   }
   const wallet = await kg.generateWallet(config)
   return wallet
