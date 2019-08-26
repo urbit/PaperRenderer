@@ -14,17 +14,18 @@ const randNumBit = (num) => {
 const main = async () => {
   const galaxy = {
     ship: 0,
-    ticket: '~zod',
+    ticket:
+      '~wacfus-dabpex-danted-mosfep-pasrud-lavmer-nodtex-taslus-pactyp-milpub-pildeg-fornev-ralmed-dinfeb-fopbyr-sanbet-sovmyl-dozsut-mogsyx-mapwyc-sorrup-ricnec-marnys-lignex',
   }
 
   const star = {
     ship: 9128,
-    ticket: '~binzod',
+    ticket: '~doznec-marbud-doznec-marbud-doznec-marbud-doznec-marbud',
   }
 
   const planet = {
     ship: 3234674,
-    ticket: '~ridlur',
+    ticket: '~doznec-marbud-doznec-marbud',
   }
 
   const galaxyWallet = await kg.generateWallet(galaxy)

@@ -18,8 +18,10 @@ const Figma = require('figma-js')
 const fs = require('fs')
 const { getComponent, types, isType } = require('./elementSchema')
 
-const FIGMA_FILE_KEY = 'a4u6jBsdTgiXcrDGW61q5ngY'
-const FIGMA_PAGE_KEY = 'Registration 1.2'
+// const FIGMA_FILE_KEY = 'a4u6jBsdTgiXcrDGW61q5ngY'
+const FIGMA_FILE_KEY = '2Lh4E8LguPxidqNGKGxr1B'
+// const FIGMA_PAGE_KEY = 'Registration 1.2'
+const FIGMA_PAGE_KEY = 'Release 2.0'
 const WALLET_PATH = 'preview/src/js/sampleWallets/wallet.json'
 const OUTPUT_PATH = 'lib/src/templates.json'
 

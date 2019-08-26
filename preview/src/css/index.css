@@ -1,12 +1,15 @@
 @import './font64.css';
 
 canvas {
-  border: 1px solid purple;
+  border: 1px solid red;
   /* background-color: #222 */
+  border-radius: 2px;
 }
 
 img {
-  border: 1px solid green;
+  border: 1px solid #aaa;
+  margin-right: 6px;
   max-width: 600px;
   height: auto;
+  border-radius: 2px;
 }
