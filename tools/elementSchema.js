@@ -37,16 +37,31 @@ const types = {
 //     })
 // }
 
-const getSvgPath = (child) => {
+// const genSvg = (child) => {
+//   const path = child.fillGeometry[0].path
+//
+//   if (path === undefined || path === null || path === '')
+//     console.error(
+//       `Unable gen svg for child: ${JSON.stringify(child)}`
+//     )
+//
+//     // create the svg element
+//       const ast = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+//       ast.
+//
+//       // set width and height
+//       ast.setAttribute("width", child.absoluteBoundingBox.width);
+//       ast.setAttribute("height", child.absoluteBoundingBox.height);
+//
+//   const ast = `<svg height="${child.absoluteBoundingBox.height}" width="${child.absoluteBoundingBox.width}"><path d="${path}"/></svg>`
+//   return ast
+// }
+
+const genSvgPath = (child) => {
   const path = child.fillGeometry[0].path
-
   if (path === undefined || path === null || path === '')
-    console.error(
-      `Unable to get the path for the svg child: ${JSON.stringify(child)}`
-    )
-
-  const ast = `<svg height="${child.absoluteBoundingBox.height}" width="${child.absoluteBoundingBox.width}"><path d="${path}"/></svg>`
-  return ast
+    console.error(`Unable gen svg for child: ${JSON.stringify(child)}`)
+  return path
 }
 
 const rgba = (fills) => {
@@ -101,13 +116,13 @@ const img = (child, page) => {
   return {
     type: 'img',
     draw: 'img',
-    data: getSvgPath(child),
+    data: genSvgPath(child),
     path: getPath(child),
-    // svg: getSvgPath(child),
     width: child.absoluteBoundingBox.height,
     height: child.absoluteBoundingBox.width,
     x: child.absoluteBoundingBox.x - page.originX,
     y: child.absoluteBoundingBox.y - page.originY,
+    color: rgba(child.fills),
   }
 }
 
