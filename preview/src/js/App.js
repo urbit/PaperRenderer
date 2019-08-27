@@ -39,7 +39,6 @@ class App extends Component {
                 style={{
                   maxWidth: '550px',
                   height: 'auto',
-                  border: '1px solid black',
                 }}
                 src={page.uri}
               />

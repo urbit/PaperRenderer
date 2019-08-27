@@ -1,15 +1,14 @@
 const types = {
   figma: [
     'qr',
-    'template_text',
     'rect',
     'patq',
     'text',
     'sigil',
     'img',
-    'wrap_addr_split_four',
-    'addr_split_four',
-    'template_text',
+    'wrapAddrSplitFour',
+    'addrSplitFour',
+    'templateText',
     'hr',
   ],
   text: [
@@ -67,7 +66,11 @@ const genSvgPath = (child) => {
 const rgba = (fills) => {
   if (fills.length === 0) return `rgba(0,0,0,0)`
   const color = fills[0].color
-  return `rgba(${color.r * 255},${color.g * 255},${color.b * 255},${color.a})`
+  const red = Math.floor(color.r * 255)
+  const green = Math.floor(color.g * 255)
+  const blue = Math.floor(color.b * 255)
+  const alpha = Math.floor(color.a)
+  return `rgba(${red},${green},${blue},${alpha})`
 }
 
 const isType = (type) => {
@@ -127,7 +130,6 @@ const img = (child, page) => {
 }
 
 const text = (child, page) => {
-  console.log(child.characters)
   return {
     type: 'text',
     draw: 'wrappedText',
@@ -144,9 +146,9 @@ const text = (child, page) => {
   }
 }
 
-const template_text = (child, page) => {
+const templateText = (child, page) => {
   return {
-    type: 'template_text',
+    type: 'templateText',
     draw: 'wrappedText',
     path: getPath(child),
     data: null,
@@ -178,9 +180,9 @@ const patq = (child, page) => {
   }
 }
 
-const addr_split_four = (child, page) => {
+const addrSplitFour = (child, page) => {
   return {
-    type: 'addr_split_four',
+    type: 'addrSplitFour',
     draw: 'ethereumAddressLong',
     path: getPath(child),
     data: null,
@@ -196,9 +198,9 @@ const addr_split_four = (child, page) => {
   }
 }
 
-const wrap_addr_split_four = (child, page) => {
+const wrapAddrSplitFour = (child, page) => {
   return {
-    type: 'wrap_addr_split_four',
+    type: 'wrapAddrSplitFour',
     draw: 'ethereumAddressCompact',
     path: getPath(child),
     data: null,
@@ -249,15 +251,14 @@ const hr = (child, page) => {
 
 const components = {
   qr: (child, page) => qr(child, page),
-  template_text: (child, page) => template_text(child, page),
+  templateText: (child, page) => templateText(child, page),
   rect: (child, page) => rect(child, page),
   patq: (child, page) => patq(child, page),
   text: (child, page) => text(child, page),
   sigil: (child, page) => sigil(child, page),
   img: (child, page) => img(child, page),
-  wrap_addr_split_four: (child, page) => wrap_addr_split_four(child, page),
-  addr_split_four: (child, page) => addr_split_four(child, page),
-  template_text: (child, page) => template_text(child, page),
+  wrapAddrSplitFour: (child, page) => wrapAddrSplitFour(child, page),
+  addrSplitFour: (child, page) => addrSplitFour(child, page),
   hr: (child, page) => hr(child, page),
 }
 
