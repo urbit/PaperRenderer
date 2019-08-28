@@ -90,7 +90,7 @@ test('No invalid paths in templates', () => {
     'network',
   ]
 
-  const knownExceptions = ['shard.number']
+  const knownExceptions = []
 
   const validPaths = [...knownExceptions, ...walletPaths]
 
