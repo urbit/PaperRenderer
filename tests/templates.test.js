@@ -19,13 +19,13 @@ test('Has all star templates', () => {
 test('Has all galaxy templates', () => {
   const count = templates.pages.filter((page) => page.classOf === 'galaxy')
     .length
-  expect(count).toBe(5)
+  expect(count).toBe(7)
 })
 
-test('Has multipass template', () => {
-  const count = templates.pages.filter((page) => page.classOf === 'all').length
-  expect(count).toBe(1)
-})
+// test('Has multipass template', () => {
+//   const count = templates.pages.filter((page) => page.classOf === 'all').length
+//   expect(count).toBe(1)
+// })
 
 test('Is shaped as expected', () => {
   expect(typeof templates.figmaPageID).toBe('string')
@@ -35,6 +35,13 @@ test('Is shaped as expected', () => {
 test('No invalid paths in templates', () => {
   const walletPaths = [
     'meta.generator',
+    'meta.paperRendererVersion',
+    'meta.keyGeneratorVersion',
+    'meta.dateCreated',
+    'shard.0',
+    'shard.1',
+    'shard.2',
+    'meta.walletVersion',
     'meta.ship',
     'meta.patp',
     'meta.tier',
@@ -51,35 +58,35 @@ test('No invalid paths in templates', () => {
     'ownership.keys.private',
     'ownership.keys.chain',
     'ownership.keys.address',
-    'ownership.keys.addrQr',
+    // 'ownership.keys.addrQr',
     'transfer.type',
     'transfer.seed',
     'transfer.keys.public',
     'transfer.keys.private',
     'transfer.keys.chain',
     'transfer.keys.address',
-    'transfer.keys.addrQr',
+    // 'transfer.keys.addrQr',
     'spawn.type',
     'spawn.seed',
     'spawn.keys.public',
     'spawn.keys.private',
     'spawn.keys.chain',
     'spawn.keys.address',
-    'spawn.keys.addrQr',
+    // 'spawn.keys.addrQr',
     'voting.type',
     'voting.seed',
     'voting.keys.public',
     'voting.keys.private',
     'voting.keys.chain',
     'voting.keys.address',
-    'voting.keys.addrQr',
+    // 'voting.keys.addrQr',
     'management.type',
     'management.seed',
     'management.keys.public',
     'management.keys.private',
     'management.keys.chain',
     'management.keys.address',
-    'management.keys.addrQr',
+    // 'management.keys.addrQr',
     'network',
   ]
 

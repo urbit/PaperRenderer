@@ -1,41 +1,21 @@
 const types = {
   figma: [
     'qr',
-    'template_text',
     'rect',
     'patq',
     'text',
     'sigil',
     'img',
-    'wrap_addr_split_four',
-    'addr_split_four',
-    'template_text',
-    'hr',
+    'wrapAddrSplitFour',
+    'addrSplitFour',
+    'line',
   ],
-  text: [
-    'template_text',
-    'text',
-    'patq',
-    'wrap_addr_split_four',
-    'addr_split_four',
-  ],
+  text: ['text', 'patq', 'wrapAddrSplitFour', 'addrSplitFour'],
   // types whose data is retrieved asynchronously (we do not import the figma data)
   async: ['sigil', 'qr'],
   // these Figma types house children elements, so we need to transverse all children nodes when we find a parentType
   singleParent: ['group', 'instance', 'frame'],
 }
-
-// const toBase64 = url => {
-//   image2base64(url)
-//     .then(response => {
-//       console.log(response)
-//       return response
-//     })
-//     .catch(error => {
-//       console.error(error)
-//       return null
-//     })
-// }
 
 const getSvgPath = (child) => {
   const path = child.fillGeometry[0].path
@@ -52,7 +32,11 @@ const getSvgPath = (child) => {
 const rgba = (fills) => {
   if (fills.length === 0) return `rgba(0,0,0,0)`
   const color = fills[0].color
-  return `rgba(${color.r * 255},${color.g * 255},${color.b * 255},${color.a})`
+  const red = Math.floor(color.r * 255)
+  const green = Math.floor(color.g * 255)
+  const blue = Math.floor(color.b * 255)
+  const alpha = Math.floor(color.a)
+  return `rgba(${red},${green},${blue},${alpha})`
 }
 
 const isType = (type) => {
@@ -66,10 +50,9 @@ const isType = (type) => {
 }
 
 const getPath = (child) => {
-  const str = child.name
-  if (str.includes('@')) {
-    return str.split('@')[1]
-  }
+  const s = child.name.split('@')
+  const t = s[0].replace('#', '')
+  if (isType(t) && s.length > 1) return s[1]
   return null
 }
 
@@ -112,37 +95,19 @@ const img = (child, page) => {
 }
 
 const text = (child, page) => {
-  console.log(child.characters)
   return {
     type: 'text',
     draw: 'wrappedText',
-    path: null,
-    fontFamily: child.style.fontFamily,
-    fontSize: child.style.fontSize,
-    data: child.characters,
-    fontWeight: child.style.fontWeight,
-    maxWidth: child.absoluteBoundingBox.width,
-    lineHeightPx: child.style.lineHeightPx,
-    x: child.absoluteBoundingBox.x - page.originX,
-    y: child.absoluteBoundingBox.y - page.originY,
-    fontColor: rgba(child.fills),
-  }
-}
-
-const template_text = (child, page) => {
-  return {
-    type: 'template_text',
-    draw: 'wrappedText',
     path: getPath(child),
-    data: null,
+    data: child.characters === undefined ? null : child.characters,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
     fontWeight: child.style.fontWeight,
+    fontColor: rgba(child.fills),
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
     x: child.absoluteBoundingBox.x - page.originX,
     y: child.absoluteBoundingBox.y - page.originY,
-    fontColor: rgba(child.fills),
   }
 }
 
@@ -163,16 +128,15 @@ const patq = (child, page) => {
   }
 }
 
-const addr_split_four = (child, page) => {
+const addrSplitFour = (child, page) => {
   return {
-    type: 'addr_split_four',
+    type: 'addrSplitFour',
     draw: 'ethereumAddressLong',
     path: getPath(child),
     data: null,
     fontWeight: child.style.fontWeight,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
-    // text: getPath(child),
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
     x: child.absoluteBoundingBox.x - page.originX,
@@ -181,9 +145,9 @@ const addr_split_four = (child, page) => {
   }
 }
 
-const wrap_addr_split_four = (child, page) => {
+const wrapAddrSplitFour = (child, page) => {
   return {
-    type: 'wrap_addr_split_four',
+    type: 'wrapAddrSplitFour',
     draw: 'ethereumAddressCompact',
     path: getPath(child),
     data: null,
@@ -202,7 +166,7 @@ const rect = (child, page) => {
   return {
     type: 'rect',
     draw: 'rect',
-    path: getPath(child),
+    path: null,
     data: null,
     cornerRadius: child.cornerRadius,
     dashes: child.strokeDashes,
@@ -216,11 +180,11 @@ const rect = (child, page) => {
   }
 }
 
-const hr = (child, page) => {
+const line = (child, page) => {
   return {
-    type: 'hr',
+    type: 'line',
     draw: 'line',
-    path: getPath(child),
+    path: null,
     data: null,
     dashes: child.strokeDashes,
     x: child.absoluteBoundingBox.x - page.originX,
@@ -234,16 +198,15 @@ const hr = (child, page) => {
 
 const components = {
   qr: (child, page) => qr(child, page),
-  template_text: (child, page) => template_text(child, page),
+  templateText: (child, page) => templateText(child, page),
   rect: (child, page) => rect(child, page),
   patq: (child, page) => patq(child, page),
   text: (child, page) => text(child, page),
   sigil: (child, page) => sigil(child, page),
   img: (child, page) => img(child, page),
-  wrap_addr_split_four: (child, page) => wrap_addr_split_four(child, page),
-  addr_split_four: (child, page) => addr_split_four(child, page),
-  template_text: (child, page) => template_text(child, page),
-  hr: (child, page) => hr(child, page),
+  wrapAddrSplitFour: (child, page) => wrapAddrSplitFour(child, page),
+  addrSplitFour: (child, page) => addrSplitFour(child, page),
+  line: (child, page) => line(child, page),
 }
 
 const getComponent = (child, name, page) => {

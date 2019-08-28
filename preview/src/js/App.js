@@ -26,7 +26,8 @@ class App extends Component {
         </p>
         {
           <PaperCollateralRenderer
-            wallets={wallets}
+            debug={true}
+            wallets={[wallets[0]]}
             className={''}
             callback={(data) => this.handleOutput(data)}
             // mode={'REGISTRATION'}
@@ -39,7 +40,6 @@ class App extends Component {
                 style={{
                   maxWidth: '550px',
                   height: 'auto',
-                  border: '1px solid black',
                 }}
                 src={page.uri}
               />
