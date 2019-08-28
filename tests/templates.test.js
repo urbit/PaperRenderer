@@ -19,13 +19,13 @@ test('Has all star templates', () => {
 test('Has all galaxy templates', () => {
   const count = templates.pages.filter((page) => page.classOf === 'galaxy')
     .length
-  expect(count).toBe(5)
+  expect(count).toBe(7)
 })
 
-test('Has multipass template', () => {
-  const count = templates.pages.filter((page) => page.classOf === 'all').length
-  expect(count).toBe(1)
-})
+// test('Has multipass template', () => {
+//   const count = templates.pages.filter((page) => page.classOf === 'all').length
+//   expect(count).toBe(1)
+// })
 
 test('Is shaped as expected', () => {
   expect(typeof templates.figmaPageID).toBe('string')
@@ -35,6 +35,13 @@ test('Is shaped as expected', () => {
 test('No invalid paths in templates', () => {
   const walletPaths = [
     'meta.generator',
+    'meta.paperRendererVersion',
+    'meta.keyGeneratorVersion',
+    'meta.dateCreated',
+    'shard.0',
+    'shard.1',
+    'shard.2',
+    'meta.walletVersion',
     'meta.ship',
     'meta.patp',
     'meta.tier',
