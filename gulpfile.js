@@ -5,6 +5,7 @@ var rollup = require('gulp-better-rollup')
 var sucrase = require('@sucrase/gulp-plugin')
 var minify = require('gulp-minify')
 var exec = require('child_process').exec
+var gzip = require('gulp-gzip')
 
 var commonjs = require('rollup-plugin-commonjs')
 var resolve = require('rollup-plugin-node-resolve')
@@ -149,6 +150,20 @@ gulp.task('js-imports-preview', function(cb) {
     .on('end', cb)
 })
 
+gulp.task('minify', function() {
+  return gulp
+    .src(`${PATHS.dist}/index.js`)
+    .pipe(minify())
+    .pipe(gulp.dest(`${PATHS.dist}`))
+})
+
+gulp.task('gzip', function() {
+  return gulp
+    .src(`${PATHS.dist}/index-min.js`)
+    .pipe(gzip())
+    .pipe(gulp.dest(`${PATHS.dist}`))
+})
+
 gulp.task('copy-json-wallet', function() {
   return gulp
     .src(`${PATHS.previewSrc}/js/sampleWallets/*.json`)
@@ -227,4 +242,4 @@ gulp.task(
 
 gulp.task('default', gulp.series('run'))
 
-gulp.task('bundle-prod', gulp.series('js-bundle-lib'))
+gulp.task('bundle-prod', gulp.series('js-bundle-lib', 'minify', 'gzip'))
