@@ -53,6 +53,7 @@ const getPath = (child) => {
   const s = child.name.split('@')
   const t = s[0].replace('#', '')
   if (isType(t) && s.length > 1) return s[1]
+  return null
 }
 
 const qr = (child, page) => {
@@ -165,7 +166,7 @@ const rect = (child, page) => {
   return {
     type: 'rect',
     draw: 'rect',
-    path: getPath(child),
+    path: null,
     data: null,
     cornerRadius: child.cornerRadius,
     dashes: child.strokeDashes,
@@ -183,7 +184,7 @@ const line = (child, page) => {
   return {
     type: 'line',
     draw: 'line',
-    path: getPath(child),
+    path: null,
     data: null,
     dashes: child.strokeDashes,
     x: child.absoluteBoundingBox.x - page.originX,
