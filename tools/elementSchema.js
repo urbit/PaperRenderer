@@ -25,8 +25,7 @@ const getSvgPath = (child) => {
       `Unable to get the path for the svg child: ${JSON.stringify(child)}`
     )
 
-  const ast = `<svg height="${child.absoluteBoundingBox.height}" width="${child.absoluteBoundingBox.width}"><path d="${path}"/></svg>`
-  return ast
+  return path
 }
 
 const rgba = (fills) => {
@@ -86,11 +85,11 @@ const img = (child, page) => {
     draw: 'img',
     data: getSvgPath(child),
     path: getPath(child),
-    // svg: getSvgPath(child),
     width: child.absoluteBoundingBox.height,
     height: child.absoluteBoundingBox.width,
     x: child.absoluteBoundingBox.x - page.originX,
     y: child.absoluteBoundingBox.y - page.originY,
+    color: rgba(child.fills),
   }
 }
 
