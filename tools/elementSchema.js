@@ -8,27 +8,14 @@ const types = {
     'img',
     'wrapAddrSplitFour',
     'addrSplitFour',
-    'templateText',
-    'hr',
+    'line',
   ],
-  text: ['templateText', 'text', 'patq', 'wrapAddrSplitFour', 'addrSplitFour'],
+  text: ['text', 'patq', 'wrapAddrSplitFour', 'addrSplitFour'],
   // types whose data is retrieved asynchronously (we do not import the figma data)
   async: ['sigil', 'qr'],
   // these Figma types house children elements, so we need to transverse all children nodes when we find a parentType
   singleParent: ['group', 'instance', 'frame'],
 }
-
-// const toBase64 = url => {
-//   image2base64(url)
-//     .then(response => {
-//       console.log(response)
-//       return response
-//     })
-//     .catch(error => {
-//       console.error(error)
-//       return null
-//     })
-// }
 
 const getSvgPath = (child) => {
   const path = child.fillGeometry[0].path
@@ -63,11 +50,9 @@ const isType = (type) => {
 }
 
 const getPath = (child) => {
-  const str = child.name
-  if (str.includes('@')) {
-    return str.split('@')[1]
-  }
-  return null
+  const s = child.name.split('@')
+  const t = s[0].replace('#', '')
+  if (isType(t) && s.length > 1) return s[1]
 }
 
 const qr = (child, page) => {
@@ -112,33 +97,16 @@ const text = (child, page) => {
   return {
     type: 'text',
     draw: 'wrappedText',
-    path: null,
-    fontFamily: child.style.fontFamily,
-    fontSize: child.style.fontSize,
-    data: child.characters,
-    fontWeight: child.style.fontWeight,
-    maxWidth: child.absoluteBoundingBox.width,
-    lineHeightPx: child.style.lineHeightPx,
-    x: child.absoluteBoundingBox.x - page.originX,
-    y: child.absoluteBoundingBox.y - page.originY,
-    fontColor: rgba(child.fills),
-  }
-}
-
-const templateText = (child, page) => {
-  return {
-    type: 'templateText',
-    draw: 'wrappedText',
     path: getPath(child),
-    data: null,
+    data: child.characters === undefined ? null : child.characters,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
     fontWeight: child.style.fontWeight,
+    fontColor: rgba(child.fills),
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
     x: child.absoluteBoundingBox.x - page.originX,
     y: child.absoluteBoundingBox.y - page.originY,
-    fontColor: rgba(child.fills),
   }
 }
 
@@ -168,7 +136,6 @@ const addrSplitFour = (child, page) => {
     fontWeight: child.style.fontWeight,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
-    // text: getPath(child),
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
     x: child.absoluteBoundingBox.x - page.originX,
@@ -212,9 +179,9 @@ const rect = (child, page) => {
   }
 }
 
-const hr = (child, page) => {
+const line = (child, page) => {
   return {
-    type: 'hr',
+    type: 'line',
     draw: 'line',
     path: getPath(child),
     data: null,
@@ -238,7 +205,7 @@ const components = {
   img: (child, page) => img(child, page),
   wrapAddrSplitFour: (child, page) => wrapAddrSplitFour(child, page),
   addrSplitFour: (child, page) => addrSplitFour(child, page),
-  hr: (child, page) => hr(child, page),
+  line: (child, page) => line(child, page),
 }
 
 const getComponent = (child, name, page) => {
