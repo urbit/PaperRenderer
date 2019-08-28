@@ -78,7 +78,7 @@ gulp.task('js-imports-lib', function(cb) {
               namedExports: {
                 'node_modules/react/index.js': ['Component'],
                 'node_modules/lodash/lodash.js': ['get'],
-                // 'node_modules/urbit-sigil-js/lib/src/index.js': [
+                // 'node_modules/urbit-sigil-js/lib/dist/index.js': [
                 //    'sigil',
                 //    'stringRenderer'
                 //  ],
