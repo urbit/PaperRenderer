@@ -38,20 +38,20 @@ test('No invalid paths in templates', () => {
     'meta.paperRendererVersion',
     'meta.keyGeneratorVersion',
     'meta.dateCreated',
-    'shard.0',
-    'shard.1',
-    'shard.2',
+    'shards.0.shard',
+    'shards.1.shard',
+    'shards.2.shard',
     'meta.walletVersion',
     'meta.ship',
     'meta.patp',
     'meta.tier',
     'meta.derivationPath',
     'meta.passphrase',
-    'meta.sigil',
+    'meta.sigilLight',
+    'meta.sigilDark',
     'meta.azimuthUrl',
     'meta.createdOn',
     'ticket',
-    'shards',
     'ownership.type',
     'ownership.seed',
     'ownership.keys.public',
@@ -90,7 +90,7 @@ test('No invalid paths in templates', () => {
     'network',
   ]
 
-  const knownExceptions = ['shard.number']
+  const knownExceptions = []
 
   const validPaths = [...knownExceptions, ...walletPaths]
 
