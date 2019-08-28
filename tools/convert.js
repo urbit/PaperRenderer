@@ -30,13 +30,6 @@ var templateSchema = {
   pages: [],
 }
 
-// var pageSchema = {
-//   classOf: '',
-//   usage: '',
-//   bin: 0,
-//   elements: [],
-// }
-
 const writeData = (data, path) => {
   const fmtData = JSON.stringify(data, null, 2)
   fs.writeFile(path, fmtData, (err) => {
@@ -44,104 +37,40 @@ const writeData = (data, path) => {
   })
 }
 
-// "galaxy, management, 4" --> [galaxy, management, 4]
-const splitTitle = (title) => {
-  return title
+// #text@meta.dateCreated --> ["text", "meta.dateCreated"]
+const getComponentTagData = (child) => {
+  const data = child.name.split('@')
+  data[0].replace('#', '')
+
+  // if an @ in an email is falsely recognized as a component id
+  // assign it the default figma type (such as "TEXT")
+  if (!isType(data[0])) {
+    data[0] = child.type.toLowerCase()
+    data[1] = null
+  }
+
+  // unsupported type
+  if (!isType(child.type.toLowerCase())) return null
+
+  return {
+    type: data[0],
+    path: data[1],
+  }
+}
+
+const getPageSchema = (child) => {
+  // "galaxy, management, 4" --> ["galaxy", "management", "4"]
+  const frameArr = title
     .toString()
     .replace(/\s/g, '')
     .split(',')
-}
-
-// removes data portion of Figma name and retrieves component name
-const formatName = (name) => {
-  const s = name.split('@')
-  const t = s[0].replace('#', '')
-  if (isType(t)) return t
-  return null
-}
-
-const getComponentId = (child) => {
-  const type = child.type.toLowerCase()
-  const name = formatName(child.name)
-
-  // we use figma's type identifier for type TEXT. otherwise we use name id
-  if (isType(name)) return name
-  if (isType(type)) return type
-
-  if (type !== 'vector')
-    console.error(
-      `Component ID not supported for child of type ${type} and name ${name}`
-    )
-  return null
-}
-
-// creates an elementSchema via /elementSchema.js
-const createElement = (child, name) => {
-  const currPage = templateSchema.pages[templateSchema.pages.length - 1]
-  if (currPage === null)
-    throw new Error(
-      `Could not get the current page for the template: ${templateSchema}`
-    )
-
-  const elt = getComponent(child, name, currPage)
-  if (elt === null) console.error(`Component of type ${name} is unsupported.`)
-
-  return elt
-}
-
-// "galaxy, management, 4" --> [galaxy, mangagement, 4] --> frame { classOf: "galaxy", usage: "management", bin: 4}
-const getFrame = (title) => {
-  const data = splitTitle(title)
-  var frame = {}
-
-  if (data.length === 0 || data === null)
-    throw new Error(`Unable to get class for ${title}'s frame.`)
-  else frame.classOf = data[0]
-
-  if (data.length === 1)
-    throw new Error(`Unable to get usage for ${title}'s frame.`)
-  else frame.usage = data[1]
-
-  if (data.length === 2)
-    throw new Error(`Unable to get custody number for ${title}'s frame.`)
-  else frame.bin = data[2]
-
-  return frame
-}
-
-const addPageSchema = (child) => {
-  var pageSchema = {
-    classOf: '',
-    usage: '',
-    bin: 0,
-    elements: [],
+  return {
+    classOf: frameArr[0],
+    usage: frameArr[1],
+    bin: frameArr[2],
+    originX: child.absoluteBoundingBox.x,
+    originY: child.absoluteBoundingBox.y,
   }
-
-  var data = getFrame(child.name)
-
-  pageSchema.classOf = data.classOf
-  pageSchema.usage = data.usage
-  pageSchema.bin = data.bin
-  pageSchema.originX = child.absoluteBoundingBox.x
-  pageSchema.originY = child.absoluteBoundingBox.y
-  pageSchema.dataPath = data.usage
-  templateSchema.pages.push(pageSchema)
-}
-
-const addElementSchema = (child, name) => {
-  const elt = createElement(child, name)
-
-  if (templateSchema.pages != [] && templateSchema.pages.length > 0)
-    templateSchema.pages[templateSchema.pages.length - 1].elements.push(elt)
-  else
-    console.error(
-      `Could not add element schema for child of name ${name} because elementSchema is null`
-    )
-}
-
-const endTraverse = (name) => {
-  if (types.async.includes(name)) return true
-  return false
 }
 
 const depthFirst = (node, callback) => {
@@ -153,32 +82,30 @@ const depthFirst = (node, callback) => {
 
       if (child.hasBeenVisited === undefined) child.hasBeenVisited = true
 
-      const name = getComponentId(child)
+      const tagData = getComponentTagData(child)
 
-      // create a new pageSchema and add it to templateSchema
-      if (name === 'frame') {
-        addPageSchema(child)
+      // add new pageSchema to templateSchema
+      if (tagData.type === 'frame')
+        templateSchema.pages.push(getPageSchema(child))
+      // add valid components to page's elements array
+      else if (
+        (types.component.includes(tagData.type) ||
+          types.async.includes(tagData.type)) &&
+        templateSchema.pages !== []
+      ) {
+        // addElementSchema
+        const currPage = templateSchema.pages[templateSchema.pages.length - 1]
+        const elt = getComponent(child, tagData.path, currPage)
+        templateSchema.pages[templateSchema.pages.length - 1].elements.push(elt)
       }
 
-      // when we find a base figma type add it to this page's elements
-      else if (
-        (types.figma.includes(name) || types.async.includes(name)) &&
-        templateSchema.pages !== []
-      )
-        addElementSchema(child, name, node)
-
-      // !endTraverse when name is NOT qr or sigil
-      if (!endTraverse(name)) depthFirst(child, callback)
+      // continue traversal if type is NOT qr or sigil
+      if (!types.async.includes(tagData.type)) depthFirst(child, callback)
     }
   }
 }
 
-const extractSchema = (lo) => {
-  // console.error('Figma component of type vector is not supported.')
-  depthFirst(lo, function(node) {})
-}
-
-const getTemplateSchema = (fileKey, pageKey) => {
+const figmaToJSON = (fileKey, pageKey) => {
   const TOKEN = process.env.FIGMA_API_TOKEN
   const client = Figma.Client({ personalAccessToken: TOKEN })
 
@@ -186,16 +113,12 @@ const getTemplateSchema = (fileKey, pageKey) => {
     const arr = res.data.document.children
     const page = arr.filter((page) => page.name === pageKey)[0]
 
-    extractSchema(page)
+    depthFirst(page, function(node) {})
 
-    if (templateSchema === null)
-      throw new Error(
-        `Unable to extract template schema from ${page} with key ${KEY}.`
-      )
     templateSchema.figmaPageID = pageKey
     writeData(templateSchema, OUTPUT_PATH)
     console.log(`Templates saved in ${OUTPUT_PATH}`)
   })
 }
 
-getTemplateSchema(FIGMA_FILE_KEY, FIGMA_PAGE_KEY)
+figmaToJSON(FIGMA_FILE_KEY, FIGMA_PAGE_KEY)

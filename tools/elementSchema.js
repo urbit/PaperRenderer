@@ -1,5 +1,5 @@
 const types = {
-  figma: [
+  component: [
     'qr',
     'rect',
     'patq',
@@ -14,7 +14,7 @@ const types = {
   // types whose data is retrieved asynchronously (we do not import the figma data)
   async: ['sigil', 'qr'],
   // these Figma types house children elements, so we need to transverse all children nodes when we find a parentType
-  singleParent: ['group', 'instance', 'frame'],
+  group: ['group', 'instance', 'frame'],
 }
 
 const getSvgPath = (child) => {
@@ -40,9 +40,9 @@ const rgba = (fills) => {
 
 const isType = (type) => {
   if (
-    types.figma.includes(type) ||
+    types.component.includes(type) ||
     types.async.includes(type) ||
-    types.singleParent.includes(type)
+    types.group.includes(type)
   )
     return true
   return false
