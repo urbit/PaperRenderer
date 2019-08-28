@@ -95,11 +95,17 @@ const img = (child, page) => {
 }
 
 const text = (child, page) => {
+  let data
+  if (getPath(child) !== null) {
+    data = null
+  } else {
+    data = child.characters === undefined ? null : child.characters
+  }
   return {
     type: 'text',
     draw: 'wrappedText',
     path: getPath(child),
-    data: child.characters === undefined ? null : child.characters,
+    data: data,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
     fontWeight: child.style.fontWeight,
