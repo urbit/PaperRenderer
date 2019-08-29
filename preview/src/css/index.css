@@ -1,4 +1,5 @@
-@import './font64.css';
+* {
+}
 
 canvas {
   border: 1px solid red;

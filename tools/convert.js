@@ -54,7 +54,10 @@ const splitTitle = (title) => {
 
 // removes data portion of Figma name and retrieves component name
 const formatName = (name) => {
-  return name.split(':')[0].replace('>', '')
+  const s = name.split('@')
+  const t = s[0].replace('#', '')
+  if (isType(t)) return t
+  return null
 }
 
 const getComponentId = (child) => {

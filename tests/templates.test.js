@@ -19,13 +19,13 @@ test('Has all star templates', () => {
 test('Has all galaxy templates', () => {
   const count = templates.pages.filter((page) => page.classOf === 'galaxy')
     .length
-  expect(count).toBe(5)
+  expect(count).toBe(7)
 })
 
-test('Has multipass template', () => {
-  const count = templates.pages.filter((page) => page.classOf === 'all').length
-  expect(count).toBe(1)
-})
+// test('Has multipass template', () => {
+//   const count = templates.pages.filter((page) => page.classOf === 'all').length
+//   expect(count).toBe(1)
+// })
 
 test('Is shaped as expected', () => {
   expect(typeof templates.figmaPageID).toBe('string')
@@ -33,57 +33,60 @@ test('Is shaped as expected', () => {
 })
 
 test('No invalid paths in templates', () => {
+  // The following are the valid data targets in the extendedWallet object. The use of other paths will cause an error. If you want to add more properties to the extendedWallet, you’ll need to do so in index.js of PaperRender. And don’t forget to update this list. (Aug 29 2019)
   const walletPaths = [
-    'meta.generator',
+    'meta.generator.name',
+    'meta.generator.version',
+    'meta.spec',
     'meta.ship',
     'meta.patp',
     'meta.tier',
     'meta.derivationPath',
     'meta.passphrase',
-    'meta.sigil',
-    'meta.azimuthUrl',
-    'meta.createdOn',
+    'meta.sigilDark',
+    'meta.sigilLight',
+    'meta.azimuth.url',
+    'meta.renderer.version',
+    'meta.renderer.name',
+    'meta.dateCreated',
     'ticket',
-    'shards',
+    'shards.0',
+    'shards.1',
+    'shards.2',
     'ownership.type',
     'ownership.seed',
     'ownership.keys.public',
     'ownership.keys.private',
     'ownership.keys.chain',
     'ownership.keys.address',
-    'ownership.keys.addrQr',
     'transfer.type',
     'transfer.seed',
     'transfer.keys.public',
     'transfer.keys.private',
     'transfer.keys.chain',
     'transfer.keys.address',
-    'transfer.keys.addrQr',
     'spawn.type',
     'spawn.seed',
     'spawn.keys.public',
     'spawn.keys.private',
     'spawn.keys.chain',
     'spawn.keys.address',
-    'spawn.keys.addrQr',
     'voting.type',
     'voting.seed',
     'voting.keys.public',
     'voting.keys.private',
     'voting.keys.chain',
     'voting.keys.address',
-    'voting.keys.addrQr',
     'management.type',
     'management.seed',
     'management.keys.public',
     'management.keys.private',
     'management.keys.chain',
     'management.keys.address',
-    'management.keys.addrQr',
     'network',
   ]
 
-  const knownExceptions = ['shard.number']
+  const knownExceptions = []
 
   const validPaths = [...knownExceptions, ...walletPaths]
 

@@ -1,0 +1,180 @@
+[
+  {
+    "meta": {
+      "generator": {
+        "name": "urbit-key-generation",
+        "version": "0.17.0"
+      },
+      "spec": "UP8",
+      "ship": 2989793465,
+      "patp": "~roptuc-lidrum",
+      "tier": "planet",
+      "derivationPath": "m/44'/60'/0'/0/0",
+      "passphrase": null
+    },
+    "ticket": "~marbud-tidsev-litsut-hidfep",
+    "shards": ["~marbud-tidsev-litsut-hidfep"],
+    "ownership": {
+      "type": "ownership",
+      "seed": "spend panda myth decade barrel raise rent assume bring blast horn alley various please absent asset visual tuna sound combine joke quantum swallow produce",
+      "keys": {
+        "public": "029a6d3ca960989dff90aca2ed86433b8d7183b9f8a9f1e5f13dcfd6388cc0f284",
+        "private": "98670cf0a762d6f902aea952f7acdfae6716c2c37a3a82e8625b857ec67036eb",
+        "chain": "1ef6d8fdaa64a6c3a629b26ac77b29d245b50a0b908dee8f0d05d2c281eae160",
+        "address": "0x3FD32fb3bbd60150d5F9fF753569691B8Db6f9D3"
+      }
+    },
+    "transfer": {
+      "type": "transfer",
+      "seed": "fork minimum upon cost razor all damp give bargain moon arrange holiday lend gallery come exist imitate awake fuel merry reunion number already day",
+      "keys": {
+        "public": "024fb6736a7d2c28a84a7e0f2164e170346031b9b496b9f819de498d48196e502e",
+        "private": "b35d61417ef91fb41cf93fb4c7417fcab8b360074a0d83eb0bd74228ce4f2a38",
+        "chain": "694f31fb25c1d7dc2d25e05a3fc453884bddc7e53298f1c68a50d574533dce0b",
+        "address": "0xCfFe6b6e35F862c7481b25643C4B5be552B89F96"
+      }
+    },
+    "spawn": {},
+    "voting": {},
+    "management": {
+      "type": "management",
+      "seed": "mean grant spoil lizard jazz gap parrot depth panda twist frame height catalog round click sell leave shrimp jungle unknown salad assist rice network",
+      "keys": {
+        "public": "02dfafd1a8106cd2d6558cde1f3c7ea89bc0f08e759299089856a971a8a31d2560",
+        "private": "3a101215c16bd8b60ff42624e2992e4e2018731bf7e9287f5b997ff2cf0f84a1",
+        "chain": "8689dedf0f7d91ce721e61b9dcb8ee15bbb8cc188a68f4fc0dfd1283abe7686a",
+        "address": "0xaa8C9a8B0d313C89d9dCeB441dAC0ef9480a5550"
+      }
+    },
+    "network": {}
+  },
+  {
+    "meta": {
+      "generator": {
+        "name": "urbit-key-generation",
+        "version": "0.17.0"
+      },
+      "spec": "UP8",
+      "ship": 60409,
+      "patp": "~ladtel",
+      "tier": "star",
+      "derivationPath": "m/44'/60'/0'/0/0",
+      "passphrase": null
+    },
+    "ticket": "~marbud-tidsev-litsut-hidfep",
+    "shards": ["~marbud-tidsev-litsut-hidfep"],
+    "ownership": {
+      "type": "ownership",
+      "seed": "vehicle wise hope south talent work slow consider fatigue festival until adjust renew soda hen vibrant spin save wheat above north detect ski senior",
+      "keys": {
+        "public": "03c7ad3c35ec6cf6b94ccc3a626042c3fea8e728a030237d46c34849dbddc40b3f",
+        "private": "7e432a3242b091821c7aa9ba91765e0ea79daea90ea9577c4ebd22dc72543b42",
+        "chain": "d8eb75a6c0688a0bbdfeb444ce5094b3b582226f93d73f2bdb6244bd615466f7",
+        "address": "0x97493Fc2c7f792A3b8825680D9b5ab564684D05c"
+      }
+    },
+    "transfer": {
+      "type": "transfer",
+      "seed": "marble angry burst glimpse unique enemy photo nation diary harvest oyster tag hair culture add absorb frown security banner tree search ten change mean",
+      "keys": {
+        "public": "03d3b9bea5aad61a9281ce51710e66e7a376cb70443ece1ed8192091e4e9bcad18",
+        "private": "7c3cff06fc256281d30be816ffac753226a1d036569a04daa0a87f917214cfca",
+        "chain": "e8ad89f54a763c5436a52f76ea4f7b8e09e17783812cf2e073af967b6ed8d6b7",
+        "address": "0x0866a59dd4d82c851A2c1B7436d6928F8460CeB1"
+      }
+    },
+    "spawn": {
+      "type": "spawn",
+      "seed": "boat husband dirt fence squirrel practice flee verb burst grocery size blouse dwarf unusual amateur monitor display rival sock have poverty taste unique junior",
+      "keys": {
+        "public": "03031758cfc2886db1e1bf9883cb1f641665382253a1d411ff820f8dbec8c63a21",
+        "private": "466a137cea7bbaa7b14a1805b2cb58ccbd681aca285a94b50b8e8f29c13788fb",
+        "chain": "96dbbbc4a2f467b27f69a13307c60582a3fdb6e54df8db3009be63210a2078de",
+        "address": "0x239C06CFD22D1e9146aA3276397001960f34F54D"
+      }
+    },
+    "voting": {},
+    "management": {
+      "type": "management",
+      "seed": "boss lady return push risk violin swamp happy net behave route toward miss battle office virtual earth exclude ill enrich quantum suspect recall degree",
+      "keys": {
+        "public": "0316930a1556c5e2ba8fc7b233a71da572571e685d94e0f329fa79310f3584bcd5",
+        "private": "1fed5431155b47755b1286271bec08bc5acc3bacab4824db678037dd119b37c2",
+        "chain": "f9d2b3156b0be1655ffc366e16d34d880e75523e7acdb1c097fe2ff138957868",
+        "address": "0xecD5E35AcA838acAe8a49188E012A29E78B53Ea7"
+      }
+    },
+    "network": {}
+  },
+  {
+    "meta": {
+      "generator": {
+        "name": "urbit-key-generation",
+        "version": "0.17.0"
+      },
+      "spec": "UP8",
+      "ship": 127,
+      "patp": "~med",
+      "tier": "galaxy",
+      "derivationPath": "m/44'/60'/0'/0/0",
+      "passphrase": null
+    },
+    "ticket": "~wacfus-dabpex-danted-mosfep-pasrud-lavmer-nodtex-taslus-pactyp-milpub-pildeg-fornev-ralmed-dinfeb-fopbyr-sanbet-sovmyl-dozsut-mogsyx-mapwyc-sorrup-ricnec-marnys-lignex",
+    "shards": [
+      "~wacfus-dabpex-danted-mosfep-pasrud-lavmer-nodtex-taslus-pactyp-milpub-pildeg-fornev-ralmed-dinfeb-fopbyr-sanbet",
+      "~pactyp-milpub-pildeg-fornev-ralmed-dinfeb-fopbyr-sanbet-sovmyl-dozsut-mogsyx-mapwyc-sorrup-ricnec-marnys-lignex",
+      "~wacfus-dabpex-danted-mosfep-pasrud-lavmer-nodtex-taslus-sovmyl-dozsut-mogsyx-mapwyc-sorrup-ricnec-marnys-lignex"
+    ],
+    "ownership": {
+      "type": "ownership",
+      "seed": "fever staff tennis frame misery era snake wink harsh allow idea finish fatigue alarm evolve anchor finish roast sentence dish melody social bring pelican",
+      "keys": {
+        "public": "03d9b87fc97809bd179f0be17468c0adb0055206738164da8a1d600a5122f41cc1",
+        "private": "f7dc6a94112c60a7dbb7fdd429eacc71406acc4c8da0a11ee29405030e3431a4",
+        "chain": "8293545485a75e81fc7f611745d58898053ab104561bcec277f631900edc2f0e",
+        "address": "0x7a5E3043b83118d16062b4001A4A75c949819893"
+      }
+    },
+    "transfer": {
+      "type": "transfer",
+      "seed": "around pottery faith scare element hurt poem enlist earn hill neutral rain hybrid denial enter current carry exchange camera remind return layer maze much",
+      "keys": {
+        "public": "03ed0911b70a6798b15d35a6614365e67fab0e7a78800268e5af9c5ec445886a95",
+        "private": "cedaa5ddb1dd5e93b73c1bf9fc12bbeaec769281a4f8e0344261a9f4ce5b6565",
+        "chain": "7f18d53dde6ced00fc8ce2255c04cafbe022877ae983d50782049ad09cac9725",
+        "address": "0x8Ec58910641F297FA5908E6497858152D15a0475"
+      }
+    },
+    "spawn": {
+      "type": "spawn",
+      "seed": "where rebel atom husband plug there kid mistake elbow puppy ride exact east else obscure position amused young loan crouch raccoon soccer rib ketchup",
+      "keys": {
+        "public": "037b6fe48af72ebb997283d0d96b00144dc55dc9d343503b54403cf881d45442b8",
+        "private": "5a64ae43751a786b19c01c1f6036279a8046c4f9021d26361d38b8cd05802a96",
+        "chain": "6320c126406c8ef1312105ebe2b8da5e3bb5a26cf06d5ef182440474e468099c",
+        "address": "0xAADd365cdea981273B4d559eA0E690E4dC50d794"
+      }
+    },
+    "voting": {
+      "type": "voting",
+      "seed": "three ridge company mule soul dolphin drink defy project soul journey kite glory decline photo anchor task swamp ethics belt horse ill hair rail",
+      "keys": {
+        "public": "028dbdd8d7c32d3667aa4129c03414f72f491f83a00183965ba727adfd0e6b6a30",
+        "private": "942ea22d9088355c6b24caeab00fa399ca139a729de82a3121032d8ae74171f0",
+        "chain": "2aa18949b4ed8a8f5df338609a01a71fefa4c8210711fbbfecf6bd5c801f6607",
+        "address": "0xFb82a334Ed49880041C96d7a95FF16c2a6DDA127"
+      }
+    },
+    "management": {
+      "type": "management",
+      "seed": "afraid decade trade cabin wage tower judge end hill beauty parrot avocado exist regret stage surround quit brief grow sting dutch robust theme warrior",
+      "keys": {
+        "public": "0292025cbc22e735abd166c4f9d2372fc23f220a3f74d6a34b880e4aac9de33bdf",
+        "private": "f36c34c124179ae3ed3ea4225365b058561ab315ffdfe6ca279c8898a05fa36d",
+        "chain": "acc3633bdb0c4e65de7e4af440ada521de0a185e3d207e90e4a01eba805ef29e",
+        "address": "0xFED5AB98085C4b67D10b3dC7b0043002C3d0b55d"
+      }
+    },
+    "network": {}
+  }
+]
