@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import wallets from './sampleWallets/sampleWallets.json'
+import wallets from './sampleWallets/sampleWallet0.json'
 import templates from '../../../lib/src/templates.json'
 
 import PaperCollateralRenderer from '../../../lib/dist/index.js'
