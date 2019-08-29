@@ -120,7 +120,17 @@ With verbose on
 Sample wallets can be found in [sampleWallets](preview/src/js/sampleWallets)
 
 
-## Testing
+## Release Checklist
+
+- [ ] all pages have correct custody information
+- [ ] all paths resolve to data, ie are not undefined
+- [ ] all paths resolve to correct data, referenced between json wallet and printed wallets
+- [ ] font-families are correct in preview
+- [ ] color is correct in preview
+- [ ] font weights are correct in preview
+- [ ] programmatic tests pass
+- [ ] library has been built
+- [ ] library can accept empty proxy wallet inputs
 
 #### License
 
