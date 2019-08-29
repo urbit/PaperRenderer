@@ -13,10 +13,8 @@ class App extends Component {
   }
 
   handleOutput = (data) => {
-    console.log(data)
-
-    this.setState({ out: data })
     console.log('Out: ', data)
+    this.setState({ out: data })
   }
 
   render() {
@@ -53,7 +51,6 @@ class App extends Component {
             verbose={false}
             output={'uri'} // uri || png
             callback={(data) => this.handleOutput(data)}
-            // mode={'REGISTRATION'}
           />
         }
         {this.state.out.map((wallet) => {
