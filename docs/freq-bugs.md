@@ -1,6 +1,6 @@
 # Frequent Bugs
 
-During the development process of `PaperCollateralRenderer` we have encountered a few detrimental bugs and documented their fixes.
+During the development process of `PaperRenderer` we have encountered a few detrimental bugs and documented their fixes.
 
 ### Fixes
 
