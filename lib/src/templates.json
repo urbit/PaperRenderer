@@ -784,7 +784,7 @@
         {
           "type": "text",
           "draw": "wrappedText",
-          "path": "shards.0.shard",
+          "path": "shards.0",
           "data": null,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
