@@ -1197,7 +1197,7 @@
     },
     {
       "classOf": "galaxy",
-      "usage": "shard",
+      "usage": "shard3",
       "bin": "3",
       "elements": [
         {
@@ -1762,11 +1762,11 @@
       ],
       "originX": 5375,
       "originY": -400,
-      "dataPath": "shard"
+      "dataPath": "shard3"
     },
     {
       "classOf": "galaxy",
-      "usage": "shard",
+      "usage": "shard1",
       "bin": "3",
       "elements": [
         {
@@ -2345,11 +2345,11 @@
       ],
       "originX": 4023,
       "originY": -400,
-      "dataPath": "shard"
+      "dataPath": "shard1"
     },
     {
       "classOf": "galaxy",
-      "usage": "shard",
+      "usage": "shard2",
       "bin": "3",
       "elements": [
         {
@@ -2914,7 +2914,7 @@
       ],
       "originX": 4699,
       "originY": -400,
-      "dataPath": "shard"
+      "dataPath": "shard2"
     },
     {
       "classOf": "galaxy",
