@@ -13,6 +13,8 @@ class App extends Component {
   }
 
   handleOutput = (data) => {
+    console.log(data)
+
     this.setState({ out: data })
     console.log('Out: ', data)
   }
@@ -44,9 +46,12 @@ class App extends Component {
         <pre>{JSON.stringify(fontCount, null, ' ')}</pre>
         {
           <PaperCollateralRenderer
+            show={false}
             debug={false}
-            wallets={[wallets[0]]}
+            wallets={wallets}
             className={''}
+            verbose={false}
+            output={'uri'} // uri || png
             callback={(data) => this.handleOutput(data)}
             // mode={'REGISTRATION'}
           />
@@ -60,7 +65,7 @@ class App extends Component {
                   maxWidth: '550px',
                   height: 'auto',
                 }}
-                src={page.uri}
+                src={page.image}
               />
             )
           })
