@@ -11,33 +11,12 @@ const randNumBit = (num) => {
   return Math.floor(Math.random() * (max - min) + min)
 }
 
-const randGalaxy = () => {
-  return ob.patp()
-}
-const randStar = () => {
-  return ob.patp(randNumBit(16))
-}
-const randPlanet = () => {
-  return ob.patp(randNumBit(32))
-}
-
 const writeData = (data, path) => {
   const fmtData = JSON.stringify(data, null, 2)
   fs.writeFile(path, fmtData, (err) => {
     if (err) throw err
   })
 }
-
-// const createWallet = async (patp) => {
-//   const num = parseInt(ob.patp2dec(patp))
-//   const config = {
-//     ship: num,
-//     ticket: patp,
-//
-//   }
-//   const wallet = await kg.generateWallet(config)
-//   return wallet
-// }
 
 // string: outputPath
 // optional bool: planet wallet generation, default true
