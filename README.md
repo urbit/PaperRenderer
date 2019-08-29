@@ -115,10 +115,11 @@ With verbose on
   templates: {...}, // templates
   wallet: {...} // wallet
 }]
+```
+
 #### Sample Wallet Input
 
 Sample wallets can be found in [sampleWallets](preview/src/js/sampleWallets)
-
 
 ## Release Checklist
 
@@ -135,4 +136,7 @@ Sample wallets can be found in [sampleWallets](preview/src/js/sampleWallets)
 #### License
 
 This project is licensed under the MIT License - see the [LICENSE.txt](docs/LICENSE.txt) file for details
+
+```
+
 ```
