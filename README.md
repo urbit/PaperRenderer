@@ -12,6 +12,8 @@
 
 ## Dependencies
 
+**FONTS MUST BE PROVIDED AND LOADED APPLICATION-SIDE. FONTS WILL NOT RENDER IF THEY ARE NOT LOADED.**
+
 ### Fonts
 
 - Inter UI 500
@@ -117,6 +119,8 @@ With verbose on
 
 Sample wallets can be found in [sampleWallets](preview/src/js/sampleWallets)
 
+
+## Testing
 
 #### License
 
