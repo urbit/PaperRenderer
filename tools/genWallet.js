@@ -8,11 +8,11 @@ const NUM_WALLET_FILES = 1
 const randNumBit = (num) => {
   const min = Math.pow(2, num - 1) - 1
   const max = Math.pow(2, num) - 1
-  return Math.random() * (max - min) + min
+  return Math.floor(Math.random() * (max - min) + min)
 }
 
 const randGalaxy = () => {
-  return ob.patp(randNumBit(8))
+  return ob.patp()
 }
 const randStar = () => {
   return ob.patp(randNumBit(16))
@@ -28,16 +28,16 @@ const writeData = (data, path) => {
   })
 }
 
-const createWallet = async (patp) => {
-  const num = parseInt(ob.patp2dec(patp))
-  const config = {
-    ship: num,
-    ticket: patp,
-
-  }
-  const wallet = await kg.generateWallet(config)
-  return wallet
-}
+// const createWallet = async (patp) => {
+//   const num = parseInt(ob.patp2dec(patp))
+//   const config = {
+//     ship: num,
+//     ticket: patp,
+//
+//   }
+//   const wallet = await kg.generateWallet(config)
+//   return wallet
+// }
 
 // string: outputPath
 // optional bool: planet wallet generation, default true
@@ -55,9 +55,19 @@ const createSampleWallets = async (
     var sampleWallet = []
     const path = `${outputPath}/sampleWallet${i}.json`
 
-    const planetWallet = await createWallet(randPlanet())
-    const starWallet = await createWallet(randStar())
-    const galaxyWallet = await createWallet(randGalaxy())
+    const planetWallet = await kg.generateWallet({
+      ship: randNumBit(32),
+      ticket: '~marbud-tidsev-litsut-hidfep',
+    })
+    const starWallet = await kg.generateWallet({
+      ship: randNumBit(16),
+      ticket: '~marbud-tidsev-litsut-hidfep',
+    })
+    const galaxyWallet = await kg.generateWallet({
+      ship: randNumBit(8),
+      ticket:
+        '~wacfus-dabpex-danted-mosfep-pasrud-lavmer-nodtex-taslus-pactyp-milpub-pildeg-fornev-ralmed-dinfeb-fopbyr-sanbet-sovmyl-dozsut-mogsyx-mapwyc-sorrup-ricnec-marnys-lignex',
+    })
 
     if (planet) {
       sampleWallet.push(planetWallet)
@@ -69,7 +79,7 @@ const createSampleWallets = async (
       sampleWallet.push(galaxyWallet)
     }
 
-    writeData(galaxyWallet, path)
+    writeData(sampleWallet, path)
 
     console.log(
       `Saved ${num} wallet${
