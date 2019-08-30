@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import JSZip from './vendor/jszip-browser'
+// import saveAs from 'save-as'
 import wallets from './sampleWallets/sampleWallets.json'
 import templates from '../../../lib/src/templates.json'
 
@@ -15,6 +17,24 @@ class App extends Component {
   handleOutput = (data) => {
     this.setState({ out: data })
     console.log('Out: ', data)
+  }
+
+  handleDownload = () => {
+    const wallets = this.state.out
+
+    const zipPromises = wallets.map((wallet) => {
+      const zip = new JSZip()
+
+      wallet.pages.forEach((page) => {
+        zip.file(`${page.givenName}`, page.image)
+      })
+
+      return zip.generateAsync({ type: 'blob' })
+    })
+
+    Promise.all(zipPromises).then((data, index) => {
+      data.forEach((d) => saveAs(d, `${wallets[index].meta.patp}.zip`))
+    })
   }
 
   render() {
@@ -68,7 +88,7 @@ class App extends Component {
                   maxWidth: '550px',
                   height: 'auto',
                 }}
-                src={page.uri}
+                src={page.image}
               />
             )
           })

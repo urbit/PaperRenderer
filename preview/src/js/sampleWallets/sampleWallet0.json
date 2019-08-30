@@ -1,0 +1,180 @@
+[
+  {
+    "meta": {
+      "generator": {
+        "name": "urbit-key-generation",
+        "version": "0.17.0"
+      },
+      "spec": "UP8",
+      "ship": 2543215885,
+      "patp": "~nampeg-hadner",
+      "tier": "planet",
+      "derivationPath": "m/44'/60'/0'/0/0",
+      "passphrase": null
+    },
+    "ticket": "~marbud-tidsev-litsut-hidfep",
+    "shards": ["~marbud-tidsev-litsut-hidfep"],
+    "ownership": {
+      "type": "ownership",
+      "seed": "garden damage vivid circle grace harsh fossil stairs crime tool garlic lend begin rate jacket lecture cover gym verify fossil desk ten remind note",
+      "keys": {
+        "public": "0299274c9e634e291c2f7d2c49375d2e87924a5d3bd0e2047a835d27c745279054",
+        "private": "2867b620bce6c795f0fec0b22d8c67b58146813ebcfec32c462f78265d2295b7",
+        "chain": "77b4c69dd08cabf9e84a6df3e4233f4015284408142d2cd9ac893bb628333e0a",
+        "address": "0x7eA22395c93E5e31B11D1797DC83D8D986Ca407B"
+      }
+    },
+    "transfer": {
+      "type": "transfer",
+      "seed": "copper shine coffee summer orchard news hub siren across wealth dynamic scatter menu adjust awake buddy ensure nuclear mutual harbor brisk arrange cave segment",
+      "keys": {
+        "public": "0244e8e01ef32d821b710e2d003c6ae989f4414731bc966baabe3ab8ed250f3b43",
+        "private": "9f5e39b64973eb784a9ef098390fc4615b6e9239bad80fc7cd759d2866c2d54b",
+        "chain": "e9512b7c07f3f14bb7662cc92f648b09780530a31619fc6114c3062a43b2c5ca",
+        "address": "0x1C965cB5319E2495D4f1Bd6386A22c78B6caF4Cc"
+      }
+    },
+    "spawn": {},
+    "voting": {},
+    "management": {
+      "type": "management",
+      "seed": "diet engage height sentence road talk aware left fault identify remove fence frozen bag travel test glad device milk illegal cactus report invest ancient",
+      "keys": {
+        "public": "02096a67bf0c410010983c4314144ea7dc50029f04c6ecb42c4910015fe168e463",
+        "private": "5593474f7878399b0f17ffe8ae92b4dbbf9c2d8df19b86e5690aafb437c1cb9f",
+        "chain": "23306736dede22c909f3ce17e1625ec69ef864947a8f72d974db60635428653c",
+        "address": "0xa080Fa18B615D1483A0AE0c1Ce23Ae26df99a29c"
+      }
+    },
+    "network": {}
+  },
+  {
+    "meta": {
+      "generator": {
+        "name": "urbit-key-generation",
+        "version": "0.17.0"
+      },
+      "spec": "UP8",
+      "ship": 38234,
+      "patp": "~pacfus",
+      "tier": "star",
+      "derivationPath": "m/44'/60'/0'/0/0",
+      "passphrase": null
+    },
+    "ticket": "~marbud-tidsev-litsut-hidfep",
+    "shards": ["~marbud-tidsev-litsut-hidfep"],
+    "ownership": {
+      "type": "ownership",
+      "seed": "bacon there jealous zebra achieve crumble engine captain diagram soup thing merge rain upgrade snow allow garment cradle nice faculty vocal fold edit enact",
+      "keys": {
+        "public": "02dc0c31d7613dade814a62b626aaefdb9746677f644205a1e563b23ace8db877b",
+        "private": "1efe7afade7e7ecf01db6cbb22d1bf3644ba830cb79b44fc9edf51f5510b34a3",
+        "chain": "ff7a131b3df2a594dc523ba3499620650acb00e73ac59b52468d666ecef20a18",
+        "address": "0x41948c89BDf2919Fd10326EA38F781C8a412B0Dd"
+      }
+    },
+    "transfer": {
+      "type": "transfer",
+      "seed": "illness defy angry denial auction blossom humor square betray hedgehog sausage maple life jacket despair artefact great smoke fly soda great problem where cabin",
+      "keys": {
+        "public": "03200e5f90f630fff1511ae661d846af4defaa9d5391cb7bf3d9090a6900223a35",
+        "private": "fef23c09903e105177c5844d849f9d980d04e86e613088579ebf66ee6f224450",
+        "chain": "67f8b35c025639f228eb505afb5f77dac526c0bb694bd1635b3b031869c4e2b9",
+        "address": "0xdc8001AbbA3A553861f9d4015DEA6893D37a5B18"
+      }
+    },
+    "spawn": {
+      "type": "spawn",
+      "seed": "scare rabbit photo gallery leader essence section captain engine evolve estate champion liar van despair network vessel expose hollow flock soccer flip whisper tower",
+      "keys": {
+        "public": "036bf2b578917889cc7308b48fbf180831ceef54ba75b8577d47d0e258a6873690",
+        "private": "1f05c52786c0aeff5d8fff48e2ca8dfddbf785ee259bdf8c8d3678e5263b5774",
+        "chain": "8e4b6135d42d1e84f2812ecd81f1de543515c293e09c5806a3369a19ebe8d67e",
+        "address": "0x71595753B83D8976F7Eb586faF87c14f72cad2F7"
+      }
+    },
+    "voting": {},
+    "management": {
+      "type": "management",
+      "seed": "retreat client educate crush whip song trust gesture file gap ripple fire absent alien frame sword birth talent drill brick sad fire vacuum vague",
+      "keys": {
+        "public": "020e5de73a4a8bf855aebcc4f84e4289d8446584dc44c905125903248cd076c103",
+        "private": "679dfa89e6d36d3c844c14ee7c43007058a11f92a8ded4aa1bdad1c505d111df",
+        "chain": "6d425201b73e8de51dfc0e4408b103bae53043c3bead563189c1110ff304219c",
+        "address": "0x26098C8e2c09398A5DeC4502B9eea95c085ced20"
+      }
+    },
+    "network": {}
+  },
+  {
+    "meta": {
+      "generator": {
+        "name": "urbit-key-generation",
+        "version": "0.17.0"
+      },
+      "spec": "UP8",
+      "ship": 254,
+      "patp": "~nev",
+      "tier": "galaxy",
+      "derivationPath": "m/44'/60'/0'/0/0",
+      "passphrase": null
+    },
+    "ticket": "~wacfus-dabpex-danted-mosfep-pasrud-lavmer-nodtex-taslus-pactyp-milpub-pildeg-fornev-ralmed-dinfeb-fopbyr-sanbet-sovmyl-dozsut-mogsyx-mapwyc-sorrup-ricnec-marnys-lignex",
+    "shards": [
+      "~wacfus-dabpex-danted-mosfep-pasrud-lavmer-nodtex-taslus-pactyp-milpub-pildeg-fornev-ralmed-dinfeb-fopbyr-sanbet",
+      "~pactyp-milpub-pildeg-fornev-ralmed-dinfeb-fopbyr-sanbet-sovmyl-dozsut-mogsyx-mapwyc-sorrup-ricnec-marnys-lignex",
+      "~wacfus-dabpex-danted-mosfep-pasrud-lavmer-nodtex-taslus-sovmyl-dozsut-mogsyx-mapwyc-sorrup-ricnec-marnys-lignex"
+    ],
+    "ownership": {
+      "type": "ownership",
+      "seed": "business fall valid destroy riot sign slot cheap catch eagle point scatter radio bike among burger rude pulp grunt grit mutual this soccer code",
+      "keys": {
+        "public": "030b15bdb703f0453bb8a290bc4207e7b5fab85fc5c8cdd4506163546bc161c839",
+        "private": "b269f30f096296cbea512d6a00328744cc1323755460141d1fc087b410a4d6d6",
+        "chain": "eca6a1ecbe4fa01cf0397c7cd51752a2877142c2e6b5d30bff168edce2174832",
+        "address": "0x5fe62a651e53771BF064FAdef04dF5D71D4aeE45"
+      }
+    },
+    "transfer": {
+      "type": "transfer",
+      "seed": "upgrade someone trophy canal shove amateur hundred marriage survey glory illness near check process riot thank daring bike hour drift that bitter file glue",
+      "keys": {
+        "public": "0276038f3dc6e19c86c5515743d2e39b17b89a10a8506158d5d9fbe073485f951c",
+        "private": "ae86046e5e11c84f4d23e5a99f3eed73b00875e2b4f8111c7eab757748bfbccd",
+        "chain": "ea3668e083acf55da1497f91067dfade6e4dd8c917762ef69c2f203dc41b89c3",
+        "address": "0xB7dcE074d8C34F4d614990f4eFdfa8eF24f6Eacc"
+      }
+    },
+    "spawn": {
+      "type": "spawn",
+      "seed": "bunker nuclear mesh lake enlist faculty hawk outdoor umbrella squirrel negative alert opera royal payment never add payment knee increase unfair soon shield regular",
+      "keys": {
+        "public": "030aa8b8729d32a8e78ae15dedd3f289ab00a1edf924b77b2b427a7bdc586883bd",
+        "private": "3e926bf63c717765fce2a769ca4effa3d2cdd7ab2d1cc49c1fb6eaa91afabffb",
+        "chain": "ab0f7dc6a6c15a7f77db009939b8d58f016211e40e40d0841b719f9de8d24a32",
+        "address": "0x6793fbAA804DE522d1F8CA1cb64FAb54Aff15922"
+      }
+    },
+    "voting": {
+      "type": "voting",
+      "seed": "future broccoli need column grid diagram neutral mesh gentle survey will park happy fury deliver creek crowd funny umbrella robot spike uncle work famous",
+      "keys": {
+        "public": "03c3dbe16bc42c8b10daa4199d4ecda95ec475fcbfb390369c920e7e5ef121fb0a",
+        "private": "05ca5015fdeb18fc9facd6f16ee628cf6cd9e5f89846200d45cdc2da2b718667",
+        "chain": "25dd4a145db8eea4ecd2e9d4bc7fc5fe83e69e561378c91800b31a7554c01061",
+        "address": "0xC9E2C1f121E13F8a5e7d6051E6802F6cAEcfBD43"
+      }
+    },
+    "management": {
+      "type": "management",
+      "seed": "random among real endless frequent pencil brave way when remember mechanic leave salt tornado road horror seven switch pattern dash brother predict donate crazy",
+      "keys": {
+        "public": "0287e3e7790c75e123f87c8f660a83f68adea8b81c4341daf355233130ee4ee6bd",
+        "private": "8b6eb57f34b7cf8d611a30ab83053f234e9e9ab3d9bab11c77b7a2af51561d69",
+        "chain": "0c34626785ed52e74aa17ecffb273cfbc7c922d32f8a2629a749b0d42545d524",
+        "address": "0x2A03bDDd2682A81dD8f645dd9d6C977BE9EaaBB2"
+      }
+    },
+    "network": {}
+  }
+]
