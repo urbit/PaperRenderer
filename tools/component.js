@@ -82,7 +82,7 @@ const isType = (type) => {
   return false
 }
 
-const qr = (child, tagData, frame) => {
+const qr = (child, frame) => {
   return {
     type: 'qr',
     draw: 'qr',
@@ -94,7 +94,7 @@ const qr = (child, tagData, frame) => {
   }
 }
 
-const sigil = (child, tagData, frame) => {
+const sigil = (child, frame) => {
   return {
     type: 'sigil',
     draw: 'sigil',
@@ -106,7 +106,7 @@ const sigil = (child, tagData, frame) => {
   }
 }
 
-const img = (child, tagData, frame) => {
+const img = (child, frame) => {
   return {
     type: 'img',
     draw: 'img',
@@ -120,12 +120,15 @@ const img = (child, tagData, frame) => {
   }
 }
 
-const text = (child, tagData, frame) => {
+const text = (child, frame) => {
   return {
     type: 'text',
     draw: 'wrappedText',
     path: getComponentTagData(child).path,
-    data: tagData.path === null ? child.characters : tagData.path,
+    data:
+      getComponentTagData(child).path === null
+        ? child.characters
+        : getComponentTagData(child).path,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
     fontWeight: child.style.fontWeight,
@@ -137,7 +140,7 @@ const text = (child, tagData, frame) => {
   }
 }
 
-const patq = (child, tagData, frame) => {
+const patq = (child, frame) => {
   return {
     type: 'patq',
     draw: 'patq',
@@ -154,7 +157,7 @@ const patq = (child, tagData, frame) => {
   }
 }
 
-const addrSplitFour = (child, tagData, frame) => {
+const addrSplitFour = (child, frame) => {
   return {
     type: 'addrSplitFour',
     draw: 'ethereumAddressLong',
@@ -171,7 +174,7 @@ const addrSplitFour = (child, tagData, frame) => {
   }
 }
 
-const wrapAddrSplitFour = (child, tagData, frame) => {
+const wrapAddrSplitFour = (child, frame) => {
   return {
     type: 'wrapAddrSplitFour',
     draw: 'ethereumAddressCompact',
@@ -188,7 +191,8 @@ const wrapAddrSplitFour = (child, tagData, frame) => {
   }
 }
 
-const rect = (child, tagData, frame) => {
+const rect = (child, frame) => {
+  console.log(frame)
   return {
     type: 'rect',
     draw: 'rect',
@@ -206,7 +210,7 @@ const rect = (child, tagData, frame) => {
   }
 }
 
-const line = (child, tagData, frame) => {
+const line = (child, frame) => {
   return {
     type: 'line',
     draw: 'line',
@@ -236,7 +240,8 @@ const components = {
 }
 
 const getComponent = (child, frame) => {
-  const type = getComponentTagData.type
+  // console.log(frame)
+  const type = getComponentTagData(child).type
   const component = components[type]
   if (component === undefined) {
     return null
@@ -247,6 +252,7 @@ const getComponent = (child, frame) => {
 const template = (child, frames) => {
   return {
     type: 'template',
+    path: null,
     figmaFrameID: child.name,
     frames: frames,
   }
@@ -263,6 +269,7 @@ const frame = (child, elements) => {
     classOf: title[0],
     usage: title[1],
     bin: title[2],
+    path: null,
     originX: child.absoluteBoundingBox.x,
     originY: child.absoluteBoundingBox.y,
     elements: elements,

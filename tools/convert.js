@@ -43,16 +43,18 @@ const getChildren = (child, frame) => {
   const children = child.children.reduce((acc, child) => {
     const t = getComponentTagData(child)
 
-    // if (t.type === null) {
-    //   console.error(`unsupported type for child ${child.name}`)
-    //   return acc
-    // }
+    if (t.type === null) {
+      console.error(`unsupported type for child ${child.name}`)
+      return
+    }
 
-    if (types.async.includes(t.type)) return [...acc, getChildren(child, frame)]
+    if (types.async.includes(t.type))
+      return [...acc, getComponent(child, frame)]
 
     if (types.group.includes(t.type)) return [...acc, getChildren(child, frame)]
 
-    if (types.component.includes(t.type)) return acc.concat(child)
+    if (types.component.includes(t.type))
+      return [...acc, getComponent(child, frame)]
 
     return acc
   }, [])
@@ -64,13 +66,19 @@ const flatPack = (frames) => {
     // ignore notes that lie outside of a frame
     if (child.children !== undefined) {
       const frame = getSchema(child, 'frame', null)
-
       frame.elements = getChildren(child, frame)
-
       return frame
     }
   })
-  return extracted
+
+  // ignore & remove notes that lie outside of a frame
+  const filtered = extracted.filter(function(elt) {
+    return elt != null
+  })
+  // console.log(typeof extracted)
+  // writeData(extracted.flat(), 'tools/flat.json')
+
+  return filtered
 }
 
 const figmaToJSON = (fileKey, pageKey) => {
@@ -92,5 +100,3 @@ const figmaToJSON = (fileKey, pageKey) => {
 }
 
 figmaToJSON(FIGMA_FILE_KEY, FIGMA_PAGE_KEY)
-
-module.exports = { getComponentTagData }
