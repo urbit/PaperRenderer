@@ -17,6 +17,40 @@ const types = {
   group: ['group', 'instance', 'frame'],
 }
 
+// #text@meta.dateCreated --> ["text", "meta.dateCreated"]
+const getComponentTagData = (child) => {
+  // TEXT or FRAME type
+  const figmaType = child.type.toLowerCase()
+
+  // "#text@meta.patp" --> ["#text", "meta.patp"]
+  const componentData = child.name.split('@')
+
+  // "#text" --> "text"
+  const componentType = componentData[0].replace('#', '')
+
+  // "meta.dateCreated"
+  const componentPath = componentData[1]
+
+  // {type: "text", path: "meta.dateCreated"}
+  if (isType(componentType))
+    return {
+      type: componentType,
+      path: componentPath,
+    }
+  // {type: "text" path: "null"} --> text data provided in template
+  else if (isType(figmaType))
+    return {
+      type: figmaType,
+      path: null,
+    }
+
+  // when the type is not a figma/component type, it is not supported
+  return {
+    type: null,
+    path: null,
+  }
+}
+
 const getSvgPath = (child) => {
   const path = child.fillGeometry[0].path
 
@@ -53,7 +87,7 @@ const qr = (child, tagData, frame) => {
     type: 'qr',
     draw: 'qr',
     data: null,
-    path: tagData.path,
+    path: getComponentTagData(child).path,
     size: child.absoluteBoundingBox.height,
     x: child.absoluteBoundingBox.x - frame.originX,
     y: child.absoluteBoundingBox.y - frame.originY,
@@ -65,7 +99,7 @@ const sigil = (child, tagData, frame) => {
     type: 'sigil',
     draw: 'sigil',
     data: null,
-    path: tagData.path,
+    path: getComponentTagData(child).path,
     size: child.absoluteBoundingBox.height,
     x: child.absoluteBoundingBox.x - frame.originX,
     y: child.absoluteBoundingBox.y - frame.originY,
@@ -77,7 +111,7 @@ const img = (child, tagData, frame) => {
     type: 'img',
     draw: 'img',
     data: getSvgPath(child),
-    path: tagData.path,
+    path: getComponentTagData(child).path,
     width: child.absoluteBoundingBox.height,
     height: child.absoluteBoundingBox.width,
     x: child.absoluteBoundingBox.x - frame.originX,
@@ -90,7 +124,7 @@ const text = (child, tagData, frame) => {
   return {
     type: 'text',
     draw: 'wrappedText',
-    path: tagData.path,
+    path: getComponentTagData(child).path,
     data: tagData.path === null ? child.characters : tagData.path,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
@@ -107,7 +141,7 @@ const patq = (child, tagData, frame) => {
   return {
     type: 'patq',
     draw: 'patq',
-    path: tagData.path,
+    path: getComponentTagData(child).path,
     data: null,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
@@ -124,7 +158,7 @@ const addrSplitFour = (child, tagData, frame) => {
   return {
     type: 'addrSplitFour',
     draw: 'ethereumAddressLong',
-    path: tagData.path,
+    path: getComponentTagData(child).path,
     data: null,
     fontWeight: child.style.fontWeight,
     fontFamily: child.style.fontFamily,
@@ -141,7 +175,7 @@ const wrapAddrSplitFour = (child, tagData, frame) => {
   return {
     type: 'wrapAddrSplitFour',
     draw: 'ethereumAddressCompact',
-    path: tagData.path,
+    path: getComponentTagData(child).path,
     data: null,
     fontWeight: child.style.fontWeight,
     fontFamily: child.style.fontFamily,
@@ -158,7 +192,7 @@ const rect = (child, tagData, frame) => {
   return {
     type: 'rect',
     draw: 'rect',
-    path: tagData.path,
+    path: getComponentTagData(child).path,
     data: null,
     cornerRadius: child.cornerRadius,
     dashes: child.strokeDashes,
@@ -176,7 +210,7 @@ const line = (child, tagData, frame) => {
   return {
     type: 'line',
     draw: 'line',
-    path: tagData.path,
+    path: getComponentTagData(child).path,
     data: null,
     dashes: child.strokeDashes,
     x: child.absoluteBoundingBox.x - frame.originX,
@@ -189,26 +223,25 @@ const line = (child, tagData, frame) => {
 }
 
 const components = {
-  qr: (child, tagData, frame) => qr(child, tagData, frame),
-  templateText: (child, tagData, frame) => templateText(child, tagData, frame),
-  rect: (child, tagData, frame) => rect(child, tagData, frame),
-  patq: (child, tagData, frame) => patq(child, tagData, frame),
-  text: (child, tagData, frame) => text(child, tagData, frame),
-  sigil: (child, tagData, frame) => sigil(child, tagData, frame),
-  img: (child, tagData, frame) => img(child, tagData, frame),
-  wrapAddrSplitFour: (child, tagData, frame) =>
-    wrapAddrSplitFour(child, tagData, frame),
-  addrSplitFour: (child, tagData, frame) =>
-    addrSplitFour(child, tagData, frame),
-  line: (child, tagData, frame) => line(child, tagData, frame),
+  qr: (child, frame) => qr(child, frame),
+  templateText: (child, frame) => templateText(child, frame),
+  rect: (child, frame) => rect(child, frame),
+  patq: (child, frame) => patq(child, frame),
+  text: (child, frame) => text(child, frame),
+  sigil: (child, frame) => sigil(child, frame),
+  img: (child, frame) => img(child, frame),
+  wrapAddrSplitFour: (child, frame) => wrapAddrSplitFour(child, frame),
+  addrSplitFour: (child, frame) => addrSplitFour(child, frame),
+  line: (child, tframe) => line(child, frame),
 }
 
-const getComponent = (child, tagData, frame) => {
-  const component = components[tagData.type]
+const getComponent = (child, frame) => {
+  const type = getComponentTagData.type
+  const component = components[type]
   if (component === undefined) {
     return null
   }
-  return component(child, tagData, frame)
+  return component(child, frame)
 }
 
 const template = (child, frames) => {
@@ -247,6 +280,7 @@ const getSchema = (child, type, array) => {
 }
 
 module.exports = {
+  getComponentTagData,
   getComponent,
   getSchema,
   types,

@@ -16,7 +16,13 @@ templateSchema > pageSchemas > elementSchemas
 require('dotenv').config()
 const Figma = require('figma-js')
 const fs = require('fs')
-const { getComponent, getSchema, types, isType } = require('./elementSchema')
+const {
+  getComponentTagData,
+  getComponent,
+  getSchema,
+  types,
+  isType,
+} = require('./component')
 
 // const FIGMA_FILE_KEY = 'a4u6jBsdTgiXcrDGW61q5ngY'
 const FIGMA_FILE_KEY = '2Lh4E8LguPxidqNGKGxr1B'
@@ -30,40 +36,6 @@ const writeData = (data, path) => {
   fs.writeFile(path, fmtData, (err) => {
     if (err) throw err
   })
-}
-
-// #text@meta.dateCreated --> ["text", "meta.dateCreated"]
-const getComponentTagData = (child) => {
-  // TEXT or FRAME type
-  const figmaType = child.type.toLowerCase()
-
-  // "#text@meta.patp" --> ["#text", "meta.patp"]
-  const componentData = child.name.split('@')
-
-  // "#text" --> "text"
-  const componentType = componentData[0].replace('#', '')
-
-  // "meta.dateCreated"
-  const componentPath = componentData[1]
-
-  // {type: "text", path: "meta.dateCreated"}
-  if (isType(componentType))
-    return {
-      type: componentType,
-      path: componentPath,
-    }
-  // {type: "text" path: "null"} --> text data provided in template
-  else if (isType(figmaType))
-    return {
-      type: figmaType,
-      path: null,
-    }
-
-  // when the type is not a figma/component type, it is not supported
-  return {
-    type: null,
-    path: null,
-  }
 }
 
 // if pass pages into acc buffer overload error
@@ -88,10 +60,10 @@ const flatPack = (child, frame, pages) => {
     if (types.group.includes(t.type))
       return [...acc, ...flatPack(child, frame, pages)]
 
-    if (types.async.includes(t)) return [...acc, getComponent(child, t, frame)]
+    if (types.async.includes(t)) return [...acc, getComponent(child, frame)]
 
     if (types.component.includes(t.type))
-      return [...acc, getComponent(child, t, frame)]
+      return [...acc, getComponent(child, frame)]
 
     return acc
   }, [])
@@ -116,3 +88,5 @@ const figmaToJSON = (fileKey, pageKey) => {
 }
 
 figmaToJSON(FIGMA_FILE_KEY, FIGMA_PAGE_KEY)
+
+module.exports = { getComponentTagData }
