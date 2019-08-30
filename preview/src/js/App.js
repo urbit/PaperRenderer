@@ -33,6 +33,8 @@ class App extends Component {
     // don't do this in prod code!
     delete fontCount['undefined-undefined']
 
+    const disableDownload = this.state.out.length === 0
+
     return (
       <div>
         <h3>Fonts</h3>
@@ -51,6 +53,12 @@ class App extends Component {
             // mode={'REGISTRATION'}
           />
         }
+        <button
+          onClick={() => this.handleDownload()}
+          disabled={disableDownload}
+        >
+          Download
+        </button>
         {this.state.out.map((wallet) => {
           return wallet.pages.map((page, idx) => {
             return (
