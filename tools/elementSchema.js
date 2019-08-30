@@ -6,11 +6,10 @@ const types = {
     'text',
     'sigil',
     'img',
-    'wrapAddrSplitFour',
-    'addrSplitFour',
+    'ethereumAddress',
     'line',
   ],
-  text: ['text', 'patq', 'wrapAddrSplitFour', 'addrSplitFour'],
+  text: ['text', 'patq', 'ethereumAddress'],
   // types whose data is retrieved asynchronously (we do not import the figma data)
   async: ['sigil', 'qr'],
   // these Figma types house children elements, so we need to transverse all children nodes when we find a parentType
@@ -133,10 +132,10 @@ const patq = (child, page) => {
   }
 }
 
-const addrSplitFour = (child, page) => {
+const ethereumAddress = (child, page) => {
   return {
-    type: 'addrSplitFour',
-    draw: 'ethereumAddressLong',
+    type: 'ethereumAddress',
+    draw: 'ethereumAddress',
     path: getPath(child),
     data: null,
     fontWeight: child.style.fontWeight,
@@ -150,22 +149,22 @@ const addrSplitFour = (child, page) => {
   }
 }
 
-const wrapAddrSplitFour = (child, page) => {
-  return {
-    type: 'wrapAddrSplitFour',
-    draw: 'ethereumAddressCompact',
-    path: getPath(child),
-    data: null,
-    fontWeight: child.style.fontWeight,
-    fontFamily: child.style.fontFamily,
-    fontSize: child.style.fontSize,
-    maxWidth: child.absoluteBoundingBox.width,
-    lineHeightPx: child.style.lineHeightPx,
-    x: child.absoluteBoundingBox.x - page.originX,
-    y: child.absoluteBoundingBox.y - page.originY,
-    fontColor: rgba(child.fills),
-  }
-}
+// const wrapAddrSplitFour = (child, page) => {
+//   return {
+//     type: 'wrapAddrSplitFour',
+//     draw: 'ethereumAddressCompact',
+//     path: getPath(child),
+//     data: null,
+//     fontWeight: child.style.fontWeight,
+//     fontFamily: child.style.fontFamily,
+//     fontSize: child.style.fontSize,
+//     maxWidth: child.absoluteBoundingBox.width,
+//     lineHeightPx: child.style.lineHeightPx,
+//     x: child.absoluteBoundingBox.x - page.originX,
+//     y: child.absoluteBoundingBox.y - page.originY,
+//     fontColor: rgba(child.fills),
+//   }
+// }
 
 const rect = (child, page) => {
   return {
@@ -209,8 +208,8 @@ const components = {
   text: (child, page) => text(child, page),
   sigil: (child, page) => sigil(child, page),
   img: (child, page) => img(child, page),
-  wrapAddrSplitFour: (child, page) => wrapAddrSplitFour(child, page),
-  addrSplitFour: (child, page) => addrSplitFour(child, page),
+  // wrapAddrSplitFour: (child, page) => wrapAddrSplitFour(child, page),
+  ethereumAddress: (child, page) => ethereumAddress(child, page),
   line: (child, page) => line(child, page),
 }
 

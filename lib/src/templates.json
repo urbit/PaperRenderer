@@ -272,8 +272,8 @@
           "strokeWeight": 1
         },
         {
-          "type": "text",
-          "draw": "wrappedText",
+          "type": "patq",
+          "draw": "patq",
           "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
@@ -314,18 +314,18 @@
           "y": 272
         },
         {
-          "type": "text",
-          "draw": "wrappedText",
+          "type": "ethereumAddress",
+          "draw": "ethereumAddress",
           "path": "ownership.keys.address",
           "data": null,
+          "fontWeight": 500,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "fontWeight": 500,
-          "fontColor": "rgba(255,255,255,1)",
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 294.5
+          "y": 294.5,
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "text",
@@ -386,8 +386,8 @@
         {
           "type": "text",
           "draw": "wrappedText",
-          "path": null,
-          "data": "bridge.urbit.org",
+          "path": "meta.azimuth.url",
+          "data": null,
           "fontFamily": "Inter",
           "fontSize": 12,
           "fontWeight": 400,
@@ -869,8 +869,8 @@
           "strokeWeight": 1
         },
         {
-          "type": "text",
-          "draw": "wrappedText",
+          "type": "patq",
+          "draw": "patq",
           "path": "ticket",
           "data": null,
           "fontFamily": "Source Code Pro",
@@ -911,18 +911,18 @@
           "y": 272
         },
         {
-          "type": "text",
-          "draw": "wrappedText",
+          "type": "ethereumAddress",
+          "draw": "ethereumAddress",
           "path": "ownership.keys.address",
           "data": null,
+          "fontWeight": 500,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "fontWeight": 500,
-          "fontColor": "rgba(255,255,255,1)",
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 294.5
+          "y": 294.5,
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "text",
@@ -983,8 +983,8 @@
         {
           "type": "text",
           "draw": "wrappedText",
-          "path": null,
-          "data": "bridge.urbit.org",
+          "path": "meta.azimuth.url",
+          "data": null,
           "fontFamily": "Inter",
           "fontSize": 12,
           "fontWeight": 400,
@@ -1374,18 +1374,18 @@
           "y": 208
         },
         {
-          "type": "text",
-          "draw": "wrappedText",
+          "type": "ethereumAddress",
+          "draw": "ethereumAddress",
           "path": "ownership.keys.address",
           "data": null,
+          "fontWeight": 500,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "fontWeight": 500,
-          "fontColor": "rgba(255,255,255,1)",
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 230.5
+          "y": 230.5,
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "text",
@@ -1566,8 +1566,8 @@
         {
           "type": "text",
           "draw": "wrappedText",
-          "path": null,
-          "data": "bridge.urbit.org",
+          "path": "meta.azimuth.url",
+          "data": null,
           "fontFamily": "Inter",
           "fontSize": 12,
           "fontWeight": 400,
@@ -1943,18 +1943,18 @@
           "y": 208
         },
         {
-          "type": "text",
-          "draw": "wrappedText",
+          "type": "ethereumAddress",
+          "draw": "ethereumAddress",
           "path": "ownership.keys.address",
           "data": null,
+          "fontWeight": 500,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "fontWeight": 500,
-          "fontColor": "rgba(255,255,255,1)",
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 230.5
+          "y": 230.5,
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "text",
@@ -2135,8 +2135,8 @@
         {
           "type": "text",
           "draw": "wrappedText",
-          "path": null,
-          "data": "bridge.urbit.org",
+          "path": "meta.azimuth.url",
+          "data": null,
           "fontFamily": "Inter",
           "fontSize": 12,
           "fontWeight": 400,
@@ -2526,18 +2526,18 @@
           "y": 208
         },
         {
-          "type": "text",
-          "draw": "wrappedText",
+          "type": "ethereumAddress",
+          "draw": "ethereumAddress",
           "path": "ownership.keys.address",
           "data": null,
+          "fontWeight": 500,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "fontWeight": 500,
-          "fontColor": "rgba(255,255,255,1)",
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 230.5
+          "y": 230.5,
+          "fontColor": "rgba(255,255,255,1)"
         },
         {
           "type": "text",
@@ -2718,8 +2718,8 @@
         {
           "type": "text",
           "draw": "wrappedText",
-          "path": null,
-          "data": "bridge.urbit.org",
+          "path": "meta.azimuth.url",
+          "data": null,
           "fontFamily": "Inter",
           "fontSize": 12,
           "fontWeight": 400,
@@ -3187,18 +3187,18 @@
           "y": 224
         },
         {
-          "type": "text",
-          "draw": "wrappedText",
+          "type": "ethereumAddress",
+          "draw": "ethereumAddress",
           "path": "management.keys.address",
           "data": null,
+          "fontWeight": 500,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "fontWeight": 500,
-          "fontColor": "rgba(0,0,0,1)",
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 246.5
+          "y": 246.5,
+          "fontColor": "rgba(0,0,0,1)"
         },
         {
           "type": "text",
@@ -3273,8 +3273,8 @@
         {
           "type": "text",
           "draw": "wrappedText",
-          "path": null,
-          "data": "bridge.urbit.org",
+          "path": "meta.azimuth.url",
+          "data": null,
           "fontFamily": "Inter",
           "fontSize": 12,
           "fontWeight": 400,
@@ -3756,18 +3756,18 @@
           "y": 224
         },
         {
-          "type": "text",
-          "draw": "wrappedText",
+          "type": "ethereumAddress",
+          "draw": "ethereumAddress",
           "path": "management.keys.address",
           "data": null,
+          "fontWeight": 500,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "fontWeight": 500,
-          "fontColor": "rgba(0,0,0,1)",
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 246.5
+          "y": 246.5,
+          "fontColor": "rgba(0,0,0,1)"
         },
         {
           "type": "text",
@@ -3842,8 +3842,8 @@
         {
           "type": "text",
           "draw": "wrappedText",
-          "path": null,
-          "data": "bridge.urbit.org",
+          "path": "meta.azimuth.url",
+          "data": null,
           "fontFamily": "Inter",
           "fontSize": 12,
           "fontWeight": 400,
@@ -4325,18 +4325,18 @@
           "y": 224
         },
         {
-          "type": "text",
-          "draw": "wrappedText",
+          "type": "ethereumAddress",
+          "draw": "ethereumAddress",
           "path": "management.keys.address",
           "data": null,
+          "fontWeight": 500,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "fontWeight": 500,
-          "fontColor": "rgba(0,0,0,1)",
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 246.5
+          "y": 246.5,
+          "fontColor": "rgba(0,0,0,1)"
         },
         {
           "type": "text",
@@ -4411,8 +4411,8 @@
         {
           "type": "text",
           "draw": "wrappedText",
-          "path": null,
-          "data": "bridge.urbit.org",
+          "path": "meta.azimuth.url",
+          "data": null,
           "fontFamily": "Inter",
           "fontSize": 12,
           "fontWeight": 400,
@@ -4922,18 +4922,18 @@
           "y": 224
         },
         {
-          "type": "text",
-          "draw": "wrappedText",
+          "type": "ethereumAddress",
+          "draw": "ethereumAddress",
           "path": "spawn.keys.address",
           "data": null,
+          "fontWeight": 500,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "fontWeight": 500,
-          "fontColor": "rgba(0,0,0,1)",
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 246.5
+          "y": 246.5,
+          "fontColor": "rgba(0,0,0,1)"
         },
         {
           "type": "text",
@@ -4994,8 +4994,8 @@
         {
           "type": "text",
           "draw": "wrappedText",
-          "path": null,
-          "data": "bridge.urbit.org",
+          "path": "meta.azimuth.url",
+          "data": null,
           "fontFamily": "Inter",
           "fontSize": 12,
           "fontWeight": 400,
@@ -5491,18 +5491,18 @@
           "y": 224
         },
         {
-          "type": "text",
-          "draw": "wrappedText",
+          "type": "ethereumAddress",
+          "draw": "ethereumAddress",
           "path": "transfer.keys.address",
           "data": null,
+          "fontWeight": 500,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "fontWeight": 500,
-          "fontColor": "rgba(0,0,0,1)",
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 246.5
+          "y": 246.5,
+          "fontColor": "rgba(0,0,0,1)"
         },
         {
           "type": "text",
@@ -5563,8 +5563,8 @@
         {
           "type": "text",
           "draw": "wrappedText",
-          "path": null,
-          "data": "bridge.urbit.org",
+          "path": "meta.azimuth.url",
+          "data": null,
           "fontFamily": "Inter",
           "fontSize": 12,
           "fontWeight": 400,
@@ -6060,18 +6060,18 @@
           "y": 224
         },
         {
-          "type": "text",
-          "draw": "wrappedText",
+          "type": "ethereumAddress",
+          "draw": "ethereumAddress",
           "path": "transfer.keys.address",
           "data": null,
+          "fontWeight": 500,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "fontWeight": 500,
-          "fontColor": "rgba(0,0,0,1)",
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 246.5
+          "y": 246.5,
+          "fontColor": "rgba(0,0,0,1)"
         },
         {
           "type": "text",
@@ -6132,8 +6132,8 @@
         {
           "type": "text",
           "draw": "wrappedText",
-          "path": null,
-          "data": "bridge.urbit.org",
+          "path": "meta.azimuth.url",
+          "data": null,
           "fontFamily": "Inter",
           "fontSize": 12,
           "fontWeight": 400,
@@ -6615,18 +6615,18 @@
           "y": 224
         },
         {
-          "type": "text",
-          "draw": "wrappedText",
+          "type": "ethereumAddress",
+          "draw": "ethereumAddress",
           "path": "transfer.keys.address",
           "data": null,
+          "fontWeight": 500,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "fontWeight": 500,
-          "fontColor": "rgba(0,0,0,1)",
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 246.5
+          "y": 246.5,
+          "fontColor": "rgba(0,0,0,1)"
         },
         {
           "type": "text",
@@ -6687,8 +6687,8 @@
         {
           "type": "text",
           "draw": "wrappedText",
-          "path": null,
-          "data": "bridge.urbit.org",
+          "path": "meta.azimuth.url",
+          "data": null,
           "fontFamily": "Inter",
           "fontSize": 12,
           "fontWeight": 400,
@@ -7198,18 +7198,18 @@
           "y": 224
         },
         {
-          "type": "text",
-          "draw": "wrappedText",
+          "type": "ethereumAddress",
+          "draw": "ethereumAddress",
           "path": "management.keys.address",
           "data": null,
+          "fontWeight": 500,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "fontWeight": 500,
-          "fontColor": "rgba(0,0,0,1)",
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 246.5
+          "y": 246.5,
+          "fontColor": "rgba(0,0,0,1)"
         },
         {
           "type": "text",
@@ -7270,8 +7270,8 @@
         {
           "type": "text",
           "draw": "wrappedText",
-          "path": null,
-          "data": "bridge.urbit.org",
+          "path": "meta.azimuth.url",
+          "data": null,
           "fontFamily": "Inter",
           "fontSize": 12,
           "fontWeight": 400,
@@ -7753,18 +7753,18 @@
           "y": 224
         },
         {
-          "type": "text",
-          "draw": "wrappedText",
+          "type": "ethereumAddress",
+          "draw": "ethereumAddress",
           "path": "spawn.keys.address",
           "data": null,
+          "fontWeight": 500,
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
-          "fontWeight": 500,
-          "fontColor": "rgba(0,0,0,1)",
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 246.5
+          "y": 246.5,
+          "fontColor": "rgba(0,0,0,1)"
         },
         {
           "type": "text",
@@ -7825,8 +7825,8 @@
         {
           "type": "text",
           "draw": "wrappedText",
-          "path": null,
-          "data": "bridge.urbit.org",
+          "path": "meta.azimuth.url",
+          "data": null,
           "fontFamily": "Inter",
           "fontSize": 12,
           "fontWeight": 400,
