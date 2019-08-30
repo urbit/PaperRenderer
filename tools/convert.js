@@ -43,21 +43,14 @@ const getChildren = (child, frame) => {
   const children = child.children.reduce((acc, child) => {
     const t = getComponentTagData(child)
 
-    if (t.type === null) {
-      console.error(`unsupported type for child ${child.name}`)
-      return
-    }
-
-    if (types.async.includes(t.type))
+    if (types.component.includes(t.type))
       return [...acc, getComponent(child, frame)]
 
     if (types.group.includes(t.type)) return [...acc, getChildren(child, frame)]
 
-    if (types.component.includes(t.type))
-      return [...acc, getComponent(child, frame)]
-
     return acc
   }, [])
+  writeData(children, 'children.json')
   return children
 }
 
@@ -75,8 +68,6 @@ const flatPack = (frames) => {
   const filtered = extracted.filter(function(elt) {
     return elt != null
   })
-  // console.log(typeof extracted)
-  // writeData(extracted.flat(), 'tools/flat.json')
 
   return filtered
 }
