@@ -48,79 +48,66 @@ const isType = (type) => {
   return false
 }
 
-const getPath = (child) => {
-  const s = child.name.split('@')
-  const t = s[0].replace('#', '')
-  if (isType(t) && s.length > 1) return s[1]
-  return null
-}
-
-const qr = (child, page) => {
+const qr = (child, tagData, frame) => {
   return {
     type: 'qr',
     draw: 'qr',
     data: null,
-    path: getPath(child),
+    path: tagData.path,
     size: child.absoluteBoundingBox.height,
-    x: child.absoluteBoundingBox.x - page.originX,
-    y: child.absoluteBoundingBox.y - page.originY,
+    x: child.absoluteBoundingBox.x - frame.originX,
+    y: child.absoluteBoundingBox.y - frame.originY,
   }
 }
 
-const sigil = (child, page) => {
+const sigil = (child, tagData, frame) => {
   return {
     type: 'sigil',
     draw: 'sigil',
     data: null,
-    path: getPath(child),
+    path: tagData.path,
     size: child.absoluteBoundingBox.height,
-    x: child.absoluteBoundingBox.x - page.originX,
-    y: child.absoluteBoundingBox.y - page.originY,
+    x: child.absoluteBoundingBox.x - frame.originX,
+    y: child.absoluteBoundingBox.y - frame.originY,
   }
 }
 
-const img = (child, page) => {
+const img = (child, tagData, frame) => {
   return {
     type: 'img',
     draw: 'img',
     data: getSvgPath(child),
-    path: getPath(child),
+    path: tagData.path,
     width: child.absoluteBoundingBox.height,
     height: child.absoluteBoundingBox.width,
-    x: child.absoluteBoundingBox.x - page.originX,
-    y: child.absoluteBoundingBox.y - page.originY,
+    x: child.absoluteBoundingBox.x - frame.originX,
+    y: child.absoluteBoundingBox.y - frame.originY,
     color: rgba(child.fills),
   }
 }
 
-const text = (child, page) => {
-  let data
-  if (getPath(child) !== null) {
-    data = null
-  } else {
-    data = child.characters === undefined ? null : child.characters
-  }
+const text = (child, tagData, frame) => {
   return {
     type: 'text',
     draw: 'wrappedText',
-    path: getPath(child),
-    data: data,
+    path: tagData.path,
+    data: tagData.path === null ? child.characters : tagData.path,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
     fontWeight: child.style.fontWeight,
     fontColor: rgba(child.fills),
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
-    x: child.absoluteBoundingBox.x - page.originX,
-    y: child.absoluteBoundingBox.y - page.originY,
+    x: child.absoluteBoundingBox.x - frame.originX,
+    y: child.absoluteBoundingBox.y - frame.originY,
   }
 }
 
-const patq = (child, page) => {
+const patq = (child, tagData, frame) => {
   return {
     type: 'patq',
     draw: 'patq',
-    path: getPath(child),
+    path: tagData.path,
     data: null,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
@@ -128,55 +115,55 @@ const patq = (child, page) => {
     fontColor: rgba(child.fills),
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
-    x: child.absoluteBoundingBox.x - page.originX,
-    y: child.absoluteBoundingBox.y - page.originY,
+    x: child.absoluteBoundingBox.x - frame.originX,
+    y: child.absoluteBoundingBox.y - frame.originY,
   }
 }
 
-const addrSplitFour = (child, page) => {
+const addrSplitFour = (child, tagData, frame) => {
   return {
     type: 'addrSplitFour',
     draw: 'ethereumAddressLong',
-    path: getPath(child),
+    path: tagData.path,
     data: null,
     fontWeight: child.style.fontWeight,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
-    x: child.absoluteBoundingBox.x - page.originX,
-    y: child.absoluteBoundingBox.y - page.originY,
+    x: child.absoluteBoundingBox.x - frame.originX,
+    y: child.absoluteBoundingBox.y - frame.originY,
     fontColor: rgba(child.fills),
   }
 }
 
-const wrapAddrSplitFour = (child, page) => {
+const wrapAddrSplitFour = (child, tagData, frame) => {
   return {
     type: 'wrapAddrSplitFour',
     draw: 'ethereumAddressCompact',
-    path: getPath(child),
+    path: tagData.path,
     data: null,
     fontWeight: child.style.fontWeight,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
-    x: child.absoluteBoundingBox.x - page.originX,
-    y: child.absoluteBoundingBox.y - page.originY,
+    x: child.absoluteBoundingBox.x - frame.originX,
+    y: child.absoluteBoundingBox.y - frame.originY,
     fontColor: rgba(child.fills),
   }
 }
 
-const rect = (child, page) => {
+const rect = (child, tagData, frame) => {
   return {
     type: 'rect',
     draw: 'rect',
-    path: null,
+    path: tagData.path,
     data: null,
     cornerRadius: child.cornerRadius,
     dashes: child.strokeDashes,
-    x: child.absoluteBoundingBox.x - page.originX,
-    y: child.absoluteBoundingBox.y - page.originY,
+    x: child.absoluteBoundingBox.x - frame.originX,
+    y: child.absoluteBoundingBox.y - frame.originY,
     width: child.absoluteBoundingBox.width,
     height: child.absoluteBoundingBox.height,
     fillColor: rgba(child.fills),
@@ -185,15 +172,15 @@ const rect = (child, page) => {
   }
 }
 
-const line = (child, page) => {
+const line = (child, tagData, frame) => {
   return {
     type: 'line',
     draw: 'line',
-    path: null,
+    path: tagData.path,
     data: null,
     dashes: child.strokeDashes,
-    x: child.absoluteBoundingBox.x - page.originX,
-    y: child.absoluteBoundingBox.y - page.originY,
+    x: child.absoluteBoundingBox.x - frame.originX,
+    y: child.absoluteBoundingBox.y - frame.originY,
     width: child.absoluteBoundingBox.width,
     height: child.absoluteBoundingBox.height,
     strokeColor: rgba(child.strokes),
@@ -202,28 +189,66 @@ const line = (child, page) => {
 }
 
 const components = {
-  qr: (child, page) => qr(child, page),
-  templateText: (child, page) => templateText(child, page),
-  rect: (child, page) => rect(child, page),
-  patq: (child, page) => patq(child, page),
-  text: (child, page) => text(child, page),
-  sigil: (child, page) => sigil(child, page),
-  img: (child, page) => img(child, page),
-  wrapAddrSplitFour: (child, page) => wrapAddrSplitFour(child, page),
-  addrSplitFour: (child, page) => addrSplitFour(child, page),
-  line: (child, page) => line(child, page),
+  qr: (child, tagData, frame) => qr(child, tagData, frame),
+  templateText: (child, tagData, frame) => templateText(child, tagData, frame),
+  rect: (child, tagData, frame) => rect(child, tagData, frame),
+  patq: (child, tagData, frame) => patq(child, tagData, frame),
+  text: (child, tagData, frame) => text(child, tagData, frame),
+  sigil: (child, tagData, frame) => sigil(child, tagData, frame),
+  img: (child, tagData, frame) => img(child, tagData, frame),
+  wrapAddrSplitFour: (child, tagData, frame) =>
+    wrapAddrSplitFour(child, tagData, frame),
+  addrSplitFour: (child, tagData, frame) =>
+    addrSplitFour(child, tagData, frame),
+  line: (child, tagData, frame) => line(child, tagData, frame),
 }
 
-const getComponent = (child, name, page) => {
-  const component = components[name]
+const getComponent = (child, tagData, frame) => {
+  const component = components[tagData.type]
   if (component === undefined) {
     return null
   }
-  return component(child, page)
+  return component(child, tagData, frame)
+}
+
+const template = (child, frames) => {
+  return {
+    type: 'template',
+    figmaFrameID: child.name,
+    frames: frames,
+  }
+}
+
+const frame = (child, elements) => {
+  // "galaxy, management, 4" --> ["galaxy", "management", "4"]
+  const title = child.name
+    .toString()
+    .replace(/\s/g, '')
+    .split(',')
+  return {
+    type: 'frame',
+    classOf: title[0],
+    usage: title[1],
+    bin: title[2],
+    originX: child.absoluteBoundingBox.x,
+    originY: child.absoluteBoundingBox.y,
+    elements: elements,
+  }
+}
+
+const schemas = {
+  template: (child, array) => template(child, array),
+  frame: (child, array) => frame(child, array),
+}
+
+const getSchema = (child, type, array) => {
+  if (type === 'CANVAS') type = 'TEMPLATE'
+  return schemas[type.toLowerCase()](child, array)
 }
 
 module.exports = {
   getComponent,
+  getSchema,
   types,
   isType,
 }

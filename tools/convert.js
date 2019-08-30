@@ -16,7 +16,7 @@ templateSchema > pageSchemas > elementSchemas
 require('dotenv').config()
 const Figma = require('figma-js')
 const fs = require('fs')
-const { getComponent, types, isType } = require('./elementSchema')
+const { getComponent, getSchema, types, isType } = require('./elementSchema')
 
 // const FIGMA_FILE_KEY = 'a4u6jBsdTgiXcrDGW61q5ngY'
 const FIGMA_FILE_KEY = '2Lh4E8LguPxidqNGKGxr1B'
@@ -24,11 +24,6 @@ const FIGMA_FILE_KEY = '2Lh4E8LguPxidqNGKGxr1B'
 const FIGMA_PAGE_KEY = 'Release 2.0'
 const WALLET_PATH = 'preview/src/js/sampleWallets/wallet.json'
 const OUTPUT_PATH = 'lib/src/templates.json'
-
-var templateSchema = {
-  figmaPageID: '',
-  pages: [],
-}
 
 const writeData = (data, path) => {
   const fmtData = JSON.stringify(data, null, 2)
@@ -39,70 +34,68 @@ const writeData = (data, path) => {
 
 // #text@meta.dateCreated --> ["text", "meta.dateCreated"]
 const getComponentTagData = (child) => {
-  const data = child.name.split('@')
-  data[0].replace('#', '')
+  // TEXT or FRAME type
+  const figmaType = child.type.toLowerCase()
 
-  // if an @ in an email is falsely recognized as a component id
-  // assign it the default figma type (such as "TEXT")
-  if (!isType(data[0])) {
-    data[0] = child.type.toLowerCase()
-    data[1] = null
-  }
+  // "#text@meta.patp" --> ["#text", "meta.patp"]
+  const componentData = child.name.split('@')
 
-  // unsupported type
-  if (!isType(child.type.toLowerCase())) return null
+  // "#text" --> "text"
+  const componentType = componentData[0].replace('#', '')
 
-  return {
-    type: data[0],
-    path: data[1],
-  }
-}
+  // "meta.dateCreated"
+  const componentPath = componentData[1]
 
-const getPageSchema = (child) => {
-  // "galaxy, management, 4" --> ["galaxy", "management", "4"]
-  const frameArr = title
-    .toString()
-    .replace(/\s/g, '')
-    .split(',')
-  return {
-    classOf: frameArr[0],
-    usage: frameArr[1],
-    bin: frameArr[2],
-    originX: child.absoluteBoundingBox.x,
-    originY: child.absoluteBoundingBox.y,
-  }
-}
-
-const depthFirst = (node, callback) => {
-  callback(node)
-
-  if (node.children !== null || node.children.length > 0) {
-    for (c in node.children) {
-      var child = node.children[c]
-
-      if (child.hasBeenVisited === undefined) child.hasBeenVisited = true
-
-      const tagData = getComponentTagData(child)
-
-      // add new pageSchema to templateSchema
-      if (tagData.type === 'frame')
-        templateSchema.pages.push(getPageSchema(child))
-      // add valid components to page's elements array
-      else if (
-        (types.component.includes(tagData.type) ||
-          types.async.includes(tagData.type)) &&
-        templateSchema.pages !== []
-      ) {
-        // addElementSchema
-        const currPage = templateSchema.pages[templateSchema.pages.length - 1]
-        const elt = getComponent(child, tagData.path, currPage)
-        templateSchema.pages[templateSchema.pages.length - 1].elements.push(elt)
-      }
-
-      // continue traversal if type is NOT qr or sigil
-      if (!types.async.includes(tagData.type)) depthFirst(child, callback)
+  // {type: "text", path: "meta.dateCreated"}
+  if (isType(componentType))
+    return {
+      type: componentType,
+      path: componentPath,
     }
+  // {type: "text" path: "null"} --> text data provided in template
+  else if (isType(figmaType))
+    return {
+      type: figmaType,
+      path: null,
+    }
+
+  // when the type is not a figma/component type, it is not supported
+  return {
+    type: null,
+    path: null,
   }
+}
+
+// if pass pages into acc buffer overload error
+const flatPack = (child, frame, pages) => {
+  const extracted = child.children.reduce((acc, child) => {
+    const t = getComponentTagData(child)
+
+    if (t.type === null) {
+      console.error(`unsupported type for child ${child.name}`)
+      return acc
+    }
+
+    if (t.type === 'frame') {
+      const frame = getSchema(child, t.type, null)
+      frame.elements = [...acc, ...flatPack(child, frame, pages)]
+      pages.push(frame)
+    }
+
+    // ignore notes outside of any frame in figma template
+    if (frame === null) return acc
+
+    if (types.group.includes(t.type))
+      return [...acc, ...flatPack(child, frame, pages)]
+
+    if (types.async.includes(t)) return [...acc, getComponent(child, t, frame)]
+
+    if (types.component.includes(t.type))
+      return [...acc, getComponent(child, t, frame)]
+
+    return acc
+  }, [])
+  return pages
 }
 
 const figmaToJSON = (fileKey, pageKey) => {
@@ -113,10 +106,11 @@ const figmaToJSON = (fileKey, pageKey) => {
     const arr = res.data.document.children
     const page = arr.filter((page) => page.name === pageKey)[0]
 
-    depthFirst(page, function(node) {})
+    writeData(page, 'lib/src/out.json')
+    const pages = flatPack(page, null, [])
+    const template = getSchema(page, page.type, pages)
 
-    templateSchema.figmaPageID = pageKey
-    writeData(templateSchema, OUTPUT_PATH)
+    writeData(template, OUTPUT_PATH)
     console.log(`Templates saved in ${OUTPUT_PATH}`)
   })
 }
