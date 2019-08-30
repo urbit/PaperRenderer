@@ -38,36 +38,43 @@ const writeData = (data, path) => {
   })
 }
 
-// if pass pages into acc buffer overload error
-const flatPack = (child, frame, pages) => {
-  const extracted = child.children.reduce((acc, child) => {
+// recursively get all children from a frame
+const getChildren = (child, frame) => {
+  const children = child.children.reduce((acc, child) => {
     const t = getComponentTagData(child)
 
     if (t.type === null) {
       console.error(`unsupported type for child ${child.name}`)
       return acc
     }
-
-    if (t.type === 'frame') {
-      const frame = getSchema(child, t.type, null)
-      frame.elements = [...acc, ...flatPack(child, frame, pages)]
-      pages.push(frame)
-    }
-
-    // ignore notes outside of any frame in figma template
-    if (frame === null) return acc
+    if (types.async.includes(t.type))
+      return [...acc, getComponent(child, frame)]
 
     if (types.group.includes(t.type))
-      return [...acc, ...flatPack(child, frame, pages)]
+      return [...acc, ...getChildren(child, frame)]
 
-    if (types.async.includes(t)) return [...acc, getComponent(child, frame)]
-
-    if (types.component.includes(t.type))
+    if (types.component.includes(t.type)) {
       return [...acc, getComponent(child, frame)]
+    }
 
     return acc
   }, [])
-  return pages
+  console.log(children)
+  return children
+}
+
+const flatPack = (frames) => {
+  const extracted = frames.map(function(child) {
+    // ignore notes that lie outside of a frame
+    if (child.children !== undefined) {
+      const frame = getSchema(child, 'frame', null)
+
+      frame.elements = getChildren(child, frame)
+
+      ;(child) => frame
+    }
+  })
+  return extracted
 }
 
 const figmaToJSON = (fileKey, pageKey) => {
@@ -78,8 +85,9 @@ const figmaToJSON = (fileKey, pageKey) => {
     const arr = res.data.document.children
     const page = arr.filter((page) => page.name === pageKey)[0]
 
-    writeData(page, 'lib/src/out.json')
-    const pages = flatPack(page, null, [])
+    // convert obj to array
+    const frames = Object.keys(page.children).map((i) => page.children[i])
+    const pages = flatPack(frames, null)
     const template = getSchema(page, page.type, pages)
 
     writeData(template, OUTPUT_PATH)
