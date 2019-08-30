@@ -272,10 +272,10 @@
           "strokeWeight": 1
         },
         {
-          "type": "patq",
-          "draw": "patq",
-          "path": "ticket",
-          "data": null,
+          "type": "text",
+          "draw": "wrappedText",
+          "path": null,
+          "data": ".~dottem-migmeb-ridlur-ropdyl",
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 500,
@@ -869,10 +869,10 @@
           "strokeWeight": 1
         },
         {
-          "type": "patq",
-          "draw": "patq",
-          "path": "ticket",
-          "data": null,
+          "type": "text",
+          "draw": "wrappedText",
+          "path": null,
+          "data": ".~dottem-migmeb-ridlur-ropdyl",
           "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 500,
@@ -1332,8 +1332,8 @@
           "strokeWeight": 1
         },
         {
-          "type": "text",
-          "draw": "wrappedText",
+          "type": "shard",
+          "draw": "shard",
           "path": "shards.2",
           "data": null,
           "fontFamily": "Source Code Pro",
@@ -1901,8 +1901,8 @@
           "strokeWeight": 1
         },
         {
-          "type": "text",
-          "draw": "wrappedText",
+          "type": "shard",
+          "draw": "shard",
           "path": "shards.0",
           "data": null,
           "fontFamily": "Source Code Pro",
@@ -2484,8 +2484,8 @@
           "strokeWeight": 1
         },
         {
-          "type": "text",
-          "draw": "wrappedText",
+          "type": "shard",
+          "draw": "shard",
           "path": "shards.1",
           "data": null,
           "fontFamily": "Source Code Pro",

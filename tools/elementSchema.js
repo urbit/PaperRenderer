@@ -2,14 +2,14 @@ const types = {
   figma: [
     'qr',
     'rect',
-    'patq',
+    'shard',
     'text',
     'sigil',
     'img',
     'ethereumAddress',
     'line',
   ],
-  text: ['text', 'patq', 'ethereumAddress'],
+  text: ['text', 'shard', 'ethereumAddress'],
   // types whose data is retrieved asynchronously (we do not import the figma data)
   async: ['sigil', 'qr'],
   // these Figma types house children elements, so we need to transverse all children nodes when we find a parentType
@@ -115,10 +115,10 @@ const text = (child, page) => {
   }
 }
 
-const patq = (child, page) => {
+const shard = (child, page) => {
   return {
-    type: 'patq',
-    draw: 'patq',
+    type: 'shard',
+    draw: 'shard',
     path: getPath(child),
     data: null,
     fontFamily: child.style.fontFamily,
@@ -204,7 +204,7 @@ const components = {
   qr: (child, page) => qr(child, page),
   templateText: (child, page) => templateText(child, page),
   rect: (child, page) => rect(child, page),
-  patq: (child, page) => patq(child, page),
+  shard: (child, page) => shard(child, page),
   text: (child, page) => text(child, page),
   sigil: (child, page) => sigil(child, page),
   img: (child, page) => img(child, page),
