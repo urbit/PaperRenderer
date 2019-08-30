@@ -59,7 +59,7 @@ const getChildren = (child, frame) => {
 
     return acc
   }, [])
-  console.log(children)
+  // console.log(children)
   return children
 }
 
@@ -71,9 +71,10 @@ const flatPack = (frames) => {
 
       frame.elements = getChildren(child, frame)
 
-      ;(child) => frame
+      return frame
     }
   })
+  // console.log(extracted)
   return extracted
 }
 
