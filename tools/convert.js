@@ -43,23 +43,19 @@ const getChildren = (child, frame) => {
   const children = child.children.reduce((acc, child) => {
     const t = getComponentTagData(child)
 
-    if (t.type === null) {
-      console.error(`unsupported type for child ${child.name}`)
-      return acc
-    }
-    if (types.async.includes(t.type))
-      return [...acc, getComponent(child, frame)]
+    // if (t.type === null) {
+    //   console.error(`unsupported type for child ${child.name}`)
+    //   return acc
+    // }
 
-    if (types.group.includes(t.type))
-      return [...acc, ...getChildren(child, frame)]
+    if (types.async.includes(t.type)) return [...acc, getChildren(child, frame)]
 
-    if (types.component.includes(t.type)) {
-      return [...acc, getComponent(child, frame)]
-    }
+    if (types.group.includes(t.type)) return [...acc, getChildren(child, frame)]
+
+    if (types.component.includes(t.type)) return acc.concat(child)
 
     return acc
   }, [])
-  // console.log(children)
   return children
 }
 
@@ -74,7 +70,6 @@ const flatPack = (frames) => {
       return frame
     }
   })
-  // console.log(extracted)
   return extracted
 }
 
