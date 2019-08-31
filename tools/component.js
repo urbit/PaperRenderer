@@ -192,7 +192,6 @@ const wrapAddrSplitFour = (child, frame) => {
 }
 
 const rect = (child, frame) => {
-  console.log(frame)
   return {
     type: 'rect',
     draw: 'rect',
@@ -240,7 +239,6 @@ const components = {
 }
 
 const getComponent = (child, frame) => {
-  // console.log(frame)
   const type = getComponentTagData(child).type
   const component = components[type]
   if (component === undefined) {

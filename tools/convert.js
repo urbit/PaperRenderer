@@ -46,11 +46,11 @@ const getChildren = (child, frame) => {
     if (types.component.includes(t.type))
       return [...acc, getComponent(child, frame)]
 
-    if (types.group.includes(t.type)) return [...acc, getChildren(child, frame)]
+    if (types.group.includes(t.type))
+      return [...acc, ...getChildren(child, frame)]
 
     return acc
   }, [])
-  writeData(children, 'children.json')
   return children
 }
 
