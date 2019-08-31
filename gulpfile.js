@@ -117,18 +117,18 @@ gulp.task('js-imports-preview', function(cb) {
       rollup(
         {
           plugins: [
+            babel({
+              // babelrc: false,
+              // presets: [
+              //   ['@babel/preset-env', { modules: false }],
+              // ],
+            }),
             commonjs({
               namedExports: {
                 'node_modules/react/index.js': ['Component'],
                 'node_modules/lodash/lodash.js': ['get'],
                 'node_modules/urbit-ob/dist/index.js': ['tierOfadd', 'patp'],
               },
-            }),
-            babel({
-              // babelrc: false,
-              // presets: [
-              //   ['@babel/preset-env', { modules: false }],
-              // ],
             }),
             replace({
               'process.env.NODE_ENV': JSON.stringify('development'),
