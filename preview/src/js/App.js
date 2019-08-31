@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import wallets from './sampleWallets/sampleWallets.json'
+import wallets from './sampleWallets/sampleWallet0.json'
 import templates from '../../../lib/src/templates.json'
 
-import PaperCollateralRenderer from '../../../lib/dist/index.js'
+import PaperRenderer from '../../../lib/dist/index.js'
 
 class App extends Component {
   constructor(props) {
@@ -13,8 +13,8 @@ class App extends Component {
   }
 
   handleOutput = (data) => {
-    this.setState({ out: data })
     console.log('Out: ', data)
+    this.setState({ out: data })
   }
 
   render() {
@@ -43,12 +43,14 @@ class App extends Component {
         <p>Expected Fonts</p>
         <pre>{JSON.stringify(fontCount, null, ' ')}</pre>
         {
-          <PaperCollateralRenderer
+          <PaperRenderer
+            show={false}
             debug={false}
-            wallets={[wallets[0]]}
+            wallets={wallets}
             className={''}
+            verbose={false}
+            output={'uri'} // uri || png
             callback={(data) => this.handleOutput(data)}
-            // mode={'REGISTRATION'}
           />
         }
         {this.state.out.map((wallet) => {
@@ -60,7 +62,7 @@ class App extends Component {
                   maxWidth: '550px',
                   height: 'auto',
                 }}
-                src={page.uri}
+                src={page.image}
               />
             )
           })

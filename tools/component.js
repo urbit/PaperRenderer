@@ -1,20 +1,19 @@
 const types = {
-  component: [
+  figma: [
     'qr',
     'rect',
-    'patq',
+    'shard',
     'text',
     'sigil',
     'img',
-    'wrapAddrSplitFour',
-    'addrSplitFour',
+    'ethereumAddress',
     'line',
   ],
-  text: ['text', 'patq', 'wrapAddrSplitFour', 'addrSplitFour'],
+  text: ['text', 'shard', 'ethereumAddress'],
   // types whose data is retrieved asynchronously (we do not import the figma data)
   async: ['sigil', 'qr'],
   // these Figma types house children elements, so we need to transverse all children nodes when we find a parentType
-  group: ['group', 'instance', 'frame'],
+  singleParent: ['group', 'instance', 'frame'],
 }
 
 // #text@meta.dateCreated --> ["text", "meta.dateCreated"]
@@ -140,10 +139,10 @@ const text = (child, frame) => {
   }
 }
 
-const patq = (child, frame) => {
+const shard = (child, frame) => {
   return {
-    type: 'patq',
-    draw: 'patq',
+    type: 'shard',
+    draw: 'shard',
     path: getComponentTagData(child).path,
     data: null,
     fontFamily: child.style.fontFamily,
@@ -152,15 +151,15 @@ const patq = (child, frame) => {
     fontColor: rgba(child.fills),
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
-    x: child.absoluteBoundingBox.x - frame.originX,
-    y: child.absoluteBoundingBox.y - frame.originY,
+    x: child.absoluteBoundingBox.x - page.originX,
+    y: child.absoluteBoundingBox.y - page.originY,
   }
 }
 
-const addrSplitFour = (child, frame) => {
+const ethereumAddress = (child, frame) => {
   return {
-    type: 'addrSplitFour',
-    draw: 'ethereumAddressLong',
+    type: 'ethereumAddress',
+    draw: 'ethereumAddress',
     path: getComponentTagData(child).path,
     data: null,
     fontWeight: child.style.fontWeight,
@@ -168,34 +167,34 @@ const addrSplitFour = (child, frame) => {
     fontSize: child.style.fontSize,
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
-    x: child.absoluteBoundingBox.x - frame.originX,
-    y: child.absoluteBoundingBox.y - frame.originY,
+    x: child.absoluteBoundingBox.x - page.originX,
+    y: child.absoluteBoundingBox.y - page.originY,
     fontColor: rgba(child.fills),
   }
 }
 
-const wrapAddrSplitFour = (child, frame) => {
-  return {
-    type: 'wrapAddrSplitFour',
-    draw: 'ethereumAddressCompact',
-    path: getComponentTagData(child).path,
-    data: null,
-    fontWeight: child.style.fontWeight,
-    fontFamily: child.style.fontFamily,
-    fontSize: child.style.fontSize,
-    maxWidth: child.absoluteBoundingBox.width,
-    lineHeightPx: child.style.lineHeightPx,
-    x: child.absoluteBoundingBox.x - frame.originX,
-    y: child.absoluteBoundingBox.y - frame.originY,
-    fontColor: rgba(child.fills),
-  }
-}
+// const wrapAddrSplitFour = (child, frame) => {
+//   return {
+//     type: 'wrapAddrSplitFour',
+//     draw: 'ethereumAddressCompact',
+//     path: getComponentTagData(child).path,
+//     data: null,
+//     fontWeight: child.style.fontWeight,
+//     fontFamily: child.style.fontFamily,
+//     fontSize: child.style.fontSize,
+//     maxWidth: child.absoluteBoundingBox.width,
+//     lineHeightPx: child.style.lineHeightPx,
+//     x: child.absoluteBoundingBox.x - frame.originX,
+//     y: child.absoluteBoundingBox.y - frame.originY,
+//     fontColor: rgba(child.fills),
+//   }
+// }
 
 const rect = (child, frame) => {
   return {
     type: 'rect',
     draw: 'rect',
-    path: getComponentTagData(child).path,
+    path: null,
     data: null,
     cornerRadius: child.cornerRadius,
     dashes: child.strokeDashes,
@@ -213,7 +212,7 @@ const line = (child, frame) => {
   return {
     type: 'line',
     draw: 'line',
-    path: getComponentTagData(child).path,
+    path: null,
     data: null,
     dashes: child.strokeDashes,
     x: child.absoluteBoundingBox.x - frame.originX,
@@ -229,12 +228,12 @@ const components = {
   qr: (child, frame) => qr(child, frame),
   templateText: (child, frame) => templateText(child, frame),
   rect: (child, frame) => rect(child, frame),
-  patq: (child, frame) => patq(child, frame),
+  shard: (child, frame) => shard(child, frame),
   text: (child, frame) => text(child, frame),
   sigil: (child, frame) => sigil(child, frame),
   img: (child, frame) => img(child, frame),
-  wrapAddrSplitFour: (child, frame) => wrapAddrSplitFour(child, frame),
-  addrSplitFour: (child, frame) => addrSplitFour(child, frame),
+  // wrapAddrSplitFour: (child, frame) => wrapAddrSplitFour(child, frame),
+  ethereumAddress: (child, frame) => ethereumAddress(child, frame),
   line: (child, tframe) => line(child, frame),
 }
 
