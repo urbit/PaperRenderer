@@ -6,30 +6,32 @@ const templates = JSON.parse(
 )
 
 test('Has all planet templates', () => {
-  const count = templates.pages.filter((page) => page.classOf === 'planet')
+  const count = templates.frames.filter((frame) => frame.classOf === 'planet')
     .length
   expect(count).toBe(3)
 })
 
 test('Has all star templates', () => {
-  const count = templates.pages.filter((page) => page.classOf === 'star').length
+  const count = templates.frames.filter((frame) => frame.classOf === 'star')
+    .length
   expect(count).toBe(4)
 })
 
 test('Has all galaxy templates', () => {
-  const count = templates.pages.filter((page) => page.classOf === 'galaxy')
+  const count = templates.frames.filter((frame) => frame.classOf === 'galaxy')
     .length
   expect(count).toBe(7)
 })
 
 // test('Has multipass template', () => {
-//   const count = templates.pages.filter((page) => page.classOf === 'all').length
+//   const count = templates.frames.filter((frame) => frame.classOf === 'all').length
 //   expect(count).toBe(1)
 // })
 
 test('Is shaped as expected', () => {
-  expect(typeof templates.figmaPageID).toBe('string')
-  expect(Array.isArray(templates.pages)).toBe(true)
+  expect(typeof templates.figmaFrameID).toBe('string')
+
+  expect(Array.isArray(templates.frames)).toBe(true)
 })
 
 test('No invalid paths in templates', () => {
@@ -90,8 +92,8 @@ test('No invalid paths in templates', () => {
 
   const validPaths = [...knownExceptions, ...walletPaths]
 
-  const existingPaths = templates.pages.reduce((acc, page) => {
-    const elemPaths = page.elements.map((elem) => elem.path)
+  const existingPaths = templates.frames.reduce((acc, frame) => {
+    const elemPaths = frame.elements.map((elem) => elem.path)
     acc = acc.concat(elemPaths)
     return acc
   }, [])
@@ -104,9 +106,3 @@ test('No invalid paths in templates', () => {
 
   expect(violations.length).toBe(0)
 })
-
-// test('No invalid component pointers in templates', () => {
-//   const validComponents = []
-//
-//
-// })
