@@ -55,9 +55,9 @@
         "version": "0.17.0"
       },
       "spec": "UP8",
-      "ship": 238947,
-      "patp": "~palsum-donmes",
-      "tier": "planet",
+      "ship": 38947,
+      "patp": "~falsep",
+      "tier": "star",
       "derivationPath": "m/44'/60'/0'/0/0",
       "passphrase": null
     },
@@ -65,34 +65,43 @@
     "shards": ["~marbud-tidsev-litsut-hidfep-marbud-tidsev-litsut-hidfep"],
     "ownership": {
       "type": "ownership",
-      "seed": "impact believe pool humor purse acoustic vessel ginger moon merge whisper obey enact enact tone oblige culture ivory width fame squeeze slogan tongue subject",
+      "seed": "cross reward media prevent guard extra cricket pride guess equal faint midnight surprise panda rent waste regular credit gentle brick wasp wrist sister lock",
       "keys": {
-        "public": "02d62cb0cd8fc57efe358829f3652169cacaa4f8df417f76a1df323ff2d9b9e88f",
-        "private": "05260d8354d80bf29f820a58a298a324f38e75c4a4613d69efd5116d4e45206d",
-        "chain": "fb762c6f9410fd1b1f8a1d7c49dc5b3a8a637b1a4c74c3969ba0ee8f0df3be6d",
-        "address": "0x5Db55313ce97ee5106e420795c0f0a6Db730Eb0d"
+        "public": "03c1ccf9c692d20f8352feebd4bd5bfb102ddd5979ff50fa180cea433632f0a808",
+        "private": "2081c53924103e57f7983831e4b41c3eae08ee59fc1402822bf03d50b3188cf1",
+        "chain": "6b1a87c32bb907e952efbe117dd0f91a64a5ef0224b943115131bd500fd1cc8e",
+        "address": "0x1E9cE0Edf51BC6e2F74F1DC63813f335e78a6D1A"
       }
     },
     "transfer": {
       "type": "transfer",
-      "seed": "more milk view push nurse outer alarm opinion giggle dutch public average plastic episode spoil possible hint invest fee super brother peanut fold salad",
+      "seed": "guilt key profit seed walnut next mango meat annual pulse upset picture alien say avocado cave echo power allow ugly off boost task toddler",
       "keys": {
-        "public": "02bf8dcbeaf5607571bc53f91e4e0143a44f338c99428b4f3234c3f8fc80f2efd6",
-        "private": "589f18b7e635135c34cc3d8a3c7f1e1b19c38f2015bfbfb0516b86fdfdfc3322",
-        "chain": "f31bf8b973055acdb485554d3545b6f5d59ed3079e3323819aeb76adbc573ae5",
-        "address": "0xD350Ff0F0dbE748711DFAB9C3F722E247ffC2b86"
+        "public": "0399d1ab63944ba26924138d796dc237c8ffe3969f80a70da6aeece8760ea69236",
+        "private": "8e25d4ad8fcf0c86f2de7c60d88b1b67d55a50804ce2097f1fbebeb54056c8f9",
+        "chain": "9498521c142126e562be913435d6569d26e38fb09692a6ce4f96dbcf813739f5",
+        "address": "0xE18c86117F73e6C542ffbce03143C84A8b9f693C"
       }
     },
-    "spawn": {},
+    "spawn": {
+      "type": "spawn",
+      "seed": "shrimp tongue ride medal sustain apart maximum one detect minor wear cube riot orange toward upon tennis toward volume start turn auction bacon top",
+      "keys": {
+        "public": "020c9f346e833e70f923bb82fe63c6eb1854b6ef11dadb9551cb5f038cdeb25409",
+        "private": "f6535c95798f896c4706ab447c3a3f7278c59eff41992e37e77aa130534ec17b",
+        "chain": "7fc16f2b111698c1cd00ed49e1671a2309783e9c63be94afec8a3db89b48af71",
+        "address": "0xffB59B8aD37c682e2B24cf6F228D5F3d6e46E3C1"
+      }
+    },
     "voting": {},
     "management": {
       "type": "management",
-      "seed": "wide trade sniff knife basic fantasy shell cool amount defense cushion distance stand elephant fossil produce wall rookie absent brush innocent bread special heavy",
+      "seed": "know scene update rice february final curve huge question soda surface prize cute magic business picture empty copper develop small thing lecture song cabin",
       "keys": {
-        "public": "02078bfe29d6bbccce2628dd43f842f09d05bca18d5dd0c3962e68b43d5a90660d",
-        "private": "5fe4011af52fd138731478351972229b4c66f5c4f8d8241854e6790c51f1a3f8",
-        "chain": "2782230b75d266745d844bcd57eaf885616528d81c603b68cef7544b046acd2d",
-        "address": "0x5309beC0D0F7a3C8e755159D54c75747Efe7b3B5"
+        "public": "025ba988c18841d2f9c889af9e73aa412977f62a38f8f526701c9c99336114136a",
+        "private": "0268c329ff8ef724f4661c3f902443e46ba9cdc5989f22a8e2dde76b2ea21f0e",
+        "chain": "6b718390d115dc57fd2fec9e8f2dbe29096fb1a1f963ffd724c1e1d3f1cb4b08",
+        "address": "0x6AE108AB8126D9c812ece96402d34045080C48CA"
       }
     },
     "network": {}
