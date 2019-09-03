@@ -29,7 +29,8 @@ test('Has all galaxy templates', () => {
 // })
 
 test('Is shaped as expected', () => {
-  expect(typeof templates.figmaPageID).toBe('string')
+  expect(typeof templates.figmaFrameID).toBe('string')
+
   expect(Array.isArray(templates.frames)).toBe(true)
 })
 

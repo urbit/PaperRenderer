@@ -1,5 +1,5 @@
 const types = {
-  figma: [
+  component: [
     'qr',
     'rect',
     'shard',
@@ -13,7 +13,17 @@ const types = {
   // types whose data is retrieved asynchronously (we do not import the figma data)
   async: ['sigil', 'qr'],
   // these Figma types house children elements, so we need to transverse all children nodes when we find a parentType
-  singleParent: ['group', 'instance', 'frame'],
+  group: ['group', 'instance', 'frame'],
+}
+
+const isType = (type) => {
+  if (
+    types.component.includes(type) ||
+    types.async.includes(type) ||
+    types.group.includes(type)
+  )
+    return true
+  return false
 }
 
 // #text@meta.dateCreated --> ["text", "meta.dateCreated"]
@@ -69,16 +79,6 @@ const rgba = (fills) => {
   const blue = Math.floor(color.b * 255)
   const alpha = Math.floor(color.a)
   return `rgba(${red},${green},${blue},${alpha})`
-}
-
-const isType = (type) => {
-  if (
-    types.component.includes(type) ||
-    types.async.includes(type) ||
-    types.group.includes(type)
-  )
-    return true
-  return false
 }
 
 const qr = (child, frame) => {
@@ -151,8 +151,8 @@ const shard = (child, frame) => {
     fontColor: rgba(child.fills),
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
-    x: child.absoluteBoundingBox.x - page.originX,
-    y: child.absoluteBoundingBox.y - page.originY,
+    x: child.absoluteBoundingBox.x - frame.originX,
+    y: child.absoluteBoundingBox.y - frame.originY,
   }
 }
 
@@ -167,8 +167,8 @@ const ethereumAddress = (child, frame) => {
     fontSize: child.style.fontSize,
     maxWidth: child.absoluteBoundingBox.width,
     lineHeightPx: child.style.lineHeightPx,
-    x: child.absoluteBoundingBox.x - page.originX,
-    y: child.absoluteBoundingBox.y - page.originY,
+    x: child.absoluteBoundingBox.x - frame.originX,
+    y: child.absoluteBoundingBox.y - frame.originY,
     fontColor: rgba(child.fills),
   }
 }
