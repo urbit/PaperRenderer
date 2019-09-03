@@ -35,15 +35,18 @@ const createSampleWallets = async (
     const path = `${outputPath}/sampleWallet${i}.json`
 
     const planetWallet = await kg.generateWallet({
-      ship: randNumBit(32),
+      // ship: randNumBit(32),
+      ship: 12412515,
       ticket: '~marbud-tidsev-litsut-hidfep',
     })
     const starWallet = await kg.generateWallet({
-      ship: randNumBit(16),
-      ticket: '~marbud-tidsev-litsut-hidfep',
+      // ship: randNumBit(16),
+      ship: 238947,
+      ticket: '~marbud-tidsev-litsut-hidfep-marbud-tidsev-litsut-hidfep',
     })
     const galaxyWallet = await kg.generateWallet({
-      ship: randNumBit(8),
+      // ship: randNumBit(8),
+      ship: 19,
       ticket:
         '~wacfus-dabpex-danted-mosfep-pasrud-lavmer-nodtex-taslus-pactyp-milpub-pildeg-fornev-ralmed-dinfeb-fopbyr-sanbet-sovmyl-dozsut-mogsyx-mapwyc-sorrup-ricnec-marnys-lignex',
     })
