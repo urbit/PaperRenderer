@@ -188,6 +188,8 @@ const ethereumAddress = (child, frame) => {
 // }
 
 const rect = (child, frame) => {
+  // if(frame.originX === undefined)
+  //   console.log(frame)
   return {
     type: 'rect',
     draw: 'rect',
@@ -231,7 +233,7 @@ const components = {
   img: (child, frame) => img(child, frame),
   // wrapAddrSplitFour: (child, frame) => wrapAddrSplitFour(child, frame),
   ethereumAddress: (child, frame) => ethereumAddress(child, frame),
-  line: (child, tframe) => line(child, frame),
+  line: (child, frame) => line(child, frame),
 }
 
 const getComponent = (child, frame) => {
