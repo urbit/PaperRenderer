@@ -41,7 +41,7 @@ const createSampleWallets = async (
     })
     const starWallet = await kg.generateWallet({
       // ship: randNumBit(16),
-      ship: 238947,
+      ship: 38947,
       ticket: '~marbud-tidsev-litsut-hidfep-marbud-tidsev-litsut-hidfep',
     })
     const galaxyWallet = await kg.generateWallet({
