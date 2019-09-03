@@ -124,10 +124,7 @@ const text = (child, frame) => {
     type: 'text',
     draw: 'wrappedText',
     path: getComponentTagData(child).path,
-    data:
-      getComponentTagData(child).path === null
-        ? child.characters
-        : getComponentTagData(child).path,
+    data: getComponentTagData(child).path === null ? child.characters : null,
     fontFamily: child.style.fontFamily,
     fontSize: child.style.fontSize,
     fontWeight: child.style.fontWeight,

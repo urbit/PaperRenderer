@@ -27,7 +27,7 @@ class App extends Component {
   }
 
   render() {
-    const fontCount = templates.pages.reduce((acc, page) => {
+    const fontCount = templates.frames.reduce((acc, page) => {
       page.elements.forEach((elem) => {
         const key = `${elem.fontFamily}-${elem.fontWeight}`
         if (acc[key] === undefined) {
@@ -71,7 +71,7 @@ class App extends Component {
         }
 
         {this.state.out.map((duo) => {
-          return duo.pages.map((page, idx) => {
+          return duo.frames.map((page, idx) => {
             return (
               <img
                 onClick={() =>
