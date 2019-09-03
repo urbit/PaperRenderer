@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import archiver from 'archiver'
 import wallets from './sampleWallets/sampleWallet0.json'
 import templates from '../../../lib/src/templates.json'
-
-console.log(archiver)
+import FileSaver from 'file-saver'
 
 import PaperRenderer from '../../../lib/dist/index.js'
 
@@ -20,76 +18,12 @@ class App extends Component {
     console.log('Out: ', data)
   }
 
+  handleImgOnClick = (data, fileName) => {
+    FileSaver.saveAs(data, fileName)
+  }
+
   handleDownload = () => {
-    const duos = this.state.out
-
-    // const files = [
-    //   ['some-folder/cat.mp4', 'https://d8d913s460fub.cloudfront.net/videoserver/cat-test-video-320x240.mp4'],
-    //   ['some-folder/status.txt', 'https://httpbin.org/get'],
-    //   ['some-folder/teapot.txt', 'https://httpbin.org/status/418']
-    // ].values()
-    //
-    // const files = duos.reduce((acc, duo) => {
-    //
-    //   const assets = duo.pages.map(page => {
-    //     const fileName = `${duo.wallet.meta.patp}-${page.givenName}.png`
-    //     return [fileName, page.image]
-    //   })
-    //
-    //   acc = [...acc, assets]
-    //   return acc
-    //
-    // }, [])
-    // // Getting a iterator `.values()` is good for task where you
-    // // have to iterate over values but can't use a for-loop, due to async nature
-    //
-    // new ZIP({
-    //   // called each time when stream-zip has finish a entry
-    //   pull (ctrl) {
-    //     const entry = files.next()
-    //     if (entry.done) {
-    //       ctrl.close()
-    //     } else {
-    //       const [name, url] = entry.value
-    //
-    //       return fetch(url).then(res => {
-    //         ctrl.enqueue({
-    //           name,
-    //           stream: () => res.body
-    //         })
-    //       })
-    //     }
-    //   }
-    // }).pipeTo(streamSaver.createWriteStream('wallets.zip'))
-
-    // const duos = this.state.out
-    //
-    // duos.forEach((duo) => {
-    //
-    //   const todl = duo.pages.map((page) => {
-    //
-    //     const fileName = `${duo.wallet.meta.patp}-${page.givenName}.png`
-    //
-    //     return [page.image, fileName, 'image/png']
-    //
-    //     // download(page.image, fileName, 'image/png')
-    //
-    //
-    //     // const fileStream = streamSaver.createWriteStream(fileName, {
-    //     //   size: 22, // (optional) Will show progress
-    //     //   writableStrategy: undefined, // (optional)
-    //     //   readableStrategy: undefined  // (optional)
-    //     // })
-    //     //
-    //     // new Response(page.image).body
-    //     //   .pipeTo(fileStream)
-    //     //   .then(success, error)
-    //
-    //   })
-    //
-    //   download(todl)
-
-    // })
+    console.log('handleDownload does not work')
   }
 
   render() {
@@ -136,10 +70,16 @@ class App extends Component {
           />
         }
 
-        {this.state.out.map((wallet) => {
-          return wallet.pages.map((page, idx) => {
+        {this.state.out.map((duo) => {
+          return duo.pages.map((page, idx) => {
             return (
               <img
+                onClick={() =>
+                  this.handleImgOnClick(
+                    page.image,
+                    `${duo.wallet.meta.patp}-${page.givenName}.png`
+                  )
+                }
                 key={`page-${idx}`}
                 style={{
                   maxWidth: '550px',
