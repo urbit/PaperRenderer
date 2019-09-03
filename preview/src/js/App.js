@@ -63,7 +63,7 @@ class App extends Component {
         </div>
         {
           <PaperRenderer
-            debug={false}
+            debug={true}
             wallets={wallets}
             output="uri"
             callback={(data) => this.handleOutput(data)}
@@ -82,7 +82,7 @@ class App extends Component {
                 }
                 key={`page-${idx}`}
                 style={{
-                  maxWidth: '550px',
+                  maxWidth: '850px',
                   height: 'auto',
                 }}
                 src={page.image}
