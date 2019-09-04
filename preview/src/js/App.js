@@ -63,7 +63,7 @@ class App extends Component {
         </div>
         {
           <PaperRenderer
-            debug={true}
+            debug={false}
             wallets={wallets}
             output="uri"
             callback={(data) => this.handleOutput(data)}
