@@ -76,7 +76,7 @@
   },
   "scripts": {
     "convert": "node tools/convert.js",
-    "genWallet": "node tools/genWallet.js",
+    "gen": "node tools/genWallet.js",
     "start": "gulp",
     "build": "gulp bundle-prod",
     "test": "jest"
