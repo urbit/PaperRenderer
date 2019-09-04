@@ -209,7 +209,7 @@
           "maxWidth": 168,
           "lineHeightPx": 16,
           "x": 206,
-          "y": 112
+          "y": 116
         },
         {
           "type": "text",
@@ -249,7 +249,7 @@
           "maxWidth": 135,
           "lineHeightPx": 16,
           "x": 426,
-          "y": 112
+          "y": 116
         },
         {
           "type": "text",
@@ -314,7 +314,7 @@
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(255,255,255,1)",
-          "maxWidth": 352.31787109375,
+          "maxWidth": 352,
           "lineHeightPx": 16,
           "x": 96,
           "y": 272
@@ -330,7 +330,7 @@
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 294.5,
+          "y": 292,
           "fontColor": "rgba(255,255,255,1)"
         },
         {
@@ -394,7 +394,7 @@
           "draw": "wrappedText",
           "path": "meta.azimuth.url",
           "data": null,
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -506,7 +506,7 @@
           "draw": "wrappedText",
           "path": null,
           "data": "support@urbit.org",
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -520,7 +520,7 @@
           "draw": "wrappedText",
           "path": null,
           "data": "urbit.org/docs",
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -575,20 +575,6 @@
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "Very Secret",
-          "fontFamily": "Inter",
-          "fontSize": 18,
-          "fontWeight": 400,
-          "fontColor": "rgba(127,127,127,1)",
-          "maxWidth": 102,
-          "lineHeightPx": 18,
-          "x": 414,
-          "y": 32
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": null,
           "data": "If you lose this master ticket, you will have no way to recover this wallet or it’s proxies.",
           "fontFamily": "Inter",
           "fontSize": 12,
@@ -598,6 +584,20 @@
           "lineHeightPx": 16,
           "x": 96,
           "y": 620
+        },
+        {
+          "type": "text",
+          "draw": "wrappedText",
+          "path": null,
+          "data": "Secret",
+          "fontFamily": "Inter",
+          "fontSize": 18,
+          "fontWeight": 400,
+          "fontColor": "rgba(127,127,127,1)",
+          "maxWidth": 58,
+          "lineHeightPx": 18,
+          "x": 458,
+          "y": 32
         }
       ]
     },
@@ -807,7 +807,7 @@
           "maxWidth": 168,
           "lineHeightPx": 16,
           "x": 206,
-          "y": 112
+          "y": 116
         },
         {
           "type": "text",
@@ -847,7 +847,7 @@
           "maxWidth": 135,
           "lineHeightPx": 16,
           "x": 426,
-          "y": 112
+          "y": 116
         },
         {
           "type": "text",
@@ -912,7 +912,7 @@
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(255,255,255,1)",
-          "maxWidth": 352.31787109375,
+          "maxWidth": 352,
           "lineHeightPx": 16,
           "x": 96,
           "y": 272
@@ -928,7 +928,7 @@
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 294.5,
+          "y": 292,
           "fontColor": "rgba(255,255,255,1)"
         },
         {
@@ -992,7 +992,7 @@
           "draw": "wrappedText",
           "path": "meta.azimuth.url",
           "data": null,
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -1104,7 +1104,7 @@
           "draw": "wrappedText",
           "path": null,
           "data": "support@urbit.org",
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -1118,7 +1118,7 @@
           "draw": "wrappedText",
           "path": null,
           "data": "urbit.org/docs",
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -1271,7 +1271,7 @@
           "maxWidth": 168,
           "lineHeightPx": 16,
           "x": 206,
-          "y": 112
+          "y": 116
         },
         {
           "type": "text",
@@ -1311,7 +1311,7 @@
           "maxWidth": 135,
           "lineHeightPx": 16,
           "x": 426,
-          "y": 112
+          "y": 116
         },
         {
           "type": "text",
@@ -1376,7 +1376,7 @@
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(255,255,255,1)",
-          "maxWidth": 352.31787109375,
+          "maxWidth": 352,
           "lineHeightPx": 16,
           "x": 96,
           "y": 208
@@ -1392,7 +1392,7 @@
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 230.5,
+          "y": 228,
           "fontColor": "rgba(255,255,255,1)"
         },
         {
@@ -1576,7 +1576,7 @@
           "draw": "wrappedText",
           "path": "meta.azimuth.url",
           "data": null,
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -1631,7 +1631,7 @@
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "This is a secret document (cryptographic property). If someone else obtains this information, they may perform unauthorized actions on your behalf.  Please store this document and/or information in a private, secure place you won’t forget.",
+          "data": "This is a high value, secret document (cryptographic property).  If someone else obtains this information, they may perform unauthorized actions on your behalf. Please securely print and/or lock this document in a private, trusted place you won’t forget.",
           "fontFamily": "Inter",
           "fontSize": 12,
           "fontWeight": 400,
@@ -1645,7 +1645,7 @@
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "If you lose this seed, you can regenerate it with your master ticket.",
+          "data": "If you lose this shard, you can access your wallet with the other two shards.",
           "fontFamily": "Inter",
           "fontSize": 12,
           "fontWeight": 400,
@@ -1667,7 +1667,7 @@
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 608
+          "y": 616
         },
         {
           "type": "text",
@@ -1681,7 +1681,7 @@
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 632
+          "y": 640
         },
         {
           "type": "text",
@@ -1695,35 +1695,35 @@
           "maxWidth": 154,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 656
+          "y": 664
         },
         {
           "type": "text",
           "draw": "wrappedText",
           "path": null,
           "data": "support@urbit.org",
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
           "maxWidth": 252,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 676
+          "y": 684
         },
         {
           "type": "text",
           "draw": "wrappedText",
           "path": null,
           "data": "urbit.org/docs",
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
           "maxWidth": 268,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 656
+          "y": 664
         },
         {
           "type": "text",
@@ -1737,7 +1737,7 @@
           "maxWidth": 12,
           "lineHeightPx": 16,
           "x": 258,
-          "y": 656
+          "y": 664
         },
         {
           "type": "text",
@@ -1751,7 +1751,7 @@
           "maxWidth": 12,
           "lineHeightPx": 16,
           "x": 258,
-          "y": 676
+          "y": 684
         },
         {
           "type": "text",
@@ -1765,7 +1765,7 @@
           "maxWidth": 154,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 676
+          "y": 684
         }
       ]
     },
@@ -1841,7 +1841,7 @@
           "maxWidth": 168,
           "lineHeightPx": 16,
           "x": 206,
-          "y": 112
+          "y": 116
         },
         {
           "type": "text",
@@ -1881,7 +1881,7 @@
           "maxWidth": 135,
           "lineHeightPx": 16,
           "x": 426,
-          "y": 112
+          "y": 116
         },
         {
           "type": "text",
@@ -1946,7 +1946,7 @@
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(255,255,255,1)",
-          "maxWidth": 352.31787109375,
+          "maxWidth": 352,
           "lineHeightPx": 16,
           "x": 96,
           "y": 208
@@ -1962,7 +1962,7 @@
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 230.5,
+          "y": 228,
           "fontColor": "rgba(255,255,255,1)"
         },
         {
@@ -2146,7 +2146,7 @@
           "draw": "wrappedText",
           "path": "meta.azimuth.url",
           "data": null,
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -2201,7 +2201,7 @@
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "This is a secret document (cryptographic property). If someone else obtains this information, they may perform unauthorized actions on your behalf.  Please store this document and/or information in a private, secure place you won’t forget.",
+          "data": "This is a high value, secret document (cryptographic property).  If someone else obtains this information, they may perform unauthorized actions on your behalf. Please securely print and/or lock this document in a private, trusted place you won’t forget.",
           "fontFamily": "Inter",
           "fontSize": 12,
           "fontWeight": 400,
@@ -2215,7 +2215,7 @@
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "If you lose this seed, you can regenerate it with your master ticket.",
+          "data": "If you lose this shard, you can access your wallet with the other two shards.",
           "fontFamily": "Inter",
           "fontSize": 12,
           "fontWeight": 400,
@@ -2237,7 +2237,7 @@
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 608
+          "y": 616
         },
         {
           "type": "text",
@@ -2251,7 +2251,7 @@
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 632
+          "y": 640
         },
         {
           "type": "text",
@@ -2265,35 +2265,35 @@
           "maxWidth": 154,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 656
+          "y": 664
         },
         {
           "type": "text",
           "draw": "wrappedText",
           "path": null,
           "data": "support@urbit.org",
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
           "maxWidth": 252,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 676
+          "y": 684
         },
         {
           "type": "text",
           "draw": "wrappedText",
           "path": null,
           "data": "urbit.org/docs",
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
           "maxWidth": 268,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 656
+          "y": 664
         },
         {
           "type": "text",
@@ -2307,7 +2307,7 @@
           "maxWidth": 12,
           "lineHeightPx": 16,
           "x": 258,
-          "y": 656
+          "y": 664
         },
         {
           "type": "text",
@@ -2321,7 +2321,7 @@
           "maxWidth": 12,
           "lineHeightPx": 16,
           "x": 258,
-          "y": 676
+          "y": 684
         },
         {
           "type": "text",
@@ -2335,7 +2335,7 @@
           "maxWidth": 154,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 676
+          "y": 684
         }
       ]
     },
@@ -2411,7 +2411,7 @@
           "maxWidth": 168,
           "lineHeightPx": 16,
           "x": 206,
-          "y": 112
+          "y": 116
         },
         {
           "type": "text",
@@ -2451,7 +2451,7 @@
           "maxWidth": 135,
           "lineHeightPx": 16,
           "x": 426,
-          "y": 112
+          "y": 116
         },
         {
           "type": "text",
@@ -2516,7 +2516,7 @@
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(255,255,255,1)",
-          "maxWidth": 352.31787109375,
+          "maxWidth": 352,
           "lineHeightPx": 16,
           "x": 96,
           "y": 208
@@ -2532,7 +2532,7 @@
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 230.5,
+          "y": 228,
           "fontColor": "rgba(255,255,255,1)"
         },
         {
@@ -2716,7 +2716,7 @@
           "draw": "wrappedText",
           "path": "meta.azimuth.url",
           "data": null,
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -2771,7 +2771,7 @@
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "This is a secret document (cryptographic property). If someone else obtains this information, they may perform unauthorized actions on your behalf.  Please store this document and/or information in a private, secure place you won’t forget.",
+          "data": "This is a high value, secret document (cryptographic property).  If someone else obtains this information, they may perform unauthorized actions on your behalf. Please securely print and/or lock this document in a private, trusted place you won’t forget.",
           "fontFamily": "Inter",
           "fontSize": 12,
           "fontWeight": 400,
@@ -2785,7 +2785,7 @@
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "If you lose this seed, you can regenerate it with your master ticket.",
+          "data": "If you lose this shard, you can access your wallet with the other two shards.",
           "fontFamily": "Inter",
           "fontSize": 12,
           "fontWeight": 400,
@@ -2807,7 +2807,7 @@
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 608
+          "y": 616
         },
         {
           "type": "text",
@@ -2821,7 +2821,7 @@
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 632
+          "y": 640
         },
         {
           "type": "text",
@@ -2835,35 +2835,35 @@
           "maxWidth": 154,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 656
+          "y": 664
         },
         {
           "type": "text",
           "draw": "wrappedText",
           "path": null,
           "data": "support@urbit.org",
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
           "maxWidth": 252,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 676
+          "y": 684
         },
         {
           "type": "text",
           "draw": "wrappedText",
           "path": null,
           "data": "urbit.org/docs",
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
           "maxWidth": 268,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 656
+          "y": 664
         },
         {
           "type": "text",
@@ -2877,7 +2877,7 @@
           "maxWidth": 12,
           "lineHeightPx": 16,
           "x": 258,
-          "y": 656
+          "y": 664
         },
         {
           "type": "text",
@@ -2891,7 +2891,7 @@
           "maxWidth": 12,
           "lineHeightPx": 16,
           "x": 258,
-          "y": 676
+          "y": 684
         },
         {
           "type": "text",
@@ -2905,7 +2905,7 @@
           "maxWidth": 154,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 676
+          "y": 684
         }
       ]
     },
@@ -3101,7 +3101,7 @@
           "maxWidth": 168,
           "lineHeightPx": 16,
           "x": 206,
-          "y": 112
+          "y": 116
         },
         {
           "type": "text",
@@ -3141,7 +3141,7 @@
           "maxWidth": 135,
           "lineHeightPx": 16,
           "x": 426,
-          "y": 112
+          "y": 116
         },
         {
           "type": "text",
@@ -3178,7 +3178,7 @@
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
-          "maxWidth": 352.31787109375,
+          "maxWidth": 352,
           "lineHeightPx": 16,
           "x": 96,
           "y": 224
@@ -3194,7 +3194,7 @@
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 246.5,
+          "y": 244,
           "fontColor": "rgba(0,0,0,1)"
         },
         {
@@ -3272,7 +3272,7 @@
           "draw": "wrappedText",
           "path": "meta.azimuth.url",
           "data": null,
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -3398,7 +3398,7 @@
           "draw": "wrappedText",
           "path": null,
           "data": "support@urbit.org",
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -3412,7 +3412,7 @@
           "draw": "wrappedText",
           "path": null,
           "data": "urbit.org/docs",
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -3671,7 +3671,7 @@
           "maxWidth": 168,
           "lineHeightPx": 16,
           "x": 206,
-          "y": 112
+          "y": 116
         },
         {
           "type": "text",
@@ -3711,7 +3711,7 @@
           "maxWidth": 135,
           "lineHeightPx": 16,
           "x": 426,
-          "y": 112
+          "y": 116
         },
         {
           "type": "text",
@@ -3748,7 +3748,7 @@
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
-          "maxWidth": 352.31787109375,
+          "maxWidth": 352,
           "lineHeightPx": 16,
           "x": 96,
           "y": 224
@@ -3764,7 +3764,7 @@
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 246.5,
+          "y": 244,
           "fontColor": "rgba(0,0,0,1)"
         },
         {
@@ -3842,7 +3842,7 @@
           "draw": "wrappedText",
           "path": "meta.azimuth.url",
           "data": null,
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -3968,7 +3968,7 @@
           "draw": "wrappedText",
           "path": null,
           "data": "support@urbit.org",
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -3982,7 +3982,7 @@
           "draw": "wrappedText",
           "path": null,
           "data": "urbit.org/docs",
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -4241,7 +4241,7 @@
           "maxWidth": 168,
           "lineHeightPx": 16,
           "x": 206,
-          "y": 112
+          "y": 116
         },
         {
           "type": "text",
@@ -4281,7 +4281,7 @@
           "maxWidth": 135,
           "lineHeightPx": 16,
           "x": 426,
-          "y": 112
+          "y": 116
         },
         {
           "type": "text",
@@ -4318,7 +4318,7 @@
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
-          "maxWidth": 352.31787109375,
+          "maxWidth": 352,
           "lineHeightPx": 16,
           "x": 96,
           "y": 224
@@ -4334,7 +4334,7 @@
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 246.5,
+          "y": 244,
           "fontColor": "rgba(0,0,0,1)"
         },
         {
@@ -4412,7 +4412,7 @@
           "draw": "wrappedText",
           "path": "meta.azimuth.url",
           "data": null,
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -4538,7 +4538,7 @@
           "draw": "wrappedText",
           "path": null,
           "data": "support@urbit.org",
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -4552,7 +4552,7 @@
           "draw": "wrappedText",
           "path": null,
           "data": "urbit.org/docs",
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -4677,7 +4677,7 @@
           "maxWidth": 168,
           "lineHeightPx": 16,
           "x": 206,
-          "y": 112
+          "y": 116
         },
         {
           "type": "text",
@@ -4717,7 +4717,7 @@
           "maxWidth": 135,
           "lineHeightPx": 16,
           "x": 426,
-          "y": 112
+          "y": 116
         },
         {
           "type": "text",
@@ -4916,7 +4916,7 @@
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
-          "maxWidth": 352.31787109375,
+          "maxWidth": 352,
           "lineHeightPx": 16,
           "x": 96,
           "y": 224
@@ -4932,7 +4932,7 @@
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 246.5,
+          "y": 244,
           "fontColor": "rgba(0,0,0,1)"
         },
         {
@@ -4996,7 +4996,7 @@
           "draw": "wrappedText",
           "path": "meta.azimuth.url",
           "data": null,
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -5108,7 +5108,7 @@
           "draw": "wrappedText",
           "path": null,
           "data": "support@urbit.org",
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -5122,7 +5122,7 @@
           "draw": "wrappedText",
           "path": null,
           "data": "urbit.org/docs",
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -5409,7 +5409,7 @@
           "maxWidth": 168,
           "lineHeightPx": 16,
           "x": 206,
-          "y": 112
+          "y": 116
         },
         {
           "type": "text",
@@ -5449,7 +5449,7 @@
           "maxWidth": 135,
           "lineHeightPx": 16,
           "x": 426,
-          "y": 112
+          "y": 116
         },
         {
           "type": "text",
@@ -5486,7 +5486,7 @@
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
-          "maxWidth": 352.31787109375,
+          "maxWidth": 352,
           "lineHeightPx": 16,
           "x": 96,
           "y": 224
@@ -5502,7 +5502,7 @@
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 246.5,
+          "y": 244,
           "fontColor": "rgba(0,0,0,1)"
         },
         {
@@ -5566,7 +5566,7 @@
           "draw": "wrappedText",
           "path": "meta.azimuth.url",
           "data": null,
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -5678,7 +5678,7 @@
           "draw": "wrappedText",
           "path": null,
           "data": "support@urbit.org",
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -5692,7 +5692,7 @@
           "draw": "wrappedText",
           "path": null,
           "data": "urbit.org/docs",
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -5979,7 +5979,7 @@
           "maxWidth": 168,
           "lineHeightPx": 16,
           "x": 206,
-          "y": 112
+          "y": 116
         },
         {
           "type": "text",
@@ -6019,7 +6019,7 @@
           "maxWidth": 135,
           "lineHeightPx": 16,
           "x": 426,
-          "y": 112
+          "y": 116
         },
         {
           "type": "text",
@@ -6056,7 +6056,7 @@
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
-          "maxWidth": 352.31787109375,
+          "maxWidth": 352,
           "lineHeightPx": 16,
           "x": 96,
           "y": 224
@@ -6072,7 +6072,7 @@
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 246.5,
+          "y": 244,
           "fontColor": "rgba(0,0,0,1)"
         },
         {
@@ -6136,7 +6136,7 @@
           "draw": "wrappedText",
           "path": "meta.azimuth.url",
           "data": null,
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -6248,7 +6248,7 @@
           "draw": "wrappedText",
           "path": null,
           "data": "support@urbit.org",
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -6262,7 +6262,7 @@
           "draw": "wrappedText",
           "path": null,
           "data": "urbit.org/docs",
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -6535,7 +6535,7 @@
           "maxWidth": 168,
           "lineHeightPx": 16,
           "x": 206,
-          "y": 112
+          "y": 116
         },
         {
           "type": "text",
@@ -6575,7 +6575,7 @@
           "maxWidth": 135,
           "lineHeightPx": 16,
           "x": 426,
-          "y": 112
+          "y": 116
         },
         {
           "type": "text",
@@ -6612,7 +6612,7 @@
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
-          "maxWidth": 352.31787109375,
+          "maxWidth": 352,
           "lineHeightPx": 16,
           "x": 96,
           "y": 224
@@ -6628,7 +6628,7 @@
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 246.5,
+          "y": 244,
           "fontColor": "rgba(0,0,0,1)"
         },
         {
@@ -6692,7 +6692,7 @@
           "draw": "wrappedText",
           "path": "meta.azimuth.url",
           "data": null,
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -6804,7 +6804,7 @@
           "draw": "wrappedText",
           "path": null,
           "data": "support@urbit.org",
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -6818,7 +6818,7 @@
           "draw": "wrappedText",
           "path": null,
           "data": "urbit.org/docs",
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -7119,7 +7119,7 @@
           "maxWidth": 168,
           "lineHeightPx": 16,
           "x": 206,
-          "y": 112
+          "y": 116
         },
         {
           "type": "text",
@@ -7159,7 +7159,7 @@
           "maxWidth": 135,
           "lineHeightPx": 16,
           "x": 426,
-          "y": 112
+          "y": 116
         },
         {
           "type": "text",
@@ -7191,12 +7191,12 @@
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "Management Address",
+          "data": "Voting Address",
           "fontFamily": "Inter",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
-          "maxWidth": 352.31787109375,
+          "maxWidth": 352,
           "lineHeightPx": 16,
           "x": 96,
           "y": 224
@@ -7204,7 +7204,7 @@
         {
           "type": "ethereumAddress",
           "draw": "ethereumAddress",
-          "path": "management.keys.address",
+          "path": "voting.keys.address",
           "data": null,
           "fontWeight": 500,
           "fontFamily": "Source Code Pro",
@@ -7212,7 +7212,7 @@
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 246.5,
+          "y": 244,
           "fontColor": "rgba(0,0,0,1)"
         },
         {
@@ -7276,7 +7276,7 @@
           "draw": "wrappedText",
           "path": "meta.azimuth.url",
           "data": null,
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -7388,7 +7388,7 @@
           "draw": "wrappedText",
           "path": null,
           "data": "support@urbit.org",
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -7402,7 +7402,7 @@
           "draw": "wrappedText",
           "path": null,
           "data": "urbit.org/docs",
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -7513,7 +7513,7 @@
           "maxWidth": 168,
           "lineHeightPx": 16,
           "x": 206,
-          "y": 112
+          "y": 116
         },
         {
           "type": "text",
@@ -7553,7 +7553,7 @@
           "maxWidth": 135,
           "lineHeightPx": 16,
           "x": 426,
-          "y": 112
+          "y": 116
         },
         {
           "type": "text",
@@ -7752,7 +7752,7 @@
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
-          "maxWidth": 352.31787109375,
+          "maxWidth": 352,
           "lineHeightPx": 16,
           "x": 96,
           "y": 224
@@ -7768,7 +7768,7 @@
           "maxWidth": 420,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 246.5,
+          "y": 244,
           "fontColor": "rgba(0,0,0,1)"
         },
         {
@@ -7832,7 +7832,7 @@
           "draw": "wrappedText",
           "path": "meta.azimuth.url",
           "data": null,
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -7944,7 +7944,7 @@
           "draw": "wrappedText",
           "path": null,
           "data": "support@urbit.org",
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
@@ -7958,7 +7958,7 @@
           "draw": "wrappedText",
           "path": null,
           "data": "urbit.org/docs",
-          "fontFamily": "Inter",
+          "fontFamily": "Source Code Pro",
           "fontSize": 12,
           "fontWeight": 400,
           "fontColor": "rgba(0,0,0,1)",
