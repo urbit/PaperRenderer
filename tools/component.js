@@ -71,6 +71,23 @@ const getSvgPath = (child) => {
   return path
 }
 
+// For some reason, figma doesn't always return the correct fontWeights for textboxes. We correct this here.
+const correctFontWeight = (child) => {
+  const shims = {
+    'Inter-Regular': 400,
+    'Inter-Medium': 500,
+    'Inter-SemiBold': 600,
+    'SourceCodePro-Regular': 400,
+    'SourceCodePro-Medium': 500,
+  }
+
+  if (shims[child.style.fontPostScriptName] !== undefined) {
+    child.style.fontWeight = shims[child.style.fontPostScriptName]
+  }
+
+  return child
+}
+
 const rgba = (fills) => {
   if (fills.length === 0) return `rgba(0,0,0,0)`
   const color = fills[0].color
@@ -99,7 +116,8 @@ const sigil = (child, frame) => {
     draw: 'sigil',
     data: null,
     path: getComponentTagData(child).path,
-    size: child.absoluteBoundingBox.height,
+    height: child.absoluteBoundingBox.height,
+    width: child.absoluteBoundingBox.width,
     x: child.absoluteBoundingBox.x - frame.originX,
     y: child.absoluteBoundingBox.y - frame.originY,
   }
@@ -120,16 +138,19 @@ const img = (child, frame) => {
 }
 
 const text = (child, frame) => {
+  child = correctFontWeight(child)
   return {
     type: 'text',
     draw: 'wrappedText',
     path: getComponentTagData(child).path,
     data: getComponentTagData(child).path === null ? child.characters : null,
     fontFamily: child.style.fontFamily,
+    fontPostScriptName: child.style.fontPostScriptName,
     fontSize: child.style.fontSize,
     fontWeight: child.style.fontWeight,
     fontColor: rgba(child.fills),
-    maxWidth: child.absoluteBoundingBox.width,
+    width: child.absoluteBoundingBox.width,
+    height: child.absoluteBoundingBox.height,
     lineHeightPx: child.style.lineHeightPx,
     x: child.absoluteBoundingBox.x - frame.originX,
     y: child.absoluteBoundingBox.y - frame.originY,
@@ -137,16 +158,19 @@ const text = (child, frame) => {
 }
 
 const shard = (child, frame) => {
+  child = correctFontWeight(child)
   return {
     type: 'shard',
     draw: 'shard',
     path: getComponentTagData(child).path,
     data: null,
     fontFamily: child.style.fontFamily,
+    fontPostScriptName: child.style.fontPostScriptName,
     fontSize: child.style.fontSize,
     fontWeight: child.style.fontWeight,
     fontColor: rgba(child.fills),
-    maxWidth: child.absoluteBoundingBox.width,
+    width: child.absoluteBoundingBox.width,
+    height: child.absoluteBoundingBox.height,
     lineHeightPx: child.style.lineHeightPx,
     x: child.absoluteBoundingBox.x - frame.originX,
     y: child.absoluteBoundingBox.y - frame.originY,
@@ -154,6 +178,7 @@ const shard = (child, frame) => {
 }
 
 const ethereumAddress = (child, frame) => {
+  child = correctFontWeight(child)
   return {
     type: 'ethereumAddress',
     draw: 'ethereumAddress',
@@ -161,8 +186,10 @@ const ethereumAddress = (child, frame) => {
     data: null,
     fontWeight: child.style.fontWeight,
     fontFamily: child.style.fontFamily,
+    fontPostScriptName: child.style.fontPostScriptName,
     fontSize: child.style.fontSize,
-    maxWidth: child.absoluteBoundingBox.width,
+    width: child.absoluteBoundingBox.width,
+    height: child.absoluteBoundingBox.height,
     lineHeightPx: child.style.lineHeightPx,
     x: child.absoluteBoundingBox.x - frame.originX,
     y: child.absoluteBoundingBox.y - frame.originY,
@@ -179,7 +206,7 @@ const ethereumAddress = (child, frame) => {
 //     fontWeight: child.style.fontWeight,
 //     fontFamily: child.style.fontFamily,
 //     fontSize: child.style.fontSize,
-//     maxWidth: child.absoluteBoundingBox.width,
+//     width: child.absoluteBoundingBox.width,
 //     lineHeightPx: child.style.lineHeightPx,
 //     x: child.absoluteBoundingBox.x - frame.originX,
 //     y: child.absoluteBoundingBox.y - frame.originY,
