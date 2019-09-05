@@ -1,6 +1,6 @@
 {
   "name": "urbit-paper-renderer",
-  "version": "2.0.1",
+  "version": "2.0.3",
   "private": false,
   "repository": {
     "url": ""
@@ -9,9 +9,6 @@
   "author": "",
   "license": "MIT",
   "main": "lib/dist/index.js",
-  "peerDependencies": {
-    "urbit-key-generation": "^0.16.2"
-  },
   "dependencies": {
     "lodash.get": "^4.4.2",
     "prop-types": "^15.7.2",
