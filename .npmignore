@@ -9,3 +9,9 @@
 .env.production.local
 .env
 .env.development
+gulpfile.js
+lib/src
+lib/dist/lib
+.travis.yml
+CHANGELOG.md
+CONTRIBUTING.md

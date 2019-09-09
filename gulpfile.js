@@ -33,6 +33,7 @@ gulp.task('serve-preview', function() {
     },
     notify: false,
     port: 8000,
+    open: false,
   })
 })
 
@@ -192,13 +193,19 @@ gulp.task(
   gulp.series('copy-template-json', 'jsx-transpile-lib', 'js-imports-lib')
 )
 
+gulp.task('reload', function(done) {
+  browserSync.reload()
+  done()
+})
+
 gulp.task(
   'js-bundle-preview',
   gulp.series(
     'js-bundle-lib',
     'copy-json-wallet',
     'jsx-transpile-preview',
-    'js-imports-preview'
+    'js-imports-preview',
+    'reload'
   )
 )
 
@@ -229,18 +236,16 @@ gulp.task('watch-preview-html', function() {
 
 gulp.task(
   'run',
-  gulp.series(
+  gulp.parallel(
+    'serve-preview',
     gulp.series(
-      'js-bundle-lib',
-      'js-bundle-preview',
-      'copy-preview-html',
-      'css-bundle-preview'
-    ),
-    gulp.parallel(
-      'watch-preview-js',
-      'watch-preview-css',
-      'watch-lib-js',
-      'serve-preview'
+      gulp.series(
+        'js-bundle-lib',
+        'js-bundle-preview',
+        'copy-preview-html',
+        'css-bundle-preview'
+      ),
+      gulp.parallel('watch-preview-js', 'watch-preview-css', 'watch-lib-js')
     )
   )
 )

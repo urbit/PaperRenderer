@@ -420,7 +420,7 @@
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "Use your master ticket like a high-value password to access your account. There, you can change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains. The master ticket is the secret code from which all of your other keys are derived. ",
+          "data": "Your master ticket is a high-value password to manage your identity. With it, you can change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains. The master ticket is the secret code from which all of your other keys are derived. ",
           "fontFamily": "Inter",
           "fontPostScriptName": "Inter-Regular",
           "fontSize": 12,
@@ -446,7 +446,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 484
+          "y": 488
         },
         {
           "type": "text",
@@ -461,14 +461,14 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 484
+          "x": 238,
+          "y": 488
         },
         {
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "Use Bridge",
+          "data": "Manage your identity",
           "fontFamily": "Inter",
           "fontPostScriptName": "Inter-Regular",
           "fontSize": 12,
@@ -478,7 +478,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 484
+          "y": 488
         },
         {
           "type": "text",
@@ -494,7 +494,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 524
+          "y": 528
         },
         {
           "type": "text",
@@ -510,7 +510,7 @@
           "height": 64,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 548
+          "y": 552
         },
         {
           "type": "text",
@@ -526,7 +526,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 676
+          "y": 680
         },
         {
           "type": "text",
@@ -542,7 +542,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 700
+          "y": 704
         },
         {
           "type": "text",
@@ -558,7 +558,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 724
+          "y": 728
         },
         {
           "type": "text",
@@ -574,7 +574,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 744
+          "y": 748
         },
         {
           "type": "text",
@@ -590,7 +590,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 724
+          "y": 728
         },
         {
           "type": "text",
@@ -605,8 +605,8 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 724
+          "x": 238,
+          "y": 728
         },
         {
           "type": "text",
@@ -621,8 +621,8 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 744
+          "x": 238,
+          "y": 748
         },
         {
           "type": "text",
@@ -638,7 +638,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 744
+          "y": 748
         },
         {
           "type": "text",
@@ -654,7 +654,7 @@
           "height": 32,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 620
+          "y": 624
         },
         {
           "type": "text",
@@ -1091,7 +1091,7 @@
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "Use your master ticket like a high-value password to access your account. There, you can change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains. The master ticket is the secret code from which all of your other keys are derived. ",
+          "data": "Your master ticket is a high-value password to manage your identity. With it, you can change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains. The master ticket is the secret code from which all of your other keys are derived. ",
           "fontFamily": "Inter",
           "fontPostScriptName": "Inter-Regular",
           "fontSize": 12,
@@ -1117,7 +1117,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 484
+          "y": 488
         },
         {
           "type": "text",
@@ -1132,14 +1132,14 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 484
+          "x": 238,
+          "y": 488
         },
         {
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "Use Bridge",
+          "data": "Manage your identity",
           "fontFamily": "Inter",
           "fontPostScriptName": "Inter-Regular",
           "fontSize": 12,
@@ -1149,7 +1149,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 484
+          "y": 488
         },
         {
           "type": "text",
@@ -1165,7 +1165,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 524
+          "y": 528
         },
         {
           "type": "text",
@@ -1181,7 +1181,7 @@
           "height": 64,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 548
+          "y": 552
         },
         {
           "type": "text",
@@ -1197,7 +1197,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 676
+          "y": 680
         },
         {
           "type": "text",
@@ -1213,7 +1213,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 700
+          "y": 704
         },
         {
           "type": "text",
@@ -1229,7 +1229,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 724
+          "y": 728
         },
         {
           "type": "text",
@@ -1245,7 +1245,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 744
+          "y": 748
         },
         {
           "type": "text",
@@ -1261,7 +1261,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 724
+          "y": 728
         },
         {
           "type": "text",
@@ -1276,8 +1276,8 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 724
+          "x": 238,
+          "y": 728
         },
         {
           "type": "text",
@@ -1292,8 +1292,8 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 744
+          "x": 238,
+          "y": 748
         },
         {
           "type": "text",
@@ -1309,22 +1309,22 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 744
+          "y": 748
         },
         {
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "Very Secret",
+          "data": "Top Secret",
           "fontFamily": "Inter",
           "fontPostScriptName": "Inter-SemiBold",
           "fontSize": 18,
           "fontWeight": 600,
           "fontColor": "rgba(127,127,127,1)",
-          "width": 104,
+          "width": 98,
           "height": 16,
           "lineHeightPx": 18,
-          "x": 414,
+          "x": 418,
           "y": 32
         },
         {
@@ -1341,7 +1341,7 @@
           "height": 32,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 620
+          "y": 624
         }
       ]
     },
@@ -1374,16 +1374,16 @@
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "Very Secret",
+          "data": "Top Secret",
           "fontFamily": "Inter",
           "fontPostScriptName": "Inter-SemiBold",
           "fontSize": 18,
           "fontWeight": 600,
           "fontColor": "rgba(127,127,127,1)",
-          "width": 104,
+          "width": 98,
           "height": 16,
           "lineHeightPx": 18,
-          "x": 414,
+          "x": 418,
           "y": 32
         },
         {
@@ -1746,7 +1746,7 @@
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "Use your master ticket like a high-value password to access your account. There, you can change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains. The master ticket is the secret code from which all of your other keys are derived. ",
+          "data": "Your master ticket is a high-value password to manage your identity. With it, you can change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains. The master ticket is the secret code from which all of your other keys are derived. ",
           "fontFamily": "Inter",
           "fontPostScriptName": "Inter-Regular",
           "fontSize": 12,
@@ -1772,7 +1772,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 428
+          "y": 432
         },
         {
           "type": "text",
@@ -1787,14 +1787,14 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 428
+          "x": 238,
+          "y": 432
         },
         {
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "Use Bridge",
+          "data": "Manage your identity",
           "fontFamily": "Inter",
           "fontPostScriptName": "Inter-Regular",
           "fontSize": 12,
@@ -1804,7 +1804,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 428
+          "y": 432
         },
         {
           "type": "text",
@@ -1820,7 +1820,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 468
+          "y": 472
         },
         {
           "type": "text",
@@ -1836,7 +1836,7 @@
           "height": 64,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 492
+          "y": 496
         },
         {
           "type": "text",
@@ -1852,7 +1852,7 @@
           "height": 32,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 564
+          "y": 568
         },
         {
           "type": "text",
@@ -1868,7 +1868,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 616
+          "y": 620
         },
         {
           "type": "text",
@@ -1884,7 +1884,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 640
+          "y": 644
         },
         {
           "type": "text",
@@ -1900,7 +1900,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 664
+          "y": 668
         },
         {
           "type": "text",
@@ -1916,7 +1916,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 684
+          "y": 688
         },
         {
           "type": "text",
@@ -1932,7 +1932,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 664
+          "y": 668
         },
         {
           "type": "text",
@@ -1947,8 +1947,8 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 664
+          "x": 238,
+          "y": 668
         },
         {
           "type": "text",
@@ -1963,8 +1963,8 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 684
+          "x": 238,
+          "y": 688
         },
         {
           "type": "text",
@@ -1980,7 +1980,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 684
+          "y": 688
         }
       ]
     },
@@ -1997,16 +1997,16 @@
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "Very Secret",
+          "data": "Top Secret",
           "fontFamily": "Inter",
           "fontPostScriptName": "Inter-SemiBold",
           "fontSize": 18,
           "fontWeight": 600,
           "fontColor": "rgba(127,127,127,1)",
-          "width": 104,
+          "width": 98,
           "height": 16,
           "lineHeightPx": 18,
-          "x": 414,
+          "x": 418,
           "y": 32
         },
         {
@@ -2385,7 +2385,7 @@
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "Use your master ticket like a high-value password to access your account. There, you can change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains. The master ticket is the secret code from which all of your other keys are derived. ",
+          "data": "Your master ticket is a high-value password to manage your identity. With it, you can change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains. The master ticket is the secret code from which all of your other keys are derived. ",
           "fontFamily": "Inter",
           "fontPostScriptName": "Inter-Regular",
           "fontSize": 12,
@@ -2411,7 +2411,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 428
+          "y": 432
         },
         {
           "type": "text",
@@ -2426,14 +2426,14 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 428
+          "x": 238,
+          "y": 432
         },
         {
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "Use Bridge",
+          "data": "Manage your identity",
           "fontFamily": "Inter",
           "fontPostScriptName": "Inter-Regular",
           "fontSize": 12,
@@ -2443,7 +2443,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 428
+          "y": 432
         },
         {
           "type": "text",
@@ -2459,7 +2459,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 468
+          "y": 472
         },
         {
           "type": "text",
@@ -2475,7 +2475,7 @@
           "height": 64,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 492
+          "y": 496
         },
         {
           "type": "text",
@@ -2491,7 +2491,7 @@
           "height": 32,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 564
+          "y": 568
         },
         {
           "type": "text",
@@ -2507,7 +2507,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 616
+          "y": 620
         },
         {
           "type": "text",
@@ -2523,7 +2523,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 640
+          "y": 644
         },
         {
           "type": "text",
@@ -2539,7 +2539,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 664
+          "y": 668
         },
         {
           "type": "text",
@@ -2555,7 +2555,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 684
+          "y": 688
         },
         {
           "type": "text",
@@ -2571,7 +2571,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 664
+          "y": 668
         },
         {
           "type": "text",
@@ -2586,8 +2586,8 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 664
+          "x": 238,
+          "y": 668
         },
         {
           "type": "text",
@@ -2602,8 +2602,8 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 684
+          "x": 238,
+          "y": 688
         },
         {
           "type": "text",
@@ -2619,7 +2619,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 684
+          "y": 688
         }
       ]
     },
@@ -2652,16 +2652,16 @@
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "Very Secret",
+          "data": "Top Secret",
           "fontFamily": "Inter",
           "fontPostScriptName": "Inter-SemiBold",
           "fontSize": 18,
           "fontWeight": 600,
           "fontColor": "rgba(127,127,127,1)",
-          "width": 104,
+          "width": 98,
           "height": 16,
           "lineHeightPx": 18,
-          "x": 414,
+          "x": 418,
           "y": 32
         },
         {
@@ -3024,7 +3024,7 @@
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "Use your master ticket like a high-value password to access your account. There, you can change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains. The master ticket is the secret code from which all of your other keys are derived. ",
+          "data": "Your master ticket is a high-value password to manage your identity. With it, you can change sponsors, transfer ownership, setup proxies, set operator, network keys, and DNS domains. The master ticket is the secret code from which all of your other keys are derived. ",
           "fontFamily": "Inter",
           "fontPostScriptName": "Inter-Regular",
           "fontSize": 12,
@@ -3050,7 +3050,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 428
+          "y": 432
         },
         {
           "type": "text",
@@ -3065,14 +3065,14 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 428
+          "x": 238,
+          "y": 432
         },
         {
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "Use Bridge",
+          "data": "Manage your identity",
           "fontFamily": "Inter",
           "fontPostScriptName": "Inter-Regular",
           "fontSize": 12,
@@ -3082,7 +3082,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 428
+          "y": 432
         },
         {
           "type": "text",
@@ -3098,7 +3098,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 468
+          "y": 472
         },
         {
           "type": "text",
@@ -3114,7 +3114,7 @@
           "height": 64,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 492
+          "y": 496
         },
         {
           "type": "text",
@@ -3130,7 +3130,7 @@
           "height": 32,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 564
+          "y": 568
         },
         {
           "type": "text",
@@ -3146,7 +3146,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 616
+          "y": 620
         },
         {
           "type": "text",
@@ -3162,7 +3162,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 640
+          "y": 644
         },
         {
           "type": "text",
@@ -3178,7 +3178,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 664
+          "y": 668
         },
         {
           "type": "text",
@@ -3194,7 +3194,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 684
+          "y": 688
         },
         {
           "type": "text",
@@ -3210,7 +3210,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 664
+          "y": 668
         },
         {
           "type": "text",
@@ -3225,8 +3225,8 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 664
+          "x": 238,
+          "y": 668
         },
         {
           "type": "text",
@@ -3241,8 +3241,8 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 684
+          "x": 238,
+          "y": 688
         },
         {
           "type": "text",
@@ -3258,7 +3258,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 684
+          "y": 688
         }
       ]
     },
@@ -3673,7 +3673,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 428
+          "y": 432
         },
         {
           "type": "text",
@@ -3688,14 +3688,14 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 428
+          "x": 238,
+          "y": 432
         },
         {
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "Use Bridge",
+          "data": "Manage your identity",
           "fontFamily": "Inter",
           "fontPostScriptName": "Inter-Regular",
           "fontSize": 12,
@@ -3705,39 +3705,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 428
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": null,
-          "data": "How should I store this document?",
-          "fontFamily": "Inter",
-          "fontPostScriptName": "Inter-SemiBold",
-          "fontSize": 12,
-          "fontWeight": 600,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 420,
-          "height": 16,
-          "lineHeightPx": 16,
-          "x": 96,
-          "y": 468
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": null,
-          "data": "This is a secret document (cryptographic property). If someone else obtains this information, they may perform unauthorized actions on your behalf.  Please store this document and/or information in a private, secure place you won’t forget.",
-          "fontFamily": "Inter",
-          "fontPostScriptName": "Inter-Regular",
-          "fontSize": 12,
-          "fontWeight": 400,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 420,
-          "height": 64,
-          "lineHeightPx": 16,
-          "x": 96,
-          "y": 492
+          "y": 432
         },
         {
           "type": "text",
@@ -3759,6 +3727,38 @@
           "type": "text",
           "draw": "wrappedText",
           "path": null,
+          "data": "How should I store this document?",
+          "fontFamily": "Inter",
+          "fontPostScriptName": "Inter-SemiBold",
+          "fontSize": 12,
+          "fontWeight": 600,
+          "fontColor": "rgba(0,0,0,1)",
+          "width": 420,
+          "height": 16,
+          "lineHeightPx": 16,
+          "x": 96,
+          "y": 472
+        },
+        {
+          "type": "text",
+          "draw": "wrappedText",
+          "path": null,
+          "data": "This is a secret document (cryptographic property). If someone else obtains this information, they may perform unauthorized actions on your behalf.  Please store this document and/or information in a private, secure place you won’t forget.",
+          "fontFamily": "Inter",
+          "fontPostScriptName": "Inter-Regular",
+          "fontSize": 12,
+          "fontWeight": 400,
+          "fontColor": "rgba(0,0,0,1)",
+          "width": 420,
+          "height": 64,
+          "lineHeightPx": 16,
+          "x": 96,
+          "y": 496
+        },
+        {
+          "type": "text",
+          "draw": "wrappedText",
+          "path": null,
           "data": "Get Support",
           "fontFamily": "Inter",
           "fontPostScriptName": "Inter-SemiBold",
@@ -3769,7 +3769,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 604
+          "y": 608
         },
         {
           "type": "text",
@@ -3785,7 +3785,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 628
+          "y": 632
         },
         {
           "type": "text",
@@ -3801,7 +3801,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 652
+          "y": 656
         },
         {
           "type": "text",
@@ -3817,7 +3817,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 672
+          "y": 676
         },
         {
           "type": "text",
@@ -3833,7 +3833,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 652
+          "y": 656
         },
         {
           "type": "text",
@@ -3848,8 +3848,8 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 652
+          "x": 238,
+          "y": 656
         },
         {
           "type": "text",
@@ -3864,8 +3864,8 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 672
+          "x": 238,
+          "y": 676
         },
         {
           "type": "text",
@@ -3881,7 +3881,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 672
+          "y": 676
         },
         {
           "type": "text",
@@ -3897,7 +3897,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 564
+          "y": 568
         }
       ]
     },
@@ -4312,7 +4312,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 428
+          "y": 432
         },
         {
           "type": "text",
@@ -4327,14 +4327,14 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 428
+          "x": 238,
+          "y": 432
         },
         {
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "Use Bridge",
+          "data": "Manage your identity",
           "fontFamily": "Inter",
           "fontPostScriptName": "Inter-Regular",
           "fontSize": 12,
@@ -4344,7 +4344,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 428
+          "y": 432
         },
         {
           "type": "text",
@@ -4360,7 +4360,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 468
+          "y": 472
         },
         {
           "type": "text",
@@ -4376,7 +4376,7 @@
           "height": 64,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 492
+          "y": 496
         },
         {
           "type": "text",
@@ -4408,7 +4408,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 604
+          "y": 608
         },
         {
           "type": "text",
@@ -4424,7 +4424,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 628
+          "y": 632
         },
         {
           "type": "text",
@@ -4440,7 +4440,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 652
+          "y": 656
         },
         {
           "type": "text",
@@ -4456,7 +4456,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 672
+          "y": 676
         },
         {
           "type": "text",
@@ -4472,7 +4472,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 652
+          "y": 656
         },
         {
           "type": "text",
@@ -4487,8 +4487,8 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 652
+          "x": 238,
+          "y": 656
         },
         {
           "type": "text",
@@ -4503,8 +4503,8 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 672
+          "x": 238,
+          "y": 676
         },
         {
           "type": "text",
@@ -4520,7 +4520,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 672
+          "y": 676
         },
         {
           "type": "text",
@@ -4536,7 +4536,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 564
+          "y": 568
         }
       ]
     },
@@ -4951,7 +4951,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 428
+          "y": 432
         },
         {
           "type": "text",
@@ -4966,14 +4966,14 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 428
+          "x": 238,
+          "y": 432
         },
         {
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "Use Bridge",
+          "data": "Manage your identity",
           "fontFamily": "Inter",
           "fontPostScriptName": "Inter-Regular",
           "fontSize": 12,
@@ -4983,7 +4983,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 428
+          "y": 432
         },
         {
           "type": "text",
@@ -4999,7 +4999,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 468
+          "y": 472
         },
         {
           "type": "text",
@@ -5015,7 +5015,7 @@
           "height": 64,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 492
+          "y": 496
         },
         {
           "type": "text",
@@ -5047,7 +5047,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 604
+          "y": 608
         },
         {
           "type": "text",
@@ -5063,7 +5063,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 628
+          "y": 632
         },
         {
           "type": "text",
@@ -5079,7 +5079,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 652
+          "y": 656
         },
         {
           "type": "text",
@@ -5095,7 +5095,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 672
+          "y": 676
         },
         {
           "type": "text",
@@ -5111,7 +5111,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 652
+          "y": 656
         },
         {
           "type": "text",
@@ -5126,8 +5126,8 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 652
+          "x": 238,
+          "y": 656
         },
         {
           "type": "text",
@@ -5142,8 +5142,8 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 672
+          "x": 238,
+          "y": 676
         },
         {
           "type": "text",
@@ -5159,7 +5159,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 672
+          "y": 676
         },
         {
           "type": "text",
@@ -5175,7 +5175,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 564
+          "y": 568
         }
       ]
     },
@@ -5208,16 +5208,16 @@
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "Very Secret",
+          "data": "Top Secret",
           "fontFamily": "Inter",
           "fontPostScriptName": "Inter-SemiBold",
           "fontSize": 18,
           "fontWeight": 600,
           "fontColor": "rgba(127,127,127,1)",
-          "width": 104,
+          "width": 98,
           "height": 16,
           "lineHeightPx": 18,
-          "x": 414,
+          "x": 418,
           "y": 32
         },
         {
@@ -5606,7 +5606,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 428
+          "y": 432
         },
         {
           "type": "text",
@@ -5621,14 +5621,14 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 428
+          "x": 238,
+          "y": 432
         },
         {
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "Use Bridge",
+          "data": "Manage your identity",
           "fontFamily": "Inter",
           "fontPostScriptName": "Inter-Regular",
           "fontSize": 12,
@@ -5638,7 +5638,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 428
+          "y": 432
         },
         {
           "type": "text",
@@ -5654,7 +5654,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 468
+          "y": 472
         },
         {
           "type": "text",
@@ -5670,7 +5670,7 @@
           "height": 64,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 492
+          "y": 496
         },
         {
           "type": "text",
@@ -5686,7 +5686,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 604
+          "y": 608
         },
         {
           "type": "text",
@@ -5702,7 +5702,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 628
+          "y": 632
         },
         {
           "type": "text",
@@ -5718,7 +5718,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 652
+          "y": 656
         },
         {
           "type": "text",
@@ -5734,7 +5734,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 672
+          "y": 676
         },
         {
           "type": "text",
@@ -5750,7 +5750,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 652
+          "y": 656
         },
         {
           "type": "text",
@@ -5765,8 +5765,8 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 652
+          "x": 238,
+          "y": 656
         },
         {
           "type": "text",
@@ -5781,8 +5781,8 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 672
+          "x": 238,
+          "y": 676
         },
         {
           "type": "text",
@@ -5798,7 +5798,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 672
+          "y": 676
         },
         {
           "type": "text",
@@ -5814,7 +5814,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 564
+          "y": 568
         }
       ]
     },
@@ -5847,16 +5847,16 @@
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "Very Secret",
+          "data": "Top Secret",
           "fontFamily": "Inter",
           "fontPostScriptName": "Inter-SemiBold",
           "fontSize": 18,
           "fontWeight": 600,
           "fontColor": "rgba(127,127,127,1)",
-          "width": 104,
+          "width": 98,
           "height": 16,
           "lineHeightPx": 18,
-          "x": 414,
+          "x": 418,
           "y": 32
         },
         {
@@ -6245,7 +6245,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 428
+          "y": 432
         },
         {
           "type": "text",
@@ -6260,14 +6260,14 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 428
+          "x": 238,
+          "y": 432
         },
         {
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "Use Bridge",
+          "data": "Manage your identity",
           "fontFamily": "Inter",
           "fontPostScriptName": "Inter-Regular",
           "fontSize": 12,
@@ -6277,7 +6277,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 428
+          "y": 432
         },
         {
           "type": "text",
@@ -6293,7 +6293,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 468
+          "y": 472
         },
         {
           "type": "text",
@@ -6309,7 +6309,7 @@
           "height": 64,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 492
+          "y": 496
         },
         {
           "type": "text",
@@ -6325,7 +6325,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 604
+          "y": 608
         },
         {
           "type": "text",
@@ -6341,7 +6341,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 628
+          "y": 632
         },
         {
           "type": "text",
@@ -6357,7 +6357,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 652
+          "y": 656
         },
         {
           "type": "text",
@@ -6373,7 +6373,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 672
+          "y": 676
         },
         {
           "type": "text",
@@ -6389,7 +6389,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 652
+          "y": 656
         },
         {
           "type": "text",
@@ -6404,8 +6404,8 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 652
+          "x": 238,
+          "y": 656
         },
         {
           "type": "text",
@@ -6420,8 +6420,8 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 672
+          "x": 238,
+          "y": 676
         },
         {
           "type": "text",
@@ -6437,7 +6437,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 672
+          "y": 676
         },
         {
           "type": "text",
@@ -6453,7 +6453,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 564
+          "y": 568
         }
       ]
     },
@@ -6486,16 +6486,16 @@
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "Very Secret",
+          "data": "Top Secret",
           "fontFamily": "Inter",
           "fontPostScriptName": "Inter-SemiBold",
           "fontSize": 18,
           "fontWeight": 600,
           "fontColor": "rgba(127,127,127,1)",
-          "width": 104,
+          "width": 98,
           "height": 16,
           "lineHeightPx": 18,
-          "x": 414,
+          "x": 418,
           "y": 32
         },
         {
@@ -6884,7 +6884,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 428
+          "y": 432
         },
         {
           "type": "text",
@@ -6899,14 +6899,14 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 428
+          "x": 238,
+          "y": 432
         },
         {
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "Use Bridge",
+          "data": "Manage your identity",
           "fontFamily": "Inter",
           "fontPostScriptName": "Inter-Regular",
           "fontSize": 12,
@@ -6916,7 +6916,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 428
+          "y": 432
         },
         {
           "type": "text",
@@ -6932,7 +6932,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 468
+          "y": 472
         },
         {
           "type": "text",
@@ -6948,7 +6948,7 @@
           "height": 64,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 492
+          "y": 496
         },
         {
           "type": "text",
@@ -6964,7 +6964,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 604
+          "y": 608
         },
         {
           "type": "text",
@@ -6980,7 +6980,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 628
+          "y": 632
         },
         {
           "type": "text",
@@ -6996,7 +6996,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 652
+          "y": 656
         },
         {
           "type": "text",
@@ -7012,7 +7012,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 672
+          "y": 676
         },
         {
           "type": "text",
@@ -7028,7 +7028,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 652
+          "y": 656
         },
         {
           "type": "text",
@@ -7043,8 +7043,8 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 652
+          "x": 238,
+          "y": 656
         },
         {
           "type": "text",
@@ -7059,8 +7059,8 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 672
+          "x": 238,
+          "y": 676
         },
         {
           "type": "text",
@@ -7076,7 +7076,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 672
+          "y": 676
         },
         {
           "type": "text",
@@ -7092,646 +7092,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 564
-        }
-      ]
-    },
-    {
-      "type": "frame",
-      "classOf": "planet",
-      "usage": "transfer",
-      "bin": "2",
-      "path": null,
-      "originX": 2671,
-      "originY": 1696,
-      "elements": [
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": null,
-          "data": "Transfer Proxy",
-          "fontFamily": "Inter",
-          "fontPostScriptName": "Inter-SemiBold",
-          "fontSize": 18,
-          "fontWeight": 600,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 420,
-          "height": 16,
-          "lineHeightPx": 18,
-          "x": 96,
-          "y": 32
-        },
-        {
-          "type": "rect",
-          "draw": "rect",
-          "path": null,
-          "data": null,
-          "cornerRadius": 20,
-          "x": 80,
-          "y": 80,
-          "width": 452,
-          "height": 240,
-          "fillColor": "rgba(0,0,0,0)",
-          "strokeColor": "rgba(0,0,0,1)",
-          "strokeWeight": 1
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": null,
-          "data": "Proposal",
-          "fontFamily": "Inter",
-          "fontPostScriptName": "Inter-SemiBold",
-          "fontSize": 10,
-          "fontWeight": 600,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 90,
-          "height": 12,
-          "lineHeightPx": 11.71875,
-          "x": 96,
-          "y": 280
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": "meta.spec",
-          "data": null,
-          "fontFamily": "Source Code Pro",
-          "fontPostScriptName": "SourceCodePro-Medium",
-          "fontSize": 10,
-          "fontWeight": 500,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 90,
-          "height": 12,
-          "lineHeightPx": 16,
-          "x": 96,
-          "y": 292
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": null,
-          "data": "paper-renderer",
-          "fontFamily": "Inter",
-          "fontPostScriptName": "Inter-SemiBold",
-          "fontSize": 10,
-          "fontWeight": 600,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 90,
-          "height": 12,
-          "lineHeightPx": 11.71875,
-          "x": 208,
-          "y": 280
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": "meta.renderer.version",
-          "data": null,
-          "fontFamily": "Source Code Pro",
-          "fontPostScriptName": "SourceCodePro-Medium",
-          "fontSize": 10,
-          "fontWeight": 500,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 90,
-          "height": 12,
-          "lineHeightPx": 16,
-          "x": 208,
-          "y": 292
-        },
-        {
-          "type": "line",
-          "draw": "line",
-          "path": null,
-          "data": null,
-          "x": 186,
-          "y": 280,
-          "width": 9.791347110876814e-7,
-          "height": 24,
-          "strokeColor": "rgba(0,0,0,1)",
-          "strokeWeight": 1
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": null,
-          "data": "key-generation",
-          "fontFamily": "Inter",
-          "fontPostScriptName": "Inter-SemiBold",
-          "fontSize": 10,
-          "fontWeight": 600,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 90,
-          "height": 12,
-          "lineHeightPx": 11.71875,
-          "x": 318,
-          "y": 280
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": "meta.generator.version",
-          "data": null,
-          "fontFamily": "Source Code Pro",
-          "fontPostScriptName": "SourceCodePro-Medium",
-          "fontSize": 10,
-          "fontWeight": 500,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 90,
-          "height": 12,
-          "lineHeightPx": 16,
-          "x": 318,
-          "y": 292
-        },
-        {
-          "type": "line",
-          "draw": "line",
-          "path": null,
-          "data": null,
-          "x": 296,
-          "y": 280,
-          "width": 9.791347110876814e-7,
-          "height": 24,
-          "strokeColor": "rgba(0,0,0,1)",
-          "strokeWeight": 1
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": null,
-          "data": "Created On",
-          "fontFamily": "Inter",
-          "fontPostScriptName": "Inter-SemiBold",
-          "fontSize": 10,
-          "fontWeight": 600,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 90,
-          "height": 12,
-          "lineHeightPx": 11.71875,
-          "x": 428,
-          "y": 280
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": "meta.dateCreated",
-          "data": null,
-          "fontFamily": "Source Code Pro",
-          "fontPostScriptName": "SourceCodePro-Medium",
-          "fontSize": 10,
-          "fontWeight": 500,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 90,
-          "height": 12,
-          "lineHeightPx": 16,
-          "x": 428,
-          "y": 292
-        },
-        {
-          "type": "line",
-          "draw": "line",
-          "path": null,
-          "data": null,
-          "x": 406,
-          "y": 280,
-          "width": 9.791347110876814e-7,
-          "height": 24,
-          "strokeColor": "rgba(0,0,0,1)",
-          "strokeWeight": 1
-        },
-        {
-          "type": "sigil",
-          "draw": "sigil",
-          "data": null,
-          "path": "meta.sigilLight",
-          "height": 32,
-          "width": 32,
-          "x": 96,
-          "y": 96
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": "meta.patp",
-          "data": null,
-          "fontFamily": "Source Code Pro",
-          "fontPostScriptName": "SourceCodePro-Medium",
-          "fontSize": 12,
-          "fontWeight": 500,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 168,
-          "height": 16,
-          "lineHeightPx": 16,
-          "x": 206,
-          "y": 116
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": null,
-          "data": "Point ",
-          "fontFamily": "Inter",
-          "fontPostScriptName": "Inter-SemiBold",
-          "fontSize": 12,
-          "fontWeight": 600,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 89,
-          "height": 16,
-          "lineHeightPx": 18,
-          "x": 206,
-          "y": 96
-        },
-        {
-          "type": "line",
-          "draw": "line",
-          "path": null,
-          "data": null,
-          "x": 186,
-          "y": 96,
-          "width": 0.0000011190113582415506,
-          "height": 32,
-          "strokeColor": "rgba(0,0,0,1)",
-          "strokeWeight": 1
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": "meta.tier",
-          "data": null,
-          "fontFamily": "Source Code Pro",
-          "fontPostScriptName": "SourceCodePro-Medium",
-          "fontSize": 12,
-          "fontWeight": 500,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 135,
-          "height": 16,
-          "lineHeightPx": 16,
-          "x": 426,
-          "y": 116
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": null,
-          "data": "Class",
-          "fontFamily": "Inter",
-          "fontPostScriptName": "Inter-SemiBold",
-          "fontSize": 12,
-          "fontWeight": 600,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 135,
-          "height": 16,
-          "lineHeightPx": 18,
-          "x": 426,
-          "y": 96
-        },
-        {
-          "type": "line",
-          "draw": "line",
-          "path": null,
-          "data": null,
-          "x": 406,
-          "y": 96,
-          "width": 0.0000011190113582415506,
-          "height": 32,
-          "strokeColor": "rgba(0,0,0,1)",
-          "strokeWeight": 1
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": null,
-          "data": "Transfer Address",
-          "fontFamily": "Inter",
-          "fontPostScriptName": "Inter-SemiBold",
-          "fontSize": 12,
-          "fontWeight": 600,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 352,
-          "height": 16,
-          "lineHeightPx": 16,
-          "x": 96,
-          "y": 224
-        },
-        {
-          "type": "ethereumAddress",
-          "draw": "ethereumAddress",
-          "path": "transfer.keys.address",
-          "data": null,
-          "fontWeight": 500,
-          "fontFamily": "Source Code Pro",
-          "fontPostScriptName": "SourceCodePro-Medium",
-          "fontSize": 12,
-          "width": 420,
-          "height": 16,
-          "lineHeightPx": 16,
-          "x": 96,
-          "y": 244,
-          "fontColor": "rgba(0,0,0,1)"
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": "transfer.seed",
-          "data": null,
-          "fontFamily": "Source Code Pro",
-          "fontPostScriptName": "SourceCodePro-Medium",
-          "fontSize": 12,
-          "fontWeight": 500,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 420,
-          "height": 48,
-          "lineHeightPx": 16,
-          "x": 96,
-          "y": 164
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": null,
-          "data": "Transfer Seed",
-          "fontFamily": "Inter",
-          "fontPostScriptName": "Inter-SemiBold",
-          "fontSize": 12,
-          "fontWeight": 600,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 420,
-          "height": 16,
-          "lineHeightPx": 16,
-          "x": 96,
-          "y": 144
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": null,
-          "data": "What does this do?",
-          "fontFamily": "Inter",
-          "fontPostScriptName": "Inter-SemiBold",
-          "fontSize": 12,
-          "fontWeight": 600,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 420,
-          "height": 16,
-          "lineHeightPx": 16,
-          "x": 96,
-          "y": 352
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": null,
-          "data": "Transfer Proxies are used to transfer ownership to a new ethereum address. The seed is a BIP39 mnemonic, which can be used as the master seed for a hardware wallet.",
-          "fontFamily": "Inter",
-          "fontPostScriptName": "Inter-Regular",
-          "fontSize": 12,
-          "fontWeight": 400,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 420,
-          "height": 48,
-          "lineHeightPx": 16,
-          "x": 96,
-          "y": 376
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": "meta.azimuth.url",
-          "data": null,
-          "fontFamily": "Source Code Pro",
-          "fontPostScriptName": "SourceCodePro-Regular",
-          "fontSize": 12,
-          "fontWeight": 400,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 252,
-          "height": 16,
-          "lineHeightPx": 16,
-          "x": 270,
-          "y": 428
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": null,
-          "data": "->",
-          "fontFamily": "Inter",
-          "fontPostScriptName": "Inter-Regular",
-          "fontSize": 12,
-          "fontWeight": 400,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 12,
-          "height": 16,
-          "lineHeightPx": 16,
-          "x": 258,
-          "y": 428
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": null,
-          "data": "Use Bridge",
-          "fontFamily": "Inter",
-          "fontPostScriptName": "Inter-Regular",
-          "fontSize": 12,
-          "fontWeight": 400,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 154,
-          "height": 16,
-          "lineHeightPx": 16,
-          "x": 96,
-          "y": 428
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": null,
-          "data": "How should I store this document?",
-          "fontFamily": "Inter",
-          "fontPostScriptName": "Inter-SemiBold",
-          "fontSize": 12,
-          "fontWeight": 600,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 420,
-          "height": 16,
-          "lineHeightPx": 16,
-          "x": 96,
-          "y": 468
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": null,
-          "data": "This is a high value, secret document (cryptographic property).  If someone else obtains this information, they may perform unauthorized actions on your behalf. Please securely print and/or lock this document in a private, trusted place you won’t forget.",
-          "fontFamily": "Inter",
-          "fontPostScriptName": "Inter-Regular",
-          "fontSize": 12,
-          "fontWeight": 400,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 420,
-          "height": 64,
-          "lineHeightPx": 16,
-          "x": 96,
-          "y": 492
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": null,
-          "data": "Get Support",
-          "fontFamily": "Inter",
-          "fontPostScriptName": "Inter-SemiBold",
-          "fontSize": 12,
-          "fontWeight": 600,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 420,
-          "height": 16,
-          "lineHeightPx": 16,
-          "x": 96,
-          "y": 604
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": null,
-          "data": "If you need help or information, please visit the following resources.",
-          "fontFamily": "Inter",
-          "fontPostScriptName": "Inter-Regular",
-          "fontSize": 12,
-          "fontWeight": 400,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 420,
-          "height": 16,
-          "lineHeightPx": 16,
-          "x": 96,
-          "y": 628
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": null,
-          "data": "Documentation",
-          "fontFamily": "Inter",
-          "fontPostScriptName": "Inter-Regular",
-          "fontSize": 12,
-          "fontWeight": 400,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 154,
-          "height": 16,
-          "lineHeightPx": 16,
-          "x": 96,
-          "y": 652
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": null,
-          "data": "support@urbit.org",
-          "fontFamily": "Source Code Pro",
-          "fontPostScriptName": "SourceCodePro-Regular",
-          "fontSize": 12,
-          "fontWeight": 400,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 252,
-          "height": 16,
-          "lineHeightPx": 16,
-          "x": 270,
-          "y": 672
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": null,
-          "data": "urbit.org/docs",
-          "fontFamily": "Source Code Pro",
-          "fontPostScriptName": "SourceCodePro-Regular",
-          "fontSize": 12,
-          "fontWeight": 400,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 268,
-          "height": 16,
-          "lineHeightPx": 16,
-          "x": 270,
-          "y": 652
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": null,
-          "data": "->",
-          "fontFamily": "Inter",
-          "fontPostScriptName": "Inter-Regular",
-          "fontSize": 12,
-          "fontWeight": 400,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 12,
-          "height": 16,
-          "lineHeightPx": 16,
-          "x": 258,
-          "y": 652
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": null,
-          "data": "->",
-          "fontFamily": "Inter",
-          "fontPostScriptName": "Inter-Regular",
-          "fontSize": 12,
-          "fontWeight": 400,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 12,
-          "height": 16,
-          "lineHeightPx": 16,
-          "x": 258,
-          "y": 672
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": null,
-          "data": "Contact support",
-          "fontFamily": "Inter",
-          "fontPostScriptName": "Inter-Regular",
-          "fontSize": 12,
-          "fontWeight": 400,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 154,
-          "height": 16,
-          "lineHeightPx": 16,
-          "x": 96,
-          "y": 672
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": null,
-          "data": "If you lose this seed, you can regenerate it with your master ticket.",
-          "fontFamily": "Inter",
-          "fontPostScriptName": "Inter-Regular",
-          "fontSize": 12,
-          "fontWeight": 400,
-          "fontColor": "rgba(0,0,0,1)",
-          "width": 420,
-          "height": 16,
-          "lineHeightPx": 16,
-          "x": 96,
-          "y": 564
-        },
-        {
-          "type": "text",
-          "draw": "wrappedText",
-          "path": null,
-          "data": "Secret",
-          "fontFamily": "Inter",
-          "fontPostScriptName": "Inter-SemiBold",
-          "fontSize": 18,
-          "fontWeight": 600,
-          "fontColor": "rgba(127,127,127,1)",
-          "width": 58,
-          "height": 16,
-          "lineHeightPx": 18,
-          "x": 459,
-          "y": 32
+          "y": 568
         }
       ]
     },
@@ -8162,7 +7523,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 428
+          "y": 432
         },
         {
           "type": "text",
@@ -8177,14 +7538,14 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 428
+          "x": 238,
+          "y": 432
         },
         {
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "Use Bridge",
+          "data": "Manage your identity",
           "fontFamily": "Inter",
           "fontPostScriptName": "Inter-Regular",
           "fontSize": 12,
@@ -8194,7 +7555,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 428
+          "y": 432
         },
         {
           "type": "text",
@@ -8210,7 +7571,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 468
+          "y": 472
         },
         {
           "type": "text",
@@ -8226,7 +7587,7 @@
           "height": 64,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 492
+          "y": 496
         },
         {
           "type": "text",
@@ -8242,7 +7603,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 604
+          "y": 608
         },
         {
           "type": "text",
@@ -8258,7 +7619,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 628
+          "y": 632
         },
         {
           "type": "text",
@@ -8274,7 +7635,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 652
+          "y": 656
         },
         {
           "type": "text",
@@ -8290,7 +7651,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 672
+          "y": 676
         },
         {
           "type": "text",
@@ -8306,7 +7667,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 652
+          "y": 656
         },
         {
           "type": "text",
@@ -8321,8 +7682,8 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 652
+          "x": 238,
+          "y": 656
         },
         {
           "type": "text",
@@ -8337,8 +7698,8 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 672
+          "x": 238,
+          "y": 676
         },
         {
           "type": "text",
@@ -8354,7 +7715,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 672
+          "y": 676
         },
         {
           "type": "text",
@@ -8370,7 +7731,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 564
+          "y": 568
         }
       ]
     },
@@ -8785,7 +8146,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 428
+          "y": 432
         },
         {
           "type": "text",
@@ -8800,14 +8161,14 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 428
+          "x": 238,
+          "y": 432
         },
         {
           "type": "text",
           "draw": "wrappedText",
           "path": null,
-          "data": "Use Bridge",
+          "data": "Manage your identity",
           "fontFamily": "Inter",
           "fontPostScriptName": "Inter-Regular",
           "fontSize": 12,
@@ -8817,7 +8178,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 428
+          "y": 432
         },
         {
           "type": "text",
@@ -8833,7 +8194,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 468
+          "y": 472
         },
         {
           "type": "text",
@@ -8849,7 +8210,7 @@
           "height": 64,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 492
+          "y": 496
         },
         {
           "type": "text",
@@ -8865,7 +8226,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 604
+          "y": 608
         },
         {
           "type": "text",
@@ -8881,7 +8242,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 628
+          "y": 632
         },
         {
           "type": "text",
@@ -8897,7 +8258,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 652
+          "y": 656
         },
         {
           "type": "text",
@@ -8913,7 +8274,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 672
+          "y": 676
         },
         {
           "type": "text",
@@ -8929,7 +8290,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 270,
-          "y": 652
+          "y": 656
         },
         {
           "type": "text",
@@ -8944,8 +8305,8 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 652
+          "x": 238,
+          "y": 656
         },
         {
           "type": "text",
@@ -8960,8 +8321,8 @@
           "width": 12,
           "height": 16,
           "lineHeightPx": 16,
-          "x": 258,
-          "y": 672
+          "x": 238,
+          "y": 676
         },
         {
           "type": "text",
@@ -8977,7 +8338,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 672
+          "y": 676
         },
         {
           "type": "text",
@@ -8993,7 +8354,7 @@
           "height": 16,
           "lineHeightPx": 16,
           "x": 96,
-          "y": 564
+          "y": 568
         },
         {
           "type": "text",
@@ -9010,6 +8371,47 @@
           "lineHeightPx": 18,
           "x": 459,
           "y": 32
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "classOf": "Warning",
+      "path": null,
+      "originX": -521,
+      "originY": -2267,
+      "elements": [
+        {
+          "type": "text",
+          "draw": "wrappedText",
+          "path": null,
+          "data": "DO NOT ALTER COMPONENTS ON THIS PAGE. READ AND UNDERSTAND THE DOCUMENTATION BEFORE ALTERING THESE ARTBOARDS",
+          "fontFamily": "Inter",
+          "fontPostScriptName": "Inter-Black",
+          "fontSize": 288,
+          "fontWeight": 900,
+          "fontColor": "rgba(0,0,0,1)",
+          "width": 5473,
+          "height": 1123,
+          "lineHeightPx": 337.5,
+          "x": 982,
+          "y": 0
+        },
+        {
+          "type": "text",
+          "draw": "wrappedText",
+          "path": null,
+          "data": "THE DOCUMENTATION IS FOUND AT\nhttps://github.com/urbit/PaperRenderer",
+          "fontFamily": "Inter",
+          "fontPostScriptName": "Inter-Black",
+          "fontSize": 288,
+          "fontWeight": 900,
+          "fontColor": "rgba(0,0,0,1)",
+          "width": 6349,
+          "height": 1123,
+          "lineHeightPx": 337.5,
+          "x": 999,
+          "y": 5300
         }
       ]
     }

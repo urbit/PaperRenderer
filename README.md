@@ -258,6 +258,12 @@ Base64 encoding fonts is easy, but the resulting data is large and difficult to 
 
 - The derivation path is omitted because it is mentioned in the wallet UP ([UP8](https://github.com/urbit/proposals/blob/master/008-urbit-hd-wallet.md))
 
+### Security
+
+Tlon runs a [bug bounty program](https://urbit.org/bounties/). If you believe you've discovered a
+vulnerability anywhere in this implementation, you can disclose it privately to
+security@tlon.io.
+
 ### Authors
 
 - `~davpub-habrut`

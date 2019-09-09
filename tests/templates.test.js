@@ -8,25 +8,33 @@ const templates = JSON.parse(
 test('Has all planet templates', () => {
   const count = templates.frames.filter((frame) => frame.classOf === 'planet')
     .length
-  expect(count).toBe(3)
+  // Master ticket
+  // Management proxy
+  expect(count).toBe(2)
 })
 
 test('Has all star templates', () => {
   const count = templates.frames.filter((frame) => frame.classOf === 'star')
     .length
+  // Master ticket
+  // Management proxy
+  // Spawn Proxy
+  // Transfer Proxy
   expect(count).toBe(4)
 })
 
 test('Has all galaxy templates', () => {
   const count = templates.frames.filter((frame) => frame.classOf === 'galaxy')
     .length
+  // Master shard 1
+  // Master shard 2
+  // Master shard 3
+  // Management proxy
+  // Spawn Proxy
+  // Transfer Proxy
+  // Voting Proxy
   expect(count).toBe(7)
 })
-
-// test('Has multipass template', () => {
-//   const count = templates.frames.filter((frame) => frame.classOf === 'all').length
-//   expect(count).toBe(1)
-// })
 
 test('Is shaped as expected', () => {
   expect(typeof templates.figmaFrameID).toBe('string')
