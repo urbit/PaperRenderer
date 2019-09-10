@@ -54,12 +54,18 @@ class App extends Component {
           </p>
           <p>Expected Fonts</p>
           <pre>{JSON.stringify(fontCount, null, ' ')}</pre>
-          <button
-            onClick={() => this.handleDownload()}
-            disabled={disableDownload}
-          >
-            Download
-          </button>
+          <p>Nomenclature Reminder</p>
+          <ul>
+            <li>100 Thin</li>
+            <li>200 Extra Light</li>
+            <li>300 Light</li>
+            <li>400 Normal</li>
+            <li>500 Medium</li>
+            <li>600 Semi Bold</li>
+            <li>700 Bold</li>
+            <li>800 Extra Bold</li>
+            <li>900 Ultra Bold</li>
+          </ul>
         </div>
         {
           <PaperRenderer

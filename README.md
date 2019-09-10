@@ -254,6 +254,21 @@ One way to ensure that the browser loads all fonts is to include the font data a
 
 Base64 encoding fonts is easy, but the resulting data is large and difficult to move around in a text editor.
 
+In the past, we've used [font squirrel](https://www.fontsquirrel.com/tools/webfont-generator) to generate base64 encoded fonts embedded in a CSS file for inclusion in an application.
+
+You can also use the `gulp fonts` command. You'll have to manually change the output to follow this format:
+
+```css
+@font-face {
+  font-family: 'myfont';
+  src: url(data:font/truetype;charset=utf-8;base64,<<base64 string>>) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+```
+
+Font names are critical. `Inter UI` is not the same as `Inter`. Any discrepancy will cause fonts to not render. You may have to add the font-weight param manually on some fonts, or correct the font-family name.
+
 ### Miscellaneous
 
 - The derivation path is omitted because it is mentioned in the wallet UP ([UP8](https://github.com/urbit/proposals/blob/master/008-urbit-hd-wallet.md))

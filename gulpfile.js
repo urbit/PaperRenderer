@@ -15,6 +15,7 @@ var builtins = require('rollup-plugin-node-builtins')
 var rootImport = require('rollup-plugin-root-import')
 var globals = require('rollup-plugin-node-globals')
 var babel = require('rollup-plugin-babel')
+var font64 = require('gulp-simplefont64')
 
 var browserSync = require('browser-sync')
 var run = require('gulp-run')
@@ -253,3 +254,10 @@ gulp.task(
 gulp.task('default', gulp.series('run'))
 
 gulp.task('bundle-prod', gulp.series('js-bundle-lib', 'minify', 'gzip'))
+
+gulp.task('fonts', function() {
+  return gulp
+    .src('fonts/src/**/*.{otf,ttf,woff}')
+    .pipe(font64())
+    .pipe(gulp.dest('fonts/base64/'))
+})
